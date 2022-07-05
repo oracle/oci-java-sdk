@@ -476,18 +476,20 @@ public class ThreatintelClient implements Threatintel {
                 GetIndicatorConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIndicatorConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetIndicatorResponse>
-                transformer = GetIndicatorConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Threatintel",
-                "GetIndicator",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/Indicator/GetIndicator");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Threatintel",
+                        "GetIndicator",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/Indicator/GetIndicator");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetIndicatorResponse>
+                transformer =
+                        GetIndicatorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -510,18 +512,21 @@ public class ThreatintelClient implements Threatintel {
                 ListIndicatorCountsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIndicatorCountsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIndicatorCountsResponse>
-                transformer = ListIndicatorCountsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Threatintel",
-                "ListIndicatorCounts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorCountCollection/ListIndicatorCounts");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Threatintel",
+                        "ListIndicatorCounts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorCountCollection/ListIndicatorCounts");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListIndicatorCountsResponse>
+                transformer =
+                        ListIndicatorCountsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -544,18 +549,20 @@ public class ThreatintelClient implements Threatintel {
                 ListIndicatorsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIndicatorsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIndicatorsResponse>
-                transformer = ListIndicatorsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Threatintel",
-                "ListIndicators",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorSummaryCollection/ListIndicators");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Threatintel",
+                        "ListIndicators",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorSummaryCollection/ListIndicators");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListIndicatorsResponse>
+                transformer =
+                        ListIndicatorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -578,18 +585,21 @@ public class ThreatintelClient implements Threatintel {
                 ListThreatTypesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListThreatTypesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListThreatTypesResponse>
-                transformer = ListThreatTypesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Threatintel",
-                "ListThreatTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/ThreatTypesCollection/ListThreatTypes");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Threatintel",
+                        "ListThreatTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/ThreatTypesCollection/ListThreatTypes");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListThreatTypesResponse>
+                transformer =
+                        ListThreatTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

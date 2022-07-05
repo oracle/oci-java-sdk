@@ -9,38 +9,32 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.google.common.base.Optional;
+import com.oracle.bmc.ServiceDetails;
 import com.oracle.bmc.http.ApacheUtils;
 import com.oracle.bmc.io.internal.AutoCloseableContentLengthVerifyingInputStream;
 import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
 import com.oracle.bmc.io.internal.WrappedResponseInputStream;
 import com.oracle.bmc.model.BmcException;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Value;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Nonnull;
 
 /**
  * A {@code BmcException} exception is thrown in response to failures from a
  * REST endpoint. It contains the status code of the HTTP response as well as an
  * application code and message describing the problem.
  */
-@Getter
-@Slf4j
 public class ResponseHelper {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ResponseHelper.class);
     private static final ObjectReader STRING_READER =
             RestClientFactory.getObjectMapper().readerFor(String.class);
     private static final int MAX_RESPONSE_BUFFER_BYTES = 4096;
@@ -62,9 +56,26 @@ public class ResponseHelper {
      * Family.SUCCESSFUL, or is not Status.NOT_MODIFIED.
      *
      * @param response
-     *            The response received.
+     *            The response received
      */
-    public static void throwIfNotSuccessful(@NonNull Response response) {
+    public static void throwIfNotSuccessful(@Nonnull Response response) {
+        throwIfNotSuccessful(response, ServiceDetails.UNKNOWN_SERVICE_DETAILS);
+    }
+
+    /**
+     * Throws BmcException if the response status is not in the family
+     * Family.SUCCESSFUL, or is not Status.NOT_MODIFIED.
+     *
+     * @param response
+     *            The response received.
+     * @param serviceDetails
+     *            The service details of the response
+     */
+    public static void throwIfNotSuccessful(
+            @Nonnull Response response, @Nonnull ServiceDetails serviceDetails) {
+        if (response == null) {
+            throw new java.lang.NullPointerException("response is marked non-null but is null");
+        }
         // synchronized for async handlers where both an AsyncHandler and a Future might try to
         // handle the response
         synchronized (response) {
@@ -96,7 +107,8 @@ public class ResponseHelper {
                                     response.getMediaType(),
                                     MediaType.APPLICATION_JSON_TYPE,
                                     responseBody),
-                            opcRequestId);
+                            opcRequestId,
+                            serviceDetails);
                 } finally {
                     // Ensure that the response entity is closed so that the connection isn't left in use.  This is
                     // especially important for customers using the ApacheConnectorProvider.
@@ -133,13 +145,15 @@ public class ResponseHelper {
                             message != null
                                     ? message
                                     : "Detailed exception information not available",
-                            opcRequestId);
+                            opcRequestId,
+                            serviceDetails);
                 } else {
                     throw new BmcException(
                             response.getStatus(),
                             errorCodeAndMessage.getCode(),
                             errorCodeAndMessage.getMessage(),
-                            opcRequestId);
+                            opcRequestId,
+                            serviceDetails);
                 }
             } catch (ProcessingException e) {
                 // NOTE: for async paths, this means the first invocation will be the only one that gets
@@ -155,7 +169,7 @@ public class ResponseHelper {
                 // so close it now after the response has been read out.
                 closeResponseSilently(response);
 
-                throw new BmcException(status, "Unknown", message, opcRequestId, e);
+                throw new BmcException(status, "Unknown", message, opcRequestId, e, serviceDetails);
             }
         }
     }
@@ -166,7 +180,10 @@ public class ResponseHelper {
      *
      * @param response the response
      */
-    public static void readWithoutEntity(@NonNull final Response response) {
+    public static void readWithoutEntity(@Nonnull final Response response) {
+        if (response == null) {
+            throw new java.lang.NullPointerException("response is marked non-null but is null");
+        }
         // synchronized for async handlers where both an AsyncHandler and a Future might try to
         // handle the response
         synchronized (response) {
@@ -184,7 +201,10 @@ public class ResponseHelper {
      *            the type of the entity to read
      * @return the entity (if the response's status code was 2xx)
      */
-    public static <T> T readEntity(@NonNull final Response response, GenericType<T> entityType) {
+    public static <T> T readEntity(@Nonnull final Response response, GenericType<T> entityType) {
+        if (response == null) {
+            throw new java.lang.NullPointerException("response is marked non-null but is null");
+        }
         // synchronized for async handlers where both an AsyncHandler and a Future might try to
         // handle the response
         synchronized (response) {
@@ -217,8 +237,11 @@ public class ResponseHelper {
      *            the type of the entity to read
      * @return the entity (if the response's status code was 2xx), or null if 304
      */
-    public static <T> T readEntity(@NonNull final Response response, Class<T> entityType)
+    public static <T> T readEntity(@Nonnull final Response response, Class<T> entityType)
             throws BmcException {
+        if (response == null) {
+            throw new java.lang.NullPointerException("response is marked non-null but is null");
+        }
         // synchronized for async handlers where both an AsyncHandler and a Future might try to
         // handle the response
         synchronized (response) {
@@ -322,7 +345,10 @@ public class ResponseHelper {
      *
      * @param response the response to close
      */
-    public static void closeResponseSilentlyIfNotBuffered(@NonNull final Response response) {
+    public static void closeResponseSilentlyIfNotBuffered(@Nonnull final Response response) {
+        if (response == null) {
+            throw new java.lang.NullPointerException("response is marked non-null but is null");
+        }
         synchronized (response) {
             /*
              * Ensure that the entity has been buffered.  A status of true asserts that the entity is backed
@@ -402,15 +428,100 @@ public class ResponseHelper {
         SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM = shouldAutoClose;
     }
 
-    @Value
     @JsonDeserialize(builder = ErrorCodeAndMessage.Builder.class)
-    @Builder(builderClassName = "Builder")
-    public static class ErrorCodeAndMessage {
-
-        String code;
-        String message;
+    public static final class ErrorCodeAndMessage {
+        private final String code;
+        private final String message;
 
         @JsonPOJOBuilder(withPrefix = "")
-        public static class Builder {}
+        public static class Builder {
+            private String code;
+            private String message;
+
+            Builder() {}
+
+            /**
+             * @return {@code this}.
+             */
+            public ResponseHelper.ErrorCodeAndMessage.Builder code(final String code) {
+                this.code = code;
+                return this;
+            }
+
+            /**
+             * @return {@code this}.
+             */
+            public ResponseHelper.ErrorCodeAndMessage.Builder message(final String message) {
+                this.message = message;
+                return this;
+            }
+
+            public ResponseHelper.ErrorCodeAndMessage build() {
+                return new ResponseHelper.ErrorCodeAndMessage(this.code, this.message);
+            }
+
+            @java.lang.Override
+            public java.lang.String toString() {
+                return "ResponseHelper.ErrorCodeAndMessage.Builder(code="
+                        + this.code
+                        + ", message="
+                        + this.message
+                        + ")";
+            }
+        }
+
+        @java.beans.ConstructorProperties({"code", "message"})
+        ErrorCodeAndMessage(final String code, final String message) {
+            this.code = code;
+            this.message = message;
+        }
+
+        public static ResponseHelper.ErrorCodeAndMessage.Builder builder() {
+            return new ResponseHelper.ErrorCodeAndMessage.Builder();
+        }
+
+        public String getCode() {
+            return this.code;
+        }
+
+        public String getMessage() {
+            return this.message;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object o) {
+            if (o == this) return true;
+            if (!(o instanceof ResponseHelper.ErrorCodeAndMessage)) return false;
+            final ResponseHelper.ErrorCodeAndMessage other = (ResponseHelper.ErrorCodeAndMessage) o;
+            final java.lang.Object this$code = this.getCode();
+            final java.lang.Object other$code = other.getCode();
+            if (this$code == null ? other$code != null : !this$code.equals(other$code))
+                return false;
+            final java.lang.Object this$message = this.getMessage();
+            final java.lang.Object other$message = other.getMessage();
+            if (this$message == null ? other$message != null : !this$message.equals(other$message))
+                return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            final int PRIME = 59;
+            int result = 1;
+            final java.lang.Object $code = this.getCode();
+            result = result * PRIME + ($code == null ? 43 : $code.hashCode());
+            final java.lang.Object $message = this.getMessage();
+            result = result * PRIME + ($message == null ? 43 : $message.hashCode());
+            return result;
+        }
+
+        @java.lang.Override
+        public java.lang.String toString() {
+            return "ResponseHelper.ErrorCodeAndMessage(code="
+                    + this.getCode()
+                    + ", message="
+                    + this.getMessage()
+                    + ")";
+        }
     }
 }

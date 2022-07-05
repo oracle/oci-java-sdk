@@ -58,6 +58,13 @@ public class GetBackupDestinationConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.database.responses.GetBackupDestinationResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GetBackupDestinationResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.database.responses.GetBackupDestinationResponse>
@@ -70,16 +77,24 @@ public class GetBackupDestinationConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.database.responses.GetBackupDestinationResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.database.model
                                                                 .BackupDestination>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.database.model
-                                                                        .BackupDestination
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.database.model.BackupDestination
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.database.model.BackupDestination
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.database.model.BackupDestination>

@@ -131,6 +131,13 @@ public class ListBdsMetastoreConfigurationsConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.bds.responses.ListBdsMetastoreConfigurationsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.bds.responses.ListBdsMetastoreConfigurationsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.bds.responses.ListBdsMetastoreConfigurationsResponse>
@@ -145,18 +152,29 @@ public class ListBdsMetastoreConfigurationsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.bds.responses.ListBdsMetastoreConfigurationsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
                                                                 com.oracle.bmc.bds.model
                                                                         .BdsMetastoreConfigurationSummary>>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        new javax.ws.rs.core.GenericType<
-                                                                java.util.List<
-                                                                        com.oracle.bmc.bds.model
-                                                                                .BdsMetastoreConfigurationSummary>>() {});
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.bds.model
+                                                                            .BdsMetastoreConfigurationSummary>>() {},
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.bds.model
+                                                                            .BdsMetastoreConfigurationSummary>>() {});
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<

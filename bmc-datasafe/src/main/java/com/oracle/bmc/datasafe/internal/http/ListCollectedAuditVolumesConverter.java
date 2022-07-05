@@ -114,6 +114,13 @@ public class ListCollectedAuditVolumesConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.datasafe.responses.ListCollectedAuditVolumesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datasafe.responses.ListCollectedAuditVolumesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.datasafe.responses.ListCollectedAuditVolumesResponse>
@@ -128,16 +135,26 @@ public class ListCollectedAuditVolumesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.datasafe.responses.ListCollectedAuditVolumesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.datasafe.model
                                                                 .CollectedAuditVolumeCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.datasafe.model
-                                                                        .CollectedAuditVolumeCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.datasafe.model
+                                                                    .CollectedAuditVolumeCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.datasafe.model
+                                                                    .CollectedAuditVolumeCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.datasafe.model

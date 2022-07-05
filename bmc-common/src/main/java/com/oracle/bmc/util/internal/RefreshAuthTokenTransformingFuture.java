@@ -4,17 +4,16 @@
  */
 package com.oracle.bmc.util.internal;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-
 import com.google.common.base.Function;
 import com.google.common.base.Supplier;
 import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.model.BmcException;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Nonnull;
+import org.slf4j.Logger;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Future that both delegates to another one and provides the ability to transform
@@ -30,19 +29,22 @@ import lombok.extern.slf4j.Slf4j;
  *
  * @deprecated in favor of RefreshAuthTokenWrapper -- versions after 1.25.1 do not use RefreshAuthTokenTransformingFuture anymore
  */
-@Slf4j
 public class RefreshAuthTokenTransformingFuture<FROM, TO> implements Future<TO> {
-    @NonNull private Future<FROM> delegate;
-
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(RefreshAuthTokenTransformingFuture.class);
+    @Nonnull private Future<FROM> delegate;
     private final Function<FROM, TO> transformer;
     private final RefreshableOnNotAuthenticatedProvider<?> authProvider;
     private final Supplier<Future<FROM>> generateNewFutureForRetry;
 
     public RefreshAuthTokenTransformingFuture(
-            @NonNull Future<FROM> delegate,
+            @Nonnull Future<FROM> delegate,
             Function<FROM, TO> transformer,
             RefreshableOnNotAuthenticatedProvider<?> authProvider,
             Supplier<Future<FROM>> generateNewFutureForRetry) {
+        if (delegate == null) {
+            throw new java.lang.NullPointerException("delegate is marked non-null but is null");
+        }
         this.delegate = delegate;
         this.transformer = transformer;
         this.authProvider = authProvider;

@@ -6,14 +6,12 @@ package com.oracle.bmc.auth;
 
 import javax.annotation.Nonnull;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
 /**
  * Formatter used to create the correct 'keyId' needed for signing requests.
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class CustomerKeyIdFormatter {
+
+    private CustomerKeyIdFormatter() {}
 
     /**
      * Creates a keyId from the individual components.

@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
-
 import javax.annotation.Priority;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.client.ClientRequestContext;
@@ -16,16 +15,15 @@ import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.client.ClientResponseContext;
 import javax.ws.rs.client.ClientResponseFilter;
 import javax.ws.rs.core.MultivaluedMap;
-
 import com.google.common.annotations.VisibleForTesting;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Filter that logs all of the outbound and inbound headers at debug level.
  */
 @Priority(Priorities.USER)
-@Slf4j
 public class LogHeadersFilter implements ClientResponseFilter, ClientRequestFilter {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(LogHeadersFilter.class);
 
     @Override
     public void filter(ClientRequestContext requestContext, ClientResponseContext responseContext)

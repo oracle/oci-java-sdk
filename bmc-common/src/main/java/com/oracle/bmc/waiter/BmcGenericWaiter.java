@@ -5,21 +5,19 @@
 package com.oracle.bmc.waiter;
 
 import java.util.concurrent.Callable;
-
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.google.common.base.Supplier;
 import com.oracle.bmc.model.BmcException;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * BmcGenericWaiter is a Waiter that provides a generic foundation to build
  * more custom waiters for specific types of calls.
  */
-@Slf4j
 public class BmcGenericWaiter {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(BmcGenericWaiter.class);
     private final GenericWaiter waiter;
 
     /**

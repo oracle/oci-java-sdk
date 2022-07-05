@@ -81,6 +81,13 @@ public class QueryOpsiDataObjectDataConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.opsi.responses.QueryOpsiDataObjectDataResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.opsi.responses.QueryOpsiDataObjectDataResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.opsi.responses.QueryOpsiDataObjectDataResponse>
@@ -93,16 +100,26 @@ public class QueryOpsiDataObjectDataConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.opsi.responses.QueryOpsiDataObjectDataResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.opsi.model
                                                                 .QueryDataObjectResultSetRowsCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.opsi.model
-                                                                        .QueryDataObjectResultSetRowsCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.opsi.model
+                                                                    .QueryDataObjectResultSetRowsCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.opsi.model
+                                                                    .QueryDataObjectResultSetRowsCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.opsi.model

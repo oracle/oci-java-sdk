@@ -113,6 +113,12 @@ public class ListIndexesConverter {
     public static com.google.common.base.Function<
                     javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.ListIndexesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.ListIndexesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.nosql.responses.ListIndexesResponse>
@@ -125,14 +131,23 @@ public class ListIndexesConverter {
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.nosql.responses.ListIndexesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.nosql.model.IndexCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.nosql.model.IndexCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.nosql.model.IndexCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.nosql.model.IndexCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.nosql.model.IndexCollection>

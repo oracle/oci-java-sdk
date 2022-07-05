@@ -4,26 +4,22 @@
  */
 package com.oracle.bmc.http.internal;
 
+import com.oracle.bmc.http.signing.RequestSigner;
+import com.oracle.bmc.http.signing.SigningStrategy;
+
 import java.io.IOException;
 import java.util.Map;
-
+import javax.annotation.Nonnull;
 import javax.annotation.Priority;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.core.MultivaluedMap;
 
-import com.oracle.bmc.http.signing.RequestSigner;
-
-import com.oracle.bmc.http.signing.SigningStrategy;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-
 /**
  * Filter that injects authentication headers into the request.
  */
 @Priority(Priorities.AUTHENTICATION)
-@RequiredArgsConstructor
 public class AuthnClientFilter implements ClientRequestFilter {
 
     public static final String SIGNING_STRATEGY_PROPERTY_NAME =
@@ -32,8 +28,20 @@ public class AuthnClientFilter implements ClientRequestFilter {
     private final RequestSigner defaultRequestSigner;
     private final Map<SigningStrategy, RequestSigner> requestSigners;
 
+    @java.beans.ConstructorProperties({"defaultRequestSigner", "requestSigners"})
+    public AuthnClientFilter(
+            final RequestSigner defaultRequestSigner,
+            final Map<SigningStrategy, RequestSigner> requestSigners) {
+        this.defaultRequestSigner = defaultRequestSigner;
+        this.requestSigners = requestSigners;
+    }
+
     @Override
-    public void filter(@NonNull ClientRequestContext clientRequestContext) throws IOException {
+    public void filter(@Nonnull ClientRequestContext clientRequestContext) throws IOException {
+        if (clientRequestContext == null) {
+            throw new java.lang.NullPointerException(
+                    "clientRequestContext is marked non-null but is null");
+        }
         RequestSigner chosenRequestSigner = this.defaultRequestSigner;
 
         SigningStrategy perOperationSigningStrategy =
@@ -55,7 +63,7 @@ public class AuthnClientFilter implements ClientRequestFilter {
 
         MultivaluedMap<String, Object> headers = clientRequestContext.getHeaders();
         for (Map.Entry<String, String> e : authHeaders.entrySet()) {
-            if (!headers.keySet().contains(e.getKey())) {
+            if (!headers.containsKey(e.getKey())) {
                 headers.putSingle(e.getKey(), e.getValue());
             }
         }

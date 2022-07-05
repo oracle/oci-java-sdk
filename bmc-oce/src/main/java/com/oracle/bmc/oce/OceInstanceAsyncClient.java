@@ -399,13 +399,18 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 ChangeOceInstanceCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeOceInstanceCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OceInstance",
+                        "ChangeOceInstanceCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeOceInstanceCompartmentResponse>
-                transformer = ChangeOceInstanceCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OceInstance", "ChangeOceInstanceCompartment", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ChangeOceInstanceCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeOceInstanceCompartmentRequest, ChangeOceInstanceCompartmentResponse>
                 handlerToUse = handler;
@@ -449,12 +454,14 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 CreateOceInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateOceInstanceConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateOceInstanceResponse>
-                transformer = CreateOceInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OceInstance", "CreateOceInstance", ib.getRequestUri().toString(), "");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OceInstance", "CreateOceInstance", ib.getRequestUri().toString(), "");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateOceInstanceResponse>
+                transformer =
+                        CreateOceInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateOceInstanceRequest, CreateOceInstanceResponse>
                 handlerToUse = handler;
 
@@ -496,11 +503,13 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 DeleteOceInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteOceInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OceInstance", "DeleteOceInstance", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteOceInstanceResponse>
-                transformer = DeleteOceInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OceInstance", "DeleteOceInstance", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteOceInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteOceInstanceRequest, DeleteOceInstanceResponse>
                 handlerToUse = handler;
 
@@ -537,11 +546,12 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 GetOceInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetOceInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OceInstance", "GetOceInstance", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetOceInstanceResponse>
-                transformer = GetOceInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OceInstance", "GetOceInstance", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetOceInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetOceInstanceRequest, GetOceInstanceResponse>
                 handlerToUse = handler;
 
@@ -578,11 +588,12 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OceInstance", "GetWorkRequest", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OceInstance", "GetWorkRequest", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -619,11 +630,13 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 ListOceInstancesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListOceInstancesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OceInstance", "ListOceInstances", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListOceInstancesResponse>
-                transformer = ListOceInstancesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OceInstance", "ListOceInstances", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListOceInstancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListOceInstancesRequest, ListOceInstancesResponse>
                 handlerToUse = handler;
 
@@ -660,12 +673,14 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OceInstance", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OceInstance", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -703,12 +718,14 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OceInstance", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OceInstance", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -746,11 +763,13 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OceInstance", "ListWorkRequests", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OceInstance", "ListWorkRequests", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -787,11 +806,13 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 UpdateOceInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateOceInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OceInstance", "UpdateOceInstance", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOceInstanceResponse>
-                transformer = UpdateOceInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OceInstance", "UpdateOceInstance", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        UpdateOceInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateOceInstanceRequest, UpdateOceInstanceResponse>
                 handlerToUse = handler;
 

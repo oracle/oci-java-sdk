@@ -411,15 +411,18 @@ public class InvoiceServiceClient implements InvoiceService {
                 DownloadPdfContentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DownloadPdfContentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DownloadPdfContentResponse>
-                transformer = DownloadPdfContentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "InvoiceService", "DownloadPdfContent", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "InvoiceService", "DownloadPdfContent", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DownloadPdfContentResponse>
+                transformer =
+                        DownloadPdfContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -442,15 +445,16 @@ public class InvoiceServiceClient implements InvoiceService {
         final GetInvoiceRequest interceptedRequest = GetInvoiceConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInvoiceConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetInvoiceResponse> transformer =
-                GetInvoiceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "InvoiceService", "GetInvoice", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "InvoiceService", "GetInvoice", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetInvoiceResponse> transformer =
+                GetInvoiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -473,15 +477,18 @@ public class InvoiceServiceClient implements InvoiceService {
                 ListInvoiceLinesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInvoiceLinesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoiceLinesResponse>
-                transformer = ListInvoiceLinesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "InvoiceService", "ListInvoiceLines", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "InvoiceService", "ListInvoiceLines", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoiceLinesResponse>
+                transformer =
+                        ListInvoiceLinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -504,15 +511,17 @@ public class InvoiceServiceClient implements InvoiceService {
                 ListInvoicesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInvoicesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoicesResponse>
-                transformer = ListInvoicesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "InvoiceService", "ListInvoices", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "InvoiceService", "ListInvoices", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoicesResponse>
+                transformer =
+                        ListInvoicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -534,16 +543,17 @@ public class InvoiceServiceClient implements InvoiceService {
         final PayInvoiceRequest interceptedRequest = PayInvoiceConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 PayInvoiceConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, PayInvoiceResponse> transformer =
-                PayInvoiceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "InvoiceService", "PayInvoice", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "InvoiceService", "PayInvoice", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, PayInvoiceResponse> transformer =
+                PayInvoiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

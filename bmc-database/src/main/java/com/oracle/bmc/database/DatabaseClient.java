@@ -478,20 +478,23 @@ public class DatabaseClient implements Database {
                 ActivateExadataInfrastructureConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ActivateExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ActivateExadataInfrastructureResponse>
-                transformer = ActivateExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ActivateExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ActivateExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ActivateExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ActivateExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ActivateExadataInfrastructureResponse>
+                transformer =
+                        ActivateExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -521,20 +524,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AddStorageCapacityExadataInfrastructureConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, AddStorageCapacityExadataInfrastructureResponse>
-                transformer = AddStorageCapacityExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "AddStorageCapacityExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/AddStorageCapacityExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "AddStorageCapacityExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/AddStorageCapacityExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AddStorageCapacityExadataInfrastructureResponse>
+                transformer =
+                        AddStorageCapacityExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -559,20 +565,23 @@ public class DatabaseClient implements Database {
                 AddVirtualMachineToVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AddVirtualMachineToVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, AddVirtualMachineToVmClusterResponse>
-                transformer = AddVirtualMachineToVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "AddVirtualMachineToVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/AddVirtualMachineToVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "AddVirtualMachineToVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/AddVirtualMachineToVmCluster");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AddVirtualMachineToVmClusterResponse>
+                transformer =
+                        AddVirtualMachineToVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -601,20 +610,23 @@ public class DatabaseClient implements Database {
                 AutonomousDatabaseManualRefreshConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AutonomousDatabaseManualRefreshConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, AutonomousDatabaseManualRefreshResponse>
-                transformer = AutonomousDatabaseManualRefreshConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "AutonomousDatabaseManualRefresh",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/AutonomousDatabaseManualRefresh");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "AutonomousDatabaseManualRefresh",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/AutonomousDatabaseManualRefresh");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AutonomousDatabaseManualRefreshResponse>
+                transformer =
+                        AutonomousDatabaseManualRefreshConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -645,21 +657,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeAutonomousContainerDatabaseCompartmentConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeAutonomousContainerDatabaseCompartmentResponse>
-                transformer = ChangeAutonomousContainerDatabaseCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeAutonomousContainerDatabaseCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ChangeAutonomousContainerDatabaseCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeAutonomousContainerDatabaseCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ChangeAutonomousContainerDatabaseCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeAutonomousContainerDatabaseCompartmentResponse>
+                transformer =
+                        ChangeAutonomousContainerDatabaseCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -688,20 +703,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeAutonomousDatabaseCompartmentConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeAutonomousDatabaseCompartmentResponse>
-                transformer = ChangeAutonomousDatabaseCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeAutonomousDatabaseCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ChangeAutonomousDatabaseCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeAutonomousDatabaseCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ChangeAutonomousDatabaseCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeAutonomousDatabaseCompartmentResponse>
+                transformer =
+                        ChangeAutonomousDatabaseCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -731,22 +749,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeAutonomousExadataInfrastructureCompartmentConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeAutonomousExadataInfrastructureCompartmentResponse>
-                transformer =
-                        ChangeAutonomousExadataInfrastructureCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeAutonomousExadataInfrastructureCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/ChangeAutonomousExadataInfrastructureCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeAutonomousExadataInfrastructureCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/ChangeAutonomousExadataInfrastructureCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeAutonomousExadataInfrastructureCompartmentResponse>
+                transformer =
+                        ChangeAutonomousExadataInfrastructureCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -775,20 +795,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeAutonomousVmClusterCompartmentConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeAutonomousVmClusterCompartmentResponse>
-                transformer = ChangeAutonomousVmClusterCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeAutonomousVmClusterCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ChangeAutonomousVmClusterCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeAutonomousVmClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ChangeAutonomousVmClusterCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeAutonomousVmClusterCompartmentResponse>
+                transformer =
+                        ChangeAutonomousVmClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -817,20 +840,23 @@ public class DatabaseClient implements Database {
                 ChangeBackupDestinationCompartmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeBackupDestinationCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeBackupDestinationCompartmentResponse>
-                transformer = ChangeBackupDestinationCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeBackupDestinationCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/ChangeBackupDestinationCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeBackupDestinationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/ChangeBackupDestinationCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeBackupDestinationCompartmentResponse>
+                transformer =
+                        ChangeBackupDestinationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -860,21 +886,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeCloudAutonomousVmClusterCompartmentConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeCloudAutonomousVmClusterCompartmentResponse>
-                transformer = ChangeCloudAutonomousVmClusterCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeCloudAutonomousVmClusterCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ChangeCloudAutonomousVmClusterCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeCloudAutonomousVmClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ChangeCloudAutonomousVmClusterCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeCloudAutonomousVmClusterCompartmentResponse>
+                transformer =
+                        ChangeCloudAutonomousVmClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -905,21 +934,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeCloudExadataInfrastructureCompartmentConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeCloudExadataInfrastructureCompartmentResponse>
-                transformer = ChangeCloudExadataInfrastructureCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeCloudExadataInfrastructureCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ChangeCloudExadataInfrastructureCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeCloudExadataInfrastructureCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ChangeCloudExadataInfrastructureCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeCloudExadataInfrastructureCompartmentResponse>
+                transformer =
+                        ChangeCloudExadataInfrastructureCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -948,20 +980,23 @@ public class DatabaseClient implements Database {
                 ChangeCloudVmClusterCompartmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeCloudVmClusterCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeCloudVmClusterCompartmentResponse>
-                transformer = ChangeCloudVmClusterCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeCloudVmClusterCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ChangeCloudVmClusterCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeCloudVmClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ChangeCloudVmClusterCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeCloudVmClusterCompartmentResponse>
+                transformer =
+                        ChangeCloudVmClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -991,20 +1026,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeDatabaseSoftwareImageCompartmentConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeDatabaseSoftwareImageCompartmentResponse>
-                transformer = ChangeDatabaseSoftwareImageCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeDatabaseSoftwareImageCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/ChangeDatabaseSoftwareImageCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeDatabaseSoftwareImageCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/ChangeDatabaseSoftwareImageCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeDatabaseSoftwareImageCompartmentResponse>
+                transformer =
+                        ChangeDatabaseSoftwareImageCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1032,20 +1070,23 @@ public class DatabaseClient implements Database {
                 ChangeDbSystemCompartmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeDbSystemCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeDbSystemCompartmentResponse>
-                transformer = ChangeDbSystemCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeDbSystemCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ChangeDbSystemCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeDbSystemCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ChangeDbSystemCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeDbSystemCompartmentResponse>
+                transformer =
+                        ChangeDbSystemCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1074,20 +1115,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeExadataInfrastructureCompartmentConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeExadataInfrastructureCompartmentResponse>
-                transformer = ChangeExadataInfrastructureCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeExadataInfrastructureCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ChangeExadataInfrastructureCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeExadataInfrastructureCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ChangeExadataInfrastructureCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeExadataInfrastructureCompartmentResponse>
+                transformer =
+                        ChangeExadataInfrastructureCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1118,21 +1162,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeExternalContainerDatabaseCompartmentConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeExternalContainerDatabaseCompartmentResponse>
-                transformer = ChangeExternalContainerDatabaseCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeExternalContainerDatabaseCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ChangeExternalContainerDatabaseCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeExternalContainerDatabaseCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ChangeExternalContainerDatabaseCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeExternalContainerDatabaseCompartmentResponse>
+                transformer =
+                        ChangeExternalContainerDatabaseCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1162,21 +1209,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeExternalNonContainerDatabaseCompartmentConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeExternalNonContainerDatabaseCompartmentResponse>
-                transformer = ChangeExternalNonContainerDatabaseCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeExternalNonContainerDatabaseCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/ChangeExternalNonContainerDatabaseCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeExternalNonContainerDatabaseCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/ChangeExternalNonContainerDatabaseCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeExternalNonContainerDatabaseCompartmentResponse>
+                transformer =
+                        ChangeExternalNonContainerDatabaseCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1206,21 +1256,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeExternalPluggableDatabaseCompartmentConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeExternalPluggableDatabaseCompartmentResponse>
-                transformer = ChangeExternalPluggableDatabaseCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeExternalPluggableDatabaseCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/ChangeExternalPluggableDatabaseCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeExternalPluggableDatabaseCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/ChangeExternalPluggableDatabaseCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeExternalPluggableDatabaseCompartmentResponse>
+                transformer =
+                        ChangeExternalPluggableDatabaseCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1248,20 +1301,23 @@ public class DatabaseClient implements Database {
                 ChangeKeyStoreCompartmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeKeyStoreCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeKeyStoreCompartmentResponse>
-                transformer = ChangeKeyStoreCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeKeyStoreCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/ChangeKeyStoreCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeKeyStoreCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/ChangeKeyStoreCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeKeyStoreCompartmentResponse>
+                transformer =
+                        ChangeKeyStoreCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1290,20 +1346,23 @@ public class DatabaseClient implements Database {
                 ChangeVmClusterCompartmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeVmClusterCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeVmClusterCompartmentResponse>
-                transformer = ChangeVmClusterCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeVmClusterCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/ChangeVmClusterCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeVmClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/ChangeVmClusterCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeVmClusterCompartmentResponse>
+                transformer =
+                        ChangeVmClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1334,22 +1393,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CheckExternalDatabaseConnectorConnectionStatusConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        CheckExternalDatabaseConnectorConnectionStatusResponse>
-                transformer =
-                        CheckExternalDatabaseConnectorConnectionStatusConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CheckExternalDatabaseConnectorConnectionStatus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/CheckExternalDatabaseConnectorConnectionStatus");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CheckExternalDatabaseConnectorConnectionStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/CheckExternalDatabaseConnectorConnectionStatus");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        CheckExternalDatabaseConnectorConnectionStatusResponse>
+                transformer =
+                        CheckExternalDatabaseConnectorConnectionStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1374,20 +1435,23 @@ public class DatabaseClient implements Database {
                 CompleteExternalBackupJobConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CompleteExternalBackupJobConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CompleteExternalBackupJobResponse>
-                transformer = CompleteExternalBackupJobConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CompleteExternalBackupJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/CompleteExternalBackupJob");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CompleteExternalBackupJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/CompleteExternalBackupJob");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CompleteExternalBackupJobResponse>
+                transformer =
+                        CompleteExternalBackupJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1417,20 +1481,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ConfigureAutonomousDatabaseVaultKeyConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ConfigureAutonomousDatabaseVaultKeyResponse>
-                transformer = ConfigureAutonomousDatabaseVaultKeyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ConfigureAutonomousDatabaseVaultKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ConfigureAutonomousDatabaseVaultKey");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ConfigureAutonomousDatabaseVaultKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ConfigureAutonomousDatabaseVaultKey");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ConfigureAutonomousDatabaseVaultKeyResponse>
+                transformer =
+                        ConfigureAutonomousDatabaseVaultKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1458,18 +1525,20 @@ public class DatabaseClient implements Database {
                 ConvertToPdbConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ConvertToPdbConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ConvertToPdbResponse>
-                transformer = ConvertToPdbConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ConvertToPdb",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ConvertToPdb");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ConvertToPdb",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ConvertToPdb");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ConvertToPdbResponse>
+                transformer =
+                        ConvertToPdbConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1497,20 +1566,23 @@ public class DatabaseClient implements Database {
                 CreateAutonomousContainerDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAutonomousContainerDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAutonomousContainerDatabaseResponse>
-                transformer = CreateAutonomousContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateAutonomousContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/CreateAutonomousContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateAutonomousContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/CreateAutonomousContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateAutonomousContainerDatabaseResponse>
+                transformer =
+                        CreateAutonomousContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1539,19 +1611,22 @@ public class DatabaseClient implements Database {
                 CreateAutonomousDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAutonomousDatabaseResponse>
-                transformer = CreateAutonomousDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/CreateAutonomousDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/CreateAutonomousDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAutonomousDatabaseResponse>
+                transformer =
+                        CreateAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1579,20 +1654,23 @@ public class DatabaseClient implements Database {
                 CreateAutonomousDatabaseBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAutonomousDatabaseBackupConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAutonomousDatabaseBackupResponse>
-                transformer = CreateAutonomousDatabaseBackupConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateAutonomousDatabaseBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/CreateAutonomousDatabaseBackup");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateAutonomousDatabaseBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/CreateAutonomousDatabaseBackup");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateAutonomousDatabaseBackupResponse>
+                transformer =
+                        CreateAutonomousDatabaseBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1621,20 +1699,23 @@ public class DatabaseClient implements Database {
                 CreateAutonomousVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAutonomousVmClusterResponse>
-                transformer = CreateAutonomousVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/CreateAutonomousVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/CreateAutonomousVmCluster");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateAutonomousVmClusterResponse>
+                transformer =
+                        CreateAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1662,19 +1743,21 @@ public class DatabaseClient implements Database {
                 CreateBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBackupConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupResponse>
-                transformer = CreateBackupConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/CreateBackup");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/CreateBackup");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupResponse>
+                transformer =
+                        CreateBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1702,19 +1785,22 @@ public class DatabaseClient implements Database {
                 CreateBackupDestinationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBackupDestinationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupDestinationResponse>
-                transformer = CreateBackupDestinationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateBackupDestination",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/CreateBackupDestination");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateBackupDestination",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/CreateBackupDestination");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupDestinationResponse>
+                transformer =
+                        CreateBackupDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1742,20 +1828,23 @@ public class DatabaseClient implements Database {
                 CreateCloudAutonomousVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateCloudAutonomousVmClusterResponse>
-                transformer = CreateCloudAutonomousVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateCloudAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateCloudAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateCloudAutonomousVmClusterResponse>
+                transformer =
+                        CreateCloudAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1784,20 +1873,23 @@ public class DatabaseClient implements Database {
                 CreateCloudExadataInfrastructureConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateCloudExadataInfrastructureResponse>
-                transformer = CreateCloudExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateCloudExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/CreateCloudExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/CreateCloudExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateCloudExadataInfrastructureResponse>
+                transformer =
+                        CreateCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1825,19 +1917,22 @@ public class DatabaseClient implements Database {
                 CreateCloudVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCloudVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCloudVmClusterResponse>
-                transformer = CreateCloudVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateCloudVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/CreateCloudVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateCloudVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/CreateCloudVmCluster");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCloudVmClusterResponse>
+                transformer =
+                        CreateCloudVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1865,19 +1960,22 @@ public class DatabaseClient implements Database {
                 CreateConsoleConnectionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateConsoleConnectionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateConsoleConnectionResponse>
-                transformer = CreateConsoleConnectionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateConsoleConnection",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/CreateConsoleConnection");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateConsoleConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/CreateConsoleConnection");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateConsoleConnectionResponse>
+                transformer =
+                        CreateConsoleConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1905,20 +2003,23 @@ public class DatabaseClient implements Database {
                 CreateDataGuardAssociationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateDataGuardAssociationResponse>
-                transformer = CreateDataGuardAssociationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateDataGuardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/CreateDataGuardAssociation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateDataGuardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/CreateDataGuardAssociation");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateDataGuardAssociationResponse>
+                transformer =
+                        CreateDataGuardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1946,19 +2047,21 @@ public class DatabaseClient implements Database {
                 CreateDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDatabaseResponse>
-                transformer = CreateDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/CreateDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/CreateDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDatabaseResponse>
+                transformer =
+                        CreateDatabaseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1986,20 +2089,23 @@ public class DatabaseClient implements Database {
                 CreateDatabaseSoftwareImageConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDatabaseSoftwareImageConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateDatabaseSoftwareImageResponse>
-                transformer = CreateDatabaseSoftwareImageConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateDatabaseSoftwareImage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/CreateDatabaseSoftwareImage");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateDatabaseSoftwareImage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/CreateDatabaseSoftwareImage");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateDatabaseSoftwareImageResponse>
+                transformer =
+                        CreateDatabaseSoftwareImageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2027,19 +2133,21 @@ public class DatabaseClient implements Database {
                 CreateDbHomeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDbHomeConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbHomeResponse>
-                transformer = CreateDbHomeConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateDbHome",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/CreateDbHome");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateDbHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/CreateDbHome");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbHomeResponse>
+                transformer =
+                        CreateDbHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2068,20 +2176,23 @@ public class DatabaseClient implements Database {
                 CreateExadataInfrastructureConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateExadataInfrastructureResponse>
-                transformer = CreateExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/CreateExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/CreateExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateExadataInfrastructureResponse>
+                transformer =
+                        CreateExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2110,19 +2221,22 @@ public class DatabaseClient implements Database {
                 CreateExternalBackupJobConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateExternalBackupJobConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateExternalBackupJobResponse>
-                transformer = CreateExternalBackupJobConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateExternalBackupJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/CreateExternalBackupJob");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExternalBackupJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/CreateExternalBackupJob");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateExternalBackupJobResponse>
+                transformer =
+                        CreateExternalBackupJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2150,20 +2264,23 @@ public class DatabaseClient implements Database {
                 CreateExternalContainerDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateExternalContainerDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateExternalContainerDatabaseResponse>
-                transformer = CreateExternalContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateExternalContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/CreateExternalContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExternalContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/CreateExternalContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateExternalContainerDatabaseResponse>
+                transformer =
+                        CreateExternalContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2192,20 +2309,23 @@ public class DatabaseClient implements Database {
                 CreateExternalDatabaseConnectorConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateExternalDatabaseConnectorConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateExternalDatabaseConnectorResponse>
-                transformer = CreateExternalDatabaseConnectorConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateExternalDatabaseConnector",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/CreateExternalDatabaseConnector");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExternalDatabaseConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/CreateExternalDatabaseConnector");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateExternalDatabaseConnectorResponse>
+                transformer =
+                        CreateExternalDatabaseConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2234,20 +2354,23 @@ public class DatabaseClient implements Database {
                 CreateExternalNonContainerDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateExternalNonContainerDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateExternalNonContainerDatabaseResponse>
-                transformer = CreateExternalNonContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateExternalNonContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/CreateExternalNonContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExternalNonContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/CreateExternalNonContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateExternalNonContainerDatabaseResponse>
+                transformer =
+                        CreateExternalNonContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2276,20 +2399,23 @@ public class DatabaseClient implements Database {
                 CreateExternalPluggableDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateExternalPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateExternalPluggableDatabaseResponse>
-                transformer = CreateExternalPluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateExternalPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/CreateExternalPluggableDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExternalPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/CreateExternalPluggableDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateExternalPluggableDatabaseResponse>
+                transformer =
+                        CreateExternalPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2317,19 +2443,21 @@ public class DatabaseClient implements Database {
                 CreateKeyStoreConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateKeyStoreConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateKeyStoreResponse>
-                transformer = CreateKeyStoreConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateKeyStore",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/CreateKeyStore");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateKeyStore",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/CreateKeyStore");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateKeyStoreResponse>
+                transformer =
+                        CreateKeyStoreConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2357,19 +2485,22 @@ public class DatabaseClient implements Database {
                 CreatePluggableDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreatePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePluggableDatabaseResponse>
-                transformer = CreatePluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreatePluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/CreatePluggableDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreatePluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/CreatePluggableDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePluggableDatabaseResponse>
+                transformer =
+                        CreatePluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2396,19 +2527,22 @@ public class DatabaseClient implements Database {
                 CreateVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVmClusterResponse>
-                transformer = CreateVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/CreateVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/CreateVmCluster");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVmClusterResponse>
+                transformer =
+                        CreateVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2436,19 +2570,22 @@ public class DatabaseClient implements Database {
                 CreateVmClusterNetworkConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVmClusterNetworkResponse>
-                transformer = CreateVmClusterNetworkConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateVmClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/CreateVmClusterNetwork");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/CreateVmClusterNetwork");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVmClusterNetworkResponse>
+                transformer =
+                        CreateVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2475,19 +2612,21 @@ public class DatabaseClient implements Database {
                 DbNodeActionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DbNodeActionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DbNodeActionResponse>
-                transformer = DbNodeActionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DbNodeAction",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/DbNodeAction");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DbNodeAction",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/DbNodeAction");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DbNodeActionResponse>
+                transformer =
+                        DbNodeActionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2512,18 +2651,21 @@ public class DatabaseClient implements Database {
                 DeleteAutonomousDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAutonomousDatabaseResponse>
-                transformer = DeleteAutonomousDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DeleteAutonomousDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DeleteAutonomousDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAutonomousDatabaseResponse>
+                transformer =
+                        DeleteAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2548,19 +2690,22 @@ public class DatabaseClient implements Database {
                 DeleteAutonomousVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteAutonomousVmClusterResponse>
-                transformer = DeleteAutonomousVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/DeleteAutonomousVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/DeleteAutonomousVmCluster");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteAutonomousVmClusterResponse>
+                transformer =
+                        DeleteAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2584,18 +2729,20 @@ public class DatabaseClient implements Database {
                 DeleteBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBackupConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupResponse>
-                transformer = DeleteBackupConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/DeleteBackup");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/DeleteBackup");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupResponse>
+                transformer =
+                        DeleteBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2620,18 +2767,21 @@ public class DatabaseClient implements Database {
                 DeleteBackupDestinationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBackupDestinationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupDestinationResponse>
-                transformer = DeleteBackupDestinationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteBackupDestination",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/DeleteBackupDestination");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteBackupDestination",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/DeleteBackupDestination");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupDestinationResponse>
+                transformer =
+                        DeleteBackupDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2656,19 +2806,22 @@ public class DatabaseClient implements Database {
                 DeleteCloudAutonomousVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteCloudAutonomousVmClusterResponse>
-                transformer = DeleteCloudAutonomousVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteCloudAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/DeleteCloudAutonomousVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteCloudAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/DeleteCloudAutonomousVmCluster");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteCloudAutonomousVmClusterResponse>
+                transformer =
+                        DeleteCloudAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2693,19 +2846,22 @@ public class DatabaseClient implements Database {
                 DeleteCloudExadataInfrastructureConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteCloudExadataInfrastructureResponse>
-                transformer = DeleteCloudExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteCloudExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/DeleteCloudExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/DeleteCloudExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteCloudExadataInfrastructureResponse>
+                transformer =
+                        DeleteCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2729,18 +2885,21 @@ public class DatabaseClient implements Database {
                 DeleteCloudVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCloudVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCloudVmClusterResponse>
-                transformer = DeleteCloudVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteCloudVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/DeleteCloudVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteCloudVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/DeleteCloudVmCluster");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCloudVmClusterResponse>
+                transformer =
+                        DeleteCloudVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2765,18 +2924,21 @@ public class DatabaseClient implements Database {
                 DeleteConsoleConnectionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteConsoleConnectionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConsoleConnectionResponse>
-                transformer = DeleteConsoleConnectionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteConsoleConnection",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/DeleteConsoleConnection");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteConsoleConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/DeleteConsoleConnection");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConsoleConnectionResponse>
+                transformer =
+                        DeleteConsoleConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2800,18 +2962,20 @@ public class DatabaseClient implements Database {
                 DeleteDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDatabaseResponse>
-                transformer = DeleteDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/DeleteDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/DeleteDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDatabaseResponse>
+                transformer =
+                        DeleteDatabaseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2836,19 +3000,22 @@ public class DatabaseClient implements Database {
                 DeleteDatabaseSoftwareImageConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDatabaseSoftwareImageConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteDatabaseSoftwareImageResponse>
-                transformer = DeleteDatabaseSoftwareImageConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteDatabaseSoftwareImage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/DeleteDatabaseSoftwareImage");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteDatabaseSoftwareImage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/DeleteDatabaseSoftwareImage");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteDatabaseSoftwareImageResponse>
+                transformer =
+                        DeleteDatabaseSoftwareImageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2872,18 +3039,20 @@ public class DatabaseClient implements Database {
                 DeleteDbHomeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDbHomeConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDbHomeResponse>
-                transformer = DeleteDbHomeConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteDbHome",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/DeleteDbHome");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteDbHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/DeleteDbHome");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDbHomeResponse>
+                transformer =
+                        DeleteDbHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2908,19 +3077,22 @@ public class DatabaseClient implements Database {
                 DeleteExadataInfrastructureConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteExadataInfrastructureResponse>
-                transformer = DeleteExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/DeleteExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/DeleteExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteExadataInfrastructureResponse>
+                transformer =
+                        DeleteExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2945,19 +3117,22 @@ public class DatabaseClient implements Database {
                 DeleteExternalContainerDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteExternalContainerDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteExternalContainerDatabaseResponse>
-                transformer = DeleteExternalContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteExternalContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DeleteExternalContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteExternalContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DeleteExternalContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteExternalContainerDatabaseResponse>
+                transformer =
+                        DeleteExternalContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2982,19 +3157,22 @@ public class DatabaseClient implements Database {
                 DeleteExternalDatabaseConnectorConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteExternalDatabaseConnectorConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteExternalDatabaseConnectorResponse>
-                transformer = DeleteExternalDatabaseConnectorConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteExternalDatabaseConnector",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/DeleteExternalDatabaseConnector");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteExternalDatabaseConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/DeleteExternalDatabaseConnector");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteExternalDatabaseConnectorResponse>
+                transformer =
+                        DeleteExternalDatabaseConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3019,19 +3197,22 @@ public class DatabaseClient implements Database {
                 DeleteExternalNonContainerDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteExternalNonContainerDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteExternalNonContainerDatabaseResponse>
-                transformer = DeleteExternalNonContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteExternalNonContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DeleteExternalNonContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteExternalNonContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DeleteExternalNonContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteExternalNonContainerDatabaseResponse>
+                transformer =
+                        DeleteExternalNonContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3056,19 +3237,22 @@ public class DatabaseClient implements Database {
                 DeleteExternalPluggableDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteExternalPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteExternalPluggableDatabaseResponse>
-                transformer = DeleteExternalPluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteExternalPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DeleteExternalPluggableDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteExternalPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DeleteExternalPluggableDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteExternalPluggableDatabaseResponse>
+                transformer =
+                        DeleteExternalPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3092,18 +3276,20 @@ public class DatabaseClient implements Database {
                 DeleteKeyStoreConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteKeyStoreConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteKeyStoreResponse>
-                transformer = DeleteKeyStoreConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteKeyStore",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/DeleteKeyStore");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteKeyStore",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/DeleteKeyStore");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteKeyStoreResponse>
+                transformer =
+                        DeleteKeyStoreConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3128,18 +3314,21 @@ public class DatabaseClient implements Database {
                 DeletePluggableDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeletePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePluggableDatabaseResponse>
-                transformer = DeletePluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeletePluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/DeletePluggableDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeletePluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/DeletePluggableDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePluggableDatabaseResponse>
+                transformer =
+                        DeletePluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3163,18 +3352,21 @@ public class DatabaseClient implements Database {
                 DeleteVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVmClusterResponse>
-                transformer = DeleteVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/DeleteVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/DeleteVmCluster");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVmClusterResponse>
+                transformer =
+                        DeleteVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3199,18 +3391,21 @@ public class DatabaseClient implements Database {
                 DeleteVmClusterNetworkConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVmClusterNetworkResponse>
-                transformer = DeleteVmClusterNetworkConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteVmClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DeleteVmClusterNetwork");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DeleteVmClusterNetwork");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVmClusterNetworkResponse>
+                transformer =
+                        DeleteVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3236,19 +3431,22 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeregisterAutonomousDatabaseDataSafeConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeregisterAutonomousDatabaseDataSafeResponse>
-                transformer = DeregisterAutonomousDatabaseDataSafeConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeregisterAutonomousDatabaseDataSafe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DeregisterAutonomousDatabaseDataSafe");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeregisterAutonomousDatabaseDataSafe",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DeregisterAutonomousDatabaseDataSafe");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeregisterAutonomousDatabaseDataSafeResponse>
+                transformer =
+                        DeregisterAutonomousDatabaseDataSafeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3278,19 +3476,22 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableAutonomousDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DisableAutonomousDatabaseManagementResponse>
-                transformer = DisableAutonomousDatabaseManagementConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableAutonomousDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DisableAutonomousDatabaseManagement");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableAutonomousDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DisableAutonomousDatabaseManagement");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DisableAutonomousDatabaseManagementResponse>
+                transformer =
+                        DisableAutonomousDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3317,20 +3518,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableAutonomousDatabaseOperationsInsightsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        DisableAutonomousDatabaseOperationsInsightsResponse>
-                transformer = DisableAutonomousDatabaseOperationsInsightsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableAutonomousDatabaseOperationsInsights",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DisableAutonomousDatabaseOperationsInsights");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableAutonomousDatabaseOperationsInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DisableAutonomousDatabaseOperationsInsights");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableAutonomousDatabaseOperationsInsightsResponse>
+                transformer =
+                        DisableAutonomousDatabaseOperationsInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3355,20 +3559,23 @@ public class DatabaseClient implements Database {
                 DisableDatabaseManagementConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableDatabaseManagementConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DisableDatabaseManagementResponse>
-                transformer = DisableDatabaseManagementConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/DisableDatabaseManagement");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/DisableDatabaseManagement");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DisableDatabaseManagementResponse>
+                transformer =
+                        DisableDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3396,22 +3603,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalContainerDatabaseDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        DisableExternalContainerDatabaseDatabaseManagementResponse>
-                transformer =
-                        DisableExternalContainerDatabaseDatabaseManagementConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalContainerDatabaseDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseDatabaseManagement");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalContainerDatabaseDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseDatabaseManagement");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalContainerDatabaseDatabaseManagementResponse>
+                transformer =
+                        DisableExternalContainerDatabaseDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3438,22 +3647,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalContainerDatabaseStackMonitoringConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        DisableExternalContainerDatabaseStackMonitoringResponse>
-                transformer =
-                        DisableExternalContainerDatabaseStackMonitoringConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalContainerDatabaseStackMonitoring",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseStackMonitoring");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalContainerDatabaseStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseStackMonitoring");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalContainerDatabaseStackMonitoringResponse>
+                transformer =
+                        DisableExternalContainerDatabaseStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3481,23 +3692,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalNonContainerDatabaseDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        DisableExternalNonContainerDatabaseDatabaseManagementResponse>
-                transformer =
-                        DisableExternalNonContainerDatabaseDatabaseManagementConverter
-                                .fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalNonContainerDatabaseDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseDatabaseManagement");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalNonContainerDatabaseDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseDatabaseManagement");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalNonContainerDatabaseDatabaseManagementResponse>
+                transformer =
+                        DisableExternalNonContainerDatabaseDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3525,23 +3737,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalNonContainerDatabaseOperationsInsightsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        DisableExternalNonContainerDatabaseOperationsInsightsResponse>
-                transformer =
-                        DisableExternalNonContainerDatabaseOperationsInsightsConverter
-                                .fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalNonContainerDatabaseOperationsInsights",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseOperationsInsights");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalNonContainerDatabaseOperationsInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseOperationsInsights");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalNonContainerDatabaseOperationsInsightsResponse>
+                transformer =
+                        DisableExternalNonContainerDatabaseOperationsInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3569,22 +3782,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalNonContainerDatabaseStackMonitoringConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        DisableExternalNonContainerDatabaseStackMonitoringResponse>
-                transformer =
-                        DisableExternalNonContainerDatabaseStackMonitoringConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalNonContainerDatabaseStackMonitoring",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseStackMonitoring");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalNonContainerDatabaseStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseStackMonitoring");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalNonContainerDatabaseStackMonitoringResponse>
+                transformer =
+                        DisableExternalNonContainerDatabaseStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3612,22 +3827,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalPluggableDatabaseDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        DisableExternalPluggableDatabaseDatabaseManagementResponse>
-                transformer =
-                        DisableExternalPluggableDatabaseDatabaseManagementConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalPluggableDatabaseDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseDatabaseManagement");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalPluggableDatabaseDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseDatabaseManagement");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalPluggableDatabaseDatabaseManagementResponse>
+                transformer =
+                        DisableExternalPluggableDatabaseDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3655,22 +3872,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalPluggableDatabaseOperationsInsightsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        DisableExternalPluggableDatabaseOperationsInsightsResponse>
-                transformer =
-                        DisableExternalPluggableDatabaseOperationsInsightsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalPluggableDatabaseOperationsInsights",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseOperationsInsights");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalPluggableDatabaseOperationsInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseOperationsInsights");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalPluggableDatabaseOperationsInsightsResponse>
+                transformer =
+                        DisableExternalPluggableDatabaseOperationsInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3697,22 +3916,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalPluggableDatabaseStackMonitoringConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        DisableExternalPluggableDatabaseStackMonitoringResponse>
-                transformer =
-                        DisableExternalPluggableDatabaseStackMonitoringConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalPluggableDatabaseStackMonitoring",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseStackMonitoring");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalPluggableDatabaseStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseStackMonitoring");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalPluggableDatabaseStackMonitoringResponse>
+                transformer =
+                        DisableExternalPluggableDatabaseStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3748,20 +3969,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DownloadExadataInfrastructureConfigFileConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DownloadExadataInfrastructureConfigFileResponse>
-                transformer = DownloadExadataInfrastructureConfigFileConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DownloadExadataInfrastructureConfigFile",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/DownloadExadataInfrastructureConfigFile");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DownloadExadataInfrastructureConfigFile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/DownloadExadataInfrastructureConfigFile");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DownloadExadataInfrastructureConfigFileResponse>
+                transformer =
+                        DownloadExadataInfrastructureConfigFileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3796,19 +4020,22 @@ public class DatabaseClient implements Database {
                 DownloadValidationReportConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DownloadValidationReportConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DownloadValidationReportResponse>
-                transformer = DownloadValidationReportConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DownloadValidationReport",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DownloadValidationReport");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DownloadValidationReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DownloadValidationReport");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DownloadValidationReportResponse>
+                transformer =
+                        DownloadValidationReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3843,20 +4070,23 @@ public class DatabaseClient implements Database {
                 DownloadVmClusterNetworkConfigFileConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DownloadVmClusterNetworkConfigFileConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DownloadVmClusterNetworkConfigFileResponse>
-                transformer = DownloadVmClusterNetworkConfigFileConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DownloadVmClusterNetworkConfigFile",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DownloadVmClusterNetworkConfigFile");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DownloadVmClusterNetworkConfigFile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DownloadVmClusterNetworkConfigFile");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DownloadVmClusterNetworkConfigFileResponse>
+                transformer =
+                        DownloadVmClusterNetworkConfigFileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3881,19 +4111,22 @@ public class DatabaseClient implements Database {
                 EnableAutonomousDatabaseManagementConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableAutonomousDatabaseManagementConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, EnableAutonomousDatabaseManagementResponse>
-                transformer = EnableAutonomousDatabaseManagementConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableAutonomousDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/EnableAutonomousDatabaseManagement");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableAutonomousDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/EnableAutonomousDatabaseManagement");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, EnableAutonomousDatabaseManagementResponse>
+                transformer =
+                        EnableAutonomousDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3920,20 +4153,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableAutonomousDatabaseOperationsInsightsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        EnableAutonomousDatabaseOperationsInsightsResponse>
-                transformer = EnableAutonomousDatabaseOperationsInsightsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableAutonomousDatabaseOperationsInsights",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/EnableAutonomousDatabaseOperationsInsights");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableAutonomousDatabaseOperationsInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/EnableAutonomousDatabaseOperationsInsights");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableAutonomousDatabaseOperationsInsightsResponse>
+                transformer =
+                        EnableAutonomousDatabaseOperationsInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3958,19 +4194,22 @@ public class DatabaseClient implements Database {
                 EnableDatabaseManagementConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableDatabaseManagementConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, EnableDatabaseManagementResponse>
-                transformer = EnableDatabaseManagementConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/EnableDatabaseManagement");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/EnableDatabaseManagement");
+        com.google.common.base.Function<javax.ws.rs.core.Response, EnableDatabaseManagementResponse>
+                transformer =
+                        EnableDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4001,22 +4240,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalContainerDatabaseDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        EnableExternalContainerDatabaseDatabaseManagementResponse>
-                transformer =
-                        EnableExternalContainerDatabaseDatabaseManagementConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalContainerDatabaseDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseDatabaseManagement");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalContainerDatabaseDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseDatabaseManagement");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalContainerDatabaseDatabaseManagementResponse>
+                transformer =
+                        EnableExternalContainerDatabaseDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4047,22 +4288,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalContainerDatabaseStackMonitoringConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        EnableExternalContainerDatabaseStackMonitoringResponse>
-                transformer =
-                        EnableExternalContainerDatabaseStackMonitoringConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalContainerDatabaseStackMonitoring",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseStackMonitoring");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalContainerDatabaseStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseStackMonitoring");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalContainerDatabaseStackMonitoringResponse>
+                transformer =
+                        EnableExternalContainerDatabaseStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4094,23 +4337,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalNonContainerDatabaseDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        EnableExternalNonContainerDatabaseDatabaseManagementResponse>
-                transformer =
-                        EnableExternalNonContainerDatabaseDatabaseManagementConverter
-                                .fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalNonContainerDatabaseDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseDatabaseManagement");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalNonContainerDatabaseDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseDatabaseManagement");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalNonContainerDatabaseDatabaseManagementResponse>
+                transformer =
+                        EnableExternalNonContainerDatabaseDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4142,23 +4386,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalNonContainerDatabaseOperationsInsightsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        EnableExternalNonContainerDatabaseOperationsInsightsResponse>
-                transformer =
-                        EnableExternalNonContainerDatabaseOperationsInsightsConverter
-                                .fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalNonContainerDatabaseOperationsInsights",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseOperationsInsights");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalNonContainerDatabaseOperationsInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseOperationsInsights");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalNonContainerDatabaseOperationsInsightsResponse>
+                transformer =
+                        EnableExternalNonContainerDatabaseOperationsInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4190,22 +4435,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalNonContainerDatabaseStackMonitoringConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        EnableExternalNonContainerDatabaseStackMonitoringResponse>
-                transformer =
-                        EnableExternalNonContainerDatabaseStackMonitoringConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalNonContainerDatabaseStackMonitoring",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseStackMonitoring");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalNonContainerDatabaseStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseStackMonitoring");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalNonContainerDatabaseStackMonitoringResponse>
+                transformer =
+                        EnableExternalNonContainerDatabaseStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4237,22 +4484,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalPluggableDatabaseDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        EnableExternalPluggableDatabaseDatabaseManagementResponse>
-                transformer =
-                        EnableExternalPluggableDatabaseDatabaseManagementConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalPluggableDatabaseDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseDatabaseManagement");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalPluggableDatabaseDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseDatabaseManagement");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalPluggableDatabaseDatabaseManagementResponse>
+                transformer =
+                        EnableExternalPluggableDatabaseDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4284,22 +4533,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalPluggableDatabaseOperationsInsightsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        EnableExternalPluggableDatabaseOperationsInsightsResponse>
-                transformer =
-                        EnableExternalPluggableDatabaseOperationsInsightsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalPluggableDatabaseOperationsInsights",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseOperationsInsights");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalPluggableDatabaseOperationsInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseOperationsInsights");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalPluggableDatabaseOperationsInsightsResponse>
+                transformer =
+                        EnableExternalPluggableDatabaseOperationsInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4330,22 +4581,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalPluggableDatabaseStackMonitoringConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        EnableExternalPluggableDatabaseStackMonitoringResponse>
-                transformer =
-                        EnableExternalPluggableDatabaseStackMonitoringConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalPluggableDatabaseStackMonitoring",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseStackMonitoring");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalPluggableDatabaseStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseStackMonitoring");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalPluggableDatabaseStackMonitoringResponse>
+                transformer =
+                        EnableExternalPluggableDatabaseStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4374,20 +4627,23 @@ public class DatabaseClient implements Database {
                 FailOverAutonomousDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 FailOverAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, FailOverAutonomousDatabaseResponse>
-                transformer = FailOverAutonomousDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "FailOverAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/FailOverAutonomousDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "FailOverAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/FailOverAutonomousDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, FailOverAutonomousDatabaseResponse>
+                transformer =
+                        FailOverAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4415,22 +4671,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 FailoverAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
-                transformer =
-                        FailoverAutonomousContainerDatabaseDataguardAssociationConverter
-                                .fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "FailoverAutonomousContainerDatabaseDataguardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/FailoverAutonomousContainerDatabaseDataguardAssociation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "FailoverAutonomousContainerDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/FailoverAutonomousContainerDatabaseDataguardAssociation");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
+                transformer =
+                        FailoverAutonomousContainerDatabaseDataguardAssociationConverter
+                                .fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4455,19 +4712,22 @@ public class DatabaseClient implements Database {
                 FailoverDataGuardAssociationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 FailoverDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, FailoverDataGuardAssociationResponse>
-                transformer = FailoverDataGuardAssociationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "FailoverDataGuardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/FailoverDataGuardAssociation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "FailoverDataGuardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/FailoverDataGuardAssociation");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, FailoverDataGuardAssociationResponse>
+                transformer =
+                        FailoverDataGuardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4506,20 +4766,23 @@ public class DatabaseClient implements Database {
                 GenerateAutonomousDatabaseWalletConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GenerateAutonomousDatabaseWalletConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GenerateAutonomousDatabaseWalletResponse>
-                transformer = GenerateAutonomousDatabaseWalletConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GenerateAutonomousDatabaseWallet",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/GenerateAutonomousDatabaseWallet");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GenerateAutonomousDatabaseWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/GenerateAutonomousDatabaseWallet");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateAutonomousDatabaseWalletResponse>
+                transformer =
+                        GenerateAutonomousDatabaseWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4549,20 +4812,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GenerateRecommendedVmClusterNetworkConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GenerateRecommendedVmClusterNetworkResponse>
-                transformer = GenerateRecommendedVmClusterNetworkConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GenerateRecommendedVmClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/GenerateRecommendedVmClusterNetwork");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GenerateRecommendedVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/GenerateRecommendedVmClusterNetwork");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateRecommendedVmClusterNetworkResponse>
+                transformer =
+                        GenerateRecommendedVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4591,19 +4857,22 @@ public class DatabaseClient implements Database {
                 GetAutonomousContainerDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousContainerDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutonomousContainerDatabaseResponse>
-                transformer = GetAutonomousContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/GetAutonomousContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/GetAutonomousContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAutonomousContainerDatabaseResponse>
+                transformer =
+                        GetAutonomousContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4630,21 +4899,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        GetAutonomousContainerDatabaseDataguardAssociationResponse>
-                transformer =
-                        GetAutonomousContainerDatabaseDataguardAssociationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousContainerDatabaseDataguardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/GetAutonomousContainerDatabaseDataguardAssociation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousContainerDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/GetAutonomousContainerDatabaseDataguardAssociation");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        GetAutonomousContainerDatabaseDataguardAssociationResponse>
+                transformer =
+                        GetAutonomousContainerDatabaseDataguardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4668,18 +4939,21 @@ public class DatabaseClient implements Database {
                 GetAutonomousDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAutonomousDatabaseResponse>
-                transformer = GetAutonomousDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/GetAutonomousDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/GetAutonomousDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetAutonomousDatabaseResponse>
+                transformer =
+                        GetAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4703,19 +4977,22 @@ public class DatabaseClient implements Database {
                 GetAutonomousDatabaseBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousDatabaseBackupConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutonomousDatabaseBackupResponse>
-                transformer = GetAutonomousDatabaseBackupConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousDatabaseBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/GetAutonomousDatabaseBackup");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousDatabaseBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/GetAutonomousDatabaseBackup");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAutonomousDatabaseBackupResponse>
+                transformer =
+                        GetAutonomousDatabaseBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4741,20 +5018,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousDatabaseDataguardAssociationConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        GetAutonomousDatabaseDataguardAssociationResponse>
-                transformer = GetAutonomousDatabaseDataguardAssociationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousDatabaseDataguardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseDataguardAssociation/GetAutonomousDatabaseDataguardAssociation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseDataguardAssociation/GetAutonomousDatabaseDataguardAssociation");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        GetAutonomousDatabaseDataguardAssociationResponse>
+                transformer =
+                        GetAutonomousDatabaseDataguardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4779,19 +5059,22 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousDatabaseRegionalWalletConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutonomousDatabaseRegionalWalletResponse>
-                transformer = GetAutonomousDatabaseRegionalWalletConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousDatabaseRegionalWallet",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/GetAutonomousDatabaseRegionalWallet");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousDatabaseRegionalWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/GetAutonomousDatabaseRegionalWallet");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAutonomousDatabaseRegionalWalletResponse>
+                transformer =
+                        GetAutonomousDatabaseRegionalWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4815,19 +5098,22 @@ public class DatabaseClient implements Database {
                 GetAutonomousDatabaseWalletConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousDatabaseWalletConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutonomousDatabaseWalletResponse>
-                transformer = GetAutonomousDatabaseWalletConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousDatabaseWallet",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/GetAutonomousDatabaseWallet");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousDatabaseWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/GetAutonomousDatabaseWallet");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAutonomousDatabaseWalletResponse>
+                transformer =
+                        GetAutonomousDatabaseWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4851,19 +5137,22 @@ public class DatabaseClient implements Database {
                 GetAutonomousExadataInfrastructureConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutonomousExadataInfrastructureResponse>
-                transformer = GetAutonomousExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/GetAutonomousExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/GetAutonomousExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAutonomousExadataInfrastructureResponse>
+                transformer =
+                        GetAutonomousExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4886,18 +5175,21 @@ public class DatabaseClient implements Database {
                 GetAutonomousPatchConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousPatchConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAutonomousPatchResponse>
-                transformer = GetAutonomousPatchConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousPatch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousPatch/GetAutonomousPatch");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousPatch/GetAutonomousPatch");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetAutonomousPatchResponse>
+                transformer =
+                        GetAutonomousPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4921,18 +5213,21 @@ public class DatabaseClient implements Database {
                 GetAutonomousVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAutonomousVmClusterResponse>
-                transformer = GetAutonomousVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/GetAutonomousVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/GetAutonomousVmCluster");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetAutonomousVmClusterResponse>
+                transformer =
+                        GetAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4954,18 +5249,19 @@ public class DatabaseClient implements Database {
         final GetBackupRequest interceptedRequest = GetBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBackupConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupResponse> transformer =
-                GetBackupConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/GetBackup");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/GetBackup");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupResponse> transformer =
+                GetBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4988,18 +5284,21 @@ public class DatabaseClient implements Database {
                 GetBackupDestinationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBackupDestinationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupDestinationResponse>
-                transformer = GetBackupDestinationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetBackupDestination",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/GetBackupDestination");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetBackupDestination",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/GetBackupDestination");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupDestinationResponse>
+                transformer =
+                        GetBackupDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5023,19 +5322,22 @@ public class DatabaseClient implements Database {
                 GetCloudAutonomousVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetCloudAutonomousVmClusterResponse>
-                transformer = GetCloudAutonomousVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetCloudAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetCloudAutonomousVmClusterResponse>
+                transformer =
+                        GetCloudAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5059,19 +5361,22 @@ public class DatabaseClient implements Database {
                 GetCloudExadataInfrastructureConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetCloudExadataInfrastructureResponse>
-                transformer = GetCloudExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetCloudExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/GetCloudExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/GetCloudExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetCloudExadataInfrastructureResponse>
+                transformer =
+                        GetCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5094,18 +5399,21 @@ public class DatabaseClient implements Database {
                 GetCloudVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCloudVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCloudVmClusterResponse>
-                transformer = GetCloudVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetCloudVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/GetCloudVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/GetCloudVmCluster");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetCloudVmClusterResponse>
+                transformer =
+                        GetCloudVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5129,19 +5437,22 @@ public class DatabaseClient implements Database {
                 GetCloudVmClusterIormConfigConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCloudVmClusterIormConfigConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetCloudVmClusterIormConfigResponse>
-                transformer = GetCloudVmClusterIormConfigConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetCloudVmClusterIormConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/GetCloudVmClusterIormConfig");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudVmClusterIormConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/GetCloudVmClusterIormConfig");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetCloudVmClusterIormConfigResponse>
+                transformer =
+                        GetCloudVmClusterIormConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5165,18 +5476,21 @@ public class DatabaseClient implements Database {
                 GetCloudVmClusterUpdateConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCloudVmClusterUpdateConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCloudVmClusterUpdateResponse>
-                transformer = GetCloudVmClusterUpdateConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetCloudVmClusterUpdate",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Update/GetCloudVmClusterUpdate");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudVmClusterUpdate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Update/GetCloudVmClusterUpdate");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetCloudVmClusterUpdateResponse>
+                transformer =
+                        GetCloudVmClusterUpdateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5201,19 +5515,22 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCloudVmClusterUpdateHistoryEntryConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetCloudVmClusterUpdateHistoryEntryResponse>
-                transformer = GetCloudVmClusterUpdateHistoryEntryConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetCloudVmClusterUpdateHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/UpdateHistoryEntry/GetCloudVmClusterUpdateHistoryEntry");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudVmClusterUpdateHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/UpdateHistoryEntry/GetCloudVmClusterUpdateHistoryEntry");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetCloudVmClusterUpdateHistoryEntryResponse>
+                transformer =
+                        GetCloudVmClusterUpdateHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5236,18 +5553,21 @@ public class DatabaseClient implements Database {
                 GetConsoleConnectionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetConsoleConnectionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConsoleConnectionResponse>
-                transformer = GetConsoleConnectionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetConsoleConnection",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/GetConsoleConnection");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetConsoleConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/GetConsoleConnection");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetConsoleConnectionResponse>
+                transformer =
+                        GetConsoleConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5271,18 +5591,21 @@ public class DatabaseClient implements Database {
                 GetDataGuardAssociationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDataGuardAssociationResponse>
-                transformer = GetDataGuardAssociationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDataGuardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/GetDataGuardAssociation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDataGuardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/GetDataGuardAssociation");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDataGuardAssociationResponse>
+                transformer =
+                        GetDataGuardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5305,18 +5628,20 @@ public class DatabaseClient implements Database {
                 GetDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDatabaseResponse>
-                transformer = GetDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/GetDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/GetDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDatabaseResponse>
+                transformer =
+                        GetDatabaseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5340,18 +5665,21 @@ public class DatabaseClient implements Database {
                 GetDatabaseSoftwareImageConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDatabaseSoftwareImageConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDatabaseSoftwareImageResponse>
-                transformer = GetDatabaseSoftwareImageConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDatabaseSoftwareImage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/GetDatabaseSoftwareImage");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDatabaseSoftwareImage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/GetDatabaseSoftwareImage");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDatabaseSoftwareImageResponse>
+                transformer =
+                        GetDatabaseSoftwareImageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5375,19 +5703,22 @@ public class DatabaseClient implements Database {
                 GetDatabaseUpgradeHistoryEntryConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDatabaseUpgradeHistoryEntryConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDatabaseUpgradeHistoryEntryResponse>
-                transformer = GetDatabaseUpgradeHistoryEntryConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDatabaseUpgradeHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseUpgradeHistoryEntry/GetDatabaseUpgradeHistoryEntry");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDatabaseUpgradeHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseUpgradeHistoryEntry/GetDatabaseUpgradeHistoryEntry");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetDatabaseUpgradeHistoryEntryResponse>
+                transformer =
+                        GetDatabaseUpgradeHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5409,18 +5740,19 @@ public class DatabaseClient implements Database {
         final GetDbHomeRequest interceptedRequest = GetDbHomeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbHomeConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbHomeResponse> transformer =
-                GetDbHomeConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbHome",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/GetDbHome");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/GetDbHome");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbHomeResponse> transformer =
+                GetDbHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5443,18 +5775,20 @@ public class DatabaseClient implements Database {
                 GetDbHomePatchConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbHomePatchConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbHomePatchResponse>
-                transformer = GetDbHomePatchConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbHomePatch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetDbHomePatch");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbHomePatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetDbHomePatch");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbHomePatchResponse>
+                transformer =
+                        GetDbHomePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5478,19 +5812,22 @@ public class DatabaseClient implements Database {
                 GetDbHomePatchHistoryEntryConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbHomePatchHistoryEntryConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDbHomePatchHistoryEntryResponse>
-                transformer = GetDbHomePatchHistoryEntryConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbHomePatchHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbHomePatchHistoryEntry");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbHomePatchHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbHomePatchHistoryEntry");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetDbHomePatchHistoryEntryResponse>
+                transformer =
+                        GetDbHomePatchHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5512,18 +5849,19 @@ public class DatabaseClient implements Database {
         final GetDbNodeRequest interceptedRequest = GetDbNodeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbNodeConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbNodeResponse> transformer =
-                GetDbNodeConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbNode",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/GetDbNode");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbNode",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/GetDbNode");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbNodeResponse> transformer =
+                GetDbNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5546,18 +5884,20 @@ public class DatabaseClient implements Database {
                 GetDbServerConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbServerConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbServerResponse>
-                transformer = GetDbServerConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbServer",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbServer/GetDbServer");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbServer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbServer/GetDbServer");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbServerResponse>
+                transformer =
+                        GetDbServerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5580,18 +5920,20 @@ public class DatabaseClient implements Database {
                 GetDbSystemConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbSystemConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemResponse>
-                transformer = GetDbSystemConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbSystem",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/GetDbSystem");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/GetDbSystem");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemResponse>
+                transformer =
+                        GetDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5614,18 +5956,21 @@ public class DatabaseClient implements Database {
                 GetDbSystemPatchConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbSystemPatchConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemPatchResponse>
-                transformer = GetDbSystemPatchConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbSystemPatch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetDbSystemPatch");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbSystemPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetDbSystemPatch");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemPatchResponse>
+                transformer =
+                        GetDbSystemPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5649,19 +5994,22 @@ public class DatabaseClient implements Database {
                 GetDbSystemPatchHistoryEntryConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbSystemPatchHistoryEntryConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDbSystemPatchHistoryEntryResponse>
-                transformer = GetDbSystemPatchHistoryEntryConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbSystemPatchHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbSystemPatchHistoryEntry");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbSystemPatchHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbSystemPatchHistoryEntry");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetDbSystemPatchHistoryEntryResponse>
+                transformer =
+                        GetDbSystemPatchHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5685,19 +6033,22 @@ public class DatabaseClient implements Database {
                 GetDbSystemUpgradeHistoryEntryConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbSystemUpgradeHistoryEntryConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDbSystemUpgradeHistoryEntryResponse>
-                transformer = GetDbSystemUpgradeHistoryEntryConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbSystemUpgradeHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/GetDbSystemUpgradeHistoryEntry");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbSystemUpgradeHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/GetDbSystemUpgradeHistoryEntry");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetDbSystemUpgradeHistoryEntryResponse>
+                transformer =
+                        GetDbSystemUpgradeHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5721,18 +6072,21 @@ public class DatabaseClient implements Database {
                 GetExadataInfrastructureConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetExadataInfrastructureResponse>
-                transformer = GetExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/GetExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/GetExadataInfrastructure");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetExadataInfrastructureResponse>
+                transformer =
+                        GetExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5756,19 +6110,22 @@ public class DatabaseClient implements Database {
                 GetExadataInfrastructureOcpusConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExadataInfrastructureOcpusConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetExadataInfrastructureOcpusResponse>
-                transformer = GetExadataInfrastructureOcpusConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExadataInfrastructureOcpus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/OCPUs/GetExadataInfrastructureOcpus");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExadataInfrastructureOcpus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OCPUs/GetExadataInfrastructureOcpus");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetExadataInfrastructureOcpusResponse>
+                transformer =
+                        GetExadataInfrastructureOcpusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5791,18 +6148,21 @@ public class DatabaseClient implements Database {
                 GetExadataIormConfigConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExadataIormConfigConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetExadataIormConfigResponse>
-                transformer = GetExadataIormConfigConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExadataIormConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/GetExadataIormConfig");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExadataIormConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/GetExadataIormConfig");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetExadataIormConfigResponse>
+                transformer =
+                        GetExadataIormConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5825,18 +6185,21 @@ public class DatabaseClient implements Database {
                 GetExternalBackupJobConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExternalBackupJobConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetExternalBackupJobResponse>
-                transformer = GetExternalBackupJobConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExternalBackupJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/GetExternalBackupJob");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExternalBackupJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/GetExternalBackupJob");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetExternalBackupJobResponse>
+                transformer =
+                        GetExternalBackupJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5860,19 +6223,22 @@ public class DatabaseClient implements Database {
                 GetExternalContainerDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExternalContainerDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetExternalContainerDatabaseResponse>
-                transformer = GetExternalContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExternalContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/GetExternalContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExternalContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/GetExternalContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetExternalContainerDatabaseResponse>
+                transformer =
+                        GetExternalContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5896,19 +6262,22 @@ public class DatabaseClient implements Database {
                 GetExternalDatabaseConnectorConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExternalDatabaseConnectorConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetExternalDatabaseConnectorResponse>
-                transformer = GetExternalDatabaseConnectorConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExternalDatabaseConnector",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/GetExternalDatabaseConnector");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExternalDatabaseConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/GetExternalDatabaseConnector");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetExternalDatabaseConnectorResponse>
+                transformer =
+                        GetExternalDatabaseConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5932,19 +6301,22 @@ public class DatabaseClient implements Database {
                 GetExternalNonContainerDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExternalNonContainerDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetExternalNonContainerDatabaseResponse>
-                transformer = GetExternalNonContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExternalNonContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/GetExternalNonContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExternalNonContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/GetExternalNonContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetExternalNonContainerDatabaseResponse>
+                transformer =
+                        GetExternalNonContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5968,19 +6340,22 @@ public class DatabaseClient implements Database {
                 GetExternalPluggableDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExternalPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetExternalPluggableDatabaseResponse>
-                transformer = GetExternalPluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExternalPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/GetExternalPluggableDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExternalPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/GetExternalPluggableDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetExternalPluggableDatabaseResponse>
+                transformer =
+                        GetExternalPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6003,18 +6378,20 @@ public class DatabaseClient implements Database {
                 GetKeyStoreConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetKeyStoreConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetKeyStoreResponse>
-                transformer = GetKeyStoreConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetKeyStore",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/GetKeyStore");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetKeyStore",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/GetKeyStore");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetKeyStoreResponse>
+                transformer =
+                        GetKeyStoreConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6037,18 +6414,21 @@ public class DatabaseClient implements Database {
                 GetMaintenanceRunConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetMaintenanceRunConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetMaintenanceRunResponse>
-                transformer = GetMaintenanceRunConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetMaintenanceRun",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/GetMaintenanceRun");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetMaintenanceRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/GetMaintenanceRun");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetMaintenanceRunResponse>
+                transformer =
+                        GetMaintenanceRunConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6072,19 +6452,22 @@ public class DatabaseClient implements Database {
                 GetPdbConversionHistoryEntryConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPdbConversionHistoryEntryConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetPdbConversionHistoryEntryResponse>
-                transformer = GetPdbConversionHistoryEntryConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetPdbConversionHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PdbConversionHistoryEntry/GetPdbConversionHistoryEntry");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetPdbConversionHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PdbConversionHistoryEntry/GetPdbConversionHistoryEntry");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetPdbConversionHistoryEntryResponse>
+                transformer =
+                        GetPdbConversionHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6107,18 +6490,21 @@ public class DatabaseClient implements Database {
                 GetPluggableDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPluggableDatabaseResponse>
-                transformer = GetPluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/GetPluggableDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/GetPluggableDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetPluggableDatabaseResponse>
+                transformer =
+                        GetPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6141,18 +6527,20 @@ public class DatabaseClient implements Database {
                 GetVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterResponse>
-                transformer = GetVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/GetVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/GetVmCluster");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterResponse>
+                transformer =
+                        GetVmClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6175,18 +6563,21 @@ public class DatabaseClient implements Database {
                 GetVmClusterNetworkConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterNetworkResponse>
-                transformer = GetVmClusterNetworkConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetVmClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/GetVmClusterNetwork");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/GetVmClusterNetwork");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterNetworkResponse>
+                transformer =
+                        GetVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6209,18 +6600,21 @@ public class DatabaseClient implements Database {
                 GetVmClusterPatchConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVmClusterPatchConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterPatchResponse>
-                transformer = GetVmClusterPatchConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetVmClusterPatch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetVmClusterPatch");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetVmClusterPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetVmClusterPatch");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterPatchResponse>
+                transformer =
+                        GetVmClusterPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6244,19 +6638,22 @@ public class DatabaseClient implements Database {
                 GetVmClusterPatchHistoryEntryConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVmClusterPatchHistoryEntryConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetVmClusterPatchHistoryEntryResponse>
-                transformer = GetVmClusterPatchHistoryEntryConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetVmClusterPatchHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetVmClusterPatchHistoryEntry");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetVmClusterPatchHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetVmClusterPatchHistoryEntry");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetVmClusterPatchHistoryEntryResponse>
+                transformer =
+                        GetVmClusterPatchHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6279,18 +6676,21 @@ public class DatabaseClient implements Database {
                 GetVmClusterUpdateConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVmClusterUpdateConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterUpdateResponse>
-                transformer = GetVmClusterUpdateConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetVmClusterUpdate",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdate/GetVmClusterUpdate");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetVmClusterUpdate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdate/GetVmClusterUpdate");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterUpdateResponse>
+                transformer =
+                        GetVmClusterUpdateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6314,19 +6714,22 @@ public class DatabaseClient implements Database {
                 GetVmClusterUpdateHistoryEntryConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVmClusterUpdateHistoryEntryConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetVmClusterUpdateHistoryEntryResponse>
-                transformer = GetVmClusterUpdateHistoryEntryConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetVmClusterUpdateHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdateHistoryEntry/GetVmClusterUpdateHistoryEntry");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetVmClusterUpdateHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdateHistoryEntry/GetVmClusterUpdateHistoryEntry");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetVmClusterUpdateHistoryEntryResponse>
+                transformer =
+                        GetVmClusterUpdateHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6351,20 +6754,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 LaunchAutonomousExadataInfrastructureConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, LaunchAutonomousExadataInfrastructureResponse>
-                transformer = LaunchAutonomousExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "LaunchAutonomousExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/LaunchAutonomousExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "LaunchAutonomousExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/LaunchAutonomousExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, LaunchAutonomousExadataInfrastructureResponse>
+                transformer =
+                        LaunchAutonomousExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6392,19 +6798,21 @@ public class DatabaseClient implements Database {
                 LaunchDbSystemConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 LaunchDbSystemConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, LaunchDbSystemResponse>
-                transformer = LaunchDbSystemConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "LaunchDbSystem",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/LaunchDbSystem");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "LaunchDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/LaunchDbSystem");
+        com.google.common.base.Function<javax.ws.rs.core.Response, LaunchDbSystemResponse>
+                transformer =
+                        LaunchDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6435,22 +6843,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousContainerDatabaseDataguardAssociationsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        ListAutonomousContainerDatabaseDataguardAssociationsResponse>
-                transformer =
-                        ListAutonomousContainerDatabaseDataguardAssociationsConverter
-                                .fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousContainerDatabaseDataguardAssociations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/ListAutonomousContainerDatabaseDataguardAssociations");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousContainerDatabaseDataguardAssociations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/ListAutonomousContainerDatabaseDataguardAssociations");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListAutonomousContainerDatabaseDataguardAssociationsResponse>
+                transformer =
+                        ListAutonomousContainerDatabaseDataguardAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6474,19 +6883,22 @@ public class DatabaseClient implements Database {
                 ListAutonomousContainerDatabasesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousContainerDatabasesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousContainerDatabasesResponse>
-                transformer = ListAutonomousContainerDatabasesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousContainerDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ListAutonomousContainerDatabases");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousContainerDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ListAutonomousContainerDatabases");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAutonomousContainerDatabasesResponse>
+                transformer =
+                        ListAutonomousContainerDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6510,19 +6922,22 @@ public class DatabaseClient implements Database {
                 ListAutonomousDatabaseBackupsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDatabaseBackupsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousDatabaseBackupsResponse>
-                transformer = ListAutonomousDatabaseBackupsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDatabaseBackups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/ListAutonomousDatabaseBackups");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDatabaseBackups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/ListAutonomousDatabaseBackups");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAutonomousDatabaseBackupsResponse>
+                transformer =
+                        ListAutonomousDatabaseBackupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6547,19 +6962,22 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDatabaseCharacterSetsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousDatabaseCharacterSetsResponse>
-                transformer = ListAutonomousDatabaseCharacterSetsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDatabaseCharacterSets",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDatabaseCharacterSets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAutonomousDatabaseCharacterSetsResponse>
+                transformer =
+                        ListAutonomousDatabaseCharacterSetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6583,19 +7001,22 @@ public class DatabaseClient implements Database {
                 ListAutonomousDatabaseClonesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDatabaseClonesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousDatabaseClonesResponse>
-                transformer = ListAutonomousDatabaseClonesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDatabaseClones",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabaseClones");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDatabaseClones",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabaseClones");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAutonomousDatabaseClonesResponse>
+                transformer =
+                        ListAutonomousDatabaseClonesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6621,20 +7042,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDatabaseDataguardAssociationsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        ListAutonomousDatabaseDataguardAssociationsResponse>
-                transformer = ListAutonomousDatabaseDataguardAssociationsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDatabaseDataguardAssociations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseDataguardAssociation/ListAutonomousDatabaseDataguardAssociations");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDatabaseDataguardAssociations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseDataguardAssociation/ListAutonomousDatabaseDataguardAssociations");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListAutonomousDatabaseDataguardAssociationsResponse>
+                transformer =
+                        ListAutonomousDatabaseDataguardAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6658,18 +7082,21 @@ public class DatabaseClient implements Database {
                 ListAutonomousDatabasesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDatabasesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAutonomousDatabasesResponse>
-                transformer = ListAutonomousDatabasesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabases");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabases");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListAutonomousDatabasesResponse>
+                transformer =
+                        ListAutonomousDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6693,19 +7120,22 @@ public class DatabaseClient implements Database {
                 ListAutonomousDbPreviewVersionsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDbPreviewVersionsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousDbPreviewVersionsResponse>
-                transformer = ListAutonomousDbPreviewVersionsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDbPreviewVersions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDbPreviewVersionSummary/ListAutonomousDbPreviewVersions");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDbPreviewVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDbPreviewVersionSummary/ListAutonomousDbPreviewVersions");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAutonomousDbPreviewVersionsResponse>
+                transformer =
+                        ListAutonomousDbPreviewVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6729,18 +7159,21 @@ public class DatabaseClient implements Database {
                 ListAutonomousDbVersionsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDbVersionsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAutonomousDbVersionsResponse>
-                transformer = ListAutonomousDbVersionsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDbVersions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDbVersionSummary/ListAutonomousDbVersions");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDbVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDbVersionSummary/ListAutonomousDbVersions");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListAutonomousDbVersionsResponse>
+                transformer =
+                        ListAutonomousDbVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6766,20 +7199,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousExadataInfrastructureShapesConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        ListAutonomousExadataInfrastructureShapesResponse>
-                transformer = ListAutonomousExadataInfrastructureShapesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousExadataInfrastructureShapes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructureShapeSummary/ListAutonomousExadataInfrastructureShapes");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousExadataInfrastructureShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructureShapeSummary/ListAutonomousExadataInfrastructureShapes");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListAutonomousExadataInfrastructureShapesResponse>
+                transformer =
+                        ListAutonomousExadataInfrastructureShapesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6804,19 +7240,22 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousExadataInfrastructuresConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousExadataInfrastructuresResponse>
-                transformer = ListAutonomousExadataInfrastructuresConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousExadataInfrastructures",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/ListAutonomousExadataInfrastructures");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousExadataInfrastructures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/ListAutonomousExadataInfrastructures");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAutonomousExadataInfrastructuresResponse>
+                transformer =
+                        ListAutonomousExadataInfrastructuresConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6840,18 +7279,21 @@ public class DatabaseClient implements Database {
                 ListAutonomousVmClustersConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousVmClustersConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAutonomousVmClustersResponse>
-                transformer = ListAutonomousVmClustersConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousVmClusters",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ListAutonomousVmClusters");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousVmClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ListAutonomousVmClusters");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListAutonomousVmClustersResponse>
+                transformer =
+                        ListAutonomousVmClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6875,18 +7317,21 @@ public class DatabaseClient implements Database {
                 ListBackupDestinationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBackupDestinationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupDestinationResponse>
-                transformer = ListBackupDestinationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListBackupDestination",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestinationSummary/ListBackupDestination");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListBackupDestination",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestinationSummary/ListBackupDestination");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupDestinationResponse>
+                transformer =
+                        ListBackupDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6909,18 +7354,20 @@ public class DatabaseClient implements Database {
                 ListBackupsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBackupsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupsResponse>
-                transformer = ListBackupsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListBackups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/ListBackups");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListBackups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/ListBackups");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupsResponse>
+                transformer =
+                        ListBackupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6944,19 +7391,22 @@ public class DatabaseClient implements Database {
                 ListCloudAutonomousVmClustersConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCloudAutonomousVmClustersConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCloudAutonomousVmClustersResponse>
-                transformer = ListCloudAutonomousVmClustersConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListCloudAutonomousVmClusters",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListCloudAutonomousVmClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListCloudAutonomousVmClustersResponse>
+                transformer =
+                        ListCloudAutonomousVmClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6980,19 +7430,22 @@ public class DatabaseClient implements Database {
                 ListCloudExadataInfrastructuresConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCloudExadataInfrastructuresConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCloudExadataInfrastructuresResponse>
-                transformer = ListCloudExadataInfrastructuresConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListCloudExadataInfrastructures",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ListCloudExadataInfrastructures");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListCloudExadataInfrastructures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ListCloudExadataInfrastructures");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListCloudExadataInfrastructuresResponse>
+                transformer =
+                        ListCloudExadataInfrastructuresConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7017,19 +7470,22 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCloudVmClusterUpdateHistoryEntriesConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCloudVmClusterUpdateHistoryEntriesResponse>
-                transformer = ListCloudVmClusterUpdateHistoryEntriesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListCloudVmClusterUpdateHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/UpdateHistoryEntry/ListCloudVmClusterUpdateHistoryEntries");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListCloudVmClusterUpdateHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/UpdateHistoryEntry/ListCloudVmClusterUpdateHistoryEntries");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListCloudVmClusterUpdateHistoryEntriesResponse>
+                transformer =
+                        ListCloudVmClusterUpdateHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7053,19 +7509,22 @@ public class DatabaseClient implements Database {
                 ListCloudVmClusterUpdatesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCloudVmClusterUpdatesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCloudVmClusterUpdatesResponse>
-                transformer = ListCloudVmClusterUpdatesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListCloudVmClusterUpdates",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Update/ListCloudVmClusterUpdates");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListCloudVmClusterUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Update/ListCloudVmClusterUpdates");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListCloudVmClusterUpdatesResponse>
+                transformer =
+                        ListCloudVmClusterUpdatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7088,18 +7547,21 @@ public class DatabaseClient implements Database {
                 ListCloudVmClustersConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCloudVmClustersConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCloudVmClustersResponse>
-                transformer = ListCloudVmClustersConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListCloudVmClusters",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ListCloudVmClusters");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListCloudVmClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ListCloudVmClusters");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListCloudVmClustersResponse>
+                transformer =
+                        ListCloudVmClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7123,18 +7585,21 @@ public class DatabaseClient implements Database {
                 ListConsoleConnectionsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListConsoleConnectionsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListConsoleConnectionsResponse>
-                transformer = ListConsoleConnectionsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListConsoleConnections",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/ListConsoleConnections");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListConsoleConnections",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/ListConsoleConnections");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListConsoleConnectionsResponse>
+                transformer =
+                        ListConsoleConnectionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7158,19 +7623,22 @@ public class DatabaseClient implements Database {
                 ListContainerDatabasePatchesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListContainerDatabasePatchesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListContainerDatabasePatchesResponse>
-                transformer = ListContainerDatabasePatchesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListContainerDatabasePatches",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousPatch/ListContainerDatabasePatches");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListContainerDatabasePatches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousPatch/ListContainerDatabasePatches");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListContainerDatabasePatchesResponse>
+                transformer =
+                        ListContainerDatabasePatchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7194,19 +7662,22 @@ public class DatabaseClient implements Database {
                 ListDataGuardAssociationsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDataGuardAssociationsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDataGuardAssociationsResponse>
-                transformer = ListDataGuardAssociationsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDataGuardAssociations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/ListDataGuardAssociations");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDataGuardAssociations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/ListDataGuardAssociations");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDataGuardAssociationsResponse>
+                transformer =
+                        ListDataGuardAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7230,19 +7701,22 @@ public class DatabaseClient implements Database {
                 ListDatabaseSoftwareImagesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDatabaseSoftwareImagesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDatabaseSoftwareImagesResponse>
-                transformer = ListDatabaseSoftwareImagesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDatabaseSoftwareImages",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/ListDatabaseSoftwareImages");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDatabaseSoftwareImages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/ListDatabaseSoftwareImages");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDatabaseSoftwareImagesResponse>
+                transformer =
+                        ListDatabaseSoftwareImagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7266,19 +7740,22 @@ public class DatabaseClient implements Database {
                 ListDatabaseUpgradeHistoryEntriesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDatabaseUpgradeHistoryEntriesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDatabaseUpgradeHistoryEntriesResponse>
-                transformer = ListDatabaseUpgradeHistoryEntriesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDatabaseUpgradeHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListDatabaseUpgradeHistoryEntries");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDatabaseUpgradeHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListDatabaseUpgradeHistoryEntries");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDatabaseUpgradeHistoryEntriesResponse>
+                transformer =
+                        ListDatabaseUpgradeHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7301,18 +7778,20 @@ public class DatabaseClient implements Database {
                 ListDatabasesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDatabasesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDatabasesResponse>
-                transformer = ListDatabasesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListDatabases");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListDatabases");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDatabasesResponse>
+                transformer =
+                        ListDatabasesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7336,19 +7815,22 @@ public class DatabaseClient implements Database {
                 ListDbHomePatchHistoryEntriesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbHomePatchHistoryEntriesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDbHomePatchHistoryEntriesResponse>
-                transformer = ListDbHomePatchHistoryEntriesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbHomePatchHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListDbHomePatchHistoryEntries");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbHomePatchHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListDbHomePatchHistoryEntries");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDbHomePatchHistoryEntriesResponse>
+                transformer =
+                        ListDbHomePatchHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7371,18 +7853,21 @@ public class DatabaseClient implements Database {
                 ListDbHomePatchesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbHomePatchesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbHomePatchesResponse>
-                transformer = ListDbHomePatchesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbHomePatches",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListDbHomePatches");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbHomePatches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListDbHomePatches");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbHomePatchesResponse>
+                transformer =
+                        ListDbHomePatchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7405,18 +7890,20 @@ public class DatabaseClient implements Database {
                 ListDbHomesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbHomesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbHomesResponse>
-                transformer = ListDbHomesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbHomes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/ListDbHomes");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbHomes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/ListDbHomes");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbHomesResponse>
+                transformer =
+                        ListDbHomesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7439,18 +7926,20 @@ public class DatabaseClient implements Database {
                 ListDbNodesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbNodesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbNodesResponse>
-                transformer = ListDbNodesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbNodes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/ListDbNodes");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbNodes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/ListDbNodes");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbNodesResponse>
+                transformer =
+                        ListDbNodesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7473,18 +7962,20 @@ public class DatabaseClient implements Database {
                 ListDbServersConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbServersConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbServersResponse>
-                transformer = ListDbServersConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbServers",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbServer/ListDbServers");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbServers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbServer/ListDbServers");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbServersResponse>
+                transformer =
+                        ListDbServersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7508,19 +7999,22 @@ public class DatabaseClient implements Database {
                 ListDbSystemComputePerformancesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemComputePerformancesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDbSystemComputePerformancesResponse>
-                transformer = ListDbSystemComputePerformancesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystemComputePerformances",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemComputePerformanceSummary/ListDbSystemComputePerformances");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystemComputePerformances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemComputePerformanceSummary/ListDbSystemComputePerformances");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDbSystemComputePerformancesResponse>
+                transformer =
+                        ListDbSystemComputePerformancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7544,19 +8038,22 @@ public class DatabaseClient implements Database {
                 ListDbSystemPatchHistoryEntriesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemPatchHistoryEntriesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDbSystemPatchHistoryEntriesResponse>
-                transformer = ListDbSystemPatchHistoryEntriesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystemPatchHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListDbSystemPatchHistoryEntries");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystemPatchHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListDbSystemPatchHistoryEntries");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDbSystemPatchHistoryEntriesResponse>
+                transformer =
+                        ListDbSystemPatchHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7579,18 +8076,21 @@ public class DatabaseClient implements Database {
                 ListDbSystemPatchesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemPatchesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemPatchesResponse>
-                transformer = ListDbSystemPatchesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystemPatches",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListDbSystemPatches");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystemPatches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListDbSystemPatches");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemPatchesResponse>
+                transformer =
+                        ListDbSystemPatchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7613,18 +8113,21 @@ public class DatabaseClient implements Database {
                 ListDbSystemShapesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemShapesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemShapesResponse>
-                transformer = ListDbSystemShapesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystemShapes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemShapeSummary/ListDbSystemShapes");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystemShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemShapeSummary/ListDbSystemShapes");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemShapesResponse>
+                transformer =
+                        ListDbSystemShapesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7648,19 +8151,22 @@ public class DatabaseClient implements Database {
                 ListDbSystemStoragePerformancesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemStoragePerformancesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDbSystemStoragePerformancesResponse>
-                transformer = ListDbSystemStoragePerformancesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystemStoragePerformances",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemStoragePerformanceSummary/ListDbSystemStoragePerformances");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystemStoragePerformances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemStoragePerformanceSummary/ListDbSystemStoragePerformances");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDbSystemStoragePerformancesResponse>
+                transformer =
+                        ListDbSystemStoragePerformancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7684,19 +8190,22 @@ public class DatabaseClient implements Database {
                 ListDbSystemUpgradeHistoryEntriesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemUpgradeHistoryEntriesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDbSystemUpgradeHistoryEntriesResponse>
-                transformer = ListDbSystemUpgradeHistoryEntriesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystemUpgradeHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/ListDbSystemUpgradeHistoryEntries");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystemUpgradeHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/ListDbSystemUpgradeHistoryEntries");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDbSystemUpgradeHistoryEntriesResponse>
+                transformer =
+                        ListDbSystemUpgradeHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7719,18 +8228,20 @@ public class DatabaseClient implements Database {
                 ListDbSystemsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemsResponse>
-                transformer = ListDbSystemsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystems",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystems");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystems",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystems");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemsResponse>
+                transformer =
+                        ListDbSystemsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7753,18 +8264,20 @@ public class DatabaseClient implements Database {
                 ListDbVersionsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbVersionsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbVersionsResponse>
-                transformer = ListDbVersionsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbVersions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbVersionsResponse>
+                transformer =
+                        ListDbVersionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7788,19 +8301,22 @@ public class DatabaseClient implements Database {
                 ListExadataInfrastructuresConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListExadataInfrastructuresConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListExadataInfrastructuresResponse>
-                transformer = ListExadataInfrastructuresConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListExadataInfrastructures",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ListExadataInfrastructures");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExadataInfrastructures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ListExadataInfrastructures");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListExadataInfrastructuresResponse>
+                transformer =
+                        ListExadataInfrastructuresConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7824,19 +8340,22 @@ public class DatabaseClient implements Database {
                 ListExternalContainerDatabasesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListExternalContainerDatabasesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListExternalContainerDatabasesResponse>
-                transformer = ListExternalContainerDatabasesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListExternalContainerDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ListExternalContainerDatabases");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExternalContainerDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ListExternalContainerDatabases");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListExternalContainerDatabasesResponse>
+                transformer =
+                        ListExternalContainerDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7860,19 +8379,22 @@ public class DatabaseClient implements Database {
                 ListExternalDatabaseConnectorsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListExternalDatabaseConnectorsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListExternalDatabaseConnectorsResponse>
-                transformer = ListExternalDatabaseConnectorsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListExternalDatabaseConnectors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/ListExternalDatabaseConnectors");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExternalDatabaseConnectors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/ListExternalDatabaseConnectors");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListExternalDatabaseConnectorsResponse>
+                transformer =
+                        ListExternalDatabaseConnectorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7896,19 +8418,22 @@ public class DatabaseClient implements Database {
                 ListExternalNonContainerDatabasesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListExternalNonContainerDatabasesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListExternalNonContainerDatabasesResponse>
-                transformer = ListExternalNonContainerDatabasesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListExternalNonContainerDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/ListExternalNonContainerDatabases");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExternalNonContainerDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/ListExternalNonContainerDatabases");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListExternalNonContainerDatabasesResponse>
+                transformer =
+                        ListExternalNonContainerDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7932,19 +8457,22 @@ public class DatabaseClient implements Database {
                 ListExternalPluggableDatabasesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListExternalPluggableDatabasesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListExternalPluggableDatabasesResponse>
-                transformer = ListExternalPluggableDatabasesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListExternalPluggableDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/ListExternalPluggableDatabases");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExternalPluggableDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/ListExternalPluggableDatabases");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListExternalPluggableDatabasesResponse>
+                transformer =
+                        ListExternalPluggableDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7967,18 +8495,21 @@ public class DatabaseClient implements Database {
                 ListFlexComponentsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListFlexComponentsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListFlexComponentsResponse>
-                transformer = ListFlexComponentsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListFlexComponents",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/FlexComponentCollection/ListFlexComponents");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListFlexComponents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/FlexComponentCollection/ListFlexComponents");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListFlexComponentsResponse>
+                transformer =
+                        ListFlexComponentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8001,18 +8532,20 @@ public class DatabaseClient implements Database {
                 ListGiVersionsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListGiVersionsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListGiVersionsResponse>
-                transformer = ListGiVersionsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListGiVersions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiVersionSummary/ListGiVersions");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListGiVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiVersionSummary/ListGiVersions");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListGiVersionsResponse>
+                transformer =
+                        ListGiVersionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8035,18 +8568,20 @@ public class DatabaseClient implements Database {
                 ListKeyStoresConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListKeyStoresConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListKeyStoresResponse>
-                transformer = ListKeyStoresConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListKeyStores",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStoreSummary/ListKeyStores");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListKeyStores",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStoreSummary/ListKeyStores");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListKeyStoresResponse>
+                transformer =
+                        ListKeyStoresConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8069,18 +8604,21 @@ public class DatabaseClient implements Database {
                 ListMaintenanceRunsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListMaintenanceRunsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMaintenanceRunsResponse>
-                transformer = ListMaintenanceRunsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListMaintenanceRuns",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/ListMaintenanceRuns");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListMaintenanceRuns",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/ListMaintenanceRuns");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListMaintenanceRunsResponse>
+                transformer =
+                        ListMaintenanceRunsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8104,19 +8642,22 @@ public class DatabaseClient implements Database {
                 ListPdbConversionHistoryEntriesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPdbConversionHistoryEntriesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListPdbConversionHistoryEntriesResponse>
-                transformer = ListPdbConversionHistoryEntriesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListPdbConversionHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListPdbConversionHistoryEntries");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListPdbConversionHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListPdbConversionHistoryEntries");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListPdbConversionHistoryEntriesResponse>
+                transformer =
+                        ListPdbConversionHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8140,18 +8681,21 @@ public class DatabaseClient implements Database {
                 ListPluggableDatabasesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPluggableDatabasesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPluggableDatabasesResponse>
-                transformer = ListPluggableDatabasesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListPluggableDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/ListPluggableDatabases");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListPluggableDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/ListPluggableDatabases");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListPluggableDatabasesResponse>
+                transformer =
+                        ListPluggableDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8175,18 +8719,21 @@ public class DatabaseClient implements Database {
                 ListVmClusterNetworksConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVmClusterNetworksConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVmClusterNetworksResponse>
-                transformer = ListVmClusterNetworksConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListVmClusterNetworks",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ListVmClusterNetworks");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListVmClusterNetworks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ListVmClusterNetworks");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVmClusterNetworksResponse>
+                transformer =
+                        ListVmClusterNetworksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8210,19 +8757,22 @@ public class DatabaseClient implements Database {
                 ListVmClusterPatchHistoryEntriesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVmClusterPatchHistoryEntriesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListVmClusterPatchHistoryEntriesResponse>
-                transformer = ListVmClusterPatchHistoryEntriesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListVmClusterPatchHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListVmClusterPatchHistoryEntries");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListVmClusterPatchHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListVmClusterPatchHistoryEntries");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListVmClusterPatchHistoryEntriesResponse>
+                transformer =
+                        ListVmClusterPatchHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8245,18 +8795,21 @@ public class DatabaseClient implements Database {
                 ListVmClusterPatchesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVmClusterPatchesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVmClusterPatchesResponse>
-                transformer = ListVmClusterPatchesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListVmClusterPatches",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListVmClusterPatches");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListVmClusterPatches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListVmClusterPatches");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVmClusterPatchesResponse>
+                transformer =
+                        ListVmClusterPatchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8280,19 +8833,22 @@ public class DatabaseClient implements Database {
                 ListVmClusterUpdateHistoryEntriesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVmClusterUpdateHistoryEntriesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListVmClusterUpdateHistoryEntriesResponse>
-                transformer = ListVmClusterUpdateHistoryEntriesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListVmClusterUpdateHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdateHistoryEntry/ListVmClusterUpdateHistoryEntries");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListVmClusterUpdateHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdateHistoryEntry/ListVmClusterUpdateHistoryEntries");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListVmClusterUpdateHistoryEntriesResponse>
+                transformer =
+                        ListVmClusterUpdateHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8315,18 +8871,21 @@ public class DatabaseClient implements Database {
                 ListVmClusterUpdatesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVmClusterUpdatesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVmClusterUpdatesResponse>
-                transformer = ListVmClusterUpdatesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListVmClusterUpdates",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdate/ListVmClusterUpdates");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListVmClusterUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdate/ListVmClusterUpdates");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVmClusterUpdatesResponse>
+                transformer =
+                        ListVmClusterUpdatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8349,18 +8908,20 @@ public class DatabaseClient implements Database {
                 ListVmClustersConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVmClustersConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVmClustersResponse>
-                transformer = ListVmClustersConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListVmClusters",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/ListVmClusters");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListVmClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/ListVmClusters");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVmClustersResponse>
+                transformer =
+                        ListVmClustersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8384,20 +8945,23 @@ public class DatabaseClient implements Database {
                 LocalClonePluggableDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 LocalClonePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, LocalClonePluggableDatabaseResponse>
-                transformer = LocalClonePluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "LocalClonePluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/LocalClonePluggableDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "LocalClonePluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/LocalClonePluggableDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, LocalClonePluggableDatabaseResponse>
+                transformer =
+                        LocalClonePluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8427,20 +8991,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 MigrateExadataDbSystemResourceModelConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, MigrateExadataDbSystemResourceModelResponse>
-                transformer = MigrateExadataDbSystemResourceModelConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "MigrateExadataDbSystemResourceModel",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/MigrateExadataDbSystemResourceModel");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "MigrateExadataDbSystemResourceModel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/MigrateExadataDbSystemResourceModel");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, MigrateExadataDbSystemResourceModelResponse>
+                transformer =
+                        MigrateExadataDbSystemResourceModelConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8464,19 +9031,22 @@ public class DatabaseClient implements Database {
                 MigrateVaultKeyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 MigrateVaultKeyConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, MigrateVaultKeyResponse>
-                transformer = MigrateVaultKeyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "MigrateVaultKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/MigrateVaultKey");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "MigrateVaultKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/MigrateVaultKey");
+        com.google.common.base.Function<javax.ws.rs.core.Response, MigrateVaultKeyResponse>
+                transformer =
+                        MigrateVaultKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8504,19 +9074,22 @@ public class DatabaseClient implements Database {
                 ModifyDatabaseManagementConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ModifyDatabaseManagementConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ModifyDatabaseManagementResponse>
-                transformer = ModifyDatabaseManagementConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ModifyDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ModifyDatabaseManagement");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ModifyDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ModifyDatabaseManagement");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ModifyDatabaseManagementResponse>
+                transformer =
+                        ModifyDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8544,19 +9117,22 @@ public class DatabaseClient implements Database {
                 RegisterAutonomousDatabaseDataSafeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RegisterAutonomousDatabaseDataSafeConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RegisterAutonomousDatabaseDataSafeResponse>
-                transformer = RegisterAutonomousDatabaseDataSafeConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RegisterAutonomousDatabaseDataSafe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RegisterAutonomousDatabaseDataSafe");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RegisterAutonomousDatabaseDataSafe",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RegisterAutonomousDatabaseDataSafe");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RegisterAutonomousDatabaseDataSafeResponse>
+                transformer =
+                        RegisterAutonomousDatabaseDataSafeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8588,22 +9164,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ReinstateAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
-                transformer =
-                        ReinstateAutonomousContainerDatabaseDataguardAssociationConverter
-                                .fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ReinstateAutonomousContainerDatabaseDataguardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/ReinstateAutonomousContainerDatabaseDataguardAssociation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ReinstateAutonomousContainerDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/ReinstateAutonomousContainerDatabaseDataguardAssociation");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
+                transformer =
+                        ReinstateAutonomousContainerDatabaseDataguardAssociationConverter
+                                .fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8628,19 +9205,22 @@ public class DatabaseClient implements Database {
                 ReinstateDataGuardAssociationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ReinstateDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ReinstateDataGuardAssociationResponse>
-                transformer = ReinstateDataGuardAssociationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ReinstateDataGuardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/ReinstateDataGuardAssociation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ReinstateDataGuardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/ReinstateDataGuardAssociation");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ReinstateDataGuardAssociationResponse>
+                transformer =
+                        ReinstateDataGuardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8669,20 +9249,23 @@ public class DatabaseClient implements Database {
                 RemoteClonePluggableDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemoteClonePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RemoteClonePluggableDatabaseResponse>
-                transformer = RemoteClonePluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RemoteClonePluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/RemoteClonePluggableDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RemoteClonePluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/RemoteClonePluggableDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoteClonePluggableDatabaseResponse>
+                transformer =
+                        RemoteClonePluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8711,20 +9294,23 @@ public class DatabaseClient implements Database {
                 RemoveVirtualMachineFromVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemoveVirtualMachineFromVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RemoveVirtualMachineFromVmClusterResponse>
-                transformer = RemoveVirtualMachineFromVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RemoveVirtualMachineFromVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/RemoveVirtualMachineFromVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RemoveVirtualMachineFromVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/RemoveVirtualMachineFromVmCluster");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveVirtualMachineFromVmClusterResponse>
+                transformer =
+                        RemoveVirtualMachineFromVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8753,19 +9339,22 @@ public class DatabaseClient implements Database {
                 RestartAutonomousContainerDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestartAutonomousContainerDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RestartAutonomousContainerDatabaseResponse>
-                transformer = RestartAutonomousContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RestartAutonomousContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/RestartAutonomousContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RestartAutonomousContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/RestartAutonomousContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RestartAutonomousContainerDatabaseResponse>
+                transformer =
+                        RestartAutonomousContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8790,19 +9379,22 @@ public class DatabaseClient implements Database {
                 RestartAutonomousDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestartAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RestartAutonomousDatabaseResponse>
-                transformer = RestartAutonomousDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RestartAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RestartAutonomousDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RestartAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RestartAutonomousDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RestartAutonomousDatabaseResponse>
+                transformer =
+                        RestartAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8827,19 +9419,22 @@ public class DatabaseClient implements Database {
                 RestoreAutonomousDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestoreAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RestoreAutonomousDatabaseResponse>
-                transformer = RestoreAutonomousDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RestoreAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RestoreAutonomousDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RestoreAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RestoreAutonomousDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RestoreAutonomousDatabaseResponse>
+                transformer =
+                        RestoreAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8867,18 +9462,21 @@ public class DatabaseClient implements Database {
                 RestoreDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestoreDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, RestoreDatabaseResponse>
-                transformer = RestoreDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RestoreDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RestoreDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RestoreDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RestoreDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, RestoreDatabaseResponse>
+                transformer =
+                        RestoreDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8908,22 +9506,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateAutonomousContainerDatabaseEncryptionKeyConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        RotateAutonomousContainerDatabaseEncryptionKeyResponse>
-                transformer =
-                        RotateAutonomousContainerDatabaseEncryptionKeyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateAutonomousContainerDatabaseEncryptionKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/RotateAutonomousContainerDatabaseEncryptionKey");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateAutonomousContainerDatabaseEncryptionKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/RotateAutonomousContainerDatabaseEncryptionKey");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        RotateAutonomousContainerDatabaseEncryptionKeyResponse>
+                transformer =
+                        RotateAutonomousContainerDatabaseEncryptionKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8949,20 +9549,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateAutonomousDatabaseEncryptionKeyConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RotateAutonomousDatabaseEncryptionKeyResponse>
-                transformer = RotateAutonomousDatabaseEncryptionKeyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateAutonomousDatabaseEncryptionKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RotateAutonomousDatabaseEncryptionKey");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateAutonomousDatabaseEncryptionKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RotateAutonomousDatabaseEncryptionKey");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RotateAutonomousDatabaseEncryptionKeyResponse>
+                transformer =
+                        RotateAutonomousDatabaseEncryptionKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8988,20 +9591,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateCloudAutonomousVmClusterOrdsCertsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RotateCloudAutonomousVmClusterOrdsCertsResponse>
-                transformer = RotateCloudAutonomousVmClusterOrdsCertsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateCloudAutonomousVmClusterOrdsCerts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RotateCloudAutonomousVmClusterOrdsCerts");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateCloudAutonomousVmClusterOrdsCerts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RotateCloudAutonomousVmClusterOrdsCerts");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RotateCloudAutonomousVmClusterOrdsCertsResponse>
+                transformer =
+                        RotateCloudAutonomousVmClusterOrdsCertsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9027,20 +9633,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateCloudAutonomousVmClusterSslCertsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RotateCloudAutonomousVmClusterSslCertsResponse>
-                transformer = RotateCloudAutonomousVmClusterSslCertsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateCloudAutonomousVmClusterSslCerts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RotateCloudAutonomousVmClusterSslCerts");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateCloudAutonomousVmClusterSslCerts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RotateCloudAutonomousVmClusterSslCerts");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RotateCloudAutonomousVmClusterSslCertsResponse>
+                transformer =
+                        RotateCloudAutonomousVmClusterSslCertsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9064,19 +9673,22 @@ public class DatabaseClient implements Database {
                 RotateOrdsCertsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateOrdsCertsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, RotateOrdsCertsResponse>
-                transformer = RotateOrdsCertsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateOrdsCerts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/RotateOrdsCerts");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateOrdsCerts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/RotateOrdsCerts");
+        com.google.common.base.Function<javax.ws.rs.core.Response, RotateOrdsCertsResponse>
+                transformer =
+                        RotateOrdsCertsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9100,19 +9712,21 @@ public class DatabaseClient implements Database {
                 RotateSslCertsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateSslCertsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, RotateSslCertsResponse>
-                transformer = RotateSslCertsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateSslCerts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/RotateSslCerts");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateSslCerts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/RotateSslCerts");
+        com.google.common.base.Function<javax.ws.rs.core.Response, RotateSslCertsResponse>
+                transformer =
+                        RotateSslCertsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9136,19 +9750,21 @@ public class DatabaseClient implements Database {
                 RotateVaultKeyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateVaultKeyConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, RotateVaultKeyResponse>
-                transformer = RotateVaultKeyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateVaultKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RotateVaultKey");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateVaultKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RotateVaultKey");
+        com.google.common.base.Function<javax.ws.rs.core.Response, RotateVaultKeyResponse>
+                transformer =
+                        RotateVaultKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9175,22 +9791,24 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ScanExternalContainerDatabasePluggableDatabasesConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        ScanExternalContainerDatabasePluggableDatabasesResponse>
-                transformer =
-                        ScanExternalContainerDatabasePluggableDatabasesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ScanExternalContainerDatabasePluggableDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ScanExternalContainerDatabasePluggableDatabases");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ScanExternalContainerDatabasePluggableDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ScanExternalContainerDatabasePluggableDatabases");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ScanExternalContainerDatabasePluggableDatabasesResponse>
+                transformer =
+                        ScanExternalContainerDatabasePluggableDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9215,18 +9833,21 @@ public class DatabaseClient implements Database {
                 ShrinkAutonomousDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ShrinkAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ShrinkAutonomousDatabaseResponse>
-                transformer = ShrinkAutonomousDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ShrinkAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ShrinkAutonomousDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ShrinkAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ShrinkAutonomousDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ShrinkAutonomousDatabaseResponse>
+                transformer =
+                        ShrinkAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9251,18 +9872,21 @@ public class DatabaseClient implements Database {
                 StartAutonomousDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StartAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartAutonomousDatabaseResponse>
-                transformer = StartAutonomousDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "StartAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/StartAutonomousDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "StartAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/StartAutonomousDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, StartAutonomousDatabaseResponse>
+                transformer =
+                        StartAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9287,19 +9911,22 @@ public class DatabaseClient implements Database {
                 StartPluggableDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StartPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartPluggableDatabaseResponse>
-                transformer = StartPluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "StartPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/StartPluggableDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "StartPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/StartPluggableDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, StartPluggableDatabaseResponse>
+                transformer =
+                        StartPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9324,18 +9951,21 @@ public class DatabaseClient implements Database {
                 StopAutonomousDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StopAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopAutonomousDatabaseResponse>
-                transformer = StopAutonomousDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "StopAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/StopAutonomousDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "StopAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/StopAutonomousDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, StopAutonomousDatabaseResponse>
+                transformer =
+                        StopAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9360,19 +9990,22 @@ public class DatabaseClient implements Database {
                 StopPluggableDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StopPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopPluggableDatabaseResponse>
-                transformer = StopPluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "StopPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/StopPluggableDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "StopPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/StopPluggableDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, StopPluggableDatabaseResponse>
+                transformer =
+                        StopPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9400,22 +10033,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SwitchoverAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
-                transformer =
-                        SwitchoverAutonomousContainerDatabaseDataguardAssociationConverter
-                                .fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "SwitchoverAutonomousContainerDatabaseDataguardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/SwitchoverAutonomousContainerDatabaseDataguardAssociation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "SwitchoverAutonomousContainerDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/SwitchoverAutonomousContainerDatabaseDataguardAssociation");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
+                transformer =
+                        SwitchoverAutonomousContainerDatabaseDataguardAssociationConverter
+                                .fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9440,20 +10074,23 @@ public class DatabaseClient implements Database {
                 SwitchoverAutonomousDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SwitchoverAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SwitchoverAutonomousDatabaseResponse>
-                transformer = SwitchoverAutonomousDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "SwitchoverAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/SwitchoverAutonomousDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "SwitchoverAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/SwitchoverAutonomousDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SwitchoverAutonomousDatabaseResponse>
+                transformer =
+                        SwitchoverAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9478,19 +10115,22 @@ public class DatabaseClient implements Database {
                 SwitchoverDataGuardAssociationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SwitchoverDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SwitchoverDataGuardAssociationResponse>
-                transformer = SwitchoverDataGuardAssociationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "SwitchoverDataGuardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/SwitchoverDataGuardAssociation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "SwitchoverDataGuardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/SwitchoverDataGuardAssociation");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SwitchoverDataGuardAssociationResponse>
+                transformer =
+                        SwitchoverDataGuardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9520,19 +10160,22 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 TerminateAutonomousContainerDatabaseConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, TerminateAutonomousContainerDatabaseResponse>
-                transformer = TerminateAutonomousContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "TerminateAutonomousContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/TerminateAutonomousContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "TerminateAutonomousContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/TerminateAutonomousContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, TerminateAutonomousContainerDatabaseResponse>
+                transformer =
+                        TerminateAutonomousContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9559,19 +10202,22 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 TerminateAutonomousExadataInfrastructureConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, TerminateAutonomousExadataInfrastructureResponse>
-                transformer = TerminateAutonomousExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "TerminateAutonomousExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/TerminateAutonomousExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "TerminateAutonomousExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/TerminateAutonomousExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, TerminateAutonomousExadataInfrastructureResponse>
+                transformer =
+                        TerminateAutonomousExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9595,18 +10241,21 @@ public class DatabaseClient implements Database {
                 TerminateDbSystemConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 TerminateDbSystemConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, TerminateDbSystemResponse>
-                transformer = TerminateDbSystemConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "TerminateDbSystem",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/TerminateDbSystem");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "TerminateDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/TerminateDbSystem");
+        com.google.common.base.Function<javax.ws.rs.core.Response, TerminateDbSystemResponse>
+                transformer =
+                        TerminateDbSystemConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9631,19 +10280,22 @@ public class DatabaseClient implements Database {
                 UpdateAutonomousContainerDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousContainerDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAutonomousContainerDatabaseResponse>
-                transformer = UpdateAutonomousContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/UpdateAutonomousContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/UpdateAutonomousContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateAutonomousContainerDatabaseResponse>
+                transformer =
+                        UpdateAutonomousContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9675,22 +10327,23 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        UpdateAutonomousContainerDatabaseDataguardAssociationResponse>
-                transformer =
-                        UpdateAutonomousContainerDatabaseDataguardAssociationConverter
-                                .fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousContainerDatabaseDataguardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/UpdateAutonomousContainerDatabaseDataguardAssociation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousContainerDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/UpdateAutonomousContainerDatabaseDataguardAssociation");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        UpdateAutonomousContainerDatabaseDataguardAssociationResponse>
+                transformer =
+                        UpdateAutonomousContainerDatabaseDataguardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9719,18 +10372,21 @@ public class DatabaseClient implements Database {
                 UpdateAutonomousDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAutonomousDatabaseResponse>
-                transformer = UpdateAutonomousDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/UpdateAutonomousDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/UpdateAutonomousDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAutonomousDatabaseResponse>
+                transformer =
+                        UpdateAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9759,19 +10415,22 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousDatabaseRegionalWalletConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAutonomousDatabaseRegionalWalletResponse>
-                transformer = UpdateAutonomousDatabaseRegionalWalletConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousDatabaseRegionalWallet",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/UpdateAutonomousDatabaseRegionalWallet");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousDatabaseRegionalWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/UpdateAutonomousDatabaseRegionalWallet");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateAutonomousDatabaseRegionalWalletResponse>
+                transformer =
+                        UpdateAutonomousDatabaseRegionalWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9800,19 +10459,22 @@ public class DatabaseClient implements Database {
                 UpdateAutonomousDatabaseWalletConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousDatabaseWalletConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAutonomousDatabaseWalletResponse>
-                transformer = UpdateAutonomousDatabaseWalletConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousDatabaseWallet",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/UpdateAutonomousDatabaseWallet");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousDatabaseWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/UpdateAutonomousDatabaseWallet");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateAutonomousDatabaseWalletResponse>
+                transformer =
+                        UpdateAutonomousDatabaseWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9842,19 +10504,22 @@ public class DatabaseClient implements Database {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousExadataInfrastructureConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAutonomousExadataInfrastructureResponse>
-                transformer = UpdateAutonomousExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/UpdateAutonomousExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/UpdateAutonomousExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateAutonomousExadataInfrastructureResponse>
+                transformer =
+                        UpdateAutonomousExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9883,19 +10548,22 @@ public class DatabaseClient implements Database {
                 UpdateAutonomousVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAutonomousVmClusterResponse>
-                transformer = UpdateAutonomousVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/UpdateAutonomousVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/UpdateAutonomousVmCluster");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateAutonomousVmClusterResponse>
+                transformer =
+                        UpdateAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9924,18 +10592,21 @@ public class DatabaseClient implements Database {
                 UpdateBackupDestinationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateBackupDestinationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackupDestinationResponse>
-                transformer = UpdateBackupDestinationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateBackupDestination",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/UpdateBackupDestination");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateBackupDestination",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/UpdateBackupDestination");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackupDestinationResponse>
+                transformer =
+                        UpdateBackupDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9963,19 +10634,22 @@ public class DatabaseClient implements Database {
                 UpdateCloudAutonomousVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateCloudAutonomousVmClusterResponse>
-                transformer = UpdateCloudAutonomousVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateCloudAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/UpdateCloudAutonomousVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateCloudAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/UpdateCloudAutonomousVmCluster");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateCloudAutonomousVmClusterResponse>
+                transformer =
+                        UpdateCloudAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10004,19 +10678,22 @@ public class DatabaseClient implements Database {
                 UpdateCloudExadataInfrastructureConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateCloudExadataInfrastructureResponse>
-                transformer = UpdateCloudExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateCloudExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/UpdateCloudExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/UpdateCloudExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateCloudExadataInfrastructureResponse>
+                transformer =
+                        UpdateCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10044,18 +10721,21 @@ public class DatabaseClient implements Database {
                 UpdateCloudVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCloudVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCloudVmClusterResponse>
-                transformer = UpdateCloudVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateCloudVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/UpdateCloudVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateCloudVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/UpdateCloudVmCluster");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCloudVmClusterResponse>
+                transformer =
+                        UpdateCloudVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10083,19 +10763,22 @@ public class DatabaseClient implements Database {
                 UpdateCloudVmClusterIormConfigConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCloudVmClusterIormConfigConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateCloudVmClusterIormConfigResponse>
-                transformer = UpdateCloudVmClusterIormConfigConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateCloudVmClusterIormConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/UpdateCloudVmClusterIormConfig");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateCloudVmClusterIormConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/UpdateCloudVmClusterIormConfig");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateCloudVmClusterIormConfigResponse>
+                transformer =
+                        UpdateCloudVmClusterIormConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10124,19 +10807,22 @@ public class DatabaseClient implements Database {
                 UpdateDataGuardAssociationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateDataGuardAssociationResponse>
-                transformer = UpdateDataGuardAssociationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateDataGuardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/UpdateDataGuardAssociation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDataGuardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/UpdateDataGuardAssociation");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateDataGuardAssociationResponse>
+                transformer =
+                        UpdateDataGuardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10164,18 +10850,20 @@ public class DatabaseClient implements Database {
                 UpdateDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDatabaseResponse>
-                transformer = UpdateDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpdateDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpdateDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDatabaseResponse>
+                transformer =
+                        UpdateDatabaseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10203,19 +10891,22 @@ public class DatabaseClient implements Database {
                 UpdateDatabaseSoftwareImageConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDatabaseSoftwareImageConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateDatabaseSoftwareImageResponse>
-                transformer = UpdateDatabaseSoftwareImageConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateDatabaseSoftwareImage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/UpdateDatabaseSoftwareImage");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDatabaseSoftwareImage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/UpdateDatabaseSoftwareImage");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateDatabaseSoftwareImageResponse>
+                transformer =
+                        UpdateDatabaseSoftwareImageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10243,18 +10934,20 @@ public class DatabaseClient implements Database {
                 UpdateDbHomeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDbHomeConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDbHomeResponse>
-                transformer = UpdateDbHomeConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateDbHome",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/UpdateDbHome");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDbHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/UpdateDbHome");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDbHomeResponse>
+                transformer =
+                        UpdateDbHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10281,18 +10974,20 @@ public class DatabaseClient implements Database {
                 UpdateDbSystemConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDbSystemConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDbSystemResponse>
-                transformer = UpdateDbSystemConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateDbSystem",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpdateDbSystem");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpdateDbSystem");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDbSystemResponse>
+                transformer =
+                        UpdateDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10320,19 +11015,22 @@ public class DatabaseClient implements Database {
                 UpdateExadataInfrastructureConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateExadataInfrastructureResponse>
-                transformer = UpdateExadataInfrastructureConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/UpdateExadataInfrastructure");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/UpdateExadataInfrastructure");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateExadataInfrastructureResponse>
+                transformer =
+                        UpdateExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10361,18 +11059,21 @@ public class DatabaseClient implements Database {
                 UpdateExadataIormConfigConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateExadataIormConfigConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateExadataIormConfigResponse>
-                transformer = UpdateExadataIormConfigConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateExadataIormConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpdateExadataIormConfig");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExadataIormConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpdateExadataIormConfig");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateExadataIormConfigResponse>
+                transformer =
+                        UpdateExadataIormConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10400,19 +11101,22 @@ public class DatabaseClient implements Database {
                 UpdateExternalContainerDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateExternalContainerDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateExternalContainerDatabaseResponse>
-                transformer = UpdateExternalContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateExternalContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/UpdateExternalContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExternalContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/UpdateExternalContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateExternalContainerDatabaseResponse>
+                transformer =
+                        UpdateExternalContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10441,19 +11145,22 @@ public class DatabaseClient implements Database {
                 UpdateExternalDatabaseConnectorConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateExternalDatabaseConnectorConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateExternalDatabaseConnectorResponse>
-                transformer = UpdateExternalDatabaseConnectorConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateExternalDatabaseConnector",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/UpdateExternalDatabaseConnector");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExternalDatabaseConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/UpdateExternalDatabaseConnector");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateExternalDatabaseConnectorResponse>
+                transformer =
+                        UpdateExternalDatabaseConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10482,19 +11189,22 @@ public class DatabaseClient implements Database {
                 UpdateExternalNonContainerDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateExternalNonContainerDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateExternalNonContainerDatabaseResponse>
-                transformer = UpdateExternalNonContainerDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateExternalNonContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/UpdateExternalNonContainerDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExternalNonContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/UpdateExternalNonContainerDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateExternalNonContainerDatabaseResponse>
+                transformer =
+                        UpdateExternalNonContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10523,19 +11233,22 @@ public class DatabaseClient implements Database {
                 UpdateExternalPluggableDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateExternalPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateExternalPluggableDatabaseResponse>
-                transformer = UpdateExternalPluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateExternalPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/UpdateExternalPluggableDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExternalPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/UpdateExternalPluggableDatabase");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateExternalPluggableDatabaseResponse>
+                transformer =
+                        UpdateExternalPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10563,18 +11276,20 @@ public class DatabaseClient implements Database {
                 UpdateKeyStoreConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateKeyStoreConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateKeyStoreResponse>
-                transformer = UpdateKeyStoreConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateKeyStore",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/UpdateKeyStore");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateKeyStore",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/UpdateKeyStore");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateKeyStoreResponse>
+                transformer =
+                        UpdateKeyStoreConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10601,18 +11316,21 @@ public class DatabaseClient implements Database {
                 UpdateMaintenanceRunConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateMaintenanceRunConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMaintenanceRunResponse>
-                transformer = UpdateMaintenanceRunConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateMaintenanceRun",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/UpdateMaintenanceRun");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateMaintenanceRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/UpdateMaintenanceRun");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMaintenanceRunResponse>
+                transformer =
+                        UpdateMaintenanceRunConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10640,18 +11358,21 @@ public class DatabaseClient implements Database {
                 UpdatePluggableDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdatePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePluggableDatabaseResponse>
-                transformer = UpdatePluggableDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdatePluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/UpdatePluggableDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdatePluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/UpdatePluggableDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePluggableDatabaseResponse>
+                transformer =
+                        UpdatePluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10678,18 +11399,21 @@ public class DatabaseClient implements Database {
                 UpdateVmClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVmClusterConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVmClusterResponse>
-                transformer = UpdateVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/UpdateVmCluster");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/UpdateVmCluster");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVmClusterResponse>
+                transformer =
+                        UpdateVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10717,18 +11441,21 @@ public class DatabaseClient implements Database {
                 UpdateVmClusterNetworkConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVmClusterNetworkResponse>
-                transformer = UpdateVmClusterNetworkConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateVmClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/UpdateVmClusterNetwork");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/UpdateVmClusterNetwork");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVmClusterNetworkResponse>
+                transformer =
+                        UpdateVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10755,18 +11482,21 @@ public class DatabaseClient implements Database {
                 UpgradeDatabaseConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpgradeDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDatabaseResponse>
-                transformer = UpgradeDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpgradeDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpgradeDatabase");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpgradeDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpgradeDatabase");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDatabaseResponse>
+                transformer =
+                        UpgradeDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10793,19 +11523,22 @@ public class DatabaseClient implements Database {
                 UpgradeDbSystemConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpgradeDbSystemConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDbSystemResponse>
-                transformer = UpgradeDbSystemConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpgradeDbSystem",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpgradeDbSystem");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpgradeDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpgradeDbSystem");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDbSystemResponse>
+                transformer =
+                        UpgradeDbSystemConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10833,19 +11566,22 @@ public class DatabaseClient implements Database {
                 ValidateVmClusterNetworkConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ValidateVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ValidateVmClusterNetworkResponse>
-                transformer = ValidateVmClusterNetworkConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ValidateVmClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ValidateVmClusterNetwork");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ValidateVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ValidateVmClusterNetwork");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ValidateVmClusterNetworkResponse>
+                transformer =
+                        ValidateVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

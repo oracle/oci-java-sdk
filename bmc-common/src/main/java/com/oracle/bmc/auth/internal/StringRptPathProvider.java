@@ -4,14 +4,15 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 /**
  * This path provider directly takes a string and returns it.
  */
-@Slf4j
 public class StringRptPathProvider implements RptPathProvider {
 
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(StringRptPathProvider.class);
     private final String path;
 
     /**

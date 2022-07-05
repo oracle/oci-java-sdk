@@ -398,15 +398,17 @@ public class ServiceManagerProxyAsyncClient implements ServiceManagerProxyAsync 
                 GetServiceEnvironmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetServiceEnvironmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceManagerProxy",
+                        "GetServiceEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/smp/20210914/ServiceEnvironment/GetServiceEnvironment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetServiceEnvironmentResponse>
-                transformer = GetServiceEnvironmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceManagerProxy",
-                "GetServiceEnvironment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/smp/20210914/ServiceEnvironment/GetServiceEnvironment");
-
+                transformer =
+                        GetServiceEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetServiceEnvironmentRequest, GetServiceEnvironmentResponse>
                 handlerToUse = handler;
@@ -444,15 +446,17 @@ public class ServiceManagerProxyAsyncClient implements ServiceManagerProxyAsync 
                 ListServiceEnvironmentsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListServiceEnvironmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceManagerProxy",
+                        "ListServiceEnvironments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/smp/20210914/ServiceEnvironment/ListServiceEnvironments");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListServiceEnvironmentsResponse>
-                transformer = ListServiceEnvironmentsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceManagerProxy",
-                "ListServiceEnvironments",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/smp/20210914/ServiceEnvironment/ListServiceEnvironments");
-
+                transformer =
+                        ListServiceEnvironmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListServiceEnvironmentsRequest, ListServiceEnvironmentsResponse>
                 handlerToUse = handler;

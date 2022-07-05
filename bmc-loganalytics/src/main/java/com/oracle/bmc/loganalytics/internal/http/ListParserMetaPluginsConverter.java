@@ -91,6 +91,13 @@ public class ListParserMetaPluginsConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.loganalytics.responses.ListParserMetaPluginsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loganalytics.responses.ListParserMetaPluginsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.loganalytics.responses.ListParserMetaPluginsResponse>
@@ -105,16 +112,26 @@ public class ListParserMetaPluginsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.loganalytics.responses.ListParserMetaPluginsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.loganalytics.model
                                                                 .LogAnalyticsParserMetaPluginCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.loganalytics.model
-                                                                        .LogAnalyticsParserMetaPluginCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.loganalytics.model
+                                                                    .LogAnalyticsParserMetaPluginCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.loganalytics.model
+                                                                    .LogAnalyticsParserMetaPluginCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.loganalytics.model

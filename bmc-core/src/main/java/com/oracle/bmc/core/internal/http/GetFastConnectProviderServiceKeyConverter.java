@@ -60,6 +60,13 @@ public class GetFastConnectProviderServiceKeyConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.core.responses.GetFastConnectProviderServiceKeyResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetFastConnectProviderServiceKeyResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.core.responses.GetFastConnectProviderServiceKeyResponse>
@@ -74,16 +81,26 @@ public class GetFastConnectProviderServiceKeyConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.core.responses.GetFastConnectProviderServiceKeyResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.core.model
                                                                 .FastConnectProviderServiceKey>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.core.model
-                                                                        .FastConnectProviderServiceKey
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.core.model
+                                                                    .FastConnectProviderServiceKey
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.core.model
+                                                                    .FastConnectProviderServiceKey
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.core.model

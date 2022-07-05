@@ -9,16 +9,14 @@ import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.requests.HasContentLength;
 import com.oracle.bmc.util.JavaRuntimeUtils;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Nonnull;
 import org.apache.http.protocol.HTTP;
 import org.glassfish.jersey.SslConfigurator;
 import org.glassfish.jersey.apache.connector.ApacheConnectorProvider;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.client.RequestEntityProcessing;
-
+import org.slf4j.Logger;
 import javax.net.ssl.SSLContext;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -38,16 +36,23 @@ import java.util.List;
  * try-with-resources. Otherwise, the connection is not released from the pool and results in hanging for
  * an indefinite time.
  */
-@Slf4j
 public class ApacheConfigurator
         implements ClientConfigurator, SetsClientBuilderProperties, HasApacheConnectorProperties {
-    /** The list of {@code ClientConfigDecorator}s to support the ability to decorate {@code ClientConfig} */
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(ApacheConfigurator.class);
+
+    /**
+     * The list of {@code ClientConfigDecorator}s to support the ability to decorate {@code ClientConfig}
+     */
     protected final List<ClientConfigDecorator> clientConfigDecorators = new LinkedList<>();
 
-    /** Getter for ApacheConnectorProperties for the Apache Connection **/
-    @Getter protected ApacheConnectorProperties apacheConnectorProperties;
+    /**
+     * Getter for ApacheConnectorProperties for the Apache Connection *
+     */
+    protected ApacheConnectorProperties apacheConnectorProperties;
 
-    /** Creates a new {@code ApacheConfigurator} object. */
+    /**
+     * Creates a new {@code ApacheConfigurator} object.
+     */
     public ApacheConfigurator() {
         this.apacheConnectorProperties = ApacheConnectorProperties.builder().build();
     }
@@ -62,15 +67,27 @@ public class ApacheConfigurator
         this.clientConfigDecorators.addAll(clientConfigDecorators);
     }
 
-    /** Creates a new {@code ApacheConfigurator} object and sets the {@code ApacheConnectorProperties} */
-    public ApacheConfigurator(final @NonNull ApacheConnectorProperties apacheConnectorProperties) {
+    /**
+     * Creates a new {@code ApacheConfigurator} object and sets the {@code ApacheConnectorProperties}
+     */
+    public ApacheConfigurator(@Nonnull final ApacheConnectorProperties apacheConnectorProperties) {
+        if (apacheConnectorProperties == null) {
+            throw new java.lang.NullPointerException(
+                    "apacheConnectorProperties is marked non-null but is null");
+        }
         this.apacheConnectorProperties = apacheConnectorProperties;
     }
 
-    /** Creates a new {@code ApacheConfigurator} object and sets the {@code ApacheConnectorProperties}  and registers the list of provided {@code ClientConfigDecorator}s*/
+    /**
+     * Creates a new {@code ApacheConfigurator} object and sets the {@code ApacheConnectorProperties}  and registers the list of provided {@code ClientConfigDecorator}s
+     */
     public ApacheConfigurator(
-            final @NonNull ApacheConnectorProperties apacheConnectorProperties,
+            @Nonnull final ApacheConnectorProperties apacheConnectorProperties,
             final List<ClientConfigDecorator> clientConfigDecorators) {
+        if (apacheConnectorProperties == null) {
+            throw new java.lang.NullPointerException(
+                    "apacheConnectorProperties is marked non-null but is null");
+        }
         this.apacheConnectorProperties = apacheConnectorProperties;
         this.clientConfigDecorators.addAll(clientConfigDecorators);
     }
@@ -145,6 +162,10 @@ public class ApacheConfigurator
         }
     }
 
+    public ApacheConnectorProperties getApacheConnectorProperties() {
+        return this.apacheConnectorProperties;
+    }
+
     public static class NonBuffering extends ApacheConfigurator
             implements HasApacheConnectorProperties {
 
@@ -157,13 +178,21 @@ public class ApacheConfigurator
             this.clientConfigDecorators.addAll(clientConfigDecorators);
         }
 
-        public NonBuffering(final @NonNull ApacheConnectorProperties apacheConnectorProperties) {
+        public NonBuffering(@Nonnull final ApacheConnectorProperties apacheConnectorProperties) {
+            if (apacheConnectorProperties == null) {
+                throw new java.lang.NullPointerException(
+                        "apacheConnectorProperties is marked non-null but is null");
+            }
             this.apacheConnectorProperties = apacheConnectorProperties;
         }
 
         public NonBuffering(
-                final @NonNull ApacheConnectorProperties apacheConnectorProperties,
+                @Nonnull final ApacheConnectorProperties apacheConnectorProperties,
                 final List<ClientConfigDecorator> clientConfigDecorators) {
+            if (apacheConnectorProperties == null) {
+                throw new java.lang.NullPointerException(
+                        "apacheConnectorProperties is marked non-null but is null");
+            }
             this.apacheConnectorProperties = apacheConnectorProperties;
             this.clientConfigDecorators.addAll(clientConfigDecorators);
         }

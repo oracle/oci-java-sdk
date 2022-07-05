@@ -408,11 +408,13 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
                 DownloadPdfContentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DownloadPdfContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "InvoiceService", "DownloadPdfContent", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DownloadPdfContentResponse>
-                transformer = DownloadPdfContentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "InvoiceService", "DownloadPdfContent", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DownloadPdfContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DownloadPdfContentRequest, DownloadPdfContentResponse>
                 handlerToUse = handler;
 
@@ -447,11 +449,12 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
         final GetInvoiceRequest interceptedRequest = GetInvoiceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInvoiceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "InvoiceService", "GetInvoice", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetInvoiceResponse>
-                transformer = GetInvoiceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "InvoiceService", "GetInvoice", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetInvoiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetInvoiceRequest, GetInvoiceResponse> handlerToUse =
                 handler;
 
@@ -488,11 +491,13 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
                 ListInvoiceLinesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInvoiceLinesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "InvoiceService", "ListInvoiceLines", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoiceLinesResponse>
-                transformer = ListInvoiceLinesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "InvoiceService", "ListInvoiceLines", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListInvoiceLinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListInvoiceLinesRequest, ListInvoiceLinesResponse>
                 handlerToUse = handler;
 
@@ -528,11 +533,12 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
                 ListInvoicesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInvoicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "InvoiceService", "ListInvoices", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoicesResponse>
-                transformer = ListInvoicesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "InvoiceService", "ListInvoices", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListInvoicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListInvoicesRequest, ListInvoicesResponse>
                 handlerToUse = handler;
 
@@ -567,12 +573,13 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
         final PayInvoiceRequest interceptedRequest = PayInvoiceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 PayInvoiceConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PayInvoiceResponse>
-                transformer = PayInvoiceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "InvoiceService", "PayInvoice", ib.getRequestUri().toString(), "");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "InvoiceService", "PayInvoice", ib.getRequestUri().toString(), "");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, PayInvoiceResponse>
+                transformer =
+                        PayInvoiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<PayInvoiceRequest, PayInvoiceResponse> handlerToUse =
                 handler;
 

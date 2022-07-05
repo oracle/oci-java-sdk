@@ -10,7 +10,7 @@ import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.model.BmcException;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
@@ -23,8 +23,9 @@ import java.security.interfaces.RSAPublicKey;
  * This class gets a security token from the auth service by signing the request with a PKI issued leaf certificate,
  * passing along a temporary public key that is bounded to the the security token, and the leaf certificate.
  */
-@Slf4j
 public class ResourcePrincipalsFederationClient extends AbstractFederationClient {
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ResourcePrincipalsFederationClient.class);
     private final InstancePrincipalsAuthenticationDetailsProvider provider;
     private final RptPathProvider resourcePrincipalTokenPathProvider;
 

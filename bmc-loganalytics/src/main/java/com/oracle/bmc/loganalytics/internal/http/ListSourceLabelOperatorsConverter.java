@@ -91,6 +91,13 @@ public class ListSourceLabelOperatorsConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.loganalytics.responses.ListSourceLabelOperatorsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loganalytics.responses.ListSourceLabelOperatorsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.loganalytics.responses.ListSourceLabelOperatorsResponse>
@@ -105,16 +112,26 @@ public class ListSourceLabelOperatorsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.loganalytics.responses.ListSourceLabelOperatorsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.loganalytics.model
                                                                 .LogAnalyticsLabelOperatorCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.loganalytics.model
-                                                                        .LogAnalyticsLabelOperatorCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.loganalytics.model
+                                                                    .LogAnalyticsLabelOperatorCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.loganalytics.model
+                                                                    .LogAnalyticsLabelOperatorCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.loganalytics.model

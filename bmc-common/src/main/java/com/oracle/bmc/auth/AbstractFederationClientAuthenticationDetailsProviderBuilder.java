@@ -16,8 +16,7 @@ import com.oracle.bmc.auth.internal.X509FederationClient;
 
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -42,7 +41,6 @@ import java.util.concurrent.TimeUnit;
  * @param <P> provider class
  */
 @InternalSdk
-@Slf4j
 public abstract class AbstractFederationClientAuthenticationDetailsProviderBuilder<
                 B extends AbstractFederationClientAuthenticationDetailsProviderBuilder<B, P>,
                 P extends AbstractAuthenticationDetailsProvider>
@@ -75,16 +73,19 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     private static final String REGION_PATH_LITERAL = "region";
 
     private static final Client CLIENT = ClientBuilder.newClient();
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(
+                    AbstractFederationClientAuthenticationDetailsProviderBuilder.class);
 
     /**
      * Base url of metadata service.
      */
-    @Getter protected volatile String metadataBaseUrl = METADATA_SERVICE_BASE_URL;
+    protected volatile String metadataBaseUrl = METADATA_SERVICE_BASE_URL;
 
     /**
      * The federation endpoint url.
      */
-    @Getter protected String federationEndpoint;
+    protected String federationEndpoint;
 
     /**
      * Flag to ensure fallback logic executed only once.
@@ -94,12 +95,12 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /**
      * The leaf certificate, or null if detecting from instance metadata.
      */
-    @Getter protected X509CertificateSupplier leafCertificateSupplier;
+    protected X509CertificateSupplier leafCertificateSupplier;
 
     /**
      * Tenancy OCI, or null if detecting from instance metadata.
      */
-    @Getter protected String tenancyId;
+    protected String tenancyId;
 
     /**
      * The configuration for the circuit breaker.
@@ -111,7 +112,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /**
      * Detected region.
      */
-    @Getter protected Region region = null;
+    protected Region region = null;
 
     /**
      * Configure the metadata endpoint to use when retrieving the instance data and principal for federation.
@@ -385,6 +386,26 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      * @return authentication details provider
      */
     protected abstract P buildProvider(SessionKeySupplier sessionKeySupplierToUse);
+
+    public String getMetadataBaseUrl() {
+        return this.metadataBaseUrl;
+    }
+
+    public String getFederationEndpoint() {
+        return this.federationEndpoint;
+    }
+
+    public X509CertificateSupplier getLeafCertificateSupplier() {
+        return this.leafCertificateSupplier;
+    }
+
+    public String getTenancyId() {
+        return this.tenancyId;
+    }
+
+    public Region getRegion() {
+        return this.region;
+    }
 
     /**
      * This is a helper class to generate in-memory temporary session keys.

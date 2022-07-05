@@ -68,6 +68,13 @@ public class UpdateCloudExadataInfrastructureConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.database.responses.UpdateCloudExadataInfrastructureResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.UpdateCloudExadataInfrastructureResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.database.responses.UpdateCloudExadataInfrastructureResponse>
@@ -82,16 +89,26 @@ public class UpdateCloudExadataInfrastructureConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.database.responses.UpdateCloudExadataInfrastructureResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.database.model
                                                                 .CloudExadataInfrastructure>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.database.model
-                                                                        .CloudExadataInfrastructure
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.database.model
+                                                                    .CloudExadataInfrastructure
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.database.model
+                                                                    .CloudExadataInfrastructure
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.database.model

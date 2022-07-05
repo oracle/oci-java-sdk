@@ -54,6 +54,13 @@ public class ListCustomerSecretKeysConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.identity.responses.ListCustomerSecretKeysResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListCustomerSecretKeysResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.identity.responses.ListCustomerSecretKeysResponse>
@@ -67,19 +74,29 @@ public class ListCustomerSecretKeysConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.identity.responses.ListCustomerSecretKeysResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
                                                                 com.oracle.bmc.identity.model
                                                                         .CustomerSecretKeySummary>>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        new javax.ws.rs.core.GenericType<
-                                                                java.util.List<
-                                                                        com.oracle.bmc.identity
-                                                                                .model
-                                                                                .CustomerSecretKeySummary>>() {});
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.identity.model
+                                                                            .CustomerSecretKeySummary>>() {},
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.identity.model
+                                                                            .CustomerSecretKeySummary>>() {});
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<

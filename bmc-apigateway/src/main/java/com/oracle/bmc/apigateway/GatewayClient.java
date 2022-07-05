@@ -476,19 +476,22 @@ public class GatewayClient implements Gateway {
                 ChangeGatewayCompartmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeGatewayCompartmentResponse>
-                transformer = ChangeGatewayCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Gateway",
-                "ChangeGatewayCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/ChangeGatewayCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Gateway",
+                        "ChangeGatewayCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/ChangeGatewayCompartment");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeGatewayCompartmentResponse>
+                transformer =
+                        ChangeGatewayCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -515,16 +518,18 @@ public class GatewayClient implements Gateway {
                 CreateGatewayConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateGatewayConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateGatewayResponse>
-                transformer = CreateGatewayConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Gateway", "CreateGateway", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Gateway", "CreateGateway", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateGatewayResponse>
+                transformer =
+                        CreateGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -551,18 +556,20 @@ public class GatewayClient implements Gateway {
                 DeleteGatewayConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteGatewayConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGatewayResponse>
-                transformer = DeleteGatewayConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Gateway",
-                "DeleteGateway",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/DeleteGateway");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Gateway",
+                        "DeleteGateway",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/DeleteGateway");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGatewayResponse>
+                transformer =
+                        DeleteGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -585,18 +592,19 @@ public class GatewayClient implements Gateway {
         final GetGatewayRequest interceptedRequest = GetGatewayConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetGatewayConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetGatewayResponse> transformer =
-                GetGatewayConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Gateway",
-                "GetGateway",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/GetGateway");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Gateway",
+                        "GetGateway",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/GetGateway");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetGatewayResponse> transformer =
+                GetGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -619,18 +627,20 @@ public class GatewayClient implements Gateway {
                 ListGatewaysConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListGatewaysConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListGatewaysResponse>
-                transformer = ListGatewaysConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Gateway",
-                "ListGateways",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/GatewaySummary/ListGateways");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Gateway",
+                        "ListGateways",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/GatewaySummary/ListGateways");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListGatewaysResponse>
+                transformer =
+                        ListGatewaysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -653,18 +663,20 @@ public class GatewayClient implements Gateway {
                 UpdateGatewayConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateGatewayConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGatewayResponse>
-                transformer = UpdateGatewayConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Gateway",
-                "UpdateGateway",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/UpdateGateway");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Gateway",
+                        "UpdateGateway",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/UpdateGateway");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGatewayResponse>
+                transformer =
+                        UpdateGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

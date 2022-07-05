@@ -476,20 +476,23 @@ public class DeploymentClient implements Deployment {
                 ChangeDeploymentCompartmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeDeploymentCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeDeploymentCompartmentResponse>
-                transformer = ChangeDeploymentCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Deployment",
-                "ChangeDeploymentCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/ChangeDeploymentCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Deployment",
+                        "ChangeDeploymentCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/ChangeDeploymentCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeDeploymentCompartmentResponse>
+                transformer =
+                        ChangeDeploymentCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -517,16 +520,19 @@ public class DeploymentClient implements Deployment {
                 CreateDeploymentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
-                transformer = CreateDeploymentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Deployment", "CreateDeployment", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Deployment", "CreateDeployment", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
+                transformer =
+                        CreateDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -553,18 +559,21 @@ public class DeploymentClient implements Deployment {
                 DeleteDeploymentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeploymentResponse>
-                transformer = DeleteDeploymentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Deployment",
-                "DeleteDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/DeleteDeployment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Deployment",
+                        "DeleteDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/DeleteDeployment");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeploymentResponse>
+                transformer =
+                        DeleteDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -588,18 +597,20 @@ public class DeploymentClient implements Deployment {
                 GetDeploymentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentResponse>
-                transformer = GetDeploymentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Deployment",
-                "GetDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/GetDeployment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Deployment",
+                        "GetDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/GetDeployment");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentResponse>
+                transformer =
+                        GetDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -622,18 +633,21 @@ public class DeploymentClient implements Deployment {
                 ListDeploymentsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDeploymentsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
-                transformer = ListDeploymentsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Deployment",
-                "ListDeployments",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/DeploymentSummary/ListDeployments");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Deployment",
+                        "ListDeployments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/DeploymentSummary/ListDeployments");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
+                transformer =
+                        ListDeploymentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -656,18 +670,21 @@ public class DeploymentClient implements Deployment {
                 UpdateDeploymentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
-                transformer = UpdateDeploymentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Deployment",
-                "UpdateDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/UpdateDeployment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Deployment",
+                        "UpdateDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/UpdateDeployment");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
+                transformer =
+                        UpdateDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

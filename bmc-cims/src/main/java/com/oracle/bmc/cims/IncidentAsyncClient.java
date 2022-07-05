@@ -398,14 +398,15 @@ public class IncidentAsyncClient implements IncidentAsync {
                 CreateIncidentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateIncidentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Incident",
+                        "CreateIncident",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/CreateIncident");
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateIncidentResponse>
-                transformer = CreateIncidentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Incident",
-                "CreateIncident",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/CreateIncident");
-
+                transformer =
+                        CreateIncidentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateIncidentRequest, CreateIncidentResponse>
                 handlerToUse = handler;
 
@@ -446,14 +447,15 @@ public class IncidentAsyncClient implements IncidentAsync {
                 GetIncidentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIncidentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Incident",
+                        "GetIncident",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/GetIncident");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetIncidentResponse>
-                transformer = GetIncidentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Incident",
-                "GetIncident",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/GetIncident");
-
+                transformer =
+                        GetIncidentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetIncidentRequest, GetIncidentResponse>
                 handlerToUse = handler;
 
@@ -488,14 +490,15 @@ public class IncidentAsyncClient implements IncidentAsync {
         final GetStatusRequest interceptedRequest = GetStatusConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetStatusConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Incident",
+                        "GetStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Status/GetStatus");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetStatusResponse>
-                transformer = GetStatusConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Incident",
-                "GetStatus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Status/GetStatus");
-
+                transformer =
+                        GetStatusConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetStatusRequest, GetStatusResponse> handlerToUse =
                 handler;
 
@@ -531,15 +534,17 @@ public class IncidentAsyncClient implements IncidentAsync {
                 ListIncidentResourceTypesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIncidentResourceTypesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Incident",
+                        "ListIncidentResourceTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/IncidentResourceType/ListIncidentResourceTypes");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIncidentResourceTypesResponse>
-                transformer = ListIncidentResourceTypesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Incident",
-                "ListIncidentResourceTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/IncidentResourceType/ListIncidentResourceTypes");
-
+                transformer =
+                        ListIncidentResourceTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListIncidentResourceTypesRequest, ListIncidentResourceTypesResponse>
                 handlerToUse = handler;
@@ -577,14 +582,15 @@ public class IncidentAsyncClient implements IncidentAsync {
                 ListIncidentsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIncidentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Incident",
+                        "ListIncidents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/IncidentSummary/ListIncidents");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListIncidentsResponse>
-                transformer = ListIncidentsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Incident",
-                "ListIncidents",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/IncidentSummary/ListIncidents");
-
+                transformer =
+                        ListIncidentsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListIncidentsRequest, ListIncidentsResponse>
                 handlerToUse = handler;
 
@@ -621,14 +627,15 @@ public class IncidentAsyncClient implements IncidentAsync {
                 UpdateIncidentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateIncidentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Incident",
+                        "UpdateIncident",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/UpdateIncident/UpdateIncident");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIncidentResponse>
-                transformer = UpdateIncidentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Incident",
-                "UpdateIncident",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/UpdateIncident/UpdateIncident");
-
+                transformer =
+                        UpdateIncidentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateIncidentRequest, UpdateIncidentResponse>
                 handlerToUse = handler;
 
@@ -669,14 +676,15 @@ public class IncidentAsyncClient implements IncidentAsync {
                 ValidateUserConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ValidateUserConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Incident",
+                        "ValidateUser",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/ValidationResponse/ValidateUser");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ValidateUserResponse>
-                transformer = ValidateUserConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Incident",
-                "ValidateUser",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/ValidationResponse/ValidateUser");
-
+                transformer =
+                        ValidateUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ValidateUserRequest, ValidateUserResponse>
                 handlerToUse = handler;
 

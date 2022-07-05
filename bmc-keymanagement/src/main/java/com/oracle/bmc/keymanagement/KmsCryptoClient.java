@@ -322,15 +322,16 @@ public class KmsCryptoClient implements KmsCrypto {
         final DecryptRequest interceptedRequest = DecryptConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DecryptConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DecryptResponse> transformer =
-                DecryptConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsCrypto", "Decrypt", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsCrypto", "Decrypt", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DecryptResponse> transformer =
+                DecryptConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -356,15 +357,16 @@ public class KmsCryptoClient implements KmsCrypto {
         final EncryptRequest interceptedRequest = EncryptConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EncryptConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, EncryptResponse> transformer =
-                EncryptConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsCrypto", "Encrypt", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsCrypto", "Encrypt", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, EncryptResponse> transformer =
+                EncryptConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -390,15 +392,16 @@ public class KmsCryptoClient implements KmsCrypto {
         final ExportKeyRequest interceptedRequest = ExportKeyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ExportKeyConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ExportKeyResponse> transformer =
-                ExportKeyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsCrypto", "ExportKey", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsCrypto", "ExportKey", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ExportKeyResponse> transformer =
+                ExportKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -426,16 +429,22 @@ public class KmsCryptoClient implements KmsCrypto {
                 GenerateDataEncryptionKeyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GenerateDataEncryptionKeyConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GenerateDataEncryptionKeyResponse>
-                transformer = GenerateDataEncryptionKeyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsCrypto", "GenerateDataEncryptionKey", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsCrypto",
+                        "GenerateDataEncryptionKey",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateDataEncryptionKeyResponse>
+                transformer =
+                        GenerateDataEncryptionKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -461,15 +470,16 @@ public class KmsCryptoClient implements KmsCrypto {
         final SignRequest interceptedRequest = SignConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SignConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, SignResponse> transformer =
-                SignConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsCrypto", "Sign", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsCrypto", "Sign", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, SignResponse> transformer =
+                SignConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -495,15 +505,16 @@ public class KmsCryptoClient implements KmsCrypto {
         final VerifyRequest interceptedRequest = VerifyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 VerifyConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, VerifyResponse> transformer =
-                VerifyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsCrypto", "Verify", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsCrypto", "Verify", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, VerifyResponse> transformer =
+                VerifyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

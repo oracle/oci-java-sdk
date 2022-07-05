@@ -475,16 +475,19 @@ public class MysqlaasClient implements Mysqlaas {
                 CreateConfigurationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateConfigurationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateConfigurationResponse>
-                transformer = CreateConfigurationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Mysqlaas", "CreateConfiguration", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Mysqlaas", "CreateConfiguration", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateConfigurationResponse>
+                transformer =
+                        CreateConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -511,18 +514,21 @@ public class MysqlaasClient implements Mysqlaas {
                 DeleteConfigurationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteConfigurationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConfigurationResponse>
-                transformer = DeleteConfigurationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Mysqlaas",
-                "DeleteConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Configuration/DeleteConfiguration");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Mysqlaas",
+                        "DeleteConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Configuration/DeleteConfiguration");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConfigurationResponse>
+                transformer =
+                        DeleteConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -546,18 +552,21 @@ public class MysqlaasClient implements Mysqlaas {
                 GetConfigurationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetConfigurationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
-                transformer = GetConfigurationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Mysqlaas",
-                "GetConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Configuration/GetConfiguration");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Mysqlaas",
+                        "GetConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Configuration/GetConfiguration");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
+                transformer =
+                        GetConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -580,18 +589,21 @@ public class MysqlaasClient implements Mysqlaas {
                 ListConfigurationsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListConfigurationsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListConfigurationsResponse>
-                transformer = ListConfigurationsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Mysqlaas",
-                "ListConfigurations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ConfigurationSummary/ListConfigurations");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Mysqlaas",
+                        "ListConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ConfigurationSummary/ListConfigurations");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListConfigurationsResponse>
+                transformer =
+                        ListConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -613,18 +625,19 @@ public class MysqlaasClient implements Mysqlaas {
         final ListShapesRequest interceptedRequest = ListShapesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListShapesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListShapesResponse> transformer =
-                ListShapesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Mysqlaas",
-                "ListShapes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Mysqlaas",
+                        "ListShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListShapesResponse> transformer =
+                ListShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -647,18 +660,20 @@ public class MysqlaasClient implements Mysqlaas {
                 ListVersionsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVersionsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVersionsResponse>
-                transformer = ListVersionsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Mysqlaas",
-                "ListVersions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/VersionSummary/ListVersions");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Mysqlaas",
+                        "ListVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/VersionSummary/ListVersions");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVersionsResponse>
+                transformer =
+                        ListVersionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -681,18 +696,21 @@ public class MysqlaasClient implements Mysqlaas {
                 UpdateConfigurationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateConfigurationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
-                transformer = UpdateConfigurationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Mysqlaas",
-                "UpdateConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Configuration/UpdateConfiguration");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Mysqlaas",
+                        "UpdateConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Configuration/UpdateConfiguration");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
+                transformer =
+                        UpdateConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -399,16 +399,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ActivateExadataInfrastructureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ActivateExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ActivateExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ActivateExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ActivateExadataInfrastructureResponse>
-                transformer = ActivateExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ActivateExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ActivateExadataInfrastructure");
-
+                transformer =
+                        ActivateExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ActivateExadataInfrastructureRequest, ActivateExadataInfrastructureResponse>
                 handlerToUse = handler;
@@ -455,16 +457,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AddStorageCapacityExadataInfrastructureConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "AddStorageCapacityExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/AddStorageCapacityExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AddStorageCapacityExadataInfrastructureResponse>
-                transformer = AddStorageCapacityExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "AddStorageCapacityExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/AddStorageCapacityExadataInfrastructure");
-
+                transformer =
+                        AddStorageCapacityExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AddStorageCapacityExadataInfrastructureRequest,
                         AddStorageCapacityExadataInfrastructureResponse>
@@ -508,16 +512,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 AddVirtualMachineToVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AddVirtualMachineToVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "AddVirtualMachineToVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/AddVirtualMachineToVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AddVirtualMachineToVmClusterResponse>
-                transformer = AddVirtualMachineToVmClusterConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "AddVirtualMachineToVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/AddVirtualMachineToVmCluster");
-
+                transformer =
+                        AddVirtualMachineToVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AddVirtualMachineToVmClusterRequest, AddVirtualMachineToVmClusterResponse>
                 handlerToUse = handler;
@@ -563,16 +569,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 AutonomousDatabaseManualRefreshConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AutonomousDatabaseManualRefreshConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "AutonomousDatabaseManualRefresh",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/AutonomousDatabaseManualRefresh");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AutonomousDatabaseManualRefreshResponse>
-                transformer = AutonomousDatabaseManualRefreshConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "AutonomousDatabaseManualRefresh",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/AutonomousDatabaseManualRefresh");
-
+                transformer =
+                        AutonomousDatabaseManualRefreshConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AutonomousDatabaseManualRefreshRequest,
                         AutonomousDatabaseManualRefreshResponse>
@@ -621,17 +629,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeAutonomousContainerDatabaseCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeAutonomousContainerDatabaseCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ChangeAutonomousContainerDatabaseCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ChangeAutonomousContainerDatabaseCompartmentResponse>
-                transformer = ChangeAutonomousContainerDatabaseCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeAutonomousContainerDatabaseCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ChangeAutonomousContainerDatabaseCompartment");
-
+                transformer =
+                        ChangeAutonomousContainerDatabaseCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAutonomousContainerDatabaseCompartmentRequest,
                         ChangeAutonomousContainerDatabaseCompartmentResponse>
@@ -681,16 +691,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeAutonomousDatabaseCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeAutonomousDatabaseCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ChangeAutonomousDatabaseCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeAutonomousDatabaseCompartmentResponse>
-                transformer = ChangeAutonomousDatabaseCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeAutonomousDatabaseCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ChangeAutonomousDatabaseCompartment");
-
+                transformer =
+                        ChangeAutonomousDatabaseCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAutonomousDatabaseCompartmentRequest,
                         ChangeAutonomousDatabaseCompartmentResponse>
@@ -739,18 +751,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeAutonomousExadataInfrastructureCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeAutonomousExadataInfrastructureCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/ChangeAutonomousExadataInfrastructureCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ChangeAutonomousExadataInfrastructureCompartmentResponse>
                 transformer =
-                        ChangeAutonomousExadataInfrastructureCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeAutonomousExadataInfrastructureCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/ChangeAutonomousExadataInfrastructureCompartment");
-
+                        ChangeAutonomousExadataInfrastructureCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAutonomousExadataInfrastructureCompartmentRequest,
                         ChangeAutonomousExadataInfrastructureCompartmentResponse>
@@ -800,16 +813,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeAutonomousVmClusterCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeAutonomousVmClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ChangeAutonomousVmClusterCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeAutonomousVmClusterCompartmentResponse>
-                transformer = ChangeAutonomousVmClusterCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeAutonomousVmClusterCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ChangeAutonomousVmClusterCompartment");
-
+                transformer =
+                        ChangeAutonomousVmClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAutonomousVmClusterCompartmentRequest,
                         ChangeAutonomousVmClusterCompartmentResponse>
@@ -857,16 +872,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ChangeBackupDestinationCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeBackupDestinationCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeBackupDestinationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/ChangeBackupDestinationCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeBackupDestinationCompartmentResponse>
-                transformer = ChangeBackupDestinationCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeBackupDestinationCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/ChangeBackupDestinationCompartment");
-
+                transformer =
+                        ChangeBackupDestinationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeBackupDestinationCompartmentRequest,
                         ChangeBackupDestinationCompartmentResponse>
@@ -915,17 +932,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeCloudAutonomousVmClusterCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeCloudAutonomousVmClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ChangeCloudAutonomousVmClusterCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ChangeCloudAutonomousVmClusterCompartmentResponse>
-                transformer = ChangeCloudAutonomousVmClusterCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeCloudAutonomousVmClusterCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ChangeCloudAutonomousVmClusterCompartment");
-
+                transformer =
+                        ChangeCloudAutonomousVmClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCloudAutonomousVmClusterCompartmentRequest,
                         ChangeCloudAutonomousVmClusterCompartmentResponse>
@@ -976,17 +995,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeCloudExadataInfrastructureCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeCloudExadataInfrastructureCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ChangeCloudExadataInfrastructureCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ChangeCloudExadataInfrastructureCompartmentResponse>
-                transformer = ChangeCloudExadataInfrastructureCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeCloudExadataInfrastructureCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ChangeCloudExadataInfrastructureCompartment");
-
+                transformer =
+                        ChangeCloudExadataInfrastructureCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCloudExadataInfrastructureCompartmentRequest,
                         ChangeCloudExadataInfrastructureCompartmentResponse>
@@ -1036,16 +1057,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ChangeCloudVmClusterCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeCloudVmClusterCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeCloudVmClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ChangeCloudVmClusterCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeCloudVmClusterCompartmentResponse>
-                transformer = ChangeCloudVmClusterCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeCloudVmClusterCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ChangeCloudVmClusterCompartment");
-
+                transformer =
+                        ChangeCloudVmClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCloudVmClusterCompartmentRequest,
                         ChangeCloudVmClusterCompartmentResponse>
@@ -1094,16 +1117,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeDatabaseSoftwareImageCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeDatabaseSoftwareImageCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/ChangeDatabaseSoftwareImageCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseSoftwareImageCompartmentResponse>
-                transformer = ChangeDatabaseSoftwareImageCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeDatabaseSoftwareImageCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/ChangeDatabaseSoftwareImageCompartment");
-
+                transformer =
+                        ChangeDatabaseSoftwareImageCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDatabaseSoftwareImageCompartmentRequest,
                         ChangeDatabaseSoftwareImageCompartmentResponse>
@@ -1149,16 +1174,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ChangeDbSystemCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeDbSystemCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeDbSystemCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ChangeDbSystemCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDbSystemCompartmentResponse>
-                transformer = ChangeDbSystemCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeDbSystemCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ChangeDbSystemCompartment");
-
+                transformer =
+                        ChangeDbSystemCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDbSystemCompartmentRequest, ChangeDbSystemCompartmentResponse>
                 handlerToUse = handler;
@@ -1205,16 +1232,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeExadataInfrastructureCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeExadataInfrastructureCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ChangeExadataInfrastructureCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeExadataInfrastructureCompartmentResponse>
-                transformer = ChangeExadataInfrastructureCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeExadataInfrastructureCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ChangeExadataInfrastructureCompartment");
-
+                transformer =
+                        ChangeExadataInfrastructureCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeExadataInfrastructureCompartmentRequest,
                         ChangeExadataInfrastructureCompartmentResponse>
@@ -1264,17 +1293,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeExternalContainerDatabaseCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeExternalContainerDatabaseCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ChangeExternalContainerDatabaseCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ChangeExternalContainerDatabaseCompartmentResponse>
-                transformer = ChangeExternalContainerDatabaseCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeExternalContainerDatabaseCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ChangeExternalContainerDatabaseCompartment");
-
+                transformer =
+                        ChangeExternalContainerDatabaseCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeExternalContainerDatabaseCompartmentRequest,
                         ChangeExternalContainerDatabaseCompartmentResponse>
@@ -1324,17 +1355,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeExternalNonContainerDatabaseCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeExternalNonContainerDatabaseCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/ChangeExternalNonContainerDatabaseCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ChangeExternalNonContainerDatabaseCompartmentResponse>
-                transformer = ChangeExternalNonContainerDatabaseCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeExternalNonContainerDatabaseCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/ChangeExternalNonContainerDatabaseCompartment");
-
+                transformer =
+                        ChangeExternalNonContainerDatabaseCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeExternalNonContainerDatabaseCompartmentRequest,
                         ChangeExternalNonContainerDatabaseCompartmentResponse>
@@ -1384,17 +1417,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeExternalPluggableDatabaseCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeExternalPluggableDatabaseCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/ChangeExternalPluggableDatabaseCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ChangeExternalPluggableDatabaseCompartmentResponse>
-                transformer = ChangeExternalPluggableDatabaseCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeExternalPluggableDatabaseCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/ChangeExternalPluggableDatabaseCompartment");
-
+                transformer =
+                        ChangeExternalPluggableDatabaseCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeExternalPluggableDatabaseCompartmentRequest,
                         ChangeExternalPluggableDatabaseCompartmentResponse>
@@ -1441,16 +1476,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ChangeKeyStoreCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeKeyStoreCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeKeyStoreCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/ChangeKeyStoreCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeKeyStoreCompartmentResponse>
-                transformer = ChangeKeyStoreCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeKeyStoreCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/ChangeKeyStoreCompartment");
-
+                transformer =
+                        ChangeKeyStoreCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeKeyStoreCompartmentRequest, ChangeKeyStoreCompartmentResponse>
                 handlerToUse = handler;
@@ -1496,16 +1533,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ChangeVmClusterCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeVmClusterCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeVmClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/ChangeVmClusterCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVmClusterCompartmentResponse>
-                transformer = ChangeVmClusterCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ChangeVmClusterCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/ChangeVmClusterCompartment");
-
+                transformer =
+                        ChangeVmClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVmClusterCompartmentRequest, ChangeVmClusterCompartmentResponse>
                 handlerToUse = handler;
@@ -1552,18 +1591,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CheckExternalDatabaseConnectorConnectionStatusConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CheckExternalDatabaseConnectorConnectionStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/CheckExternalDatabaseConnectorConnectionStatus");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         CheckExternalDatabaseConnectorConnectionStatusResponse>
                 transformer =
-                        CheckExternalDatabaseConnectorConnectionStatusConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CheckExternalDatabaseConnectorConnectionStatus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/CheckExternalDatabaseConnectorConnectionStatus");
-
+                        CheckExternalDatabaseConnectorConnectionStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CheckExternalDatabaseConnectorConnectionStatusRequest,
                         CheckExternalDatabaseConnectorConnectionStatusResponse>
@@ -1605,16 +1645,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CompleteExternalBackupJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CompleteExternalBackupJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CompleteExternalBackupJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/CompleteExternalBackupJob");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CompleteExternalBackupJobResponse>
-                transformer = CompleteExternalBackupJobConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CompleteExternalBackupJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/CompleteExternalBackupJob");
-
+                transformer =
+                        CompleteExternalBackupJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CompleteExternalBackupJobRequest, CompleteExternalBackupJobResponse>
                 handlerToUse = handler;
@@ -1661,16 +1703,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ConfigureAutonomousDatabaseVaultKeyConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ConfigureAutonomousDatabaseVaultKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ConfigureAutonomousDatabaseVaultKey");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ConfigureAutonomousDatabaseVaultKeyResponse>
-                transformer = ConfigureAutonomousDatabaseVaultKeyConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ConfigureAutonomousDatabaseVaultKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ConfigureAutonomousDatabaseVaultKey");
-
+                transformer =
+                        ConfigureAutonomousDatabaseVaultKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ConfigureAutonomousDatabaseVaultKeyRequest,
                         ConfigureAutonomousDatabaseVaultKeyResponse>
@@ -1715,14 +1759,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ConvertToPdbConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ConvertToPdbConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ConvertToPdb",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ConvertToPdb");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ConvertToPdbResponse>
-                transformer = ConvertToPdbConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ConvertToPdb",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ConvertToPdb");
-
+                transformer =
+                        ConvertToPdbConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ConvertToPdbRequest, ConvertToPdbResponse>
                 handlerToUse = handler;
 
@@ -1766,16 +1811,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateAutonomousContainerDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAutonomousContainerDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateAutonomousContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/CreateAutonomousContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAutonomousContainerDatabaseResponse>
-                transformer = CreateAutonomousContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateAutonomousContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/CreateAutonomousContainerDatabase");
-
+                transformer =
+                        CreateAutonomousContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAutonomousContainerDatabaseRequest,
                         CreateAutonomousContainerDatabaseResponse>
@@ -1821,16 +1868,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateAutonomousDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/CreateAutonomousDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAutonomousDatabaseResponse>
-                transformer = CreateAutonomousDatabaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/CreateAutonomousDatabase");
-
+                transformer =
+                        CreateAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAutonomousDatabaseRequest, CreateAutonomousDatabaseResponse>
                 handlerToUse = handler;
@@ -1875,16 +1924,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateAutonomousDatabaseBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAutonomousDatabaseBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateAutonomousDatabaseBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/CreateAutonomousDatabaseBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAutonomousDatabaseBackupResponse>
-                transformer = CreateAutonomousDatabaseBackupConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateAutonomousDatabaseBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/CreateAutonomousDatabaseBackup");
-
+                transformer =
+                        CreateAutonomousDatabaseBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAutonomousDatabaseBackupRequest,
                         CreateAutonomousDatabaseBackupResponse>
@@ -1929,16 +1980,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateAutonomousVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/CreateAutonomousVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAutonomousVmClusterResponse>
-                transformer = CreateAutonomousVmClusterConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/CreateAutonomousVmCluster");
-
+                transformer =
+                        CreateAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAutonomousVmClusterRequest, CreateAutonomousVmClusterResponse>
                 handlerToUse = handler;
@@ -1981,15 +2034,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBackupConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupResponse>
-                transformer = CreateBackupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/CreateBackup");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/CreateBackup");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupResponse>
+                transformer =
+                        CreateBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateBackupRequest, CreateBackupResponse>
                 handlerToUse = handler;
 
@@ -2031,16 +2085,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateBackupDestinationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBackupDestinationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateBackupDestination",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/CreateBackupDestination");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateBackupDestinationResponse>
-                transformer = CreateBackupDestinationConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateBackupDestination",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/CreateBackupDestination");
-
+                transformer =
+                        CreateBackupDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateBackupDestinationRequest, CreateBackupDestinationResponse>
                 handlerToUse = handler;
@@ -2085,16 +2141,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateCloudAutonomousVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateCloudAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateCloudAutonomousVmClusterResponse>
-                transformer = CreateCloudAutonomousVmClusterConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateCloudAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster");
-
+                transformer =
+                        CreateCloudAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateCloudAutonomousVmClusterRequest,
                         CreateCloudAutonomousVmClusterResponse>
@@ -2141,16 +2199,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateCloudExadataInfrastructureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/CreateCloudExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateCloudExadataInfrastructureResponse>
-                transformer = CreateCloudExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateCloudExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/CreateCloudExadataInfrastructure");
-
+                transformer =
+                        CreateCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateCloudExadataInfrastructureRequest,
                         CreateCloudExadataInfrastructureResponse>
@@ -2196,16 +2256,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateCloudVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCloudVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateCloudVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/CreateCloudVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateCloudVmClusterResponse>
-                transformer = CreateCloudVmClusterConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateCloudVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/CreateCloudVmCluster");
-
+                transformer =
+                        CreateCloudVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateCloudVmClusterRequest, CreateCloudVmClusterResponse>
                 handlerToUse = handler;
@@ -2248,16 +2310,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateConsoleConnectionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateConsoleConnectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateConsoleConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/CreateConsoleConnection");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateConsoleConnectionResponse>
-                transformer = CreateConsoleConnectionConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateConsoleConnection",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/CreateConsoleConnection");
-
+                transformer =
+                        CreateConsoleConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateConsoleConnectionRequest, CreateConsoleConnectionResponse>
                 handlerToUse = handler;
@@ -2302,16 +2366,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateDataGuardAssociationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateDataGuardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/CreateDataGuardAssociation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDataGuardAssociationResponse>
-                transformer = CreateDataGuardAssociationConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateDataGuardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/CreateDataGuardAssociation");
-
+                transformer =
+                        CreateDataGuardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDataGuardAssociationRequest, CreateDataGuardAssociationResponse>
                 handlerToUse = handler;
@@ -2355,15 +2421,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDatabaseConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDatabaseResponse>
-                transformer = CreateDatabaseConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/CreateDatabase");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/CreateDatabase");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDatabaseResponse>
+                transformer =
+                        CreateDatabaseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateDatabaseRequest, CreateDatabaseResponse>
                 handlerToUse = handler;
 
@@ -2407,16 +2474,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateDatabaseSoftwareImageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDatabaseSoftwareImageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateDatabaseSoftwareImage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/CreateDatabaseSoftwareImage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDatabaseSoftwareImageResponse>
-                transformer = CreateDatabaseSoftwareImageConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateDatabaseSoftwareImage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/CreateDatabaseSoftwareImage");
-
+                transformer =
+                        CreateDatabaseSoftwareImageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDatabaseSoftwareImageRequest, CreateDatabaseSoftwareImageResponse>
                 handlerToUse = handler;
@@ -2459,15 +2528,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateDbHomeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDbHomeConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbHomeResponse>
-                transformer = CreateDbHomeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateDbHome",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/CreateDbHome");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateDbHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/CreateDbHome");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbHomeResponse>
+                transformer =
+                        CreateDbHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateDbHomeRequest, CreateDbHomeResponse>
                 handlerToUse = handler;
 
@@ -2511,16 +2581,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateExadataInfrastructureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/CreateExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateExadataInfrastructureResponse>
-                transformer = CreateExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/CreateExadataInfrastructure");
-
+                transformer =
+                        CreateExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExadataInfrastructureRequest, CreateExadataInfrastructureResponse>
                 handlerToUse = handler;
@@ -2564,16 +2636,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateExternalBackupJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateExternalBackupJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExternalBackupJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/CreateExternalBackupJob");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateExternalBackupJobResponse>
-                transformer = CreateExternalBackupJobConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateExternalBackupJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/CreateExternalBackupJob");
-
+                transformer =
+                        CreateExternalBackupJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExternalBackupJobRequest, CreateExternalBackupJobResponse>
                 handlerToUse = handler;
@@ -2618,16 +2692,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateExternalContainerDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateExternalContainerDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExternalContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/CreateExternalContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateExternalContainerDatabaseResponse>
-                transformer = CreateExternalContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateExternalContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/CreateExternalContainerDatabase");
-
+                transformer =
+                        CreateExternalContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExternalContainerDatabaseRequest,
                         CreateExternalContainerDatabaseResponse>
@@ -2675,16 +2751,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateExternalDatabaseConnectorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateExternalDatabaseConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExternalDatabaseConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/CreateExternalDatabaseConnector");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateExternalDatabaseConnectorResponse>
-                transformer = CreateExternalDatabaseConnectorConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateExternalDatabaseConnector",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/CreateExternalDatabaseConnector");
-
+                transformer =
+                        CreateExternalDatabaseConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExternalDatabaseConnectorRequest,
                         CreateExternalDatabaseConnectorResponse>
@@ -2732,16 +2810,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateExternalNonContainerDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateExternalNonContainerDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExternalNonContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/CreateExternalNonContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateExternalNonContainerDatabaseResponse>
-                transformer = CreateExternalNonContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateExternalNonContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/CreateExternalNonContainerDatabase");
-
+                transformer =
+                        CreateExternalNonContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExternalNonContainerDatabaseRequest,
                         CreateExternalNonContainerDatabaseResponse>
@@ -2789,16 +2869,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateExternalPluggableDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateExternalPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExternalPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/CreateExternalPluggableDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateExternalPluggableDatabaseResponse>
-                transformer = CreateExternalPluggableDatabaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateExternalPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/CreateExternalPluggableDatabase");
-
+                transformer =
+                        CreateExternalPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExternalPluggableDatabaseRequest,
                         CreateExternalPluggableDatabaseResponse>
@@ -2844,15 +2926,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateKeyStoreConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateKeyStoreConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateKeyStoreResponse>
-                transformer = CreateKeyStoreConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateKeyStore",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/CreateKeyStore");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateKeyStore",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/CreateKeyStore");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateKeyStoreResponse>
+                transformer =
+                        CreateKeyStoreConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateKeyStoreRequest, CreateKeyStoreResponse>
                 handlerToUse = handler;
 
@@ -2894,16 +2977,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreatePluggableDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreatePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreatePluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/CreatePluggableDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreatePluggableDatabaseResponse>
-                transformer = CreatePluggableDatabaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreatePluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/CreatePluggableDatabase");
-
+                transformer =
+                        CreatePluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreatePluggableDatabaseRequest, CreatePluggableDatabaseResponse>
                 handlerToUse = handler;
@@ -2946,15 +3031,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVmClusterConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVmClusterResponse>
-                transformer = CreateVmClusterConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/CreateVmCluster");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/CreateVmCluster");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVmClusterResponse>
+                transformer =
+                        CreateVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateVmClusterRequest, CreateVmClusterResponse>
                 handlerToUse = handler;
 
@@ -2996,16 +3083,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateVmClusterNetworkConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/CreateVmClusterNetwork");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVmClusterNetworkResponse>
-                transformer = CreateVmClusterNetworkConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "CreateVmClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/CreateVmClusterNetwork");
-
+                transformer =
+                        CreateVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVmClusterNetworkRequest, CreateVmClusterNetworkResponse>
                 handlerToUse = handler;
@@ -3047,15 +3136,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DbNodeActionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DbNodeActionConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DbNodeActionResponse>
-                transformer = DbNodeActionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DbNodeAction",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/DbNodeAction");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DbNodeAction",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/DbNodeAction");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DbNodeActionResponse>
+                transformer =
+                        DbNodeActionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DbNodeActionRequest, DbNodeActionResponse>
                 handlerToUse = handler;
 
@@ -3092,15 +3182,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteAutonomousDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DeleteAutonomousDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAutonomousDatabaseResponse>
-                transformer = DeleteAutonomousDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DeleteAutonomousDatabase");
-
+                transformer =
+                        DeleteAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteAutonomousDatabaseRequest, DeleteAutonomousDatabaseResponse>
                 handlerToUse = handler;
@@ -3138,15 +3230,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteAutonomousVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/DeleteAutonomousVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAutonomousVmClusterResponse>
-                transformer = DeleteAutonomousVmClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/DeleteAutonomousVmCluster");
-
+                transformer =
+                        DeleteAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteAutonomousVmClusterRequest, DeleteAutonomousVmClusterResponse>
                 handlerToUse = handler;
@@ -3184,14 +3278,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/DeleteBackup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupResponse>
-                transformer = DeleteBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/DeleteBackup");
-
+                transformer =
+                        DeleteBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteBackupRequest, DeleteBackupResponse>
                 handlerToUse = handler;
 
@@ -3228,15 +3323,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteBackupDestinationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBackupDestinationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteBackupDestination",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/DeleteBackupDestination");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteBackupDestinationResponse>
-                transformer = DeleteBackupDestinationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteBackupDestination",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/DeleteBackupDestination");
-
+                transformer =
+                        DeleteBackupDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteBackupDestinationRequest, DeleteBackupDestinationResponse>
                 handlerToUse = handler;
@@ -3276,15 +3373,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteCloudAutonomousVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteCloudAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/DeleteCloudAutonomousVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteCloudAutonomousVmClusterResponse>
-                transformer = DeleteCloudAutonomousVmClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteCloudAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/DeleteCloudAutonomousVmCluster");
-
+                transformer =
+                        DeleteCloudAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteCloudAutonomousVmClusterRequest,
                         DeleteCloudAutonomousVmClusterResponse>
@@ -3326,15 +3425,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteCloudExadataInfrastructureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/DeleteCloudExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteCloudExadataInfrastructureResponse>
-                transformer = DeleteCloudExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteCloudExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/DeleteCloudExadataInfrastructure");
-
+                transformer =
+                        DeleteCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteCloudExadataInfrastructureRequest,
                         DeleteCloudExadataInfrastructureResponse>
@@ -3375,15 +3476,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteCloudVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCloudVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteCloudVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/DeleteCloudVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteCloudVmClusterResponse>
-                transformer = DeleteCloudVmClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteCloudVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/DeleteCloudVmCluster");
-
+                transformer =
+                        DeleteCloudVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteCloudVmClusterRequest, DeleteCloudVmClusterResponse>
                 handlerToUse = handler;
@@ -3421,15 +3524,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteConsoleConnectionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteConsoleConnectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteConsoleConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/DeleteConsoleConnection");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteConsoleConnectionResponse>
-                transformer = DeleteConsoleConnectionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteConsoleConnection",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/DeleteConsoleConnection");
-
+                transformer =
+                        DeleteConsoleConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteConsoleConnectionRequest, DeleteConsoleConnectionResponse>
                 handlerToUse = handler;
@@ -3467,14 +3572,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/DeleteDatabase");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDatabaseResponse>
-                transformer = DeleteDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/DeleteDatabase");
-
+                transformer =
+                        DeleteDatabaseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteDatabaseRequest, DeleteDatabaseResponse>
                 handlerToUse = handler;
 
@@ -3513,15 +3619,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteDatabaseSoftwareImageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDatabaseSoftwareImageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteDatabaseSoftwareImage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/DeleteDatabaseSoftwareImage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseSoftwareImageResponse>
-                transformer = DeleteDatabaseSoftwareImageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteDatabaseSoftwareImage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/DeleteDatabaseSoftwareImage");
-
+                transformer =
+                        DeleteDatabaseSoftwareImageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDatabaseSoftwareImageRequest, DeleteDatabaseSoftwareImageResponse>
                 handlerToUse = handler;
@@ -3559,14 +3667,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteDbHomeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDbHomeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteDbHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/DeleteDbHome");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDbHomeResponse>
-                transformer = DeleteDbHomeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteDbHome",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/DeleteDbHome");
-
+                transformer =
+                        DeleteDbHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteDbHomeRequest, DeleteDbHomeResponse>
                 handlerToUse = handler;
 
@@ -3605,15 +3714,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteExadataInfrastructureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/DeleteExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteExadataInfrastructureResponse>
-                transformer = DeleteExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/DeleteExadataInfrastructure");
-
+                transformer =
+                        DeleteExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteExadataInfrastructureRequest, DeleteExadataInfrastructureResponse>
                 handlerToUse = handler;
@@ -3654,15 +3765,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteExternalContainerDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteExternalContainerDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteExternalContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DeleteExternalContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteExternalContainerDatabaseResponse>
-                transformer = DeleteExternalContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteExternalContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DeleteExternalContainerDatabase");
-
+                transformer =
+                        DeleteExternalContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteExternalContainerDatabaseRequest,
                         DeleteExternalContainerDatabaseResponse>
@@ -3705,15 +3818,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteExternalDatabaseConnectorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteExternalDatabaseConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteExternalDatabaseConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/DeleteExternalDatabaseConnector");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteExternalDatabaseConnectorResponse>
-                transformer = DeleteExternalDatabaseConnectorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteExternalDatabaseConnector",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/DeleteExternalDatabaseConnector");
-
+                transformer =
+                        DeleteExternalDatabaseConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteExternalDatabaseConnectorRequest,
                         DeleteExternalDatabaseConnectorResponse>
@@ -3756,15 +3871,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteExternalNonContainerDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteExternalNonContainerDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteExternalNonContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DeleteExternalNonContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteExternalNonContainerDatabaseResponse>
-                transformer = DeleteExternalNonContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteExternalNonContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DeleteExternalNonContainerDatabase");
-
+                transformer =
+                        DeleteExternalNonContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteExternalNonContainerDatabaseRequest,
                         DeleteExternalNonContainerDatabaseResponse>
@@ -3807,15 +3924,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteExternalPluggableDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteExternalPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteExternalPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DeleteExternalPluggableDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteExternalPluggableDatabaseResponse>
-                transformer = DeleteExternalPluggableDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteExternalPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DeleteExternalPluggableDatabase");
-
+                transformer =
+                        DeleteExternalPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteExternalPluggableDatabaseRequest,
                         DeleteExternalPluggableDatabaseResponse>
@@ -3856,14 +3975,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteKeyStoreConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteKeyStoreConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteKeyStore",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/DeleteKeyStore");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteKeyStoreResponse>
-                transformer = DeleteKeyStoreConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteKeyStore",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/DeleteKeyStore");
-
+                transformer =
+                        DeleteKeyStoreConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteKeyStoreRequest, DeleteKeyStoreResponse>
                 handlerToUse = handler;
 
@@ -3900,15 +4020,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeletePluggableDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeletePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeletePluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/DeletePluggableDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeletePluggableDatabaseResponse>
-                transformer = DeletePluggableDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeletePluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/DeletePluggableDatabase");
-
+                transformer =
+                        DeletePluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeletePluggableDatabaseRequest, DeletePluggableDatabaseResponse>
                 handlerToUse = handler;
@@ -3946,14 +4068,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/DeleteVmCluster");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVmClusterResponse>
-                transformer = DeleteVmClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/DeleteVmCluster");
-
+                transformer =
+                        DeleteVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteVmClusterRequest, DeleteVmClusterResponse>
                 handlerToUse = handler;
 
@@ -3990,15 +4114,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DeleteVmClusterNetworkConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DeleteVmClusterNetwork");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteVmClusterNetworkResponse>
-                transformer = DeleteVmClusterNetworkConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeleteVmClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DeleteVmClusterNetwork");
-
+                transformer =
+                        DeleteVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteVmClusterNetworkRequest, DeleteVmClusterNetworkResponse>
                 handlerToUse = handler;
@@ -4039,15 +4165,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeregisterAutonomousDatabaseDataSafeConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeregisterAutonomousDatabaseDataSafe",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DeregisterAutonomousDatabaseDataSafe");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeregisterAutonomousDatabaseDataSafeResponse>
-                transformer = DeregisterAutonomousDatabaseDataSafeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DeregisterAutonomousDatabaseDataSafe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DeregisterAutonomousDatabaseDataSafe");
-
+                transformer =
+                        DeregisterAutonomousDatabaseDataSafeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeregisterAutonomousDatabaseDataSafeRequest,
                         DeregisterAutonomousDatabaseDataSafeResponse>
@@ -4096,15 +4224,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableAutonomousDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableAutonomousDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DisableAutonomousDatabaseManagement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DisableAutonomousDatabaseManagementResponse>
-                transformer = DisableAutonomousDatabaseManagementConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableAutonomousDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DisableAutonomousDatabaseManagement");
-
+                transformer =
+                        DisableAutonomousDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DisableAutonomousDatabaseManagementRequest,
                         DisableAutonomousDatabaseManagementResponse>
@@ -4148,16 +4278,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableAutonomousDatabaseOperationsInsightsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableAutonomousDatabaseOperationsInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DisableAutonomousDatabaseOperationsInsights");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         DisableAutonomousDatabaseOperationsInsightsResponse>
-                transformer = DisableAutonomousDatabaseOperationsInsightsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableAutonomousDatabaseOperationsInsights",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DisableAutonomousDatabaseOperationsInsights");
-
+                transformer =
+                        DisableAutonomousDatabaseOperationsInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DisableAutonomousDatabaseOperationsInsightsRequest,
                         DisableAutonomousDatabaseOperationsInsightsResponse>
@@ -4199,16 +4331,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DisableDatabaseManagementConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/DisableDatabaseManagement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DisableDatabaseManagementResponse>
-                transformer = DisableDatabaseManagementConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/DisableDatabaseManagement");
-
+                transformer =
+                        DisableDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DisableDatabaseManagementRequest, DisableDatabaseManagementResponse>
                 handlerToUse = handler;
@@ -4251,18 +4385,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalContainerDatabaseDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalContainerDatabaseDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseDatabaseManagement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         DisableExternalContainerDatabaseDatabaseManagementResponse>
                 transformer =
-                        DisableExternalContainerDatabaseDatabaseManagementConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalContainerDatabaseDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseDatabaseManagement");
-
+                        DisableExternalContainerDatabaseDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DisableExternalContainerDatabaseDatabaseManagementRequest,
                         DisableExternalContainerDatabaseDatabaseManagementResponse>
@@ -4307,18 +4442,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalContainerDatabaseStackMonitoringConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalContainerDatabaseStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseStackMonitoring");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         DisableExternalContainerDatabaseStackMonitoringResponse>
                 transformer =
-                        DisableExternalContainerDatabaseStackMonitoringConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalContainerDatabaseStackMonitoring",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseStackMonitoring");
-
+                        DisableExternalContainerDatabaseStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DisableExternalContainerDatabaseStackMonitoringRequest,
                         DisableExternalContainerDatabaseStackMonitoringResponse>
@@ -4365,19 +4501,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalNonContainerDatabaseDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalNonContainerDatabaseDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseDatabaseManagement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         DisableExternalNonContainerDatabaseDatabaseManagementResponse>
                 transformer =
-                        DisableExternalNonContainerDatabaseDatabaseManagementConverter
-                                .fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalNonContainerDatabaseDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseDatabaseManagement");
-
+                        DisableExternalNonContainerDatabaseDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DisableExternalNonContainerDatabaseDatabaseManagementRequest,
                         DisableExternalNonContainerDatabaseDatabaseManagementResponse>
@@ -4424,19 +4560,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalNonContainerDatabaseOperationsInsightsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalNonContainerDatabaseOperationsInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseOperationsInsights");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         DisableExternalNonContainerDatabaseOperationsInsightsResponse>
                 transformer =
-                        DisableExternalNonContainerDatabaseOperationsInsightsConverter
-                                .fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalNonContainerDatabaseOperationsInsights",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseOperationsInsights");
-
+                        DisableExternalNonContainerDatabaseOperationsInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DisableExternalNonContainerDatabaseOperationsInsightsRequest,
                         DisableExternalNonContainerDatabaseOperationsInsightsResponse>
@@ -4482,18 +4618,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalNonContainerDatabaseStackMonitoringConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalNonContainerDatabaseStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseStackMonitoring");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         DisableExternalNonContainerDatabaseStackMonitoringResponse>
                 transformer =
-                        DisableExternalNonContainerDatabaseStackMonitoringConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalNonContainerDatabaseStackMonitoring",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseStackMonitoring");
-
+                        DisableExternalNonContainerDatabaseStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DisableExternalNonContainerDatabaseStackMonitoringRequest,
                         DisableExternalNonContainerDatabaseStackMonitoringResponse>
@@ -4539,18 +4676,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalPluggableDatabaseDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalPluggableDatabaseDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseDatabaseManagement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         DisableExternalPluggableDatabaseDatabaseManagementResponse>
                 transformer =
-                        DisableExternalPluggableDatabaseDatabaseManagementConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalPluggableDatabaseDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseDatabaseManagement");
-
+                        DisableExternalPluggableDatabaseDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DisableExternalPluggableDatabaseDatabaseManagementRequest,
                         DisableExternalPluggableDatabaseDatabaseManagementResponse>
@@ -4596,18 +4734,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalPluggableDatabaseOperationsInsightsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalPluggableDatabaseOperationsInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseOperationsInsights");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         DisableExternalPluggableDatabaseOperationsInsightsResponse>
                 transformer =
-                        DisableExternalPluggableDatabaseOperationsInsightsConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalPluggableDatabaseOperationsInsights",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseOperationsInsights");
-
+                        DisableExternalPluggableDatabaseOperationsInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DisableExternalPluggableDatabaseOperationsInsightsRequest,
                         DisableExternalPluggableDatabaseOperationsInsightsResponse>
@@ -4652,18 +4791,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableExternalPluggableDatabaseStackMonitoringConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisableExternalPluggableDatabaseStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseStackMonitoring");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         DisableExternalPluggableDatabaseStackMonitoringResponse>
                 transformer =
-                        DisableExternalPluggableDatabaseStackMonitoringConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DisableExternalPluggableDatabaseStackMonitoring",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseStackMonitoring");
-
+                        DisableExternalPluggableDatabaseStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DisableExternalPluggableDatabaseStackMonitoringRequest,
                         DisableExternalPluggableDatabaseStackMonitoringResponse>
@@ -4718,16 +4858,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DownloadExadataInfrastructureConfigFileConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DownloadExadataInfrastructureConfigFile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/DownloadExadataInfrastructureConfigFile");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DownloadExadataInfrastructureConfigFileResponse>
-                transformer = DownloadExadataInfrastructureConfigFileConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DownloadExadataInfrastructureConfigFile",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/DownloadExadataInfrastructureConfigFile");
-
+                transformer =
+                        DownloadExadataInfrastructureConfigFileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DownloadExadataInfrastructureConfigFileRequest,
                         DownloadExadataInfrastructureConfigFileResponse>
@@ -4779,16 +4921,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DownloadValidationReportConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DownloadValidationReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DownloadValidationReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DownloadValidationReport");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DownloadValidationReportResponse>
-                transformer = DownloadValidationReportConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DownloadValidationReport",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DownloadValidationReport");
-
+                transformer =
+                        DownloadValidationReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DownloadValidationReportRequest, DownloadValidationReportResponse>
                 handlerToUse = handler;
@@ -4838,16 +4982,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DownloadVmClusterNetworkConfigFileConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DownloadVmClusterNetworkConfigFileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DownloadVmClusterNetworkConfigFile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DownloadVmClusterNetworkConfigFile");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DownloadVmClusterNetworkConfigFileResponse>
-                transformer = DownloadVmClusterNetworkConfigFileConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "DownloadVmClusterNetworkConfigFile",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DownloadVmClusterNetworkConfigFile");
-
+                transformer =
+                        DownloadVmClusterNetworkConfigFileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DownloadVmClusterNetworkConfigFileRequest,
                         DownloadVmClusterNetworkConfigFileResponse>
@@ -4890,15 +5036,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 EnableAutonomousDatabaseManagementConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableAutonomousDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableAutonomousDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/EnableAutonomousDatabaseManagement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, EnableAutonomousDatabaseManagementResponse>
-                transformer = EnableAutonomousDatabaseManagementConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableAutonomousDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/EnableAutonomousDatabaseManagement");
-
+                transformer =
+                        EnableAutonomousDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableAutonomousDatabaseManagementRequest,
                         EnableAutonomousDatabaseManagementResponse>
@@ -4942,16 +5090,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableAutonomousDatabaseOperationsInsightsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableAutonomousDatabaseOperationsInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/EnableAutonomousDatabaseOperationsInsights");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         EnableAutonomousDatabaseOperationsInsightsResponse>
-                transformer = EnableAutonomousDatabaseOperationsInsightsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableAutonomousDatabaseOperationsInsights",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/EnableAutonomousDatabaseOperationsInsights");
-
+                transformer =
+                        EnableAutonomousDatabaseOperationsInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableAutonomousDatabaseOperationsInsightsRequest,
                         EnableAutonomousDatabaseOperationsInsightsResponse>
@@ -4993,16 +5143,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 EnableDatabaseManagementConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/EnableDatabaseManagement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, EnableDatabaseManagementResponse>
-                transformer = EnableDatabaseManagementConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/EnableDatabaseManagement");
-
+                transformer =
+                        EnableDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableDatabaseManagementRequest, EnableDatabaseManagementResponse>
                 handlerToUse = handler;
@@ -5049,18 +5201,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalContainerDatabaseDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalContainerDatabaseDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseDatabaseManagement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         EnableExternalContainerDatabaseDatabaseManagementResponse>
                 transformer =
-                        EnableExternalContainerDatabaseDatabaseManagementConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalContainerDatabaseDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseDatabaseManagement");
-
+                        EnableExternalContainerDatabaseDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableExternalContainerDatabaseDatabaseManagementRequest,
                         EnableExternalContainerDatabaseDatabaseManagementResponse>
@@ -5111,18 +5264,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalContainerDatabaseStackMonitoringConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalContainerDatabaseStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseStackMonitoring");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         EnableExternalContainerDatabaseStackMonitoringResponse>
                 transformer =
-                        EnableExternalContainerDatabaseStackMonitoringConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalContainerDatabaseStackMonitoring",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseStackMonitoring");
-
+                        EnableExternalContainerDatabaseStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableExternalContainerDatabaseStackMonitoringRequest,
                         EnableExternalContainerDatabaseStackMonitoringResponse>
@@ -5174,19 +5328,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalNonContainerDatabaseDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalNonContainerDatabaseDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseDatabaseManagement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         EnableExternalNonContainerDatabaseDatabaseManagementResponse>
                 transformer =
-                        EnableExternalNonContainerDatabaseDatabaseManagementConverter
-                                .fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalNonContainerDatabaseDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseDatabaseManagement");
-
+                        EnableExternalNonContainerDatabaseDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableExternalNonContainerDatabaseDatabaseManagementRequest,
                         EnableExternalNonContainerDatabaseDatabaseManagementResponse>
@@ -5238,19 +5392,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalNonContainerDatabaseOperationsInsightsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalNonContainerDatabaseOperationsInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseOperationsInsights");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         EnableExternalNonContainerDatabaseOperationsInsightsResponse>
                 transformer =
-                        EnableExternalNonContainerDatabaseOperationsInsightsConverter
-                                .fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalNonContainerDatabaseOperationsInsights",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseOperationsInsights");
-
+                        EnableExternalNonContainerDatabaseOperationsInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableExternalNonContainerDatabaseOperationsInsightsRequest,
                         EnableExternalNonContainerDatabaseOperationsInsightsResponse>
@@ -5302,18 +5456,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalNonContainerDatabaseStackMonitoringConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalNonContainerDatabaseStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseStackMonitoring");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         EnableExternalNonContainerDatabaseStackMonitoringResponse>
                 transformer =
-                        EnableExternalNonContainerDatabaseStackMonitoringConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalNonContainerDatabaseStackMonitoring",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseStackMonitoring");
-
+                        EnableExternalNonContainerDatabaseStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableExternalNonContainerDatabaseStackMonitoringRequest,
                         EnableExternalNonContainerDatabaseStackMonitoringResponse>
@@ -5365,18 +5520,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalPluggableDatabaseDatabaseManagementConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalPluggableDatabaseDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseDatabaseManagement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         EnableExternalPluggableDatabaseDatabaseManagementResponse>
                 transformer =
-                        EnableExternalPluggableDatabaseDatabaseManagementConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalPluggableDatabaseDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseDatabaseManagement");
-
+                        EnableExternalPluggableDatabaseDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableExternalPluggableDatabaseDatabaseManagementRequest,
                         EnableExternalPluggableDatabaseDatabaseManagementResponse>
@@ -5428,18 +5584,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalPluggableDatabaseOperationsInsightsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalPluggableDatabaseOperationsInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseOperationsInsights");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         EnableExternalPluggableDatabaseOperationsInsightsResponse>
                 transformer =
-                        EnableExternalPluggableDatabaseOperationsInsightsConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalPluggableDatabaseOperationsInsights",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseOperationsInsights");
-
+                        EnableExternalPluggableDatabaseOperationsInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableExternalPluggableDatabaseOperationsInsightsRequest,
                         EnableExternalPluggableDatabaseOperationsInsightsResponse>
@@ -5490,18 +5647,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableExternalPluggableDatabaseStackMonitoringConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnableExternalPluggableDatabaseStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseStackMonitoring");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         EnableExternalPluggableDatabaseStackMonitoringResponse>
                 transformer =
-                        EnableExternalPluggableDatabaseStackMonitoringConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "EnableExternalPluggableDatabaseStackMonitoring",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseStackMonitoring");
-
+                        EnableExternalPluggableDatabaseStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableExternalPluggableDatabaseStackMonitoringRequest,
                         EnableExternalPluggableDatabaseStackMonitoringResponse>
@@ -5551,16 +5709,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 FailOverAutonomousDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 FailOverAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "FailOverAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/FailOverAutonomousDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, FailOverAutonomousDatabaseResponse>
-                transformer = FailOverAutonomousDatabaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "FailOverAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/FailOverAutonomousDatabase");
-
+                transformer =
+                        FailOverAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         FailOverAutonomousDatabaseRequest, FailOverAutonomousDatabaseResponse>
                 handlerToUse = handler;
@@ -5604,18 +5764,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 FailoverAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "FailoverAutonomousContainerDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/FailoverAutonomousContainerDatabaseDataguardAssociation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
                 transformer =
                         FailoverAutonomousContainerDatabaseDataguardAssociationConverter
-                                .fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "FailoverAutonomousContainerDatabaseDataguardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/FailoverAutonomousContainerDatabaseDataguardAssociation");
-
+                                .fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         FailoverAutonomousContainerDatabaseDataguardAssociationRequest,
                         FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
@@ -5659,15 +5819,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 FailoverDataGuardAssociationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 FailoverDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "FailoverDataGuardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/FailoverDataGuardAssociation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, FailoverDataGuardAssociationResponse>
-                transformer = FailoverDataGuardAssociationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "FailoverDataGuardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/FailoverDataGuardAssociation");
-
+                transformer =
+                        FailoverDataGuardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         FailoverDataGuardAssociationRequest, FailoverDataGuardAssociationResponse>
                 handlerToUse = handler;
@@ -5723,16 +5885,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GenerateAutonomousDatabaseWalletConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GenerateAutonomousDatabaseWalletConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GenerateAutonomousDatabaseWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/GenerateAutonomousDatabaseWallet");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateAutonomousDatabaseWalletResponse>
-                transformer = GenerateAutonomousDatabaseWalletConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GenerateAutonomousDatabaseWallet",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/GenerateAutonomousDatabaseWallet");
-
+                transformer =
+                        GenerateAutonomousDatabaseWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateAutonomousDatabaseWalletRequest,
                         GenerateAutonomousDatabaseWalletResponse>
@@ -5781,16 +5945,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GenerateRecommendedVmClusterNetworkConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GenerateRecommendedVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/GenerateRecommendedVmClusterNetwork");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateRecommendedVmClusterNetworkResponse>
-                transformer = GenerateRecommendedVmClusterNetworkConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GenerateRecommendedVmClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/GenerateRecommendedVmClusterNetwork");
-
+                transformer =
+                        GenerateRecommendedVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateRecommendedVmClusterNetworkRequest,
                         GenerateRecommendedVmClusterNetworkResponse>
@@ -5838,15 +6004,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetAutonomousContainerDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousContainerDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/GetAutonomousContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAutonomousContainerDatabaseResponse>
-                transformer = GetAutonomousContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/GetAutonomousContainerDatabase");
-
+                transformer =
+                        GetAutonomousContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAutonomousContainerDatabaseRequest,
                         GetAutonomousContainerDatabaseResponse>
@@ -5890,17 +6058,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousContainerDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/GetAutonomousContainerDatabaseDataguardAssociation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         GetAutonomousContainerDatabaseDataguardAssociationResponse>
                 transformer =
-                        GetAutonomousContainerDatabaseDataguardAssociationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousContainerDatabaseDataguardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/GetAutonomousContainerDatabaseDataguardAssociation");
-
+                        GetAutonomousContainerDatabaseDataguardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAutonomousContainerDatabaseDataguardAssociationRequest,
                         GetAutonomousContainerDatabaseDataguardAssociationResponse>
@@ -5942,15 +6111,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetAutonomousDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/GetAutonomousDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAutonomousDatabaseResponse>
-                transformer = GetAutonomousDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/GetAutonomousDatabase");
-
+                transformer =
+                        GetAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAutonomousDatabaseRequest, GetAutonomousDatabaseResponse>
                 handlerToUse = handler;
@@ -5990,15 +6161,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetAutonomousDatabaseBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousDatabaseBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousDatabaseBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/GetAutonomousDatabaseBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAutonomousDatabaseBackupResponse>
-                transformer = GetAutonomousDatabaseBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousDatabaseBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/GetAutonomousDatabaseBackup");
-
+                transformer =
+                        GetAutonomousDatabaseBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAutonomousDatabaseBackupRequest, GetAutonomousDatabaseBackupResponse>
                 handlerToUse = handler;
@@ -6040,16 +6213,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousDatabaseDataguardAssociationConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseDataguardAssociation/GetAutonomousDatabaseDataguardAssociation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         GetAutonomousDatabaseDataguardAssociationResponse>
-                transformer = GetAutonomousDatabaseDataguardAssociationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousDatabaseDataguardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseDataguardAssociation/GetAutonomousDatabaseDataguardAssociation");
-
+                transformer =
+                        GetAutonomousDatabaseDataguardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAutonomousDatabaseDataguardAssociationRequest,
                         GetAutonomousDatabaseDataguardAssociationResponse>
@@ -6094,15 +6269,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousDatabaseRegionalWalletConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousDatabaseRegionalWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/GetAutonomousDatabaseRegionalWallet");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAutonomousDatabaseRegionalWalletResponse>
-                transformer = GetAutonomousDatabaseRegionalWalletConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousDatabaseRegionalWallet",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/GetAutonomousDatabaseRegionalWallet");
-
+                transformer =
+                        GetAutonomousDatabaseRegionalWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAutonomousDatabaseRegionalWalletRequest,
                         GetAutonomousDatabaseRegionalWalletResponse>
@@ -6145,15 +6322,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetAutonomousDatabaseWalletConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousDatabaseWalletConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousDatabaseWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/GetAutonomousDatabaseWallet");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAutonomousDatabaseWalletResponse>
-                transformer = GetAutonomousDatabaseWalletConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousDatabaseWallet",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/GetAutonomousDatabaseWallet");
-
+                transformer =
+                        GetAutonomousDatabaseWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAutonomousDatabaseWalletRequest, GetAutonomousDatabaseWalletResponse>
                 handlerToUse = handler;
@@ -6194,15 +6373,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetAutonomousExadataInfrastructureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/GetAutonomousExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAutonomousExadataInfrastructureResponse>
-                transformer = GetAutonomousExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/GetAutonomousExadataInfrastructure");
-
+                transformer =
+                        GetAutonomousExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAutonomousExadataInfrastructureRequest,
                         GetAutonomousExadataInfrastructureResponse>
@@ -6243,14 +6424,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetAutonomousPatchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousPatchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousPatch/GetAutonomousPatch");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAutonomousPatchResponse>
-                transformer = GetAutonomousPatchConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousPatch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousPatch/GetAutonomousPatch");
-
+                transformer =
+                        GetAutonomousPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetAutonomousPatchRequest, GetAutonomousPatchResponse>
                 handlerToUse = handler;
 
@@ -6287,15 +6470,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetAutonomousVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/GetAutonomousVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAutonomousVmClusterResponse>
-                transformer = GetAutonomousVmClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/GetAutonomousVmCluster");
-
+                transformer =
+                        GetAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAutonomousVmClusterRequest, GetAutonomousVmClusterResponse>
                 handlerToUse = handler;
@@ -6331,14 +6516,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final GetBackupRequest interceptedRequest = GetBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/GetBackup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupResponse>
-                transformer = GetBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/GetBackup");
-
+                transformer =
+                        GetBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetBackupRequest, GetBackupResponse> handlerToUse =
                 handler;
 
@@ -6374,15 +6560,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetBackupDestinationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBackupDestinationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetBackupDestination",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/GetBackupDestination");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetBackupDestinationResponse>
-                transformer = GetBackupDestinationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetBackupDestination",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/GetBackupDestination");
-
+                transformer =
+                        GetBackupDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetBackupDestinationRequest, GetBackupDestinationResponse>
                 handlerToUse = handler;
@@ -6422,15 +6610,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetCloudAutonomousVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCloudAutonomousVmClusterResponse>
-                transformer = GetCloudAutonomousVmClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetCloudAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster");
-
+                transformer =
+                        GetCloudAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetCloudAutonomousVmClusterRequest, GetCloudAutonomousVmClusterResponse>
                 handlerToUse = handler;
@@ -6471,15 +6661,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetCloudExadataInfrastructureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/GetCloudExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCloudExadataInfrastructureResponse>
-                transformer = GetCloudExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetCloudExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/GetCloudExadataInfrastructure");
-
+                transformer =
+                        GetCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetCloudExadataInfrastructureRequest, GetCloudExadataInfrastructureResponse>
                 handlerToUse = handler;
@@ -6518,14 +6710,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetCloudVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCloudVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/GetCloudVmCluster");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCloudVmClusterResponse>
-                transformer = GetCloudVmClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetCloudVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/GetCloudVmCluster");
-
+                transformer =
+                        GetCloudVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCloudVmClusterRequest, GetCloudVmClusterResponse>
                 handlerToUse = handler;
 
@@ -6564,15 +6758,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetCloudVmClusterIormConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCloudVmClusterIormConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudVmClusterIormConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/GetCloudVmClusterIormConfig");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCloudVmClusterIormConfigResponse>
-                transformer = GetCloudVmClusterIormConfigConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetCloudVmClusterIormConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/GetCloudVmClusterIormConfig");
-
+                transformer =
+                        GetCloudVmClusterIormConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetCloudVmClusterIormConfigRequest, GetCloudVmClusterIormConfigResponse>
                 handlerToUse = handler;
@@ -6611,15 +6807,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetCloudVmClusterUpdateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCloudVmClusterUpdateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudVmClusterUpdate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Update/GetCloudVmClusterUpdate");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCloudVmClusterUpdateResponse>
-                transformer = GetCloudVmClusterUpdateConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetCloudVmClusterUpdate",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Update/GetCloudVmClusterUpdate");
-
+                transformer =
+                        GetCloudVmClusterUpdateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetCloudVmClusterUpdateRequest, GetCloudVmClusterUpdateResponse>
                 handlerToUse = handler;
@@ -6660,15 +6858,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCloudVmClusterUpdateHistoryEntryConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudVmClusterUpdateHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/UpdateHistoryEntry/GetCloudVmClusterUpdateHistoryEntry");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCloudVmClusterUpdateHistoryEntryResponse>
-                transformer = GetCloudVmClusterUpdateHistoryEntryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetCloudVmClusterUpdateHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/UpdateHistoryEntry/GetCloudVmClusterUpdateHistoryEntry");
-
+                transformer =
+                        GetCloudVmClusterUpdateHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetCloudVmClusterUpdateHistoryEntryRequest,
                         GetCloudVmClusterUpdateHistoryEntryResponse>
@@ -6709,15 +6909,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetConsoleConnectionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetConsoleConnectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetConsoleConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/GetConsoleConnection");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetConsoleConnectionResponse>
-                transformer = GetConsoleConnectionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetConsoleConnection",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/GetConsoleConnection");
-
+                transformer =
+                        GetConsoleConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetConsoleConnectionRequest, GetConsoleConnectionResponse>
                 handlerToUse = handler;
@@ -6755,15 +6957,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetDataGuardAssociationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDataGuardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/GetDataGuardAssociation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDataGuardAssociationResponse>
-                transformer = GetDataGuardAssociationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDataGuardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/GetDataGuardAssociation");
-
+                transformer =
+                        GetDataGuardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetDataGuardAssociationRequest, GetDataGuardAssociationResponse>
                 handlerToUse = handler;
@@ -6800,14 +7004,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/GetDatabase");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDatabaseResponse>
-                transformer = GetDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/GetDatabase");
-
+                transformer =
+                        GetDatabaseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDatabaseRequest, GetDatabaseResponse>
                 handlerToUse = handler;
 
@@ -6844,15 +7049,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetDatabaseSoftwareImageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDatabaseSoftwareImageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDatabaseSoftwareImage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/GetDatabaseSoftwareImage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDatabaseSoftwareImageResponse>
-                transformer = GetDatabaseSoftwareImageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDatabaseSoftwareImage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/GetDatabaseSoftwareImage");
-
+                transformer =
+                        GetDatabaseSoftwareImageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetDatabaseSoftwareImageRequest, GetDatabaseSoftwareImageResponse>
                 handlerToUse = handler;
@@ -6892,15 +7099,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetDatabaseUpgradeHistoryEntryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDatabaseUpgradeHistoryEntryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDatabaseUpgradeHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseUpgradeHistoryEntry/GetDatabaseUpgradeHistoryEntry");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDatabaseUpgradeHistoryEntryResponse>
-                transformer = GetDatabaseUpgradeHistoryEntryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDatabaseUpgradeHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseUpgradeHistoryEntry/GetDatabaseUpgradeHistoryEntry");
-
+                transformer =
+                        GetDatabaseUpgradeHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetDatabaseUpgradeHistoryEntryRequest,
                         GetDatabaseUpgradeHistoryEntryResponse>
@@ -6938,14 +7147,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final GetDbHomeRequest interceptedRequest = GetDbHomeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbHomeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/GetDbHome");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDbHomeResponse>
-                transformer = GetDbHomeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbHome",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/GetDbHome");
-
+                transformer =
+                        GetDbHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDbHomeRequest, GetDbHomeResponse> handlerToUse =
                 handler;
 
@@ -6981,14 +7191,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetDbHomePatchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbHomePatchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbHomePatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetDbHomePatch");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDbHomePatchResponse>
-                transformer = GetDbHomePatchConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbHomePatch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetDbHomePatch");
-
+                transformer =
+                        GetDbHomePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDbHomePatchRequest, GetDbHomePatchResponse>
                 handlerToUse = handler;
 
@@ -7027,15 +7238,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetDbHomePatchHistoryEntryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbHomePatchHistoryEntryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbHomePatchHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbHomePatchHistoryEntry");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDbHomePatchHistoryEntryResponse>
-                transformer = GetDbHomePatchHistoryEntryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbHomePatchHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbHomePatchHistoryEntry");
-
+                transformer =
+                        GetDbHomePatchHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetDbHomePatchHistoryEntryRequest, GetDbHomePatchHistoryEntryResponse>
                 handlerToUse = handler;
@@ -7072,14 +7285,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final GetDbNodeRequest interceptedRequest = GetDbNodeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbNodeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbNode",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/GetDbNode");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDbNodeResponse>
-                transformer = GetDbNodeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbNode",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/GetDbNode");
-
+                transformer =
+                        GetDbNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDbNodeRequest, GetDbNodeResponse> handlerToUse =
                 handler;
 
@@ -7114,14 +7328,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetDbServerConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbServerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbServer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbServer/GetDbServer");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDbServerResponse>
-                transformer = GetDbServerConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbServer",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbServer/GetDbServer");
-
+                transformer =
+                        GetDbServerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDbServerRequest, GetDbServerResponse>
                 handlerToUse = handler;
 
@@ -7157,14 +7372,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetDbSystemConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/GetDbSystem");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemResponse>
-                transformer = GetDbSystemConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbSystem",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/GetDbSystem");
-
+                transformer =
+                        GetDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDbSystemRequest, GetDbSystemResponse>
                 handlerToUse = handler;
 
@@ -7201,14 +7417,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetDbSystemPatchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbSystemPatchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbSystemPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetDbSystemPatch");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemPatchResponse>
-                transformer = GetDbSystemPatchConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbSystemPatch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetDbSystemPatch");
-
+                transformer =
+                        GetDbSystemPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDbSystemPatchRequest, GetDbSystemPatchResponse>
                 handlerToUse = handler;
 
@@ -7247,15 +7465,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetDbSystemPatchHistoryEntryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbSystemPatchHistoryEntryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbSystemPatchHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbSystemPatchHistoryEntry");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDbSystemPatchHistoryEntryResponse>
-                transformer = GetDbSystemPatchHistoryEntryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbSystemPatchHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbSystemPatchHistoryEntry");
-
+                transformer =
+                        GetDbSystemPatchHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetDbSystemPatchHistoryEntryRequest, GetDbSystemPatchHistoryEntryResponse>
                 handlerToUse = handler;
@@ -7296,15 +7516,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetDbSystemUpgradeHistoryEntryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDbSystemUpgradeHistoryEntryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetDbSystemUpgradeHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/GetDbSystemUpgradeHistoryEntry");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDbSystemUpgradeHistoryEntryResponse>
-                transformer = GetDbSystemUpgradeHistoryEntryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetDbSystemUpgradeHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/GetDbSystemUpgradeHistoryEntry");
-
+                transformer =
+                        GetDbSystemUpgradeHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetDbSystemUpgradeHistoryEntryRequest,
                         GetDbSystemUpgradeHistoryEntryResponse>
@@ -7344,15 +7566,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetExadataInfrastructureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/GetExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetExadataInfrastructureResponse>
-                transformer = GetExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/GetExadataInfrastructure");
-
+                transformer =
+                        GetExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetExadataInfrastructureRequest, GetExadataInfrastructureResponse>
                 handlerToUse = handler;
@@ -7392,15 +7616,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetExadataInfrastructureOcpusConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExadataInfrastructureOcpusConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExadataInfrastructureOcpus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OCPUs/GetExadataInfrastructureOcpus");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetExadataInfrastructureOcpusResponse>
-                transformer = GetExadataInfrastructureOcpusConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExadataInfrastructureOcpus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/OCPUs/GetExadataInfrastructureOcpus");
-
+                transformer =
+                        GetExadataInfrastructureOcpusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetExadataInfrastructureOcpusRequest, GetExadataInfrastructureOcpusResponse>
                 handlerToUse = handler;
@@ -7439,15 +7665,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetExadataIormConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExadataIormConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExadataIormConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/GetExadataIormConfig");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetExadataIormConfigResponse>
-                transformer = GetExadataIormConfigConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExadataIormConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/GetExadataIormConfig");
-
+                transformer =
+                        GetExadataIormConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetExadataIormConfigRequest, GetExadataIormConfigResponse>
                 handlerToUse = handler;
@@ -7485,15 +7713,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetExternalBackupJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExternalBackupJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExternalBackupJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/GetExternalBackupJob");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetExternalBackupJobResponse>
-                transformer = GetExternalBackupJobConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExternalBackupJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/GetExternalBackupJob");
-
+                transformer =
+                        GetExternalBackupJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetExternalBackupJobRequest, GetExternalBackupJobResponse>
                 handlerToUse = handler;
@@ -7533,15 +7763,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetExternalContainerDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExternalContainerDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExternalContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/GetExternalContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetExternalContainerDatabaseResponse>
-                transformer = GetExternalContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExternalContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/GetExternalContainerDatabase");
-
+                transformer =
+                        GetExternalContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetExternalContainerDatabaseRequest, GetExternalContainerDatabaseResponse>
                 handlerToUse = handler;
@@ -7582,15 +7814,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetExternalDatabaseConnectorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExternalDatabaseConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExternalDatabaseConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/GetExternalDatabaseConnector");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetExternalDatabaseConnectorResponse>
-                transformer = GetExternalDatabaseConnectorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExternalDatabaseConnector",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/GetExternalDatabaseConnector");
-
+                transformer =
+                        GetExternalDatabaseConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetExternalDatabaseConnectorRequest, GetExternalDatabaseConnectorResponse>
                 handlerToUse = handler;
@@ -7631,15 +7865,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetExternalNonContainerDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExternalNonContainerDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExternalNonContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/GetExternalNonContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetExternalNonContainerDatabaseResponse>
-                transformer = GetExternalNonContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExternalNonContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/GetExternalNonContainerDatabase");
-
+                transformer =
+                        GetExternalNonContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetExternalNonContainerDatabaseRequest,
                         GetExternalNonContainerDatabaseResponse>
@@ -7682,15 +7918,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetExternalPluggableDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetExternalPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExternalPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/GetExternalPluggableDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetExternalPluggableDatabaseResponse>
-                transformer = GetExternalPluggableDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetExternalPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/GetExternalPluggableDatabase");
-
+                transformer =
+                        GetExternalPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetExternalPluggableDatabaseRequest, GetExternalPluggableDatabaseResponse>
                 handlerToUse = handler;
@@ -7728,14 +7966,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetKeyStoreConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetKeyStoreConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetKeyStore",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/GetKeyStore");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetKeyStoreResponse>
-                transformer = GetKeyStoreConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetKeyStore",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/GetKeyStore");
-
+                transformer =
+                        GetKeyStoreConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetKeyStoreRequest, GetKeyStoreResponse>
                 handlerToUse = handler;
 
@@ -7772,14 +8011,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetMaintenanceRunConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetMaintenanceRunConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetMaintenanceRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/GetMaintenanceRun");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetMaintenanceRunResponse>
-                transformer = GetMaintenanceRunConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetMaintenanceRun",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/GetMaintenanceRun");
-
+                transformer =
+                        GetMaintenanceRunConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetMaintenanceRunRequest, GetMaintenanceRunResponse>
                 handlerToUse = handler;
 
@@ -7818,15 +8059,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetPdbConversionHistoryEntryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPdbConversionHistoryEntryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetPdbConversionHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PdbConversionHistoryEntry/GetPdbConversionHistoryEntry");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetPdbConversionHistoryEntryResponse>
-                transformer = GetPdbConversionHistoryEntryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetPdbConversionHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PdbConversionHistoryEntry/GetPdbConversionHistoryEntry");
-
+                transformer =
+                        GetPdbConversionHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetPdbConversionHistoryEntryRequest, GetPdbConversionHistoryEntryResponse>
                 handlerToUse = handler;
@@ -7865,15 +8108,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetPluggableDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/GetPluggableDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetPluggableDatabaseResponse>
-                transformer = GetPluggableDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/GetPluggableDatabase");
-
+                transformer =
+                        GetPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetPluggableDatabaseRequest, GetPluggableDatabaseResponse>
                 handlerToUse = handler;
@@ -7910,14 +8155,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/GetVmCluster");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterResponse>
-                transformer = GetVmClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/GetVmCluster");
-
+                transformer =
+                        GetVmClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetVmClusterRequest, GetVmClusterResponse>
                 handlerToUse = handler;
 
@@ -7954,15 +8200,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetVmClusterNetworkConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/GetVmClusterNetwork");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVmClusterNetworkResponse>
-                transformer = GetVmClusterNetworkConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetVmClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/GetVmClusterNetwork");
-
+                transformer =
+                        GetVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetVmClusterNetworkRequest, GetVmClusterNetworkResponse>
                 handlerToUse = handler;
@@ -8000,14 +8248,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetVmClusterPatchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVmClusterPatchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetVmClusterPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetVmClusterPatch");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterPatchResponse>
-                transformer = GetVmClusterPatchConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetVmClusterPatch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetVmClusterPatch");
-
+                transformer =
+                        GetVmClusterPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetVmClusterPatchRequest, GetVmClusterPatchResponse>
                 handlerToUse = handler;
 
@@ -8046,15 +8296,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetVmClusterPatchHistoryEntryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVmClusterPatchHistoryEntryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetVmClusterPatchHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetVmClusterPatchHistoryEntry");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVmClusterPatchHistoryEntryResponse>
-                transformer = GetVmClusterPatchHistoryEntryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetVmClusterPatchHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetVmClusterPatchHistoryEntry");
-
+                transformer =
+                        GetVmClusterPatchHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetVmClusterPatchHistoryEntryRequest, GetVmClusterPatchHistoryEntryResponse>
                 handlerToUse = handler;
@@ -8093,14 +8345,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetVmClusterUpdateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVmClusterUpdateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetVmClusterUpdate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdate/GetVmClusterUpdate");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterUpdateResponse>
-                transformer = GetVmClusterUpdateConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetVmClusterUpdate",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdate/GetVmClusterUpdate");
-
+                transformer =
+                        GetVmClusterUpdateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetVmClusterUpdateRequest, GetVmClusterUpdateResponse>
                 handlerToUse = handler;
 
@@ -8139,15 +8393,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 GetVmClusterUpdateHistoryEntryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVmClusterUpdateHistoryEntryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetVmClusterUpdateHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdateHistoryEntry/GetVmClusterUpdateHistoryEntry");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVmClusterUpdateHistoryEntryResponse>
-                transformer = GetVmClusterUpdateHistoryEntryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "GetVmClusterUpdateHistoryEntry",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdateHistoryEntry/GetVmClusterUpdateHistoryEntry");
-
+                transformer =
+                        GetVmClusterUpdateHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetVmClusterUpdateHistoryEntryRequest,
                         GetVmClusterUpdateHistoryEntryResponse>
@@ -8190,16 +8446,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 LaunchAutonomousExadataInfrastructureConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "LaunchAutonomousExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/LaunchAutonomousExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, LaunchAutonomousExadataInfrastructureResponse>
-                transformer = LaunchAutonomousExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "LaunchAutonomousExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/LaunchAutonomousExadataInfrastructure");
-
+                transformer =
+                        LaunchAutonomousExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         LaunchAutonomousExadataInfrastructureRequest,
                         LaunchAutonomousExadataInfrastructureResponse>
@@ -8246,15 +8504,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 LaunchDbSystemConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 LaunchDbSystemConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, LaunchDbSystemResponse>
-                transformer = LaunchDbSystemConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "LaunchDbSystem",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/LaunchDbSystem");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "LaunchDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/LaunchDbSystem");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, LaunchDbSystemResponse>
+                transformer =
+                        LaunchDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<LaunchDbSystemRequest, LaunchDbSystemResponse>
                 handlerToUse = handler;
 
@@ -8300,18 +8559,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousContainerDatabaseDataguardAssociationsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousContainerDatabaseDataguardAssociations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/ListAutonomousContainerDatabaseDataguardAssociations");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ListAutonomousContainerDatabaseDataguardAssociationsResponse>
                 transformer =
-                        ListAutonomousContainerDatabaseDataguardAssociationsConverter
-                                .fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousContainerDatabaseDataguardAssociations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/ListAutonomousContainerDatabaseDataguardAssociations");
-
+                        ListAutonomousContainerDatabaseDataguardAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutonomousContainerDatabaseDataguardAssociationsRequest,
                         ListAutonomousContainerDatabaseDataguardAssociationsResponse>
@@ -8355,15 +8614,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListAutonomousContainerDatabasesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousContainerDatabasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousContainerDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ListAutonomousContainerDatabases");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutonomousContainerDatabasesResponse>
-                transformer = ListAutonomousContainerDatabasesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousContainerDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ListAutonomousContainerDatabases");
-
+                transformer =
+                        ListAutonomousContainerDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutonomousContainerDatabasesRequest,
                         ListAutonomousContainerDatabasesResponse>
@@ -8406,15 +8667,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListAutonomousDatabaseBackupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDatabaseBackupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDatabaseBackups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/ListAutonomousDatabaseBackups");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutonomousDatabaseBackupsResponse>
-                transformer = ListAutonomousDatabaseBackupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDatabaseBackups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/ListAutonomousDatabaseBackups");
-
+                transformer =
+                        ListAutonomousDatabaseBackupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutonomousDatabaseBackupsRequest, ListAutonomousDatabaseBackupsResponse>
                 handlerToUse = handler;
@@ -8456,15 +8719,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDatabaseCharacterSetsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDatabaseCharacterSets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutonomousDatabaseCharacterSetsResponse>
-                transformer = ListAutonomousDatabaseCharacterSetsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDatabaseCharacterSets",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets");
-
+                transformer =
+                        ListAutonomousDatabaseCharacterSetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutonomousDatabaseCharacterSetsRequest,
                         ListAutonomousDatabaseCharacterSetsResponse>
@@ -8507,15 +8772,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListAutonomousDatabaseClonesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDatabaseClonesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDatabaseClones",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabaseClones");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutonomousDatabaseClonesResponse>
-                transformer = ListAutonomousDatabaseClonesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDatabaseClones",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabaseClones");
-
+                transformer =
+                        ListAutonomousDatabaseClonesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutonomousDatabaseClonesRequest, ListAutonomousDatabaseClonesResponse>
                 handlerToUse = handler;
@@ -8557,16 +8824,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDatabaseDataguardAssociationsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDatabaseDataguardAssociations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseDataguardAssociation/ListAutonomousDatabaseDataguardAssociations");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ListAutonomousDatabaseDataguardAssociationsResponse>
-                transformer = ListAutonomousDatabaseDataguardAssociationsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDatabaseDataguardAssociations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseDataguardAssociation/ListAutonomousDatabaseDataguardAssociations");
-
+                transformer =
+                        ListAutonomousDatabaseDataguardAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutonomousDatabaseDataguardAssociationsRequest,
                         ListAutonomousDatabaseDataguardAssociationsResponse>
@@ -8608,15 +8877,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListAutonomousDatabasesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDatabasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabases");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutonomousDatabasesResponse>
-                transformer = ListAutonomousDatabasesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabases");
-
+                transformer =
+                        ListAutonomousDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutonomousDatabasesRequest, ListAutonomousDatabasesResponse>
                 handlerToUse = handler;
@@ -8656,15 +8927,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListAutonomousDbPreviewVersionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDbPreviewVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDbPreviewVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDbPreviewVersionSummary/ListAutonomousDbPreviewVersions");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutonomousDbPreviewVersionsResponse>
-                transformer = ListAutonomousDbPreviewVersionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDbPreviewVersions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDbPreviewVersionSummary/ListAutonomousDbPreviewVersions");
-
+                transformer =
+                        ListAutonomousDbPreviewVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutonomousDbPreviewVersionsRequest,
                         ListAutonomousDbPreviewVersionsResponse>
@@ -8705,15 +8978,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListAutonomousDbVersionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousDbVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDbVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDbVersionSummary/ListAutonomousDbVersions");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutonomousDbVersionsResponse>
-                transformer = ListAutonomousDbVersionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousDbVersions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDbVersionSummary/ListAutonomousDbVersions");
-
+                transformer =
+                        ListAutonomousDbVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutonomousDbVersionsRequest, ListAutonomousDbVersionsResponse>
                 handlerToUse = handler;
@@ -8754,16 +9029,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousExadataInfrastructureShapesConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousExadataInfrastructureShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructureShapeSummary/ListAutonomousExadataInfrastructureShapes");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ListAutonomousExadataInfrastructureShapesResponse>
-                transformer = ListAutonomousExadataInfrastructureShapesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousExadataInfrastructureShapes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructureShapeSummary/ListAutonomousExadataInfrastructureShapes");
-
+                transformer =
+                        ListAutonomousExadataInfrastructureShapesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutonomousExadataInfrastructureShapesRequest,
                         ListAutonomousExadataInfrastructureShapesResponse>
@@ -8808,15 +9085,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousExadataInfrastructuresConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousExadataInfrastructures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/ListAutonomousExadataInfrastructures");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutonomousExadataInfrastructuresResponse>
-                transformer = ListAutonomousExadataInfrastructuresConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousExadataInfrastructures",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/ListAutonomousExadataInfrastructures");
-
+                transformer =
+                        ListAutonomousExadataInfrastructuresConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutonomousExadataInfrastructuresRequest,
                         ListAutonomousExadataInfrastructuresResponse>
@@ -8857,15 +9136,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListAutonomousVmClustersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAutonomousVmClustersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousVmClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ListAutonomousVmClusters");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutonomousVmClustersResponse>
-                transformer = ListAutonomousVmClustersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListAutonomousVmClusters",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ListAutonomousVmClusters");
-
+                transformer =
+                        ListAutonomousVmClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutonomousVmClustersRequest, ListAutonomousVmClustersResponse>
                 handlerToUse = handler;
@@ -8903,15 +9184,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListBackupDestinationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBackupDestinationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListBackupDestination",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestinationSummary/ListBackupDestination");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListBackupDestinationResponse>
-                transformer = ListBackupDestinationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListBackupDestination",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestinationSummary/ListBackupDestination");
-
+                transformer =
+                        ListBackupDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListBackupDestinationRequest, ListBackupDestinationResponse>
                 handlerToUse = handler;
@@ -8948,14 +9231,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListBackupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBackupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListBackups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/ListBackups");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupsResponse>
-                transformer = ListBackupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListBackups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/ListBackups");
-
+                transformer =
+                        ListBackupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListBackupsRequest, ListBackupsResponse>
                 handlerToUse = handler;
 
@@ -8994,15 +9278,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListCloudAutonomousVmClustersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCloudAutonomousVmClustersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListCloudAutonomousVmClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCloudAutonomousVmClustersResponse>
-                transformer = ListCloudAutonomousVmClustersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListCloudAutonomousVmClusters",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters");
-
+                transformer =
+                        ListCloudAutonomousVmClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListCloudAutonomousVmClustersRequest, ListCloudAutonomousVmClustersResponse>
                 handlerToUse = handler;
@@ -9043,15 +9329,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListCloudExadataInfrastructuresConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCloudExadataInfrastructuresConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListCloudExadataInfrastructures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ListCloudExadataInfrastructures");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCloudExadataInfrastructuresResponse>
-                transformer = ListCloudExadataInfrastructuresConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListCloudExadataInfrastructures",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ListCloudExadataInfrastructures");
-
+                transformer =
+                        ListCloudExadataInfrastructuresConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListCloudExadataInfrastructuresRequest,
                         ListCloudExadataInfrastructuresResponse>
@@ -9095,15 +9383,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCloudVmClusterUpdateHistoryEntriesConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListCloudVmClusterUpdateHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/UpdateHistoryEntry/ListCloudVmClusterUpdateHistoryEntries");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCloudVmClusterUpdateHistoryEntriesResponse>
-                transformer = ListCloudVmClusterUpdateHistoryEntriesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListCloudVmClusterUpdateHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/UpdateHistoryEntry/ListCloudVmClusterUpdateHistoryEntries");
-
+                transformer =
+                        ListCloudVmClusterUpdateHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListCloudVmClusterUpdateHistoryEntriesRequest,
                         ListCloudVmClusterUpdateHistoryEntriesResponse>
@@ -9144,15 +9434,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListCloudVmClusterUpdatesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCloudVmClusterUpdatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListCloudVmClusterUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Update/ListCloudVmClusterUpdates");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCloudVmClusterUpdatesResponse>
-                transformer = ListCloudVmClusterUpdatesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListCloudVmClusterUpdates",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Update/ListCloudVmClusterUpdates");
-
+                transformer =
+                        ListCloudVmClusterUpdatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListCloudVmClusterUpdatesRequest, ListCloudVmClusterUpdatesResponse>
                 handlerToUse = handler;
@@ -9191,15 +9483,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListCloudVmClustersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCloudVmClustersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListCloudVmClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ListCloudVmClusters");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCloudVmClustersResponse>
-                transformer = ListCloudVmClustersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListCloudVmClusters",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ListCloudVmClusters");
-
+                transformer =
+                        ListCloudVmClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListCloudVmClustersRequest, ListCloudVmClustersResponse>
                 handlerToUse = handler;
@@ -9237,15 +9531,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListConsoleConnectionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListConsoleConnectionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListConsoleConnections",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/ListConsoleConnections");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListConsoleConnectionsResponse>
-                transformer = ListConsoleConnectionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListConsoleConnections",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/ListConsoleConnections");
-
+                transformer =
+                        ListConsoleConnectionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListConsoleConnectionsRequest, ListConsoleConnectionsResponse>
                 handlerToUse = handler;
@@ -9285,15 +9581,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListContainerDatabasePatchesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListContainerDatabasePatchesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListContainerDatabasePatches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousPatch/ListContainerDatabasePatches");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListContainerDatabasePatchesResponse>
-                transformer = ListContainerDatabasePatchesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListContainerDatabasePatches",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousPatch/ListContainerDatabasePatches");
-
+                transformer =
+                        ListContainerDatabasePatchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListContainerDatabasePatchesRequest, ListContainerDatabasePatchesResponse>
                 handlerToUse = handler;
@@ -9332,15 +9630,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDataGuardAssociationsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDataGuardAssociationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDataGuardAssociations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/ListDataGuardAssociations");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDataGuardAssociationsResponse>
-                transformer = ListDataGuardAssociationsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDataGuardAssociations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/ListDataGuardAssociations");
-
+                transformer =
+                        ListDataGuardAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDataGuardAssociationsRequest, ListDataGuardAssociationsResponse>
                 handlerToUse = handler;
@@ -9381,15 +9681,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDatabaseSoftwareImagesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDatabaseSoftwareImagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDatabaseSoftwareImages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/ListDatabaseSoftwareImages");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDatabaseSoftwareImagesResponse>
-                transformer = ListDatabaseSoftwareImagesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDatabaseSoftwareImages",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/ListDatabaseSoftwareImages");
-
+                transformer =
+                        ListDatabaseSoftwareImagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDatabaseSoftwareImagesRequest, ListDatabaseSoftwareImagesResponse>
                 handlerToUse = handler;
@@ -9430,15 +9732,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDatabaseUpgradeHistoryEntriesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDatabaseUpgradeHistoryEntriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDatabaseUpgradeHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListDatabaseUpgradeHistoryEntries");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDatabaseUpgradeHistoryEntriesResponse>
-                transformer = ListDatabaseUpgradeHistoryEntriesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDatabaseUpgradeHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListDatabaseUpgradeHistoryEntries");
-
+                transformer =
+                        ListDatabaseUpgradeHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDatabaseUpgradeHistoryEntriesRequest,
                         ListDatabaseUpgradeHistoryEntriesResponse>
@@ -9478,14 +9782,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDatabasesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDatabasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListDatabases");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDatabasesResponse>
-                transformer = ListDatabasesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListDatabases");
-
+                transformer =
+                        ListDatabasesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDatabasesRequest, ListDatabasesResponse>
                 handlerToUse = handler;
 
@@ -9524,15 +9829,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbHomePatchHistoryEntriesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbHomePatchHistoryEntriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbHomePatchHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListDbHomePatchHistoryEntries");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDbHomePatchHistoryEntriesResponse>
-                transformer = ListDbHomePatchHistoryEntriesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbHomePatchHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListDbHomePatchHistoryEntries");
-
+                transformer =
+                        ListDbHomePatchHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDbHomePatchHistoryEntriesRequest, ListDbHomePatchHistoryEntriesResponse>
                 handlerToUse = handler;
@@ -9571,14 +9878,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbHomePatchesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbHomePatchesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbHomePatches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListDbHomePatches");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbHomePatchesResponse>
-                transformer = ListDbHomePatchesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbHomePatches",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListDbHomePatches");
-
+                transformer =
+                        ListDbHomePatchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDbHomePatchesRequest, ListDbHomePatchesResponse>
                 handlerToUse = handler;
 
@@ -9614,14 +9923,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbHomesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbHomesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbHomes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/ListDbHomes");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbHomesResponse>
-                transformer = ListDbHomesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbHomes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/ListDbHomes");
-
+                transformer =
+                        ListDbHomesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDbHomesRequest, ListDbHomesResponse>
                 handlerToUse = handler;
 
@@ -9657,14 +9967,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbNodesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbNodesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbNodes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/ListDbNodes");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbNodesResponse>
-                transformer = ListDbNodesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbNodes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/ListDbNodes");
-
+                transformer =
+                        ListDbNodesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDbNodesRequest, ListDbNodesResponse>
                 handlerToUse = handler;
 
@@ -9700,14 +10011,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbServersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbServersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbServers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbServer/ListDbServers");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbServersResponse>
-                transformer = ListDbServersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbServers",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbServer/ListDbServers");
-
+                transformer =
+                        ListDbServersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDbServersRequest, ListDbServersResponse>
                 handlerToUse = handler;
 
@@ -9746,15 +10058,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbSystemComputePerformancesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemComputePerformancesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystemComputePerformances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemComputePerformanceSummary/ListDbSystemComputePerformances");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDbSystemComputePerformancesResponse>
-                transformer = ListDbSystemComputePerformancesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystemComputePerformances",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemComputePerformanceSummary/ListDbSystemComputePerformances");
-
+                transformer =
+                        ListDbSystemComputePerformancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDbSystemComputePerformancesRequest,
                         ListDbSystemComputePerformancesResponse>
@@ -9797,15 +10111,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbSystemPatchHistoryEntriesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemPatchHistoryEntriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystemPatchHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListDbSystemPatchHistoryEntries");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDbSystemPatchHistoryEntriesResponse>
-                transformer = ListDbSystemPatchHistoryEntriesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystemPatchHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListDbSystemPatchHistoryEntries");
-
+                transformer =
+                        ListDbSystemPatchHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDbSystemPatchHistoryEntriesRequest,
                         ListDbSystemPatchHistoryEntriesResponse>
@@ -9846,15 +10162,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbSystemPatchesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemPatchesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystemPatches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListDbSystemPatches");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDbSystemPatchesResponse>
-                transformer = ListDbSystemPatchesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystemPatches",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListDbSystemPatches");
-
+                transformer =
+                        ListDbSystemPatchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDbSystemPatchesRequest, ListDbSystemPatchesResponse>
                 handlerToUse = handler;
@@ -9892,14 +10210,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbSystemShapesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemShapesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystemShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemShapeSummary/ListDbSystemShapes");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemShapesResponse>
-                transformer = ListDbSystemShapesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystemShapes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemShapeSummary/ListDbSystemShapes");
-
+                transformer =
+                        ListDbSystemShapesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDbSystemShapesRequest, ListDbSystemShapesResponse>
                 handlerToUse = handler;
 
@@ -9938,15 +10258,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbSystemStoragePerformancesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemStoragePerformancesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystemStoragePerformances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemStoragePerformanceSummary/ListDbSystemStoragePerformances");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDbSystemStoragePerformancesResponse>
-                transformer = ListDbSystemStoragePerformancesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystemStoragePerformances",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemStoragePerformanceSummary/ListDbSystemStoragePerformances");
-
+                transformer =
+                        ListDbSystemStoragePerformancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDbSystemStoragePerformancesRequest,
                         ListDbSystemStoragePerformancesResponse>
@@ -9989,15 +10311,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbSystemUpgradeHistoryEntriesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemUpgradeHistoryEntriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystemUpgradeHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/ListDbSystemUpgradeHistoryEntries");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDbSystemUpgradeHistoryEntriesResponse>
-                transformer = ListDbSystemUpgradeHistoryEntriesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystemUpgradeHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/ListDbSystemUpgradeHistoryEntries");
-
+                transformer =
+                        ListDbSystemUpgradeHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDbSystemUpgradeHistoryEntriesRequest,
                         ListDbSystemUpgradeHistoryEntriesResponse>
@@ -10037,14 +10361,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbSystemsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbSystemsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbSystems",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystems");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemsResponse>
-                transformer = ListDbSystemsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbSystems",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystems");
-
+                transformer =
+                        ListDbSystemsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDbSystemsRequest, ListDbSystemsResponse>
                 handlerToUse = handler;
 
@@ -10081,14 +10406,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListDbVersionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListDbVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbVersionsResponse>
-                transformer = ListDbVersionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListDbVersions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions");
-
+                transformer =
+                        ListDbVersionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDbVersionsRequest, ListDbVersionsResponse>
                 handlerToUse = handler;
 
@@ -10127,15 +10453,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListExadataInfrastructuresConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListExadataInfrastructuresConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExadataInfrastructures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ListExadataInfrastructures");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListExadataInfrastructuresResponse>
-                transformer = ListExadataInfrastructuresConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListExadataInfrastructures",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ListExadataInfrastructures");
-
+                transformer =
+                        ListExadataInfrastructuresConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListExadataInfrastructuresRequest, ListExadataInfrastructuresResponse>
                 handlerToUse = handler;
@@ -10176,15 +10504,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListExternalContainerDatabasesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListExternalContainerDatabasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExternalContainerDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ListExternalContainerDatabases");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListExternalContainerDatabasesResponse>
-                transformer = ListExternalContainerDatabasesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListExternalContainerDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ListExternalContainerDatabases");
-
+                transformer =
+                        ListExternalContainerDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListExternalContainerDatabasesRequest,
                         ListExternalContainerDatabasesResponse>
@@ -10226,15 +10556,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListExternalDatabaseConnectorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListExternalDatabaseConnectorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExternalDatabaseConnectors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/ListExternalDatabaseConnectors");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListExternalDatabaseConnectorsResponse>
-                transformer = ListExternalDatabaseConnectorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListExternalDatabaseConnectors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/ListExternalDatabaseConnectors");
-
+                transformer =
+                        ListExternalDatabaseConnectorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListExternalDatabaseConnectorsRequest,
                         ListExternalDatabaseConnectorsResponse>
@@ -10276,15 +10608,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListExternalNonContainerDatabasesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListExternalNonContainerDatabasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExternalNonContainerDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/ListExternalNonContainerDatabases");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListExternalNonContainerDatabasesResponse>
-                transformer = ListExternalNonContainerDatabasesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListExternalNonContainerDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/ListExternalNonContainerDatabases");
-
+                transformer =
+                        ListExternalNonContainerDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListExternalNonContainerDatabasesRequest,
                         ListExternalNonContainerDatabasesResponse>
@@ -10327,15 +10661,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListExternalPluggableDatabasesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListExternalPluggableDatabasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExternalPluggableDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/ListExternalPluggableDatabases");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListExternalPluggableDatabasesResponse>
-                transformer = ListExternalPluggableDatabasesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListExternalPluggableDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/ListExternalPluggableDatabases");
-
+                transformer =
+                        ListExternalPluggableDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListExternalPluggableDatabasesRequest,
                         ListExternalPluggableDatabasesResponse>
@@ -10375,14 +10711,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListFlexComponentsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListFlexComponentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListFlexComponents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/FlexComponentCollection/ListFlexComponents");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListFlexComponentsResponse>
-                transformer = ListFlexComponentsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListFlexComponents",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/FlexComponentCollection/ListFlexComponents");
-
+                transformer =
+                        ListFlexComponentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListFlexComponentsRequest, ListFlexComponentsResponse>
                 handlerToUse = handler;
 
@@ -10419,14 +10757,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListGiVersionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListGiVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListGiVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiVersionSummary/ListGiVersions");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListGiVersionsResponse>
-                transformer = ListGiVersionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListGiVersions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiVersionSummary/ListGiVersions");
-
+                transformer =
+                        ListGiVersionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListGiVersionsRequest, ListGiVersionsResponse>
                 handlerToUse = handler;
 
@@ -10462,14 +10801,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListKeyStoresConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListKeyStoresConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListKeyStores",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStoreSummary/ListKeyStores");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListKeyStoresResponse>
-                transformer = ListKeyStoresConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListKeyStores",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStoreSummary/ListKeyStores");
-
+                transformer =
+                        ListKeyStoresConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListKeyStoresRequest, ListKeyStoresResponse>
                 handlerToUse = handler;
 
@@ -10506,15 +10846,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListMaintenanceRunsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListMaintenanceRunsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListMaintenanceRuns",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/ListMaintenanceRuns");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListMaintenanceRunsResponse>
-                transformer = ListMaintenanceRunsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListMaintenanceRuns",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/ListMaintenanceRuns");
-
+                transformer =
+                        ListMaintenanceRunsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListMaintenanceRunsRequest, ListMaintenanceRunsResponse>
                 handlerToUse = handler;
@@ -10554,15 +10896,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListPdbConversionHistoryEntriesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPdbConversionHistoryEntriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListPdbConversionHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListPdbConversionHistoryEntries");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPdbConversionHistoryEntriesResponse>
-                transformer = ListPdbConversionHistoryEntriesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListPdbConversionHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListPdbConversionHistoryEntries");
-
+                transformer =
+                        ListPdbConversionHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListPdbConversionHistoryEntriesRequest,
                         ListPdbConversionHistoryEntriesResponse>
@@ -10603,15 +10947,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListPluggableDatabasesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPluggableDatabasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListPluggableDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/ListPluggableDatabases");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPluggableDatabasesResponse>
-                transformer = ListPluggableDatabasesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListPluggableDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/ListPluggableDatabases");
-
+                transformer =
+                        ListPluggableDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
                 handlerToUse = handler;
@@ -10649,15 +10995,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListVmClusterNetworksConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVmClusterNetworksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListVmClusterNetworks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ListVmClusterNetworks");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVmClusterNetworksResponse>
-                transformer = ListVmClusterNetworksConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListVmClusterNetworks",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ListVmClusterNetworks");
-
+                transformer =
+                        ListVmClusterNetworksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListVmClusterNetworksRequest, ListVmClusterNetworksResponse>
                 handlerToUse = handler;
@@ -10697,15 +11045,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListVmClusterPatchHistoryEntriesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVmClusterPatchHistoryEntriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListVmClusterPatchHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListVmClusterPatchHistoryEntries");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVmClusterPatchHistoryEntriesResponse>
-                transformer = ListVmClusterPatchHistoryEntriesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListVmClusterPatchHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListVmClusterPatchHistoryEntries");
-
+                transformer =
+                        ListVmClusterPatchHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListVmClusterPatchHistoryEntriesRequest,
                         ListVmClusterPatchHistoryEntriesResponse>
@@ -10746,15 +11096,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListVmClusterPatchesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVmClusterPatchesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListVmClusterPatches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListVmClusterPatches");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVmClusterPatchesResponse>
-                transformer = ListVmClusterPatchesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListVmClusterPatches",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListVmClusterPatches");
-
+                transformer =
+                        ListVmClusterPatchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListVmClusterPatchesRequest, ListVmClusterPatchesResponse>
                 handlerToUse = handler;
@@ -10794,15 +11146,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListVmClusterUpdateHistoryEntriesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVmClusterUpdateHistoryEntriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListVmClusterUpdateHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdateHistoryEntry/ListVmClusterUpdateHistoryEntries");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVmClusterUpdateHistoryEntriesResponse>
-                transformer = ListVmClusterUpdateHistoryEntriesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListVmClusterUpdateHistoryEntries",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdateHistoryEntry/ListVmClusterUpdateHistoryEntries");
-
+                transformer =
+                        ListVmClusterUpdateHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListVmClusterUpdateHistoryEntriesRequest,
                         ListVmClusterUpdateHistoryEntriesResponse>
@@ -10843,15 +11197,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListVmClusterUpdatesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVmClusterUpdatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListVmClusterUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdate/ListVmClusterUpdates");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVmClusterUpdatesResponse>
-                transformer = ListVmClusterUpdatesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListVmClusterUpdates",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdate/ListVmClusterUpdates");
-
+                transformer =
+                        ListVmClusterUpdatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListVmClusterUpdatesRequest, ListVmClusterUpdatesResponse>
                 handlerToUse = handler;
@@ -10889,14 +11245,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ListVmClustersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVmClustersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListVmClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/ListVmClusters");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListVmClustersResponse>
-                transformer = ListVmClustersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ListVmClusters",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/ListVmClusters");
-
+                transformer =
+                        ListVmClustersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListVmClustersRequest, ListVmClustersResponse>
                 handlerToUse = handler;
 
@@ -10935,16 +11292,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 LocalClonePluggableDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 LocalClonePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "LocalClonePluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/LocalClonePluggableDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, LocalClonePluggableDatabaseResponse>
-                transformer = LocalClonePluggableDatabaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "LocalClonePluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/LocalClonePluggableDatabase");
-
+                transformer =
+                        LocalClonePluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         LocalClonePluggableDatabaseRequest, LocalClonePluggableDatabaseResponse>
                 handlerToUse = handler;
@@ -10991,16 +11350,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 MigrateExadataDbSystemResourceModelConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "MigrateExadataDbSystemResourceModel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/MigrateExadataDbSystemResourceModel");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, MigrateExadataDbSystemResourceModelResponse>
-                transformer = MigrateExadataDbSystemResourceModelConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "MigrateExadataDbSystemResourceModel",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/MigrateExadataDbSystemResourceModel");
-
+                transformer =
+                        MigrateExadataDbSystemResourceModelConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         MigrateExadataDbSystemResourceModelRequest,
                         MigrateExadataDbSystemResourceModelResponse>
@@ -11041,15 +11402,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 MigrateVaultKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 MigrateVaultKeyConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, MigrateVaultKeyResponse>
-                transformer = MigrateVaultKeyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "MigrateVaultKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/MigrateVaultKey");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "MigrateVaultKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/MigrateVaultKey");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, MigrateVaultKeyResponse>
+                transformer =
+                        MigrateVaultKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<MigrateVaultKeyRequest, MigrateVaultKeyResponse>
                 handlerToUse = handler;
 
@@ -11091,16 +11454,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ModifyDatabaseManagementConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ModifyDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ModifyDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ModifyDatabaseManagement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ModifyDatabaseManagementResponse>
-                transformer = ModifyDatabaseManagementConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ModifyDatabaseManagement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ModifyDatabaseManagement");
-
+                transformer =
+                        ModifyDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ModifyDatabaseManagementRequest, ModifyDatabaseManagementResponse>
                 handlerToUse = handler;
@@ -11145,15 +11510,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 RegisterAutonomousDatabaseDataSafeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RegisterAutonomousDatabaseDataSafeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RegisterAutonomousDatabaseDataSafe",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RegisterAutonomousDatabaseDataSafe");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RegisterAutonomousDatabaseDataSafeResponse>
-                transformer = RegisterAutonomousDatabaseDataSafeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RegisterAutonomousDatabaseDataSafe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RegisterAutonomousDatabaseDataSafe");
-
+                transformer =
+                        RegisterAutonomousDatabaseDataSafeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RegisterAutonomousDatabaseDataSafeRequest,
                         RegisterAutonomousDatabaseDataSafeResponse>
@@ -11204,18 +11571,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ReinstateAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ReinstateAutonomousContainerDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/ReinstateAutonomousContainerDatabaseDataguardAssociation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
                 transformer =
                         ReinstateAutonomousContainerDatabaseDataguardAssociationConverter
-                                .fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ReinstateAutonomousContainerDatabaseDataguardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/ReinstateAutonomousContainerDatabaseDataguardAssociation");
-
+                                .fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ReinstateAutonomousContainerDatabaseDataguardAssociationRequest,
                         ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
@@ -11259,15 +11626,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ReinstateDataGuardAssociationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ReinstateDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ReinstateDataGuardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/ReinstateDataGuardAssociation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ReinstateDataGuardAssociationResponse>
-                transformer = ReinstateDataGuardAssociationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ReinstateDataGuardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/ReinstateDataGuardAssociation");
-
+                transformer =
+                        ReinstateDataGuardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ReinstateDataGuardAssociationRequest, ReinstateDataGuardAssociationResponse>
                 handlerToUse = handler;
@@ -11313,16 +11682,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 RemoteClonePluggableDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemoteClonePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RemoteClonePluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/RemoteClonePluggableDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoteClonePluggableDatabaseResponse>
-                transformer = RemoteClonePluggableDatabaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RemoteClonePluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/RemoteClonePluggableDatabase");
-
+                transformer =
+                        RemoteClonePluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RemoteClonePluggableDatabaseRequest, RemoteClonePluggableDatabaseResponse>
                 handlerToUse = handler;
@@ -11368,16 +11739,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 RemoveVirtualMachineFromVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemoveVirtualMachineFromVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RemoveVirtualMachineFromVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/RemoveVirtualMachineFromVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveVirtualMachineFromVmClusterResponse>
-                transformer = RemoveVirtualMachineFromVmClusterConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RemoveVirtualMachineFromVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/RemoveVirtualMachineFromVmCluster");
-
+                transformer =
+                        RemoveVirtualMachineFromVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveVirtualMachineFromVmClusterRequest,
                         RemoveVirtualMachineFromVmClusterResponse>
@@ -11425,15 +11798,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 RestartAutonomousContainerDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestartAutonomousContainerDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RestartAutonomousContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/RestartAutonomousContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RestartAutonomousContainerDatabaseResponse>
-                transformer = RestartAutonomousContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RestartAutonomousContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/RestartAutonomousContainerDatabase");
-
+                transformer =
+                        RestartAutonomousContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RestartAutonomousContainerDatabaseRequest,
                         RestartAutonomousContainerDatabaseResponse>
@@ -11474,15 +11849,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 RestartAutonomousDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestartAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RestartAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RestartAutonomousDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RestartAutonomousDatabaseResponse>
-                transformer = RestartAutonomousDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RestartAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RestartAutonomousDatabase");
-
+                transformer =
+                        RestartAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RestartAutonomousDatabaseRequest, RestartAutonomousDatabaseResponse>
                 handlerToUse = handler;
@@ -11521,15 +11898,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 RestoreAutonomousDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestoreAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RestoreAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RestoreAutonomousDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RestoreAutonomousDatabaseResponse>
-                transformer = RestoreAutonomousDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RestoreAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RestoreAutonomousDatabase");
-
+                transformer =
+                        RestoreAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RestoreAutonomousDatabaseRequest, RestoreAutonomousDatabaseResponse>
                 handlerToUse = handler;
@@ -11573,14 +11952,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 RestoreDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestoreDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RestoreDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RestoreDatabase");
         final com.google.common.base.Function<javax.ws.rs.core.Response, RestoreDatabaseResponse>
-                transformer = RestoreDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RestoreDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RestoreDatabase");
-
+                transformer =
+                        RestoreDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RestoreDatabaseRequest, RestoreDatabaseResponse>
                 handlerToUse = handler;
 
@@ -11625,18 +12006,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateAutonomousContainerDatabaseEncryptionKeyConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateAutonomousContainerDatabaseEncryptionKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/RotateAutonomousContainerDatabaseEncryptionKey");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         RotateAutonomousContainerDatabaseEncryptionKeyResponse>
                 transformer =
-                        RotateAutonomousContainerDatabaseEncryptionKeyConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateAutonomousContainerDatabaseEncryptionKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/RotateAutonomousContainerDatabaseEncryptionKey");
-
+                        RotateAutonomousContainerDatabaseEncryptionKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RotateAutonomousContainerDatabaseEncryptionKeyRequest,
                         RotateAutonomousContainerDatabaseEncryptionKeyResponse>
@@ -11681,16 +12063,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateAutonomousDatabaseEncryptionKeyConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateAutonomousDatabaseEncryptionKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RotateAutonomousDatabaseEncryptionKey");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RotateAutonomousDatabaseEncryptionKeyResponse>
-                transformer = RotateAutonomousDatabaseEncryptionKeyConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateAutonomousDatabaseEncryptionKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RotateAutonomousDatabaseEncryptionKey");
-
+                transformer =
+                        RotateAutonomousDatabaseEncryptionKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RotateAutonomousDatabaseEncryptionKeyRequest,
                         RotateAutonomousDatabaseEncryptionKeyResponse>
@@ -11734,16 +12118,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateCloudAutonomousVmClusterOrdsCertsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateCloudAutonomousVmClusterOrdsCerts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RotateCloudAutonomousVmClusterOrdsCerts");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RotateCloudAutonomousVmClusterOrdsCertsResponse>
-                transformer = RotateCloudAutonomousVmClusterOrdsCertsConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateCloudAutonomousVmClusterOrdsCerts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RotateCloudAutonomousVmClusterOrdsCerts");
-
+                transformer =
+                        RotateCloudAutonomousVmClusterOrdsCertsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RotateCloudAutonomousVmClusterOrdsCertsRequest,
                         RotateCloudAutonomousVmClusterOrdsCertsResponse>
@@ -11788,16 +12174,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateCloudAutonomousVmClusterSslCertsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateCloudAutonomousVmClusterSslCerts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RotateCloudAutonomousVmClusterSslCerts");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RotateCloudAutonomousVmClusterSslCertsResponse>
-                transformer = RotateCloudAutonomousVmClusterSslCertsConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateCloudAutonomousVmClusterSslCerts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RotateCloudAutonomousVmClusterSslCerts");
-
+                transformer =
+                        RotateCloudAutonomousVmClusterSslCertsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RotateCloudAutonomousVmClusterSslCertsRequest,
                         RotateCloudAutonomousVmClusterSslCertsResponse>
@@ -11838,15 +12226,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 RotateOrdsCertsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateOrdsCertsConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RotateOrdsCertsResponse>
-                transformer = RotateOrdsCertsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateOrdsCerts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/RotateOrdsCerts");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateOrdsCerts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/RotateOrdsCerts");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RotateOrdsCertsResponse>
+                transformer =
+                        RotateOrdsCertsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RotateOrdsCertsRequest, RotateOrdsCertsResponse>
                 handlerToUse = handler;
 
@@ -11883,15 +12273,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 RotateSslCertsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateSslCertsConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RotateSslCertsResponse>
-                transformer = RotateSslCertsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateSslCerts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/RotateSslCerts");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateSslCerts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/RotateSslCerts");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RotateSslCertsResponse>
+                transformer =
+                        RotateSslCertsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RotateSslCertsRequest, RotateSslCertsResponse>
                 handlerToUse = handler;
 
@@ -11928,15 +12319,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 RotateVaultKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateVaultKeyConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RotateVaultKeyResponse>
-                transformer = RotateVaultKeyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "RotateVaultKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RotateVaultKey");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateVaultKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RotateVaultKey");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RotateVaultKeyResponse>
+                transformer =
+                        RotateVaultKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RotateVaultKeyRequest, RotateVaultKeyResponse>
                 handlerToUse = handler;
 
@@ -11976,18 +12368,19 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ScanExternalContainerDatabasePluggableDatabasesConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ScanExternalContainerDatabasePluggableDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ScanExternalContainerDatabasePluggableDatabases");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ScanExternalContainerDatabasePluggableDatabasesResponse>
                 transformer =
-                        ScanExternalContainerDatabasePluggableDatabasesConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ScanExternalContainerDatabasePluggableDatabases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ScanExternalContainerDatabasePluggableDatabases");
-
+                        ScanExternalContainerDatabasePluggableDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ScanExternalContainerDatabasePluggableDatabasesRequest,
                         ScanExternalContainerDatabasePluggableDatabasesResponse>
@@ -12029,15 +12422,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ShrinkAutonomousDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ShrinkAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ShrinkAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ShrinkAutonomousDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ShrinkAutonomousDatabaseResponse>
-                transformer = ShrinkAutonomousDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ShrinkAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ShrinkAutonomousDatabase");
-
+                transformer =
+                        ShrinkAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ShrinkAutonomousDatabaseRequest, ShrinkAutonomousDatabaseResponse>
                 handlerToUse = handler;
@@ -12075,15 +12470,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 StartAutonomousDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StartAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "StartAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/StartAutonomousDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, StartAutonomousDatabaseResponse>
-                transformer = StartAutonomousDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "StartAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/StartAutonomousDatabase");
-
+                transformer =
+                        StartAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         StartAutonomousDatabaseRequest, StartAutonomousDatabaseResponse>
                 handlerToUse = handler;
@@ -12121,16 +12518,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 StartPluggableDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StartPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "StartPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/StartPluggableDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, StartPluggableDatabaseResponse>
-                transformer = StartPluggableDatabaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "StartPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/StartPluggableDatabase");
-
+                transformer =
+                        StartPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         StartPluggableDatabaseRequest, StartPluggableDatabaseResponse>
                 handlerToUse = handler;
@@ -12168,15 +12567,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 StopAutonomousDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StopAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "StopAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/StopAutonomousDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, StopAutonomousDatabaseResponse>
-                transformer = StopAutonomousDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "StopAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/StopAutonomousDatabase");
-
+                transformer =
+                        StopAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         StopAutonomousDatabaseRequest, StopAutonomousDatabaseResponse>
                 handlerToUse = handler;
@@ -12214,16 +12615,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 StopPluggableDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StopPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "StopPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/StopPluggableDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, StopPluggableDatabaseResponse>
-                transformer = StopPluggableDatabaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "StopPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/StopPluggableDatabase");
-
+                transformer =
+                        StopPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         StopPluggableDatabaseRequest, StopPluggableDatabaseResponse>
                 handlerToUse = handler;
@@ -12266,18 +12669,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SwitchoverAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "SwitchoverAutonomousContainerDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/SwitchoverAutonomousContainerDatabaseDataguardAssociation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
                 transformer =
                         SwitchoverAutonomousContainerDatabaseDataguardAssociationConverter
-                                .fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "SwitchoverAutonomousContainerDatabaseDataguardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/SwitchoverAutonomousContainerDatabaseDataguardAssociation");
-
+                                .fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest,
                         SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
@@ -12321,16 +12724,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 SwitchoverAutonomousDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SwitchoverAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "SwitchoverAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/SwitchoverAutonomousDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SwitchoverAutonomousDatabaseResponse>
-                transformer = SwitchoverAutonomousDatabaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "SwitchoverAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/SwitchoverAutonomousDatabase");
-
+                transformer =
+                        SwitchoverAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         SwitchoverAutonomousDatabaseRequest, SwitchoverAutonomousDatabaseResponse>
                 handlerToUse = handler;
@@ -12371,15 +12776,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 SwitchoverDataGuardAssociationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SwitchoverDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "SwitchoverDataGuardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/SwitchoverDataGuardAssociation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SwitchoverDataGuardAssociationResponse>
-                transformer = SwitchoverDataGuardAssociationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "SwitchoverDataGuardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/SwitchoverDataGuardAssociation");
-
+                transformer =
+                        SwitchoverDataGuardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         SwitchoverDataGuardAssociationRequest,
                         SwitchoverDataGuardAssociationResponse>
@@ -12427,15 +12834,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 TerminateAutonomousContainerDatabaseConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "TerminateAutonomousContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/TerminateAutonomousContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, TerminateAutonomousContainerDatabaseResponse>
-                transformer = TerminateAutonomousContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "TerminateAutonomousContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/TerminateAutonomousContainerDatabase");
-
+                transformer =
+                        TerminateAutonomousContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         TerminateAutonomousContainerDatabaseRequest,
                         TerminateAutonomousContainerDatabaseResponse>
@@ -12479,15 +12888,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 TerminateAutonomousExadataInfrastructureConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "TerminateAutonomousExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/TerminateAutonomousExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, TerminateAutonomousExadataInfrastructureResponse>
-                transformer = TerminateAutonomousExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "TerminateAutonomousExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/TerminateAutonomousExadataInfrastructure");
-
+                transformer =
+                        TerminateAutonomousExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         TerminateAutonomousExadataInfrastructureRequest,
                         TerminateAutonomousExadataInfrastructureResponse>
@@ -12529,14 +12940,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 TerminateDbSystemConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 TerminateDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "TerminateDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/TerminateDbSystem");
         final com.google.common.base.Function<javax.ws.rs.core.Response, TerminateDbSystemResponse>
-                transformer = TerminateDbSystemConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "TerminateDbSystem",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/TerminateDbSystem");
-
+                transformer =
+                        TerminateDbSystemConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<TerminateDbSystemRequest, TerminateDbSystemResponse>
                 handlerToUse = handler;
 
@@ -12575,15 +12988,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateAutonomousContainerDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousContainerDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/UpdateAutonomousContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAutonomousContainerDatabaseResponse>
-                transformer = UpdateAutonomousContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/UpdateAutonomousContainerDatabase");
-
+                transformer =
+                        UpdateAutonomousContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAutonomousContainerDatabaseRequest,
                         UpdateAutonomousContainerDatabaseResponse>
@@ -12634,18 +13049,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousContainerDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/UpdateAutonomousContainerDatabaseDataguardAssociation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         UpdateAutonomousContainerDatabaseDataguardAssociationResponse>
                 transformer =
-                        UpdateAutonomousContainerDatabaseDataguardAssociationConverter
-                                .fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousContainerDatabaseDataguardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/UpdateAutonomousContainerDatabaseDataguardAssociation");
-
+                        UpdateAutonomousContainerDatabaseDataguardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAutonomousContainerDatabaseDataguardAssociationRequest,
                         UpdateAutonomousContainerDatabaseDataguardAssociationResponse>
@@ -12693,15 +13108,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateAutonomousDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/UpdateAutonomousDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAutonomousDatabaseResponse>
-                transformer = UpdateAutonomousDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/UpdateAutonomousDatabase");
-
+                transformer =
+                        UpdateAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAutonomousDatabaseRequest, UpdateAutonomousDatabaseResponse>
                 handlerToUse = handler;
@@ -12747,15 +13164,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousDatabaseRegionalWalletConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousDatabaseRegionalWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/UpdateAutonomousDatabaseRegionalWallet");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAutonomousDatabaseRegionalWalletResponse>
-                transformer = UpdateAutonomousDatabaseRegionalWalletConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousDatabaseRegionalWallet",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/UpdateAutonomousDatabaseRegionalWallet");
-
+                transformer =
+                        UpdateAutonomousDatabaseRegionalWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAutonomousDatabaseRegionalWalletRequest,
                         UpdateAutonomousDatabaseRegionalWalletResponse>
@@ -12803,15 +13222,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateAutonomousDatabaseWalletConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousDatabaseWalletConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousDatabaseWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/UpdateAutonomousDatabaseWallet");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAutonomousDatabaseWalletResponse>
-                transformer = UpdateAutonomousDatabaseWalletConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousDatabaseWallet",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/UpdateAutonomousDatabaseWallet");
-
+                transformer =
+                        UpdateAutonomousDatabaseWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAutonomousDatabaseWalletRequest,
                         UpdateAutonomousDatabaseWalletResponse>
@@ -12859,15 +13280,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousExadataInfrastructureConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/UpdateAutonomousExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAutonomousExadataInfrastructureResponse>
-                transformer = UpdateAutonomousExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/UpdateAutonomousExadataInfrastructure");
-
+                transformer =
+                        UpdateAutonomousExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAutonomousExadataInfrastructureRequest,
                         UpdateAutonomousExadataInfrastructureResponse>
@@ -12914,15 +13337,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateAutonomousVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/UpdateAutonomousVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAutonomousVmClusterResponse>
-                transformer = UpdateAutonomousVmClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/UpdateAutonomousVmCluster");
-
+                transformer =
+                        UpdateAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAutonomousVmClusterRequest, UpdateAutonomousVmClusterResponse>
                 handlerToUse = handler;
@@ -12966,15 +13391,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateBackupDestinationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateBackupDestinationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateBackupDestination",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/UpdateBackupDestination");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateBackupDestinationResponse>
-                transformer = UpdateBackupDestinationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateBackupDestination",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/UpdateBackupDestination");
-
+                transformer =
+                        UpdateBackupDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateBackupDestinationRequest, UpdateBackupDestinationResponse>
                 handlerToUse = handler;
@@ -13019,15 +13446,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateCloudAutonomousVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateCloudAutonomousVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/UpdateCloudAutonomousVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateCloudAutonomousVmClusterResponse>
-                transformer = UpdateCloudAutonomousVmClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateCloudAutonomousVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/UpdateCloudAutonomousVmCluster");
-
+                transformer =
+                        UpdateCloudAutonomousVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateCloudAutonomousVmClusterRequest,
                         UpdateCloudAutonomousVmClusterResponse>
@@ -13074,15 +13503,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateCloudExadataInfrastructureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/UpdateCloudExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateCloudExadataInfrastructureResponse>
-                transformer = UpdateCloudExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateCloudExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/UpdateCloudExadataInfrastructure");
-
+                transformer =
+                        UpdateCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateCloudExadataInfrastructureRequest,
                         UpdateCloudExadataInfrastructureResponse>
@@ -13128,15 +13559,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateCloudVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCloudVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateCloudVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/UpdateCloudVmCluster");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateCloudVmClusterResponse>
-                transformer = UpdateCloudVmClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateCloudVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/UpdateCloudVmCluster");
-
+                transformer =
+                        UpdateCloudVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateCloudVmClusterRequest, UpdateCloudVmClusterResponse>
                 handlerToUse = handler;
@@ -13181,15 +13614,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateCloudVmClusterIormConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCloudVmClusterIormConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateCloudVmClusterIormConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/UpdateCloudVmClusterIormConfig");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateCloudVmClusterIormConfigResponse>
-                transformer = UpdateCloudVmClusterIormConfigConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateCloudVmClusterIormConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/UpdateCloudVmClusterIormConfig");
-
+                transformer =
+                        UpdateCloudVmClusterIormConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateCloudVmClusterIormConfigRequest,
                         UpdateCloudVmClusterIormConfigResponse>
@@ -13236,15 +13671,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateDataGuardAssociationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDataGuardAssociationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDataGuardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/UpdateDataGuardAssociation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDataGuardAssociationResponse>
-                transformer = UpdateDataGuardAssociationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateDataGuardAssociation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/UpdateDataGuardAssociation");
-
+                transformer =
+                        UpdateDataGuardAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDataGuardAssociationRequest, UpdateDataGuardAssociationResponse>
                 handlerToUse = handler;
@@ -13288,14 +13725,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpdateDatabase");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDatabaseResponse>
-                transformer = UpdateDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpdateDatabase");
-
+                transformer =
+                        UpdateDatabaseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateDatabaseRequest, UpdateDatabaseResponse>
                 handlerToUse = handler;
 
@@ -13339,15 +13777,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateDatabaseSoftwareImageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDatabaseSoftwareImageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDatabaseSoftwareImage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/UpdateDatabaseSoftwareImage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseSoftwareImageResponse>
-                transformer = UpdateDatabaseSoftwareImageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateDatabaseSoftwareImage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/UpdateDatabaseSoftwareImage");
-
+                transformer =
+                        UpdateDatabaseSoftwareImageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDatabaseSoftwareImageRequest, UpdateDatabaseSoftwareImageResponse>
                 handlerToUse = handler;
@@ -13390,14 +13830,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateDbHomeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDbHomeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDbHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/UpdateDbHome");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDbHomeResponse>
-                transformer = UpdateDbHomeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateDbHome",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/UpdateDbHome");
-
+                transformer =
+                        UpdateDbHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateDbHomeRequest, UpdateDbHomeResponse>
                 handlerToUse = handler;
 
@@ -13439,14 +13880,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateDbSystemConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpdateDbSystem");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDbSystemResponse>
-                transformer = UpdateDbSystemConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateDbSystem",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpdateDbSystem");
-
+                transformer =
+                        UpdateDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateDbSystemRequest, UpdateDbSystemResponse>
                 handlerToUse = handler;
 
@@ -13490,15 +13932,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateExadataInfrastructureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/UpdateExadataInfrastructure");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateExadataInfrastructureResponse>
-                transformer = UpdateExadataInfrastructureConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateExadataInfrastructure",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/UpdateExadataInfrastructure");
-
+                transformer =
+                        UpdateExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateExadataInfrastructureRequest, UpdateExadataInfrastructureResponse>
                 handlerToUse = handler;
@@ -13542,15 +13986,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateExadataIormConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateExadataIormConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExadataIormConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpdateExadataIormConfig");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateExadataIormConfigResponse>
-                transformer = UpdateExadataIormConfigConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateExadataIormConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpdateExadataIormConfig");
-
+                transformer =
+                        UpdateExadataIormConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateExadataIormConfigRequest, UpdateExadataIormConfigResponse>
                 handlerToUse = handler;
@@ -13595,15 +14041,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateExternalContainerDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateExternalContainerDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExternalContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/UpdateExternalContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateExternalContainerDatabaseResponse>
-                transformer = UpdateExternalContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateExternalContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/UpdateExternalContainerDatabase");
-
+                transformer =
+                        UpdateExternalContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateExternalContainerDatabaseRequest,
                         UpdateExternalContainerDatabaseResponse>
@@ -13651,15 +14099,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateExternalDatabaseConnectorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateExternalDatabaseConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExternalDatabaseConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/UpdateExternalDatabaseConnector");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateExternalDatabaseConnectorResponse>
-                transformer = UpdateExternalDatabaseConnectorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateExternalDatabaseConnector",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/UpdateExternalDatabaseConnector");
-
+                transformer =
+                        UpdateExternalDatabaseConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateExternalDatabaseConnectorRequest,
                         UpdateExternalDatabaseConnectorResponse>
@@ -13707,15 +14157,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateExternalNonContainerDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateExternalNonContainerDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExternalNonContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/UpdateExternalNonContainerDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateExternalNonContainerDatabaseResponse>
-                transformer = UpdateExternalNonContainerDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateExternalNonContainerDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/UpdateExternalNonContainerDatabase");
-
+                transformer =
+                        UpdateExternalNonContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateExternalNonContainerDatabaseRequest,
                         UpdateExternalNonContainerDatabaseResponse>
@@ -13763,15 +14215,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateExternalPluggableDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateExternalPluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExternalPluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/UpdateExternalPluggableDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateExternalPluggableDatabaseResponse>
-                transformer = UpdateExternalPluggableDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateExternalPluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/UpdateExternalPluggableDatabase");
-
+                transformer =
+                        UpdateExternalPluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateExternalPluggableDatabaseRequest,
                         UpdateExternalPluggableDatabaseResponse>
@@ -13817,14 +14271,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateKeyStoreConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateKeyStoreConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateKeyStore",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/UpdateKeyStore");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateKeyStoreResponse>
-                transformer = UpdateKeyStoreConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateKeyStore",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/UpdateKeyStore");
-
+                transformer =
+                        UpdateKeyStoreConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateKeyStoreRequest, UpdateKeyStoreResponse>
                 handlerToUse = handler;
 
@@ -13866,15 +14321,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateMaintenanceRunConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateMaintenanceRunConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateMaintenanceRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/UpdateMaintenanceRun");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateMaintenanceRunResponse>
-                transformer = UpdateMaintenanceRunConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateMaintenanceRun",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/UpdateMaintenanceRun");
-
+                transformer =
+                        UpdateMaintenanceRunConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateMaintenanceRunRequest, UpdateMaintenanceRunResponse>
                 handlerToUse = handler;
@@ -13917,15 +14374,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdatePluggableDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdatePluggableDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdatePluggableDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/UpdatePluggableDatabase");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdatePluggableDatabaseResponse>
-                transformer = UpdatePluggableDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdatePluggableDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/UpdatePluggableDatabase");
-
+                transformer =
+                        UpdatePluggableDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdatePluggableDatabaseRequest, UpdatePluggableDatabaseResponse>
                 handlerToUse = handler;
@@ -13968,14 +14427,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateVmClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/UpdateVmCluster");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVmClusterResponse>
-                transformer = UpdateVmClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateVmCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/UpdateVmCluster");
-
+                transformer =
+                        UpdateVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateVmClusterRequest, UpdateVmClusterResponse>
                 handlerToUse = handler;
 
@@ -14017,15 +14478,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpdateVmClusterNetworkConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/UpdateVmClusterNetwork");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateVmClusterNetworkResponse>
-                transformer = UpdateVmClusterNetworkConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpdateVmClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/UpdateVmClusterNetwork");
-
+                transformer =
+                        UpdateVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateVmClusterNetworkRequest, UpdateVmClusterNetworkResponse>
                 handlerToUse = handler;
@@ -14068,14 +14531,16 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpgradeDatabaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpgradeDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpgradeDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpgradeDatabase");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDatabaseResponse>
-                transformer = UpgradeDatabaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpgradeDatabase",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpgradeDatabase");
-
+                transformer =
+                        UpgradeDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpgradeDatabaseRequest, UpgradeDatabaseResponse>
                 handlerToUse = handler;
 
@@ -14117,15 +14582,17 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 UpgradeDbSystemConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpgradeDbSystemConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDbSystemResponse>
-                transformer = UpgradeDbSystemConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "UpgradeDbSystem",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpgradeDbSystem");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpgradeDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpgradeDbSystem");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDbSystemResponse>
+                transformer =
+                        UpgradeDbSystemConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpgradeDbSystemRequest, UpgradeDbSystemResponse>
                 handlerToUse = handler;
 
@@ -14167,16 +14634,18 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 ValidateVmClusterNetworkConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ValidateVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ValidateVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ValidateVmClusterNetwork");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ValidateVmClusterNetworkResponse>
-                transformer = ValidateVmClusterNetworkConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Database",
-                "ValidateVmClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ValidateVmClusterNetwork");
-
+                transformer =
+                        ValidateVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ValidateVmClusterNetworkRequest, ValidateVmClusterNetworkResponse>
                 handlerToUse = handler;

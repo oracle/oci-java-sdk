@@ -4,19 +4,18 @@
  */
 package com.oracle.bmc.encryption.internal;
 
+import com.oracle.bmc.encryption.KmsMasterKey;
+import com.oracle.bmc.encryption.MasterKeyProvider;
+
+import javax.crypto.Cipher;
+import javax.crypto.spec.GCMParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 import java.security.GeneralSecurityException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.SecureRandom;
 import java.security.spec.AlgorithmParameterSpec;
 import java.util.Base64;
-import javax.crypto.Cipher;
-import javax.crypto.spec.GCMParameterSpec;
-import javax.crypto.spec.SecretKeySpec;
-
-import com.oracle.bmc.encryption.KmsMasterKey;
-import com.oracle.bmc.encryption.MasterKeyProvider;
-import lombok.Value;
 
 public abstract class CipherHandler {
     protected final Cipher cipher;
@@ -77,9 +76,58 @@ public abstract class CipherHandler {
         return cipher;
     }
 
-    @Value
-    public static class WithEncryptionHeader<T> {
-        T result;
-        EncryptionHeader encryptionHeader;
+    public static final class WithEncryptionHeader<T> {
+        private final T result;
+        private final EncryptionHeader encryptionHeader;
+
+        @java.beans.ConstructorProperties({"result", "encryptionHeader"})
+        public WithEncryptionHeader(T result, EncryptionHeader encryptionHeader) {
+            this.result = result;
+            this.encryptionHeader = encryptionHeader;
+        }
+
+        public T getResult() {
+            return this.result;
+        }
+
+        public EncryptionHeader getEncryptionHeader() {
+            return this.encryptionHeader;
+        }
+
+        public boolean equals(final Object o) {
+            if (o == this) return true;
+            if (!(o instanceof WithEncryptionHeader)) return false;
+            final WithEncryptionHeader<?> other = (WithEncryptionHeader<?>) o;
+            final Object this$result = this.getResult();
+            final Object other$result = other.getResult();
+            if (this$result == null ? other$result != null : !this$result.equals(other$result))
+                return false;
+            final Object this$encryptionHeader = this.getEncryptionHeader();
+            final Object other$encryptionHeader = other.getEncryptionHeader();
+            if (this$encryptionHeader == null
+                    ? other$encryptionHeader != null
+                    : !this$encryptionHeader.equals(other$encryptionHeader)) return false;
+            return true;
+        }
+
+        public int hashCode() {
+            final int PRIME = 59;
+            int result = 1;
+            final Object $result = this.getResult();
+            result = result * PRIME + ($result == null ? 43 : $result.hashCode());
+            final Object $encryptionHeader = this.getEncryptionHeader();
+            result =
+                    result * PRIME
+                            + ($encryptionHeader == null ? 43 : $encryptionHeader.hashCode());
+            return result;
+        }
+
+        public String toString() {
+            return "CipherHandler.WithEncryptionHeader(result="
+                    + this.getResult()
+                    + ", encryptionHeader="
+                    + this.getEncryptionHeader()
+                    + ")";
+        }
     }
 }

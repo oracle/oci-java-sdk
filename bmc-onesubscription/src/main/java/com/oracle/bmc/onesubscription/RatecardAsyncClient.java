@@ -396,11 +396,12 @@ public class RatecardAsyncClient implements RatecardAsync {
                 ListRateCardsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRateCardsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Ratecard", "ListRateCards", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRateCardsResponse>
-                transformer = ListRateCardsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Ratecard", "ListRateCards", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListRateCardsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRateCardsRequest, ListRateCardsResponse>
                 handlerToUse = handler;
 

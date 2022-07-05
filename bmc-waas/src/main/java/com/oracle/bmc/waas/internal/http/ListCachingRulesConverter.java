@@ -75,6 +75,13 @@ public class ListCachingRulesConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.waas.responses.ListCachingRulesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ListCachingRulesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.waas.responses.ListCachingRulesResponse>
@@ -87,18 +94,29 @@ public class ListCachingRulesConverter {
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.waas.responses.ListCachingRulesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
                                                                 com.oracle.bmc.waas.model
                                                                         .CachingRuleSummary>>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        new javax.ws.rs.core.GenericType<
-                                                                java.util.List<
-                                                                        com.oracle.bmc.waas.model
-                                                                                .CachingRuleSummary>>() {});
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.waas.model
+                                                                            .CachingRuleSummary>>() {},
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.waas.model
+                                                                            .CachingRuleSummary>>() {});
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<

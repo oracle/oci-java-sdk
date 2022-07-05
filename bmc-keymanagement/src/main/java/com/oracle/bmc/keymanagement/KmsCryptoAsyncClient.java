@@ -319,11 +319,11 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
         final DecryptRequest interceptedRequest = DecryptConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DecryptConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsCrypto", "Decrypt", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DecryptResponse>
-                transformer = DecryptConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsCrypto", "Decrypt", ib.getRequestUri().toString(), "");
-
+                transformer = DecryptConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DecryptRequest, DecryptResponse> handlerToUse =
                 handler;
 
@@ -361,11 +361,11 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
         final EncryptRequest interceptedRequest = EncryptConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EncryptConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsCrypto", "Encrypt", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, EncryptResponse>
-                transformer = EncryptConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsCrypto", "Encrypt", ib.getRequestUri().toString(), "");
-
+                transformer = EncryptConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<EncryptRequest, EncryptResponse> handlerToUse =
                 handler;
 
@@ -404,11 +404,12 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
         final ExportKeyRequest interceptedRequest = ExportKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ExportKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsCrypto", "ExportKey", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ExportKeyResponse>
-                transformer = ExportKeyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsCrypto", "ExportKey", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ExportKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ExportKeyRequest, ExportKeyResponse> handlerToUse =
                 handler;
 
@@ -449,12 +450,17 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
                 GenerateDataEncryptionKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GenerateDataEncryptionKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsCrypto",
+                        "GenerateDataEncryptionKey",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateDataEncryptionKeyResponse>
-                transformer = GenerateDataEncryptionKeyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsCrypto", "GenerateDataEncryptionKey", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GenerateDataEncryptionKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateDataEncryptionKeyRequest, GenerateDataEncryptionKeyResponse>
                 handlerToUse = handler;
@@ -495,11 +501,11 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
         final SignRequest interceptedRequest = SignConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SignConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsCrypto", "Sign", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, SignResponse> transformer =
-                SignConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsCrypto", "Sign", ib.getRequestUri().toString(), "");
-
+                SignConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<SignRequest, SignResponse> handlerToUse = handler;
 
         java.util.function.Function<
@@ -536,11 +542,11 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
         final VerifyRequest interceptedRequest = VerifyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 VerifyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsCrypto", "Verify", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, VerifyResponse>
-                transformer = VerifyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsCrypto", "Verify", ib.getRequestUri().toString(), "");
-
+                transformer = VerifyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<VerifyRequest, VerifyResponse> handlerToUse = handler;
 
         java.util.function.Function<

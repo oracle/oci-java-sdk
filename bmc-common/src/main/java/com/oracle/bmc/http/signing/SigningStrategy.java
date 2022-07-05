@@ -7,17 +7,12 @@ package com.oracle.bmc.http.signing;
 import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.http.signing.internal.Constants;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
 import java.util.List;
 
 /**
  * Enum for the various signing strategies used by OCI.
  */
 @InternalSdk
-@RequiredArgsConstructor
-@Getter
 public enum SigningStrategy {
     /**
      * Standard signing strategy.
@@ -57,4 +52,40 @@ public enum SigningStrategy {
      * to be signed.
      */
     private final boolean skipContentHeadersForStreamingPutRequests;
+
+    @java.beans.ConstructorProperties({
+        "headersToSign",
+        "optionalHeadersToSign",
+        "skipContentHeadersForStreamingPutRequests"
+    })
+    private SigningStrategy(
+            final ImmutableMap<String, List<String>> headersToSign,
+            final ImmutableMap<String, List<String>> optionalHeadersToSign,
+            final boolean skipContentHeadersForStreamingPutRequests) {
+        this.headersToSign = headersToSign;
+        this.optionalHeadersToSign = optionalHeadersToSign;
+        this.skipContentHeadersForStreamingPutRequests = skipContentHeadersForStreamingPutRequests;
+    }
+
+    /**
+     * The Map of headers (by HTTP method) to sign.
+     */
+    public ImmutableMap<String, List<String>> getHeadersToSign() {
+        return this.headersToSign;
+    }
+
+    /**
+     * The Map of headers (by HTTP method) to sign, if they are set.
+     */
+    public ImmutableMap<String, List<String>> getOptionalHeadersToSign() {
+        return this.optionalHeadersToSign;
+    }
+
+    /**
+     * Flag to indicate whether a PUT requests require content-* headers
+     * to be signed.
+     */
+    public boolean isSkipContentHeadersForStreamingPutRequests() {
+        return this.skipContentHeadersForStreamingPutRequests;
+    }
 }

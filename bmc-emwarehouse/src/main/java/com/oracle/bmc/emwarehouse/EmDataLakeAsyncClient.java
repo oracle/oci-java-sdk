@@ -398,11 +398,13 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 CancelWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake", "CancelWorkRequest", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
-                transformer = CancelWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "CancelWorkRequest", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        CancelWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -441,13 +443,18 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 ChangeEmWarehouseCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeEmWarehouseCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake",
+                        "ChangeEmWarehouseCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeEmWarehouseCompartmentResponse>
-                transformer = ChangeEmWarehouseCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "ChangeEmWarehouseCompartment", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ChangeEmWarehouseCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeEmWarehouseCompartmentRequest, ChangeEmWarehouseCompartmentResponse>
                 handlerToUse = handler;
@@ -491,12 +498,14 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 CreateEmWarehouseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateEmWarehouseConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEmWarehouseResponse>
-                transformer = CreateEmWarehouseConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "CreateEmWarehouse", ib.getRequestUri().toString(), "");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake", "CreateEmWarehouse", ib.getRequestUri().toString(), "");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEmWarehouseResponse>
+                transformer =
+                        CreateEmWarehouseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateEmWarehouseRequest, CreateEmWarehouseResponse>
                 handlerToUse = handler;
 
@@ -538,11 +547,13 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 DeleteEmWarehouseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteEmWarehouseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake", "DeleteEmWarehouse", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEmWarehouseResponse>
-                transformer = DeleteEmWarehouseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "DeleteEmWarehouse", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteEmWarehouseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteEmWarehouseRequest, DeleteEmWarehouseResponse>
                 handlerToUse = handler;
 
@@ -579,11 +590,12 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 GetEmWarehouseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetEmWarehouseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake", "GetEmWarehouse", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetEmWarehouseResponse>
-                transformer = GetEmWarehouseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "GetEmWarehouse", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetEmWarehouseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetEmWarehouseRequest, GetEmWarehouseResponse>
                 handlerToUse = handler;
 
@@ -622,12 +634,17 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 GetEmWarehouseResourceUsageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetEmWarehouseResourceUsageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake",
+                        "GetEmWarehouseResourceUsage",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetEmWarehouseResourceUsageResponse>
-                transformer = GetEmWarehouseResourceUsageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "GetEmWarehouseResourceUsage", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetEmWarehouseResourceUsageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetEmWarehouseResourceUsageRequest, GetEmWarehouseResourceUsageResponse>
                 handlerToUse = handler;
@@ -666,11 +683,12 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake", "GetWorkRequest", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "GetWorkRequest", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -707,11 +725,13 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 ListEmWarehousesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListEmWarehousesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake", "ListEmWarehouses", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListEmWarehousesResponse>
-                transformer = ListEmWarehousesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "ListEmWarehouses", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListEmWarehousesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListEmWarehousesRequest, ListEmWarehousesResponse>
                 handlerToUse = handler;
 
@@ -747,11 +767,12 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 ListEtlRunsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListEtlRunsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake", "ListEtlRuns", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListEtlRunsResponse>
-                transformer = ListEtlRunsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "ListEtlRuns", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListEtlRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListEtlRunsRequest, ListEtlRunsResponse>
                 handlerToUse = handler;
 
@@ -788,12 +809,14 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -831,12 +854,14 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -874,11 +899,13 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake", "ListWorkRequests", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "ListWorkRequests", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -915,11 +942,13 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 UpdateEmWarehouseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateEmWarehouseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmDataLake", "UpdateEmWarehouse", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEmWarehouseResponse>
-                transformer = UpdateEmWarehouseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "EmDataLake", "UpdateEmWarehouse", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        UpdateEmWarehouseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateEmWarehouseRequest, UpdateEmWarehouseResponse>
                 handlerToUse = handler;
 

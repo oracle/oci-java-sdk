@@ -400,19 +400,22 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 BatchDetectDominantLanguageConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BatchDetectDominantLanguageConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, BatchDetectDominantLanguageResponse>
-                transformer = BatchDetectDominantLanguageConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "BatchDetectDominantLanguage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectDominantLanguage/BatchDetectDominantLanguage");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectDominantLanguage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectDominantLanguage/BatchDetectDominantLanguage");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BatchDetectDominantLanguageResponse>
+                transformer =
+                        BatchDetectDominantLanguageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -441,19 +444,22 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 BatchDetectLanguageEntitiesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BatchDetectLanguageEntitiesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, BatchDetectLanguageEntitiesResponse>
-                transformer = BatchDetectLanguageEntitiesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "BatchDetectLanguageEntities",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageEntities/BatchDetectLanguageEntities");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectLanguageEntities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageEntities/BatchDetectLanguageEntities");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BatchDetectLanguageEntitiesResponse>
+                transformer =
+                        BatchDetectLanguageEntitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -482,19 +488,22 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 BatchDetectLanguageKeyPhrasesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BatchDetectLanguageKeyPhrasesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, BatchDetectLanguageKeyPhrasesResponse>
-                transformer = BatchDetectLanguageKeyPhrasesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "BatchDetectLanguageKeyPhrases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectLanguageKeyPhrases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BatchDetectLanguageKeyPhrasesResponse>
+                transformer =
+                        BatchDetectLanguageKeyPhrasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -523,19 +532,22 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 BatchDetectLanguageSentimentsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BatchDetectLanguageSentimentsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, BatchDetectLanguageSentimentsResponse>
-                transformer = BatchDetectLanguageSentimentsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "BatchDetectLanguageSentiments",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectLanguageSentiments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BatchDetectLanguageSentimentsResponse>
+                transformer =
+                        BatchDetectLanguageSentimentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -565,19 +577,22 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BatchDetectLanguageTextClassificationConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, BatchDetectLanguageTextClassificationResponse>
-                transformer = BatchDetectLanguageTextClassificationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "BatchDetectLanguageTextClassification",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectLanguageTextClassification",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BatchDetectLanguageTextClassificationResponse>
+                transformer =
+                        BatchDetectLanguageTextClassificationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -606,18 +621,21 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 DetectDominantLanguageConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetectDominantLanguageConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DetectDominantLanguageResponse>
-                transformer = DetectDominantLanguageConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "DetectDominantLanguage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectDominantLanguage/DetectDominantLanguage");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "DetectDominantLanguage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectDominantLanguage/DetectDominantLanguage");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DetectDominantLanguageResponse>
+                transformer =
+                        DetectDominantLanguageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -645,18 +663,21 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 DetectLanguageEntitiesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetectLanguageEntitiesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DetectLanguageEntitiesResponse>
-                transformer = DetectLanguageEntitiesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "DetectLanguageEntities",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageEntities/DetectLanguageEntities");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "DetectLanguageEntities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageEntities/DetectLanguageEntities");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DetectLanguageEntitiesResponse>
+                transformer =
+                        DetectLanguageEntitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -684,18 +705,21 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 DetectLanguageKeyPhrasesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetectLanguageKeyPhrasesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DetectLanguageKeyPhrasesResponse>
-                transformer = DetectLanguageKeyPhrasesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "DetectLanguageKeyPhrases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageKeyPhrases/DetectLanguageKeyPhrases");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "DetectLanguageKeyPhrases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageKeyPhrases/DetectLanguageKeyPhrases");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DetectLanguageKeyPhrasesResponse>
+                transformer =
+                        DetectLanguageKeyPhrasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -723,18 +747,21 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 DetectLanguageSentimentsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetectLanguageSentimentsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DetectLanguageSentimentsResponse>
-                transformer = DetectLanguageSentimentsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "DetectLanguageSentiments",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageSentiments/DetectLanguageSentiments");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "DetectLanguageSentiments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageSentiments/DetectLanguageSentiments");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DetectLanguageSentimentsResponse>
+                transformer =
+                        DetectLanguageSentimentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -762,19 +789,22 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 DetectLanguageTextClassificationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetectLanguageTextClassificationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DetectLanguageTextClassificationResponse>
-                transformer = DetectLanguageTextClassificationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "DetectLanguageTextClassification",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageTextClassification/DetectLanguageTextClassification");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "DetectLanguageTextClassification",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageTextClassification/DetectLanguageTextClassification");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DetectLanguageTextClassificationResponse>
+                transformer =
+                        DetectLanguageTextClassificationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

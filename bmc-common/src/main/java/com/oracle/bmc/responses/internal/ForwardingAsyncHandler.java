@@ -5,9 +5,7 @@
 package com.oracle.bmc.responses.internal;
 
 import com.oracle.bmc.responses.AsyncHandler;
-import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 public class ForwardingAsyncHandler<REQUEST, RESPONSE> implements AsyncHandler<REQUEST, RESPONSE> {
     private final AsyncHandler<REQUEST, RESPONSE> delegate;
 
@@ -23,5 +21,10 @@ public class ForwardingAsyncHandler<REQUEST, RESPONSE> implements AsyncHandler<R
         if (delegate != null) {
             delegate.onError(request, error);
         }
+    }
+
+    @java.beans.ConstructorProperties({"delegate"})
+    public ForwardingAsyncHandler(final AsyncHandler<REQUEST, RESPONSE> delegate) {
+        this.delegate = delegate;
     }
 }

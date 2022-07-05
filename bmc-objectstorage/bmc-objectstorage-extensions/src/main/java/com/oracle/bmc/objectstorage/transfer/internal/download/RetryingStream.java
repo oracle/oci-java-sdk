@@ -6,20 +6,20 @@ package com.oracle.bmc.objectstorage.transfer.internal.download;
 
 import java.io.IOException;
 import java.io.InputStream;
-
 import com.oracle.bmc.model.Range;
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
 import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.util.StreamUtils;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * An InputStream that can resume a broken download by making a range read
  * request to Object Storage.
  */
-@Slf4j
 public class RetryingStream extends InputStream {
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(RetryingStream.class);
 
     /**
      * ObjectStorage client.
@@ -107,7 +107,7 @@ public class RetryingStream extends InputStream {
     }
 
     @Override
-    public synchronized int read(byte b[], int off, int len) throws IOException {
+    public synchronized int read(byte[] b, int off, int len) throws IOException {
         if (len == 0) {
             return 0;
         }

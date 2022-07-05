@@ -63,6 +63,13 @@ public class UpdateDomainConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.tenantmanagercontrolplane.responses.UpdateDomainResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.tenantmanagercontrolplane.responses.UpdateDomainResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.tenantmanagercontrolplane.responses.UpdateDomainResponse>
@@ -77,16 +84,26 @@ public class UpdateDomainConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.tenantmanagercontrolplane.responses.UpdateDomainResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.tenantmanagercontrolplane
                                                                 .model.Domain>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.tenantmanagercontrolplane
-                                                                        .model.Domain
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.tenantmanagercontrolplane.model
+                                                                    .Domain
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.tenantmanagercontrolplane.model
+                                                                    .Domain
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.tenantmanagercontrolplane.model

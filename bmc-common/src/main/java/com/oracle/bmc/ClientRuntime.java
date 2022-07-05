@@ -4,20 +4,19 @@
  */
 package com.oracle.bmc;
 
+import org.slf4j.Logger;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
 import com.oracle.bmc.util.internal.StringUtils;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * This class provides client info that will be sent to the servers as part of each request.
  */
-@Slf4j
 public class ClientRuntime {
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(ClientRuntime.class);
     /**
      * Sets an extra piece of information into the user-agent header passed to the server.
      * The format is (by convention) "Application/Version", ex "MyApp/1.3.5".
@@ -25,7 +24,7 @@ public class ClientRuntime {
      * Note, this must be called BEFORE any service calls are ever made, and once set, cannot
      * be changed after a call has been made.
      */
-    @Setter private static String clientUserAgent;
+    private static String clientUserAgent;
 
     /**
      * The user agent to send.
@@ -33,11 +32,11 @@ public class ClientRuntime {
      * The agent will include runtime information, ex:
      * <code>Oracle-JavaSDK/1.0.0 (Linux/3.10.0-229.el7.x86_64; Java/1.8.0_60; Java HotSpot(TM) 64-Bit Server VM/25.60-b23)</code>
      */
-    @Getter private final String userAgent;
+    private final String userAgent;
     /**
      * The SDK client info to send.
      */
-    @Getter private final String clientInfo;
+    private final String clientInfo;
 
     private static final String ENV_VAR_USER_AGENT = "OCI_SDK_APPEND_USER_AGENT";
 
@@ -106,6 +105,18 @@ public class ClientRuntime {
      */
     public static ClientRuntime getRuntime() {
         return RuntimeInstance.INSTANCE;
+    }
+
+    public String getUserAgent() {
+        return this.userAgent;
+    }
+
+    public String getClientInfo() {
+        return this.clientInfo;
+    }
+
+    public static void setClientUserAgent(String clientUserAgent) {
+        ClientRuntime.clientUserAgent = clientUserAgent;
     }
 
     // holder

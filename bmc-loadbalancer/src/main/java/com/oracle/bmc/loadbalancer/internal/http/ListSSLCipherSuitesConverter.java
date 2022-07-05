@@ -58,6 +58,13 @@ public class ListSSLCipherSuitesConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.loadbalancer.responses.ListSSLCipherSuitesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.ListSSLCipherSuitesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.loadbalancer.responses.ListSSLCipherSuitesResponse>
@@ -71,19 +78,31 @@ public class ListSSLCipherSuitesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.loadbalancer.responses.ListSSLCipherSuitesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
                                                                 com.oracle.bmc.loadbalancer.model
                                                                         .SSLCipherSuite>>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        new javax.ws.rs.core.GenericType<
-                                                                java.util.List<
-                                                                        com.oracle.bmc.loadbalancer
-                                                                                .model
-                                                                                .SSLCipherSuite>>() {});
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.loadbalancer
+                                                                            .model
+                                                                            .SSLCipherSuite>>() {},
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.loadbalancer
+                                                                            .model
+                                                                            .SSLCipherSuite>>() {});
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<

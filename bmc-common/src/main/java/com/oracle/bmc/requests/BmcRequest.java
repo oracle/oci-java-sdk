@@ -6,11 +6,10 @@ package com.oracle.bmc.requests;
 
 import javax.ws.rs.client.Invocation;
 
+import javax.ws.rs.core.MultivaluedMap;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.util.internal.Consumer;
-import lombok.Getter;
-import lombok.Setter;
 import java.util.Objects;
 
 /**
@@ -28,8 +27,7 @@ public class BmcRequest<B> {
      * modifying the passed in {@code headers} map after the call does not have any
      * effect on headers set.
      */
-    @Setter @Getter private Consumer<Invocation.Builder> invocationCallback;
-
+    private Consumer<Invocation.Builder> invocationCallback;
     /**
      * Optional {@link RetryConfiguration} to use for this request.
      *
@@ -37,7 +35,7 @@ public class BmcRequest<B> {
      * {@link com.oracle.bmc.ClientConfiguration} and SDK level (via
      * {@link com.oracle.bmc.retrier.Retriers#setDefaultRetryConfiguration(RetryConfiguration)}
      */
-    @Setter @Getter private RetryConfiguration retryConfiguration;
+    private RetryConfiguration retryConfiguration;
 
     /**
      * Alternative accessor for the body parameter, if this request supports a body.
@@ -67,7 +65,7 @@ public class BmcRequest<B> {
     /**
      * Uses getInvocationCallback and getRetryConfiguration to determine if passed
      * request is equal to 'this'.
-     **/
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -83,7 +81,7 @@ public class BmcRequest<B> {
 
     /**
      * Uses invocationCallback and retryConfiguration to generate a hash.
-     **/
+     */
     @Override
     public int hashCode() {
         return Objects.hash(getInvocationCallback(), getRetryConfiguration());
@@ -122,5 +120,55 @@ public class BmcRequest<B> {
          * @return request
          */
         T build();
+    }
+
+    /**
+     * Optional consumer that will be invoked before the actual REST call is made.
+     * Allows callers to alter/add any parameters that were not directly
+     * configurable otherwise.  Attempting to invoke or build the builder in any
+     * way will result in an exception.
+     *
+     * For the {@link Invocation.Builder#headers(MultivaluedMap)} method, note that
+     * modifying the passed in {@code headers} map after the call does not have any
+     * effect on headers set.
+     */
+    public void setInvocationCallback(final Consumer<Invocation.Builder> invocationCallback) {
+        this.invocationCallback = invocationCallback;
+    }
+
+    /**
+     * Optional consumer that will be invoked before the actual REST call is made.
+     * Allows callers to alter/add any parameters that were not directly
+     * configurable otherwise.  Attempting to invoke or build the builder in any
+     * way will result in an exception.
+     *
+     * For the {@link Invocation.Builder#headers(MultivaluedMap)} method, note that
+     * modifying the passed in {@code headers} map after the call does not have any
+     * effect on headers set.
+     */
+    public Consumer<Invocation.Builder> getInvocationCallback() {
+        return this.invocationCallback;
+    }
+
+    /**
+     * Optional {@link RetryConfiguration} to use for this request.
+     *
+     * Note: This overrides the retry configurations set on the client (via
+     * {@link com.oracle.bmc.ClientConfiguration} and SDK level (via
+     * {@link com.oracle.bmc.retrier.Retriers#setDefaultRetryConfiguration(RetryConfiguration)}
+     */
+    public void setRetryConfiguration(final RetryConfiguration retryConfiguration) {
+        this.retryConfiguration = retryConfiguration;
+    }
+
+    /**
+     * Optional {@link RetryConfiguration} to use for this request.
+     *
+     * Note: This overrides the retry configurations set on the client (via
+     * {@link com.oracle.bmc.ClientConfiguration} and SDK level (via
+     * {@link com.oracle.bmc.retrier.Retriers#setDefaultRetryConfiguration(RetryConfiguration)}
+     */
+    public RetryConfiguration getRetryConfiguration() {
+        return this.retryConfiguration;
     }
 }

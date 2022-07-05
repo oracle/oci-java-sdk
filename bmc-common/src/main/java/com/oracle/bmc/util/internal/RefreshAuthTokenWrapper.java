@@ -4,19 +4,18 @@
  */
 package com.oracle.bmc.util.internal;
 
+import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
+import com.oracle.bmc.model.BmcException;
+import com.oracle.bmc.requests.BmcRequest;
+import com.oracle.bmc.responses.AsyncHandler;
+import javax.annotation.Nonnull;
+import org.slf4j.Logger;
+
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Function;
-
-import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
-import com.oracle.bmc.model.BmcException;
-import com.oracle.bmc.requests.BmcRequest;
-import com.oracle.bmc.responses.AsyncHandler;
-import com.oracle.bmc.retrier.DefaultRetryCondition;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Combined future and callbacks for asynchronous requests intended to work with some authenticated calls, like
@@ -38,16 +37,17 @@ import lombok.extern.slf4j.Slf4j;
  * @param <RESPONSE>
  *            The response type.
  */
-@Slf4j
 public abstract class RefreshAuthTokenWrapper<REQUEST extends BmcRequest<?>, RESPONSE>
         implements AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE> {
     private static final int NUM_TRIES_ALLOWED = 2;
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(RefreshAuthTokenWrapper.class);
 
     private final RefreshableOnNotAuthenticatedProvider<?> authDetailsProvider;
     private final AsyncHandler<REQUEST, RESPONSE> innerHandler;
 
     private final Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> futureSupplier;
-    @NonNull private Future<RESPONSE> delegate;
+    @Nonnull private Future<RESPONSE> delegate;
 
     private volatile int currentAttempt = 0;
 

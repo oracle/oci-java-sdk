@@ -106,6 +106,13 @@ public class ListWorkspacesConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.dataintegration.responses.ListWorkspacesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dataintegration.responses.ListWorkspacesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.dataintegration.responses.ListWorkspacesResponse>
@@ -118,20 +125,31 @@ public class ListWorkspacesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.dataintegration.responses.ListWorkspacesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
                                                                 com.oracle.bmc.dataintegration.model
                                                                         .WorkspaceSummary>>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        new javax.ws.rs.core.GenericType<
-                                                                java.util.List<
-                                                                        com.oracle.bmc
-                                                                                .dataintegration
-                                                                                .model
-                                                                                .WorkspaceSummary>>() {});
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.dataintegration
+                                                                            .model
+                                                                            .WorkspaceSummary>>() {},
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.dataintegration
+                                                                            .model
+                                                                            .WorkspaceSummary>>() {});
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<

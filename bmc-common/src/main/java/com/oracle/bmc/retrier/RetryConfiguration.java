@@ -10,10 +10,7 @@ import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategyWithJitter;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import com.oracle.bmc.waiter.TerminationStrategy;
 import com.oracle.bmc.waiter.WaiterConfiguration;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.ToString;
-
+import javax.annotation.Nonnull;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -23,7 +20,6 @@ import java.util.concurrent.TimeUnit;
  * The default delay strategy is an exponential backoff strategy to a max wait of 30 seconds.
  * The default retry condition is {@link DefaultRetryCondition}.
  */
-@ToString(callSuper = true)
 public class RetryConfiguration extends WaiterConfiguration {
     public static final RetryConfiguration NO_RETRY_CONFIGURATION =
             RetryConfiguration.builder().build();
@@ -41,15 +37,30 @@ public class RetryConfiguration extends WaiterConfiguration {
                             exception -> new DefaultRetryCondition().shouldBeRetried(exception))
                     .build();
 
-    @Getter private final RetryCondition retryCondition;
-    @Getter private final RetryOptions retryOptions;
+    private final RetryCondition retryCondition;
+    private final RetryOptions retryOptions;
 
     private RetryConfiguration(
-            @NonNull final TerminationStrategy terminationStrategy,
-            @NonNull final DelayStrategy delayStrategy,
-            @NonNull final RetryCondition retryCondition,
-            @NonNull final RetryOptions retryOptions) {
+            @Nonnull final TerminationStrategy terminationStrategy,
+            @Nonnull final DelayStrategy delayStrategy,
+            @Nonnull final RetryCondition retryCondition,
+            @Nonnull final RetryOptions retryOptions) {
         super(terminationStrategy, delayStrategy);
+        if (terminationStrategy == null) {
+            throw new java.lang.NullPointerException(
+                    "terminationStrategy is marked non-null but is null");
+        }
+        if (delayStrategy == null) {
+            throw new java.lang.NullPointerException(
+                    "delayStrategy is marked non-null but is null");
+        }
+        if (retryCondition == null) {
+            throw new java.lang.NullPointerException(
+                    "retryCondition is marked non-null but is null");
+        }
+        if (retryOptions == null) {
+            throw new java.lang.NullPointerException("retryOptions is marked non-null but is null");
+        }
         this.retryCondition = retryCondition;
         this.retryOptions = retryOptions;
     }
@@ -78,22 +89,38 @@ public class RetryConfiguration extends WaiterConfiguration {
         private RetryCondition retryCondition = new DefaultRetryCondition();
         private RetryOptions retryOptions = DEFAULT_RETRY_OPTIONS;
 
-        public Builder terminationStrategy(@NonNull final TerminationStrategy terminationStrategy) {
+        public Builder terminationStrategy(@Nonnull final TerminationStrategy terminationStrategy) {
+            if (terminationStrategy == null) {
+                throw new java.lang.NullPointerException(
+                        "terminationStrategy is marked non-null but is null");
+            }
             this.terminationStrategy = terminationStrategy;
             return this;
         }
 
-        public Builder delayStrategy(@NonNull final DelayStrategy delayStrategy) {
+        public Builder delayStrategy(@Nonnull final DelayStrategy delayStrategy) {
+            if (delayStrategy == null) {
+                throw new java.lang.NullPointerException(
+                        "delayStrategy is marked non-null but is null");
+            }
             this.delayStrategy = delayStrategy;
             return this;
         }
 
-        public Builder retryCondition(@NonNull final RetryCondition retryCondition) {
+        public Builder retryCondition(@Nonnull final RetryCondition retryCondition) {
+            if (retryCondition == null) {
+                throw new java.lang.NullPointerException(
+                        "retryCondition is marked non-null but is null");
+            }
             this.retryCondition = retryCondition;
             return this;
         }
 
-        public Builder retryOptions(@NonNull final RetryOptions retryOptions) {
+        public Builder retryOptions(@Nonnull final RetryOptions retryOptions) {
+            if (retryOptions == null) {
+                throw new java.lang.NullPointerException(
+                        "retryOptions is marked non-null but is null");
+            }
             this.retryOptions = retryOptions;
             return this;
         }
@@ -106,5 +133,24 @@ public class RetryConfiguration extends WaiterConfiguration {
             return new RetryConfiguration(
                     terminationStrategy, delayStrategy, retryCondition, retryOptions);
         }
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "RetryConfiguration(super="
+                + super.toString()
+                + ", retryCondition="
+                + this.getRetryCondition()
+                + ", retryOptions="
+                + this.getRetryOptions()
+                + ")";
+    }
+
+    public RetryCondition getRetryCondition() {
+        return this.retryCondition;
+    }
+
+    public RetryOptions getRetryOptions() {
+        return this.retryOptions;
     }
 }

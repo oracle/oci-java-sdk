@@ -399,13 +399,18 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                 CreateTransferApplianceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTransferApplianceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "CreateTransferAppliance",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateTransferApplianceResponse>
-                transformer = CreateTransferApplianceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance", "CreateTransferAppliance", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        CreateTransferApplianceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTransferApplianceRequest, CreateTransferApplianceResponse>
                 handlerToUse = handler;
@@ -451,15 +456,17 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTransferApplianceAdminCredentialsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "CreateTransferApplianceAdminCredentials",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateTransferApplianceAdminCredentialsResponse>
-                transformer = CreateTransferApplianceAdminCredentialsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance",
-                "CreateTransferApplianceAdminCredentials",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        CreateTransferApplianceAdminCredentialsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTransferApplianceAdminCredentialsRequest,
                         CreateTransferApplianceAdminCredentialsResponse>
@@ -506,12 +513,17 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                 DeleteTransferApplianceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteTransferApplianceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "DeleteTransferAppliance",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteTransferApplianceResponse>
-                transformer = DeleteTransferApplianceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance", "DeleteTransferAppliance", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteTransferApplianceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteTransferApplianceRequest, DeleteTransferApplianceResponse>
                 handlerToUse = handler;
@@ -549,12 +561,17 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                 GetTransferApplianceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTransferApplianceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "GetTransferAppliance",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTransferApplianceResponse>
-                transformer = GetTransferApplianceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance", "GetTransferAppliance", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetTransferApplianceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetTransferApplianceRequest, GetTransferApplianceResponse>
                 handlerToUse = handler;
@@ -596,17 +613,18 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTransferApplianceCertificateAuthorityCertificateConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "GetTransferApplianceCertificateAuthorityCertificate",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         GetTransferApplianceCertificateAuthorityCertificateResponse>
                 transformer =
-                        GetTransferApplianceCertificateAuthorityCertificateConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance",
-                "GetTransferApplianceCertificateAuthorityCertificate",
-                ib.getRequestUri().toString(),
-                "");
-
+                        GetTransferApplianceCertificateAuthorityCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetTransferApplianceCertificateAuthorityCertificateRequest,
                         GetTransferApplianceCertificateAuthorityCertificateResponse>
@@ -651,15 +669,17 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTransferApplianceEncryptionPassphraseConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "GetTransferApplianceEncryptionPassphrase",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTransferApplianceEncryptionPassphraseResponse>
-                transformer = GetTransferApplianceEncryptionPassphraseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance",
-                "GetTransferApplianceEncryptionPassphrase",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        GetTransferApplianceEncryptionPassphraseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetTransferApplianceEncryptionPassphraseRequest,
                         GetTransferApplianceEncryptionPassphraseResponse>
@@ -701,12 +721,17 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                 ListTransferAppliancesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTransferAppliancesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "ListTransferAppliances",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTransferAppliancesResponse>
-                transformer = ListTransferAppliancesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance", "ListTransferAppliances", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListTransferAppliancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListTransferAppliancesRequest, ListTransferAppliancesResponse>
                 handlerToUse = handler;
@@ -744,12 +769,17 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                 UpdateTransferApplianceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateTransferApplianceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "UpdateTransferAppliance",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateTransferApplianceResponse>
-                transformer = UpdateTransferApplianceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance", "UpdateTransferAppliance", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        UpdateTransferApplianceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTransferApplianceRequest, UpdateTransferApplianceResponse>
                 handlerToUse = handler;

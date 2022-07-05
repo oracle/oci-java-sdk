@@ -100,6 +100,13 @@ public class ListAutoScalingConfigurationsConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.autoscaling.responses.ListAutoScalingConfigurationsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.autoscaling.responses.ListAutoScalingConfigurationsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.autoscaling.responses.ListAutoScalingConfigurationsResponse>
@@ -114,19 +121,29 @@ public class ListAutoScalingConfigurationsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.autoscaling.responses.ListAutoScalingConfigurationsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
                                                                 com.oracle.bmc.autoscaling.model
                                                                         .AutoScalingConfigurationSummary>>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        new javax.ws.rs.core.GenericType<
-                                                                java.util.List<
-                                                                        com.oracle.bmc.autoscaling
-                                                                                .model
-                                                                                .AutoScalingConfigurationSummary>>() {});
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.autoscaling.model
+                                                                            .AutoScalingConfigurationSummary>>() {},
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.autoscaling.model
+                                                                            .AutoScalingConfigurationSummary>>() {});
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<

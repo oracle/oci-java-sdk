@@ -398,18 +398,19 @@ public class UserClient implements User {
         final CreateUserRequest interceptedRequest = CreateUserConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateUserConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse> transformer =
-                CreateUserConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "User",
-                "CreateUser",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/User/CreateUser");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "User",
+                        "CreateUser",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/User/CreateUser");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse> transformer =
+                CreateUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

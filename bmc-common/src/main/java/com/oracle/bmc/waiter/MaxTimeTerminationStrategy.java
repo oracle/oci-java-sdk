@@ -5,16 +5,12 @@
 package com.oracle.bmc.waiter;
 
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
-
-import lombok.RequiredArgsConstructor;
-
 import java.util.concurrent.TimeUnit;
 
 /**
  * Termination strategy that allows up to X milliseconds to have elapsed
  * before terminating.
  */
-@RequiredArgsConstructor
 public class MaxTimeTerminationStrategy implements TerminationStrategy {
     /**
      * The max amount of time to wait (in millis) before returning.
@@ -64,5 +60,10 @@ public class MaxTimeTerminationStrategy implements TerminationStrategy {
      */
     public static MaxTimeTerminationStrategy ofMinutes(final long maxTimeInMinutes) {
         return ofTimeUnit(maxTimeInMinutes, TimeUnit.MINUTES);
+    }
+
+    @java.beans.ConstructorProperties({"maxTimeInMillis"})
+    public MaxTimeTerminationStrategy(final long maxTimeInMillis) {
+        this.maxTimeInMillis = maxTimeInMillis;
     }
 }

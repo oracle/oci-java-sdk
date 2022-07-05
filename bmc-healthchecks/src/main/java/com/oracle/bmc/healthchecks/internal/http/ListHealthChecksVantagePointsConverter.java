@@ -101,6 +101,13 @@ public class ListHealthChecksVantagePointsConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.healthchecks.responses.ListHealthChecksVantagePointsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.healthchecks.responses.ListHealthChecksVantagePointsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.healthchecks.responses.ListHealthChecksVantagePointsResponse>
@@ -115,19 +122,31 @@ public class ListHealthChecksVantagePointsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.healthchecks.responses.ListHealthChecksVantagePointsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
                                                                 com.oracle.bmc.healthchecks.model
                                                                         .HealthChecksVantagePointSummary>>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        new javax.ws.rs.core.GenericType<
-                                                                java.util.List<
-                                                                        com.oracle.bmc.healthchecks
-                                                                                .model
-                                                                                .HealthChecksVantagePointSummary>>() {});
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.healthchecks
+                                                                            .model
+                                                                            .HealthChecksVantagePointSummary>>() {},
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc.healthchecks
+                                                                            .model
+                                                                            .HealthChecksVantagePointSummary>>() {});
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<

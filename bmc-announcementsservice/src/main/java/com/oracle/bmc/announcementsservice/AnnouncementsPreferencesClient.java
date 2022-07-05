@@ -404,20 +404,23 @@ public class AnnouncementsPreferencesClient implements AnnouncementsPreferences 
                 CreateAnnouncementsPreferenceConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAnnouncementsPreferenceConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAnnouncementsPreferenceResponse>
-                transformer = CreateAnnouncementsPreferenceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementsPreferences",
-                "CreateAnnouncementsPreference",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/CreateAnnouncementsPreference");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementsPreferences",
+                        "CreateAnnouncementsPreference",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/CreateAnnouncementsPreference");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateAnnouncementsPreferenceResponse>
+                transformer =
+                        CreateAnnouncementsPreferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -445,19 +448,22 @@ public class AnnouncementsPreferencesClient implements AnnouncementsPreferences 
                 GetAnnouncementsPreferenceConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAnnouncementsPreferenceConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAnnouncementsPreferenceResponse>
-                transformer = GetAnnouncementsPreferenceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementsPreferences",
-                "GetAnnouncementsPreference",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferences/GetAnnouncementsPreference");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementsPreferences",
+                        "GetAnnouncementsPreference",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferences/GetAnnouncementsPreference");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAnnouncementsPreferenceResponse>
+                transformer =
+                        GetAnnouncementsPreferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -481,19 +487,22 @@ public class AnnouncementsPreferencesClient implements AnnouncementsPreferences 
                 ListAnnouncementsPreferencesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAnnouncementsPreferencesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAnnouncementsPreferencesResponse>
-                transformer = ListAnnouncementsPreferencesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementsPreferences",
-                "ListAnnouncementsPreferences",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/ListAnnouncementsPreferences");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementsPreferences",
+                        "ListAnnouncementsPreferences",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/ListAnnouncementsPreferences");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAnnouncementsPreferencesResponse>
+                transformer =
+                        ListAnnouncementsPreferencesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -517,19 +526,22 @@ public class AnnouncementsPreferencesClient implements AnnouncementsPreferences 
                 UpdateAnnouncementsPreferenceConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAnnouncementsPreferenceConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAnnouncementsPreferenceResponse>
-                transformer = UpdateAnnouncementsPreferenceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementsPreferences",
-                "UpdateAnnouncementsPreference",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/UpdateAnnouncementsPreference");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementsPreferences",
+                        "UpdateAnnouncementsPreference",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/UpdateAnnouncementsPreference");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateAnnouncementsPreferenceResponse>
+                transformer =
+                        UpdateAnnouncementsPreferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

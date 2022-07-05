@@ -128,6 +128,14 @@ public class ListOperatorControlAssignmentsConverter {
                     com.oracle.bmc.operatoraccesscontrol.responses
                             .ListOperatorControlAssignmentsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.operatoraccesscontrol.responses
+                            .ListOperatorControlAssignmentsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.operatoraccesscontrol.responses
@@ -143,16 +151,26 @@ public class ListOperatorControlAssignmentsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.operatoraccesscontrol.responses.ListOperatorControlAssignmentsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.operatoraccesscontrol.model
                                                                 .OperatorControlAssignmentCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.operatoraccesscontrol.model
-                                                                        .OperatorControlAssignmentCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.operatoraccesscontrol.model
+                                                                    .OperatorControlAssignmentCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.operatoraccesscontrol.model
+                                                                    .OperatorControlAssignmentCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.operatoraccesscontrol.model

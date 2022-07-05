@@ -9,14 +9,11 @@ import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.circuitbreaker.NoCircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.internal.JaxRsCircuitBreakerImpl;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
-@Slf4j
 public class CircuitBreakerUtils {
 
-    @Setter @Getter
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(CircuitBreakerUtils.class);
     private static volatile CircuitBreakerConfiguration defaultCircuitBreakerConfiguration;
 
     public static CircuitBreakerConfiguration getNoCircuitBreakerConfiguration() {
@@ -110,5 +107,14 @@ public class CircuitBreakerUtils {
             return false;
         }
         return true;
+    }
+
+    public static CircuitBreakerConfiguration getDefaultCircuitBreakerConfiguration() {
+        return CircuitBreakerUtils.defaultCircuitBreakerConfiguration;
+    }
+
+    public static void setDefaultCircuitBreakerConfiguration(
+            CircuitBreakerConfiguration defaultCircuitBreakerConfiguration) {
+        CircuitBreakerUtils.defaultCircuitBreakerConfiguration = defaultCircuitBreakerConfiguration;
     }
 }

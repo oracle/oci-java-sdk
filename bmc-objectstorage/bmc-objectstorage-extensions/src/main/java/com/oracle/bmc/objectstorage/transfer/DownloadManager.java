@@ -9,7 +9,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
 import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
@@ -18,11 +17,7 @@ import com.oracle.bmc.objectstorage.transfer.internal.download.MultithreadStream
 import com.oracle.bmc.objectstorage.transfer.internal.download.RetryingStream;
 import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
-@RequiredArgsConstructor
 /**
  * Download manager, which automatically breaks a larger download into parallel downloads, based on object size.
  * It also handles possible retries.
@@ -35,6 +30,8 @@ import lombok.extern.slf4j.Slf4j;
  * set using {@link com.oracle.bmc.retrier.RetryConfiguration} are ignored.
  */
 public class DownloadManager {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DownloadManager.class);
     private static final RetryConfiguration NO_RETRIES_IN_CLIENT =
             RetryConfiguration.builder()
                     .terminationStrategy(new MaxAttemptsTerminationStrategy(1))
@@ -246,5 +243,11 @@ public class DownloadManager {
         final GetObjectResponse retryingResponse =
                 GetObjectResponse.builder().copy(response).inputStream(retryingStream).build();
         return retryingResponse;
+    }
+
+    @java.beans.ConstructorProperties({"objectStorage", "config"})
+    public DownloadManager(final ObjectStorage objectStorage, final DownloadConfiguration config) {
+        this.objectStorage = objectStorage;
+        this.config = config;
     }
 }

@@ -60,6 +60,13 @@ public class GetEmWarehouseResourceUsageConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.emwarehouse.responses.GetEmWarehouseResourceUsageResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.emwarehouse.responses.GetEmWarehouseResourceUsageResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.emwarehouse.responses.GetEmWarehouseResourceUsageResponse>
@@ -74,16 +81,24 @@ public class GetEmWarehouseResourceUsageConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.emwarehouse.responses.GetEmWarehouseResourceUsageResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.emwarehouse.model
                                                                 .ResourceUsage>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.emwarehouse.model
-                                                                        .ResourceUsage
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.emwarehouse.model.ResourceUsage
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.emwarehouse.model.ResourceUsage
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.emwarehouse.model.ResourceUsage>

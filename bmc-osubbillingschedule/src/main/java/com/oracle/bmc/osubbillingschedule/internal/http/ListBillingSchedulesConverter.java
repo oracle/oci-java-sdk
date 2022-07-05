@@ -113,6 +113,13 @@ public class ListBillingSchedulesConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.osubbillingschedule.responses.ListBillingSchedulesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osubbillingschedule.responses.ListBillingSchedulesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.osubbillingschedule.responses.ListBillingSchedulesResponse>
@@ -127,21 +134,34 @@ public class ListBillingSchedulesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.osubbillingschedule.responses.ListBillingSchedulesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
                                                                 com.oracle.bmc.osubbillingschedule
                                                                         .model
                                                                         .BillingScheduleSummary>>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        new javax.ws.rs.core.GenericType<
-                                                                java.util.List<
-                                                                        com.oracle.bmc
-                                                                                .osubbillingschedule
-                                                                                .model
-                                                                                .BillingScheduleSummary>>() {});
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc
+                                                                            .osubbillingschedule
+                                                                            .model
+                                                                            .BillingScheduleSummary>>() {},
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc
+                                                                            .osubbillingschedule
+                                                                            .model
+                                                                            .BillingScheduleSummary>>() {});
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<

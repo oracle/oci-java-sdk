@@ -4,16 +4,6 @@
  */
 package com.oracle.bmc;
 
-import java.io.File;
-import java.io.Serializable;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Locale;
-import java.util.Map;
-
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder;
@@ -26,15 +16,21 @@ import com.oracle.bmc.util.internal.NameUtils;
 import java.util.concurrent.locks.ReentrantLock;
 import com.oracle.bmc.util.internal.StringUtils;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Nonnull;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
-
+import org.slf4j.Logger;
 import javax.ws.rs.core.MediaType;
-
+import java.io.File;
+import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.concurrent.locks.ReentrantLock;
 import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.AUTHORIZATION_HEADER_VALUE;
 import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.METADATA_SERVICE_BASE_URL;
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
@@ -44,23 +40,24 @@ import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
  * <p>
  * Note, not all services may be available in all regions.
  */
-@Slf4j
-@EqualsAndHashCode
 public final class Region implements Serializable, Comparable<Region> {
 
     // Region metadata env attribute key
-    private final static String OCI_REGION_METADATA_ENV_VAR_NAME = "OCI_REGION_METADATA";
+    private static final String OCI_REGION_METADATA_ENV_VAR_NAME = "OCI_REGION_METADATA";
 
     // Default realm metadata env attribute key
-    private final static String OCI_DEFAULT_REALM_ENV_VAR_NAME = "OCI_DEFAULT_REALM";
+    private static final String OCI_DEFAULT_REALM_ENV_VAR_NAME = "OCI_DEFAULT_REALM";
 
     //The regions-config file path location
     private static final String REGIONS_CONFIG_FILE_PATH = "~/.oci/regions-config.json";
+
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(Region.class);
 
     private static volatile boolean hasUsedEnvVar = false;
     private static volatile boolean hasUsedConfigFile = false;
 
     private static final ReentrantLock lock = new ReentrantLock();
+
     private static volatile boolean hasOptedForInstanceMetadataService = false;
     @VisibleForTesting static volatile boolean hasUsedInstanceMetadataService = false;
     private static volatile boolean hasReceivedInstanceMetadataServiceResponse = false;
@@ -85,7 +82,7 @@ public final class Region implements Serializable, Comparable<Region> {
     private static final Map<String, Region> KNOWN_REGIONS = new LinkedHashMap<>();
 
     // Region registered through the instance metadata service.
-    @Getter public static volatile Region regionFromImds = null;
+    public static volatile Region regionFromImds = null;
 
     // OC1
     public static final Region AP_CHUNCHEON_1 = register("ap-chuncheon-1", Realm.OC1, "yny");
@@ -151,8 +148,7 @@ public final class Region implements Serializable, Comparable<Region> {
     /**
      * The region identifier as defined in https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
      */
-    @Getter private final String regionId;
-
+    private final String regionId;
     /**
      * The region key as defined in https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
      */
@@ -161,10 +157,20 @@ public final class Region implements Serializable, Comparable<Region> {
     /**
      * Get the realm this region belongs to.
      */
-    @Getter private final Realm realm;
+    private final Realm realm;
 
     private Region(
-            @NonNull String regionId, @NonNull Optional<String> regionCode, @NonNull Realm realm) {
+            @Nonnull String regionId, @Nonnull Optional<String> regionCode, @Nonnull Realm realm) {
+        if (regionId == null) {
+            throw new java.lang.NullPointerException("regionId is marked non-null but is null");
+        }
+        if (regionCode == null) {
+            throw new java.lang.NullPointerException("regionCode is marked non-null but is null");
+        }
+        if (realm == null) {
+            throw new java.lang.NullPointerException("realm is marked non-null but is null");
+        }
+
         this.regionId = regionId;
         this.regionCode = regionCode;
         this.realm = realm;
@@ -174,6 +180,10 @@ public final class Region implements Serializable, Comparable<Region> {
             // For backwards compatibility, we keep track of the enum-named field.
             KNOWN_REGIONS.put(NameUtils.canonicalizeForEnumTypes(regionId), this);
         }
+    }
+
+    public static Region getRegionFromImds() {
+        return Region.regionFromImds;
     }
 
     /**
@@ -233,8 +243,8 @@ public final class Region implements Serializable, Comparable<Region> {
         return regionId.compareTo(other.regionId);
     }
 
-    @Override
     // For backward compatibility maintain the enum toString behavior
+    @Override
     public String toString() {
         return NameUtils.canonicalizeForEnumTypes(getRegionId());
     }
@@ -272,7 +282,10 @@ public final class Region implements Serializable, Comparable<Region> {
      * @throws IllegalArgumentException if no region exists with the specified
      * name
      */
-    public static Region valueOf(@NonNull String name) throws IllegalArgumentException {
+    public static Region valueOf(@Nonnull String name) throws IllegalArgumentException {
+        if (name == null) {
+            throw new java.lang.NullPointerException("name is marked non-null but is null");
+        }
         Optional<Region> maybeRegion = getRegionAndRegisterIfNecessary(name);
         if (!maybeRegion.isPresent()) {
             throw new IllegalArgumentException("Unknown region " + name);
@@ -313,7 +326,6 @@ public final class Region implements Serializable, Comparable<Region> {
         if (maybeRegion.isPresent()) {
             return formatDefaultRegionEndpoint(service, maybeRegion.get());
         }
-
         // else we need to fall back to OC1 SLD
         LOG.debug("Unknown regionId '{}', will assume it's in Realm OC1", regionId);
         return EndpointBuilder.createEndpoint(service, regionId, Realm.OC1);
@@ -378,7 +390,13 @@ public final class Region implements Serializable, Comparable<Region> {
      * @param realm The realm of the new region.
      * @return The registered region (or existing one if found).
      */
-    public static Region register(@NonNull String regionId, @NonNull final Realm realm) {
+    public static Region register(@Nonnull String regionId, @Nonnull final Realm realm) {
+        if (regionId == null) {
+            throw new java.lang.NullPointerException("regionId is marked non-null but is null");
+        }
+        if (realm == null) {
+            throw new java.lang.NullPointerException("realm is marked non-null but is null");
+        }
         return register(regionId, realm, null);
     }
 
@@ -392,7 +410,14 @@ public final class Region implements Serializable, Comparable<Region> {
      * @return The registered region (or existing one if found).
      */
     public static Region register(
-            @NonNull String regionId, @NonNull final Realm realm, String regionCode) {
+            @Nonnull String regionId, @Nonnull final Realm realm, String regionCode) {
+        if (regionId == null) {
+            throw new java.lang.NullPointerException("regionId is marked non-null but is null");
+        }
+        if (realm == null) {
+            throw new java.lang.NullPointerException("realm is marked non-null but is null");
+        }
+
         regionId = regionId.trim().toLowerCase(Locale.US);
         if (regionId.isEmpty()) {
             throw new IllegalArgumentException("Cannot have empty regionId");
@@ -436,7 +461,7 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     *  Register all regions and sets status
+     * Register all regions and sets status
      */
     private static void registerAllRegions() {
 
@@ -450,7 +475,7 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     *  Implements decision tree to determine Region.
+     * Implements decision tree to determine Region.
      */
     private static Optional<Region> getRegionAndRegisterIfNecessary(String regionCodeOrId) {
 
@@ -683,5 +708,45 @@ public final class Region implements Serializable, Comparable<Region> {
             hasUsedInstanceMetadataService = true;
         }
         return hasReceivedInstanceMetadataServiceResponse;
+    }
+
+    public boolean equals(final Object o) {
+        if (o == this) return true;
+        if (!(o instanceof Region)) return false;
+        final Region other = (Region) o;
+        final Object this$regionId = this.regionId;
+        final Object other$regionId = other.regionId;
+        if (this$regionId == null ? other$regionId != null : !this$regionId.equals(other$regionId))
+            return false;
+        final Object this$regionCode = this.getRegionCode();
+        final Object other$regionCode = other.getRegionCode();
+        if (this$regionCode == null
+                ? other$regionCode != null
+                : !this$regionCode.equals(other$regionCode)) return false;
+        final Object this$realm = this.realm;
+        final Object other$realm = other.realm;
+        if (this$realm == null ? other$realm != null : !this$realm.equals(other$realm))
+            return false;
+        return true;
+    }
+
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        final Object $regionId = this.regionId;
+        result = result * PRIME + ($regionId == null ? 43 : $regionId.hashCode());
+        final Object $regionCode = this.getRegionCode();
+        result = result * PRIME + ($regionCode == null ? 43 : $regionCode.hashCode());
+        final Object $realm = this.realm;
+        result = result * PRIME + ($realm == null ? 43 : $realm.hashCode());
+        return result;
+    }
+
+    public String getRegionId() {
+        return this.regionId;
+    }
+
+    public Realm getRealm() {
+        return this.realm;
     }
 }

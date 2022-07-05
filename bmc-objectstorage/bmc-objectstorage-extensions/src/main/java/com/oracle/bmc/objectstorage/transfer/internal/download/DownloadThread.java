@@ -6,11 +6,9 @@ package com.oracle.bmc.objectstorage.transfer.internal.download;
 
 import java.io.IOException;
 import java.io.InterruptedIOException;
-
 import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
 import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.objectstorage.transfer.DownloadManager;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * A {@link DownloadThread} object has two important methods, {@link #run()}
@@ -22,8 +20,9 @@ import lombok.extern.slf4j.Slf4j;
  * {@link #read(byte[], int, int)} is used by another thread that wants to
  * consume the data that is being read.
  */
-@Slf4j
 public class DownloadThread {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DownloadThread.class);
 
     /**
      * Used to perform the request.
@@ -209,7 +208,7 @@ public class DownloadThread {
      * @return
      * @throws InterruptedException
      */
-    public int read(byte b[], int off, int len) throws IOException {
+    public int read(byte[] b, int off, int len) throws IOException {
         if (len == 0) {
             return 0;
         }

@@ -396,11 +396,12 @@ public class CommitmentAsyncClient implements CommitmentAsync {
                 GetCommitmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCommitmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Commitment", "GetCommitment", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCommitmentResponse>
-                transformer = GetCommitmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Commitment", "GetCommitment", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetCommitmentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCommitmentRequest, GetCommitmentResponse>
                 handlerToUse = handler;
 
@@ -437,11 +438,13 @@ public class CommitmentAsyncClient implements CommitmentAsync {
                 ListCommitmentsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCommitmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Commitment", "ListCommitments", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCommitmentsResponse>
-                transformer = ListCommitmentsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Commitment", "ListCommitments", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListCommitmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListCommitmentsRequest, ListCommitmentsResponse>
                 handlerToUse = handler;
 

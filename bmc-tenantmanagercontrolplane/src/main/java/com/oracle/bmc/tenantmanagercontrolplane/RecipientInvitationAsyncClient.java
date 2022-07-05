@@ -399,16 +399,18 @@ public class RecipientInvitationAsyncClient implements RecipientInvitationAsync 
                 AcceptRecipientInvitationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AcceptRecipientInvitationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RecipientInvitation",
+                        "AcceptRecipientInvitation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/AcceptRecipientInvitation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AcceptRecipientInvitationResponse>
-                transformer = AcceptRecipientInvitationConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RecipientInvitation",
-                "AcceptRecipientInvitation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/AcceptRecipientInvitation");
-
+                transformer =
+                        AcceptRecipientInvitationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AcceptRecipientInvitationRequest, AcceptRecipientInvitationResponse>
                 handlerToUse = handler;
@@ -447,15 +449,17 @@ public class RecipientInvitationAsyncClient implements RecipientInvitationAsync 
                 GetRecipientInvitationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRecipientInvitationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RecipientInvitation",
+                        "GetRecipientInvitation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/GetRecipientInvitation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetRecipientInvitationResponse>
-                transformer = GetRecipientInvitationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RecipientInvitation",
-                "GetRecipientInvitation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/GetRecipientInvitation");
-
+                transformer =
+                        GetRecipientInvitationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetRecipientInvitationRequest, GetRecipientInvitationResponse>
                 handlerToUse = handler;
@@ -493,16 +497,18 @@ public class RecipientInvitationAsyncClient implements RecipientInvitationAsync 
                 IgnoreRecipientInvitationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 IgnoreRecipientInvitationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RecipientInvitation",
+                        "IgnoreRecipientInvitation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/IgnoreRecipientInvitation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, IgnoreRecipientInvitationResponse>
-                transformer = IgnoreRecipientInvitationConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RecipientInvitation",
-                "IgnoreRecipientInvitation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/IgnoreRecipientInvitation");
-
+                transformer =
+                        IgnoreRecipientInvitationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         IgnoreRecipientInvitationRequest, IgnoreRecipientInvitationResponse>
                 handlerToUse = handler;
@@ -541,15 +547,17 @@ public class RecipientInvitationAsyncClient implements RecipientInvitationAsync 
                 ListRecipientInvitationsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRecipientInvitationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RecipientInvitation",
+                        "ListRecipientInvitations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/ListRecipientInvitations");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListRecipientInvitationsResponse>
-                transformer = ListRecipientInvitationsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RecipientInvitation",
-                "ListRecipientInvitations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/ListRecipientInvitations");
-
+                transformer =
+                        ListRecipientInvitationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListRecipientInvitationsRequest, ListRecipientInvitationsResponse>
                 handlerToUse = handler;
@@ -587,15 +595,17 @@ public class RecipientInvitationAsyncClient implements RecipientInvitationAsync 
                 UpdateRecipientInvitationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateRecipientInvitationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RecipientInvitation",
+                        "UpdateRecipientInvitation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/UpdateRecipientInvitation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateRecipientInvitationResponse>
-                transformer = UpdateRecipientInvitationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RecipientInvitation",
-                "UpdateRecipientInvitation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/UpdateRecipientInvitation");
-
+                transformer =
+                        UpdateRecipientInvitationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateRecipientInvitationRequest, UpdateRecipientInvitationResponse>
                 handlerToUse = handler;

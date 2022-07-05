@@ -398,12 +398,17 @@ public class SubscribedServiceAsyncClient implements SubscribedServiceAsync {
                 GetSubscribedServiceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSubscribedServiceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SubscribedService",
+                        "GetSubscribedService",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetSubscribedServiceResponse>
-                transformer = GetSubscribedServiceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "SubscribedService", "GetSubscribedService", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetSubscribedServiceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetSubscribedServiceRequest, GetSubscribedServiceResponse>
                 handlerToUse = handler;
@@ -441,12 +446,17 @@ public class SubscribedServiceAsyncClient implements SubscribedServiceAsync {
                 ListSubscribedServicesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSubscribedServicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SubscribedService",
+                        "ListSubscribedServices",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSubscribedServicesResponse>
-                transformer = ListSubscribedServicesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "SubscribedService", "ListSubscribedServices", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListSubscribedServicesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListSubscribedServicesRequest, ListSubscribedServicesResponse>
                 handlerToUse = handler;

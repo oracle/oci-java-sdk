@@ -478,20 +478,23 @@ public class OrganizationClient implements Organization {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ApproveOrganizationTenancyForTransferConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ApproveOrganizationTenancyForTransferResponse>
-                transformer = ApproveOrganizationTenancyForTransferConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Organization",
-                "ApproveOrganizationTenancyForTransfer",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/ApproveOrganizationTenancyForTransfer");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "ApproveOrganizationTenancyForTransfer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/ApproveOrganizationTenancyForTransfer");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ApproveOrganizationTenancyForTransferResponse>
+                transformer =
+                        ApproveOrganizationTenancyForTransferConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -515,16 +518,19 @@ public class OrganizationClient implements Organization {
                 CreateChildTenancyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateChildTenancyConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateChildTenancyResponse>
-                transformer = CreateChildTenancyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Organization", "CreateChildTenancy", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization", "CreateChildTenancy", ib.getRequestUri().toString(), "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateChildTenancyResponse>
+                transformer =
+                        CreateChildTenancyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -552,20 +558,23 @@ public class OrganizationClient implements Organization {
                 DeleteOrganizationTenancyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteOrganizationTenancyConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteOrganizationTenancyResponse>
-                transformer = DeleteOrganizationTenancyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Organization",
-                "DeleteOrganizationTenancy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/DeleteOrganizationTenancy");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "DeleteOrganizationTenancy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/DeleteOrganizationTenancy");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteOrganizationTenancyResponse>
+                transformer =
+                        DeleteOrganizationTenancyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -589,18 +598,21 @@ public class OrganizationClient implements Organization {
                 GetOrganizationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetOrganizationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOrganizationResponse>
-                transformer = GetOrganizationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Organization",
-                "GetOrganization",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/GetOrganization");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "GetOrganization",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/GetOrganization");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetOrganizationResponse>
+                transformer =
+                        GetOrganizationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -624,18 +636,21 @@ public class OrganizationClient implements Organization {
                 GetOrganizationTenancyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetOrganizationTenancyConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOrganizationTenancyResponse>
-                transformer = GetOrganizationTenancyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Organization",
-                "GetOrganizationTenancy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/GetOrganizationTenancy");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "GetOrganizationTenancy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/GetOrganizationTenancy");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetOrganizationTenancyResponse>
+                transformer =
+                        GetOrganizationTenancyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -659,19 +674,22 @@ public class OrganizationClient implements Organization {
                 ListOrganizationTenanciesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListOrganizationTenanciesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListOrganizationTenanciesResponse>
-                transformer = ListOrganizationTenanciesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Organization",
-                "ListOrganizationTenancies",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizationTenancies");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "ListOrganizationTenancies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizationTenancies");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListOrganizationTenanciesResponse>
+                transformer =
+                        ListOrganizationTenanciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -694,18 +712,21 @@ public class OrganizationClient implements Organization {
                 ListOrganizationsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListOrganizationsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListOrganizationsResponse>
-                transformer = ListOrganizationsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Organization",
-                "ListOrganizations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizations");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "ListOrganizations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizations");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListOrganizationsResponse>
+                transformer =
+                        ListOrganizationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -729,19 +750,22 @@ public class OrganizationClient implements Organization {
                 RestoreOrganizationTenancyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestoreOrganizationTenancyConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RestoreOrganizationTenancyResponse>
-                transformer = RestoreOrganizationTenancyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Organization",
-                "RestoreOrganizationTenancy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/RestoreOrganizationTenancy");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "RestoreOrganizationTenancy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/RestoreOrganizationTenancy");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RestoreOrganizationTenancyResponse>
+                transformer =
+                        RestoreOrganizationTenancyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -767,20 +791,23 @@ public class OrganizationClient implements Organization {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UnapproveOrganizationTenancyForTransferConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UnapproveOrganizationTenancyForTransferResponse>
-                transformer = UnapproveOrganizationTenancyForTransferConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Organization",
-                "UnapproveOrganizationTenancyForTransfer",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/UnapproveOrganizationTenancyForTransfer");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "UnapproveOrganizationTenancyForTransfer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/UnapproveOrganizationTenancyForTransfer");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UnapproveOrganizationTenancyForTransferResponse>
+                transformer =
+                        UnapproveOrganizationTenancyForTransferConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -804,19 +831,22 @@ public class OrganizationClient implements Organization {
                 UpdateOrganizationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateOrganizationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOrganizationResponse>
-                transformer = UpdateOrganizationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Organization",
-                "UpdateOrganization",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/UpdateOrganization");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "UpdateOrganization",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/UpdateOrganization");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOrganizationResponse>
+                transformer =
+                        UpdateOrganizationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

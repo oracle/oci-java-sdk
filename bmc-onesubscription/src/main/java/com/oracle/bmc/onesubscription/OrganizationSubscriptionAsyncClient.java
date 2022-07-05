@@ -400,15 +400,17 @@ public class OrganizationSubscriptionAsyncClient implements OrganizationSubscrip
                 ListOrganizationSubscriptionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListOrganizationSubscriptionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OrganizationSubscription",
+                        "ListOrganizationSubscriptions",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListOrganizationSubscriptionsResponse>
-                transformer = ListOrganizationSubscriptionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OrganizationSubscription",
-                "ListOrganizationSubscriptions",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ListOrganizationSubscriptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListOrganizationSubscriptionsRequest, ListOrganizationSubscriptionsResponse>
                 handlerToUse = handler;

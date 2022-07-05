@@ -28,12 +28,11 @@ import com.oracle.bmc.identity.responses.CreateTagResponse;
 import com.oracle.bmc.identity.responses.ListTagsResponse;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.util.internal.StringUtils;
-import lombok.Getter;
-import lombok.NonNull;
 import net.jodah.failsafe.Failsafe;
 import net.jodah.failsafe.RetryPolicy;
 
 import java.util.AbstractMap;
+import javax.annotation.Nonnull;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -59,9 +58,9 @@ public class TaggingResourceHelper {
     private static final Map.Entry<String, String> F_TAG_PAIR_2 =
             new AbstractMap.SimpleImmutableEntry<>("tag2", "value2");
 
-    @Getter private String tagNamespaceId1;
-    @Getter private Map<String, String> freeformTags;
-    @Getter private Map<String, Map<String, Object>> definedTags;
+    private String tagNamespaceId1;
+    private Map<String, String> freeformTags;
+    private Map<String, Map<String, Object>> definedTags;
     private static final RetryPolicy RETRY_POLICY =
             new RetryPolicy()
                     .retryOn(BmcException.class)
@@ -69,9 +68,12 @@ public class TaggingResourceHelper {
                     .withMaxRetries(3);
 
     public TaggingResourceHelper(
-            @NonNull BasicAuthenticationDetailsProvider authProvider,
+            @Nonnull BasicAuthenticationDetailsProvider authProvider,
             ClientConfigurator configurator,
             String tenantId) {
+        if (authProvider == null) {
+            throw new NullPointerException("authProvider is marked non-null but is null");
+        }
         Failsafe.with(RETRY_POLICY)
                 .run(
                         () -> {
@@ -466,9 +468,21 @@ public class TaggingResourceHelper {
         return tagNamespace.getId();
     }
 
+    public String getTagNamespaceId1() {
+        return this.tagNamespaceId1;
+    }
+
+    public Map<String, String> getFreeformTags() {
+        return this.freeformTags;
+    }
+
+    public Map<String, Map<String, Object>> getDefinedTags() {
+        return this.definedTags;
+    }
+
     public static class TaggingInput {
-        @Getter private Map<String, String> freeformTags;
-        @Getter private Map<String, Map<String, Object>> definedTags;
+        private Map<String, String> freeformTags;
+        private Map<String, Map<String, Object>> definedTags;
 
         public TaggingInput(
                 final Map<String, String> freeformTags,
@@ -486,6 +500,14 @@ public class TaggingResourceHelper {
             } else {
                 this.definedTags = null;
             }
+        }
+
+        public Map<String, String> getFreeformTags() {
+            return this.freeformTags;
+        }
+
+        public Map<String, Map<String, Object>> getDefinedTags() {
+            return this.definedTags;
         }
     }
 }

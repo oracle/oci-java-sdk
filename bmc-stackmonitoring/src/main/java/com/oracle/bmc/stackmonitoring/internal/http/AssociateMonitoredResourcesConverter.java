@@ -68,6 +68,13 @@ public class AssociateMonitoredResourcesConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.stackmonitoring.responses.AssociateMonitoredResourcesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.stackmonitoring.responses.AssociateMonitoredResourcesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.stackmonitoring.responses
@@ -83,16 +90,26 @@ public class AssociateMonitoredResourcesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.stackmonitoring.responses.AssociateMonitoredResourcesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.stackmonitoring.model
                                                                 .MonitoredResourceAssociation>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.stackmonitoring.model
-                                                                        .MonitoredResourceAssociation
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.stackmonitoring.model
+                                                                    .MonitoredResourceAssociation
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.stackmonitoring.model
+                                                                    .MonitoredResourceAssociation
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.stackmonitoring.model

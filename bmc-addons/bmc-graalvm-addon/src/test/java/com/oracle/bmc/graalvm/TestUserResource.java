@@ -36,8 +36,6 @@ import com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse;
 import com.oracle.bmc.identity.responses.ListGroupsResponse;
 import com.oracle.bmc.identity.responses.ListUsersResponse;
 import com.oracle.bmc.model.BmcException;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import net.jodah.failsafe.Failsafe;
 import net.jodah.failsafe.RetryPolicy;
 
@@ -47,7 +45,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
-@RequiredArgsConstructor
 public class TestUserResource implements TestResource {
     // This retry policy is intended to be used when we try and ensure that a policy has been applied
     // to the user created inside this resource. We retry on 404s as they'd indicate we're not authorised
@@ -62,7 +59,7 @@ public class TestUserResource implements TestResource {
                     .withMaxRetries(10);
     final String TEST_USER_NAME = "JavaSDK.TestUser";
 
-    @Getter private final List<String> availabilityDomains = new ArrayList<>();
+    private final List<String> availabilityDomains = new ArrayList<>();
 
     // provider must have admin privileges
     private final BasicAuthenticationDetailsProvider provider;
@@ -71,7 +68,7 @@ public class TestUserResource implements TestResource {
     private final String tenantId;
 
     private Identity identity;
-    @Getter private String userId;
+    private String userId;
     private String groupId;
     private String policyId;
 
@@ -79,6 +76,18 @@ public class TestUserResource implements TestResource {
 
     private String userName;
     private String policyTesterGroupName;
+
+    @java.beans.ConstructorProperties({"provider", "publicKey", "configurator", "tenantId"})
+    public TestUserResource(
+            BasicAuthenticationDetailsProvider provider,
+            String publicKey,
+            ClientConfigurator configurator,
+            String tenantId) {
+        this.provider = provider;
+        this.publicKey = publicKey;
+        this.configurator = configurator;
+        this.tenantId = tenantId;
+    }
 
     @Override
     public void before() throws Exception {
@@ -323,5 +332,13 @@ public class TestUserResource implements TestResource {
                 BaseTest.reorderAvailabilityDomain(availabilityDomainsResponse.getItems())) {
             availabilityDomains.add(ad.getName());
         }
+    }
+
+    public List<String> getAvailabilityDomains() {
+        return this.availabilityDomains;
+    }
+
+    public String getUserId() {
+        return this.userId;
     }
 }

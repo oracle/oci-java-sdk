@@ -478,20 +478,23 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeApplianceExportJobCompartmentConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeApplianceExportJobCompartmentResponse>
-                transformer = ChangeApplianceExportJobCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplianceExportJob",
-                "ChangeApplianceExportJobCompartment",
-                ib.getRequestUri().toString(),
-                "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplianceExportJob",
+                        "ChangeApplianceExportJobCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeApplianceExportJobCompartmentResponse>
+                transformer =
+                        ChangeApplianceExportJobCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -520,19 +523,22 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
                 CreateApplianceExportJobConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateApplianceExportJobConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplianceExportJobResponse>
-                transformer = CreateApplianceExportJobConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplianceExportJob",
-                "CreateApplianceExportJob",
-                ib.getRequestUri().toString(),
-                "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplianceExportJob",
+                        "CreateApplianceExportJob",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplianceExportJobResponse>
+                transformer =
+                        CreateApplianceExportJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -560,18 +566,21 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
                 DeleteApplianceExportJobConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteApplianceExportJobConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApplianceExportJobResponse>
-                transformer = DeleteApplianceExportJobConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplianceExportJob",
-                "DeleteApplianceExportJob",
-                ib.getRequestUri().toString(),
-                "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplianceExportJob",
+                        "DeleteApplianceExportJob",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApplianceExportJobResponse>
+                transformer =
+                        DeleteApplianceExportJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -596,15 +605,21 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
                 GetApplianceExportJobConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetApplianceExportJobConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetApplianceExportJobResponse>
-                transformer = GetApplianceExportJobConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplianceExportJob", "GetApplianceExportJob", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplianceExportJob",
+                        "GetApplianceExportJob",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetApplianceExportJobResponse>
+                transformer =
+                        GetApplianceExportJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -628,15 +643,21 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
                 ListApplianceExportJobsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListApplianceExportJobsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListApplianceExportJobsResponse>
-                transformer = ListApplianceExportJobsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplianceExportJob", "ListApplianceExportJobs", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplianceExportJob",
+                        "ListApplianceExportJobs",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListApplianceExportJobsResponse>
+                transformer =
+                        ListApplianceExportJobsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -660,18 +681,21 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
                 UpdateApplianceExportJobConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateApplianceExportJobConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApplianceExportJobResponse>
-                transformer = UpdateApplianceExportJobConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplianceExportJob",
-                "UpdateApplianceExportJob",
-                ib.getRequestUri().toString(),
-                "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplianceExportJob",
+                        "UpdateApplianceExportJob",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApplianceExportJobResponse>
+                transformer =
+                        UpdateApplianceExportJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

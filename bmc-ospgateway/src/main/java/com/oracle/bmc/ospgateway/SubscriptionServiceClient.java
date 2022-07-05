@@ -403,20 +403,23 @@ public class SubscriptionServiceClient implements SubscriptionService {
                 AuthorizeSubscriptionPaymentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AuthorizeSubscriptionPaymentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, AuthorizeSubscriptionPaymentResponse>
-                transformer = AuthorizeSubscriptionPaymentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "SubscriptionService",
-                "AuthorizeSubscriptionPayment",
-                ib.getRequestUri().toString(),
-                "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SubscriptionService",
+                        "AuthorizeSubscriptionPayment",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AuthorizeSubscriptionPaymentResponse>
+                transformer =
+                        AuthorizeSubscriptionPaymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -444,15 +447,21 @@ public class SubscriptionServiceClient implements SubscriptionService {
                 GetSubscriptionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSubscriptionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
-                transformer = GetSubscriptionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "SubscriptionService", "GetSubscription", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SubscriptionService",
+                        "GetSubscription",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
+                transformer =
+                        GetSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -475,15 +484,21 @@ public class SubscriptionServiceClient implements SubscriptionService {
                 ListSubscriptionsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSubscriptionsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
-                transformer = ListSubscriptionsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "SubscriptionService", "ListSubscriptions", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SubscriptionService",
+                        "ListSubscriptions",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
+                transformer =
+                        ListSubscriptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -506,16 +521,22 @@ public class SubscriptionServiceClient implements SubscriptionService {
                 PaySubscriptionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 PaySubscriptionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, PaySubscriptionResponse>
-                transformer = PaySubscriptionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "SubscriptionService", "PaySubscription", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SubscriptionService",
+                        "PaySubscription",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, PaySubscriptionResponse>
+                transformer =
+                        PaySubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -542,15 +563,21 @@ public class SubscriptionServiceClient implements SubscriptionService {
                 UpdateSubscriptionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSubscriptionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
-                transformer = UpdateSubscriptionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "SubscriptionService", "UpdateSubscription", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SubscriptionService",
+                        "UpdateSubscription",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
+                transformer =
+                        UpdateSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

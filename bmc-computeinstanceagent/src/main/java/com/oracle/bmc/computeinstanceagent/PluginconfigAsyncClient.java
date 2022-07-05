@@ -399,15 +399,17 @@ public class PluginconfigAsyncClient implements PluginconfigAsync {
                 ListInstanceagentAvailablePluginsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInstanceagentAvailablePluginsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Pluginconfig",
+                        "ListInstanceagentAvailablePlugins",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListInstanceagentAvailablePluginsResponse>
-                transformer = ListInstanceagentAvailablePluginsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Pluginconfig",
-                "ListInstanceagentAvailablePlugins",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins");
-
+                transformer =
+                        ListInstanceagentAvailablePluginsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListInstanceagentAvailablePluginsRequest,
                         ListInstanceagentAvailablePluginsResponse>

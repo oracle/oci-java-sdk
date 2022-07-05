@@ -16,6 +16,14 @@ import com.oracle.bmc.identity.auth.sasl.messages.OciSaslMessages.Key;
 import com.oracle.bmc.identity.auth.sasl.messages.OciSaslMessages.Response;
 import com.oracle.bmc.util.StreamUtils;
 
+import javax.security.auth.callback.Callback;
+import javax.security.auth.callback.CallbackHandler;
+import javax.security.auth.callback.NameCallback;
+import javax.security.auth.callback.PasswordCallback;
+import javax.security.auth.callback.UnsupportedCallbackException;
+import javax.security.sasl.SaslClient;
+import javax.security.sasl.SaslClientFactory;
+import javax.security.sasl.SaslException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -28,16 +36,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import javax.security.auth.callback.Callback;
-import javax.security.auth.callback.CallbackHandler;
-import javax.security.auth.callback.NameCallback;
-import javax.security.auth.callback.PasswordCallback;
-import javax.security.auth.callback.UnsupportedCallbackException;
-import javax.security.sasl.SaslClient;
-import javax.security.sasl.SaslClientFactory;
-import javax.security.sasl.SaslException;
-
-import lombok.RequiredArgsConstructor;
 
 /**
  * Implementation of a {@link SaslClient} for the OCI SASL mechanism.
@@ -315,10 +313,16 @@ public class OciSaslClient implements SaslClient {
         }
     }
 
-    @RequiredArgsConstructor
     private static final class OciPrivateKey {
         private final String keyId;
         private final InputStream privateKey;
         private final char[] passphraseCharacters;
+
+        @java.beans.ConstructorProperties({"keyId", "privateKey", "passphraseCharacters"})
+        public OciPrivateKey(String keyId, InputStream privateKey, char[] passphraseCharacters) {
+            this.keyId = keyId;
+            this.privateKey = privateKey;
+            this.passphraseCharacters = passphraseCharacters;
+        }
     }
 }

@@ -7,8 +7,8 @@ package com.oracle.bmc.http;
 import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.util.internal.ReflectionUtils;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import com.oracle.bmc.util.internal.StringUtils;
+import org.slf4j.Logger;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -28,7 +28,6 @@ import java.util.List;
  * If the default configurator results in any issues, callers can provide their
  * own implementation when constructing service objects.
  */
-@Slf4j
 public class DefaultConfigurator
         implements ClientConfigurator, HasEffectiveClientConfigurator, SetsClientBuilderProperties {
 
@@ -47,9 +46,9 @@ public class DefaultConfigurator
      * environment variable in OCI_JAVASDK_JERSEY_CLIENT_DEFAULT_CONNECTOR_ENABLED_ENV_VAR hasn't been set to
      * true to enable the Jersey default connector instead.
      */
-    @Getter
     private static final boolean isApacheDependencyPresent =
             (checkForApacheDependencies() && !jerseyDefaultConnectorEnabled());
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(DefaultConfigurator.class);
 
     private static boolean checkForApacheDependencies() {
         // Check for existing of Apache dependencies, this is to ensure easier shift to Jersey default connector
@@ -80,7 +79,7 @@ public class DefaultConfigurator
     /** The list of {@code ClientConfigDecorator}s to support the ability to decorate {@code ClientConfig} */
     protected final List<ClientConfigDecorator> clientConfigDecorators = new LinkedList<>();
 
-    @Getter private final ClientConfigurator effectiveClientConfigurator;
+    private final ClientConfigurator effectiveClientConfigurator;
 
     /** Creates a new {@code DefaultConfigurator} object. */
     public DefaultConfigurator() {
@@ -104,6 +103,10 @@ public class DefaultConfigurator
             effectiveClientConfigurator =
                     new JerseyDefaultConnectorConfigurator(this.clientConfigDecorators);
         }
+    }
+
+    public static boolean isApacheDependencyPresent() {
+        return DefaultConfigurator.isApacheDependencyPresent;
     }
 
     @Override
@@ -159,6 +162,10 @@ public class DefaultConfigurator
         effectiveClientConfigurator.customizeRequest(request, ib);
     }
 
+    public ClientConfigurator getEffectiveClientConfigurator() {
+        return this.effectiveClientConfigurator;
+    }
+
     /**
      * A {@link ClientConfigurator} for a client that does not buffer requests in memory.
      *
@@ -168,7 +175,7 @@ public class DefaultConfigurator
             implements ClientConfigurator, HasEffectiveClientConfigurator,
                     SetsClientBuilderProperties {
 
-        @Getter private final ClientConfigurator effectiveClientConfigurator;
+        private final ClientConfigurator effectiveClientConfigurator;
 
         public NonBuffering() {
             if (isApacheDependencyPresent()) {
@@ -213,6 +220,10 @@ public class DefaultConfigurator
             } catch (ClassCastException e) {
                 LOG.info("Cannot call setSslContext on this ClientConfigurator");
             }
+        }
+
+        public ClientConfigurator getEffectiveClientConfigurator() {
+            return this.effectiveClientConfigurator;
         }
     }
 }

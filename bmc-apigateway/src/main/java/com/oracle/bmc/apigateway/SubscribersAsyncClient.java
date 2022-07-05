@@ -399,16 +399,18 @@ public class SubscribersAsyncClient implements SubscribersAsync {
                 ChangeSubscriberCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeSubscriberCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscribers",
+                        "ChangeSubscriberCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/ChangeSubscriberCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeSubscriberCompartmentResponse>
-                transformer = ChangeSubscriberCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscribers",
-                "ChangeSubscriberCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/ChangeSubscriberCompartment");
-
+                transformer =
+                        ChangeSubscriberCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSubscriberCompartmentRequest, ChangeSubscriberCompartmentResponse>
                 handlerToUse = handler;
@@ -452,12 +454,14 @@ public class SubscribersAsyncClient implements SubscribersAsync {
                 CreateSubscriberConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSubscriberConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubscriberResponse>
-                transformer = CreateSubscriberConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscribers", "CreateSubscriber", ib.getRequestUri().toString(), "");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscribers", "CreateSubscriber", ib.getRequestUri().toString(), "");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubscriberResponse>
+                transformer =
+                        CreateSubscriberConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateSubscriberRequest, CreateSubscriberResponse>
                 handlerToUse = handler;
 
@@ -499,14 +503,16 @@ public class SubscribersAsyncClient implements SubscribersAsync {
                 DeleteSubscriberConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSubscriberConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscribers",
+                        "DeleteSubscriber",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/DeleteSubscriber");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubscriberResponse>
-                transformer = DeleteSubscriberConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscribers",
-                "DeleteSubscriber",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/DeleteSubscriber");
-
+                transformer =
+                        DeleteSubscriberConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteSubscriberRequest, DeleteSubscriberResponse>
                 handlerToUse = handler;
 
@@ -542,14 +548,15 @@ public class SubscribersAsyncClient implements SubscribersAsync {
                 GetSubscriberConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSubscriberConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscribers",
+                        "GetSubscriber",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/GetSubscriber");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriberResponse>
-                transformer = GetSubscriberConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscribers",
-                "GetSubscriber",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/GetSubscriber");
-
+                transformer =
+                        GetSubscriberConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSubscriberRequest, GetSubscriberResponse>
                 handlerToUse = handler;
 
@@ -586,14 +593,16 @@ public class SubscribersAsyncClient implements SubscribersAsync {
                 ListSubscribersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSubscribersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscribers",
+                        "ListSubscribers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/ListSubscribers");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscribersResponse>
-                transformer = ListSubscribersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscribers",
-                "ListSubscribers",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/ListSubscribers");
-
+                transformer =
+                        ListSubscribersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSubscribersRequest, ListSubscribersResponse>
                 handlerToUse = handler;
 
@@ -630,14 +639,16 @@ public class SubscribersAsyncClient implements SubscribersAsync {
                 UpdateSubscriberConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSubscriberConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscribers",
+                        "UpdateSubscriber",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/UpdateSubscriber");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubscriberResponse>
-                transformer = UpdateSubscriberConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscribers",
-                "UpdateSubscriber",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/UpdateSubscriber");
-
+                transformer =
+                        UpdateSubscriberConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateSubscriberRequest, UpdateSubscriberResponse>
                 handlerToUse = handler;
 

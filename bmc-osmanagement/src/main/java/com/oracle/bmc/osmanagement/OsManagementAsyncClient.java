@@ -399,15 +399,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 AddPackagesToSoftwareSourceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AddPackagesToSoftwareSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "AddPackagesToSoftwareSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/AddPackagesToSoftwareSource");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AddPackagesToSoftwareSourceResponse>
-                transformer = AddPackagesToSoftwareSourceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "AddPackagesToSoftwareSource",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/AddPackagesToSoftwareSource");
-
+                transformer =
+                        AddPackagesToSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AddPackagesToSoftwareSourceRequest, AddPackagesToSoftwareSourceResponse>
                 handlerToUse = handler;
@@ -454,17 +456,19 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AttachChildSoftwareSourceToManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "AttachChildSoftwareSourceToManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachChildSoftwareSourceToManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         AttachChildSoftwareSourceToManagedInstanceResponse>
-                transformer = AttachChildSoftwareSourceToManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "AttachChildSoftwareSourceToManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachChildSoftwareSourceToManagedInstance");
-
+                transformer =
+                        AttachChildSoftwareSourceToManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AttachChildSoftwareSourceToManagedInstanceRequest,
                         AttachChildSoftwareSourceToManagedInstanceResponse>
@@ -515,17 +519,19 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AttachManagedInstanceToManagedInstanceGroupConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "AttachManagedInstanceToManagedInstanceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/AttachManagedInstanceToManagedInstanceGroup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         AttachManagedInstanceToManagedInstanceGroupResponse>
-                transformer = AttachManagedInstanceToManagedInstanceGroupConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "AttachManagedInstanceToManagedInstanceGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/AttachManagedInstanceToManagedInstanceGroup");
-
+                transformer =
+                        AttachManagedInstanceToManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AttachManagedInstanceToManagedInstanceGroupRequest,
                         AttachManagedInstanceToManagedInstanceGroupResponse>
@@ -570,17 +576,19 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AttachParentSoftwareSourceToManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "AttachParentSoftwareSourceToManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachParentSoftwareSourceToManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         AttachParentSoftwareSourceToManagedInstanceResponse>
-                transformer = AttachParentSoftwareSourceToManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "AttachParentSoftwareSourceToManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachParentSoftwareSourceToManagedInstance");
-
+                transformer =
+                        AttachParentSoftwareSourceToManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AttachParentSoftwareSourceToManagedInstanceRequest,
                         AttachParentSoftwareSourceToManagedInstanceResponse>
@@ -631,16 +639,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeManagedInstanceGroupCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ChangeManagedInstanceGroupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeManagedInstanceGroupCompartmentResponse>
-                transformer = ChangeManagedInstanceGroupCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ChangeManagedInstanceGroupCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment");
-
+                transformer =
+                        ChangeManagedInstanceGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeManagedInstanceGroupCompartmentRequest,
                         ChangeManagedInstanceGroupCompartmentResponse>
@@ -689,16 +699,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ChangeScheduledJobCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeScheduledJobCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ChangeScheduledJobCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ChangeScheduledJobCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeScheduledJobCompartmentResponse>
-                transformer = ChangeScheduledJobCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ChangeScheduledJobCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ChangeScheduledJobCompartment");
-
+                transformer =
+                        ChangeScheduledJobCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeScheduledJobCompartmentRequest, ChangeScheduledJobCompartmentResponse>
                 handlerToUse = handler;
@@ -744,16 +756,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ChangeSoftwareSourceCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeSoftwareSourceCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ChangeSoftwareSourceCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ChangeSoftwareSourceCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeSoftwareSourceCompartmentResponse>
-                transformer = ChangeSoftwareSourceCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ChangeSoftwareSourceCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ChangeSoftwareSourceCompartment");
-
+                transformer =
+                        ChangeSoftwareSourceCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSoftwareSourceCompartmentRequest,
                         ChangeSoftwareSourceCompartmentResponse>
@@ -801,16 +815,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 CreateManagedInstanceGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateManagedInstanceGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "CreateManagedInstanceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/CreateManagedInstanceGroup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateManagedInstanceGroupResponse>
-                transformer = CreateManagedInstanceGroupConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "CreateManagedInstanceGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/CreateManagedInstanceGroup");
-
+                transformer =
+                        CreateManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateManagedInstanceGroupRequest, CreateManagedInstanceGroupResponse>
                 handlerToUse = handler;
@@ -854,15 +870,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 CreateScheduledJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateScheduledJobConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateScheduledJobResponse>
-                transformer = CreateScheduledJobConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "CreateScheduledJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/CreateScheduledJob");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "CreateScheduledJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/CreateScheduledJob");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateScheduledJobResponse>
+                transformer =
+                        CreateScheduledJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateScheduledJobRequest, CreateScheduledJobResponse>
                 handlerToUse = handler;
 
@@ -904,16 +922,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 CreateSoftwareSourceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSoftwareSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "CreateSoftwareSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/CreateSoftwareSource");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateSoftwareSourceResponse>
-                transformer = CreateSoftwareSourceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "CreateSoftwareSource",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/CreateSoftwareSource");
-
+                transformer =
+                        CreateSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSoftwareSourceRequest, CreateSoftwareSourceResponse>
                 handlerToUse = handler;
@@ -958,15 +978,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 DeleteManagedInstanceGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteManagedInstanceGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "DeleteManagedInstanceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DeleteManagedInstanceGroup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteManagedInstanceGroupResponse>
-                transformer = DeleteManagedInstanceGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "DeleteManagedInstanceGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DeleteManagedInstanceGroup");
-
+                transformer =
+                        DeleteManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteManagedInstanceGroupRequest, DeleteManagedInstanceGroupResponse>
                 handlerToUse = handler;
@@ -1005,14 +1027,16 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 DeleteScheduledJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteScheduledJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "DeleteScheduledJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/DeleteScheduledJob");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteScheduledJobResponse>
-                transformer = DeleteScheduledJobConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "DeleteScheduledJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/DeleteScheduledJob");
-
+                transformer =
+                        DeleteScheduledJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteScheduledJobRequest, DeleteScheduledJobResponse>
                 handlerToUse = handler;
 
@@ -1049,15 +1073,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 DeleteSoftwareSourceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSoftwareSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "DeleteSoftwareSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/DeleteSoftwareSource");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSoftwareSourceResponse>
-                transformer = DeleteSoftwareSourceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "DeleteSoftwareSource",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/DeleteSoftwareSource");
-
+                transformer =
+                        DeleteSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSoftwareSourceRequest, DeleteSoftwareSourceResponse>
                 handlerToUse = handler;
@@ -1098,17 +1124,19 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetachChildSoftwareSourceFromManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "DetachChildSoftwareSourceFromManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachChildSoftwareSourceFromManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         DetachChildSoftwareSourceFromManagedInstanceResponse>
-                transformer = DetachChildSoftwareSourceFromManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "DetachChildSoftwareSourceFromManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachChildSoftwareSourceFromManagedInstance");
-
+                transformer =
+                        DetachChildSoftwareSourceFromManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DetachChildSoftwareSourceFromManagedInstanceRequest,
                         DetachChildSoftwareSourceFromManagedInstanceResponse>
@@ -1159,17 +1187,19 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetachManagedInstanceFromManagedInstanceGroupConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "DetachManagedInstanceFromManagedInstanceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DetachManagedInstanceFromManagedInstanceGroup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         DetachManagedInstanceFromManagedInstanceGroupResponse>
-                transformer = DetachManagedInstanceFromManagedInstanceGroupConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "DetachManagedInstanceFromManagedInstanceGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DetachManagedInstanceFromManagedInstanceGroup");
-
+                transformer =
+                        DetachManagedInstanceFromManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DetachManagedInstanceFromManagedInstanceGroupRequest,
                         DetachManagedInstanceFromManagedInstanceGroupResponse>
@@ -1214,17 +1244,19 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetachParentSoftwareSourceFromManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "DetachParentSoftwareSourceFromManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachParentSoftwareSourceFromManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         DetachParentSoftwareSourceFromManagedInstanceResponse>
-                transformer = DetachParentSoftwareSourceFromManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "DetachParentSoftwareSourceFromManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachParentSoftwareSourceFromManagedInstance");
-
+                transformer =
+                        DetachParentSoftwareSourceFromManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DetachParentSoftwareSourceFromManagedInstanceRequest,
                         DetachParentSoftwareSourceFromManagedInstanceResponse>
@@ -1275,16 +1307,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DisableModuleStreamOnManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "DisableModuleStreamOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/DisableModuleStreamOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DisableModuleStreamOnManagedInstanceResponse>
-                transformer = DisableModuleStreamOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "DisableModuleStreamOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/DisableModuleStreamOnManagedInstance");
-
+                transformer =
+                        DisableModuleStreamOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DisableModuleStreamOnManagedInstanceRequest,
                         DisableModuleStreamOnManagedInstanceResponse>
@@ -1328,16 +1362,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableModuleStreamOnManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "EnableModuleStreamOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/EnableModuleStreamOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, EnableModuleStreamOnManagedInstanceResponse>
-                transformer = EnableModuleStreamOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "EnableModuleStreamOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/EnableModuleStreamOnManagedInstance");
-
+                transformer =
+                        EnableModuleStreamOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableModuleStreamOnManagedInstanceRequest,
                         EnableModuleStreamOnManagedInstanceResponse>
@@ -1376,14 +1412,15 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final GetErratumRequest interceptedRequest = GetErratumConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetErratumConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "GetErratum",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Erratum/GetErratum");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetErratumResponse>
-                transformer = GetErratumConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "GetErratum",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Erratum/GetErratum");
-
+                transformer =
+                        GetErratumConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetErratumRequest, GetErratumResponse> handlerToUse =
                 handler;
 
@@ -1420,14 +1457,16 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetManagedInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "GetManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/GetManagedInstance");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetManagedInstanceResponse>
-                transformer = GetManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "GetManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/GetManagedInstance");
-
+                transformer =
+                        GetManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetManagedInstanceRequest, GetManagedInstanceResponse>
                 handlerToUse = handler;
 
@@ -1464,15 +1503,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetManagedInstanceGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetManagedInstanceGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "GetManagedInstanceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/GetManagedInstanceGroup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetManagedInstanceGroupResponse>
-                transformer = GetManagedInstanceGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "GetManagedInstanceGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/GetManagedInstanceGroup");
-
+                transformer =
+                        GetManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetManagedInstanceGroupRequest, GetManagedInstanceGroupResponse>
                 handlerToUse = handler;
@@ -1510,14 +1551,16 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetModuleStreamConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetModuleStreamConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "GetModuleStream",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStream/GetModuleStream");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetModuleStreamResponse>
-                transformer = GetModuleStreamConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "GetModuleStream",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStream/GetModuleStream");
-
+                transformer =
+                        GetModuleStreamConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetModuleStreamRequest, GetModuleStreamResponse>
                 handlerToUse = handler;
 
@@ -1554,15 +1597,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetModuleStreamProfileConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetModuleStreamProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "GetModuleStreamProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfile/GetModuleStreamProfile");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetModuleStreamProfileResponse>
-                transformer = GetModuleStreamProfileConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "GetModuleStreamProfile",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfile/GetModuleStreamProfile");
-
+                transformer =
+                        GetModuleStreamProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetModuleStreamProfileRequest, GetModuleStreamProfileResponse>
                 handlerToUse = handler;
@@ -1600,14 +1645,16 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetScheduledJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetScheduledJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "GetScheduledJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/GetScheduledJob");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduledJobResponse>
-                transformer = GetScheduledJobConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "GetScheduledJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/GetScheduledJob");
-
+                transformer =
+                        GetScheduledJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetScheduledJobRequest, GetScheduledJobResponse>
                 handlerToUse = handler;
 
@@ -1644,14 +1691,16 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetSoftwarePackageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSoftwarePackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "GetSoftwarePackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwarePackage");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSoftwarePackageResponse>
-                transformer = GetSoftwarePackageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "GetSoftwarePackage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwarePackage");
-
+                transformer =
+                        GetSoftwarePackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSoftwarePackageRequest, GetSoftwarePackageResponse>
                 handlerToUse = handler;
 
@@ -1688,14 +1737,16 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetSoftwareSourceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSoftwareSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "GetSoftwareSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwareSource");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSoftwareSourceResponse>
-                transformer = GetSoftwareSourceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "GetSoftwareSource",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwareSource");
-
+                transformer =
+                        GetSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSoftwareSourceRequest, GetSoftwareSourceResponse>
                 handlerToUse = handler;
 
@@ -1732,14 +1783,16 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetWindowsUpdateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWindowsUpdateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "GetWindowsUpdate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdate/GetWindowsUpdate");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWindowsUpdateResponse>
-                transformer = GetWindowsUpdateConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "GetWindowsUpdate",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdate/GetWindowsUpdate");
-
+                transformer =
+                        GetWindowsUpdateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWindowsUpdateRequest, GetWindowsUpdateResponse>
                 handlerToUse = handler;
 
@@ -1776,14 +1829,15 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/GetWorkRequest");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "GetWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/GetWorkRequest");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -1823,17 +1877,19 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 InstallAllPackageUpdatesOnManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "InstallAllPackageUpdatesOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllPackageUpdatesOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         InstallAllPackageUpdatesOnManagedInstanceResponse>
-                transformer = InstallAllPackageUpdatesOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "InstallAllPackageUpdatesOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllPackageUpdatesOnManagedInstance");
-
+                transformer =
+                        InstallAllPackageUpdatesOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         InstallAllPackageUpdatesOnManagedInstanceRequest,
                         InstallAllPackageUpdatesOnManagedInstanceResponse>
@@ -1878,16 +1934,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 InstallAllUpdatesOnManagedInstanceGroupConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "InstallAllUpdatesOnManagedInstanceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/InstallAllUpdatesOnManagedInstanceGroup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, InstallAllUpdatesOnManagedInstanceGroupResponse>
-                transformer = InstallAllUpdatesOnManagedInstanceGroupConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "InstallAllUpdatesOnManagedInstanceGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/InstallAllUpdatesOnManagedInstanceGroup");
-
+                transformer =
+                        InstallAllUpdatesOnManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         InstallAllUpdatesOnManagedInstanceGroupRequest,
                         InstallAllUpdatesOnManagedInstanceGroupResponse>
@@ -1932,17 +1990,19 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 InstallAllWindowsUpdatesOnManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "InstallAllWindowsUpdatesOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllWindowsUpdatesOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         InstallAllWindowsUpdatesOnManagedInstanceResponse>
-                transformer = InstallAllWindowsUpdatesOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "InstallAllWindowsUpdatesOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllWindowsUpdatesOnManagedInstance");
-
+                transformer =
+                        InstallAllWindowsUpdatesOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         InstallAllWindowsUpdatesOnManagedInstanceRequest,
                         InstallAllWindowsUpdatesOnManagedInstanceResponse>
@@ -1987,17 +2047,19 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 InstallModuleStreamProfileOnManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "InstallModuleStreamProfileOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileDetails/InstallModuleStreamProfileOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         InstallModuleStreamProfileOnManagedInstanceResponse>
-                transformer = InstallModuleStreamProfileOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "InstallModuleStreamProfileOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileDetails/InstallModuleStreamProfileOnManagedInstance");
-
+                transformer =
+                        InstallModuleStreamProfileOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         InstallModuleStreamProfileOnManagedInstanceRequest,
                         InstallModuleStreamProfileOnManagedInstanceResponse>
@@ -2041,16 +2103,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 InstallPackageOnManagedInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 InstallPackageOnManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "InstallPackageOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, InstallPackageOnManagedInstanceResponse>
-                transformer = InstallPackageOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "InstallPackageOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageOnManagedInstance");
-
+                transformer =
+                        InstallPackageOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         InstallPackageOnManagedInstanceRequest,
                         InstallPackageOnManagedInstanceResponse>
@@ -2094,16 +2158,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 InstallPackageUpdateOnManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "InstallPackageUpdateOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageUpdateOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, InstallPackageUpdateOnManagedInstanceResponse>
-                transformer = InstallPackageUpdateOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "InstallPackageUpdateOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageUpdateOnManagedInstance");
-
+                transformer =
+                        InstallPackageUpdateOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         InstallPackageUpdateOnManagedInstanceRequest,
                         InstallPackageUpdateOnManagedInstanceResponse>
@@ -2147,16 +2213,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 InstallWindowsUpdateOnManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "InstallWindowsUpdateOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallWindowsUpdateOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, InstallWindowsUpdateOnManagedInstanceResponse>
-                transformer = InstallWindowsUpdateOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "InstallWindowsUpdateOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallWindowsUpdateOnManagedInstance");
-
+                transformer =
+                        InstallWindowsUpdateOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         InstallWindowsUpdateOnManagedInstanceRequest,
                         InstallWindowsUpdateOnManagedInstanceResponse>
@@ -2200,15 +2268,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAvailablePackagesForManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListAvailablePackagesForManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailablePackagesForManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAvailablePackagesForManagedInstanceResponse>
-                transformer = ListAvailablePackagesForManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListAvailablePackagesForManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailablePackagesForManagedInstance");
-
+                transformer =
+                        ListAvailablePackagesForManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAvailablePackagesForManagedInstanceRequest,
                         ListAvailablePackagesForManagedInstanceResponse>
@@ -2253,17 +2323,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAvailableSoftwareSourcesForManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListAvailableSoftwareSourcesForManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableSoftwareSourcesForManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ListAvailableSoftwareSourcesForManagedInstanceResponse>
                 transformer =
-                        ListAvailableSoftwareSourcesForManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListAvailableSoftwareSourcesForManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableSoftwareSourcesForManagedInstance");
-
+                        ListAvailableSoftwareSourcesForManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAvailableSoftwareSourcesForManagedInstanceRequest,
                         ListAvailableSoftwareSourcesForManagedInstanceResponse>
@@ -2308,15 +2379,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAvailableUpdatesForManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListAvailableUpdatesForManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableUpdatesForManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAvailableUpdatesForManagedInstanceResponse>
-                transformer = ListAvailableUpdatesForManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListAvailableUpdatesForManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableUpdatesForManagedInstance");
-
+                transformer =
+                        ListAvailableUpdatesForManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAvailableUpdatesForManagedInstanceRequest,
                         ListAvailableUpdatesForManagedInstanceResponse>
@@ -2360,16 +2433,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAvailableWindowsUpdatesForManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListAvailableWindowsUpdatesForManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableWindowsUpdatesForManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ListAvailableWindowsUpdatesForManagedInstanceResponse>
-                transformer = ListAvailableWindowsUpdatesForManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListAvailableWindowsUpdatesForManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableWindowsUpdatesForManagedInstance");
-
+                transformer =
+                        ListAvailableWindowsUpdatesForManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAvailableWindowsUpdatesForManagedInstanceRequest,
                         ListAvailableWindowsUpdatesForManagedInstanceResponse>
@@ -2409,14 +2484,15 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final ListErrataRequest interceptedRequest = ListErrataConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListErrataConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListErrata",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ErratumSummary/ListErrata");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListErrataResponse>
-                transformer = ListErrataConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListErrata",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ErratumSummary/ListErrata");
-
+                transformer =
+                        ListErrataConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListErrataRequest, ListErrataResponse> handlerToUse =
                 handler;
 
@@ -2453,15 +2529,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListManagedInstanceErrataConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListManagedInstanceErrataConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListManagedInstanceErrata",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListManagedInstanceErrata");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceErrataResponse>
-                transformer = ListManagedInstanceErrataConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListManagedInstanceErrata",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListManagedInstanceErrata");
-
+                transformer =
+                        ListManagedInstanceErrataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListManagedInstanceErrataRequest, ListManagedInstanceErrataResponse>
                 handlerToUse = handler;
@@ -2500,15 +2578,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListManagedInstanceGroupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListManagedInstanceGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListManagedInstanceGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroupSummary/ListManagedInstanceGroups");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceGroupsResponse>
-                transformer = ListManagedInstanceGroupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListManagedInstanceGroups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroupSummary/ListManagedInstanceGroups");
-
+                transformer =
+                        ListManagedInstanceGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListManagedInstanceGroupsRequest, ListManagedInstanceGroupsResponse>
                 handlerToUse = handler;
@@ -2547,15 +2627,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListManagedInstancesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListManagedInstancesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListManagedInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceSummary/ListManagedInstances");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListManagedInstancesResponse>
-                transformer = ListManagedInstancesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListManagedInstances",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceSummary/ListManagedInstances");
-
+                transformer =
+                        ListManagedInstancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListManagedInstancesRequest, ListManagedInstancesResponse>
                 handlerToUse = handler;
@@ -2593,15 +2675,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListModuleStreamProfilesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListModuleStreamProfilesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListModuleStreamProfiles",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileSummary/ListModuleStreamProfiles");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListModuleStreamProfilesResponse>
-                transformer = ListModuleStreamProfilesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListModuleStreamProfiles",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileSummary/ListModuleStreamProfiles");
-
+                transformer =
+                        ListModuleStreamProfilesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListModuleStreamProfilesRequest, ListModuleStreamProfilesResponse>
                 handlerToUse = handler;
@@ -2642,16 +2726,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListModuleStreamProfilesOnManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListModuleStreamProfilesOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListModuleStreamProfilesOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ListModuleStreamProfilesOnManagedInstanceResponse>
-                transformer = ListModuleStreamProfilesOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListModuleStreamProfilesOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListModuleStreamProfilesOnManagedInstance");
-
+                transformer =
+                        ListModuleStreamProfilesOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListModuleStreamProfilesOnManagedInstanceRequest,
                         ListModuleStreamProfilesOnManagedInstanceResponse>
@@ -2693,14 +2779,16 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListModuleStreamsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListModuleStreamsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListModuleStreams",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamSummary/ListModuleStreams");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListModuleStreamsResponse>
-                transformer = ListModuleStreamsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListModuleStreams",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamSummary/ListModuleStreams");
-
+                transformer =
+                        ListModuleStreamsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListModuleStreamsRequest, ListModuleStreamsResponse>
                 handlerToUse = handler;
 
@@ -2739,15 +2827,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListModuleStreamsOnManagedInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListModuleStreamsOnManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListModuleStreamsOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListModuleStreamsOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListModuleStreamsOnManagedInstanceResponse>
-                transformer = ListModuleStreamsOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListModuleStreamsOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListModuleStreamsOnManagedInstance");
-
+                transformer =
+                        ListModuleStreamsOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListModuleStreamsOnManagedInstanceRequest,
                         ListModuleStreamsOnManagedInstanceResponse>
@@ -2791,15 +2881,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPackagesInstalledOnManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListPackagesInstalledOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListPackagesInstalledOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPackagesInstalledOnManagedInstanceResponse>
-                transformer = ListPackagesInstalledOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListPackagesInstalledOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListPackagesInstalledOnManagedInstance");
-
+                transformer =
+                        ListPackagesInstalledOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListPackagesInstalledOnManagedInstanceRequest,
                         ListPackagesInstalledOnManagedInstanceResponse>
@@ -2840,14 +2932,16 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListScheduledJobsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListScheduledJobsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListScheduledJobs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListScheduledJobs");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListScheduledJobsResponse>
-                transformer = ListScheduledJobsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListScheduledJobs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListScheduledJobs");
-
+                transformer =
+                        ListScheduledJobsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListScheduledJobsRequest, ListScheduledJobsResponse>
                 handlerToUse = handler;
 
@@ -2886,15 +2980,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListSoftwareSourcePackagesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSoftwareSourcePackagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListSoftwareSourcePackages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ListSoftwareSourcePackages");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSoftwareSourcePackagesResponse>
-                transformer = ListSoftwareSourcePackagesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListSoftwareSourcePackages",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ListSoftwareSourcePackages");
-
+                transformer =
+                        ListSoftwareSourcePackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListSoftwareSourcePackagesRequest, ListSoftwareSourcePackagesResponse>
                 handlerToUse = handler;
@@ -2933,15 +3029,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListSoftwareSourcesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSoftwareSourcesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListSoftwareSources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSourceSummary/ListSoftwareSources");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSoftwareSourcesResponse>
-                transformer = ListSoftwareSourcesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListSoftwareSources",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSourceSummary/ListSoftwareSources");
-
+                transformer =
+                        ListSoftwareSourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListSoftwareSourcesRequest, ListSoftwareSourcesResponse>
                 handlerToUse = handler;
@@ -2979,15 +3077,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListUpcomingScheduledJobsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListUpcomingScheduledJobsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListUpcomingScheduledJobs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListUpcomingScheduledJobs");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListUpcomingScheduledJobsResponse>
-                transformer = ListUpcomingScheduledJobsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListUpcomingScheduledJobs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListUpcomingScheduledJobs");
-
+                transformer =
+                        ListUpcomingScheduledJobsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListUpcomingScheduledJobsRequest, ListUpcomingScheduledJobsResponse>
                 handlerToUse = handler;
@@ -3026,14 +3126,16 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListWindowsUpdatesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWindowsUpdatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListWindowsUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdateSummary/ListWindowsUpdates");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWindowsUpdatesResponse>
-                transformer = ListWindowsUpdatesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListWindowsUpdates",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdateSummary/ListWindowsUpdates");
-
+                transformer =
+                        ListWindowsUpdatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWindowsUpdatesRequest, ListWindowsUpdatesResponse>
                 handlerToUse = handler;
 
@@ -3073,16 +3175,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWindowsUpdatesInstalledOnManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListWindowsUpdatesInstalledOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListWindowsUpdatesInstalledOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ListWindowsUpdatesInstalledOnManagedInstanceResponse>
-                transformer = ListWindowsUpdatesInstalledOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListWindowsUpdatesInstalledOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListWindowsUpdatesInstalledOnManagedInstance");
-
+                transformer =
+                        ListWindowsUpdatesInstalledOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWindowsUpdatesInstalledOnManagedInstanceRequest,
                         ListWindowsUpdatesInstalledOnManagedInstanceResponse>
@@ -3124,15 +3228,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestErrors");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListWorkRequestErrors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestErrors");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -3170,15 +3276,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestLogs");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListWorkRequestLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestLogs");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -3216,14 +3324,16 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequestSummary/ListWorkRequests");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ListWorkRequests",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequestSummary/ListWorkRequests");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -3263,16 +3373,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ManageModuleStreamsOnManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "ManageModuleStreamsOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ManageModuleStreamsOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ManageModuleStreamsOnManagedInstanceResponse>
-                transformer = ManageModuleStreamsOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "ManageModuleStreamsOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ManageModuleStreamsOnManagedInstance");
-
+                transformer =
+                        ManageModuleStreamsOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ManageModuleStreamsOnManagedInstanceRequest,
                         ManageModuleStreamsOnManagedInstanceResponse>
@@ -3321,17 +3433,19 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemoveModuleStreamProfileFromManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "RemoveModuleStreamProfileFromManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileDetails/RemoveModuleStreamProfileFromManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         RemoveModuleStreamProfileFromManagedInstanceResponse>
-                transformer = RemoveModuleStreamProfileFromManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "RemoveModuleStreamProfileFromManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileDetails/RemoveModuleStreamProfileFromManagedInstance");
-
+                transformer =
+                        RemoveModuleStreamProfileFromManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveModuleStreamProfileFromManagedInstanceRequest,
                         RemoveModuleStreamProfileFromManagedInstanceResponse>
@@ -3375,16 +3489,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 RemovePackageFromManagedInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemovePackageFromManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "RemovePackageFromManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/RemovePackageFromManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemovePackageFromManagedInstanceResponse>
-                transformer = RemovePackageFromManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "RemovePackageFromManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/RemovePackageFromManagedInstance");
-
+                transformer =
+                        RemovePackageFromManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RemovePackageFromManagedInstanceRequest,
                         RemovePackageFromManagedInstanceResponse>
@@ -3427,15 +3543,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 RemovePackagesFromSoftwareSourceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemovePackagesFromSoftwareSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "RemovePackagesFromSoftwareSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/RemovePackagesFromSoftwareSource");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemovePackagesFromSoftwareSourceResponse>
-                transformer = RemovePackagesFromSoftwareSourceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "RemovePackagesFromSoftwareSource",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/RemovePackagesFromSoftwareSource");
-
+                transformer =
+                        RemovePackagesFromSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RemovePackagesFromSoftwareSourceRequest,
                         RemovePackagesFromSoftwareSourceResponse>
@@ -3481,15 +3599,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 RunScheduledJobNowConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RunScheduledJobNowConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RunScheduledJobNowResponse>
-                transformer = RunScheduledJobNowConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "RunScheduledJobNow",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/RunScheduledJobNow");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "RunScheduledJobNow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/RunScheduledJobNow");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RunScheduledJobNowResponse>
+                transformer =
+                        RunScheduledJobNowConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RunScheduledJobNowRequest, RunScheduledJobNowResponse>
                 handlerToUse = handler;
 
@@ -3526,15 +3646,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 SearchSoftwarePackagesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SearchSoftwarePackagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "SearchSoftwarePackages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/SearchSoftwarePackages");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SearchSoftwarePackagesResponse>
-                transformer = SearchSoftwarePackagesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "SearchSoftwarePackages",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/SearchSoftwarePackages");
-
+                transformer =
+                        SearchSoftwarePackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         SearchSoftwarePackagesRequest, SearchSoftwarePackagesResponse>
                 handlerToUse = handler;
@@ -3574,16 +3696,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 SkipNextScheduledJobExecutionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SkipNextScheduledJobExecutionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "SkipNextScheduledJobExecution",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/SkipNextScheduledJobExecution");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SkipNextScheduledJobExecutionResponse>
-                transformer = SkipNextScheduledJobExecutionConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "SkipNextScheduledJobExecution",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/SkipNextScheduledJobExecution");
-
+                transformer =
+                        SkipNextScheduledJobExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         SkipNextScheduledJobExecutionRequest, SkipNextScheduledJobExecutionResponse>
                 handlerToUse = handler;
@@ -3625,16 +3749,18 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SwitchModuleStreamOnManagedInstanceConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "SwitchModuleStreamOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/SwitchModuleStreamOnManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SwitchModuleStreamOnManagedInstanceResponse>
-                transformer = SwitchModuleStreamOnManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "SwitchModuleStreamOnManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/SwitchModuleStreamOnManagedInstance");
-
+                transformer =
+                        SwitchModuleStreamOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         SwitchModuleStreamOnManagedInstanceRequest,
                         SwitchModuleStreamOnManagedInstanceResponse>
@@ -3675,15 +3801,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 UpdateManagedInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "UpdateManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/UpdateManagedInstanceDetails/UpdateManagedInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateManagedInstanceResponse>
-                transformer = UpdateManagedInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "UpdateManagedInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/UpdateManagedInstanceDetails/UpdateManagedInstance");
-
+                transformer =
+                        UpdateManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateManagedInstanceRequest, UpdateManagedInstanceResponse>
                 handlerToUse = handler;
@@ -3728,15 +3856,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 UpdateManagedInstanceGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateManagedInstanceGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "UpdateManagedInstanceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/UpdateManagedInstanceGroup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateManagedInstanceGroupResponse>
-                transformer = UpdateManagedInstanceGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "UpdateManagedInstanceGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/UpdateManagedInstanceGroup");
-
+                transformer =
+                        UpdateManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateManagedInstanceGroupRequest, UpdateManagedInstanceGroupResponse>
                 handlerToUse = handler;
@@ -3780,14 +3910,16 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 UpdateScheduledJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateScheduledJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "UpdateScheduledJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/UpdateScheduledJob");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateScheduledJobResponse>
-                transformer = UpdateScheduledJobConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "UpdateScheduledJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/UpdateScheduledJob");
-
+                transformer =
+                        UpdateScheduledJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateScheduledJobRequest, UpdateScheduledJobResponse>
                 handlerToUse = handler;
 
@@ -3829,15 +3961,17 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 UpdateSoftwareSourceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSoftwareSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OsManagement",
+                        "UpdateSoftwareSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/UpdateSoftwareSource");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateSoftwareSourceResponse>
-                transformer = UpdateSoftwareSourceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OsManagement",
-                "UpdateSoftwareSource",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/UpdateSoftwareSource");
-
+                transformer =
+                        UpdateSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSoftwareSourceRequest, UpdateSoftwareSourceResponse>
                 handlerToUse = handler;

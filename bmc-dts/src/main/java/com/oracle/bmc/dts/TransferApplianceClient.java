@@ -473,16 +473,22 @@ public class TransferApplianceClient implements TransferAppliance {
                 CreateTransferApplianceConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTransferApplianceConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTransferApplianceResponse>
-                transformer = CreateTransferApplianceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance", "CreateTransferAppliance", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "CreateTransferAppliance",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTransferApplianceResponse>
+                transformer =
+                        CreateTransferApplianceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -511,19 +517,22 @@ public class TransferApplianceClient implements TransferAppliance {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTransferApplianceAdminCredentialsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateTransferApplianceAdminCredentialsResponse>
-                transformer = CreateTransferApplianceAdminCredentialsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance",
-                "CreateTransferApplianceAdminCredentials",
-                ib.getRequestUri().toString(),
-                "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "CreateTransferApplianceAdminCredentials",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateTransferApplianceAdminCredentialsResponse>
+                transformer =
+                        CreateTransferApplianceAdminCredentialsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -551,15 +560,21 @@ public class TransferApplianceClient implements TransferAppliance {
                 DeleteTransferApplianceConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteTransferApplianceConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTransferApplianceResponse>
-                transformer = DeleteTransferApplianceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance", "DeleteTransferAppliance", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "DeleteTransferAppliance",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTransferApplianceResponse>
+                transformer =
+                        DeleteTransferApplianceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -583,15 +598,21 @@ public class TransferApplianceClient implements TransferAppliance {
                 GetTransferApplianceConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTransferApplianceConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTransferApplianceResponse>
-                transformer = GetTransferApplianceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance", "GetTransferAppliance", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "GetTransferAppliance",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetTransferApplianceResponse>
+                transformer =
+                        GetTransferApplianceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -618,21 +639,23 @@ public class TransferApplianceClient implements TransferAppliance {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTransferApplianceCertificateAuthorityCertificateConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response,
-                        GetTransferApplianceCertificateAuthorityCertificateResponse>
-                transformer =
-                        GetTransferApplianceCertificateAuthorityCertificateConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance",
-                "GetTransferApplianceCertificateAuthorityCertificate",
-                ib.getRequestUri().toString(),
-                "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "GetTransferApplianceCertificateAuthorityCertificate",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        GetTransferApplianceCertificateAuthorityCertificateResponse>
+                transformer =
+                        GetTransferApplianceCertificateAuthorityCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -658,19 +681,22 @@ public class TransferApplianceClient implements TransferAppliance {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTransferApplianceEncryptionPassphraseConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetTransferApplianceEncryptionPassphraseResponse>
-                transformer = GetTransferApplianceEncryptionPassphraseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance",
-                "GetTransferApplianceEncryptionPassphrase",
-                ib.getRequestUri().toString(),
-                "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "GetTransferApplianceEncryptionPassphrase",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetTransferApplianceEncryptionPassphraseResponse>
+                transformer =
+                        GetTransferApplianceEncryptionPassphraseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -694,15 +720,21 @@ public class TransferApplianceClient implements TransferAppliance {
                 ListTransferAppliancesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTransferAppliancesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTransferAppliancesResponse>
-                transformer = ListTransferAppliancesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance", "ListTransferAppliances", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "ListTransferAppliances",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListTransferAppliancesResponse>
+                transformer =
+                        ListTransferAppliancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -726,15 +758,21 @@ public class TransferApplianceClient implements TransferAppliance {
                 UpdateTransferApplianceConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateTransferApplianceConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTransferApplianceResponse>
-                transformer = UpdateTransferApplianceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferAppliance", "UpdateTransferAppliance", ib.getRequestUri().toString(), "");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferAppliance",
+                        "UpdateTransferAppliance",
+                        ib.getRequestUri().toString(),
+                        "");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTransferApplianceResponse>
+                transformer =
+                        UpdateTransferApplianceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

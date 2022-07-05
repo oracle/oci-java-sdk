@@ -115,6 +115,13 @@ public class ListInstanceAgentPluginsConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.computeinstanceagent.responses.ListInstanceAgentPluginsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.computeinstanceagent.responses.ListInstanceAgentPluginsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.computeinstanceagent.responses
@@ -130,21 +137,34 @@ public class ListInstanceAgentPluginsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.computeinstanceagent.responses.ListInstanceAgentPluginsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
                                                                 com.oracle.bmc.computeinstanceagent
                                                                         .model
                                                                         .InstanceAgentPluginSummary>>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        new javax.ws.rs.core.GenericType<
-                                                                java.util.List<
-                                                                        com.oracle.bmc
-                                                                                .computeinstanceagent
-                                                                                .model
-                                                                                .InstanceAgentPluginSummary>>() {});
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc
+                                                                            .computeinstanceagent
+                                                                            .model
+                                                                            .InstanceAgentPluginSummary>>() {},
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc
+                                                                            .computeinstanceagent
+                                                                            .model
+                                                                            .InstanceAgentPluginSummary>>() {});
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<

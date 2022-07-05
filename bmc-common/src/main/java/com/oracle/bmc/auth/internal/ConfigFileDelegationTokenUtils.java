@@ -7,6 +7,7 @@ package com.oracle.bmc.auth.internal;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.util.internal.FileUtils;
+import org.slf4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,10 +19,11 @@ import java.util.stream.Stream;
 /**
  * This class allows users to load delegation token from the config file
  */
-@lombok.extern.slf4j.Slf4j
 public class ConfigFileDelegationTokenUtils {
 
     private static final String OCI_DELEGATION_TOKEN_FILE_KEY = "delegation_token_file";
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ConfigFileDelegationTokenUtils.class);
 
     private ConfigFileDelegationTokenUtils() {
         throw new UnsupportedOperationException("This class cannot be instantiated.");

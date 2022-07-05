@@ -397,15 +397,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ActivateDomainConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ActivateDomainConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ActivateDomainResponse>
-                transformer = ActivateDomainConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ActivateDomain",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ActivateDomain");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ActivateDomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ActivateDomain");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ActivateDomainResponse>
+                transformer =
+                        ActivateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ActivateDomainRequest, ActivateDomainResponse>
                 handlerToUse = handler;
 
@@ -442,16 +443,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ActivateMfaTotpDeviceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ActivateMfaTotpDeviceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ActivateMfaTotpDevice",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/ActivateMfaTotpDevice");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ActivateMfaTotpDeviceResponse>
-                transformer = ActivateMfaTotpDeviceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ActivateMfaTotpDevice",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/ActivateMfaTotpDevice");
-
+                transformer =
+                        ActivateMfaTotpDeviceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ActivateMfaTotpDeviceRequest, ActivateMfaTotpDeviceResponse>
                 handlerToUse = handler;
@@ -494,15 +497,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 AddTagDefaultLockConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AddTagDefaultLockConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AddTagDefaultLockResponse>
-                transformer = AddTagDefaultLockConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "AddTagDefaultLock",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/AddTagDefaultLock");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "AddTagDefaultLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/AddTagDefaultLock");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddTagDefaultLockResponse>
+                transformer =
+                        AddTagDefaultLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AddTagDefaultLockRequest, AddTagDefaultLockResponse>
                 handlerToUse = handler;
 
@@ -544,16 +549,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 AddTagNamespaceLockConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AddTagNamespaceLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "AddTagNamespaceLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/AddTagNamespaceLock");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AddTagNamespaceLockResponse>
-                transformer = AddTagNamespaceLockConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "AddTagNamespaceLock",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/AddTagNamespaceLock");
-
+                transformer =
+                        AddTagNamespaceLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AddTagNamespaceLockRequest, AddTagNamespaceLockResponse>
                 handlerToUse = handler;
@@ -596,15 +603,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 AddUserToGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AddUserToGroupConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AddUserToGroupResponse>
-                transformer = AddUserToGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "AddUserToGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/AddUserToGroup");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "AddUserToGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/AddUserToGroup");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddUserToGroupResponse>
+                transformer =
+                        AddUserToGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AddUserToGroupRequest, AddUserToGroupResponse>
                 handlerToUse = handler;
 
@@ -646,15 +654,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 AssembleEffectiveTagSetConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AssembleEffectiveTagSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "AssembleEffectiveTagSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/AssembleEffectiveTagSet");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AssembleEffectiveTagSetResponse>
-                transformer = AssembleEffectiveTagSetConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "AssembleEffectiveTagSet",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/AssembleEffectiveTagSet");
-
+                transformer =
+                        AssembleEffectiveTagSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AssembleEffectiveTagSetRequest, AssembleEffectiveTagSetResponse>
                 handlerToUse = handler;
@@ -692,16 +702,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 BulkDeleteResourcesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BulkDeleteResourcesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "BulkDeleteResources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/BulkDeleteResources");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, BulkDeleteResourcesResponse>
-                transformer = BulkDeleteResourcesConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "BulkDeleteResources",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/BulkDeleteResources");
-
+                transformer =
+                        BulkDeleteResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         BulkDeleteResourcesRequest, BulkDeleteResourcesResponse>
                 handlerToUse = handler;
@@ -744,15 +756,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 BulkDeleteTagsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BulkDeleteTagsConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, BulkDeleteTagsResponse>
-                transformer = BulkDeleteTagsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "BulkDeleteTags",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/BulkDeleteTags");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "BulkDeleteTags",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/BulkDeleteTags");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, BulkDeleteTagsResponse>
+                transformer =
+                        BulkDeleteTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<BulkDeleteTagsRequest, BulkDeleteTagsResponse>
                 handlerToUse = handler;
 
@@ -793,15 +806,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 BulkEditTagsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BulkEditTagsConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, BulkEditTagsResponse>
-                transformer = BulkEditTagsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "BulkEditTags",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/BulkEditTags");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "BulkEditTags",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/BulkEditTags");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, BulkEditTagsResponse>
+                transformer =
+                        BulkEditTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<BulkEditTagsRequest, BulkEditTagsResponse>
                 handlerToUse = handler;
 
@@ -843,15 +857,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 BulkMoveResourcesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BulkMoveResourcesConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, BulkMoveResourcesResponse>
-                transformer = BulkMoveResourcesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "BulkMoveResources",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/BulkMoveResources");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "BulkMoveResources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/BulkMoveResources");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, BulkMoveResourcesResponse>
+                transformer =
+                        BulkMoveResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<BulkMoveResourcesRequest, BulkMoveResourcesResponse>
                 handlerToUse = handler;
 
@@ -893,16 +909,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CascadeDeleteTagNamespaceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CascadeDeleteTagNamespaceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CascadeDeleteTagNamespace",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/CascadeDeleteTagNamespace");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CascadeDeleteTagNamespaceResponse>
-                transformer = CascadeDeleteTagNamespaceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CascadeDeleteTagNamespace",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/CascadeDeleteTagNamespace");
-
+                transformer =
+                        CascadeDeleteTagNamespaceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CascadeDeleteTagNamespaceRequest, CascadeDeleteTagNamespaceResponse>
                 handlerToUse = handler;
@@ -941,16 +959,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ChangeDomainCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeDomainCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ChangeDomainCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ChangeDomainCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDomainCompartmentResponse>
-                transformer = ChangeDomainCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ChangeDomainCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ChangeDomainCompartment");
-
+                transformer =
+                        ChangeDomainCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDomainCompartmentRequest, ChangeDomainCompartmentResponse>
                 handlerToUse = handler;
@@ -993,16 +1013,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ChangeDomainLicenseTypeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeDomainLicenseTypeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ChangeDomainLicenseType",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ChangeDomainLicenseType");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDomainLicenseTypeResponse>
-                transformer = ChangeDomainLicenseTypeConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ChangeDomainLicenseType",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ChangeDomainLicenseType");
-
+                transformer =
+                        ChangeDomainLicenseTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDomainLicenseTypeRequest, ChangeDomainLicenseTypeResponse>
                 handlerToUse = handler;
@@ -1047,16 +1069,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ChangeTagNamespaceCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeTagNamespaceCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ChangeTagNamespaceCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/ChangeTagNamespaceCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeTagNamespaceCompartmentResponse>
-                transformer = ChangeTagNamespaceCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ChangeTagNamespaceCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/ChangeTagNamespaceCompartment");
-
+                transformer =
+                        ChangeTagNamespaceCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeTagNamespaceCompartmentRequest, ChangeTagNamespaceCompartmentResponse>
                 handlerToUse = handler;
@@ -1100,15 +1124,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateAuthTokenConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAuthTokenConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAuthTokenResponse>
-                transformer = CreateAuthTokenConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateAuthToken",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/CreateAuthToken");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateAuthToken",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/CreateAuthToken");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAuthTokenResponse>
+                transformer =
+                        CreateAuthTokenConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateAuthTokenRequest, CreateAuthTokenResponse>
                 handlerToUse = handler;
 
@@ -1150,15 +1176,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCompartmentConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCompartmentResponse>
-                transformer = CreateCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/CreateCompartment");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/CreateCompartment");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCompartmentResponse>
+                transformer =
+                        CreateCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateCompartmentRequest, CreateCompartmentResponse>
                 handlerToUse = handler;
 
@@ -1200,16 +1228,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateCustomerSecretKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCustomerSecretKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateCustomerSecretKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKey/CreateCustomerSecretKey");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateCustomerSecretKeyResponse>
-                transformer = CreateCustomerSecretKeyConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateCustomerSecretKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKey/CreateCustomerSecretKey");
-
+                transformer =
+                        CreateCustomerSecretKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateCustomerSecretKeyRequest, CreateCustomerSecretKeyResponse>
                 handlerToUse = handler;
@@ -1252,15 +1282,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateDbCredentialConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDbCredentialConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbCredentialResponse>
-                transformer = CreateDbCredentialConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateDbCredential",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateDbCredential");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateDbCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateDbCredential");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbCredentialResponse>
+                transformer =
+                        CreateDbCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateDbCredentialRequest, CreateDbCredentialResponse>
                 handlerToUse = handler;
 
@@ -1301,15 +1333,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateDomainConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDomainConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDomainResponse>
-                transformer = CreateDomainConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateDomain",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/CreateDomain");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateDomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/CreateDomain");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDomainResponse>
+                transformer =
+                        CreateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateDomainRequest, CreateDomainResponse>
                 handlerToUse = handler;
 
@@ -1351,15 +1384,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateDynamicGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDynamicGroupConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDynamicGroupResponse>
-                transformer = CreateDynamicGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateDynamicGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/CreateDynamicGroup");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateDynamicGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/CreateDynamicGroup");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDynamicGroupResponse>
+                transformer =
+                        CreateDynamicGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateDynamicGroupRequest, CreateDynamicGroupResponse>
                 handlerToUse = handler;
 
@@ -1400,15 +1435,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateGroupConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupResponse>
-                transformer = CreateGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/CreateGroup");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/CreateGroup");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupResponse>
+                transformer =
+                        CreateGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateGroupRequest, CreateGroupResponse>
                 handlerToUse = handler;
 
@@ -1450,16 +1486,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateIdentityProviderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/CreateIdentityProvider");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateIdentityProviderResponse>
-                transformer = CreateIdentityProviderConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateIdentityProvider",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/CreateIdentityProvider");
-
+                transformer =
+                        CreateIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateIdentityProviderRequest, CreateIdentityProviderResponse>
                 handlerToUse = handler;
@@ -1502,16 +1540,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateIdpGroupMappingConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateIdpGroupMappingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateIdpGroupMapping",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/CreateIdpGroupMapping");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateIdpGroupMappingResponse>
-                transformer = CreateIdpGroupMappingConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateIdpGroupMapping",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/CreateIdpGroupMapping");
-
+                transformer =
+                        CreateIdpGroupMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateIdpGroupMappingRequest, CreateIdpGroupMappingResponse>
                 handlerToUse = handler;
@@ -1554,16 +1594,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateMfaTotpDeviceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateMfaTotpDeviceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateMfaTotpDevice",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/CreateMfaTotpDevice");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateMfaTotpDeviceResponse>
-                transformer = CreateMfaTotpDeviceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateMfaTotpDevice",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/CreateMfaTotpDevice");
-
+                transformer =
+                        CreateMfaTotpDeviceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateMfaTotpDeviceRequest, CreateMfaTotpDeviceResponse>
                 handlerToUse = handler;
@@ -1601,16 +1643,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateNetworkSourceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateNetworkSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateNetworkSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/CreateNetworkSource");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateNetworkSourceResponse>
-                transformer = CreateNetworkSourceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateNetworkSource",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/CreateNetworkSource");
-
+                transformer =
+                        CreateNetworkSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateNetworkSourceRequest, CreateNetworkSourceResponse>
                 handlerToUse = handler;
@@ -1655,16 +1699,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateOAuthClientCredentialConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateOAuthClientCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateOAuthClientCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateOAuthClientCredential");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateOAuthClientCredentialResponse>
-                transformer = CreateOAuthClientCredentialConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateOAuthClientCredential",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateOAuthClientCredential");
-
+                transformer =
+                        CreateOAuthClientCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateOAuthClientCredentialRequest, CreateOAuthClientCredentialResponse>
                 handlerToUse = handler;
@@ -1708,16 +1754,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateOrResetUIPasswordConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateOrResetUIPasswordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateOrResetUIPassword",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UIPassword/CreateOrResetUIPassword");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>
-                transformer = CreateOrResetUIPasswordConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateOrResetUIPassword",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UIPassword/CreateOrResetUIPassword");
-
+                transformer =
+                        CreateOrResetUIPasswordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateOrResetUIPasswordRequest, CreateOrResetUIPasswordResponse>
                 handlerToUse = handler;
@@ -1754,15 +1802,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreatePolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreatePolicyConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePolicyResponse>
-                transformer = CreatePolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreatePolicy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/CreatePolicy");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreatePolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/CreatePolicy");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePolicyResponse>
+                transformer =
+                        CreatePolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreatePolicyRequest, CreatePolicyResponse>
                 handlerToUse = handler;
 
@@ -1804,16 +1853,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateRegionSubscriptionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateRegionSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateRegionSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/RegionSubscription/CreateRegionSubscription");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>
-                transformer = CreateRegionSubscriptionConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateRegionSubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/RegionSubscription/CreateRegionSubscription");
-
+                transformer =
+                        CreateRegionSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateRegionSubscriptionRequest, CreateRegionSubscriptionResponse>
                 handlerToUse = handler;
@@ -1856,16 +1907,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateSmtpCredentialConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSmtpCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateSmtpCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredential/CreateSmtpCredential");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateSmtpCredentialResponse>
-                transformer = CreateSmtpCredentialConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateSmtpCredential",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredential/CreateSmtpCredential");
-
+                transformer =
+                        CreateSmtpCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSmtpCredentialRequest, CreateSmtpCredentialResponse>
                 handlerToUse = handler;
@@ -1908,16 +1961,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateSwiftPasswordConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSwiftPasswordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateSwiftPassword",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/CreateSwiftPassword");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateSwiftPasswordResponse>
-                transformer = CreateSwiftPasswordConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateSwiftPassword",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/CreateSwiftPassword");
-
+                transformer =
+                        CreateSwiftPasswordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSwiftPasswordRequest, CreateSwiftPasswordResponse>
                 handlerToUse = handler;
@@ -1958,15 +2013,16 @@ public class IdentityAsyncClient implements IdentityAsync {
         final CreateTagRequest interceptedRequest = CreateTagConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTagConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagResponse>
-                transformer = CreateTagConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateTag",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/CreateTag");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateTag",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/CreateTag");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagResponse>
+                transformer =
+                        CreateTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateTagRequest, CreateTagResponse> handlerToUse =
                 handler;
 
@@ -2007,15 +2063,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateTagDefaultConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTagDefaultConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagDefaultResponse>
-                transformer = CreateTagDefaultConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateTagDefault",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/CreateTagDefault");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateTagDefault",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/CreateTagDefault");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagDefaultResponse>
+                transformer =
+                        CreateTagDefaultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateTagDefaultRequest, CreateTagDefaultResponse>
                 handlerToUse = handler;
 
@@ -2057,15 +2115,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateTagNamespaceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTagNamespaceConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagNamespaceResponse>
-                transformer = CreateTagNamespaceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateTagNamespace",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/CreateTagNamespace");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateTagNamespace",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/CreateTagNamespace");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagNamespaceResponse>
+                transformer =
+                        CreateTagNamespaceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateTagNamespaceRequest, CreateTagNamespaceResponse>
                 handlerToUse = handler;
 
@@ -2105,15 +2165,16 @@ public class IdentityAsyncClient implements IdentityAsync {
         final CreateUserRequest interceptedRequest = CreateUserConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateUserConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse>
-                transformer = CreateUserConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "CreateUser",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateUser");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "CreateUser",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateUser");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse>
+                transformer =
+                        CreateUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateUserRequest, CreateUserResponse> handlerToUse =
                 handler;
 
@@ -2155,15 +2216,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeactivateDomainConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeactivateDomainConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeactivateDomainResponse>
-                transformer = DeactivateDomainConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "DeactivateDomain",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/DeactivateDomain");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "DeactivateDomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/DeactivateDomain");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeactivateDomainResponse>
+                transformer =
+                        DeactivateDomainConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeactivateDomainRequest, DeactivateDomainResponse>
                 handlerToUse = handler;
 
@@ -2199,11 +2262,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteApiKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteApiKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity", "DeleteApiKey", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
-                transformer = DeleteApiKeyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity", "DeleteApiKey", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteApiKeyRequest, DeleteApiKeyResponse>
                 handlerToUse = handler;
 
@@ -2240,11 +2304,13 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteAuthTokenConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteAuthTokenConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity", "DeleteAuthToken", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAuthTokenResponse>
-                transformer = DeleteAuthTokenConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity", "DeleteAuthToken", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteAuthTokenConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteAuthTokenRequest, DeleteAuthTokenResponse>
                 handlerToUse = handler;
 
@@ -2281,14 +2347,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "DeleteCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/DeleteCompartment");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCompartmentResponse>
-                transformer = DeleteCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "DeleteCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/DeleteCompartment");
-
+                transformer =
+                        DeleteCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteCompartmentRequest, DeleteCompartmentResponse>
                 handlerToUse = handler;
 
@@ -2325,12 +2393,14 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteCustomerSecretKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCustomerSecretKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity", "DeleteCustomerSecretKey", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteCustomerSecretKeyResponse>
-                transformer = DeleteCustomerSecretKeyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity", "DeleteCustomerSecretKey", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteCustomerSecretKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteCustomerSecretKeyRequest, DeleteCustomerSecretKeyResponse>
                 handlerToUse = handler;
@@ -2368,14 +2438,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteDbCredentialConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDbCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "DeleteDbCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/DeleteDbCredential");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDbCredentialResponse>
-                transformer = DeleteDbCredentialConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "DeleteDbCredential",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/DeleteDbCredential");
-
+                transformer =
+                        DeleteDbCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteDbCredentialRequest, DeleteDbCredentialResponse>
                 handlerToUse = handler;
 
@@ -2411,14 +2483,15 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteDomainConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "DeleteDomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/DeleteDomain");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDomainResponse>
-                transformer = DeleteDomainConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "DeleteDomain",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/DeleteDomain");
-
+                transformer =
+                        DeleteDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteDomainRequest, DeleteDomainResponse>
                 handlerToUse = handler;
 
@@ -2455,11 +2528,13 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteDynamicGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDynamicGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity", "DeleteDynamicGroup", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDynamicGroupResponse>
-                transformer = DeleteDynamicGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity", "DeleteDynamicGroup", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteDynamicGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteDynamicGroupRequest, DeleteDynamicGroupResponse>
                 handlerToUse = handler;
 
@@ -2495,11 +2570,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity", "DeleteGroup", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGroupResponse>
-                transformer = DeleteGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity", "DeleteGroup", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteGroupRequest, DeleteGroupResponse>
                 handlerToUse = handler;
 
@@ -2536,12 +2612,14 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteIdentityProviderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity", "DeleteIdentityProvider", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteIdentityProviderResponse>
-                transformer = DeleteIdentityProviderConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity", "DeleteIdentityProvider", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteIdentityProviderRequest, DeleteIdentityProviderResponse>
                 handlerToUse = handler;
@@ -2579,12 +2657,14 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteIdpGroupMappingConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteIdpGroupMappingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity", "DeleteIdpGroupMapping", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteIdpGroupMappingResponse>
-                transformer = DeleteIdpGroupMappingConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity", "DeleteIdpGroupMapping", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteIdpGroupMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteIdpGroupMappingRequest, DeleteIdpGroupMappingResponse>
                 handlerToUse = handler;
@@ -2622,15 +2702,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteMfaTotpDeviceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteMfaTotpDeviceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "DeleteMfaTotpDevice",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/DeleteMfaTotpDevice");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteMfaTotpDeviceResponse>
-                transformer = DeleteMfaTotpDeviceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "DeleteMfaTotpDevice",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/DeleteMfaTotpDevice");
-
+                transformer =
+                        DeleteMfaTotpDeviceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteMfaTotpDeviceRequest, DeleteMfaTotpDeviceResponse>
                 handlerToUse = handler;
@@ -2668,15 +2750,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteNetworkSourceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteNetworkSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "DeleteNetworkSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/DeleteNetworkSource");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteNetworkSourceResponse>
-                transformer = DeleteNetworkSourceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "DeleteNetworkSource",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/DeleteNetworkSource");
-
+                transformer =
+                        DeleteNetworkSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteNetworkSourceRequest, DeleteNetworkSourceResponse>
                 handlerToUse = handler;
@@ -2716,15 +2800,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteOAuthClientCredentialConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteOAuthClientCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "DeleteOAuthClientCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/DeleteOAuthClientCredential");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteOAuthClientCredentialResponse>
-                transformer = DeleteOAuthClientCredentialConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "DeleteOAuthClientCredential",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/DeleteOAuthClientCredential");
-
+                transformer =
+                        DeleteOAuthClientCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteOAuthClientCredentialRequest, DeleteOAuthClientCredentialResponse>
                 handlerToUse = handler;
@@ -2762,11 +2848,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeletePolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeletePolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity", "DeletePolicy", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePolicyResponse>
-                transformer = DeletePolicyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity", "DeletePolicy", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeletePolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeletePolicyRequest, DeletePolicyResponse>
                 handlerToUse = handler;
 
@@ -2803,12 +2890,14 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteSmtpCredentialConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSmtpCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity", "DeleteSmtpCredential", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSmtpCredentialResponse>
-                transformer = DeleteSmtpCredentialConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity", "DeleteSmtpCredential", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteSmtpCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSmtpCredentialRequest, DeleteSmtpCredentialResponse>
                 handlerToUse = handler;
@@ -2846,12 +2935,14 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteSwiftPasswordConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSwiftPasswordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity", "DeleteSwiftPassword", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>
-                transformer = DeleteSwiftPasswordConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity", "DeleteSwiftPassword", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteSwiftPasswordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSwiftPasswordRequest, DeleteSwiftPasswordResponse>
                 handlerToUse = handler;
@@ -2887,14 +2978,15 @@ public class IdentityAsyncClient implements IdentityAsync {
         final DeleteTagRequest interceptedRequest = DeleteTagConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteTagConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "DeleteTag",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/DeleteTag");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagResponse>
-                transformer = DeleteTagConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "DeleteTag",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/DeleteTag");
-
+                transformer =
+                        DeleteTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteTagRequest, DeleteTagResponse> handlerToUse =
                 handler;
 
@@ -2930,14 +3022,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteTagDefaultConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteTagDefaultConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "DeleteTagDefault",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/DeleteTagDefault");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagDefaultResponse>
-                transformer = DeleteTagDefaultConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "DeleteTagDefault",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/DeleteTagDefault");
-
+                transformer =
+                        DeleteTagDefaultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteTagDefaultRequest, DeleteTagDefaultResponse>
                 handlerToUse = handler;
 
@@ -2974,14 +3068,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteTagNamespaceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteTagNamespaceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "DeleteTagNamespace",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/DeleteTagNamespace");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagNamespaceResponse>
-                transformer = DeleteTagNamespaceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "DeleteTagNamespace",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/DeleteTagNamespace");
-
+                transformer =
+                        DeleteTagNamespaceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteTagNamespaceRequest, DeleteTagNamespaceResponse>
                 handlerToUse = handler;
 
@@ -3016,11 +3112,12 @@ public class IdentityAsyncClient implements IdentityAsync {
         final DeleteUserRequest interceptedRequest = DeleteUserConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteUserConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity", "DeleteUser", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUserResponse>
-                transformer = DeleteUserConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity", "DeleteUser", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteUserRequest, DeleteUserResponse> handlerToUse =
                 handler;
 
@@ -3057,16 +3154,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 EnableReplicationToRegionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 EnableReplicationToRegionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "EnableReplicationToRegion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/EnableReplicationToRegion");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, EnableReplicationToRegionResponse>
-                transformer = EnableReplicationToRegionConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "EnableReplicationToRegion",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/EnableReplicationToRegion");
-
+                transformer =
+                        EnableReplicationToRegionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         EnableReplicationToRegionRequest, EnableReplicationToRegionResponse>
                 handlerToUse = handler;
@@ -3110,14 +3209,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GenerateTotpSeedConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GenerateTotpSeedConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GenerateTotpSeed",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/GenerateTotpSeed");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GenerateTotpSeedResponse>
-                transformer = GenerateTotpSeedConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GenerateTotpSeed",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/GenerateTotpSeed");
-
+                transformer =
+                        GenerateTotpSeedConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GenerateTotpSeedRequest, GenerateTotpSeedResponse>
                 handlerToUse = handler;
 
@@ -3154,15 +3255,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetAuthenticationPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAuthenticationPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetAuthenticationPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthenticationPolicy/GetAuthenticationPolicy");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAuthenticationPolicyResponse>
-                transformer = GetAuthenticationPolicyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetAuthenticationPolicy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthenticationPolicy/GetAuthenticationPolicy");
-
+                transformer =
+                        GetAuthenticationPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAuthenticationPolicyRequest, GetAuthenticationPolicyResponse>
                 handlerToUse = handler;
@@ -3200,14 +3303,15 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/GetCompartment");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCompartmentResponse>
-                transformer = GetCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/GetCompartment");
-
+                transformer =
+                        GetCompartmentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCompartmentRequest, GetCompartmentResponse>
                 handlerToUse = handler;
 
@@ -3242,14 +3346,15 @@ public class IdentityAsyncClient implements IdentityAsync {
         final GetDomainRequest interceptedRequest = GetDomainConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetDomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/GetDomain");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDomainResponse>
-                transformer = GetDomainConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetDomain",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/GetDomain");
-
+                transformer =
+                        GetDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDomainRequest, GetDomainResponse> handlerToUse =
                 handler;
 
@@ -3285,14 +3390,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetDynamicGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDynamicGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetDynamicGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/GetDynamicGroup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDynamicGroupResponse>
-                transformer = GetDynamicGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetDynamicGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/GetDynamicGroup");
-
+                transformer =
+                        GetDynamicGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDynamicGroupRequest, GetDynamicGroupResponse>
                 handlerToUse = handler;
 
@@ -3327,14 +3434,14 @@ public class IdentityAsyncClient implements IdentityAsync {
         final GetGroupRequest interceptedRequest = GetGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/GetGroup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse>
-                transformer = GetGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/GetGroup");
-
+                transformer = GetGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetGroupRequest, GetGroupResponse> handlerToUse =
                 handler;
 
@@ -3370,14 +3477,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetIamWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIamWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetIamWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequest/GetIamWorkRequest");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetIamWorkRequestResponse>
-                transformer = GetIamWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetIamWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequest/GetIamWorkRequest");
-
+                transformer =
+                        GetIamWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetIamWorkRequestRequest, GetIamWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -3414,15 +3523,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetIdentityProviderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/GetIdentityProvider");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetIdentityProviderResponse>
-                transformer = GetIdentityProviderConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetIdentityProvider",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/GetIdentityProvider");
-
+                transformer =
+                        GetIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetIdentityProviderRequest, GetIdentityProviderResponse>
                 handlerToUse = handler;
@@ -3460,14 +3571,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetIdpGroupMappingConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIdpGroupMappingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetIdpGroupMapping",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/GetIdpGroupMapping");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetIdpGroupMappingResponse>
-                transformer = GetIdpGroupMappingConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetIdpGroupMapping",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/GetIdpGroupMapping");
-
+                transformer =
+                        GetIdpGroupMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse>
                 handlerToUse = handler;
 
@@ -3504,14 +3617,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetMfaTotpDeviceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetMfaTotpDeviceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetMfaTotpDevice",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/GetMfaTotpDevice");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetMfaTotpDeviceResponse>
-                transformer = GetMfaTotpDeviceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetMfaTotpDevice",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/GetMfaTotpDevice");
-
+                transformer =
+                        GetMfaTotpDeviceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetMfaTotpDeviceRequest, GetMfaTotpDeviceResponse>
                 handlerToUse = handler;
 
@@ -3548,14 +3663,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetNetworkSourceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetNetworkSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetNetworkSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/GetNetworkSource");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkSourceResponse>
-                transformer = GetNetworkSourceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetNetworkSource",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/GetNetworkSource");
-
+                transformer =
+                        GetNetworkSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetNetworkSourceRequest, GetNetworkSourceResponse>
                 handlerToUse = handler;
 
@@ -3590,14 +3707,15 @@ public class IdentityAsyncClient implements IdentityAsync {
         final GetPolicyRequest interceptedRequest = GetPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/GetPolicy");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyResponse>
-                transformer = GetPolicyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetPolicy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/GetPolicy");
-
+                transformer =
+                        GetPolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetPolicyRequest, GetPolicyResponse> handlerToUse =
                 handler;
 
@@ -3633,15 +3751,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetStandardTagTemplateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetStandardTagTemplateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetStandardTagTemplate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/StandardTagNamespaceTemplate/GetStandardTagTemplate");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetStandardTagTemplateResponse>
-                transformer = GetStandardTagTemplateConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetStandardTagTemplate",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/StandardTagNamespaceTemplate/GetStandardTagTemplate");
-
+                transformer =
+                        GetStandardTagTemplateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetStandardTagTemplateRequest, GetStandardTagTemplateResponse>
                 handlerToUse = handler;
@@ -3676,14 +3796,14 @@ public class IdentityAsyncClient implements IdentityAsync {
         final GetTagRequest interceptedRequest = GetTagConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTagConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetTag",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/GetTag");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTagResponse>
-                transformer = GetTagConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetTag",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/GetTag");
-
+                transformer = GetTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTagRequest, GetTagResponse> handlerToUse = handler;
 
         java.util.function.Function<
@@ -3717,14 +3837,15 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetTagDefaultConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTagDefaultConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetTagDefault",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/GetTagDefault");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTagDefaultResponse>
-                transformer = GetTagDefaultConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetTagDefault",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/GetTagDefault");
-
+                transformer =
+                        GetTagDefaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTagDefaultRequest, GetTagDefaultResponse>
                 handlerToUse = handler;
 
@@ -3761,14 +3882,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetTagNamespaceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTagNamespaceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetTagNamespace",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/GetTagNamespace");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTagNamespaceResponse>
-                transformer = GetTagNamespaceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetTagNamespace",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/GetTagNamespace");
-
+                transformer =
+                        GetTagNamespaceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTagNamespaceRequest, GetTagNamespaceResponse>
                 handlerToUse = handler;
 
@@ -3805,15 +3928,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetTaggingWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTaggingWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetTaggingWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequest/GetTaggingWorkRequest");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTaggingWorkRequestResponse>
-                transformer = GetTaggingWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetTaggingWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequest/GetTaggingWorkRequest");
-
+                transformer =
+                        GetTaggingWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetTaggingWorkRequestRequest, GetTaggingWorkRequestResponse>
                 handlerToUse = handler;
@@ -3849,14 +3974,15 @@ public class IdentityAsyncClient implements IdentityAsync {
         final GetTenancyRequest interceptedRequest = GetTenancyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTenancyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetTenancy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tenancy/GetTenancy");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTenancyResponse>
-                transformer = GetTenancyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetTenancy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tenancy/GetTenancy");
-
+                transformer =
+                        GetTenancyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTenancyRequest, GetTenancyResponse> handlerToUse =
                 handler;
 
@@ -3890,14 +4016,14 @@ public class IdentityAsyncClient implements IdentityAsync {
         final GetUserRequest interceptedRequest = GetUserConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetUserConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetUser",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/GetUser");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetUserResponse>
-                transformer = GetUserConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetUser",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/GetUser");
-
+                transformer = GetUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse> handlerToUse =
                 handler;
 
@@ -3933,15 +4059,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetUserGroupMembershipConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetUserGroupMembershipConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetUserGroupMembership",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/GetUserGroupMembership");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetUserGroupMembershipResponse>
-                transformer = GetUserGroupMembershipConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetUserGroupMembership",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/GetUserGroupMembership");
-
+                transformer =
+                        GetUserGroupMembershipConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>
                 handlerToUse = handler;
@@ -3981,15 +4109,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetUserUIPasswordInformationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetUserUIPasswordInformationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetUserUIPasswordInformation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UIPasswordInformation/GetUserUIPasswordInformation");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetUserUIPasswordInformationResponse>
-                transformer = GetUserUIPasswordInformationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetUserUIPasswordInformation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UIPasswordInformation/GetUserUIPasswordInformation");
-
+                transformer =
+                        GetUserUIPasswordInformationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetUserUIPasswordInformationRequest, GetUserUIPasswordInformationResponse>
                 handlerToUse = handler;
@@ -4028,14 +4158,15 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/WorkRequest/GetWorkRequest");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "GetWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/WorkRequest/GetWorkRequest");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -4072,15 +4203,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ImportStandardTagsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ImportStandardTagsConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportStandardTagsResponse>
-                transformer = ImportStandardTagsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ImportStandardTags",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/ImportStandardTags");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ImportStandardTags",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/ImportStandardTags");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportStandardTagsResponse>
+                transformer =
+                        ImportStandardTagsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ImportStandardTagsRequest, ImportStandardTagsResponse>
                 handlerToUse = handler;
 
@@ -4124,15 +4257,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListAllowedDomainLicenseTypesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAllowedDomainLicenseTypesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListAllowedDomainLicenseTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ListAllowedDomainLicenseTypes");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAllowedDomainLicenseTypesResponse>
-                transformer = ListAllowedDomainLicenseTypesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListAllowedDomainLicenseTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ListAllowedDomainLicenseTypes");
-
+                transformer =
+                        ListAllowedDomainLicenseTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAllowedDomainLicenseTypesRequest, ListAllowedDomainLicenseTypesResponse>
                 handlerToUse = handler;
@@ -4170,14 +4305,15 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListApiKeysConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListApiKeysConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListApiKeys",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ApiKey/ListApiKeys");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListApiKeysResponse>
-                transformer = ListApiKeysConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListApiKeys",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ApiKey/ListApiKeys");
-
+                transformer =
+                        ListApiKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListApiKeysRequest, ListApiKeysResponse>
                 handlerToUse = handler;
 
@@ -4214,14 +4350,15 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListAuthTokensConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAuthTokensConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListAuthTokens",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/ListAuthTokens");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAuthTokensResponse>
-                transformer = ListAuthTokensConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListAuthTokens",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/ListAuthTokens");
-
+                transformer =
+                        ListAuthTokensConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListAuthTokensRequest, ListAuthTokensResponse>
                 handlerToUse = handler;
 
@@ -4258,15 +4395,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListAvailabilityDomainsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAvailabilityDomainsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListAvailabilityDomains",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAvailabilityDomainsResponse>
-                transformer = ListAvailabilityDomainsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListAvailabilityDomains",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains");
-
+                transformer =
+                        ListAvailabilityDomainsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAvailabilityDomainsRequest, ListAvailabilityDomainsResponse>
                 handlerToUse = handler;
@@ -4306,15 +4445,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListBulkActionResourceTypesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBulkActionResourceTypesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListBulkActionResourceTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/BulkActionResourceTypeCollection/ListBulkActionResourceTypes");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListBulkActionResourceTypesResponse>
-                transformer = ListBulkActionResourceTypesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListBulkActionResourceTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/BulkActionResourceTypeCollection/ListBulkActionResourceTypes");
-
+                transformer =
+                        ListBulkActionResourceTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListBulkActionResourceTypesRequest, ListBulkActionResourceTypesResponse>
                 handlerToUse = handler;
@@ -4355,15 +4496,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListBulkEditTagsResourceTypesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBulkEditTagsResourceTypesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListBulkEditTagsResourceTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/BulkEditTagsResourceTypeCollection/ListBulkEditTagsResourceTypes");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListBulkEditTagsResourceTypesResponse>
-                transformer = ListBulkEditTagsResourceTypesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListBulkEditTagsResourceTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/BulkEditTagsResourceTypeCollection/ListBulkEditTagsResourceTypes");
-
+                transformer =
+                        ListBulkEditTagsResourceTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListBulkEditTagsResourceTypesRequest, ListBulkEditTagsResourceTypesResponse>
                 handlerToUse = handler;
@@ -4402,14 +4545,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListCompartmentsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCompartmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListCompartments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/ListCompartments");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCompartmentsResponse>
-                transformer = ListCompartmentsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListCompartments",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/ListCompartments");
-
+                transformer =
+                        ListCompartmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListCompartmentsRequest, ListCompartmentsResponse>
                 handlerToUse = handler;
 
@@ -4446,15 +4591,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListCostTrackingTagsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCostTrackingTagsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListCostTrackingTags",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/ListCostTrackingTags");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCostTrackingTagsResponse>
-                transformer = ListCostTrackingTagsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListCostTrackingTags",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/ListCostTrackingTags");
-
+                transformer =
+                        ListCostTrackingTagsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListCostTrackingTagsRequest, ListCostTrackingTagsResponse>
                 handlerToUse = handler;
@@ -4492,15 +4639,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListCustomerSecretKeysConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCustomerSecretKeysConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListCustomerSecretKeys",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/ListCustomerSecretKeys");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>
-                transformer = ListCustomerSecretKeysConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListCustomerSecretKeys",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/ListCustomerSecretKeys");
-
+                transformer =
+                        ListCustomerSecretKeysConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListCustomerSecretKeysRequest, ListCustomerSecretKeysResponse>
                 handlerToUse = handler;
@@ -4538,14 +4687,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListDbCredentialsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDbCredentialsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListDbCredentials",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListDbCredentials");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbCredentialsResponse>
-                transformer = ListDbCredentialsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListDbCredentials",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListDbCredentials");
-
+                transformer =
+                        ListDbCredentialsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDbCredentialsRequest, ListDbCredentialsResponse>
                 handlerToUse = handler;
 
@@ -4581,14 +4732,15 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListDomainsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDomainsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListDomains",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DomainSummary/ListDomains");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDomainsResponse>
-                transformer = ListDomainsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListDomains",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DomainSummary/ListDomains");
-
+                transformer =
+                        ListDomainsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDomainsRequest, ListDomainsResponse>
                 handlerToUse = handler;
 
@@ -4625,14 +4777,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListDynamicGroupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDynamicGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListDynamicGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/ListDynamicGroups");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDynamicGroupsResponse>
-                transformer = ListDynamicGroupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListDynamicGroups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/ListDynamicGroups");
-
+                transformer =
+                        ListDynamicGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDynamicGroupsRequest, ListDynamicGroupsResponse>
                 handlerToUse = handler;
 
@@ -4669,14 +4823,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListFaultDomainsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListFaultDomainsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListFaultDomains",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListFaultDomainsResponse>
-                transformer = ListFaultDomainsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListFaultDomains",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains");
-
+                transformer =
+                        ListFaultDomainsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListFaultDomainsRequest, ListFaultDomainsResponse>
                 handlerToUse = handler;
 
@@ -4711,14 +4867,15 @@ public class IdentityAsyncClient implements IdentityAsync {
         final ListGroupsRequest interceptedRequest = ListGroupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/ListGroups");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListGroupsResponse>
-                transformer = ListGroupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListGroups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/ListGroups");
-
+                transformer =
+                        ListGroupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListGroupsRequest, ListGroupsResponse> handlerToUse =
                 handler;
 
@@ -4755,15 +4912,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListIamWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIamWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListIamWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequest/ListIamWorkRequestErrors");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIamWorkRequestErrorsResponse>
-                transformer = ListIamWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListIamWorkRequestErrors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequest/ListIamWorkRequestErrors");
-
+                transformer =
+                        ListIamWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListIamWorkRequestErrorsRequest, ListIamWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -4801,15 +4960,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListIamWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIamWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListIamWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequestLogSummary/ListIamWorkRequestLogs");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIamWorkRequestLogsResponse>
-                transformer = ListIamWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListIamWorkRequestLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequestLogSummary/ListIamWorkRequestLogs");
-
+                transformer =
+                        ListIamWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListIamWorkRequestLogsRequest, ListIamWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -4847,15 +5008,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListIamWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIamWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListIamWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequestSummary/ListIamWorkRequests");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIamWorkRequestsResponse>
-                transformer = ListIamWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListIamWorkRequests",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequestSummary/ListIamWorkRequests");
-
+                transformer =
+                        ListIamWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListIamWorkRequestsRequest, ListIamWorkRequestsResponse>
                 handlerToUse = handler;
@@ -4895,15 +5058,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListIdentityProviderGroupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIdentityProviderGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListIdentityProviderGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProviderGroupSummary/ListIdentityProviderGroups");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIdentityProviderGroupsResponse>
-                transformer = ListIdentityProviderGroupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListIdentityProviderGroups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProviderGroupSummary/ListIdentityProviderGroups");
-
+                transformer =
+                        ListIdentityProviderGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListIdentityProviderGroupsRequest, ListIdentityProviderGroupsResponse>
                 handlerToUse = handler;
@@ -4942,15 +5107,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListIdentityProvidersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIdentityProvidersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListIdentityProviders",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/ListIdentityProviders");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIdentityProvidersResponse>
-                transformer = ListIdentityProvidersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListIdentityProviders",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/ListIdentityProviders");
-
+                transformer =
+                        ListIdentityProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListIdentityProvidersRequest, ListIdentityProvidersResponse>
                 handlerToUse = handler;
@@ -4988,15 +5155,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListIdpGroupMappingsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIdpGroupMappingsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListIdpGroupMappings",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/ListIdpGroupMappings");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>
-                transformer = ListIdpGroupMappingsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListIdpGroupMappings",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/ListIdpGroupMappings");
-
+                transformer =
+                        ListIdpGroupMappingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListIdpGroupMappingsRequest, ListIdpGroupMappingsResponse>
                 handlerToUse = handler;
@@ -5034,14 +5203,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListMfaTotpDevicesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListMfaTotpDevicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListMfaTotpDevices",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/ListMfaTotpDevices");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListMfaTotpDevicesResponse>
-                transformer = ListMfaTotpDevicesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListMfaTotpDevices",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/ListMfaTotpDevices");
-
+                transformer =
+                        ListMfaTotpDevicesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListMfaTotpDevicesRequest, ListMfaTotpDevicesResponse>
                 handlerToUse = handler;
 
@@ -5078,14 +5249,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListNetworkSourcesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListNetworkSourcesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListNetworkSources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSourcesSummary/ListNetworkSources");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListNetworkSourcesResponse>
-                transformer = ListNetworkSourcesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListNetworkSources",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSourcesSummary/ListNetworkSources");
-
+                transformer =
+                        ListNetworkSourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListNetworkSourcesRequest, ListNetworkSourcesResponse>
                 handlerToUse = handler;
 
@@ -5124,15 +5297,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListOAuthClientCredentialsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListOAuthClientCredentialsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListOAuthClientCredentials",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListOAuthClientCredentials");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListOAuthClientCredentialsResponse>
-                transformer = ListOAuthClientCredentialsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListOAuthClientCredentials",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListOAuthClientCredentials");
-
+                transformer =
+                        ListOAuthClientCredentialsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListOAuthClientCredentialsRequest, ListOAuthClientCredentialsResponse>
                 handlerToUse = handler;
@@ -5170,14 +5345,15 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListPoliciesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/ListPolicies");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
-                transformer = ListPoliciesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListPolicies",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/ListPolicies");
-
+                transformer =
+                        ListPoliciesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListPoliciesRequest, ListPoliciesResponse>
                 handlerToUse = handler;
 
@@ -5214,15 +5390,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListRegionSubscriptionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRegionSubscriptionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListRegionSubscriptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/RegionSubscription/ListRegionSubscriptions");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListRegionSubscriptionsResponse>
-                transformer = ListRegionSubscriptionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListRegionSubscriptions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/RegionSubscription/ListRegionSubscriptions");
-
+                transformer =
+                        ListRegionSubscriptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListRegionSubscriptionsRequest, ListRegionSubscriptionsResponse>
                 handlerToUse = handler;
@@ -5259,14 +5437,15 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListRegionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRegionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListRegions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Region/ListRegions");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionsResponse>
-                transformer = ListRegionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListRegions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Region/ListRegions");
-
+                transformer =
+                        ListRegionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRegionsRequest, ListRegionsResponse>
                 handlerToUse = handler;
 
@@ -5303,15 +5482,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListSmtpCredentialsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSmtpCredentialsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListSmtpCredentials",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/ListSmtpCredentials");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSmtpCredentialsResponse>
-                transformer = ListSmtpCredentialsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListSmtpCredentials",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/ListSmtpCredentials");
-
+                transformer =
+                        ListSmtpCredentialsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListSmtpCredentialsRequest, ListSmtpCredentialsResponse>
                 handlerToUse = handler;
@@ -5349,15 +5530,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListStandardTagNamespacesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListStandardTagNamespacesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListStandardTagNamespaces",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/StandardTagNamespaceTemplateSummary/ListStandardTagNamespaces");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListStandardTagNamespacesResponse>
-                transformer = ListStandardTagNamespacesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListStandardTagNamespaces",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/StandardTagNamespaceTemplateSummary/ListStandardTagNamespaces");
-
+                transformer =
+                        ListStandardTagNamespacesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListStandardTagNamespacesRequest, ListStandardTagNamespacesResponse>
                 handlerToUse = handler;
@@ -5396,14 +5579,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListSwiftPasswordsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSwiftPasswordsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListSwiftPasswords",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/ListSwiftPasswords");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSwiftPasswordsResponse>
-                transformer = ListSwiftPasswordsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListSwiftPasswords",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/ListSwiftPasswords");
-
+                transformer =
+                        ListSwiftPasswordsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSwiftPasswordsRequest, ListSwiftPasswordsResponse>
                 handlerToUse = handler;
 
@@ -5440,14 +5625,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListTagDefaultsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTagDefaultsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListTagDefaults",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefaultSummary/ListTagDefaults");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTagDefaultsResponse>
-                transformer = ListTagDefaultsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListTagDefaults",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefaultSummary/ListTagDefaults");
-
+                transformer =
+                        ListTagDefaultsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTagDefaultsRequest, ListTagDefaultsResponse>
                 handlerToUse = handler;
 
@@ -5484,14 +5671,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListTagNamespacesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTagNamespacesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListTagNamespaces",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespaceSummary/ListTagNamespaces");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTagNamespacesResponse>
-                transformer = ListTagNamespacesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListTagNamespaces",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespaceSummary/ListTagNamespaces");
-
+                transformer =
+                        ListTagNamespacesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTagNamespacesRequest, ListTagNamespacesResponse>
                 handlerToUse = handler;
 
@@ -5530,15 +5719,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListTaggingWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTaggingWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListTaggingWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestErrorSummary/ListTaggingWorkRequestErrors");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTaggingWorkRequestErrorsResponse>
-                transformer = ListTaggingWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListTaggingWorkRequestErrors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestErrorSummary/ListTaggingWorkRequestErrors");
-
+                transformer =
+                        ListTaggingWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListTaggingWorkRequestErrorsRequest, ListTaggingWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -5579,15 +5770,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListTaggingWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTaggingWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListTaggingWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestLogSummary/ListTaggingWorkRequestLogs");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTaggingWorkRequestLogsResponse>
-                transformer = ListTaggingWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListTaggingWorkRequestLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestLogSummary/ListTaggingWorkRequestLogs");
-
+                transformer =
+                        ListTaggingWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListTaggingWorkRequestLogsRequest, ListTaggingWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -5626,15 +5819,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListTaggingWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTaggingWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListTaggingWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestSummary/ListTaggingWorkRequests");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTaggingWorkRequestsResponse>
-                transformer = ListTaggingWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListTaggingWorkRequests",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestSummary/ListTaggingWorkRequests");
-
+                transformer =
+                        ListTaggingWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListTaggingWorkRequestsRequest, ListTaggingWorkRequestsResponse>
                 handlerToUse = handler;
@@ -5670,14 +5865,14 @@ public class IdentityAsyncClient implements IdentityAsync {
         final ListTagsRequest interceptedRequest = ListTagsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTagsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListTags",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagSummary/ListTags");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTagsResponse>
-                transformer = ListTagsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListTags",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagSummary/ListTags");
-
+                transformer = ListTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTagsRequest, ListTagsResponse> handlerToUse =
                 handler;
 
@@ -5713,15 +5908,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListUserGroupMembershipsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListUserGroupMembershipsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListUserGroupMemberships",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/ListUserGroupMemberships");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListUserGroupMembershipsResponse>
-                transformer = ListUserGroupMembershipsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListUserGroupMemberships",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/ListUserGroupMemberships");
-
+                transformer =
+                        ListUserGroupMembershipsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListUserGroupMembershipsRequest, ListUserGroupMembershipsResponse>
                 handlerToUse = handler;
@@ -5757,14 +5954,15 @@ public class IdentityAsyncClient implements IdentityAsync {
         final ListUsersRequest interceptedRequest = ListUsersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListUsersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListUsers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListUsers");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse>
-                transformer = ListUsersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListUsers",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListUsers");
-
+                transformer =
+                        ListUsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse> handlerToUse =
                 handler;
 
@@ -5800,14 +5998,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/WorkRequestSummary/ListWorkRequests");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ListWorkRequests",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/WorkRequestSummary/ListWorkRequests");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -5844,15 +6044,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 MoveCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 MoveCompartmentConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, MoveCompartmentResponse>
-                transformer = MoveCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "MoveCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/MoveCompartment");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "MoveCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/MoveCompartment");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, MoveCompartmentResponse>
+                transformer =
+                        MoveCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<MoveCompartmentRequest, MoveCompartmentResponse>
                 handlerToUse = handler;
 
@@ -5894,14 +6096,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 RecoverCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RecoverCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "RecoverCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/RecoverCompartment");
         final com.google.common.base.Function<javax.ws.rs.core.Response, RecoverCompartmentResponse>
-                transformer = RecoverCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "RecoverCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/RecoverCompartment");
-
+                transformer =
+                        RecoverCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RecoverCompartmentRequest, RecoverCompartmentResponse>
                 handlerToUse = handler;
 
@@ -5938,16 +6142,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 RemoveTagDefaultLockConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemoveTagDefaultLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "RemoveTagDefaultLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/RemoveTagDefaultLock");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveTagDefaultLockResponse>
-                transformer = RemoveTagDefaultLockConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "RemoveTagDefaultLock",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/RemoveTagDefaultLock");
-
+                transformer =
+                        RemoveTagDefaultLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveTagDefaultLockRequest, RemoveTagDefaultLockResponse>
                 handlerToUse = handler;
@@ -5990,16 +6196,18 @@ public class IdentityAsyncClient implements IdentityAsync {
                 RemoveTagNamespaceLockConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemoveTagNamespaceLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "RemoveTagNamespaceLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/RemoveTagNamespaceLock");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveTagNamespaceLockResponse>
-                transformer = RemoveTagNamespaceLockConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "RemoveTagNamespaceLock",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/RemoveTagNamespaceLock");
-
+                transformer =
+                        RemoveTagNamespaceLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveTagNamespaceLockRequest, RemoveTagNamespaceLockResponse>
                 handlerToUse = handler;
@@ -6042,15 +6250,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 RemoveUserFromGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemoveUserFromGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "RemoveUserFromGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/RemoveUserFromGroup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveUserFromGroupResponse>
-                transformer = RemoveUserFromGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "RemoveUserFromGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/RemoveUserFromGroup");
-
+                transformer =
+                        RemoveUserFromGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveUserFromGroupRequest, RemoveUserFromGroupResponse>
                 handlerToUse = handler;
@@ -6088,14 +6298,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 ResetIdpScimClientConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ResetIdpScimClientConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "ResetIdpScimClient",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ScimClientCredentials/ResetIdpScimClient");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ResetIdpScimClientResponse>
-                transformer = ResetIdpScimClientConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "ResetIdpScimClient",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ScimClientCredentials/ResetIdpScimClient");
-
+                transformer =
+                        ResetIdpScimClientConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ResetIdpScimClientRequest, ResetIdpScimClientResponse>
                 handlerToUse = handler;
 
@@ -6132,14 +6344,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateAuthTokenConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAuthTokenConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateAuthToken",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/UpdateAuthToken");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAuthTokenResponse>
-                transformer = UpdateAuthTokenConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateAuthToken",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/UpdateAuthToken");
-
+                transformer =
+                        UpdateAuthTokenConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateAuthTokenRequest, UpdateAuthTokenResponse>
                 handlerToUse = handler;
 
@@ -6183,15 +6397,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateAuthenticationPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAuthenticationPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateAuthenticationPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthenticationPolicy/UpdateAuthenticationPolicy");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAuthenticationPolicyResponse>
-                transformer = UpdateAuthenticationPolicyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateAuthenticationPolicy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthenticationPolicy/UpdateAuthenticationPolicy");
-
+                transformer =
+                        UpdateAuthenticationPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAuthenticationPolicyRequest, UpdateAuthenticationPolicyResponse>
                 handlerToUse = handler;
@@ -6235,14 +6451,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/UpdateCompartment");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCompartmentResponse>
-                transformer = UpdateCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/UpdateCompartment");
-
+                transformer =
+                        UpdateCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateCompartmentRequest, UpdateCompartmentResponse>
                 handlerToUse = handler;
 
@@ -6284,15 +6502,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateCustomerSecretKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCustomerSecretKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateCustomerSecretKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/UpdateCustomerSecretKey");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateCustomerSecretKeyResponse>
-                transformer = UpdateCustomerSecretKeyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateCustomerSecretKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/UpdateCustomerSecretKey");
-
+                transformer =
+                        UpdateCustomerSecretKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateCustomerSecretKeyRequest, UpdateCustomerSecretKeyResponse>
                 handlerToUse = handler;
@@ -6334,14 +6554,15 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateDomainConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateDomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/UpdateDomain");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDomainResponse>
-                transformer = UpdateDomainConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateDomain",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/UpdateDomain");
-
+                transformer =
+                        UpdateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateDomainRequest, UpdateDomainResponse>
                 handlerToUse = handler;
 
@@ -6383,14 +6604,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateDynamicGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDynamicGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateDynamicGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/UpdateDynamicGroup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDynamicGroupResponse>
-                transformer = UpdateDynamicGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateDynamicGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/UpdateDynamicGroup");
-
+                transformer =
+                        UpdateDynamicGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateDynamicGroupRequest, UpdateDynamicGroupResponse>
                 handlerToUse = handler;
 
@@ -6431,14 +6654,15 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/UpdateGroup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
-                transformer = UpdateGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/UpdateGroup");
-
+                transformer =
+                        UpdateGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateGroupRequest, UpdateGroupResponse>
                 handlerToUse = handler;
 
@@ -6480,15 +6704,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateIdentityProviderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateIdentityProviderResponse>
-                transformer = UpdateIdentityProviderConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateIdentityProvider",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider");
-
+                transformer =
+                        UpdateIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateIdentityProviderRequest, UpdateIdentityProviderResponse>
                 handlerToUse = handler;
@@ -6531,15 +6757,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateIdpGroupMappingConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateIdpGroupMappingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateIdpGroupMapping",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/UpdateIdpGroupMapping");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>
-                transformer = UpdateIdpGroupMappingConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateIdpGroupMapping",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/UpdateIdpGroupMapping");
-
+                transformer =
+                        UpdateIdpGroupMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateIdpGroupMappingRequest, UpdateIdpGroupMappingResponse>
                 handlerToUse = handler;
@@ -6582,15 +6810,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateNetworkSourceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateNetworkSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateNetworkSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/UpdateNetworkSource");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateNetworkSourceResponse>
-                transformer = UpdateNetworkSourceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateNetworkSource",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/UpdateNetworkSource");
-
+                transformer =
+                        UpdateNetworkSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateNetworkSourceRequest, UpdateNetworkSourceResponse>
                 handlerToUse = handler;
@@ -6635,15 +6865,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateOAuthClientCredentialConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateOAuthClientCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateOAuthClientCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateOAuthClientCredential");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateOAuthClientCredentialResponse>
-                transformer = UpdateOAuthClientCredentialConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateOAuthClientCredential",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateOAuthClientCredential");
-
+                transformer =
+                        UpdateOAuthClientCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateOAuthClientCredentialRequest, UpdateOAuthClientCredentialResponse>
                 handlerToUse = handler;
@@ -6686,14 +6918,15 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdatePolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdatePolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdatePolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/UpdatePolicy");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePolicyResponse>
-                transformer = UpdatePolicyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdatePolicy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/UpdatePolicy");
-
+                transformer =
+                        UpdatePolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdatePolicyRequest, UpdatePolicyResponse>
                 handlerToUse = handler;
 
@@ -6735,15 +6968,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateSmtpCredentialConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSmtpCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateSmtpCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/UpdateSmtpCredential");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateSmtpCredentialResponse>
-                transformer = UpdateSmtpCredentialConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateSmtpCredential",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/UpdateSmtpCredential");
-
+                transformer =
+                        UpdateSmtpCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSmtpCredentialRequest, UpdateSmtpCredentialResponse>
                 handlerToUse = handler;
@@ -6786,15 +7021,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateSwiftPasswordConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSwiftPasswordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateSwiftPassword",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/UpdateSwiftPassword");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>
-                transformer = UpdateSwiftPasswordConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateSwiftPassword",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/UpdateSwiftPassword");
-
+                transformer =
+                        UpdateSwiftPasswordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSwiftPasswordRequest, UpdateSwiftPasswordResponse>
                 handlerToUse = handler;
@@ -6835,14 +7072,15 @@ public class IdentityAsyncClient implements IdentityAsync {
         final UpdateTagRequest interceptedRequest = UpdateTagConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateTagConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateTag",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/UpdateTag");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagResponse>
-                transformer = UpdateTagConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateTag",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/UpdateTag");
-
+                transformer =
+                        UpdateTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateTagRequest, UpdateTagResponse> handlerToUse =
                 handler;
 
@@ -6883,14 +7121,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateTagDefaultConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateTagDefaultConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateTagDefault",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/UpdateTagDefault");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagDefaultResponse>
-                transformer = UpdateTagDefaultConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateTagDefault",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/UpdateTagDefault");
-
+                transformer =
+                        UpdateTagDefaultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateTagDefaultRequest, UpdateTagDefaultResponse>
                 handlerToUse = handler;
 
@@ -6932,14 +7172,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateTagNamespaceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateTagNamespaceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateTagNamespace",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/UpdateTagNamespace");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagNamespaceResponse>
-                transformer = UpdateTagNamespaceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateTagNamespace",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/UpdateTagNamespace");
-
+                transformer =
+                        UpdateTagNamespaceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateTagNamespaceRequest, UpdateTagNamespaceResponse>
                 handlerToUse = handler;
 
@@ -6979,14 +7221,15 @@ public class IdentityAsyncClient implements IdentityAsync {
         final UpdateUserRequest interceptedRequest = UpdateUserConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateUserConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateUser",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUser");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserResponse>
-                transformer = UpdateUserConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateUser",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUser");
-
+                transformer =
+                        UpdateUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateUserRequest, UpdateUserResponse> handlerToUse =
                 handler;
 
@@ -7028,15 +7271,17 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateUserCapabilitiesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateUserCapabilitiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateUserCapabilities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUserCapabilities");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateUserCapabilitiesResponse>
-                transformer = UpdateUserCapabilitiesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateUserCapabilities",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUserCapabilities");
-
+                transformer =
+                        UpdateUserCapabilitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateUserCapabilitiesRequest, UpdateUserCapabilitiesResponse>
                 handlerToUse = handler;
@@ -7079,14 +7324,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UpdateUserStateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateUserStateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UpdateUserState",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUserState");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserStateResponse>
-                transformer = UpdateUserStateConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UpdateUserState",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUserState");
-
+                transformer =
+                        UpdateUserStateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateUserStateRequest, UpdateUserStateResponse>
                 handlerToUse = handler;
 
@@ -7127,15 +7374,16 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UploadApiKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UploadApiKeyConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UploadApiKeyResponse>
-                transformer = UploadApiKeyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Identity",
-                "UploadApiKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ApiKey/UploadApiKey");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Identity",
+                        "UploadApiKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ApiKey/UploadApiKey");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UploadApiKeyResponse>
+                transformer =
+                        UploadApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UploadApiKeyRequest, UploadApiKeyResponse>
                 handlerToUse = handler;
 

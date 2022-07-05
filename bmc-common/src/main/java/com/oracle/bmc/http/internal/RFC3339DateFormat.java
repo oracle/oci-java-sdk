@@ -6,12 +6,8 @@ package com.oracle.bmc.http.internal;
 
 import java.text.FieldPosition;
 import java.util.Date;
-
 import com.fasterxml.jackson.databind.util.ISO8601Utils;
 import com.fasterxml.jackson.databind.util.StdDateFormat;
-
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 
 /**
  * Swagger uses RFC3339 formats for date.  By default, Jackson's StdDateFormatter
@@ -19,7 +15,6 @@ import lombok.NoArgsConstructor;
  * <p>
  * Leave deserialization alone, only take over serialization.
  */
-@NoArgsConstructor(access = AccessLevel.PACKAGE)
 @SuppressWarnings({"deprecation", "serial"})
 public class RFC3339DateFormat extends StdDateFormat {
     @Override
@@ -37,4 +32,6 @@ public class RFC3339DateFormat extends StdDateFormat {
     public RFC3339DateFormat clone() {
         return new RFC3339DateFormat();
     }
+
+    RFC3339DateFormat() {}
 }

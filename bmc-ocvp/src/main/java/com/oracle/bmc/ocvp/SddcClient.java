@@ -475,19 +475,22 @@ public class SddcClient implements Sddc {
                 CancelDowngradeHcxConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelDowngradeHcxConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelDowngradeHcxResponse>
-                transformer = CancelDowngradeHcxConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "CancelDowngradeHcx",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CancelDowngradeHcx");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "CancelDowngradeHcx",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CancelDowngradeHcx");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CancelDowngradeHcxResponse>
+                transformer =
+                        CancelDowngradeHcxConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -512,19 +515,22 @@ public class SddcClient implements Sddc {
                 ChangeSddcCompartmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeSddcCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeSddcCompartmentResponse>
-                transformer = ChangeSddcCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "ChangeSddcCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/ChangeSddcCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "ChangeSddcCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/ChangeSddcCompartment");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeSddcCompartmentResponse>
+                transformer =
+                        ChangeSddcCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -550,19 +556,20 @@ public class SddcClient implements Sddc {
         final CreateSddcRequest interceptedRequest = CreateSddcConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSddcConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSddcResponse> transformer =
-                CreateSddcConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "CreateSddc",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CreateSddc");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "CreateSddc",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CreateSddc");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSddcResponse> transformer =
+                CreateSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -588,18 +595,19 @@ public class SddcClient implements Sddc {
         final DeleteSddcRequest interceptedRequest = DeleteSddcConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSddcConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSddcResponse> transformer =
-                DeleteSddcConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "DeleteSddc",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DeleteSddc");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "DeleteSddc",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DeleteSddc");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSddcResponse> transformer =
+                DeleteSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -623,19 +631,21 @@ public class SddcClient implements Sddc {
                 DowngradeHcxConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DowngradeHcxConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DowngradeHcxResponse>
-                transformer = DowngradeHcxConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "DowngradeHcx",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DowngradeHcx");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "DowngradeHcx",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DowngradeHcx");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DowngradeHcxResponse>
+                transformer =
+                        DowngradeHcxConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -661,18 +671,19 @@ public class SddcClient implements Sddc {
         final GetSddcRequest interceptedRequest = GetSddcConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSddcConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSddcResponse> transformer =
-                GetSddcConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "GetSddc",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/GetSddc");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "GetSddc",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/GetSddc");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetSddcResponse> transformer =
+                GetSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -694,18 +705,19 @@ public class SddcClient implements Sddc {
         final ListSddcsRequest interceptedRequest = ListSddcsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSddcsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSddcsResponse> transformer =
-                ListSddcsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "ListSddcs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SddcSummary/ListSddcs");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "ListSddcs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SddcSummary/ListSddcs");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSddcsResponse> transformer =
+                ListSddcsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -729,18 +741,21 @@ public class SddcClient implements Sddc {
                 ListSupportedHostShapesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSupportedHostShapesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSupportedHostShapesResponse>
-                transformer = ListSupportedHostShapesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "ListSupportedHostShapes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapeSummary/ListSupportedHostShapes");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "ListSupportedHostShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapeSummary/ListSupportedHostShapes");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSupportedHostShapesResponse>
+                transformer =
+                        ListSupportedHostShapesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -763,18 +778,21 @@ public class SddcClient implements Sddc {
                 ListSupportedSkusConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSupportedSkusConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSupportedSkusResponse>
-                transformer = ListSupportedSkusConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "ListSupportedSkus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "ListSupportedSkus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSupportedSkusResponse>
+                transformer =
+                        ListSupportedSkusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -799,19 +817,22 @@ public class SddcClient implements Sddc {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSupportedVmwareSoftwareVersionsConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSupportedVmwareSoftwareVersionsResponse>
-                transformer = ListSupportedVmwareSoftwareVersionsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "ListSupportedVmwareSoftwareVersions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "ListSupportedVmwareSoftwareVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListSupportedVmwareSoftwareVersionsResponse>
+                transformer =
+                        ListSupportedVmwareSoftwareVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -835,19 +856,22 @@ public class SddcClient implements Sddc {
                 RefreshHcxLicenseStatusConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RefreshHcxLicenseStatusConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, RefreshHcxLicenseStatusResponse>
-                transformer = RefreshHcxLicenseStatusConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "RefreshHcxLicenseStatus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/RefreshHcxLicenseStatus");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "RefreshHcxLicenseStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/RefreshHcxLicenseStatus");
+        com.google.common.base.Function<javax.ws.rs.core.Response, RefreshHcxLicenseStatusResponse>
+                transformer =
+                        RefreshHcxLicenseStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -870,18 +894,19 @@ public class SddcClient implements Sddc {
         final UpdateSddcRequest interceptedRequest = UpdateSddcConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSddcConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSddcResponse> transformer =
-                UpdateSddcConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "UpdateSddc",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "UpdateSddc",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSddcResponse> transformer =
+                UpdateSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -907,19 +932,20 @@ public class SddcClient implements Sddc {
         final UpgradeHcxRequest interceptedRequest = UpgradeHcxConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpgradeHcxConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeHcxResponse> transformer =
-                UpgradeHcxConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Sddc",
-                "UpgradeHcx",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpgradeHcx");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "UpgradeHcx",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpgradeHcx");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeHcxResponse> transformer =
+                UpgradeHcxConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

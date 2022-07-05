@@ -5,7 +5,7 @@
 package com.oracle.bmc.retrier;
 
 import com.oracle.bmc.model.BmcException;
-import lombok.NonNull;
+import javax.annotation.Nonnull;
 
 /**
  * Interface that defines the condition for which a retry may be attempted.
@@ -17,5 +17,5 @@ public interface RetryCondition {
      * @param exception The exception from the previous unsuccessful operation.
      * @return {@code true} if the operation should be retried, else {@code false}.
      */
-    boolean shouldBeRetried(@NonNull final BmcException exception);
+    boolean shouldBeRetried(@Nonnull final BmcException exception);
 }

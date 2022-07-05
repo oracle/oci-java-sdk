@@ -4,26 +4,23 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import java.security.interfaces.RSAPublicKey;
-import java.text.ParseException;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.Date;
-
 import com.google.common.base.Optional;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
 import com.oracle.bmc.auth.SessionKeySupplier;
+import org.slf4j.Logger;
 
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import java.security.interfaces.RSAPublicKey;
+import java.text.ParseException;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
 
-@Slf4j
 class SecurityTokenAdapter {
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(SecurityTokenAdapter.class);
     private final JWTClaimsSet jwt;
     private final SessionKeySupplier sessionKeySupplier;
-    @Getter private final String securityToken;
+    private final String securityToken;
 
     SecurityTokenAdapter(String securityToken, SessionKeySupplier sessionKeySupplier) {
         this.securityToken = securityToken;
@@ -137,5 +134,9 @@ class SecurityTokenAdapter {
         } catch (ParseException e) {
             throw new IllegalStateException("JWT parsing failed");
         }
+    }
+
+    public String getSecurityToken() {
+        return this.securityToken;
     }
 }

@@ -401,15 +401,17 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                 AttachDevicesToTransferPackageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AttachDevicesToTransferPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferPackage",
+                        "AttachDevicesToTransferPackage",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AttachDevicesToTransferPackageResponse>
-                transformer = AttachDevicesToTransferPackageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferPackage",
-                "AttachDevicesToTransferPackage",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        AttachDevicesToTransferPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AttachDevicesToTransferPackageRequest,
                         AttachDevicesToTransferPackageResponse>
@@ -454,13 +456,18 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                 CreateTransferPackageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTransferPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferPackage",
+                        "CreateTransferPackage",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateTransferPackageResponse>
-                transformer = CreateTransferPackageConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferPackage", "CreateTransferPackage", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        CreateTransferPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTransferPackageRequest, CreateTransferPackageResponse>
                 handlerToUse = handler;
@@ -503,12 +510,17 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                 DeleteTransferPackageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteTransferPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferPackage",
+                        "DeleteTransferPackage",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteTransferPackageResponse>
-                transformer = DeleteTransferPackageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferPackage", "DeleteTransferPackage", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteTransferPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteTransferPackageRequest, DeleteTransferPackageResponse>
                 handlerToUse = handler;
@@ -548,15 +560,17 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                 DetachDevicesFromTransferPackageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetachDevicesFromTransferPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferPackage",
+                        "DetachDevicesFromTransferPackage",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DetachDevicesFromTransferPackageResponse>
-                transformer = DetachDevicesFromTransferPackageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferPackage",
-                "DetachDevicesFromTransferPackage",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        DetachDevicesFromTransferPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DetachDevicesFromTransferPackageRequest,
                         DetachDevicesFromTransferPackageResponse>
@@ -602,11 +616,13 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                 GetTransferPackageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTransferPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferPackage", "GetTransferPackage", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTransferPackageResponse>
-                transformer = GetTransferPackageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferPackage", "GetTransferPackage", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetTransferPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTransferPackageRequest, GetTransferPackageResponse>
                 handlerToUse = handler;
 
@@ -643,12 +659,17 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                 ListTransferPackagesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTransferPackagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferPackage",
+                        "ListTransferPackages",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTransferPackagesResponse>
-                transformer = ListTransferPackagesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferPackage", "ListTransferPackages", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListTransferPackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListTransferPackagesRequest, ListTransferPackagesResponse>
                 handlerToUse = handler;
@@ -686,12 +707,17 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                 UpdateTransferPackageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateTransferPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferPackage",
+                        "UpdateTransferPackage",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateTransferPackageResponse>
-                transformer = UpdateTransferPackageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferPackage", "UpdateTransferPackage", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        UpdateTransferPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTransferPackageRequest, UpdateTransferPackageResponse>
                 handlerToUse = handler;

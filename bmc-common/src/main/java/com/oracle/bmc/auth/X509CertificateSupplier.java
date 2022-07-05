@@ -4,9 +4,6 @@
  */
 package com.oracle.bmc.auth;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPrivateKey;
 
@@ -41,10 +38,22 @@ public interface X509CertificateSupplier {
      */
     CertificateAndPrivateKeyPair getCertificateAndKeyPair();
 
-    @RequiredArgsConstructor
-    @Getter
     class CertificateAndPrivateKeyPair {
         private final X509Certificate certificate;
         private final RSAPrivateKey privateKey;
+
+        @java.beans.ConstructorProperties({"certificate", "privateKey"})
+        public CertificateAndPrivateKeyPair(X509Certificate certificate, RSAPrivateKey privateKey) {
+            this.certificate = certificate;
+            this.privateKey = privateKey;
+        }
+
+        public X509Certificate getCertificate() {
+            return this.certificate;
+        }
+
+        public RSAPrivateKey getPrivateKey() {
+            return this.privateKey;
+        }
     }
 }

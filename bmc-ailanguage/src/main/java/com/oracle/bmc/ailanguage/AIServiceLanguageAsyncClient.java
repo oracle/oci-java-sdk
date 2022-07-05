@@ -401,15 +401,17 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 BatchDetectDominantLanguageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BatchDetectDominantLanguageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectDominantLanguage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectDominantLanguage/BatchDetectDominantLanguage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, BatchDetectDominantLanguageResponse>
-                transformer = BatchDetectDominantLanguageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "BatchDetectDominantLanguage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectDominantLanguage/BatchDetectDominantLanguage");
-
+                transformer =
+                        BatchDetectDominantLanguageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         BatchDetectDominantLanguageRequest, BatchDetectDominantLanguageResponse>
                 handlerToUse = handler;
@@ -455,15 +457,17 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 BatchDetectLanguageEntitiesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BatchDetectLanguageEntitiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectLanguageEntities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageEntities/BatchDetectLanguageEntities");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, BatchDetectLanguageEntitiesResponse>
-                transformer = BatchDetectLanguageEntitiesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "BatchDetectLanguageEntities",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageEntities/BatchDetectLanguageEntities");
-
+                transformer =
+                        BatchDetectLanguageEntitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         BatchDetectLanguageEntitiesRequest, BatchDetectLanguageEntitiesResponse>
                 handlerToUse = handler;
@@ -509,15 +513,17 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 BatchDetectLanguageKeyPhrasesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BatchDetectLanguageKeyPhrasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectLanguageKeyPhrases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, BatchDetectLanguageKeyPhrasesResponse>
-                transformer = BatchDetectLanguageKeyPhrasesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "BatchDetectLanguageKeyPhrases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases");
-
+                transformer =
+                        BatchDetectLanguageKeyPhrasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         BatchDetectLanguageKeyPhrasesRequest, BatchDetectLanguageKeyPhrasesResponse>
                 handlerToUse = handler;
@@ -563,15 +569,17 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 BatchDetectLanguageSentimentsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BatchDetectLanguageSentimentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectLanguageSentiments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, BatchDetectLanguageSentimentsResponse>
-                transformer = BatchDetectLanguageSentimentsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "BatchDetectLanguageSentiments",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments");
-
+                transformer =
+                        BatchDetectLanguageSentimentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         BatchDetectLanguageSentimentsRequest, BatchDetectLanguageSentimentsResponse>
                 handlerToUse = handler;
@@ -618,15 +626,17 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BatchDetectLanguageTextClassificationConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectLanguageTextClassification",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, BatchDetectLanguageTextClassificationResponse>
-                transformer = BatchDetectLanguageTextClassificationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "BatchDetectLanguageTextClassification",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification");
-
+                transformer =
+                        BatchDetectLanguageTextClassificationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         BatchDetectLanguageTextClassificationRequest,
                         BatchDetectLanguageTextClassificationResponse>
@@ -673,15 +683,17 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 DetectDominantLanguageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetectDominantLanguageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "DetectDominantLanguage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectDominantLanguage/DetectDominantLanguage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DetectDominantLanguageResponse>
-                transformer = DetectDominantLanguageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "DetectDominantLanguage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectDominantLanguage/DetectDominantLanguage");
-
+                transformer =
+                        DetectDominantLanguageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DetectDominantLanguageRequest, DetectDominantLanguageResponse>
                 handlerToUse = handler;
@@ -724,15 +736,17 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 DetectLanguageEntitiesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetectLanguageEntitiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "DetectLanguageEntities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageEntities/DetectLanguageEntities");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DetectLanguageEntitiesResponse>
-                transformer = DetectLanguageEntitiesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "DetectLanguageEntities",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageEntities/DetectLanguageEntities");
-
+                transformer =
+                        DetectLanguageEntitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DetectLanguageEntitiesRequest, DetectLanguageEntitiesResponse>
                 handlerToUse = handler;
@@ -775,15 +789,17 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 DetectLanguageKeyPhrasesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetectLanguageKeyPhrasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "DetectLanguageKeyPhrases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageKeyPhrases/DetectLanguageKeyPhrases");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DetectLanguageKeyPhrasesResponse>
-                transformer = DetectLanguageKeyPhrasesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "DetectLanguageKeyPhrases",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageKeyPhrases/DetectLanguageKeyPhrases");
-
+                transformer =
+                        DetectLanguageKeyPhrasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DetectLanguageKeyPhrasesRequest, DetectLanguageKeyPhrasesResponse>
                 handlerToUse = handler;
@@ -826,15 +842,17 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 DetectLanguageSentimentsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetectLanguageSentimentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "DetectLanguageSentiments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageSentiments/DetectLanguageSentiments");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DetectLanguageSentimentsResponse>
-                transformer = DetectLanguageSentimentsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "DetectLanguageSentiments",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageSentiments/DetectLanguageSentiments");
-
+                transformer =
+                        DetectLanguageSentimentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DetectLanguageSentimentsRequest, DetectLanguageSentimentsResponse>
                 handlerToUse = handler;
@@ -879,15 +897,17 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 DetectLanguageTextClassificationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetectLanguageTextClassificationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "DetectLanguageTextClassification",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageTextClassification/DetectLanguageTextClassification");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DetectLanguageTextClassificationResponse>
-                transformer = DetectLanguageTextClassificationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceLanguage",
-                "DetectLanguageTextClassification",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageTextClassification/DetectLanguageTextClassification");
-
+                transformer =
+                        DetectLanguageTextClassificationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DetectLanguageTextClassificationRequest,
                         DetectLanguageTextClassificationResponse>

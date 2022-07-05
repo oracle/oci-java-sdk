@@ -4,13 +4,12 @@
  */
 package com.oracle.bmc.encryption;
 
+import com.oracle.bmc.encryption.internal.DecryptionHandler;
+import com.oracle.bmc.encryption.internal.EncryptionHandler;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
-
-import com.oracle.bmc.encryption.internal.DecryptionHandler;
-import com.oracle.bmc.encryption.internal.EncryptionHandler;
-import lombok.Value;
 
 /**
  * This is the starting point in the OCI Encryption SDK.
@@ -41,8 +40,9 @@ import lombok.Value;
  * you allocate Java virtual memory four times the data size that needs to be decrypted.
  * For example, use 8GB VM (-Xmx8G) to decrypt a 2GB file.
  */
-@Value
-public class OciCrypto {
+public final class OciCrypto {
+    public OciCrypto() {}
+
     /**
      * Creates a new CryptoInputStream that allows reading data from the encrypted stream
      * under the provided master key.
@@ -131,5 +131,21 @@ public class OciCrypto {
             throws IOException {
         DecryptionHandler crypto = new DecryptionHandler(masterKeyProvider);
         return crypto.decrypt(data);
+    }
+
+    public boolean equals(final Object o) {
+        if (o == this) return true;
+        if (!(o instanceof OciCrypto)) return false;
+        final OciCrypto other = (OciCrypto) o;
+        return true;
+    }
+
+    public int hashCode() {
+        int result = 1;
+        return result;
+    }
+
+    public String toString() {
+        return "OciCrypto()";
     }
 }

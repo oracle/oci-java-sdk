@@ -397,16 +397,18 @@ public class EventsAsyncClient implements EventsAsync {
                 ChangeRuleCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeRuleCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Events",
+                        "ChangeRuleCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/ChangeRuleCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeRuleCompartmentResponse>
-                transformer = ChangeRuleCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Events",
-                "ChangeRuleCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/ChangeRuleCompartment");
-
+                transformer =
+                        ChangeRuleCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeRuleCompartmentRequest, ChangeRuleCompartmentResponse>
                 handlerToUse = handler;
@@ -447,15 +449,16 @@ public class EventsAsyncClient implements EventsAsync {
         final CreateRuleRequest interceptedRequest = CreateRuleConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateRuleConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRuleResponse>
-                transformer = CreateRuleConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Events",
-                "CreateRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/CreateRule");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Events",
+                        "CreateRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/CreateRule");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRuleResponse>
+                transformer =
+                        CreateRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateRuleRequest, CreateRuleResponse> handlerToUse =
                 handler;
 
@@ -495,14 +498,15 @@ public class EventsAsyncClient implements EventsAsync {
         final DeleteRuleRequest interceptedRequest = DeleteRuleConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Events",
+                        "DeleteRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/DeleteRule");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRuleResponse>
-                transformer = DeleteRuleConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Events",
-                "DeleteRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/DeleteRule");
-
+                transformer =
+                        DeleteRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteRuleRequest, DeleteRuleResponse> handlerToUse =
                 handler;
 
@@ -536,14 +540,14 @@ public class EventsAsyncClient implements EventsAsync {
         final GetRuleRequest interceptedRequest = GetRuleConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Events",
+                        "GetRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/GetRule");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRuleResponse>
-                transformer = GetRuleConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Events",
-                "GetRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/GetRule");
-
+                transformer = GetRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetRuleRequest, GetRuleResponse> handlerToUse =
                 handler;
 
@@ -577,14 +581,15 @@ public class EventsAsyncClient implements EventsAsync {
         final ListRulesRequest interceptedRequest = ListRulesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Events",
+                        "ListRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/events/20181201/RuleSummary/ListRules");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRulesResponse>
-                transformer = ListRulesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Events",
-                "ListRules",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/events/20181201/RuleSummary/ListRules");
-
+                transformer =
+                        ListRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRulesRequest, ListRulesResponse> handlerToUse =
                 handler;
 
@@ -618,14 +623,15 @@ public class EventsAsyncClient implements EventsAsync {
         final UpdateRuleRequest interceptedRequest = UpdateRuleConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Events",
+                        "UpdateRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/UpdateRule");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRuleResponse>
-                transformer = UpdateRuleConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Events",
-                "UpdateRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/UpdateRule");
-
+                transformer =
+                        UpdateRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateRuleRequest, UpdateRuleResponse> handlerToUse =
                 handler;
 

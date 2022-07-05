@@ -8,7 +8,7 @@ import com.google.common.collect.ImmutableSetMultimap;
 import com.google.common.collect.Multimap;
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.model.BmcException;
-import lombok.NonNull;
+import javax.annotation.Nonnull;
 
 /**
  * Class that represents the conditions documented in
@@ -23,7 +23,10 @@ public class DefaultRetryCondition implements RetryCondition {
             "[.|\\s\\S]*processing(\\s)+exception[.|\\s\\S]*";
 
     @Override
-    public boolean shouldBeRetried(@NonNull final BmcException exception) {
+    public boolean shouldBeRetried(@Nonnull final BmcException exception) {
+        if (exception == null) {
+            throw new java.lang.NullPointerException("exception is marked non-null but is null");
+        }
         return exception.isClientSide()
                 || exception.isTimeout()
                 || exception.getStatusCode() == 429

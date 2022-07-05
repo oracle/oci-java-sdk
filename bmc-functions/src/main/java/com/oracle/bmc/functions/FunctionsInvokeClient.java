@@ -421,14 +421,17 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
                     InvokeFunctionConverter.interceptRequest(request);
             com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                     InvokeFunctionConverter.fromRequest(client, interceptedRequest);
-            com.google.common.base.Function<javax.ws.rs.core.Response, InvokeFunctionResponse>
-                    transformer = InvokeFunctionConverter.fromResponse();
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-            com.oracle.bmc.ServiceDetails.setServiceDetails(
-                    "FunctionsInvoke",
-                    "InvokeFunction",
-                    ib.getRequestUri().toString(),
-                    "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/InvokeFunction");
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "FunctionsInvoke",
+                            "InvokeFunction",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/InvokeFunction");
+            com.google.common.base.Function<javax.ws.rs.core.Response, InvokeFunctionResponse>
+                    transformer =
+                            InvokeFunctionConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {

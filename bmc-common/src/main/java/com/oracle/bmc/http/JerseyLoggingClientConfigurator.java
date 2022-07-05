@@ -5,11 +5,8 @@
 package com.oracle.bmc.http;
 
 import java.util.logging.Level;
-
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import javax.annotation.Nonnull;
 import org.glassfish.jersey.logging.LoggingFeature;
-
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 
@@ -19,8 +16,7 @@ import javax.ws.rs.client.ClientBuilder;
  * See also https://hc.apache.org/httpcomponents-client-4.5.x/logging.html
  */
 public class JerseyLoggingClientConfigurator implements ClientConfigurator {
-
-    @NonNull private org.glassfish.jersey.logging.LoggingFeature.Verbosity verbosity;
+    @Nonnull private org.glassfish.jersey.logging.LoggingFeature.Verbosity verbosity;
 
     /**
      * This logging level is {@link java.util.logging.Level}.
@@ -35,7 +31,7 @@ public class JerseyLoggingClientConfigurator implements ClientConfigurator {
      *     FINER
      *     FINEST (lowest value)
      */
-    @NonNull private String loggingLevel;
+    @Nonnull private String loggingLevel;
 
     /**
      * Create a Jersey logging configurator.
@@ -43,7 +39,13 @@ public class JerseyLoggingClientConfigurator implements ClientConfigurator {
      * @param loggingLevel logging level
      */
     public JerseyLoggingClientConfigurator(
-            @NonNull LoggingFeature.Verbosity verbosity, @NonNull String loggingLevel) {
+            @Nonnull LoggingFeature.Verbosity verbosity, @Nonnull String loggingLevel) {
+        if (verbosity == null) {
+            throw new java.lang.NullPointerException("verbosity is marked non-null but is null");
+        }
+        if (loggingLevel == null) {
+            throw new java.lang.NullPointerException("loggingLevel is marked non-null but is null");
+        }
         this.verbosity = verbosity;
         this.loggingLevel = loggingLevel;
     }
@@ -54,7 +56,13 @@ public class JerseyLoggingClientConfigurator implements ClientConfigurator {
      * @param loggingLevel logging level
      */
     public JerseyLoggingClientConfigurator(
-            @NonNull LoggingFeature.Verbosity verbosity, @NonNull Level loggingLevel) {
+            @Nonnull LoggingFeature.Verbosity verbosity, @Nonnull Level loggingLevel) {
+        if (verbosity == null) {
+            throw new java.lang.NullPointerException("verbosity is marked non-null but is null");
+        }
+        if (loggingLevel == null) {
+            throw new java.lang.NullPointerException("loggingLevel is marked non-null but is null");
+        }
         this.verbosity = verbosity;
         this.loggingLevel = loggingLevel.toString();
     }

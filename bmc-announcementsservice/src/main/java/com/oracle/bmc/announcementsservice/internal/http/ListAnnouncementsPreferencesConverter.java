@@ -78,6 +78,14 @@ public class ListAnnouncementsPreferencesConverter {
                     com.oracle.bmc.announcementsservice.responses
                             .ListAnnouncementsPreferencesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.announcementsservice.responses
+                            .ListAnnouncementsPreferencesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.announcementsservice.responses
@@ -93,21 +101,34 @@ public class ListAnnouncementsPreferencesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.announcementsservice.responses.ListAnnouncementsPreferencesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
                                                                 com.oracle.bmc.announcementsservice
                                                                         .model
                                                                         .AnnouncementsPreferencesSummary>>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        new javax.ws.rs.core.GenericType<
-                                                                java.util.List<
-                                                                        com.oracle.bmc
-                                                                                .announcementsservice
-                                                                                .model
-                                                                                .AnnouncementsPreferencesSummary>>() {});
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc
+                                                                            .announcementsservice
+                                                                            .model
+                                                                            .AnnouncementsPreferencesSummary>>() {},
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    new javax.ws.rs.core.GenericType<
+                                                            java.util.List<
+                                                                    com.oracle.bmc
+                                                                            .announcementsservice
+                                                                            .model
+                                                                            .AnnouncementsPreferencesSummary>>() {});
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 java.util.List<

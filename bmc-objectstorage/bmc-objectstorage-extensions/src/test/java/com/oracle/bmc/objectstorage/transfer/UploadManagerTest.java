@@ -554,7 +554,8 @@ public class UploadManagerTest {
                 mockCreateResponseConverter = mock(Function.class);
 
         PowerMockito.mockStatic(CreateMultipartUploadConverter.class);
-        PowerMockito.when(CreateMultipartUploadConverter.fromResponse())
+        PowerMockito.when(
+                        CreateMultipartUploadConverter.fromResponse(any(java.util.Optional.class)))
                 .thenReturn(mockCreateResponseConverter);
         PowerMockito.when(
                         CreateMultipartUploadConverter.fromRequest(
@@ -577,7 +578,7 @@ public class UploadManagerTest {
                 mockUploadResponseConverter = mock(Function.class);
 
         PowerMockito.mockStatic(UploadPartConverter.class);
-        PowerMockito.when(UploadPartConverter.fromResponse())
+        PowerMockito.when(UploadPartConverter.fromResponse(any(java.util.Optional.class)))
                 .thenReturn(mockUploadResponseConverter);
         PowerMockito.when(
                         UploadPartConverter.fromRequest(
@@ -599,7 +600,8 @@ public class UploadManagerTest {
                 mockCommitResponseConverter = mock(Function.class);
 
         PowerMockito.mockStatic(CommitMultipartUploadConverter.class);
-        PowerMockito.when(CommitMultipartUploadConverter.fromResponse())
+        PowerMockito.when(
+                        CommitMultipartUploadConverter.fromResponse(any(java.util.Optional.class)))
                 .thenReturn(mockCommitResponseConverter);
         PowerMockito.when(
                         CommitMultipartUploadConverter.fromRequest(

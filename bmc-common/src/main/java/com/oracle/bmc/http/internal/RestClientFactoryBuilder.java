@@ -12,10 +12,6 @@ import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.CompositeClientConfigurator;
 import com.oracle.bmc.http.DefaultConfigurator;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,9 +19,10 @@ import java.util.List;
  * Builder for {@link RestClientFactory}.  Will use default values
  * when no other values were provided.
  */
-@Slf4j
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class RestClientFactoryBuilder {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(RestClientFactoryBuilder.class);
+
     public static final ClientConfigurator DEFAULT_CONFIGURATOR = new DefaultConfigurator();
 
     /**
@@ -123,4 +120,6 @@ public class RestClientFactoryBuilder {
     protected List<ClientConfigurator> getAdditionalClientConfigurators() {
         return additionalClientConfigurators;
     }
+
+    protected RestClientFactoryBuilder() {}
 }

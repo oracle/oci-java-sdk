@@ -397,15 +397,17 @@ public class LimitsAsyncClient implements LimitsAsync {
                 GetResourceAvailabilityConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetResourceAvailabilityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Limits",
+                        "GetResourceAvailability",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/limits/20181025/ResourceAvailability/GetResourceAvailability");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetResourceAvailabilityResponse>
-                transformer = GetResourceAvailabilityConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Limits",
-                "GetResourceAvailability",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/ResourceAvailability/GetResourceAvailability");
-
+                transformer =
+                        GetResourceAvailabilityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetResourceAvailabilityRequest, GetResourceAvailabilityResponse>
                 handlerToUse = handler;
@@ -443,15 +445,17 @@ public class LimitsAsyncClient implements LimitsAsync {
                 ListLimitDefinitionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListLimitDefinitionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Limits",
+                        "ListLimitDefinitions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/limits/20181025/LimitDefinitionSummary/ListLimitDefinitions");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLimitDefinitionsResponse>
-                transformer = ListLimitDefinitionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Limits",
-                "ListLimitDefinitions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/LimitDefinitionSummary/ListLimitDefinitions");
-
+                transformer =
+                        ListLimitDefinitionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListLimitDefinitionsRequest, ListLimitDefinitionsResponse>
                 handlerToUse = handler;
@@ -489,14 +493,16 @@ public class LimitsAsyncClient implements LimitsAsync {
                 ListLimitValuesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListLimitValuesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Limits",
+                        "ListLimitValues",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/limits/20181025/LimitValueSummary/ListLimitValues");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListLimitValuesResponse>
-                transformer = ListLimitValuesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Limits",
-                "ListLimitValues",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/LimitValueSummary/ListLimitValues");
-
+                transformer =
+                        ListLimitValuesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListLimitValuesRequest, ListLimitValuesResponse>
                 handlerToUse = handler;
 
@@ -532,14 +538,15 @@ public class LimitsAsyncClient implements LimitsAsync {
                 ListServicesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListServicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Limits",
+                        "ListServices",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/limits/20181025/ServiceSummary/ListServices");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListServicesResponse>
-                transformer = ListServicesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Limits",
-                "ListServices",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/ServiceSummary/ListServices");
-
+                transformer =
+                        ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListServicesRequest, ListServicesResponse>
                 handlerToUse = handler;
 

@@ -320,18 +320,20 @@ public class StreamClient implements Stream {
                 ConsumerCommitConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ConsumerCommitConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ConsumerCommitResponse>
-                transformer = ConsumerCommitConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Stream",
-                "ConsumerCommit",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/ConsumerCommit");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Stream",
+                        "ConsumerCommit",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/ConsumerCommit");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ConsumerCommitResponse>
+                transformer =
+                        ConsumerCommitConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -355,18 +357,21 @@ public class StreamClient implements Stream {
                 ConsumerHeartbeatConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ConsumerHeartbeatConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ConsumerHeartbeatResponse>
-                transformer = ConsumerHeartbeatConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Stream",
-                "ConsumerHeartbeat",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/ConsumerHeartbeat");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Stream",
+                        "ConsumerHeartbeat",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/ConsumerHeartbeat");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ConsumerHeartbeatResponse>
+                transformer =
+                        ConsumerHeartbeatConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -390,18 +395,20 @@ public class StreamClient implements Stream {
                 CreateCursorConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCursorConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCursorResponse>
-                transformer = CreateCursorConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Stream",
-                "CreateCursor",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Cursor/CreateCursor");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Stream",
+                        "CreateCursor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Cursor/CreateCursor");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCursorResponse>
+                transformer =
+                        CreateCursorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -428,18 +435,21 @@ public class StreamClient implements Stream {
                 CreateGroupCursorConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateGroupCursorConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupCursorResponse>
-                transformer = CreateGroupCursorConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Stream",
-                "CreateGroupCursor",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Cursor/CreateGroupCursor");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Stream",
+                        "CreateGroupCursor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Cursor/CreateGroupCursor");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupCursorResponse>
+                transformer =
+                        CreateGroupCursorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -465,18 +475,19 @@ public class StreamClient implements Stream {
         final GetGroupRequest interceptedRequest = GetGroupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetGroupConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse> transformer =
-                GetGroupConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Stream",
-                "GetGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/GetGroup");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Stream",
+                        "GetGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/GetGroup");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse> transformer =
+                GetGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -499,18 +510,20 @@ public class StreamClient implements Stream {
                 GetMessagesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetMessagesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetMessagesResponse>
-                transformer = GetMessagesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Stream",
-                "GetMessages",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Message/GetMessages");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Stream",
+                        "GetMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Message/GetMessages");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetMessagesResponse>
+                transformer =
+                        GetMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -533,8 +546,6 @@ public class StreamClient implements Stream {
                 PutMessagesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 PutMessagesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, PutMessagesResponse>
-                transformer = PutMessagesConverter.fromResponse();
 
         ib.property(
                 com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
@@ -544,11 +555,15 @@ public class StreamClient implements Stream {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Stream",
-                "PutMessages",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Message/PutMessages");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Stream",
+                        "PutMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Message/PutMessages");
+        com.google.common.base.Function<javax.ws.rs.core.Response, PutMessagesResponse>
+                transformer =
+                        PutMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -575,18 +590,20 @@ public class StreamClient implements Stream {
                 UpdateGroupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateGroupConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
-                transformer = UpdateGroupConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Stream",
-                "UpdateGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/UpdateGroup");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Stream",
+                        "UpdateGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/UpdateGroup");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
+                transformer =
+                        UpdateGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

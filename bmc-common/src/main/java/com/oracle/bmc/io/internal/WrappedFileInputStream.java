@@ -9,11 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-
 import com.oracle.bmc.io.DuplicatableInputStream;
-
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Simple wrapper over FileInputStream that also exposes the File used
@@ -21,10 +17,10 @@ import lombok.extern.slf4j.Slf4j;
  * <p>
  * This version also support mark/reset.
  */
-@Slf4j
 public class WrappedFileInputStream extends FileInputStream implements DuplicatableInputStream {
-    @Getter private final File sourceFile;
-
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(WrappedFileInputStream.class);
+    private final File sourceFile;
     private long markPosition = 0L;
 
     public WrappedFileInputStream(File file) throws FileNotFoundException {
@@ -71,5 +67,9 @@ public class WrappedFileInputStream extends FileInputStream implements Duplicata
         } catch (FileNotFoundException e) {
             throw new IllegalArgumentException("File not found", e);
         }
+    }
+
+    public File getSourceFile() {
+        return this.sourceFile;
     }
 }

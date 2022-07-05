@@ -4,20 +4,13 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-
+import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
 @NotThreadSafe
-@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 class ProgressTracker {
-    @NonNull private final ProgressReporter progressReporter;
+    @Nonnull private final ProgressReporter progressReporter;
     private final long totalBytes;
-
-    @Getter(value = AccessLevel.PROTECTED)
     private long totalBytesRead = 0;
 
     void onBytesRead(final long bytesRead) {
@@ -47,5 +40,19 @@ class ProgressTracker {
                             totalBytesRead));
         }
         totalBytesRead -= invalidByteCount;
+    }
+
+    @java.beans.ConstructorProperties({"progressReporter", "totalBytes"})
+    ProgressTracker(@Nonnull final ProgressReporter progressReporter, final long totalBytes) {
+        if (progressReporter == null) {
+            throw new java.lang.NullPointerException(
+                    "progressReporter is marked non-null but is null");
+        }
+        this.progressReporter = progressReporter;
+        this.totalBytes = totalBytes;
+    }
+
+    protected long getTotalBytesRead() {
+        return this.totalBytesRead;
     }
 }

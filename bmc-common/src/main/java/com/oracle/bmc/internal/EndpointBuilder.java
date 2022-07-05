@@ -12,19 +12,16 @@ import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
 
 import com.oracle.bmc.util.internal.StringUtils;
-import lombok.AccessLevel;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Nonnull;
 
 /**
  * EndpointBuilder provides a wrapper to construct the appropriate
  * endpoint for a service.  The service may override the endpoint template, but
  * if not, a default template will be used.
  */
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-@Slf4j
 public class EndpointBuilder {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(EndpointBuilder.class);
     public static final String DEFAULT_ENDPOINT_TEMPLATE =
             "https://{serviceEndpointPrefix}.{region}.{secondLevelDomain}";
 
@@ -43,7 +40,16 @@ public class EndpointBuilder {
      * @return The endpoint (protocol + FQDN) for this service.
      */
     public static String createEndpoint(
-            @NonNull Service service, @NonNull String regionId, @NonNull Realm realm) {
+            @Nonnull Service service, @Nonnull String regionId, @Nonnull Realm realm) {
+        if (service == null) {
+            throw new java.lang.NullPointerException("service is marked non-null but is null");
+        }
+        if (regionId == null) {
+            throw new java.lang.NullPointerException("regionId is marked non-null but is null");
+        }
+        if (realm == null) {
+            throw new java.lang.NullPointerException("realm is marked non-null but is null");
+        }
         final String regionIdToUse;
         synchronized (OVERRIDE_REGION_IDS) {
             regionIdToUse = OVERRIDE_REGION_IDS.getOrDefault(regionId, regionId);
@@ -130,7 +136,13 @@ public class EndpointBuilder {
      * @param region The region
      * @return The endpoint (protocol + FQDN) for this service.
      */
-    public static String createEndpoint(@NonNull Service service, @NonNull Region region) {
+    public static String createEndpoint(@Nonnull Service service, @Nonnull Region region) {
+        if (service == null) {
+            throw new java.lang.NullPointerException("service is marked non-null but is null");
+        }
+        if (region == null) {
+            throw new java.lang.NullPointerException("region is marked non-null but is null");
+        }
         return createEndpoint(service, region.getRegionId(), region.getRealm());
     }
 
@@ -143,10 +155,22 @@ public class EndpointBuilder {
      * @param overrideRegionId The alternative regionId to use.
      */
     public static void overrideRegionId(
-            @NonNull String regionId, @NonNull String overrideRegionId) {
+            @Nonnull String regionId, @Nonnull String overrideRegionId) {
+        if (regionId == null) {
+            throw new java.lang.NullPointerException("regionId is marked non-null but is null");
+        }
+        if (overrideRegionId == null) {
+            throw new java.lang.NullPointerException(
+                    "overrideRegionId is marked non-null but is null");
+        }
         synchronized (OVERRIDE_REGION_IDS) {
-            LOG.warn("Overriding regionId for regionId '{}' to '{}'", regionId, overrideRegionId);
+            LOG.warn(
+                    "Overriding regionId for regionId \'{}\' to \'{}\'",
+                    regionId,
+                    overrideRegionId);
             OVERRIDE_REGION_IDS.put(regionId, overrideRegionId);
         }
     }
+
+    private EndpointBuilder() {}
 }

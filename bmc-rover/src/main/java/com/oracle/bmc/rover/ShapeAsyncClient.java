@@ -395,14 +395,15 @@ public class ShapeAsyncClient implements ShapeAsync {
         final ListShapesRequest interceptedRequest = ListShapesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListShapesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Shape",
+                        "ListShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/ShapeSummary/ListShapes");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListShapesResponse>
-                transformer = ListShapesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Shape",
-                "ListShapes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/ShapeSummary/ListShapes");
-
+                transformer =
+                        ListShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListShapesRequest, ListShapesResponse> handlerToUse =
                 handler;
 

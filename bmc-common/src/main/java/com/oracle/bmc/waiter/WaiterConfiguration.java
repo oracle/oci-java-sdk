@@ -4,16 +4,9 @@
  */
 package com.oracle.bmc.waiter;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
-
 /**
  * Configuration used when invoking a waiter loop.
  */
-@Getter
-@ToString
-@RequiredArgsConstructor
 public class WaiterConfiguration {
     private final TerminationStrategy terminationStrategy;
     private final DelayStrategy delayStrategy;
@@ -21,21 +14,20 @@ public class WaiterConfiguration {
     /**
      * The context that should be maintained by the wait loop.
      */
-    @ToString
     public static class WaitContext {
         /**
          * The time the polling starting (ex, System.currentTimeMillis()).
          */
-        @Getter private final long startTime;
+        private final long startTime;
         /**
          * The number of attempts that have been made so far.
          */
-        @Getter private int attemptsMade;
+        private int attemptsMade;
         /**
          * The current time (ex, System.currentTimeMillis()).  Exposed for
          * tests.
          */
-        @Getter private long currentTime;
+        private long currentTime;
 
         // currentTime = startTime as well
         WaitContext(long startTime) {
@@ -55,5 +47,52 @@ public class WaiterConfiguration {
         void incrementAttempts() {
             this.attemptsMade++;
         }
+
+        @java.lang.Override
+        public java.lang.String toString() {
+            return "WaiterConfiguration.WaitContext(startTime="
+                    + this.getStartTime()
+                    + ", attemptsMade="
+                    + this.getAttemptsMade()
+                    + ", currentTime="
+                    + this.getCurrentTime()
+                    + ")";
+        }
+
+        public long getStartTime() {
+            return this.startTime;
+        }
+
+        public int getAttemptsMade() {
+            return this.attemptsMade;
+        }
+
+        public long getCurrentTime() {
+            return this.currentTime;
+        }
+    }
+
+    public TerminationStrategy getTerminationStrategy() {
+        return this.terminationStrategy;
+    }
+
+    public DelayStrategy getDelayStrategy() {
+        return this.delayStrategy;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "WaiterConfiguration(terminationStrategy="
+                + this.getTerminationStrategy()
+                + ", delayStrategy="
+                + this.getDelayStrategy()
+                + ")";
+    }
+
+    @java.beans.ConstructorProperties({"terminationStrategy", "delayStrategy"})
+    public WaiterConfiguration(
+            final TerminationStrategy terminationStrategy, final DelayStrategy delayStrategy) {
+        this.terminationStrategy = terminationStrategy;
+        this.delayStrategy = delayStrategy;
     }
 }

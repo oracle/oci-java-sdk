@@ -6,20 +6,23 @@ package com.oracle.bmc.circuitbreaker.internal;
 
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
-import lombok.NonNull;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import javax.ws.rs.core.Response;
+import javax.annotation.Nonnull;
 
 final class PostCircuitBreakerFuture implements Future<Response> {
 
     private final Future<Response> future;
     private final boolean writableStackTrace;
 
-    PostCircuitBreakerFuture(@NonNull Future<Response> future, boolean writableStackTrace) {
+    PostCircuitBreakerFuture(@Nonnull Future<Response> future, boolean writableStackTrace) {
+        if (future == null) {
+            throw new NullPointerException("future is marked non-null but is null");
+        }
         this.future = future;
         this.writableStackTrace = writableStackTrace;
     }
@@ -56,8 +59,12 @@ final class PostCircuitBreakerFuture implements Future<Response> {
     }
 
     @Override
-    public Response get(long timeout, @NonNull TimeUnit unit)
+    public Response get(long timeout, @Nonnull TimeUnit unit)
             throws InterruptedException, ExecutionException, TimeoutException {
+        if (unit == null) {
+            throw new NullPointerException("unit is marked non-null but is null");
+        }
+
         try {
             return this.future.get(timeout, unit);
         } catch (HttpStatusErrorException e) {

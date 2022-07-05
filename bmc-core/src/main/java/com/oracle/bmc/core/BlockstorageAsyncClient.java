@@ -399,15 +399,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ChangeBootVolumeBackupCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeBootVolumeBackupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ChangeBootVolumeBackupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/ChangeBootVolumeBackupCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeBootVolumeBackupCompartmentResponse>
-                transformer = ChangeBootVolumeBackupCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ChangeBootVolumeBackupCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/ChangeBootVolumeBackupCompartment");
-
+                transformer =
+                        ChangeBootVolumeBackupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeBootVolumeBackupCompartmentRequest,
                         ChangeBootVolumeBackupCompartmentResponse>
@@ -455,15 +457,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ChangeBootVolumeCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeBootVolumeCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ChangeBootVolumeCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/ChangeBootVolumeCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeBootVolumeCompartmentResponse>
-                transformer = ChangeBootVolumeCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ChangeBootVolumeCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/ChangeBootVolumeCompartment");
-
+                transformer =
+                        ChangeBootVolumeCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeBootVolumeCompartmentRequest, ChangeBootVolumeCompartmentResponse>
                 handlerToUse = handler;
@@ -509,15 +513,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ChangeVolumeBackupCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeVolumeBackupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ChangeVolumeBackupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/ChangeVolumeBackupCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVolumeBackupCompartmentResponse>
-                transformer = ChangeVolumeBackupCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ChangeVolumeBackupCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/ChangeVolumeBackupCompartment");
-
+                transformer =
+                        ChangeVolumeBackupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVolumeBackupCompartmentRequest, ChangeVolumeBackupCompartmentResponse>
                 handlerToUse = handler;
@@ -561,15 +567,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ChangeVolumeCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeVolumeCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ChangeVolumeCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ChangeVolumeCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVolumeCompartmentResponse>
-                transformer = ChangeVolumeCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ChangeVolumeCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ChangeVolumeCompartment");
-
+                transformer =
+                        ChangeVolumeCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVolumeCompartmentRequest, ChangeVolumeCompartmentResponse>
                 handlerToUse = handler;
@@ -614,15 +622,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ChangeVolumeGroupBackupCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeVolumeGroupBackupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ChangeVolumeGroupBackupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/ChangeVolumeGroupBackupCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVolumeGroupBackupCompartmentResponse>
-                transformer = ChangeVolumeGroupBackupCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ChangeVolumeGroupBackupCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/ChangeVolumeGroupBackupCompartment");
-
+                transformer =
+                        ChangeVolumeGroupBackupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVolumeGroupBackupCompartmentRequest,
                         ChangeVolumeGroupBackupCompartmentResponse>
@@ -670,15 +680,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ChangeVolumeGroupCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeVolumeGroupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ChangeVolumeGroupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/ChangeVolumeGroupCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVolumeGroupCompartmentResponse>
-                transformer = ChangeVolumeGroupCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ChangeVolumeGroupCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/ChangeVolumeGroupCompartment");
-
+                transformer =
+                        ChangeVolumeGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVolumeGroupCompartmentRequest, ChangeVolumeGroupCompartmentResponse>
                 handlerToUse = handler;
@@ -722,16 +734,18 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CopyBootVolumeBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CopyBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "CopyBootVolumeBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/CopyBootVolumeBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CopyBootVolumeBackupResponse>
-                transformer = CopyBootVolumeBackupConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "CopyBootVolumeBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/CopyBootVolumeBackup");
-
+                transformer =
+                        CopyBootVolumeBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CopyBootVolumeBackupRequest, CopyBootVolumeBackupResponse>
                 handlerToUse = handler;
@@ -774,15 +788,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CopyVolumeBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CopyVolumeBackupConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CopyVolumeBackupResponse>
-                transformer = CopyVolumeBackupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "CopyVolumeBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/CopyVolumeBackup");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "CopyVolumeBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/CopyVolumeBackup");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CopyVolumeBackupResponse>
+                transformer =
+                        CopyVolumeBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CopyVolumeBackupRequest, CopyVolumeBackupResponse>
                 handlerToUse = handler;
 
@@ -824,16 +840,18 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CopyVolumeGroupBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CopyVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "CopyVolumeGroupBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/CopyVolumeGroupBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CopyVolumeGroupBackupResponse>
-                transformer = CopyVolumeGroupBackupConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "CopyVolumeGroupBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/CopyVolumeGroupBackup");
-
+                transformer =
+                        CopyVolumeGroupBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CopyVolumeGroupBackupRequest, CopyVolumeGroupBackupResponse>
                 handlerToUse = handler;
@@ -876,15 +894,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CreateBootVolumeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBootVolumeConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBootVolumeResponse>
-                transformer = CreateBootVolumeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "CreateBootVolume",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/CreateBootVolume");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "CreateBootVolume",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/CreateBootVolume");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBootVolumeResponse>
+                transformer =
+                        CreateBootVolumeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateBootVolumeRequest, CreateBootVolumeResponse>
                 handlerToUse = handler;
 
@@ -926,16 +946,18 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CreateBootVolumeBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "CreateBootVolumeBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/CreateBootVolumeBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateBootVolumeBackupResponse>
-                transformer = CreateBootVolumeBackupConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "CreateBootVolumeBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/CreateBootVolumeBackup");
-
+                transformer =
+                        CreateBootVolumeBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateBootVolumeBackupRequest, CreateBootVolumeBackupResponse>
                 handlerToUse = handler;
@@ -977,15 +999,16 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CreateVolumeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVolumeConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeResponse>
-                transformer = CreateVolumeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "CreateVolume",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/CreateVolume");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "CreateVolume",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/CreateVolume");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeResponse>
+                transformer =
+                        CreateVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateVolumeRequest, CreateVolumeResponse>
                 handlerToUse = handler;
 
@@ -1027,15 +1050,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CreateVolumeBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVolumeBackupConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeBackupResponse>
-                transformer = CreateVolumeBackupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "CreateVolumeBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/CreateVolumeBackup");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "CreateVolumeBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/CreateVolumeBackup");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeBackupResponse>
+                transformer =
+                        CreateVolumeBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateVolumeBackupRequest, CreateVolumeBackupResponse>
                 handlerToUse = handler;
 
@@ -1077,16 +1102,18 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CreateVolumeBackupPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVolumeBackupPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "CreateVolumeBackupPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/CreateVolumeBackupPolicy");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVolumeBackupPolicyResponse>
-                transformer = CreateVolumeBackupPolicyConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "CreateVolumeBackupPolicy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/CreateVolumeBackupPolicy");
-
+                transformer =
+                        CreateVolumeBackupPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVolumeBackupPolicyRequest, CreateVolumeBackupPolicyResponse>
                 handlerToUse = handler;
@@ -1131,15 +1158,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CreateVolumeBackupPolicyAssignmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVolumeBackupPolicyAssignmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "CreateVolumeBackupPolicyAssignment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/CreateVolumeBackupPolicyAssignment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVolumeBackupPolicyAssignmentResponse>
-                transformer = CreateVolumeBackupPolicyAssignmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "CreateVolumeBackupPolicyAssignment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/CreateVolumeBackupPolicyAssignment");
-
+                transformer =
+                        CreateVolumeBackupPolicyAssignmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVolumeBackupPolicyAssignmentRequest,
                         CreateVolumeBackupPolicyAssignmentResponse>
@@ -1185,15 +1214,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CreateVolumeGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVolumeGroupConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeGroupResponse>
-                transformer = CreateVolumeGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "CreateVolumeGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/CreateVolumeGroup");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "CreateVolumeGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/CreateVolumeGroup");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeGroupResponse>
+                transformer =
+                        CreateVolumeGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateVolumeGroupRequest, CreateVolumeGroupResponse>
                 handlerToUse = handler;
 
@@ -1235,16 +1266,18 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CreateVolumeGroupBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "CreateVolumeGroupBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/CreateVolumeGroupBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVolumeGroupBackupResponse>
-                transformer = CreateVolumeGroupBackupConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "CreateVolumeGroupBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/CreateVolumeGroupBackup");
-
+                transformer =
+                        CreateVolumeGroupBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVolumeGroupBackupRequest, CreateVolumeGroupBackupResponse>
                 handlerToUse = handler;
@@ -1287,11 +1320,13 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 DeleteBootVolumeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBootVolumeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage", "DeleteBootVolume", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBootVolumeResponse>
-                transformer = DeleteBootVolumeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage", "DeleteBootVolume", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteBootVolumeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteBootVolumeRequest, DeleteBootVolumeResponse>
                 handlerToUse = handler;
 
@@ -1328,12 +1363,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 DeleteBootVolumeBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "DeleteBootVolumeBackup",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteBootVolumeBackupResponse>
-                transformer = DeleteBootVolumeBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage", "DeleteBootVolumeBackup", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteBootVolumeBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteBootVolumeBackupRequest, DeleteBootVolumeBackupResponse>
                 handlerToUse = handler;
@@ -1371,12 +1411,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 DeleteBootVolumeKmsKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBootVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "DeleteBootVolumeKmsKey",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteBootVolumeKmsKeyResponse>
-                transformer = DeleteBootVolumeKmsKeyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage", "DeleteBootVolumeKmsKey", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteBootVolumeKmsKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteBootVolumeKmsKeyRequest, DeleteBootVolumeKmsKeyResponse>
                 handlerToUse = handler;
@@ -1413,11 +1458,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 DeleteVolumeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVolumeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage", "DeleteVolume", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeResponse>
-                transformer = DeleteVolumeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage", "DeleteVolume", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteVolumeRequest, DeleteVolumeResponse>
                 handlerToUse = handler;
 
@@ -1454,11 +1500,13 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 DeleteVolumeBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVolumeBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage", "DeleteVolumeBackup", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeBackupResponse>
-                transformer = DeleteVolumeBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage", "DeleteVolumeBackup", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteVolumeBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteVolumeBackupRequest, DeleteVolumeBackupResponse>
                 handlerToUse = handler;
 
@@ -1495,12 +1543,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 DeleteVolumeBackupPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVolumeBackupPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "DeleteVolumeBackupPolicy",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteVolumeBackupPolicyResponse>
-                transformer = DeleteVolumeBackupPolicyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage", "DeleteVolumeBackupPolicy", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteVolumeBackupPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteVolumeBackupPolicyRequest, DeleteVolumeBackupPolicyResponse>
                 handlerToUse = handler;
@@ -1540,15 +1593,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 DeleteVolumeBackupPolicyAssignmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVolumeBackupPolicyAssignmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "DeleteVolumeBackupPolicyAssignment",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteVolumeBackupPolicyAssignmentResponse>
-                transformer = DeleteVolumeBackupPolicyAssignmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "DeleteVolumeBackupPolicyAssignment",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        DeleteVolumeBackupPolicyAssignmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteVolumeBackupPolicyAssignmentRequest,
                         DeleteVolumeBackupPolicyAssignmentResponse>
@@ -1589,11 +1644,13 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 DeleteVolumeGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVolumeGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage", "DeleteVolumeGroup", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeGroupResponse>
-                transformer = DeleteVolumeGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage", "DeleteVolumeGroup", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteVolumeGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteVolumeGroupRequest, DeleteVolumeGroupResponse>
                 handlerToUse = handler;
 
@@ -1630,12 +1687,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 DeleteVolumeGroupBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "DeleteVolumeGroupBackup",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteVolumeGroupBackupResponse>
-                transformer = DeleteVolumeGroupBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage", "DeleteVolumeGroupBackup", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteVolumeGroupBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteVolumeGroupBackupRequest, DeleteVolumeGroupBackupResponse>
                 handlerToUse = handler;
@@ -1673,11 +1735,13 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 DeleteVolumeKmsKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage", "DeleteVolumeKmsKey", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeKmsKeyResponse>
-                transformer = DeleteVolumeKmsKeyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage", "DeleteVolumeKmsKey", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteVolumeKmsKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteVolumeKmsKeyRequest, DeleteVolumeKmsKeyResponse>
                 handlerToUse = handler;
 
@@ -1714,15 +1778,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 GetBlockVolumeReplicaConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBlockVolumeReplicaConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetBlockVolumeReplica",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BlockVolumeReplica/GetBlockVolumeReplica");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetBlockVolumeReplicaResponse>
-                transformer = GetBlockVolumeReplicaConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetBlockVolumeReplica",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BlockVolumeReplica/GetBlockVolumeReplica");
-
+                transformer =
+                        GetBlockVolumeReplicaConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetBlockVolumeReplicaRequest, GetBlockVolumeReplicaResponse>
                 handlerToUse = handler;
@@ -1759,14 +1825,15 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 GetBootVolumeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBootVolumeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetBootVolume",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/GetBootVolume");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeResponse>
-                transformer = GetBootVolumeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetBootVolume",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/GetBootVolume");
-
+                transformer =
+                        GetBootVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetBootVolumeRequest, GetBootVolumeResponse>
                 handlerToUse = handler;
 
@@ -1803,15 +1870,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 GetBootVolumeBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetBootVolumeBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/GetBootVolumeBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetBootVolumeBackupResponse>
-                transformer = GetBootVolumeBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetBootVolumeBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/GetBootVolumeBackup");
-
+                transformer =
+                        GetBootVolumeBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetBootVolumeBackupRequest, GetBootVolumeBackupResponse>
                 handlerToUse = handler;
@@ -1849,15 +1918,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 GetBootVolumeKmsKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBootVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetBootVolumeKmsKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeKmsKey/GetBootVolumeKmsKey");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetBootVolumeKmsKeyResponse>
-                transformer = GetBootVolumeKmsKeyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetBootVolumeKmsKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeKmsKey/GetBootVolumeKmsKey");
-
+                transformer =
+                        GetBootVolumeKmsKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetBootVolumeKmsKeyRequest, GetBootVolumeKmsKeyResponse>
                 handlerToUse = handler;
@@ -1895,15 +1966,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 GetBootVolumeReplicaConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBootVolumeReplicaConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetBootVolumeReplica",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeReplica/GetBootVolumeReplica");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetBootVolumeReplicaResponse>
-                transformer = GetBootVolumeReplicaConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetBootVolumeReplica",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeReplica/GetBootVolumeReplica");
-
+                transformer =
+                        GetBootVolumeReplicaConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetBootVolumeReplicaRequest, GetBootVolumeReplicaResponse>
                 handlerToUse = handler;
@@ -1939,14 +2012,15 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
         final GetVolumeRequest interceptedRequest = GetVolumeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVolumeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetVolume",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/GetVolume");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeResponse>
-                transformer = GetVolumeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetVolume",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/GetVolume");
-
+                transformer =
+                        GetVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetVolumeRequest, GetVolumeResponse> handlerToUse =
                 handler;
 
@@ -1982,14 +2056,16 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 GetVolumeBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVolumeBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetVolumeBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/GetVolumeBackup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeBackupResponse>
-                transformer = GetVolumeBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetVolumeBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/GetVolumeBackup");
-
+                transformer =
+                        GetVolumeBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetVolumeBackupRequest, GetVolumeBackupResponse>
                 handlerToUse = handler;
 
@@ -2026,15 +2102,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 GetVolumeBackupPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVolumeBackupPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetVolumeBackupPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/GetVolumeBackupPolicy");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVolumeBackupPolicyResponse>
-                transformer = GetVolumeBackupPolicyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetVolumeBackupPolicy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/GetVolumeBackupPolicy");
-
+                transformer =
+                        GetVolumeBackupPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetVolumeBackupPolicyRequest, GetVolumeBackupPolicyResponse>
                 handlerToUse = handler;
@@ -2075,15 +2153,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVolumeBackupPolicyAssetAssignmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetVolumeBackupPolicyAssetAssignment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/GetVolumeBackupPolicyAssetAssignment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVolumeBackupPolicyAssetAssignmentResponse>
-                transformer = GetVolumeBackupPolicyAssetAssignmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetVolumeBackupPolicyAssetAssignment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/GetVolumeBackupPolicyAssetAssignment");
-
+                transformer =
+                        GetVolumeBackupPolicyAssetAssignmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetVolumeBackupPolicyAssetAssignmentRequest,
                         GetVolumeBackupPolicyAssetAssignmentResponse>
@@ -2126,15 +2206,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 GetVolumeBackupPolicyAssignmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVolumeBackupPolicyAssignmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetVolumeBackupPolicyAssignment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/GetVolumeBackupPolicyAssignment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVolumeBackupPolicyAssignmentResponse>
-                transformer = GetVolumeBackupPolicyAssignmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetVolumeBackupPolicyAssignment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/GetVolumeBackupPolicyAssignment");
-
+                transformer =
+                        GetVolumeBackupPolicyAssignmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetVolumeBackupPolicyAssignmentRequest,
                         GetVolumeBackupPolicyAssignmentResponse>
@@ -2175,14 +2257,15 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 GetVolumeGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVolumeGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetVolumeGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/GetVolumeGroup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupResponse>
-                transformer = GetVolumeGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetVolumeGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/GetVolumeGroup");
-
+                transformer =
+                        GetVolumeGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetVolumeGroupRequest, GetVolumeGroupResponse>
                 handlerToUse = handler;
 
@@ -2219,15 +2302,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 GetVolumeGroupBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetVolumeGroupBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/GetVolumeGroupBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVolumeGroupBackupResponse>
-                transformer = GetVolumeGroupBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetVolumeGroupBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/GetVolumeGroupBackup");
-
+                transformer =
+                        GetVolumeGroupBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetVolumeGroupBackupRequest, GetVolumeGroupBackupResponse>
                 handlerToUse = handler;
@@ -2265,15 +2350,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 GetVolumeGroupReplicaConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVolumeGroupReplicaConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetVolumeGroupReplica",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupReplica/GetVolumeGroupReplica");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVolumeGroupReplicaResponse>
-                transformer = GetVolumeGroupReplicaConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetVolumeGroupReplica",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupReplica/GetVolumeGroupReplica");
-
+                transformer =
+                        GetVolumeGroupReplicaConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetVolumeGroupReplicaRequest, GetVolumeGroupReplicaResponse>
                 handlerToUse = handler;
@@ -2311,14 +2398,16 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 GetVolumeKmsKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "GetVolumeKmsKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeKmsKey/GetVolumeKmsKey");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeKmsKeyResponse>
-                transformer = GetVolumeKmsKeyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "GetVolumeKmsKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeKmsKey/GetVolumeKmsKey");
-
+                transformer =
+                        GetVolumeKmsKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetVolumeKmsKeyRequest, GetVolumeKmsKeyResponse>
                 handlerToUse = handler;
 
@@ -2355,15 +2444,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ListBlockVolumeReplicasConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBlockVolumeReplicasConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ListBlockVolumeReplicas",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BlockVolumeReplica/ListBlockVolumeReplicas");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListBlockVolumeReplicasResponse>
-                transformer = ListBlockVolumeReplicasConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ListBlockVolumeReplicas",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BlockVolumeReplica/ListBlockVolumeReplicas");
-
+                transformer =
+                        ListBlockVolumeReplicasConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListBlockVolumeReplicasRequest, ListBlockVolumeReplicasResponse>
                 handlerToUse = handler;
@@ -2401,15 +2492,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ListBootVolumeBackupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBootVolumeBackupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ListBootVolumeBackups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/ListBootVolumeBackups");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListBootVolumeBackupsResponse>
-                transformer = ListBootVolumeBackupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ListBootVolumeBackups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/ListBootVolumeBackups");
-
+                transformer =
+                        ListBootVolumeBackupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListBootVolumeBackupsRequest, ListBootVolumeBackupsResponse>
                 handlerToUse = handler;
@@ -2447,15 +2540,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ListBootVolumeReplicasConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBootVolumeReplicasConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ListBootVolumeReplicas",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeReplica/ListBootVolumeReplicas");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListBootVolumeReplicasResponse>
-                transformer = ListBootVolumeReplicasConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ListBootVolumeReplicas",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeReplica/ListBootVolumeReplicas");
-
+                transformer =
+                        ListBootVolumeReplicasConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListBootVolumeReplicasRequest, ListBootVolumeReplicasResponse>
                 handlerToUse = handler;
@@ -2493,14 +2588,16 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ListBootVolumesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBootVolumesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ListBootVolumes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/ListBootVolumes");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBootVolumesResponse>
-                transformer = ListBootVolumesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ListBootVolumes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/ListBootVolumes");
-
+                transformer =
+                        ListBootVolumesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListBootVolumesRequest, ListBootVolumesResponse>
                 handlerToUse = handler;
 
@@ -2537,15 +2634,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ListVolumeBackupPoliciesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVolumeBackupPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ListVolumeBackupPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/ListVolumeBackupPolicies");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVolumeBackupPoliciesResponse>
-                transformer = ListVolumeBackupPoliciesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ListVolumeBackupPolicies",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/ListVolumeBackupPolicies");
-
+                transformer =
+                        ListVolumeBackupPoliciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListVolumeBackupPoliciesRequest, ListVolumeBackupPoliciesResponse>
                 handlerToUse = handler;
@@ -2583,14 +2682,16 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ListVolumeBackupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVolumeBackupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ListVolumeBackups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/ListVolumeBackups");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeBackupsResponse>
-                transformer = ListVolumeBackupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ListVolumeBackups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/ListVolumeBackups");
-
+                transformer =
+                        ListVolumeBackupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListVolumeBackupsRequest, ListVolumeBackupsResponse>
                 handlerToUse = handler;
 
@@ -2627,15 +2728,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ListVolumeGroupBackupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVolumeGroupBackupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ListVolumeGroupBackups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/ListVolumeGroupBackups");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVolumeGroupBackupsResponse>
-                transformer = ListVolumeGroupBackupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ListVolumeGroupBackups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/ListVolumeGroupBackups");
-
+                transformer =
+                        ListVolumeGroupBackupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListVolumeGroupBackupsRequest, ListVolumeGroupBackupsResponse>
                 handlerToUse = handler;
@@ -2673,15 +2776,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ListVolumeGroupReplicasConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVolumeGroupReplicasConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ListVolumeGroupReplicas",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupReplica/ListVolumeGroupReplicas");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVolumeGroupReplicasResponse>
-                transformer = ListVolumeGroupReplicasConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ListVolumeGroupReplicas",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupReplica/ListVolumeGroupReplicas");
-
+                transformer =
+                        ListVolumeGroupReplicasConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListVolumeGroupReplicasRequest, ListVolumeGroupReplicasResponse>
                 handlerToUse = handler;
@@ -2719,14 +2824,16 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ListVolumeGroupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVolumeGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ListVolumeGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/ListVolumeGroups");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeGroupsResponse>
-                transformer = ListVolumeGroupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ListVolumeGroups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/ListVolumeGroups");
-
+                transformer =
+                        ListVolumeGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListVolumeGroupsRequest, ListVolumeGroupsResponse>
                 handlerToUse = handler;
 
@@ -2762,14 +2869,15 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 ListVolumesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVolumesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "ListVolumes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumesResponse>
-                transformer = ListVolumesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "ListVolumes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes");
-
+                transformer =
+                        ListVolumesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListVolumesRequest, ListVolumesResponse>
                 handlerToUse = handler;
 
@@ -2806,14 +2914,16 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 UpdateBootVolumeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateBootVolumeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "UpdateBootVolume",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/UpdateBootVolume");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBootVolumeResponse>
-                transformer = UpdateBootVolumeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "UpdateBootVolume",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/UpdateBootVolume");
-
+                transformer =
+                        UpdateBootVolumeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateBootVolumeRequest, UpdateBootVolumeResponse>
                 handlerToUse = handler;
 
@@ -2855,15 +2965,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 UpdateBootVolumeBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "UpdateBootVolumeBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/UpdateBootVolumeBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateBootVolumeBackupResponse>
-                transformer = UpdateBootVolumeBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "UpdateBootVolumeBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/UpdateBootVolumeBackup");
-
+                transformer =
+                        UpdateBootVolumeBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateBootVolumeBackupRequest, UpdateBootVolumeBackupResponse>
                 handlerToUse = handler;
@@ -2906,15 +3018,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 UpdateBootVolumeKmsKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateBootVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "UpdateBootVolumeKmsKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeKmsKey/UpdateBootVolumeKmsKey");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateBootVolumeKmsKeyResponse>
-                transformer = UpdateBootVolumeKmsKeyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "UpdateBootVolumeKmsKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeKmsKey/UpdateBootVolumeKmsKey");
-
+                transformer =
+                        UpdateBootVolumeKmsKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateBootVolumeKmsKeyRequest, UpdateBootVolumeKmsKeyResponse>
                 handlerToUse = handler;
@@ -2956,14 +3070,15 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 UpdateVolumeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVolumeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "UpdateVolume",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/UpdateVolume");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeResponse>
-                transformer = UpdateVolumeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "UpdateVolume",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/UpdateVolume");
-
+                transformer =
+                        UpdateVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateVolumeRequest, UpdateVolumeResponse>
                 handlerToUse = handler;
 
@@ -3005,14 +3120,16 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 UpdateVolumeBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVolumeBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "UpdateVolumeBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/UpdateVolumeBackup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeBackupResponse>
-                transformer = UpdateVolumeBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "UpdateVolumeBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/UpdateVolumeBackup");
-
+                transformer =
+                        UpdateVolumeBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateVolumeBackupRequest, UpdateVolumeBackupResponse>
                 handlerToUse = handler;
 
@@ -3054,16 +3171,18 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 UpdateVolumeBackupPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVolumeBackupPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "UpdateVolumeBackupPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/UpdateVolumeBackupPolicy");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateVolumeBackupPolicyResponse>
-                transformer = UpdateVolumeBackupPolicyConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "UpdateVolumeBackupPolicy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/UpdateVolumeBackupPolicy");
-
+                transformer =
+                        UpdateVolumeBackupPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateVolumeBackupPolicyRequest, UpdateVolumeBackupPolicyResponse>
                 handlerToUse = handler;
@@ -3106,14 +3225,16 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 UpdateVolumeGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVolumeGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "UpdateVolumeGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/UpdateVolumeGroup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeGroupResponse>
-                transformer = UpdateVolumeGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "UpdateVolumeGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/UpdateVolumeGroup");
-
+                transformer =
+                        UpdateVolumeGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateVolumeGroupRequest, UpdateVolumeGroupResponse>
                 handlerToUse = handler;
 
@@ -3155,15 +3276,17 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 UpdateVolumeGroupBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "UpdateVolumeGroupBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/UpdateVolumeGroupBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateVolumeGroupBackupResponse>
-                transformer = UpdateVolumeGroupBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "UpdateVolumeGroupBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/UpdateVolumeGroupBackup");
-
+                transformer =
+                        UpdateVolumeGroupBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateVolumeGroupBackupRequest, UpdateVolumeGroupBackupResponse>
                 handlerToUse = handler;
@@ -3206,14 +3329,16 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 UpdateVolumeKmsKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Blockstorage",
+                        "UpdateVolumeKmsKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeKmsKey/UpdateVolumeKmsKey");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeKmsKeyResponse>
-                transformer = UpdateVolumeKmsKeyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Blockstorage",
-                "UpdateVolumeKmsKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeKmsKey/UpdateVolumeKmsKey");
-
+                transformer =
+                        UpdateVolumeKmsKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateVolumeKmsKeyRequest, UpdateVolumeKmsKeyResponse>
                 handlerToUse = handler;
 

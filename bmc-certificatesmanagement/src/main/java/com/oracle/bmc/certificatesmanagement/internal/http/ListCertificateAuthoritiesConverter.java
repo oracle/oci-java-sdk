@@ -127,6 +127,14 @@ public class ListCertificateAuthoritiesConverter {
                     com.oracle.bmc.certificatesmanagement.responses
                             .ListCertificateAuthoritiesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.certificatesmanagement.responses
+                            .ListCertificateAuthoritiesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.certificatesmanagement.responses
@@ -142,16 +150,26 @@ public class ListCertificateAuthoritiesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.certificatesmanagement.responses.ListCertificateAuthoritiesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.certificatesmanagement.model
                                                                 .CertificateAuthorityCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.certificatesmanagement.model
-                                                                        .CertificateAuthorityCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.certificatesmanagement.model
+                                                                    .CertificateAuthorityCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.certificatesmanagement.model
+                                                                    .CertificateAuthorityCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.certificatesmanagement.model

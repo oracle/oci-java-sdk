@@ -58,6 +58,13 @@ public class GetManagedDatabaseConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.databasemanagement.responses.GetManagedDatabaseResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.databasemanagement.responses.GetManagedDatabaseResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.databasemanagement.responses.GetManagedDatabaseResponse>
@@ -72,16 +79,26 @@ public class GetManagedDatabaseConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.databasemanagement.responses.GetManagedDatabaseResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.databasemanagement.model
                                                                 .ManagedDatabase>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.databasemanagement.model
-                                                                        .ManagedDatabase
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.databasemanagement.model
+                                                                    .ManagedDatabase
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.databasemanagement.model
+                                                                    .ManagedDatabase
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.databasemanagement.model

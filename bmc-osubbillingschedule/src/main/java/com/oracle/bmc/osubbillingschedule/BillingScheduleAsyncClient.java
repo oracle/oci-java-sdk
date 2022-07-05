@@ -398,12 +398,17 @@ public class BillingScheduleAsyncClient implements BillingScheduleAsync {
                 ListBillingSchedulesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBillingSchedulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "BillingSchedule",
+                        "ListBillingSchedules",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListBillingSchedulesResponse>
-                transformer = ListBillingSchedulesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "BillingSchedule", "ListBillingSchedules", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListBillingSchedulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListBillingSchedulesRequest, ListBillingSchedulesResponse>
                 handlerToUse = handler;

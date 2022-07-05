@@ -397,16 +397,18 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 CancelDeploymentBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelDeploymentBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "CancelDeploymentBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/CancelDeploymentBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CancelDeploymentBackupResponse>
-                transformer = CancelDeploymentBackupConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "CancelDeploymentBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/CancelDeploymentBackup");
-
+                transformer =
+                        CancelDeploymentBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CancelDeploymentBackupRequest, CancelDeploymentBackupResponse>
                 handlerToUse = handler;
@@ -452,16 +454,18 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeDatabaseRegistrationCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ChangeDatabaseRegistrationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/ChangeDatabaseRegistrationCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseRegistrationCompartmentResponse>
-                transformer = ChangeDatabaseRegistrationCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "ChangeDatabaseRegistrationCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/ChangeDatabaseRegistrationCompartment");
-
+                transformer =
+                        ChangeDatabaseRegistrationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDatabaseRegistrationCompartmentRequest,
                         ChangeDatabaseRegistrationCompartmentResponse>
@@ -510,16 +514,18 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 ChangeDeploymentBackupCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeDeploymentBackupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ChangeDeploymentBackupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/ChangeDeploymentBackupCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDeploymentBackupCompartmentResponse>
-                transformer = ChangeDeploymentBackupCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "ChangeDeploymentBackupCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/ChangeDeploymentBackupCompartment");
-
+                transformer =
+                        ChangeDeploymentBackupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDeploymentBackupCompartmentRequest,
                         ChangeDeploymentBackupCompartmentResponse>
@@ -567,16 +573,18 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 ChangeDeploymentCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeDeploymentCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ChangeDeploymentCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ChangeDeploymentCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDeploymentCompartmentResponse>
-                transformer = ChangeDeploymentCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "ChangeDeploymentCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ChangeDeploymentCompartment");
-
+                transformer =
+                        ChangeDeploymentCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDeploymentCompartmentRequest, ChangeDeploymentCompartmentResponse>
                 handlerToUse = handler;
@@ -622,16 +630,18 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 CreateDatabaseRegistrationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDatabaseRegistrationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "CreateDatabaseRegistration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/CreateDatabaseRegistration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDatabaseRegistrationResponse>
-                transformer = CreateDatabaseRegistrationConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "CreateDatabaseRegistration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/CreateDatabaseRegistration");
-
+                transformer =
+                        CreateDatabaseRegistrationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDatabaseRegistrationRequest, CreateDatabaseRegistrationResponse>
                 handlerToUse = handler;
@@ -675,15 +685,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 CreateDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDeploymentConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
-                transformer = CreateDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "CreateDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/CreateDeployment");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "CreateDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/CreateDeployment");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
+                transformer =
+                        CreateDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateDeploymentRequest, CreateDeploymentResponse>
                 handlerToUse = handler;
 
@@ -725,16 +737,18 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 CreateDeploymentBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDeploymentBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "CreateDeploymentBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/CreateDeploymentBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDeploymentBackupResponse>
-                transformer = CreateDeploymentBackupConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "CreateDeploymentBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/CreateDeploymentBackup");
-
+                transformer =
+                        CreateDeploymentBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDeploymentBackupRequest, CreateDeploymentBackupResponse>
                 handlerToUse = handler;
@@ -779,15 +793,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 DeleteDatabaseRegistrationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDatabaseRegistrationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "DeleteDatabaseRegistration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/DeleteDatabaseRegistration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseRegistrationResponse>
-                transformer = DeleteDatabaseRegistrationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "DeleteDatabaseRegistration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/DeleteDatabaseRegistration");
-
+                transformer =
+                        DeleteDatabaseRegistrationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDatabaseRegistrationRequest, DeleteDatabaseRegistrationResponse>
                 handlerToUse = handler;
@@ -826,14 +842,16 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 DeleteDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDeploymentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "DeleteDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/DeleteDeployment");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeploymentResponse>
-                transformer = DeleteDeploymentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "DeleteDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/DeleteDeployment");
-
+                transformer =
+                        DeleteDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteDeploymentRequest, DeleteDeploymentResponse>
                 handlerToUse = handler;
 
@@ -870,15 +888,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 DeleteDeploymentBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDeploymentBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "DeleteDeploymentBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/DeleteDeploymentBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDeploymentBackupResponse>
-                transformer = DeleteDeploymentBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "DeleteDeploymentBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/DeleteDeploymentBackup");
-
+                transformer =
+                        DeleteDeploymentBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDeploymentBackupRequest, DeleteDeploymentBackupResponse>
                 handlerToUse = handler;
@@ -916,15 +936,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 GetDatabaseRegistrationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDatabaseRegistrationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "GetDatabaseRegistration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/GetDatabaseRegistration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDatabaseRegistrationResponse>
-                transformer = GetDatabaseRegistrationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "GetDatabaseRegistration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/GetDatabaseRegistration");
-
+                transformer =
+                        GetDatabaseRegistrationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetDatabaseRegistrationRequest, GetDatabaseRegistrationResponse>
                 handlerToUse = handler;
@@ -961,14 +983,15 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 GetDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDeploymentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "GetDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GetDeployment");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentResponse>
-                transformer = GetDeploymentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "GetDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GetDeployment");
-
+                transformer =
+                        GetDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDeploymentRequest, GetDeploymentResponse>
                 handlerToUse = handler;
 
@@ -1005,15 +1028,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 GetDeploymentBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDeploymentBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "GetDeploymentBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/GetDeploymentBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDeploymentBackupResponse>
-                transformer = GetDeploymentBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "GetDeploymentBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/GetDeploymentBackup");
-
+                transformer =
+                        GetDeploymentBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetDeploymentBackupRequest, GetDeploymentBackupResponse>
                 handlerToUse = handler;
@@ -1051,15 +1076,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 GetDeploymentUpgradeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDeploymentUpgradeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "GetDeploymentUpgrade",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/GetDeploymentUpgrade");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDeploymentUpgradeResponse>
-                transformer = GetDeploymentUpgradeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "GetDeploymentUpgrade",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/GetDeploymentUpgrade");
-
+                transformer =
+                        GetDeploymentUpgradeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetDeploymentUpgradeRequest, GetDeploymentUpgradeResponse>
                 handlerToUse = handler;
@@ -1097,14 +1124,15 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequest/GetWorkRequest");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "GetWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequest/GetWorkRequest");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -1141,15 +1169,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 ListDatabaseRegistrationsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDatabaseRegistrationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListDatabaseRegistrations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/ListDatabaseRegistrations");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDatabaseRegistrationsResponse>
-                transformer = ListDatabaseRegistrationsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "ListDatabaseRegistrations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/ListDatabaseRegistrations");
-
+                transformer =
+                        ListDatabaseRegistrationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDatabaseRegistrationsRequest, ListDatabaseRegistrationsResponse>
                 handlerToUse = handler;
@@ -1188,15 +1218,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 ListDeploymentBackupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDeploymentBackupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListDeploymentBackups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/ListDeploymentBackups");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDeploymentBackupsResponse>
-                transformer = ListDeploymentBackupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "ListDeploymentBackups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/ListDeploymentBackups");
-
+                transformer =
+                        ListDeploymentBackupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDeploymentBackupsRequest, ListDeploymentBackupsResponse>
                 handlerToUse = handler;
@@ -1234,15 +1266,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 ListDeploymentUpgradesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDeploymentUpgradesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListDeploymentUpgrades",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/ListDeploymentUpgrades");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDeploymentUpgradesResponse>
-                transformer = ListDeploymentUpgradesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "ListDeploymentUpgrades",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/ListDeploymentUpgrades");
-
+                transformer =
+                        ListDeploymentUpgradesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDeploymentUpgradesRequest, ListDeploymentUpgradesResponse>
                 handlerToUse = handler;
@@ -1280,14 +1314,16 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 ListDeploymentsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDeploymentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListDeployments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ListDeployments");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
-                transformer = ListDeploymentsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "ListDeployments",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ListDeployments");
-
+                transformer =
+                        ListDeploymentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResponse>
                 handlerToUse = handler;
 
@@ -1324,15 +1360,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequestError/ListWorkRequestErrors");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "ListWorkRequestErrors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequestError/ListWorkRequestErrors");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -1370,15 +1408,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequestLogEntry/ListWorkRequestLogs");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "ListWorkRequestLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequestLogEntry/ListWorkRequestLogs");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -1416,14 +1456,16 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequest/ListWorkRequests");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "ListWorkRequests",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequest/ListWorkRequests");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -1460,15 +1502,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 RestoreDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestoreDeploymentConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RestoreDeploymentResponse>
-                transformer = RestoreDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "RestoreDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/RestoreDeployment");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "RestoreDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/RestoreDeployment");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RestoreDeploymentResponse>
+                transformer =
+                        RestoreDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RestoreDeploymentRequest, RestoreDeploymentResponse>
                 handlerToUse = handler;
 
@@ -1510,15 +1554,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 StartDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StartDeploymentConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StartDeploymentResponse>
-                transformer = StartDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "StartDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/StartDeployment");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "StartDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/StartDeployment");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, StartDeploymentResponse>
+                transformer =
+                        StartDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<StartDeploymentRequest, StartDeploymentResponse>
                 handlerToUse = handler;
 
@@ -1560,15 +1606,16 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 StopDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StopDeploymentConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StopDeploymentResponse>
-                transformer = StopDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "StopDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/StopDeployment");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "StopDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/StopDeployment");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, StopDeploymentResponse>
+                transformer =
+                        StopDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<StopDeploymentRequest, StopDeploymentResponse>
                 handlerToUse = handler;
 
@@ -1612,15 +1659,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 UpdateDatabaseRegistrationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDatabaseRegistrationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "UpdateDatabaseRegistration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/UpdateDatabaseRegistration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseRegistrationResponse>
-                transformer = UpdateDatabaseRegistrationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "UpdateDatabaseRegistration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/UpdateDatabaseRegistration");
-
+                transformer =
+                        UpdateDatabaseRegistrationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDatabaseRegistrationRequest, UpdateDatabaseRegistrationResponse>
                 handlerToUse = handler;
@@ -1664,14 +1713,16 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 UpdateDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDeploymentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "UpdateDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/UpdateDeployment");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
-                transformer = UpdateDeploymentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "UpdateDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/UpdateDeployment");
-
+                transformer =
+                        UpdateDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateDeploymentRequest, UpdateDeploymentResponse>
                 handlerToUse = handler;
 
@@ -1713,15 +1764,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 UpdateDeploymentBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDeploymentBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "UpdateDeploymentBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/UpdateDeploymentBackup");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDeploymentBackupResponse>
-                transformer = UpdateDeploymentBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "UpdateDeploymentBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/UpdateDeploymentBackup");
-
+                transformer =
+                        UpdateDeploymentBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDeploymentBackupRequest, UpdateDeploymentBackupResponse>
                 handlerToUse = handler;
@@ -1764,15 +1817,17 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 UpgradeDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpgradeDeploymentConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDeploymentResponse>
-                transformer = UpgradeDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GoldenGate",
-                "UpgradeDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/UpgradeDeployment");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "UpgradeDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/UpgradeDeployment");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDeploymentResponse>
+                transformer =
+                        UpgradeDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpgradeDeploymentRequest, UpgradeDeploymentResponse>
                 handlerToUse = handler;
 

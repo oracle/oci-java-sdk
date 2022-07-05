@@ -4,19 +4,20 @@
  */
 package com.oracle.bmc.http.internal;
 
+import com.oracle.bmc.util.internal.StringUtils;
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MultivaluedMap;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * A client request filter to remove content-length.
  * It is required for calls to only allow Apache and Resteasy to set the content-length header.
  */
-@Slf4j
 public class ContentLengthFilter implements ClientRequestFilter {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ContentLengthFilter.class);
+
     private final boolean removeZeroLengthHeader;
 
     public ContentLengthFilter() {

@@ -397,15 +397,17 @@ public class PluginAsyncClient implements PluginAsync {
                 GetInstanceAgentPluginConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInstanceAgentPluginConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Plugin",
+                        "GetInstanceAgentPlugin",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/GetInstanceAgentPlugin");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetInstanceAgentPluginResponse>
-                transformer = GetInstanceAgentPluginConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Plugin",
-                "GetInstanceAgentPlugin",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/GetInstanceAgentPlugin");
-
+                transformer =
+                        GetInstanceAgentPluginConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetInstanceAgentPluginRequest, GetInstanceAgentPluginResponse>
                 handlerToUse = handler;
@@ -443,15 +445,17 @@ public class PluginAsyncClient implements PluginAsync {
                 ListInstanceAgentPluginsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInstanceAgentPluginsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Plugin",
+                        "ListInstanceAgentPlugins",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceAgentPlugins");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListInstanceAgentPluginsResponse>
-                transformer = ListInstanceAgentPluginsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Plugin",
-                "ListInstanceAgentPlugins",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceAgentPlugins");
-
+                transformer =
+                        ListInstanceAgentPluginsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListInstanceAgentPluginsRequest, ListInstanceAgentPluginsResponse>
                 handlerToUse = handler;

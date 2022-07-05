@@ -7,7 +7,7 @@ package com.oracle.bmc.util.internal;
 import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.responses.AsyncHandler;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 /**
  * Callbacks for asynchronous requests intended to work with some authenticated calls, like instance principals.
@@ -26,10 +26,11 @@ import lombok.extern.slf4j.Slf4j;
  *
  * @deprecated in favor of RefreshAuthTokenWrapper -- versions after 1.25.1 do not use RefreshAuthTokenWrappingAsyncHandler anymore
  */
-@Slf4j
 public abstract class RefreshAuthTokenWrappingAsyncHandler<REQUEST, RESPONSE>
         implements AsyncHandler<REQUEST, RESPONSE> {
     private static final int NUM_TRIES_ALLOWED = 2;
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(RefreshAuthTokenWrappingAsyncHandler.class);
 
     private final RefreshableOnNotAuthenticatedProvider<?> authDetailsProvider;
     private final AsyncHandler<REQUEST, RESPONSE> innerHandler;

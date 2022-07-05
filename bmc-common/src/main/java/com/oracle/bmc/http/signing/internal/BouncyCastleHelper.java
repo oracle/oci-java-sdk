@@ -4,13 +4,12 @@
  */
 package com.oracle.bmc.http.signing.internal;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.security.Provider;
 import java.security.Security;
 
-@Slf4j
 class BouncyCastleHelper {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(BouncyCastleHelper.class);
     private final boolean isProviderInstalled;
     private final Provider bouncyCastleProvider;
 

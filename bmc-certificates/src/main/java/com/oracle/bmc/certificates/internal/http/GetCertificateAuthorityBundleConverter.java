@@ -84,6 +84,13 @@ public class GetCertificateAuthorityBundleConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.certificates.responses.GetCertificateAuthorityBundleResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.certificates.responses.GetCertificateAuthorityBundleResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.certificates.responses.GetCertificateAuthorityBundleResponse>
@@ -98,16 +105,26 @@ public class GetCertificateAuthorityBundleConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.certificates.responses.GetCertificateAuthorityBundleResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.certificates.model
                                                                 .CertificateAuthorityBundle>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.certificates.model
-                                                                        .CertificateAuthorityBundle
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.certificates.model
+                                                                    .CertificateAuthorityBundle
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.certificates.model
+                                                                    .CertificateAuthorityBundle
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.certificates.model

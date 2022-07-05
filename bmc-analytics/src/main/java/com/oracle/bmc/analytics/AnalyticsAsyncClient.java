@@ -399,16 +399,18 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 ChangeAnalyticsInstanceCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeAnalyticsInstanceCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "ChangeAnalyticsInstanceCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ChangeAnalyticsInstanceCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeAnalyticsInstanceCompartmentResponse>
-                transformer = ChangeAnalyticsInstanceCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "ChangeAnalyticsInstanceCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ChangeAnalyticsInstanceCompartment");
-
+                transformer =
+                        ChangeAnalyticsInstanceCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAnalyticsInstanceCompartmentRequest,
                         ChangeAnalyticsInstanceCompartmentResponse>
@@ -457,16 +459,18 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeAnalyticsInstanceNetworkEndpointConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "ChangeAnalyticsInstanceNetworkEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ChangeAnalyticsInstanceNetworkEndpoint");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeAnalyticsInstanceNetworkEndpointResponse>
-                transformer = ChangeAnalyticsInstanceNetworkEndpointConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "ChangeAnalyticsInstanceNetworkEndpoint",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ChangeAnalyticsInstanceNetworkEndpoint");
-
+                transformer =
+                        ChangeAnalyticsInstanceNetworkEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAnalyticsInstanceNetworkEndpointRequest,
                         ChangeAnalyticsInstanceNetworkEndpointResponse>
@@ -513,13 +517,15 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 CreateAnalyticsInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAnalyticsInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics", "CreateAnalyticsInstance", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAnalyticsInstanceResponse>
-                transformer = CreateAnalyticsInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics", "CreateAnalyticsInstance", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        CreateAnalyticsInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAnalyticsInstanceRequest, CreateAnalyticsInstanceResponse>
                 handlerToUse = handler;
@@ -564,16 +570,18 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 CreatePrivateAccessChannelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreatePrivateAccessChannelConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "CreatePrivateAccessChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/CreatePrivateAccessChannel");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreatePrivateAccessChannelResponse>
-                transformer = CreatePrivateAccessChannelConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "CreatePrivateAccessChannel",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/CreatePrivateAccessChannel");
-
+                transformer =
+                        CreatePrivateAccessChannelConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreatePrivateAccessChannelRequest, CreatePrivateAccessChannelResponse>
                 handlerToUse = handler;
@@ -617,15 +625,17 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 CreateVanityUrlConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVanityUrlConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVanityUrlResponse>
-                transformer = CreateVanityUrlConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "CreateVanityUrl",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/CreateVanityUrl");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "CreateVanityUrl",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/CreateVanityUrl");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVanityUrlResponse>
+                transformer =
+                        CreateVanityUrlConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateVanityUrlRequest, CreateVanityUrlResponse>
                 handlerToUse = handler;
 
@@ -667,16 +677,18 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 DeleteAnalyticsInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteAnalyticsInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "DeleteAnalyticsInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeleteAnalyticsInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAnalyticsInstanceResponse>
-                transformer = DeleteAnalyticsInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "DeleteAnalyticsInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeleteAnalyticsInstance");
-
+                transformer =
+                        DeleteAnalyticsInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteAnalyticsInstanceRequest, DeleteAnalyticsInstanceResponse>
                 handlerToUse = handler;
@@ -716,16 +728,18 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 DeletePrivateAccessChannelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeletePrivateAccessChannelConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "DeletePrivateAccessChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeletePrivateAccessChannel");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeletePrivateAccessChannelResponse>
-                transformer = DeletePrivateAccessChannelConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "DeletePrivateAccessChannel",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeletePrivateAccessChannel");
-
+                transformer =
+                        DeletePrivateAccessChannelConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeletePrivateAccessChannelRequest, DeletePrivateAccessChannelResponse>
                 handlerToUse = handler;
@@ -764,15 +778,17 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 DeleteVanityUrlConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVanityUrlConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVanityUrlResponse>
-                transformer = DeleteVanityUrlConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "DeleteVanityUrl",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeleteVanityUrl");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "DeleteVanityUrl",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeleteVanityUrl");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVanityUrlResponse>
+                transformer =
+                        DeleteVanityUrlConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteVanityUrlRequest, DeleteVanityUrlResponse>
                 handlerToUse = handler;
 
@@ -809,14 +825,16 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 DeleteWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "DeleteWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequest/DeleteWorkRequest");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
-                transformer = DeleteWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "DeleteWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequest/DeleteWorkRequest");
-
+                transformer =
+                        DeleteWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteWorkRequestRequest, DeleteWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -853,15 +871,17 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 GetAnalyticsInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAnalyticsInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "GetAnalyticsInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/GetAnalyticsInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAnalyticsInstanceResponse>
-                transformer = GetAnalyticsInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "GetAnalyticsInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/GetAnalyticsInstance");
-
+                transformer =
+                        GetAnalyticsInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAnalyticsInstanceRequest, GetAnalyticsInstanceResponse>
                 handlerToUse = handler;
@@ -899,15 +919,17 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 GetPrivateAccessChannelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPrivateAccessChannelConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "GetPrivateAccessChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/GetPrivateAccessChannel");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetPrivateAccessChannelResponse>
-                transformer = GetPrivateAccessChannelConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "GetPrivateAccessChannel",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/GetPrivateAccessChannel");
-
+                transformer =
+                        GetPrivateAccessChannelConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetPrivateAccessChannelRequest, GetPrivateAccessChannelResponse>
                 handlerToUse = handler;
@@ -945,14 +967,15 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequest/GetWorkRequest");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "GetWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequest/GetWorkRequest");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -989,15 +1012,17 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 ListAnalyticsInstancesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAnalyticsInstancesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "ListAnalyticsInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstanceSummary/ListAnalyticsInstances");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAnalyticsInstancesResponse>
-                transformer = ListAnalyticsInstancesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "ListAnalyticsInstances",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstanceSummary/ListAnalyticsInstances");
-
+                transformer =
+                        ListAnalyticsInstancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAnalyticsInstancesRequest, ListAnalyticsInstancesResponse>
                 handlerToUse = handler;
@@ -1035,15 +1060,17 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestError/ListWorkRequestErrors");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "ListWorkRequestErrors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestError/ListWorkRequestErrors");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -1081,15 +1108,17 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestLog/ListWorkRequestLogs");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "ListWorkRequestLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestLog/ListWorkRequestLogs");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -1127,14 +1156,16 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestSummary/ListWorkRequests");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "ListWorkRequests",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestSummary/ListWorkRequests");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -1171,16 +1202,18 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 ScaleAnalyticsInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ScaleAnalyticsInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "ScaleAnalyticsInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ScaleAnalyticsInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ScaleAnalyticsInstanceResponse>
-                transformer = ScaleAnalyticsInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "ScaleAnalyticsInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ScaleAnalyticsInstance");
-
+                transformer =
+                        ScaleAnalyticsInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ScaleAnalyticsInstanceRequest, ScaleAnalyticsInstanceResponse>
                 handlerToUse = handler;
@@ -1221,15 +1254,16 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
         final SetKmsKeyRequest interceptedRequest = SetKmsKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SetKmsKeyConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, SetKmsKeyResponse>
-                transformer = SetKmsKeyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "SetKmsKey",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/SetKmsKey");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "SetKmsKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/SetKmsKey");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, SetKmsKeyResponse>
+                transformer =
+                        SetKmsKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<SetKmsKeyRequest, SetKmsKeyResponse> handlerToUse =
                 handler;
 
@@ -1270,16 +1304,18 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 StartAnalyticsInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StartAnalyticsInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "StartAnalyticsInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/StartAnalyticsInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, StartAnalyticsInstanceResponse>
-                transformer = StartAnalyticsInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "StartAnalyticsInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/StartAnalyticsInstance");
-
+                transformer =
+                        StartAnalyticsInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         StartAnalyticsInstanceRequest, StartAnalyticsInstanceResponse>
                 handlerToUse = handler;
@@ -1317,16 +1353,18 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 StopAnalyticsInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StopAnalyticsInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "StopAnalyticsInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/StopAnalyticsInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, StopAnalyticsInstanceResponse>
-                transformer = StopAnalyticsInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "StopAnalyticsInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/StopAnalyticsInstance");
-
+                transformer =
+                        StopAnalyticsInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         StopAnalyticsInstanceRequest, StopAnalyticsInstanceResponse>
                 handlerToUse = handler;
@@ -1364,15 +1402,17 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 UpdateAnalyticsInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAnalyticsInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "UpdateAnalyticsInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdateAnalyticsInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAnalyticsInstanceResponse>
-                transformer = UpdateAnalyticsInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "UpdateAnalyticsInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdateAnalyticsInstance");
-
+                transformer =
+                        UpdateAnalyticsInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAnalyticsInstanceRequest, UpdateAnalyticsInstanceResponse>
                 handlerToUse = handler;
@@ -1417,16 +1457,18 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 UpdatePrivateAccessChannelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdatePrivateAccessChannelConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "UpdatePrivateAccessChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdatePrivateAccessChannel");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdatePrivateAccessChannelResponse>
-                transformer = UpdatePrivateAccessChannelConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "UpdatePrivateAccessChannel",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdatePrivateAccessChannel");
-
+                transformer =
+                        UpdatePrivateAccessChannelConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdatePrivateAccessChannelRequest, UpdatePrivateAccessChannelResponse>
                 handlerToUse = handler;
@@ -1470,15 +1512,17 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 UpdateVanityUrlConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVanityUrlConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVanityUrlResponse>
-                transformer = UpdateVanityUrlConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Analytics",
-                "UpdateVanityUrl",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdateVanityUrl");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "UpdateVanityUrl",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdateVanityUrl");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVanityUrlResponse>
+                transformer =
+                        UpdateVanityUrlConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateVanityUrlRequest, UpdateVanityUrlResponse>
                 handlerToUse = handler;
 

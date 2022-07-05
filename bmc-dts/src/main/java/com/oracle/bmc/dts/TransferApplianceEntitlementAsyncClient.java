@@ -401,16 +401,18 @@ public class TransferApplianceEntitlementAsyncClient implements TransferApplianc
                 CreateTransferApplianceEntitlementConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTransferApplianceEntitlementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferApplianceEntitlement",
+                        "CreateTransferApplianceEntitlement",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateTransferApplianceEntitlementResponse>
-                transformer = CreateTransferApplianceEntitlementConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferApplianceEntitlement",
-                "CreateTransferApplianceEntitlement",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        CreateTransferApplianceEntitlementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTransferApplianceEntitlementRequest,
                         CreateTransferApplianceEntitlementResponse>
@@ -458,16 +460,18 @@ public class TransferApplianceEntitlementAsyncClient implements TransferApplianc
                 GetTransferApplianceEntitlementConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTransferApplianceEntitlementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferApplianceEntitlement",
+                        "GetTransferApplianceEntitlement",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTransferApplianceEntitlementResponse>
-                transformer = GetTransferApplianceEntitlementConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferApplianceEntitlement",
-                "GetTransferApplianceEntitlement",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        GetTransferApplianceEntitlementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetTransferApplianceEntitlementRequest,
                         GetTransferApplianceEntitlementResponse>
@@ -510,15 +514,17 @@ public class TransferApplianceEntitlementAsyncClient implements TransferApplianc
                 ListTransferApplianceEntitlementConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTransferApplianceEntitlementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferApplianceEntitlement",
+                        "ListTransferApplianceEntitlement",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTransferApplianceEntitlementResponse>
-                transformer = ListTransferApplianceEntitlementConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferApplianceEntitlement",
-                "ListTransferApplianceEntitlement",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ListTransferApplianceEntitlementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListTransferApplianceEntitlementRequest,
                         ListTransferApplianceEntitlementResponse>

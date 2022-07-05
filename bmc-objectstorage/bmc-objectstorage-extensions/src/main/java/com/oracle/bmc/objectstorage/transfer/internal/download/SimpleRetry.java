@@ -8,14 +8,14 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicLong;
-
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.objectstorage.transfer.DownloadConfiguration;
 import com.oracle.bmc.retrier.DefaultRetryCondition;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 class SimpleRetry implements DownloadExecution {
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(SimpleRetry.class);
 
     /**
      * Maximum amount of time we are willing to wait for. We will perform

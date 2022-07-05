@@ -409,15 +409,17 @@ public class GenericArtifactsContentAsyncClient implements GenericArtifactsConte
                 GetGenericArtifactContentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetGenericArtifactContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenericArtifactsContent",
+                        "GetGenericArtifactContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContent");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetGenericArtifactContentResponse>
-                transformer = GetGenericArtifactContentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GenericArtifactsContent",
-                "GetGenericArtifactContent",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContent");
-
+                transformer =
+                        GetGenericArtifactContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetGenericArtifactContentRequest, GetGenericArtifactContentResponse>
                 handlerToUse = handler;
@@ -468,15 +470,17 @@ public class GenericArtifactsContentAsyncClient implements GenericArtifactsConte
                 GetGenericArtifactContentByPathConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetGenericArtifactContentByPathConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenericArtifactsContent",
+                        "GetGenericArtifactContentByPath",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContentByPath");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetGenericArtifactContentByPathResponse>
-                transformer = GetGenericArtifactContentByPathConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GenericArtifactsContent",
-                "GetGenericArtifactContentByPath",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContentByPath");
-
+                transformer =
+                        GetGenericArtifactContentByPathConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetGenericArtifactContentByPathRequest,
                         GetGenericArtifactContentByPathResponse>
@@ -526,19 +530,21 @@ public class GenericArtifactsContentAsyncClient implements GenericArtifactsConte
                 PutGenericArtifactContentByPathConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 PutGenericArtifactContentByPathConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, PutGenericArtifactContentByPathResponse>
-                transformer = PutGenericArtifactContentByPathConverter.fromResponse();
 
         ib.property(
                 com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                 com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GenericArtifactsContent",
-                "PutGenericArtifactContentByPath",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/PutGenericArtifactContentByPath");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenericArtifactsContent",
+                        "PutGenericArtifactContentByPath",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/PutGenericArtifactContentByPath");
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, PutGenericArtifactContentByPathResponse>
+                transformer =
+                        PutGenericArtifactContentByPathConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         PutGenericArtifactContentByPathRequest,
                         PutGenericArtifactContentByPathResponse>

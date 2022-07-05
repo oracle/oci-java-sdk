@@ -132,6 +132,13 @@ public class SummarizeAlertLogCountsConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.databasemanagement.responses.SummarizeAlertLogCountsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.databasemanagement.responses.SummarizeAlertLogCountsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.databasemanagement.responses.SummarizeAlertLogCountsResponse>
@@ -146,16 +153,26 @@ public class SummarizeAlertLogCountsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.databasemanagement.responses.SummarizeAlertLogCountsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.databasemanagement.model
                                                                 .AlertLogCountsCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.databasemanagement.model
-                                                                        .AlertLogCountsCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.databasemanagement.model
+                                                                    .AlertLogCountsCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.databasemanagement.model
+                                                                    .AlertLogCountsCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.databasemanagement.model

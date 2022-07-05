@@ -10,18 +10,45 @@ import com.fasterxml.jackson.databind.ser.BeanPropertyWriter;
 import com.fasterxml.jackson.databind.ser.PropertyWriter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.google.common.base.CaseFormat;
-import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Field;
 import java.util.Set;
 
-@Slf4j
 public class ExplicitlySetFilter extends SimpleBeanPropertyFilter {
     public static final ExplicitlySetFilter INSTANCE = new ExplicitlySetFilter();
     public static final String NAME = "explicitlySetFilter";
     public static final String FIELD_NAME = "__explicitlySet__";
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ExplicitlySetFilter.class);
 
     private ExplicitlySetFilter() {}
+
+    private static Field getDeclaredField(Class<?> pojoClass, String fieldName)
+            throws NoSuchFieldException {
+        try {
+            return pojoClass.getDeclaredField(fieldName);
+        } catch (NoSuchFieldException nsfe) {
+            Class<?> superclass = pojoClass.getSuperclass();
+            if (superclass != null) {
+                return getDeclaredField(superclass, fieldName);
+            } else {
+                throw nsfe;
+            }
+        }
+    }
+
+    private static Field getMatchingDeclaredField(Class<?> pojoClass, String fieldName)
+            throws NoSuchFieldException {
+        // Try matching the exact field name
+        try {
+            return getDeclaredField(pojoClass, fieldName);
+        } catch (NoSuchFieldException nsfe) {
+            LOG.debug("Exact field name match failed for {}", fieldName);
+        }
+        // If not found, try converting the field name from snake case to camel case
+        return getDeclaredField(
+                pojoClass, CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, fieldName));
+    }
 
     @Override
     public void serializeAsField(
@@ -54,36 +81,10 @@ public class ExplicitlySetFilter extends SimpleBeanPropertyFilter {
             } finally {
                 field.setAccessible(accessible);
             }
-        } else if (!jgen.canOmitFields()) { // since 2.3
+        } else if (!jgen.canOmitFields()) {
+            // since 2.3
             writer.serializeAsOmittedField(pojo, jgen, provider);
         }
-    }
-
-    private static Field getDeclaredField(Class<?> pojoClass, String fieldName)
-            throws NoSuchFieldException {
-        try {
-            return pojoClass.getDeclaredField(fieldName);
-        } catch (NoSuchFieldException nsfe) {
-            Class<?> superclass = pojoClass.getSuperclass();
-            if (superclass != null) {
-                return getDeclaredField(superclass, fieldName);
-            } else {
-                throw nsfe;
-            }
-        }
-    }
-
-    private static Field getMatchingDeclaredField(Class<?> pojoClass, String fieldName)
-            throws NoSuchFieldException {
-        // Try matching the exact field name
-        try {
-            return getDeclaredField(pojoClass, fieldName);
-        } catch (NoSuchFieldException nsfe) {
-            LOG.debug("Exact field name match failed for {}", fieldName);
-        }
-        // If not found, try converting the field name from snake case to camel case
-        return getDeclaredField(
-                pojoClass, CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, fieldName));
     }
 
     @Override

@@ -65,6 +65,13 @@ public class UpdateProductLicenseConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.licensemanager.responses.UpdateProductLicenseResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.licensemanager.responses.UpdateProductLicenseResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.licensemanager.responses.UpdateProductLicenseResponse>
@@ -79,16 +86,26 @@ public class UpdateProductLicenseConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.licensemanager.responses.UpdateProductLicenseResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.licensemanager.model
                                                                 .ProductLicense>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.licensemanager.model
-                                                                        .ProductLicense
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.licensemanager.model
+                                                                    .ProductLicense
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.licensemanager.model
+                                                                    .ProductLicense
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.licensemanager.model.ProductLicense>

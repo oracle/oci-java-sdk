@@ -6,8 +6,8 @@ package com.oracle.bmc.keymanagement;
 
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
+import javax.annotation.Nonnull;
 
-@lombok.extern.slf4j.Slf4j
 public class KmsManagementAsyncClientBuilder
         extends AbstractKmsManagementClientBuilder<
                 KmsManagementAsyncClientBuilder, KmsManagementAsyncClient> {
@@ -17,7 +17,12 @@ public class KmsManagementAsyncClientBuilder
 
     @Override
     public KmsManagementAsyncClient build(
-            AbstractAuthenticationDetailsProvider authenticationDetailsProvider) {
+            @Nonnull AbstractAuthenticationDetailsProvider authenticationDetailsProvider) {
+        if (authenticationDetailsProvider == null) {
+            throw new NullPointerException(
+                    "authenticationDetailsProvider is marked non-null but is null");
+        }
+
         String cryptoEndpoint = getEndpoint();
 
         return new KmsManagementAsyncClient(

@@ -397,15 +397,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ApproveDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ApproveDeploymentConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ApproveDeploymentResponse>
-                transformer = ApproveDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ApproveDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/ApproveDeployment");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ApproveDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/ApproveDeployment");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ApproveDeploymentResponse>
+                transformer =
+                        ApproveDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ApproveDeploymentRequest, ApproveDeploymentResponse>
                 handlerToUse = handler;
 
@@ -447,15 +449,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CancelBuildRunConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelBuildRunConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelBuildRunResponse>
-                transformer = CancelBuildRunConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CancelBuildRun",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CancelBuildRun");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CancelBuildRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CancelBuildRun");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelBuildRunResponse>
+                transformer =
+                        CancelBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CancelBuildRunRequest, CancelBuildRunResponse>
                 handlerToUse = handler;
 
@@ -497,15 +500,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CancelDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelDeploymentConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelDeploymentResponse>
-                transformer = CancelDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CancelDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CancelDeployment");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CancelDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CancelDeployment");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelDeploymentResponse>
+                transformer =
+                        CancelDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CancelDeploymentRequest, CancelDeploymentResponse>
                 handlerToUse = handler;
 
@@ -547,16 +552,18 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ChangeProjectCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeProjectCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ChangeProjectCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/ChangeProjectCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
-                transformer = ChangeProjectCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ChangeProjectCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/ChangeProjectCompartment");
-
+                transformer =
+                        ChangeProjectCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>
                 handlerToUse = handler;
@@ -599,16 +606,18 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CreateBuildPipelineConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBuildPipelineConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CreateBuildPipeline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/CreateBuildPipeline");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateBuildPipelineResponse>
-                transformer = CreateBuildPipelineConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CreateBuildPipeline",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/CreateBuildPipeline");
-
+                transformer =
+                        CreateBuildPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateBuildPipelineRequest, CreateBuildPipelineResponse>
                 handlerToUse = handler;
@@ -651,16 +660,18 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CreateBuildPipelineStageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBuildPipelineStageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CreateBuildPipelineStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/CreateBuildPipelineStage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateBuildPipelineStageResponse>
-                transformer = CreateBuildPipelineStageConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CreateBuildPipelineStage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/CreateBuildPipelineStage");
-
+                transformer =
+                        CreateBuildPipelineStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateBuildPipelineStageRequest, CreateBuildPipelineStageResponse>
                 handlerToUse = handler;
@@ -703,15 +714,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CreateBuildRunConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBuildRunConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBuildRunResponse>
-                transformer = CreateBuildRunConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CreateBuildRun",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CreateBuildRun");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CreateBuildRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CreateBuildRun");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBuildRunResponse>
+                transformer =
+                        CreateBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateBuildRunRequest, CreateBuildRunResponse>
                 handlerToUse = handler;
 
@@ -753,15 +765,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CreateConnectionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateConnectionConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
-                transformer = CreateConnectionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CreateConnection",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/CreateConnection");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CreateConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/CreateConnection");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
+                transformer =
+                        CreateConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateConnectionRequest, CreateConnectionResponse>
                 handlerToUse = handler;
 
@@ -803,16 +817,18 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CreateDeployArtifactConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDeployArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CreateDeployArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/CreateDeployArtifact");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDeployArtifactResponse>
-                transformer = CreateDeployArtifactConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CreateDeployArtifact",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/CreateDeployArtifact");
-
+                transformer =
+                        CreateDeployArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDeployArtifactRequest, CreateDeployArtifactResponse>
                 handlerToUse = handler;
@@ -855,16 +871,18 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CreateDeployEnvironmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDeployEnvironmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CreateDeployEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/CreateDeployEnvironment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDeployEnvironmentResponse>
-                transformer = CreateDeployEnvironmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CreateDeployEnvironment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/CreateDeployEnvironment");
-
+                transformer =
+                        CreateDeployEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDeployEnvironmentRequest, CreateDeployEnvironmentResponse>
                 handlerToUse = handler;
@@ -907,16 +925,18 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CreateDeployPipelineConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDeployPipelineConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CreateDeployPipeline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/CreateDeployPipeline");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDeployPipelineResponse>
-                transformer = CreateDeployPipelineConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CreateDeployPipeline",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/CreateDeployPipeline");
-
+                transformer =
+                        CreateDeployPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDeployPipelineRequest, CreateDeployPipelineResponse>
                 handlerToUse = handler;
@@ -959,15 +979,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CreateDeployStageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDeployStageConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeployStageResponse>
-                transformer = CreateDeployStageConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CreateDeployStage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/CreateDeployStage");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CreateDeployStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/CreateDeployStage");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeployStageResponse>
+                transformer =
+                        CreateDeployStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateDeployStageRequest, CreateDeployStageResponse>
                 handlerToUse = handler;
 
@@ -1009,15 +1031,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CreateDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDeploymentConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
-                transformer = CreateDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CreateDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CreateDeployment");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CreateDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CreateDeployment");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
+                transformer =
+                        CreateDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateDeploymentRequest, CreateDeploymentResponse>
                 handlerToUse = handler;
 
@@ -1058,15 +1082,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CreateProjectConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateProjectConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
-                transformer = CreateProjectConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CreateProject",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/CreateProject");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CreateProject",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/CreateProject");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
+                transformer =
+                        CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
                 handlerToUse = handler;
 
@@ -1108,15 +1133,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CreateRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateRepositoryConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRepositoryResponse>
-                transformer = CreateRepositoryConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CreateRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/CreateRepository");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CreateRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/CreateRepository");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRepositoryResponse>
+                transformer =
+                        CreateRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResponse>
                 handlerToUse = handler;
 
@@ -1157,15 +1184,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 CreateTriggerConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTriggerConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTriggerResponse>
-                transformer = CreateTriggerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "CreateTrigger",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/CreateTrigger");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CreateTrigger",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/CreateTrigger");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTriggerResponse>
+                transformer =
+                        CreateTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateTriggerRequest, CreateTriggerResponse>
                 handlerToUse = handler;
 
@@ -1207,15 +1235,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteBuildPipelineConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBuildPipelineConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "DeleteBuildPipeline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/DeleteBuildPipeline");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteBuildPipelineResponse>
-                transformer = DeleteBuildPipelineConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "DeleteBuildPipeline",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/DeleteBuildPipeline");
-
+                transformer =
+                        DeleteBuildPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteBuildPipelineRequest, DeleteBuildPipelineResponse>
                 handlerToUse = handler;
@@ -1253,15 +1283,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteBuildPipelineStageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBuildPipelineStageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "DeleteBuildPipelineStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/DeleteBuildPipelineStage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteBuildPipelineStageResponse>
-                transformer = DeleteBuildPipelineStageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "DeleteBuildPipelineStage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/DeleteBuildPipelineStage");
-
+                transformer =
+                        DeleteBuildPipelineStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteBuildPipelineStageRequest, DeleteBuildPipelineStageResponse>
                 handlerToUse = handler;
@@ -1299,14 +1331,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteConnectionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteConnectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "DeleteConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/DeleteConnection");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
-                transformer = DeleteConnectionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "DeleteConnection",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/DeleteConnection");
-
+                transformer =
+                        DeleteConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResponse>
                 handlerToUse = handler;
 
@@ -1343,15 +1377,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteDeployArtifactConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDeployArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "DeleteDeployArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/DeleteDeployArtifact");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDeployArtifactResponse>
-                transformer = DeleteDeployArtifactConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "DeleteDeployArtifact",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/DeleteDeployArtifact");
-
+                transformer =
+                        DeleteDeployArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDeployArtifactRequest, DeleteDeployArtifactResponse>
                 handlerToUse = handler;
@@ -1389,15 +1425,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteDeployEnvironmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDeployEnvironmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "DeleteDeployEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/DeleteDeployEnvironment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDeployEnvironmentResponse>
-                transformer = DeleteDeployEnvironmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "DeleteDeployEnvironment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/DeleteDeployEnvironment");
-
+                transformer =
+                        DeleteDeployEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDeployEnvironmentRequest, DeleteDeployEnvironmentResponse>
                 handlerToUse = handler;
@@ -1435,15 +1473,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteDeployPipelineConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDeployPipelineConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "DeleteDeployPipeline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/DeleteDeployPipeline");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDeployPipelineResponse>
-                transformer = DeleteDeployPipelineConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "DeleteDeployPipeline",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/DeleteDeployPipeline");
-
+                transformer =
+                        DeleteDeployPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDeployPipelineRequest, DeleteDeployPipelineResponse>
                 handlerToUse = handler;
@@ -1481,14 +1521,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteDeployStageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDeployStageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "DeleteDeployStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/DeleteDeployStage");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeployStageResponse>
-                transformer = DeleteDeployStageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "DeleteDeployStage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/DeleteDeployStage");
-
+                transformer =
+                        DeleteDeployStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteDeployStageRequest, DeleteDeployStageResponse>
                 handlerToUse = handler;
 
@@ -1524,14 +1566,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteProjectConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteProjectConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "DeleteProject",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/DeleteProject");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
-                transformer = DeleteProjectConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "DeleteProject",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/DeleteProject");
-
+                transformer =
+                        DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
                 handlerToUse = handler;
 
@@ -1566,15 +1609,16 @@ public class DevopsAsyncClient implements DevopsAsync {
         final DeleteRefRequest interceptedRequest = DeleteRefConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteRefConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRefResponse>
-                transformer = DeleteRefConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "DeleteRef",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRef");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "DeleteRef",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRef");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRefResponse>
+                transformer =
+                        DeleteRefConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteRefRequest, DeleteRefResponse> handlerToUse =
                 handler;
 
@@ -1610,14 +1654,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteRepositoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "DeleteRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRepository");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRepositoryResponse>
-                transformer = DeleteRepositoryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "DeleteRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRepository");
-
+                transformer =
+                        DeleteRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResponse>
                 handlerToUse = handler;
 
@@ -1653,14 +1699,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteTriggerConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteTriggerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "DeleteTrigger",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/DeleteTrigger");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTriggerResponse>
-                transformer = DeleteTriggerConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "DeleteTrigger",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/DeleteTrigger");
-
+                transformer =
+                        DeleteTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteTriggerRequest, DeleteTriggerResponse>
                 handlerToUse = handler;
 
@@ -1697,14 +1744,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetBuildPipelineConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBuildPipelineConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetBuildPipeline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/GetBuildPipeline");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBuildPipelineResponse>
-                transformer = GetBuildPipelineConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetBuildPipeline",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/GetBuildPipeline");
-
+                transformer =
+                        GetBuildPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetBuildPipelineRequest, GetBuildPipelineResponse>
                 handlerToUse = handler;
 
@@ -1741,15 +1790,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetBuildPipelineStageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBuildPipelineStageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetBuildPipelineStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/GetBuildPipelineStage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetBuildPipelineStageResponse>
-                transformer = GetBuildPipelineStageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetBuildPipelineStage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/GetBuildPipelineStage");
-
+                transformer =
+                        GetBuildPipelineStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetBuildPipelineStageRequest, GetBuildPipelineStageResponse>
                 handlerToUse = handler;
@@ -1786,14 +1837,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetBuildRunConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBuildRunConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetBuildRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/GetBuildRun");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBuildRunResponse>
-                transformer = GetBuildRunConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetBuildRun",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/GetBuildRun");
-
+                transformer =
+                        GetBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetBuildRunRequest, GetBuildRunResponse>
                 handlerToUse = handler;
 
@@ -1828,14 +1880,15 @@ public class DevopsAsyncClient implements DevopsAsync {
         final GetCommitRequest interceptedRequest = GetCommitConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCommitConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetCommit",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommit");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCommitResponse>
-                transformer = GetCommitConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetCommit",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommit");
-
+                transformer =
+                        GetCommitConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCommitRequest, GetCommitResponse> handlerToUse =
                 handler;
 
@@ -1870,14 +1923,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetCommitDiffConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCommitDiffConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetCommitDiff",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommitDiff");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCommitDiffResponse>
-                transformer = GetCommitDiffConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetCommitDiff",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommitDiff");
-
+                transformer =
+                        GetCommitDiffConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCommitDiffRequest, GetCommitDiffResponse>
                 handlerToUse = handler;
 
@@ -1913,14 +1967,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetConnectionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetConnectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/GetConnection");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetConnectionResponse>
-                transformer = GetConnectionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetConnection",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/GetConnection");
-
+                transformer =
+                        GetConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
                 handlerToUse = handler;
 
@@ -1957,14 +2012,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetDeployArtifactConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDeployArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetDeployArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/GetDeployArtifact");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDeployArtifactResponse>
-                transformer = GetDeployArtifactConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetDeployArtifact",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/GetDeployArtifact");
-
+                transformer =
+                        GetDeployArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDeployArtifactRequest, GetDeployArtifactResponse>
                 handlerToUse = handler;
 
@@ -2001,15 +2058,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetDeployEnvironmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDeployEnvironmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetDeployEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/GetDeployEnvironment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDeployEnvironmentResponse>
-                transformer = GetDeployEnvironmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetDeployEnvironment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/GetDeployEnvironment");
-
+                transformer =
+                        GetDeployEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetDeployEnvironmentRequest, GetDeployEnvironmentResponse>
                 handlerToUse = handler;
@@ -2047,14 +2106,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetDeployPipelineConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDeployPipelineConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetDeployPipeline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/GetDeployPipeline");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDeployPipelineResponse>
-                transformer = GetDeployPipelineConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetDeployPipeline",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/GetDeployPipeline");
-
+                transformer =
+                        GetDeployPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDeployPipelineRequest, GetDeployPipelineResponse>
                 handlerToUse = handler;
 
@@ -2091,14 +2152,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetDeployStageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDeployStageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetDeployStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/GetDeployStage");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDeployStageResponse>
-                transformer = GetDeployStageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetDeployStage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/GetDeployStage");
-
+                transformer =
+                        GetDeployStageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDeployStageRequest, GetDeployStageResponse>
                 handlerToUse = handler;
 
@@ -2134,14 +2196,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDeploymentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/GetDeployment");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentResponse>
-                transformer = GetDeploymentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/GetDeployment");
-
+                transformer =
+                        GetDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDeploymentRequest, GetDeploymentResponse>
                 handlerToUse = handler;
 
@@ -2177,14 +2240,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetFileDiffConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetFileDiffConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetFileDiff",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetFileDiff");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetFileDiffResponse>
-                transformer = GetFileDiffConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetFileDiff",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetFileDiff");
-
+                transformer =
+                        GetFileDiffConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetFileDiffRequest, GetFileDiffResponse>
                 handlerToUse = handler;
 
@@ -2221,14 +2285,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetMirrorRecordConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetMirrorRecordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetMirrorRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetMirrorRecord");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetMirrorRecordResponse>
-                transformer = GetMirrorRecordConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetMirrorRecord",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetMirrorRecord");
-
+                transformer =
+                        GetMirrorRecordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetMirrorRecordRequest, GetMirrorRecordResponse>
                 handlerToUse = handler;
 
@@ -2263,14 +2329,15 @@ public class DevopsAsyncClient implements DevopsAsync {
         final GetObjectRequest interceptedRequest = GetObjectConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetObjectConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetObject",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryObject/GetObject");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectResponse>
-                transformer = GetObjectConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetObject",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryObject/GetObject");
-
+                transformer =
+                        GetObjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetObjectRequest, GetObjectResponse> handlerToUse =
                 handler;
 
@@ -2316,14 +2383,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetObjectContentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetObjectContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetObjectContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetObjectContent");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectContentResponse>
-                transformer = GetObjectContentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetObjectContent",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetObjectContent");
-
+                transformer =
+                        GetObjectContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetObjectContentRequest, GetObjectContentResponse>
                 handlerToUse = handler;
 
@@ -2358,14 +2427,15 @@ public class DevopsAsyncClient implements DevopsAsync {
         final GetProjectRequest interceptedRequest = GetProjectConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetProjectConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetProject",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/GetProject");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse>
-                transformer = GetProjectConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetProject",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/GetProject");
-
+                transformer =
+                        GetProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handlerToUse =
                 handler;
 
@@ -2399,14 +2469,14 @@ public class DevopsAsyncClient implements DevopsAsync {
         final GetRefRequest interceptedRequest = GetRefConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRefConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetRef",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRef");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRefResponse>
-                transformer = GetRefConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetRef",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRef");
-
+                transformer = GetRefConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetRefRequest, GetRefResponse> handlerToUse = handler;
 
         java.util.function.Function<
@@ -2441,14 +2511,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetRepoFileDiffConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRepoFileDiffConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetRepoFileDiff",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileDiff");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRepoFileDiffResponse>
-                transformer = GetRepoFileDiffConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetRepoFileDiff",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileDiff");
-
+                transformer =
+                        GetRepoFileDiffConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetRepoFileDiffRequest, GetRepoFileDiffResponse>
                 handlerToUse = handler;
 
@@ -2485,14 +2557,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetRepoFileLinesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRepoFileLinesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetRepoFileLines",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileLines");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRepoFileLinesResponse>
-                transformer = GetRepoFileLinesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetRepoFileLines",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileLines");
-
+                transformer =
+                        GetRepoFileLinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetRepoFileLinesRequest, GetRepoFileLinesResponse>
                 handlerToUse = handler;
 
@@ -2528,14 +2602,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRepositoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepository");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRepositoryResponse>
-                transformer = GetRepositoryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepository");
-
+                transformer =
+                        GetRepositoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetRepositoryRequest, GetRepositoryResponse>
                 handlerToUse = handler;
 
@@ -2584,15 +2659,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetRepositoryArchiveContentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRepositoryArchiveContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetRepositoryArchiveContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryArchiveContent");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetRepositoryArchiveContentResponse>
-                transformer = GetRepositoryArchiveContentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetRepositoryArchiveContent",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryArchiveContent");
-
+                transformer =
+                        GetRepositoryArchiveContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetRepositoryArchiveContentRequest, GetRepositoryArchiveContentResponse>
                 handlerToUse = handler;
@@ -2631,15 +2708,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetRepositoryFileLinesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRepositoryFileLinesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetRepositoryFileLines",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryFileLines");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetRepositoryFileLinesResponse>
-                transformer = GetRepositoryFileLinesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetRepositoryFileLines",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryFileLines");
-
+                transformer =
+                        GetRepositoryFileLinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetRepositoryFileLinesRequest, GetRepositoryFileLinesResponse>
                 handlerToUse = handler;
@@ -2675,14 +2754,15 @@ public class DevopsAsyncClient implements DevopsAsync {
         final GetTriggerRequest interceptedRequest = GetTriggerConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTriggerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetTrigger",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/GetTrigger");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTriggerResponse>
-                transformer = GetTriggerConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetTrigger",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/GetTrigger");
-
+                transformer =
+                        GetTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTriggerRequest, GetTriggerResponse> handlerToUse =
                 handler;
 
@@ -2719,14 +2799,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/GetWorkRequest");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "GetWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/GetWorkRequest");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -2762,14 +2843,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListAuthorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAuthorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListAuthors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListAuthors");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAuthorsResponse>
-                transformer = ListAuthorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListAuthors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListAuthors");
-
+                transformer =
+                        ListAuthorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListAuthorsRequest, ListAuthorsResponse>
                 handlerToUse = handler;
 
@@ -2806,15 +2888,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListBuildPipelineStagesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBuildPipelineStagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListBuildPipelineStages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStageSummary/ListBuildPipelineStages");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListBuildPipelineStagesResponse>
-                transformer = ListBuildPipelineStagesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListBuildPipelineStages",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStageSummary/ListBuildPipelineStages");
-
+                transformer =
+                        ListBuildPipelineStagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListBuildPipelineStagesRequest, ListBuildPipelineStagesResponse>
                 handlerToUse = handler;
@@ -2852,14 +2936,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListBuildPipelinesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBuildPipelinesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListBuildPipelines",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineCollection/ListBuildPipelines");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBuildPipelinesResponse>
-                transformer = ListBuildPipelinesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListBuildPipelines",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineCollection/ListBuildPipelines");
-
+                transformer =
+                        ListBuildPipelinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListBuildPipelinesRequest, ListBuildPipelinesResponse>
                 handlerToUse = handler;
 
@@ -2895,14 +2981,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListBuildRunsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBuildRunsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListBuildRuns",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRunSummary/ListBuildRuns");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBuildRunsResponse>
-                transformer = ListBuildRunsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListBuildRuns",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRunSummary/ListBuildRuns");
-
+                transformer =
+                        ListBuildRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListBuildRunsRequest, ListBuildRunsResponse>
                 handlerToUse = handler;
 
@@ -2939,14 +3026,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListCommitDiffsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCommitDiffsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListCommitDiffs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListCommitDiffs");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCommitDiffsResponse>
-                transformer = ListCommitDiffsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListCommitDiffs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListCommitDiffs");
-
+                transformer =
+                        ListCommitDiffsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListCommitDiffsRequest, ListCommitDiffsResponse>
                 handlerToUse = handler;
 
@@ -2982,14 +3071,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListCommitsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCommitsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListCommits",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryCommit/ListCommits");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCommitsResponse>
-                transformer = ListCommitsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListCommits",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryCommit/ListCommits");
-
+                transformer =
+                        ListCommitsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListCommitsRequest, ListCommitsResponse>
                 handlerToUse = handler;
 
@@ -3026,14 +3116,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListConnectionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListConnectionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListConnections",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ConnectionCollection/ListConnections");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
-                transformer = ListConnectionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListConnections",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ConnectionCollection/ListConnections");
-
+                transformer =
+                        ListConnectionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListConnectionsRequest, ListConnectionsResponse>
                 handlerToUse = handler;
 
@@ -3070,15 +3162,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListDeployArtifactsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDeployArtifactsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListDeployArtifacts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifactSummary/ListDeployArtifacts");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDeployArtifactsResponse>
-                transformer = ListDeployArtifactsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListDeployArtifacts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifactSummary/ListDeployArtifacts");
-
+                transformer =
+                        ListDeployArtifactsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDeployArtifactsRequest, ListDeployArtifactsResponse>
                 handlerToUse = handler;
@@ -3116,15 +3210,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListDeployEnvironmentsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDeployEnvironmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListDeployEnvironments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironmentSummary/ListDeployEnvironments");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDeployEnvironmentsResponse>
-                transformer = ListDeployEnvironmentsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListDeployEnvironments",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironmentSummary/ListDeployEnvironments");
-
+                transformer =
+                        ListDeployEnvironmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDeployEnvironmentsRequest, ListDeployEnvironmentsResponse>
                 handlerToUse = handler;
@@ -3162,15 +3258,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListDeployPipelinesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDeployPipelinesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListDeployPipelines",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipelineSummary/ListDeployPipelines");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDeployPipelinesResponse>
-                transformer = ListDeployPipelinesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListDeployPipelines",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipelineSummary/ListDeployPipelines");
-
+                transformer =
+                        ListDeployPipelinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDeployPipelinesRequest, ListDeployPipelinesResponse>
                 handlerToUse = handler;
@@ -3208,14 +3306,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListDeployStagesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDeployStagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListDeployStages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStageSummary/ListDeployStages");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDeployStagesResponse>
-                transformer = ListDeployStagesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListDeployStages",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStageSummary/ListDeployStages");
-
+                transformer =
+                        ListDeployStagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDeployStagesRequest, ListDeployStagesResponse>
                 handlerToUse = handler;
 
@@ -3252,14 +3352,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListDeploymentsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDeploymentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListDeployments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeploymentSummary/ListDeployments");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
-                transformer = ListDeploymentsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListDeployments",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeploymentSummary/ListDeployments");
-
+                transformer =
+                        ListDeploymentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResponse>
                 handlerToUse = handler;
 
@@ -3296,14 +3398,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListMirrorRecordsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListMirrorRecordsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListMirrorRecords",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListMirrorRecords");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListMirrorRecordsResponse>
-                transformer = ListMirrorRecordsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListMirrorRecords",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListMirrorRecords");
-
+                transformer =
+                        ListMirrorRecordsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListMirrorRecordsRequest, ListMirrorRecordsResponse>
                 handlerToUse = handler;
 
@@ -3338,14 +3442,15 @@ public class DevopsAsyncClient implements DevopsAsync {
         final ListPathsRequest interceptedRequest = ListPathsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPathsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListPaths",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryPathSummary/ListPaths");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPathsResponse>
-                transformer = ListPathsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListPaths",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryPathSummary/ListPaths");
-
+                transformer =
+                        ListPathsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListPathsRequest, ListPathsResponse> handlerToUse =
                 handler;
 
@@ -3380,14 +3485,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListProjectsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListProjectsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListProjects",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectSummary/ListProjects");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
-                transformer = ListProjectsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListProjects",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectSummary/ListProjects");
-
+                transformer =
+                        ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
                 handlerToUse = handler;
 
@@ -3422,14 +3528,14 @@ public class DevopsAsyncClient implements DevopsAsync {
         final ListRefsRequest interceptedRequest = ListRefsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRefsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListRefs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryRef/ListRefs");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRefsResponse>
-                transformer = ListRefsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListRefs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryRef/ListRefs");
-
+                transformer = ListRefsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRefsRequest, ListRefsResponse> handlerToUse =
                 handler;
 
@@ -3465,14 +3571,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListRepositoriesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRepositoriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListRepositories",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListRepositories");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRepositoriesResponse>
-                transformer = ListRepositoriesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListRepositories",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListRepositories");
-
+                transformer =
+                        ListRepositoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResponse>
                 handlerToUse = handler;
 
@@ -3508,14 +3616,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListTriggersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTriggersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListTriggers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/TriggerCollection/ListTriggers");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTriggersResponse>
-                transformer = ListTriggersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListTriggers",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/TriggerCollection/ListTriggers");
-
+                transformer =
+                        ListTriggersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTriggersRequest, ListTriggersResponse>
                 handlerToUse = handler;
 
@@ -3552,15 +3661,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestError/ListWorkRequestErrors");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListWorkRequestErrors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestError/ListWorkRequestErrors");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -3598,15 +3709,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestLogEntry/ListWorkRequestLogs");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListWorkRequestLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestLogEntry/ListWorkRequestLogs");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -3644,14 +3757,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/ListWorkRequests");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "ListWorkRequests",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/ListWorkRequests");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -3688,14 +3803,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 MirrorRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 MirrorRepositoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "MirrorRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/MirrorRepository");
         final com.google.common.base.Function<javax.ws.rs.core.Response, MirrorRepositoryResponse>
-                transformer = MirrorRepositoryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "MirrorRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/MirrorRepository");
-
+                transformer =
+                        MirrorRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<MirrorRepositoryRequest, MirrorRepositoryResponse>
                 handlerToUse = handler;
 
@@ -3732,15 +3849,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 PutRepositoryRefConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 PutRepositoryRefConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PutRepositoryRefResponse>
-                transformer = PutRepositoryRefConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "PutRepositoryRef",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/PutRepositoryRef");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "PutRepositoryRef",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/PutRepositoryRef");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, PutRepositoryRefResponse>
+                transformer =
+                        PutRepositoryRefConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<PutRepositoryRefRequest, PutRepositoryRefResponse>
                 handlerToUse = handler;
 
@@ -3782,15 +3901,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateBuildPipelineConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateBuildPipelineConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "UpdateBuildPipeline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/UpdateBuildPipeline");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateBuildPipelineResponse>
-                transformer = UpdateBuildPipelineConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "UpdateBuildPipeline",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/UpdateBuildPipeline");
-
+                transformer =
+                        UpdateBuildPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateBuildPipelineRequest, UpdateBuildPipelineResponse>
                 handlerToUse = handler;
@@ -3833,15 +3954,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateBuildPipelineStageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateBuildPipelineStageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "UpdateBuildPipelineStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/UpdateBuildPipelineStage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateBuildPipelineStageResponse>
-                transformer = UpdateBuildPipelineStageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "UpdateBuildPipelineStage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/UpdateBuildPipelineStage");
-
+                transformer =
+                        UpdateBuildPipelineStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateBuildPipelineStageRequest, UpdateBuildPipelineStageResponse>
                 handlerToUse = handler;
@@ -3884,14 +4007,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateBuildRunConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateBuildRunConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "UpdateBuildRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/UpdateBuildRun");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBuildRunResponse>
-                transformer = UpdateBuildRunConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "UpdateBuildRun",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/UpdateBuildRun");
-
+                transformer =
+                        UpdateBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateBuildRunRequest, UpdateBuildRunResponse>
                 handlerToUse = handler;
 
@@ -3933,14 +4057,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateConnectionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateConnectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "UpdateConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/UpdateConnection");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
-                transformer = UpdateConnectionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "UpdateConnection",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/UpdateConnection");
-
+                transformer =
+                        UpdateConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResponse>
                 handlerToUse = handler;
 
@@ -3982,15 +4108,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateDeployArtifactConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDeployArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "UpdateDeployArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/UpdateDeployArtifact");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDeployArtifactResponse>
-                transformer = UpdateDeployArtifactConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "UpdateDeployArtifact",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/UpdateDeployArtifact");
-
+                transformer =
+                        UpdateDeployArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDeployArtifactRequest, UpdateDeployArtifactResponse>
                 handlerToUse = handler;
@@ -4033,15 +4161,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateDeployEnvironmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDeployEnvironmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "UpdateDeployEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/UpdateDeployEnvironment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDeployEnvironmentResponse>
-                transformer = UpdateDeployEnvironmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "UpdateDeployEnvironment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/UpdateDeployEnvironment");
-
+                transformer =
+                        UpdateDeployEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDeployEnvironmentRequest, UpdateDeployEnvironmentResponse>
                 handlerToUse = handler;
@@ -4084,15 +4214,17 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateDeployPipelineConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDeployPipelineConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "UpdateDeployPipeline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/UpdateDeployPipeline");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDeployPipelineResponse>
-                transformer = UpdateDeployPipelineConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "UpdateDeployPipeline",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/UpdateDeployPipeline");
-
+                transformer =
+                        UpdateDeployPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDeployPipelineRequest, UpdateDeployPipelineResponse>
                 handlerToUse = handler;
@@ -4135,14 +4267,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateDeployStageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDeployStageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "UpdateDeployStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/UpdateDeployStage");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeployStageResponse>
-                transformer = UpdateDeployStageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "UpdateDeployStage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/UpdateDeployStage");
-
+                transformer =
+                        UpdateDeployStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateDeployStageRequest, UpdateDeployStageResponse>
                 handlerToUse = handler;
 
@@ -4184,14 +4318,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDeploymentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "UpdateDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/UpdateDeployment");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
-                transformer = UpdateDeploymentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "UpdateDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/UpdateDeployment");
-
+                transformer =
+                        UpdateDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateDeploymentRequest, UpdateDeploymentResponse>
                 handlerToUse = handler;
 
@@ -4232,14 +4368,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateProjectConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateProjectConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "UpdateProject",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/UpdateProject");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
-                transformer = UpdateProjectConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "UpdateProject",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/UpdateProject");
-
+                transformer =
+                        UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
                 handlerToUse = handler;
 
@@ -4281,14 +4418,16 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateRepositoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "UpdateRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/UpdateRepository");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRepositoryResponse>
-                transformer = UpdateRepositoryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "UpdateRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/UpdateRepository");
-
+                transformer =
+                        UpdateRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateRepositoryRequest, UpdateRepositoryResponse>
                 handlerToUse = handler;
 
@@ -4329,14 +4468,15 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateTriggerConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateTriggerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "UpdateTrigger",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/UpdateTrigger");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTriggerResponse>
-                transformer = UpdateTriggerConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Devops",
-                "UpdateTrigger",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/UpdateTrigger");
-
+                transformer =
+                        UpdateTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateTriggerRequest, UpdateTriggerResponse>
                 handlerToUse = handler;
 

@@ -4,13 +4,10 @@
  */
 package com.oracle.bmc.io.internal;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-@Slf4j
 /**
  * A wrapper around an {@link InputStream} that turns the {@code close} method into a no-op, and requires the calling
  * of the {@code doClose} method instead.
@@ -19,6 +16,8 @@ import java.io.InputStream;
  * for retries.
  */
 public final class KeepOpenInputStream extends FilterInputStream {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(KeepOpenInputStream.class);
 
     public volatile InputStream innerStream;
 

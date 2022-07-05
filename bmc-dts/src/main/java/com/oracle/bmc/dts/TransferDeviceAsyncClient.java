@@ -399,13 +399,18 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
                 CreateTransferDeviceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTransferDeviceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferDevice",
+                        "CreateTransferDevice",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateTransferDeviceResponse>
-                transformer = CreateTransferDeviceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferDevice", "CreateTransferDevice", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        CreateTransferDeviceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTransferDeviceRequest, CreateTransferDeviceResponse>
                 handlerToUse = handler;
@@ -448,12 +453,17 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
                 DeleteTransferDeviceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteTransferDeviceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferDevice",
+                        "DeleteTransferDevice",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteTransferDeviceResponse>
-                transformer = DeleteTransferDeviceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferDevice", "DeleteTransferDevice", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteTransferDeviceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteTransferDeviceRequest, DeleteTransferDeviceResponse>
                 handlerToUse = handler;
@@ -491,11 +501,13 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
                 GetTransferDeviceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTransferDeviceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferDevice", "GetTransferDevice", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTransferDeviceResponse>
-                transformer = GetTransferDeviceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferDevice", "GetTransferDevice", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetTransferDeviceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTransferDeviceRequest, GetTransferDeviceResponse>
                 handlerToUse = handler;
 
@@ -532,12 +544,14 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
                 ListTransferDevicesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTransferDevicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferDevice", "ListTransferDevices", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTransferDevicesResponse>
-                transformer = ListTransferDevicesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferDevice", "ListTransferDevices", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListTransferDevicesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListTransferDevicesRequest, ListTransferDevicesResponse>
                 handlerToUse = handler;
@@ -575,12 +589,17 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
                 UpdateTransferDeviceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateTransferDeviceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferDevice",
+                        "UpdateTransferDevice",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateTransferDeviceResponse>
-                transformer = UpdateTransferDeviceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "TransferDevice", "UpdateTransferDevice", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        UpdateTransferDeviceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTransferDeviceRequest, UpdateTransferDeviceResponse>
                 handlerToUse = handler;

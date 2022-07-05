@@ -6,7 +6,6 @@ package com.oracle.bmc.http.signing.internal;
 
 import java.security.interfaces.RSAPrivateKey;
 import java.util.Map;
-
 import com.google.common.base.Optional;
 import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableMap;
@@ -18,8 +17,6 @@ import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerFactory;
 import com.oracle.bmc.http.signing.SigningStrategy;
 
-import lombok.RequiredArgsConstructor;
-
 /**
  * Factory class to create RequestSigner instances. Takes care of setting up the appropriate suppliers
  * based on the cacheability of the credentials (indicated by {@link AuthCachingPolicy}.  By default,
@@ -28,7 +25,6 @@ import lombok.RequiredArgsConstructor;
  * This factory supports authentication providers that inherit from
  * {@link BasicAuthenticationDetailsProvider}.
  */
-@RequiredArgsConstructor
 public class DefaultRequestSignerFactory implements RequestSignerFactory {
     private final SigningStrategy signingStrategy;
 
@@ -127,5 +123,10 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
             builder.put(s, new DefaultRequestSignerFactory(s));
         }
         return builder.build();
+    }
+
+    @java.beans.ConstructorProperties({"signingStrategy"})
+    public DefaultRequestSignerFactory(final SigningStrategy signingStrategy) {
+        this.signingStrategy = signingStrategy;
     }
 }

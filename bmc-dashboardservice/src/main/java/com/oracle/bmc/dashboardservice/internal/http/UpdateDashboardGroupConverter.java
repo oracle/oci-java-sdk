@@ -69,6 +69,13 @@ public class UpdateDashboardGroupConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.dashboardservice.responses.UpdateDashboardGroupResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dashboardservice.responses.UpdateDashboardGroupResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.dashboardservice.responses.UpdateDashboardGroupResponse>
@@ -83,16 +90,26 @@ public class UpdateDashboardGroupConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.dashboardservice.responses.UpdateDashboardGroupResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.dashboardservice.model
                                                                 .DashboardGroup>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.dashboardservice.model
-                                                                        .DashboardGroup
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.dashboardservice.model
+                                                                    .DashboardGroup
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.dashboardservice.model
+                                                                    .DashboardGroup
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.dashboardservice.model

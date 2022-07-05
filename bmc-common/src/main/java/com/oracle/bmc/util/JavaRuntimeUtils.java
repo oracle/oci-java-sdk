@@ -4,17 +4,15 @@
  */
 package com.oracle.bmc.util;
 
+import com.oracle.bmc.InternalSdk;
+import org.slf4j.Logger;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.oracle.bmc.InternalSdk;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Various runtime utils.
  */
-@Slf4j
 @InternalSdk
 public class JavaRuntimeUtils {
     // constant names are taken from the JPE so its easier to match
@@ -22,6 +20,7 @@ public class JavaRuntimeUtils {
     private static final String PRE = "[a-zA-Z0-9]+";
     private static final String JEP223 = String.format("^%s(-%s)?$", VNUM, PRE);
     private static final Pattern JEP223_PATTERN = Pattern.compile(JEP223);
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(JavaRuntimeUtils.class);
 
     /**
      * JRE version as interpreted by the SDK.

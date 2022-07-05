@@ -4,9 +4,6 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import java.net.URI;
-import java.time.Duration;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.annotations.VisibleForTesting;
@@ -23,10 +20,7 @@ import com.oracle.bmc.http.internal.WithHeaders;
 import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
-
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 import javax.annotation.concurrent.Immutable;
 import javax.security.auth.RefreshFailedException;
@@ -34,10 +28,13 @@ import javax.security.auth.Refreshable;
 import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
+import java.net.URI;
 import java.security.KeyPair;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPublicKey;
+import java.time.Duration;
+import java.util.List;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -46,15 +43,15 @@ import java.util.Set;
  * This class gets a security token from the auth service by signing the request with a PKI issued leaf certificate,
  * passing along a temporary public key that is bounded to the the security token, and the leaf certificate.
  */
-@Slf4j
 public class X509FederationClient implements FederationClient, ProvidesConfigurableRefresh {
     private static final Function<Response, WithHeaders<SecurityToken>> SECURITY_TOKEN_FN =
             new ResponseConversionFunctionFactory().create(SecurityToken.class);
     private static final String DEFAULT_PURPOSE = "DEFAULT";
     private static final String DEFAULT_FINGERPRINT = "SHA256";
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(X509FederationClient.class);
 
-    @Getter private final X509CertificateSupplier leafCertificateSupplier;
-    @Getter private String tenancyId;
+    private final X509CertificateSupplier leafCertificateSupplier;
+    private String tenancyId;
     private final Set<X509CertificateSupplier> intermediateCertificateSuppliers;
     private final SessionKeySupplier sessionKeySupplier;
     private final String purpose;
@@ -66,7 +63,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
     private volatile SecurityTokenAdapter securityTokenAdapter = null;
 
     /**
-     * Same as {@link #X509FederationClient(String, String, X509CertificateSupplier, SessionKeySupplier, Set, ClientConfigurator, List, String)}
+     * Same as {@link #X509FederationClient(String, String, X509CertificateSupplier, SessionKeySupplier, Set, ClientConfigurator, List, CircuitBreakerConfiguration, String)}
      * but with 'purpose' set to {@link #DEFAULT_PURPOSE}.
      */
     public X509FederationClient(
@@ -328,10 +325,16 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
         return refreshAndGetSecurityTokenInner(false, Optional.of(time));
     }
 
-    @EqualsAndHashCode(callSuper = false)
+    public X509CertificateSupplier getLeafCertificateSupplier() {
+        return this.leafCertificateSupplier;
+    }
+
+    public String getTenancyId() {
+        return this.tenancyId;
+    }
+
     @Immutable
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @Getter
     public static class X509FederationRequest {
         private final Set<String> intermediateCertificates;
         private final String certificate;
@@ -350,6 +353,87 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
             this.intermediateCertificates = intermediateCertificates;
             this.purpose = purpose;
             this.fingerprintAlgorithm = fingerprintAlgorithm;
+        }
+
+        public Set<String> getIntermediateCertificates() {
+            return this.intermediateCertificates;
+        }
+
+        public String getCertificate() {
+            return this.certificate;
+        }
+
+        public String getPublicKey() {
+            return this.publicKey;
+        }
+
+        public String getPurpose() {
+            return this.purpose;
+        }
+
+        public String getFingerprintAlgorithm() {
+            return this.fingerprintAlgorithm;
+        }
+
+        public boolean equals(final Object o) {
+            if (o == this) return true;
+            if (!(o instanceof X509FederationRequest)) return false;
+            final X509FederationRequest other = (X509FederationRequest) o;
+            if (!other.canEqual((Object) this)) return false;
+            final Object this$intermediateCertificates = this.getIntermediateCertificates();
+            final Object other$intermediateCertificates = other.getIntermediateCertificates();
+            if (this$intermediateCertificates == null
+                    ? other$intermediateCertificates != null
+                    : !this$intermediateCertificates.equals(other$intermediateCertificates))
+                return false;
+            final Object this$certificate = this.getCertificate();
+            final Object other$certificate = other.getCertificate();
+            if (this$certificate == null
+                    ? other$certificate != null
+                    : !this$certificate.equals(other$certificate)) return false;
+            final Object this$publicKey = this.getPublicKey();
+            final Object other$publicKey = other.getPublicKey();
+            if (this$publicKey == null
+                    ? other$publicKey != null
+                    : !this$publicKey.equals(other$publicKey)) return false;
+            final Object this$purpose = this.getPurpose();
+            final Object other$purpose = other.getPurpose();
+            if (this$purpose == null ? other$purpose != null : !this$purpose.equals(other$purpose))
+                return false;
+            final Object this$fingerprintAlgorithm = this.getFingerprintAlgorithm();
+            final Object other$fingerprintAlgorithm = other.getFingerprintAlgorithm();
+            if (this$fingerprintAlgorithm == null
+                    ? other$fingerprintAlgorithm != null
+                    : !this$fingerprintAlgorithm.equals(other$fingerprintAlgorithm)) return false;
+            return true;
+        }
+
+        protected boolean canEqual(final Object other) {
+            return other instanceof X509FederationRequest;
+        }
+
+        public int hashCode() {
+            final int PRIME = 59;
+            int result = 1;
+            final Object $intermediateCertificates = this.getIntermediateCertificates();
+            result =
+                    result * PRIME
+                            + ($intermediateCertificates == null
+                                    ? 43
+                                    : $intermediateCertificates.hashCode());
+            final Object $certificate = this.getCertificate();
+            result = result * PRIME + ($certificate == null ? 43 : $certificate.hashCode());
+            final Object $publicKey = this.getPublicKey();
+            result = result * PRIME + ($publicKey == null ? 43 : $publicKey.hashCode());
+            final Object $purpose = this.getPurpose();
+            result = result * PRIME + ($purpose == null ? 43 : $purpose.hashCode());
+            final Object $fingerprintAlgorithm = this.getFingerprintAlgorithm();
+            result =
+                    result * PRIME
+                            + ($fingerprintAlgorithm == null
+                                    ? 43
+                                    : $fingerprintAlgorithm.hashCode());
+            return result;
         }
     }
 

@@ -7,6 +7,10 @@ package com.oracle.bmc.util;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import com.oracle.bmc.io.internal.WrappedByteArrayInputStream;
+import com.oracle.bmc.io.internal.WrappedFileInputStream;
+import org.slf4j.Logger;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -19,19 +23,14 @@ import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import com.oracle.bmc.io.internal.WrappedByteArrayInputStream;
-import com.oracle.bmc.io.internal.WrappedFileInputStream;
-
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Utility methods to work with streams.
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-@Slf4j
 public class StreamUtils {
+
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(StreamUtils.class);
+
+    private StreamUtils() {}
 
     /**
      * Close a stream without raising an exception.

@@ -7,14 +7,14 @@ package com.oracle.bmc.model.internal;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.http.internal.RestClientFactory;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Nonnull;
 
 /**
  * A helper class to support json related operations
  */
-@Slf4j
 public class JsonConverter {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(JsonConverter.class);
 
     /**
      * Object mapper to support jackson json operations
@@ -26,7 +26,13 @@ public class JsonConverter {
     /**
      * Get desired object from the json provided
      */
-    public static <T> T jsonBlobToObject(@NonNull String jsonBlob, @NonNull Class<T> clazz) {
+    public static <T> T jsonBlobToObject(@Nonnull String jsonBlob, @Nonnull Class<T> clazz) {
+        if (jsonBlob == null) {
+            throw new java.lang.NullPointerException("jsonBlob is marked non-null but is null");
+        }
+        if (clazz == null) {
+            throw new java.lang.NullPointerException("clazz is marked non-null but is null");
+        }
         T object = null;
         try {
             object = mapper.readValue(jsonBlob, clazz);
@@ -39,7 +45,10 @@ public class JsonConverter {
     /**
      * Get json string from the object param
      */
-    public static <T> String objectToJsonBlob(@NonNull T object) {
+    public static <T> String objectToJsonBlob(@Nonnull T object) {
+        if (object == null) {
+            throw new java.lang.NullPointerException("object is marked non-null but is null");
+        }
         String jsonBlob = null;
         try {
             jsonBlob = mapper.writeValueAsString(object);

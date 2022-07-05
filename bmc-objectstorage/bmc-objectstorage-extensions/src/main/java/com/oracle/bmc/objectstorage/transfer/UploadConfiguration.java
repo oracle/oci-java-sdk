@@ -7,19 +7,14 @@ package com.oracle.bmc.objectstorage.transfer;
 import com.oracle.bmc.io.DuplicatableInputStream;
 
 import com.oracle.bmc.util.internal.Validate;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * The configuration for the {@code UploadManager}.  For more information, please refer to the online documentation
  * found <a href="https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm">here</a>.
  */
-@Slf4j
-@Getter
-@ToString
 public class UploadConfiguration {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(UploadConfiguration.class);
     /*
      * Max supported sizes are specified @
      * https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm
@@ -87,7 +82,6 @@ public class UploadConfiguration {
     }
 
     // Explicit @Builder on constructor so we can enforce default values.
-    @Builder
     private UploadConfiguration(
             Integer minimumLengthForMultipartUpload,
             Integer lengthPerUploadPart,
@@ -126,6 +120,14 @@ public class UploadConfiguration {
     }
 
     public static class UploadConfigurationBuilder {
+        private Integer minimumLengthForMultipartUpload;
+        private Integer lengthPerUploadPart;
+        private Boolean enforceMd5BeforeUpload;
+        private Boolean enforceMd5BeforeMultipartUpload;
+        private Boolean allowMultipartUploads;
+        private Boolean allowParallelUploads;
+        private Boolean disableAutoAbort;
+
         /**
          * Sets the enforce MD5 flag for both {@link #enforceMd5BeforeUpload(Boolean)} and
          * {@link #enforceMd5BeforeMultipartUpload(Boolean)} (Boolean)} in a single call.
@@ -164,9 +166,203 @@ public class UploadConfiguration {
             this.lengthPerUploadPart = minimumLengthPerUploadPart;
             return this;
         }
+
+        UploadConfigurationBuilder() {}
+
+        /**
+         * @return {@code this}.
+         */
+        public UploadConfiguration.UploadConfigurationBuilder minimumLengthForMultipartUpload(
+                final Integer minimumLengthForMultipartUpload) {
+            this.minimumLengthForMultipartUpload = minimumLengthForMultipartUpload;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public UploadConfiguration.UploadConfigurationBuilder lengthPerUploadPart(
+                final Integer lengthPerUploadPart) {
+            this.lengthPerUploadPart = lengthPerUploadPart;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public UploadConfiguration.UploadConfigurationBuilder enforceMd5BeforeUpload(
+                final Boolean enforceMd5BeforeUpload) {
+            this.enforceMd5BeforeUpload = enforceMd5BeforeUpload;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public UploadConfiguration.UploadConfigurationBuilder enforceMd5BeforeMultipartUpload(
+                final Boolean enforceMd5BeforeMultipartUpload) {
+            this.enforceMd5BeforeMultipartUpload = enforceMd5BeforeMultipartUpload;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public UploadConfiguration.UploadConfigurationBuilder allowMultipartUploads(
+                final Boolean allowMultipartUploads) {
+            this.allowMultipartUploads = allowMultipartUploads;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public UploadConfiguration.UploadConfigurationBuilder allowParallelUploads(
+                final Boolean allowParallelUploads) {
+            this.allowParallelUploads = allowParallelUploads;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public UploadConfiguration.UploadConfigurationBuilder disableAutoAbort(
+                final Boolean disableAutoAbort) {
+            this.disableAutoAbort = disableAutoAbort;
+            return this;
+        }
+
+        public UploadConfiguration build() {
+            return new UploadConfiguration(
+                    this.minimumLengthForMultipartUpload,
+                    this.lengthPerUploadPart,
+                    this.enforceMd5BeforeUpload,
+                    this.enforceMd5BeforeMultipartUpload,
+                    this.allowMultipartUploads,
+                    this.allowParallelUploads,
+                    this.disableAutoAbort);
+        }
+
+        @java.lang.Override
+        public java.lang.String toString() {
+            return "UploadConfiguration.UploadConfigurationBuilder(minimumLengthForMultipartUpload="
+                    + this.minimumLengthForMultipartUpload
+                    + ", lengthPerUploadPart="
+                    + this.lengthPerUploadPart
+                    + ", enforceMd5BeforeUpload="
+                    + this.enforceMd5BeforeUpload
+                    + ", enforceMd5BeforeMultipartUpload="
+                    + this.enforceMd5BeforeMultipartUpload
+                    + ", allowMultipartUploads="
+                    + this.allowMultipartUploads
+                    + ", allowParallelUploads="
+                    + this.allowParallelUploads
+                    + ", disableAutoAbort="
+                    + this.disableAutoAbort
+                    + ")";
+        }
     }
 
     private static <T> T getOrDefault(T value, T defaultValue) {
         return (value == null) ? defaultValue : value;
+    }
+
+    public static UploadConfiguration.UploadConfigurationBuilder builder() {
+        return new UploadConfiguration.UploadConfigurationBuilder();
+    }
+
+    /**
+     * Minimum length in MiB before an upload is performed using multi-part upload, default 128.
+     * <p>
+     * Note: Accepted values: 0 - 51200.  Using a large value is not recommended.
+     */
+    public long getMinimumLengthForMultipartUpload() {
+        return this.minimumLengthForMultipartUpload;
+    }
+
+    /**
+     * Length in MiB for each part of a multi-part upload (except the last), default 128.
+     * <p>
+     * Accepted values: 1 - 51200.  Using a large value is not recommended.
+     */
+    public long getLengthPerUploadPart() {
+        return this.lengthPerUploadPart;
+    }
+
+    /**
+     * Maximum number of parts to split an upload into, default 10,000 (max allowable parts by Object Storage Service).
+     * <p>
+     * Note: Accepted values: 1 - 10000
+     * @deprecated no longer configurable as maxPartsForMultipartUpload is always configured as the default of 10,000.
+     * Use {@link #MAXIMUM_NUM_ALLOWED_PARTS instead}
+     */
+    @java.lang.Deprecated
+    public int getMaxPartsForMultipartUpload() {
+        return this.maxPartsForMultipartUpload;
+    }
+
+    /**
+     * Flag to indicate that MD5 should be set on every PutObject call.  If not provided, the SDK will calculate it before
+     * uploading the object. Default is false.
+     * <p>
+     * Note, having the SDK calculate it could lead to OutOfMemory exceptions if the stream cannot be duplicated,
+     * ie does not implement {@link DuplicatableInputStream}, as the entire stream will have to be read into memory.
+     */
+    public boolean isEnforceMd5BeforeUpload() {
+        return this.enforceMd5BeforeUpload;
+    }
+
+    /**
+     * Flag to indicate that MD5 should be set on every part of a multi-part upload.  The SDK will calculate the MD5 before uploading
+     * for each part it creates.  Default is false.
+     * <p>
+     * Note, having the SDK calculate it could lead to OutOfMemory exceptions if the source stream for the part cannot be duplicated,
+     * ie does not implement {@link DuplicatableInputStream}, as the entire part will have to be read into memory.
+     */
+    public boolean isEnforceMd5BeforeMultipartUpload() {
+        return this.enforceMd5BeforeMultipartUpload;
+    }
+
+    /**
+     * Flag to indicate that multi-part uploads can be used.  Default is true.
+     */
+    public boolean isAllowMultipartUploads() {
+        return this.allowMultipartUploads;
+    }
+
+    /**
+     * Flag to indicate that multi-part uploads can upload individual parts in parallel if possible.  Default is true.
+     */
+    public boolean isAllowParallelUploads() {
+        return this.allowParallelUploads;
+    }
+
+    /**
+     * Flag to indicate that uploads that fail should not be automatically aborted (client is reponsible for always cleaning up
+     * failed uploads themselves).  Default is false.
+     */
+    public boolean isDisableAutoAbort() {
+        return this.disableAutoAbort;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "UploadConfiguration(minimumLengthForMultipartUpload="
+                + this.getMinimumLengthForMultipartUpload()
+                + ", lengthPerUploadPart="
+                + this.getLengthPerUploadPart()
+                + ", maxPartsForMultipartUpload="
+                + this.getMaxPartsForMultipartUpload()
+                + ", enforceMd5BeforeUpload="
+                + this.isEnforceMd5BeforeUpload()
+                + ", enforceMd5BeforeMultipartUpload="
+                + this.isEnforceMd5BeforeMultipartUpload()
+                + ", allowMultipartUploads="
+                + this.isAllowMultipartUploads()
+                + ", allowParallelUploads="
+                + this.isAllowParallelUploads()
+                + ", disableAutoAbort="
+                + this.isDisableAutoAbort()
+                + ")";
     }
 }

@@ -4,35 +4,34 @@
  */
 package com.oracle.bmc.auth;
 
+import com.google.common.base.Preconditions;
+import com.google.common.base.Supplier;
+import com.oracle.bmc.ConfigFileReader;
+import com.oracle.bmc.ConfigFileReader.ConfigFile;
+import com.oracle.bmc.Realm;
+import com.oracle.bmc.Region;
+import com.oracle.bmc.auth.internal.ConfigFileDelegationTokenUtils;
+import com.oracle.bmc.auth.internal.DelegationTokenConfigurator;
+import com.oracle.bmc.http.ClientConfigurator;
+import com.oracle.bmc.auth.internal.ConfigFileDelegationTokenUtils;
+import com.oracle.bmc.util.internal.StringUtils;
+import org.slf4j.Logger;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.common.base.Preconditions;
-import com.google.common.base.Supplier;
-import com.oracle.bmc.ConfigFileReader;
-import com.oracle.bmc.Realm;
-import com.oracle.bmc.Region;
-import com.oracle.bmc.ConfigFileReader.ConfigFile;
-
-import com.oracle.bmc.auth.internal.DelegationTokenConfigurator;
-import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.auth.internal.ConfigFileDelegationTokenUtils;
-import com.oracle.bmc.util.internal.StringUtils;
-import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Implementation of {@link AuthenticationDetailsProvider} that uses a standard
  * OCI configuration file as an input.
  */
-@ToString
-@Slf4j
 public class ConfigFileAuthenticationDetailsProvider
         implements AuthenticationDetailsProvider, RegionProvider, ProvidesClientConfigurators {
 
     private final static String OCI_REGION_ENV_VAR_NAME = "OCI_REGION";
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ConfigFileAuthenticationDetailsProvider.class);
     private final BasicConfigFileAuthenticationProvider delegate;
     private final Region region;
     private final static String CONFIG_FILE_DEBUG_INFORMATION_LOG =
@@ -169,6 +168,14 @@ public class ConfigFileAuthenticationDetailsProvider
      */
     public String getPemFilePath() {
         return this.delegate.getPemFilePath();
+    }
+
+    public String toString() {
+        return "ConfigFileAuthenticationDetailsProvider(delegate="
+                + this.delegate
+                + ", region="
+                + this.getRegion()
+                + ")";
     }
 
     private static class ConfigFileSimpleAuthenticationDetailsProvider

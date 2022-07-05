@@ -4,20 +4,6 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.mockito.AdditionalMatchers.and;
-import static org.mockito.AdditionalMatchers.gt;
-import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.AdditionalMatchers.leq;
-
-import lombok.RequiredArgsConstructor;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 
@@ -31,6 +17,19 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.mockito.AdditionalMatchers.and;
+import static org.mockito.AdditionalMatchers.gt;
+import static org.mockito.AdditionalMatchers.leq;
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 public class ProgressTrackerTest {
     private static final long READ_CHUNK_SIZE = 8192L;
@@ -283,10 +282,16 @@ public class ProgressTrackerTest {
         final AtomicInteger callbackCount = new AtomicInteger();
         final ExecutorService executorService = Executors.newCachedThreadPool();
 
-        @RequiredArgsConstructor
         abstract class MockProgressTrackerSource implements Runnable {
             final ProgressTracker progressTracker;
             final long totalBytesToRead;
+
+            @java.beans.ConstructorProperties({"progressTracker", "totalBytesToRead"})
+            public MockProgressTrackerSource(
+                    ProgressTracker progressTracker, long totalBytesToRead) {
+                this.progressTracker = progressTracker;
+                this.totalBytesToRead = totalBytesToRead;
+            }
         }
 
         for (int i = 0; i < executorCount; i++) {

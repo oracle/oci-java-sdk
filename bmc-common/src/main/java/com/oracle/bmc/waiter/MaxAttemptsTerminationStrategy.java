@@ -6,22 +6,34 @@ package com.oracle.bmc.waiter;
 
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
 
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
-
 /**
  * Termination strategy that allows up to X attempts before terminating.
  */
-@RequiredArgsConstructor
-@ToString
 public class MaxAttemptsTerminationStrategy implements TerminationStrategy {
     /**
      * The maximum number of attempts to make.
      */
-    @lombok.Getter private final int maxAttempts;
+    private final int maxAttempts;
 
     @Override
     public boolean shouldTerminate(WaitContext context) {
         return context.getAttemptsMade() >= maxAttempts;
+    }
+
+    @java.beans.ConstructorProperties({"maxAttempts"})
+    public MaxAttemptsTerminationStrategy(final int maxAttempts) {
+        this.maxAttempts = maxAttempts;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "MaxAttemptsTerminationStrategy(maxAttempts=" + this.getMaxAttempts() + ")";
+    }
+
+    /**
+     * The maximum number of attempts to make.
+     */
+    public int getMaxAttempts() {
+        return this.maxAttempts;
     }
 }

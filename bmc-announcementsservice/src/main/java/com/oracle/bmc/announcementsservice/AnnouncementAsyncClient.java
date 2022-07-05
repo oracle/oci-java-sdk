@@ -398,14 +398,16 @@ public class AnnouncementAsyncClient implements AnnouncementAsync {
                 GetAnnouncementConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAnnouncementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Announcement",
+                        "GetAnnouncement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/Announcement/GetAnnouncement");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAnnouncementResponse>
-                transformer = GetAnnouncementConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Announcement",
-                "GetAnnouncement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/Announcement/GetAnnouncement");
-
+                transformer =
+                        GetAnnouncementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetAnnouncementRequest, GetAnnouncementResponse>
                 handlerToUse = handler;
 
@@ -442,15 +444,17 @@ public class AnnouncementAsyncClient implements AnnouncementAsync {
                 GetAnnouncementUserStatusConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAnnouncementUserStatusConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Announcement",
+                        "GetAnnouncementUserStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementUserStatusDetails/GetAnnouncementUserStatus");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAnnouncementUserStatusResponse>
-                transformer = GetAnnouncementUserStatusConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Announcement",
-                "GetAnnouncementUserStatus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementUserStatusDetails/GetAnnouncementUserStatus");
-
+                transformer =
+                        GetAnnouncementUserStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAnnouncementUserStatusRequest, GetAnnouncementUserStatusResponse>
                 handlerToUse = handler;
@@ -489,14 +493,16 @@ public class AnnouncementAsyncClient implements AnnouncementAsync {
                 ListAnnouncementsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAnnouncementsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Announcement",
+                        "ListAnnouncements",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsCollection/ListAnnouncements");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAnnouncementsResponse>
-                transformer = ListAnnouncementsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Announcement",
-                "ListAnnouncements",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsCollection/ListAnnouncements");
-
+                transformer =
+                        ListAnnouncementsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListAnnouncementsRequest, ListAnnouncementsResponse>
                 handlerToUse = handler;
 
@@ -535,15 +541,17 @@ public class AnnouncementAsyncClient implements AnnouncementAsync {
                 UpdateAnnouncementUserStatusConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAnnouncementUserStatusConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Announcement",
+                        "UpdateAnnouncementUserStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementUserStatusDetails/UpdateAnnouncementUserStatus");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAnnouncementUserStatusResponse>
-                transformer = UpdateAnnouncementUserStatusConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Announcement",
-                "UpdateAnnouncementUserStatus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementUserStatusDetails/UpdateAnnouncementUserStatus");
-
+                transformer =
+                        UpdateAnnouncementUserStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAnnouncementUserStatusRequest, UpdateAnnouncementUserStatusResponse>
                 handlerToUse = handler;

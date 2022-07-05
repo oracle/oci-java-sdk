@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import javax.ws.rs.client.Invocation;
-
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.internal.ObjectStorageUtils;
 import com.oracle.bmc.objectstorage.model.CommitMultipartUploadDetails;
@@ -34,9 +33,6 @@ import com.oracle.bmc.objectstorage.transfer.internal.MultipartTransferManager;
 import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.util.StreamUtils;
 import com.oracle.bmc.util.internal.Consumer;
-import lombok.Builder;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * MultiPartObjectAssembler provides a simplified interaction with uploading large
@@ -50,8 +46,9 @@ import lombok.extern.slf4j.Slf4j;
  * Note, a new assembler instance should be used for every multi-part upload.  Once
  * initialized (or resumed), an assembler cannot be reused.
  */
-@Slf4j
 public class MultipartObjectAssembler {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(MultipartObjectAssembler.class);
     private static final int MAX_CLIENT_REQUEST_ID_LENGTH = 40;
 
     private final ObjectStorage service;
@@ -74,7 +71,7 @@ public class MultipartObjectAssembler {
     /**
      * The opcClientRequestId to send for all requests related to this multi-part upload.
      */
-    @Setter private String opcClientRequestId = null;
+    private String opcClientRequestId = null;
 
     /**
      * Creates a new assembler.
@@ -110,7 +107,6 @@ public class MultipartObjectAssembler {
                 null /* contentDisposition */);
     }
 
-    @Builder
     private MultipartObjectAssembler(
             ObjectStorage service,
             String namespaceName,
@@ -441,5 +437,186 @@ public class MultipartObjectAssembler {
         }
         LOG.debug("Converted client request ID to '{}'", newClientRequestId);
         return newClientRequestId;
+    }
+
+    public static class MultipartObjectAssemblerBuilder {
+        private ObjectStorage service;
+        private String namespaceName;
+        private String bucketName;
+        private String objectName;
+        private StorageTier storageTier;
+        private boolean allowOverwrite;
+        private ExecutorService executorService;
+        private String opcClientRequestId;
+        private Consumer<Invocation.Builder> invocationCallback;
+        private RetryConfiguration retryConfiguration;
+        private String cacheControl;
+        private String contentDisposition;
+
+        MultipartObjectAssemblerBuilder() {}
+
+        /**
+         * @return {@code this}.
+         */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder service(
+                final ObjectStorage service) {
+            this.service = service;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder namespaceName(
+                final String namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder bucketName(
+                final String bucketName) {
+            this.bucketName = bucketName;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder objectName(
+                final String objectName) {
+            this.objectName = objectName;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder storageTier(
+                final StorageTier storageTier) {
+            this.storageTier = storageTier;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder allowOverwrite(
+                final boolean allowOverwrite) {
+            this.allowOverwrite = allowOverwrite;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder executorService(
+                final ExecutorService executorService) {
+            this.executorService = executorService;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder opcClientRequestId(
+                final String opcClientRequestId) {
+            this.opcClientRequestId = opcClientRequestId;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder invocationCallback(
+                final Consumer<Invocation.Builder> invocationCallback) {
+            this.invocationCallback = invocationCallback;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder retryConfiguration(
+                final RetryConfiguration retryConfiguration) {
+            this.retryConfiguration = retryConfiguration;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder cacheControl(
+                final String cacheControl) {
+            this.cacheControl = cacheControl;
+            return this;
+        }
+
+        /**
+         * @return {@code this}.
+         */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder contentDisposition(
+                final String contentDisposition) {
+            this.contentDisposition = contentDisposition;
+            return this;
+        }
+
+        public MultipartObjectAssembler build() {
+            return new MultipartObjectAssembler(
+                    this.service,
+                    this.namespaceName,
+                    this.bucketName,
+                    this.objectName,
+                    this.storageTier,
+                    this.allowOverwrite,
+                    this.executorService,
+                    this.opcClientRequestId,
+                    this.invocationCallback,
+                    this.retryConfiguration,
+                    this.cacheControl,
+                    this.contentDisposition);
+        }
+
+        @java.lang.Override
+        public java.lang.String toString() {
+            return "MultipartObjectAssembler.MultipartObjectAssemblerBuilder(service="
+                    + this.service
+                    + ", namespaceName="
+                    + this.namespaceName
+                    + ", bucketName="
+                    + this.bucketName
+                    + ", objectName="
+                    + this.objectName
+                    + ", storageTier="
+                    + this.storageTier
+                    + ", allowOverwrite="
+                    + this.allowOverwrite
+                    + ", executorService="
+                    + this.executorService
+                    + ", opcClientRequestId="
+                    + this.opcClientRequestId
+                    + ", invocationCallback="
+                    + this.invocationCallback
+                    + ", retryConfiguration="
+                    + this.retryConfiguration
+                    + ", cacheControl="
+                    + this.cacheControl
+                    + ", contentDisposition="
+                    + this.contentDisposition
+                    + ")";
+        }
+    }
+
+    public static MultipartObjectAssembler.MultipartObjectAssemblerBuilder builder() {
+        return new MultipartObjectAssembler.MultipartObjectAssemblerBuilder();
+    }
+
+    /**
+     * The opcClientRequestId to send for all requests related to this multi-part upload.
+     */
+    public void setOpcClientRequestId(final String opcClientRequestId) {
+        this.opcClientRequestId = opcClientRequestId;
     }
 }

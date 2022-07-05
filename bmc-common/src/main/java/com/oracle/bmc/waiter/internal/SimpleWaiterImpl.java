@@ -7,12 +7,8 @@ package com.oracle.bmc.waiter.internal;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
-
 import com.oracle.bmc.responses.AsyncHandler;
 import com.oracle.bmc.waiter.Waiter;
-
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 /**
  * SimpleWaiterImpl is a basic wrapper around a Callable that executes an action, and
@@ -23,7 +19,6 @@ import lombok.RequiredArgsConstructor;
  * @param <RESPONSE>
  *            The response type.
  */
-@RequiredArgsConstructor
 public class SimpleWaiterImpl<REQUEST, RESPONSE> implements Waiter<REQUEST, RESPONSE> {
     /**
      * The executor service to submit async requests to.
@@ -36,7 +31,7 @@ public class SimpleWaiterImpl<REQUEST, RESPONSE> implements Waiter<REQUEST, RESP
     /**
      * The request this waiter is being invoked on.
      */
-    @Getter private final REQUEST request;
+    private final REQUEST request;
 
     @Override
     public RESPONSE execute() throws Exception {
@@ -59,5 +54,22 @@ public class SimpleWaiterImpl<REQUEST, RESPONSE> implements Waiter<REQUEST, RESP
                         }
                     }
                 });
+    }
+
+    @java.beans.ConstructorProperties({"executorService", "callable", "request"})
+    public SimpleWaiterImpl(
+            final ExecutorService executorService,
+            final Callable<RESPONSE> callable,
+            final REQUEST request) {
+        this.executorService = executorService;
+        this.callable = callable;
+        this.request = request;
+    }
+
+    /**
+     * The request this waiter is being invoked on.
+     */
+    public REQUEST getRequest() {
+        return this.request;
     }
 }

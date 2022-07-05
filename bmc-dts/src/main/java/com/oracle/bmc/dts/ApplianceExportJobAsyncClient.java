@@ -402,16 +402,18 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeApplianceExportJobCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplianceExportJob",
+                        "ChangeApplianceExportJobCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeApplianceExportJobCompartmentResponse>
-                transformer = ChangeApplianceExportJobCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplianceExportJob",
-                "ChangeApplianceExportJobCompartment",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ChangeApplianceExportJobCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeApplianceExportJobCompartmentRequest,
                         ChangeApplianceExportJobCompartmentResponse>
@@ -457,16 +459,18 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                 CreateApplianceExportJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateApplianceExportJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplianceExportJob",
+                        "CreateApplianceExportJob",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateApplianceExportJobResponse>
-                transformer = CreateApplianceExportJobConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplianceExportJob",
-                "CreateApplianceExportJob",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        CreateApplianceExportJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateApplianceExportJobRequest, CreateApplianceExportJobResponse>
                 handlerToUse = handler;
@@ -509,15 +513,17 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                 DeleteApplianceExportJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteApplianceExportJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplianceExportJob",
+                        "DeleteApplianceExportJob",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteApplianceExportJobResponse>
-                transformer = DeleteApplianceExportJobConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplianceExportJob",
-                "DeleteApplianceExportJob",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        DeleteApplianceExportJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteApplianceExportJobRequest, DeleteApplianceExportJobResponse>
                 handlerToUse = handler;
@@ -555,12 +561,17 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                 GetApplianceExportJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetApplianceExportJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplianceExportJob",
+                        "GetApplianceExportJob",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetApplianceExportJobResponse>
-                transformer = GetApplianceExportJobConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplianceExportJob", "GetApplianceExportJob", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetApplianceExportJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetApplianceExportJobRequest, GetApplianceExportJobResponse>
                 handlerToUse = handler;
@@ -598,12 +609,17 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                 ListApplianceExportJobsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListApplianceExportJobsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplianceExportJob",
+                        "ListApplianceExportJobs",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListApplianceExportJobsResponse>
-                transformer = ListApplianceExportJobsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplianceExportJob", "ListApplianceExportJobs", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListApplianceExportJobsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListApplianceExportJobsRequest, ListApplianceExportJobsResponse>
                 handlerToUse = handler;
@@ -641,15 +657,17 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                 UpdateApplianceExportJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateApplianceExportJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplianceExportJob",
+                        "UpdateApplianceExportJob",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateApplianceExportJobResponse>
-                transformer = UpdateApplianceExportJobConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplianceExportJob",
-                "UpdateApplianceExportJob",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        UpdateApplianceExportJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateApplianceExportJobRequest, UpdateApplianceExportJobResponse>
                 handlerToUse = handler;

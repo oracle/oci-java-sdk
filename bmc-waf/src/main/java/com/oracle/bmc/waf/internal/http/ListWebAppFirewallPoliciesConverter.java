@@ -115,6 +115,13 @@ public class ListWebAppFirewallPoliciesConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.waf.responses.ListWebAppFirewallPoliciesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waf.responses.ListWebAppFirewallPoliciesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.waf.responses.ListWebAppFirewallPoliciesResponse>
@@ -127,16 +134,26 @@ public class ListWebAppFirewallPoliciesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.waf.responses.ListWebAppFirewallPoliciesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.waf.model
                                                                 .WebAppFirewallPolicyCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.waf.model
-                                                                        .WebAppFirewallPolicyCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.waf.model
+                                                                    .WebAppFirewallPolicyCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.waf.model
+                                                                    .WebAppFirewallPolicyCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.waf.model

@@ -401,16 +401,18 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
                 CreateAnnouncementsPreferenceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAnnouncementsPreferenceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementsPreferences",
+                        "CreateAnnouncementsPreference",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/CreateAnnouncementsPreference");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAnnouncementsPreferenceResponse>
-                transformer = CreateAnnouncementsPreferenceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementsPreferences",
-                "CreateAnnouncementsPreference",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/CreateAnnouncementsPreference");
-
+                transformer =
+                        CreateAnnouncementsPreferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAnnouncementsPreferenceRequest, CreateAnnouncementsPreferenceResponse>
                 handlerToUse = handler;
@@ -456,15 +458,17 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
                 GetAnnouncementsPreferenceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAnnouncementsPreferenceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementsPreferences",
+                        "GetAnnouncementsPreference",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferences/GetAnnouncementsPreference");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAnnouncementsPreferenceResponse>
-                transformer = GetAnnouncementsPreferenceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementsPreferences",
-                "GetAnnouncementsPreference",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferences/GetAnnouncementsPreference");
-
+                transformer =
+                        GetAnnouncementsPreferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAnnouncementsPreferenceRequest, GetAnnouncementsPreferenceResponse>
                 handlerToUse = handler;
@@ -505,15 +509,17 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
                 ListAnnouncementsPreferencesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAnnouncementsPreferencesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementsPreferences",
+                        "ListAnnouncementsPreferences",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/ListAnnouncementsPreferences");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAnnouncementsPreferencesResponse>
-                transformer = ListAnnouncementsPreferencesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementsPreferences",
-                "ListAnnouncementsPreferences",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/ListAnnouncementsPreferences");
-
+                transformer =
+                        ListAnnouncementsPreferencesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAnnouncementsPreferencesRequest, ListAnnouncementsPreferencesResponse>
                 handlerToUse = handler;
@@ -554,15 +560,17 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
                 UpdateAnnouncementsPreferenceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAnnouncementsPreferenceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementsPreferences",
+                        "UpdateAnnouncementsPreference",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/UpdateAnnouncementsPreference");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAnnouncementsPreferenceResponse>
-                transformer = UpdateAnnouncementsPreferenceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementsPreferences",
-                "UpdateAnnouncementsPreference",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/UpdateAnnouncementsPreference");
-
+                transformer =
+                        UpdateAnnouncementsPreferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAnnouncementsPreferenceRequest, UpdateAnnouncementsPreferenceResponse>
                 handlerToUse = handler;

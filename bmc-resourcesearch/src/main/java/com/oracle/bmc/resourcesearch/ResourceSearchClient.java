@@ -401,18 +401,21 @@ public class ResourceSearchClient implements ResourceSearch {
                 GetResourceTypeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetResourceTypeConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetResourceTypeResponse>
-                transformer = GetResourceTypeConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceSearch",
-                "GetResourceType",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/GetResourceType");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceSearch",
+                        "GetResourceType",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/GetResourceType");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetResourceTypeResponse>
+                transformer =
+                        GetResourceTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -435,18 +438,21 @@ public class ResourceSearchClient implements ResourceSearch {
                 ListResourceTypesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListResourceTypesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListResourceTypesResponse>
-                transformer = ListResourceTypesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceSearch",
-                "ListResourceTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/ListResourceTypes");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceSearch",
+                        "ListResourceTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/ListResourceTypes");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListResourceTypesResponse>
+                transformer =
+                        ListResourceTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -469,18 +475,21 @@ public class ResourceSearchClient implements ResourceSearch {
                 SearchResourcesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SearchResourcesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, SearchResourcesResponse>
-                transformer = SearchResourcesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceSearch",
-                "SearchResources",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceSummary/SearchResources");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceSearch",
+                        "SearchResources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceSummary/SearchResources");
+        com.google.common.base.Function<javax.ws.rs.core.Response, SearchResourcesResponse>
+                transformer =
+                        SearchResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

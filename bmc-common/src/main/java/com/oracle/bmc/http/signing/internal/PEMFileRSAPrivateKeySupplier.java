@@ -8,10 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.security.interfaces.RSAPrivateKey;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
 import org.bouncycastle.openssl.EncryptionException;
@@ -21,13 +19,10 @@ import org.bouncycastle.openssl.PEMKeyPair;
 import org.bouncycastle.openssl.PEMParser;
 import org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter;
 import org.bouncycastle.openssl.jcajce.JcePEMDecryptorProviderBuilder;
-
 import com.google.common.base.Charsets;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.oracle.bmc.util.StreamUtils;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * An implementation of {@link KeySupplier} that supplies a RSA private key from
@@ -42,8 +37,9 @@ import lombok.extern.slf4j.Slf4j;
  * <code>$ ssh-keygen -t rsa -b 2048</code>
  * <p>
  */
-@Slf4j
 public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(PEMFileRSAPrivateKeySupplier.class);
     private final JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
 
     private final RSAPrivateKey key;

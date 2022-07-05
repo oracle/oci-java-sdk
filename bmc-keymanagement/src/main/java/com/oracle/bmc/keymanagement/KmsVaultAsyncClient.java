@@ -396,12 +396,13 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 BackupVaultConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 BackupVaultConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, BackupVaultResponse>
-                transformer = BackupVaultConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "BackupVault", ib.getRequestUri().toString(), "");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "BackupVault", ib.getRequestUri().toString(), "");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, BackupVaultResponse>
+                transformer =
+                        BackupVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<BackupVaultRequest, BackupVaultResponse>
                 handlerToUse = handler;
 
@@ -443,13 +444,15 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 CancelVaultDeletionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelVaultDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "CancelVaultDeletion", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CancelVaultDeletionResponse>
-                transformer = CancelVaultDeletionConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "CancelVaultDeletion", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        CancelVaultDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CancelVaultDeletionRequest, CancelVaultDeletionResponse>
                 handlerToUse = handler;
@@ -487,13 +490,15 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 ChangeVaultCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeVaultCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "ChangeVaultCompartment", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVaultCompartmentResponse>
-                transformer = ChangeVaultCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "ChangeVaultCompartment", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ChangeVaultCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVaultCompartmentRequest, ChangeVaultCompartmentResponse>
                 handlerToUse = handler;
@@ -535,12 +540,13 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 CreateVaultConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVaultConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVaultResponse>
-                transformer = CreateVaultConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "CreateVault", ib.getRequestUri().toString(), "");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "CreateVault", ib.getRequestUri().toString(), "");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVaultResponse>
+                transformer =
+                        CreateVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateVaultRequest, CreateVaultResponse>
                 handlerToUse = handler;
 
@@ -582,12 +588,14 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 CreateVaultReplicaConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVaultReplicaConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVaultReplicaResponse>
-                transformer = CreateVaultReplicaConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "CreateVaultReplica", ib.getRequestUri().toString(), "");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "CreateVaultReplica", ib.getRequestUri().toString(), "");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVaultReplicaResponse>
+                transformer =
+                        CreateVaultReplicaConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateVaultReplicaRequest, CreateVaultReplicaResponse>
                 handlerToUse = handler;
 
@@ -629,12 +637,14 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 DeleteVaultReplicaConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVaultReplicaConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVaultReplicaResponse>
-                transformer = DeleteVaultReplicaConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "DeleteVaultReplica", ib.getRequestUri().toString(), "");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "DeleteVaultReplica", ib.getRequestUri().toString(), "");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVaultReplicaResponse>
+                transformer =
+                        DeleteVaultReplicaConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteVaultReplicaRequest, DeleteVaultReplicaResponse>
                 handlerToUse = handler;
 
@@ -674,11 +684,11 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         final GetVaultRequest interceptedRequest = GetVaultConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVaultConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "GetVault", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVaultResponse>
-                transformer = GetVaultConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "GetVault", ib.getRequestUri().toString(), "");
-
+                transformer = GetVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetVaultRequest, GetVaultResponse> handlerToUse =
                 handler;
 
@@ -713,11 +723,12 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 GetVaultUsageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVaultUsageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "GetVaultUsage", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVaultUsageResponse>
-                transformer = GetVaultUsageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "GetVaultUsage", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetVaultUsageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetVaultUsageRequest, GetVaultUsageResponse>
                 handlerToUse = handler;
 
@@ -754,12 +765,14 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 ListVaultReplicasConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVaultReplicasConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListVaultReplicasResponse>
-                transformer = ListVaultReplicasConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "ListVaultReplicas", ib.getRequestUri().toString(), "");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "ListVaultReplicas", ib.getRequestUri().toString(), "");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListVaultReplicasResponse>
+                transformer =
+                        ListVaultReplicasConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListVaultReplicasRequest, ListVaultReplicasResponse>
                 handlerToUse = handler;
 
@@ -794,11 +807,12 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         final ListVaultsRequest interceptedRequest = ListVaultsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVaultsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "ListVaults", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListVaultsResponse>
-                transformer = ListVaultsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "ListVaults", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListVaultsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListVaultsRequest, ListVaultsResponse> handlerToUse =
                 handler;
 
@@ -842,13 +856,15 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 RestoreVaultFromFileConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestoreVaultFromFileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "RestoreVaultFromFile", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RestoreVaultFromFileResponse>
-                transformer = RestoreVaultFromFileConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "RestoreVaultFromFile", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        RestoreVaultFromFileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RestoreVaultFromFileRequest, RestoreVaultFromFileResponse>
                 handlerToUse =
@@ -898,13 +914,18 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 RestoreVaultFromObjectStoreConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestoreVaultFromObjectStoreConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault",
+                        "RestoreVaultFromObjectStore",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RestoreVaultFromObjectStoreResponse>
-                transformer = RestoreVaultFromObjectStoreConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "RestoreVaultFromObjectStore", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        RestoreVaultFromObjectStoreConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RestoreVaultFromObjectStoreRequest, RestoreVaultFromObjectStoreResponse>
                 handlerToUse = handler;
@@ -948,13 +969,15 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 ScheduleVaultDeletionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ScheduleVaultDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "ScheduleVaultDeletion", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ScheduleVaultDeletionResponse>
-                transformer = ScheduleVaultDeletionConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "ScheduleVaultDeletion", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ScheduleVaultDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ScheduleVaultDeletionRequest, ScheduleVaultDeletionResponse>
                 handlerToUse = handler;
@@ -996,11 +1019,12 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 UpdateVaultConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVaultConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault", "UpdateVault", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVaultResponse>
-                transformer = UpdateVaultConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "KmsVault", "UpdateVault", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        UpdateVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateVaultRequest, UpdateVaultResponse>
                 handlerToUse = handler;
 

@@ -5,6 +5,7 @@
 package com.oracle.bmc.common;
 
 import com.oracle.bmc.Service;
+import org.slf4j.Logger;
 
 import java.util.Locale;
 
@@ -13,9 +14,11 @@ import java.util.Locale;
  * @param <B> actual builder class
  * @param <C> client class
  */
-@lombok.extern.slf4j.Slf4j
 public abstract class RegionalClientBuilder<B extends RegionalClientBuilder, C>
         extends ClientBuilderBase<B, C> {
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(RegionalClientBuilder.class);
+
     public RegionalClientBuilder(Service service) {
         super(service);
     }

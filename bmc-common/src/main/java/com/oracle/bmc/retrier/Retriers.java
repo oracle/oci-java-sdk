@@ -10,20 +10,15 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
-
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.requests.BmcRequest;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Nonnull;
 
 /**
  * Group of utility methods to configure the SDK retry behavior
  */
-@Slf4j
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Retriers {
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Retriers.class);
     private static volatile RetryConfiguration DEFAULT_RETRY_CONFIGURATION = null;
     private static volatile boolean SEND_OPC_RETRY_TOKEN = true;
 
@@ -40,7 +35,11 @@ public final class Retriers {
      * @param retryConfiguration the {@link RetryConfiguration} to use
      */
     public static void setDefaultRetryConfiguration(
-            @NonNull final RetryConfiguration retryConfiguration) {
+            @Nonnull final RetryConfiguration retryConfiguration) {
+        if (retryConfiguration == null) {
+            throw new java.lang.NullPointerException(
+                    "retryConfiguration is marked non-null but is null");
+        }
         LOG.info("Setting default retry configuration to {}", retryConfiguration);
         DEFAULT_RETRY_CONFIGURATION = retryConfiguration;
     }
@@ -288,4 +287,6 @@ public final class Retriers {
         }
         return wrappedStream;
     }
+
+    private Retriers() {}
 }

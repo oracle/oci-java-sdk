@@ -397,16 +397,18 @@ public class RewardsAsyncClient implements RewardsAsync {
                 CreateRedeemableUserConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateRedeemableUserConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Rewards",
+                        "CreateRedeemableUser",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUser/CreateRedeemableUser");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateRedeemableUserResponse>
-                transformer = CreateRedeemableUserConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Rewards",
-                "CreateRedeemableUser",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUser/CreateRedeemableUser");
-
+                transformer =
+                        CreateRedeemableUserConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateRedeemableUserRequest, CreateRedeemableUserResponse>
                 handlerToUse = handler;
@@ -449,15 +451,17 @@ public class RewardsAsyncClient implements RewardsAsync {
                 DeleteRedeemableUserConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteRedeemableUserConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Rewards",
+                        "DeleteRedeemableUser",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUser/DeleteRedeemableUser");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteRedeemableUserResponse>
-                transformer = DeleteRedeemableUserConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Rewards",
-                "DeleteRedeemableUser",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUser/DeleteRedeemableUser");
-
+                transformer =
+                        DeleteRedeemableUserConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteRedeemableUserRequest, DeleteRedeemableUserResponse>
                 handlerToUse = handler;
@@ -494,14 +498,15 @@ public class RewardsAsyncClient implements RewardsAsync {
                 ListProductsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListProductsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Rewards",
+                        "ListProducts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/ProductSummary/ListProducts");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListProductsResponse>
-                transformer = ListProductsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Rewards",
-                "ListProducts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/ProductSummary/ListProducts");
-
+                transformer =
+                        ListProductsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListProductsRequest, ListProductsResponse>
                 handlerToUse = handler;
 
@@ -538,15 +543,17 @@ public class RewardsAsyncClient implements RewardsAsync {
                 ListRedeemableUsersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRedeemableUsersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Rewards",
+                        "ListRedeemableUsers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUserSummary/ListRedeemableUsers");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListRedeemableUsersResponse>
-                transformer = ListRedeemableUsersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Rewards",
-                "ListRedeemableUsers",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUserSummary/ListRedeemableUsers");
-
+                transformer =
+                        ListRedeemableUsersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListRedeemableUsersRequest, ListRedeemableUsersResponse>
                 handlerToUse = handler;
@@ -583,14 +590,15 @@ public class RewardsAsyncClient implements RewardsAsync {
                 ListRewardsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRewardsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Rewards",
+                        "ListRewards",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/MonthlyRewardSummary/ListRewards");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRewardsResponse>
-                transformer = ListRewardsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Rewards",
-                "ListRewards",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/MonthlyRewardSummary/ListRewards");
-
+                transformer =
+                        ListRewardsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRewardsRequest, ListRewardsResponse>
                 handlerToUse = handler;
 

@@ -400,15 +400,17 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                 CancelInstanceAgentCommandConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelInstanceAgentCommandConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeInstanceAgent",
+                        "CancelInstanceAgentCommand",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CancelInstanceAgentCommand");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CancelInstanceAgentCommandResponse>
-                transformer = CancelInstanceAgentCommandConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeInstanceAgent",
-                "CancelInstanceAgentCommand",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CancelInstanceAgentCommand");
-
+                transformer =
+                        CancelInstanceAgentCommandConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CancelInstanceAgentCommandRequest, CancelInstanceAgentCommandResponse>
                 handlerToUse = handler;
@@ -449,16 +451,18 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                 CreateInstanceAgentCommandConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateInstanceAgentCommandConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeInstanceAgent",
+                        "CreateInstanceAgentCommand",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CreateInstanceAgentCommand");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateInstanceAgentCommandResponse>
-                transformer = CreateInstanceAgentCommandConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeInstanceAgent",
-                "CreateInstanceAgentCommand",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CreateInstanceAgentCommand");
-
+                transformer =
+                        CreateInstanceAgentCommandConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateInstanceAgentCommandRequest, CreateInstanceAgentCommandResponse>
                 handlerToUse = handler;
@@ -502,15 +506,17 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                 GetInstanceAgentCommandConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInstanceAgentCommandConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeInstanceAgent",
+                        "GetInstanceAgentCommand",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/GetInstanceAgentCommand");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetInstanceAgentCommandResponse>
-                transformer = GetInstanceAgentCommandConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeInstanceAgent",
-                "GetInstanceAgentCommand",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/GetInstanceAgentCommand");
-
+                transformer =
+                        GetInstanceAgentCommandConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetInstanceAgentCommandRequest, GetInstanceAgentCommandResponse>
                 handlerToUse = handler;
@@ -550,15 +556,17 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                 GetInstanceAgentCommandExecutionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInstanceAgentCommandExecutionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeInstanceAgent",
+                        "GetInstanceAgentCommandExecution",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecution/GetInstanceAgentCommandExecution");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetInstanceAgentCommandExecutionResponse>
-                transformer = GetInstanceAgentCommandExecutionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeInstanceAgent",
-                "GetInstanceAgentCommandExecution",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecution/GetInstanceAgentCommandExecution");
-
+                transformer =
+                        GetInstanceAgentCommandExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetInstanceAgentCommandExecutionRequest,
                         GetInstanceAgentCommandExecutionResponse>
@@ -601,15 +609,17 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                 ListInstanceAgentCommandExecutionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInstanceAgentCommandExecutionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeInstanceAgent",
+                        "ListInstanceAgentCommandExecutions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecutionSummary/ListInstanceAgentCommandExecutions");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListInstanceAgentCommandExecutionsResponse>
-                transformer = ListInstanceAgentCommandExecutionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeInstanceAgent",
-                "ListInstanceAgentCommandExecutions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecutionSummary/ListInstanceAgentCommandExecutions");
-
+                transformer =
+                        ListInstanceAgentCommandExecutionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListInstanceAgentCommandExecutionsRequest,
                         ListInstanceAgentCommandExecutionsResponse>
@@ -650,15 +660,17 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                 ListInstanceAgentCommandsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInstanceAgentCommandsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeInstanceAgent",
+                        "ListInstanceAgentCommands",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandSummary/ListInstanceAgentCommands");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListInstanceAgentCommandsResponse>
-                transformer = ListInstanceAgentCommandsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeInstanceAgent",
-                "ListInstanceAgentCommands",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandSummary/ListInstanceAgentCommands");
-
+                transformer =
+                        ListInstanceAgentCommandsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListInstanceAgentCommandsRequest, ListInstanceAgentCommandsResponse>
                 handlerToUse = handler;

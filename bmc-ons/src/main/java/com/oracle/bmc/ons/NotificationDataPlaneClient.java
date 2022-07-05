@@ -477,20 +477,23 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 ChangeSubscriptionCompartmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeSubscriptionCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeSubscriptionCompartmentResponse>
-                transformer = ChangeSubscriptionCompartmentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NotificationDataPlane",
-                "ChangeSubscriptionCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ChangeSubscriptionCompartment");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NotificationDataPlane",
+                        "ChangeSubscriptionCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ChangeSubscriptionCompartment");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeSubscriptionCompartmentResponse>
+                transformer =
+                        ChangeSubscriptionCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -518,19 +521,22 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 CreateSubscriptionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSubscriptionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubscriptionResponse>
-                transformer = CreateSubscriptionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NotificationDataPlane",
-                "CreateSubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/CreateSubscription");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NotificationDataPlane",
+                        "CreateSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/CreateSubscription");
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubscriptionResponse>
+                transformer =
+                        CreateSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -557,18 +563,21 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 DeleteSubscriptionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSubscriptionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubscriptionResponse>
-                transformer = DeleteSubscriptionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NotificationDataPlane",
-                "DeleteSubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/DeleteSubscription");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NotificationDataPlane",
+                        "DeleteSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/DeleteSubscription");
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubscriptionResponse>
+                transformer =
+                        DeleteSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -593,18 +602,21 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 GetConfirmSubscriptionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetConfirmSubscriptionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConfirmSubscriptionResponse>
-                transformer = GetConfirmSubscriptionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NotificationDataPlane",
-                "GetConfirmSubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetConfirmSubscription");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NotificationDataPlane",
+                        "GetConfirmSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetConfirmSubscription");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetConfirmSubscriptionResponse>
+                transformer =
+                        GetConfirmSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -627,18 +639,21 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 GetSubscriptionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSubscriptionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
-                transformer = GetSubscriptionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NotificationDataPlane",
-                "GetSubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetSubscription");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NotificationDataPlane",
+                        "GetSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetSubscription");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
+                transformer =
+                        GetSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -661,18 +676,21 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 GetUnsubscriptionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetUnsubscriptionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetUnsubscriptionResponse>
-                transformer = GetUnsubscriptionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NotificationDataPlane",
-                "GetUnsubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetUnsubscription");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NotificationDataPlane",
+                        "GetUnsubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetUnsubscription");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetUnsubscriptionResponse>
+                transformer =
+                        GetUnsubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -695,18 +713,21 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 ListSubscriptionsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSubscriptionsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
-                transformer = ListSubscriptionsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NotificationDataPlane",
-                "ListSubscriptions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ListSubscriptions");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NotificationDataPlane",
+                        "ListSubscriptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ListSubscriptions");
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
+                transformer =
+                        ListSubscriptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -729,18 +750,20 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 PublishMessageConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 PublishMessageConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, PublishMessageResponse>
-                transformer = PublishMessageConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NotificationDataPlane",
-                "PublishMessage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/PublishMessage");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NotificationDataPlane",
+                        "PublishMessage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/PublishMessage");
+        com.google.common.base.Function<javax.ws.rs.core.Response, PublishMessageResponse>
+                transformer =
+                        PublishMessageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -768,19 +791,22 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 ResendSubscriptionConfirmationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ResendSubscriptionConfirmationConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ResendSubscriptionConfirmationResponse>
-                transformer = ResendSubscriptionConfirmationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NotificationDataPlane",
-                "ResendSubscriptionConfirmation",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ResendSubscriptionConfirmation");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NotificationDataPlane",
+                        "ResendSubscriptionConfirmation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ResendSubscriptionConfirmation");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ResendSubscriptionConfirmationResponse>
+                transformer =
+                        ResendSubscriptionConfirmationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -804,18 +830,21 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 UpdateSubscriptionConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSubscriptionConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
-                transformer = UpdateSubscriptionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NotificationDataPlane",
-                "UpdateSubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/UpdateSubscription");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NotificationDataPlane",
+                        "UpdateSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/UpdateSubscription");
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
+                transformer =
+                        UpdateSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

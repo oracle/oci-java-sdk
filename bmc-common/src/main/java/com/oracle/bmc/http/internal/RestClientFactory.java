@@ -18,13 +18,11 @@ import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.SigningStrategy;
-import lombok.Getter;
 import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.client.JerseyClientBuilder;
 import org.glassfish.jersey.internal.InternalProperties;
 import org.glassfish.jersey.jackson.internal.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import org.glassfish.jersey.jackson.internal.jackson.jaxrs.json.JacksonJsonProvider;
-
 import javax.annotation.Nonnull;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -61,7 +59,7 @@ public class RestClientFactory {
         DEFAULT_MAPPER.setFilterProvider(filters);
     }
 
-    @Getter private final ClientConfigurator clientConfigurator;
+    private final ClientConfigurator clientConfigurator;
 
     /**
      * Creates a new REST client factor that allow the given configurator to
@@ -326,5 +324,9 @@ public class RestClientFactory {
      */
     public static ObjectMapper getObjectMapper() {
         return DEFAULT_MAPPER;
+    }
+
+    public ClientConfigurator getClientConfigurator() {
+        return this.clientConfigurator;
     }
 }

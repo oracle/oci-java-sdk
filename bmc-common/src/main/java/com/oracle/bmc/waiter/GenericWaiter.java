@@ -8,20 +8,16 @@ import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.google.common.base.Supplier;
-import com.oracle.bmc.ServiceDetails;
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
-
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Provides a basic waiter that will periodically poll for an update until a
  * desired condition is met.
  */
-@Slf4j
-@RequiredArgsConstructor
 public class GenericWaiter {
-    @lombok.Getter private final WaiterConfiguration waiterConfiguration;
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(GenericWaiter.class);
+    private final WaiterConfiguration waiterConfiguration;
 
     /**
      * Blocks until a specific condition is met.
@@ -56,8 +52,7 @@ public class GenericWaiter {
             r = functionCall.apply(requestSupplier.get());
             if (terminationPredicate.apply(r)) {
                 LOG.debug(
-                        "Total Latency for {} API call is: {}ms",
-                        ServiceDetails.getOperationName(),
+                        "Total Latency for this API call is: {}ms",
                         (context.getCurrentTime() - context.getStartTime()));
                 return Optional.of(r);
             }
@@ -81,9 +76,17 @@ public class GenericWaiter {
             }
         }
         LOG.debug(
-                "Total Latency for {} API call is: {}ms",
-                ServiceDetails.getOperationName(),
+                "Total Latency for this API call is: {}ms",
                 (context.getCurrentTime() - context.getStartTime()));
         return Optional.absent();
+    }
+
+    @java.beans.ConstructorProperties({"waiterConfiguration"})
+    public GenericWaiter(final WaiterConfiguration waiterConfiguration) {
+        this.waiterConfiguration = waiterConfiguration;
+    }
+
+    public WaiterConfiguration getWaiterConfiguration() {
+        return this.waiterConfiguration;
     }
 }

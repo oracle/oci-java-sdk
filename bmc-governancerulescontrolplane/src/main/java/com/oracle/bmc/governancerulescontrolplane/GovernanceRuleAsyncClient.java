@@ -399,13 +399,18 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 CreateGovernanceRuleConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateGovernanceRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "CreateGovernanceRule",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateGovernanceRuleResponse>
-                transformer = CreateGovernanceRuleConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "CreateGovernanceRule", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        CreateGovernanceRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateGovernanceRuleRequest, CreateGovernanceRuleResponse>
                 handlerToUse = handler;
@@ -448,13 +453,18 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 CreateInclusionCriterionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateInclusionCriterionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "CreateInclusionCriterion",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateInclusionCriterionResponse>
-                transformer = CreateInclusionCriterionConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "CreateInclusionCriterion", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        CreateInclusionCriterionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateInclusionCriterionRequest, CreateInclusionCriterionResponse>
                 handlerToUse = handler;
@@ -497,12 +507,17 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 DeleteGovernanceRuleConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteGovernanceRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "DeleteGovernanceRule",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteGovernanceRuleResponse>
-                transformer = DeleteGovernanceRuleConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "DeleteGovernanceRule", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteGovernanceRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteGovernanceRuleRequest, DeleteGovernanceRuleResponse>
                 handlerToUse = handler;
@@ -540,12 +555,17 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 DeleteInclusionCriterionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteInclusionCriterionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "DeleteInclusionCriterion",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteInclusionCriterionResponse>
-                transformer = DeleteInclusionCriterionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "DeleteInclusionCriterion", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteInclusionCriterionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteInclusionCriterionRequest, DeleteInclusionCriterionResponse>
                 handlerToUse = handler;
@@ -583,12 +603,17 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 GetEnforcedGovernanceRuleConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetEnforcedGovernanceRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "GetEnforcedGovernanceRule",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetEnforcedGovernanceRuleResponse>
-                transformer = GetEnforcedGovernanceRuleConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "GetEnforcedGovernanceRule", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetEnforcedGovernanceRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetEnforcedGovernanceRuleRequest, GetEnforcedGovernanceRuleResponse>
                 handlerToUse = handler;
@@ -627,11 +652,13 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 GetGovernanceRuleConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetGovernanceRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule", "GetGovernanceRule", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetGovernanceRuleResponse>
-                transformer = GetGovernanceRuleConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "GetGovernanceRule", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetGovernanceRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetGovernanceRuleRequest, GetGovernanceRuleResponse>
                 handlerToUse = handler;
 
@@ -668,12 +695,17 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 GetInclusionCriterionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInclusionCriterionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "GetInclusionCriterion",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetInclusionCriterionResponse>
-                transformer = GetInclusionCriterionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "GetInclusionCriterion", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetInclusionCriterionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetInclusionCriterionRequest, GetInclusionCriterionResponse>
                 handlerToUse = handler;
@@ -711,12 +743,17 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 GetTenancyAttachmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTenancyAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "GetTenancyAttachment",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTenancyAttachmentResponse>
-                transformer = GetTenancyAttachmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "GetTenancyAttachment", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetTenancyAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetTenancyAttachmentRequest, GetTenancyAttachmentResponse>
                 handlerToUse = handler;
@@ -756,12 +793,17 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 ListEnforcedGovernanceRulesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListEnforcedGovernanceRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "ListEnforcedGovernanceRules",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListEnforcedGovernanceRulesResponse>
-                transformer = ListEnforcedGovernanceRulesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "ListEnforcedGovernanceRules", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListEnforcedGovernanceRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListEnforcedGovernanceRulesRequest, ListEnforcedGovernanceRulesResponse>
                 handlerToUse = handler;
@@ -800,12 +842,14 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 ListGovernanceRulesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListGovernanceRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule", "ListGovernanceRules", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListGovernanceRulesResponse>
-                transformer = ListGovernanceRulesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "ListGovernanceRules", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListGovernanceRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListGovernanceRulesRequest, ListGovernanceRulesResponse>
                 handlerToUse = handler;
@@ -843,12 +887,17 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 ListInclusionCriteriaConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInclusionCriteriaConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "ListInclusionCriteria",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListInclusionCriteriaResponse>
-                transformer = ListInclusionCriteriaConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "ListInclusionCriteria", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListInclusionCriteriaConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListInclusionCriteriaRequest, ListInclusionCriteriaResponse>
                 handlerToUse = handler;
@@ -886,12 +935,17 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 ListTenancyAttachmentsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTenancyAttachmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "ListTenancyAttachments",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTenancyAttachmentsResponse>
-                transformer = ListTenancyAttachmentsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "ListTenancyAttachments", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListTenancyAttachmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListTenancyAttachmentsRequest, ListTenancyAttachmentsResponse>
                 handlerToUse = handler;
@@ -929,13 +983,15 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 RetryGovernanceRuleConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RetryGovernanceRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule", "RetryGovernanceRule", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RetryGovernanceRuleResponse>
-                transformer = RetryGovernanceRuleConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "RetryGovernanceRule", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        RetryGovernanceRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RetryGovernanceRuleRequest, RetryGovernanceRuleResponse>
                 handlerToUse = handler;
@@ -973,13 +1029,18 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 RetryTenancyAttachmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RetryTenancyAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "RetryTenancyAttachment",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RetryTenancyAttachmentResponse>
-                transformer = RetryTenancyAttachmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "RetryTenancyAttachment", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        RetryTenancyAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RetryTenancyAttachmentRequest, RetryTenancyAttachmentResponse>
                 handlerToUse = handler;
@@ -1017,12 +1078,17 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                 UpdateGovernanceRuleConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateGovernanceRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "UpdateGovernanceRule",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateGovernanceRuleResponse>
-                transformer = UpdateGovernanceRuleConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GovernanceRule", "UpdateGovernanceRule", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        UpdateGovernanceRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateGovernanceRuleRequest, UpdateGovernanceRuleResponse>
                 handlerToUse = handler;

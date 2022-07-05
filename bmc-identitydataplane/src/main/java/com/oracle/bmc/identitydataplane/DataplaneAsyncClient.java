@@ -397,12 +397,17 @@ public class DataplaneAsyncClient implements DataplaneAsync {
                 GenerateScopedAccessTokenConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GenerateScopedAccessTokenConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Dataplane",
+                        "GenerateScopedAccessToken",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateScopedAccessTokenResponse>
-                transformer = GenerateScopedAccessTokenConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Dataplane", "GenerateScopedAccessToken", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GenerateScopedAccessTokenConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateScopedAccessTokenRequest, GenerateScopedAccessTokenResponse>
                 handlerToUse = handler;

@@ -4,27 +4,27 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import java.io.IOException;
-
+import com.oracle.bmc.http.ClientConfigurator;
+import com.oracle.bmc.http.signing.internal.Constants;
+import javax.annotation.Nonnull;
 import javax.annotation.Priority;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
-
-import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.signing.internal.Constants;
-
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import java.io.IOException;
 
 /**
  * Configurator that injects a delegation token on every request.
  */
-@RequiredArgsConstructor
 public class DelegationTokenConfigurator implements ClientConfigurator {
     private final String delegationToken;
+
+    @java.beans.ConstructorProperties({"delegationToken"})
+    public DelegationTokenConfigurator(String delegationToken) {
+        this.delegationToken = delegationToken;
+    }
 
     @Override
     public void customizeBuilder(ClientBuilder builder) {}
@@ -44,12 +44,20 @@ public class DelegationTokenConfigurator implements ClientConfigurator {
 
         private final String delegationToken;
 
-        public DelegationTokenClientFilter(@NonNull String delegationToken) {
+        public DelegationTokenClientFilter(@Nonnull String delegationToken) {
+            if (delegationToken == null) {
+                throw new java.lang.NullPointerException(
+                        "delegationToken is marked non-null but is null");
+            }
             this.delegationToken = delegationToken;
         }
 
         @Override
-        public void filter(@NonNull ClientRequestContext clientRequestContext) throws IOException {
+        public void filter(@Nonnull ClientRequestContext clientRequestContext) throws IOException {
+            if (clientRequestContext == null) {
+                throw new java.lang.NullPointerException(
+                        "clientRequestContext is marked non-null but is null");
+            }
             clientRequestContext
                     .getHeaders()
                     .putSingle(Constants.OPC_OBO_TOKEN, this.delegationToken);

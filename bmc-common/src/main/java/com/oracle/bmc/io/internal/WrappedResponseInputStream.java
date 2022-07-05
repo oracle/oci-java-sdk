@@ -5,9 +5,7 @@
 package com.oracle.bmc.io.internal;
 
 import com.oracle.bmc.http.internal.ResponseHelper;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
-
+import javax.annotation.Nonnull;
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
@@ -17,13 +15,21 @@ import java.io.InputStream;
  * A wrapper over an {@link java.io.InputStream} that ensures that the delegate {@link javax.ws.rs.core.Response} is
  * closed when the delegate input stream is closed.
  */
-@Slf4j
 public class WrappedResponseInputStream extends InputStream {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(WrappedResponseInputStream.class);
     protected final InputStream delegate;
     protected final Response delegateResponse;
 
     public WrappedResponseInputStream(
-            @NonNull InputStream delegate, @NonNull Response delegateResponse) {
+            @Nonnull InputStream delegate, @Nonnull Response delegateResponse) {
+        if (delegate == null) {
+            throw new java.lang.NullPointerException("delegate is marked non-null but is null");
+        }
+        if (delegateResponse == null) {
+            throw new java.lang.NullPointerException(
+                    "delegateResponse is marked non-null but is null");
+        }
         this.delegate = delegate;
         this.delegateResponse = delegateResponse;
     }
@@ -34,12 +40,12 @@ public class WrappedResponseInputStream extends InputStream {
     }
 
     @Override
-    public int read(final byte b[]) throws IOException {
+    public int read(final byte[] b) throws IOException {
         return delegate.read(b);
     }
 
     @Override
-    public int read(final byte b[], final int off, final int len) throws IOException {
+    public int read(final byte[] b, final int off, final int len) throws IOException {
         return delegate.read(b, off, len);
     }
 

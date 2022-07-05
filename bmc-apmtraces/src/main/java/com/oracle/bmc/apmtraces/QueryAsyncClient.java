@@ -397,14 +397,15 @@ public class QueryAsyncClient implements QueryAsync {
                 ListQuickPicksConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListQuickPicksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Query",
+                        "ListQuickPicks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/QuickPickSummary/ListQuickPicks");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListQuickPicksResponse>
-                transformer = ListQuickPicksConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Query",
-                "ListQuickPicks",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/QuickPickSummary/ListQuickPicks");
-
+                transformer =
+                        ListQuickPicksConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListQuickPicksRequest, ListQuickPicksResponse>
                 handlerToUse = handler;
 
@@ -438,14 +439,14 @@ public class QueryAsyncClient implements QueryAsync {
         final QueryRequest interceptedRequest = QueryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 QueryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Query",
+                        "Query",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/QueryResultResponse/Query");
         final com.google.common.base.Function<javax.ws.rs.core.Response, QueryResponse>
-                transformer = QueryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Query",
-                "Query",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/QueryResultResponse/Query");
-
+                transformer = QueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<QueryRequest, QueryResponse> handlerToUse = handler;
 
         java.util.function.Function<

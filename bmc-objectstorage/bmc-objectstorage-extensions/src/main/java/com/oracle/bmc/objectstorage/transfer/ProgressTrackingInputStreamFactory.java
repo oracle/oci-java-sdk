@@ -5,17 +5,14 @@
 package com.oracle.bmc.objectstorage.transfer;
 
 import com.oracle.bmc.io.DuplicatableInputStream;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
+import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.io.InputStream;
 
-@Slf4j
 class ProgressTrackingInputStreamFactory {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ProgressTrackingInputStreamFactory.class);
+
     static InputStream create(final InputStream source, final ProgressTracker progressTracker) {
         if (progressTracker == null) {
             return source;
@@ -26,15 +23,11 @@ class ProgressTrackingInputStreamFactory {
         return new ProgressTrackingInputStream(source, progressTracker);
     }
 
-    @Slf4j
-    @RequiredArgsConstructor(access = AccessLevel.PROTECTED)
     private static class ProgressTrackingInputStream extends InputStream {
-        @Getter(value = AccessLevel.PROTECTED)
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ProgressTrackingInputStream.class);
         private final InputStream source;
-
-        @NonNull
-        @Getter(value = AccessLevel.PROTECTED)
-        private final ProgressTracker progressTracker;
+        @Nonnull private final ProgressTracker progressTracker;
 
         private long bytesReadSinceReset = 0L;
 
@@ -76,14 +69,20 @@ class ProgressTrackingInputStreamFactory {
         }
 
         @Override
-        public int read(byte[] b, int off, int len) throws IOException {
+        public int read(@Nonnull byte[] b, int off, int len) throws IOException {
+            if (b == null) {
+                throw new RuntimeException("b is marked non-null but is null");
+            }
             final int bytesRead = source.read(b, off, len);
             checkAndReportBytesRead(bytesRead);
             return bytesRead;
         }
 
         @Override
-        public int read(byte[] b) throws IOException {
+        public int read(@Nonnull byte[] b) throws IOException {
+            if (b == null) {
+                throw new RuntimeException("b is marked non-null but is null");
+            }
             final int bytesRead = source.read(b);
             checkAndReportBytesRead(bytesRead);
             return bytesRead;
@@ -101,9 +100,29 @@ class ProgressTrackingInputStreamFactory {
                 progressTracker.onBytesRead(bytesRead);
             }
         }
+
+        @java.beans.ConstructorProperties({"source", "progressTracker"})
+        protected ProgressTrackingInputStream(
+                final InputStream source, @Nonnull final ProgressTracker progressTracker) {
+            if (progressTracker == null) {
+                throw new java.lang.NullPointerException(
+                        "progressTracker is marked non-null but is null");
+            }
+            this.source = source;
+            this.progressTracker = progressTracker;
+        }
+
+        protected InputStream getSource() {
+            return this.source;
+        }
+
+        @Nonnull
+        protected ProgressTracker getProgressTracker() {
+            return this.progressTracker;
+        }
     }
 
-    private final static class DuplicatableProgressTrackingInputStream
+    private static final class DuplicatableProgressTrackingInputStream
             extends ProgressTrackingInputStream implements DuplicatableInputStream {
 
         private DuplicatableProgressTrackingInputStream(

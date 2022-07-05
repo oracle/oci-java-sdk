@@ -19,7 +19,6 @@ import com.oracle.bmc.auth.internal.RptPathProvider;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 import com.oracle.bmc.util.internal.NameUtils;
-import lombok.Getter;
 
 import java.io.File;
 import java.time.Duration;
@@ -95,7 +94,7 @@ public class ResourcePrincipalAuthenticationDetailsProvider
      *
      * @return Region object.
      */
-    @Getter private final Region region;
+    private final Region region;
 
     /**
      * Constructor of ResourcePrincipalAuthenticationDetailsProvider.
@@ -110,6 +109,10 @@ public class ResourcePrincipalAuthenticationDetailsProvider
             Region region) {
         super(federationClient, sessionKeySupplier);
         this.region = region;
+    }
+
+    public Region getRegion() {
+        return this.region;
     }
 
     public static class ClaimKeys {

@@ -5,8 +5,7 @@
 package com.oracle.bmc.http;
 
 import com.oracle.bmc.util.internal.Validate;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Nonnull;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.glassfish.jersey.apache.connector.ApacheClientProperties;
 import org.glassfish.jersey.apache.connector.ApacheConnectorProvider;
@@ -22,14 +21,20 @@ import java.util.concurrent.TimeUnit;
  *
  * @see ApacheConnectionPoolConfig
  */
-@Slf4j
 public class ApacheConnectionPoolingClientConfigDecorator implements ClientConfigDecorator {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ApacheConnectionPoolingClientConfigDecorator.class);
     private final ApacheConnectionPoolConfig config;
     private PoolingHttpClientConnectionManager poolConnectionManager;
 
-    /** Creates a new {@code ApacheConnectionPoolingClientConfigDecorator} object. */
+    /**
+     * Creates a new {@code ApacheConnectionPoolingClientConfigDecorator} object.
+     */
     public ApacheConnectionPoolingClientConfigDecorator(
-            @NonNull final ApacheConnectionPoolConfig config) {
+            @Nonnull final ApacheConnectionPoolConfig config) {
+        if (config == null) {
+            throw new java.lang.NullPointerException("config is marked non-null but is null");
+        }
         this.config = config;
     }
 

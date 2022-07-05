@@ -398,15 +398,17 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 ChangeLogGroupCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeLogGroupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ChangeLogGroupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/ChangeLogGroupCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeLogGroupCompartmentResponse>
-                transformer = ChangeLogGroupCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ChangeLogGroupCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/ChangeLogGroupCompartment");
-
+                transformer =
+                        ChangeLogGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLogGroupCompartmentRequest, ChangeLogGroupCompartmentResponse>
                 handlerToUse = handler;
@@ -450,14 +452,16 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 ChangeLogLogGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeLogLogGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ChangeLogLogGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/ChangeLogLogGroup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ChangeLogLogGroupResponse>
-                transformer = ChangeLogLogGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ChangeLogLogGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/ChangeLogLogGroup");
-
+                transformer =
+                        ChangeLogLogGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ChangeLogLogGroupRequest, ChangeLogLogGroupResponse>
                 handlerToUse = handler;
 
@@ -501,16 +505,18 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 ChangeLogSavedSearchCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeLogSavedSearchCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ChangeLogSavedSearchCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ChangeLogSavedSearchCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeLogSavedSearchCompartmentResponse>
-                transformer = ChangeLogSavedSearchCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ChangeLogSavedSearchCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ChangeLogSavedSearchCompartment");
-
+                transformer =
+                        ChangeLogSavedSearchCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLogSavedSearchCompartmentRequest,
                         ChangeLogSavedSearchCompartmentResponse>
@@ -559,17 +565,19 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeUnifiedAgentConfigurationCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ChangeUnifiedAgentConfigurationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ChangeUnifiedAgentConfigurationCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ChangeUnifiedAgentConfigurationCompartmentResponse>
-                transformer = ChangeUnifiedAgentConfigurationCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ChangeUnifiedAgentConfigurationCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ChangeUnifiedAgentConfigurationCompartment");
-
+                transformer =
+                        ChangeUnifiedAgentConfigurationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeUnifiedAgentConfigurationCompartmentRequest,
                         ChangeUnifiedAgentConfigurationCompartmentResponse>
@@ -615,15 +623,16 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
         final CreateLogRequest interceptedRequest = CreateLogConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateLogConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateLogResponse>
-                transformer = CreateLogConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "CreateLog",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/CreateLog");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "CreateLog",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/CreateLog");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateLogResponse>
+                transformer =
+                        CreateLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateLogRequest, CreateLogResponse> handlerToUse =
                 handler;
 
@@ -664,15 +673,16 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 CreateLogGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateLogGroupConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateLogGroupResponse>
-                transformer = CreateLogGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "CreateLogGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/CreateLogGroup");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "CreateLogGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/CreateLogGroup");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateLogGroupResponse>
+                transformer =
+                        CreateLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateLogGroupRequest, CreateLogGroupResponse>
                 handlerToUse = handler;
 
@@ -714,16 +724,18 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 CreateLogSavedSearchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateLogSavedSearchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "CreateLogSavedSearch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/CreateLogSavedSearch");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateLogSavedSearchResponse>
-                transformer = CreateLogSavedSearchConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "CreateLogSavedSearch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/CreateLogSavedSearch");
-
+                transformer =
+                        CreateLogSavedSearchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLogSavedSearchRequest, CreateLogSavedSearchResponse>
                 handlerToUse = handler;
@@ -768,16 +780,18 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 CreateUnifiedAgentConfigurationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateUnifiedAgentConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "CreateUnifiedAgentConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/CreateUnifiedAgentConfiguration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateUnifiedAgentConfigurationResponse>
-                transformer = CreateUnifiedAgentConfigurationConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "CreateUnifiedAgentConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/CreateUnifiedAgentConfiguration");
-
+                transformer =
+                        CreateUnifiedAgentConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateUnifiedAgentConfigurationRequest,
                         CreateUnifiedAgentConfigurationResponse>
@@ -821,14 +835,15 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
         final DeleteLogRequest interceptedRequest = DeleteLogConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteLogConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "DeleteLog",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/DeleteLog");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLogResponse>
-                transformer = DeleteLogConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "DeleteLog",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/DeleteLog");
-
+                transformer =
+                        DeleteLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteLogRequest, DeleteLogResponse> handlerToUse =
                 handler;
 
@@ -864,14 +879,15 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 DeleteLogGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteLogGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "DeleteLogGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/DeleteLogGroup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLogGroupResponse>
-                transformer = DeleteLogGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "DeleteLogGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/DeleteLogGroup");
-
+                transformer =
+                        DeleteLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteLogGroupRequest, DeleteLogGroupResponse>
                 handlerToUse = handler;
 
@@ -908,15 +924,17 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 DeleteLogSavedSearchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteLogSavedSearchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "DeleteLogSavedSearch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/DeleteLogSavedSearch");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteLogSavedSearchResponse>
-                transformer = DeleteLogSavedSearchConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "DeleteLogSavedSearch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/DeleteLogSavedSearch");
-
+                transformer =
+                        DeleteLogSavedSearchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteLogSavedSearchRequest, DeleteLogSavedSearchResponse>
                 handlerToUse = handler;
@@ -956,15 +974,17 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 DeleteUnifiedAgentConfigurationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteUnifiedAgentConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "DeleteUnifiedAgentConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/DeleteUnifiedAgentConfiguration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteUnifiedAgentConfigurationResponse>
-                transformer = DeleteUnifiedAgentConfigurationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "DeleteUnifiedAgentConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/DeleteUnifiedAgentConfiguration");
-
+                transformer =
+                        DeleteUnifiedAgentConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteUnifiedAgentConfigurationRequest,
                         DeleteUnifiedAgentConfigurationResponse>
@@ -1005,14 +1025,16 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 DeleteWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "DeleteWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/DeleteWorkRequest");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
-                transformer = DeleteWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "DeleteWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/DeleteWorkRequest");
-
+                transformer =
+                        DeleteWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteWorkRequestRequest, DeleteWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -1046,14 +1068,14 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
         final GetLogRequest interceptedRequest = GetLogConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetLogConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "GetLog",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/GetLog");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetLogResponse>
-                transformer = GetLogConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "GetLog",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/GetLog");
-
+                transformer = GetLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetLogRequest, GetLogResponse> handlerToUse = handler;
 
         java.util.function.Function<
@@ -1087,14 +1109,15 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 GetLogGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetLogGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "GetLogGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/GetLogGroup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetLogGroupResponse>
-                transformer = GetLogGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "GetLogGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/GetLogGroup");
-
+                transformer =
+                        GetLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetLogGroupRequest, GetLogGroupResponse>
                 handlerToUse = handler;
 
@@ -1131,15 +1154,17 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 GetLogIncludedSearchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetLogIncludedSearchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "GetLogIncludedSearch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/GetLogIncludedSearch");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLogIncludedSearchResponse>
-                transformer = GetLogIncludedSearchConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "GetLogIncludedSearch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/GetLogIncludedSearch");
-
+                transformer =
+                        GetLogIncludedSearchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetLogIncludedSearchRequest, GetLogIncludedSearchResponse>
                 handlerToUse = handler;
@@ -1177,14 +1202,16 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 GetLogSavedSearchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetLogSavedSearchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "GetLogSavedSearch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/GetLogSavedSearch");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetLogSavedSearchResponse>
-                transformer = GetLogSavedSearchConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "GetLogSavedSearch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/GetLogSavedSearch");
-
+                transformer =
+                        GetLogSavedSearchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetLogSavedSearchRequest, GetLogSavedSearchResponse>
                 handlerToUse = handler;
 
@@ -1223,15 +1250,17 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 GetUnifiedAgentConfigurationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetUnifiedAgentConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "GetUnifiedAgentConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/GetUnifiedAgentConfiguration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetUnifiedAgentConfigurationResponse>
-                transformer = GetUnifiedAgentConfigurationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "GetUnifiedAgentConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/GetUnifiedAgentConfiguration");
-
+                transformer =
+                        GetUnifiedAgentConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetUnifiedAgentConfigurationRequest, GetUnifiedAgentConfigurationResponse>
                 handlerToUse = handler;
@@ -1270,14 +1299,15 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/GetWorkRequest");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "GetWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/GetWorkRequest");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -1313,14 +1343,15 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 ListLogGroupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListLogGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ListLogGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroupSummary/ListLogGroups");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListLogGroupsResponse>
-                transformer = ListLogGroupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ListLogGroups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroupSummary/ListLogGroups");
-
+                transformer =
+                        ListLogGroupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListLogGroupsRequest, ListLogGroupsResponse>
                 handlerToUse = handler;
 
@@ -1357,15 +1388,17 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 ListLogIncludedSearchesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListLogIncludedSearchesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ListLogIncludedSearches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/ListLogIncludedSearches");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLogIncludedSearchesResponse>
-                transformer = ListLogIncludedSearchesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ListLogIncludedSearches",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/ListLogIncludedSearches");
-
+                transformer =
+                        ListLogIncludedSearchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListLogIncludedSearchesRequest, ListLogIncludedSearchesResponse>
                 handlerToUse = handler;
@@ -1403,15 +1436,17 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 ListLogSavedSearchesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListLogSavedSearchesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ListLogSavedSearches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ListLogSavedSearches");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLogSavedSearchesResponse>
-                transformer = ListLogSavedSearchesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ListLogSavedSearches",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ListLogSavedSearches");
-
+                transformer =
+                        ListLogSavedSearchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListLogSavedSearchesRequest, ListLogSavedSearchesResponse>
                 handlerToUse = handler;
@@ -1447,14 +1482,14 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
         final ListLogsRequest interceptedRequest = ListLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ListLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSummary/ListLogs");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListLogsResponse>
-                transformer = ListLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ListLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSummary/ListLogs");
-
+                transformer = ListLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListLogsRequest, ListLogsResponse> handlerToUse =
                 handler;
 
@@ -1489,14 +1524,15 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 ListServicesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListServicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ListServices",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/ServiceSummary/ListServices");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListServicesResponse>
-                transformer = ListServicesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ListServices",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/ServiceSummary/ListServices");
-
+                transformer =
+                        ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListServicesRequest, ListServicesResponse>
                 handlerToUse = handler;
 
@@ -1535,15 +1571,17 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 ListUnifiedAgentConfigurationsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListUnifiedAgentConfigurationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ListUnifiedAgentConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ListUnifiedAgentConfigurations");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListUnifiedAgentConfigurationsResponse>
-                transformer = ListUnifiedAgentConfigurationsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ListUnifiedAgentConfigurations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ListUnifiedAgentConfigurations");
-
+                transformer =
+                        ListUnifiedAgentConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListUnifiedAgentConfigurationsRequest,
                         ListUnifiedAgentConfigurationsResponse>
@@ -1583,15 +1621,17 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestError/ListWorkRequestErrors");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ListWorkRequestErrors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestError/ListWorkRequestErrors");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -1629,15 +1669,17 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestLog/ListWorkRequestLogs");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ListWorkRequestLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestLog/ListWorkRequestLogs");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -1675,14 +1717,16 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/ListWorkRequests");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "ListWorkRequests",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/ListWorkRequests");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -1717,14 +1761,15 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
         final UpdateLogRequest interceptedRequest = UpdateLogConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateLogConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "UpdateLog",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/UpdateLog");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLogResponse>
-                transformer = UpdateLogConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "UpdateLog",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/UpdateLog");
-
+                transformer =
+                        UpdateLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateLogRequest, UpdateLogResponse> handlerToUse =
                 handler;
 
@@ -1765,14 +1810,15 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 UpdateLogGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateLogGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "UpdateLogGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/UpdateLogGroup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLogGroupResponse>
-                transformer = UpdateLogGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "UpdateLogGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/UpdateLogGroup");
-
+                transformer =
+                        UpdateLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateLogGroupRequest, UpdateLogGroupResponse>
                 handlerToUse = handler;
 
@@ -1814,15 +1860,17 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 UpdateLogSavedSearchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateLogSavedSearchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "UpdateLogSavedSearch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/UpdateLogSavedSearch");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateLogSavedSearchResponse>
-                transformer = UpdateLogSavedSearchConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "UpdateLogSavedSearch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/UpdateLogSavedSearch");
-
+                transformer =
+                        UpdateLogSavedSearchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateLogSavedSearchRequest, UpdateLogSavedSearchResponse>
                 handlerToUse = handler;
@@ -1867,15 +1915,17 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 UpdateUnifiedAgentConfigurationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateUnifiedAgentConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LoggingManagement",
+                        "UpdateUnifiedAgentConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/UpdateUnifiedAgentConfiguration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateUnifiedAgentConfigurationResponse>
-                transformer = UpdateUnifiedAgentConfigurationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "LoggingManagement",
-                "UpdateUnifiedAgentConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/UpdateUnifiedAgentConfiguration");
-
+                transformer =
+                        UpdateUnifiedAgentConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateUnifiedAgentConfigurationRequest,
                         UpdateUnifiedAgentConfigurationResponse>

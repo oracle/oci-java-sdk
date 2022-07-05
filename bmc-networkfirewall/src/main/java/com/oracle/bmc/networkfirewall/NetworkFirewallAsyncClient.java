@@ -399,11 +399,13 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 CancelWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall", "CancelWorkRequest", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
-                transformer = CancelWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall", "CancelWorkRequest", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        CancelWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -442,15 +444,17 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 ChangeNetworkFirewallCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeNetworkFirewallCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ChangeNetworkFirewallCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeNetworkFirewallCompartmentResponse>
-                transformer = ChangeNetworkFirewallCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall",
-                "ChangeNetworkFirewallCompartment",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ChangeNetworkFirewallCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeNetworkFirewallCompartmentRequest,
                         ChangeNetworkFirewallCompartmentResponse>
@@ -499,16 +503,18 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeNetworkFirewallPolicyCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ChangeNetworkFirewallPolicyCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeNetworkFirewallPolicyCompartmentResponse>
-                transformer = ChangeNetworkFirewallPolicyCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall",
-                "ChangeNetworkFirewallPolicyCompartment",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ChangeNetworkFirewallPolicyCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeNetworkFirewallPolicyCompartmentRequest,
                         ChangeNetworkFirewallPolicyCompartmentResponse>
@@ -555,13 +561,18 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 CreateNetworkFirewallConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateNetworkFirewallConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateNetworkFirewall",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateNetworkFirewallResponse>
-                transformer = CreateNetworkFirewallConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall", "CreateNetworkFirewall", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        CreateNetworkFirewallConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateNetworkFirewallRequest, CreateNetworkFirewallResponse>
                 handlerToUse = handler;
@@ -606,16 +617,18 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 CreateNetworkFirewallPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateNetworkFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateNetworkFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateNetworkFirewallPolicyResponse>
-                transformer = CreateNetworkFirewallPolicyConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall",
-                "CreateNetworkFirewallPolicy",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        CreateNetworkFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateNetworkFirewallPolicyRequest, CreateNetworkFirewallPolicyResponse>
                 handlerToUse = handler;
@@ -659,12 +672,17 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 DeleteNetworkFirewallConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteNetworkFirewallConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteNetworkFirewall",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteNetworkFirewallResponse>
-                transformer = DeleteNetworkFirewallConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall", "DeleteNetworkFirewall", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeleteNetworkFirewallConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteNetworkFirewallRequest, DeleteNetworkFirewallResponse>
                 handlerToUse = handler;
@@ -704,15 +722,17 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 DeleteNetworkFirewallPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteNetworkFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteNetworkFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteNetworkFirewallPolicyResponse>
-                transformer = DeleteNetworkFirewallPolicyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall",
-                "DeleteNetworkFirewallPolicy",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        DeleteNetworkFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteNetworkFirewallPolicyRequest, DeleteNetworkFirewallPolicyResponse>
                 handlerToUse = handler;
@@ -751,11 +771,13 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 GetNetworkFirewallConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetNetworkFirewallConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall", "GetNetworkFirewall", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkFirewallResponse>
-                transformer = GetNetworkFirewallConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall", "GetNetworkFirewall", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetNetworkFirewallConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetNetworkFirewallRequest, GetNetworkFirewallResponse>
                 handlerToUse = handler;
 
@@ -792,12 +814,17 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 GetNetworkFirewallPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetNetworkFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetNetworkFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetNetworkFirewallPolicyResponse>
-                transformer = GetNetworkFirewallPolicyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall", "GetNetworkFirewallPolicy", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetNetworkFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetNetworkFirewallPolicyRequest, GetNetworkFirewallPolicyResponse>
                 handlerToUse = handler;
@@ -835,11 +862,12 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall", "GetWorkRequest", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall", "GetWorkRequest", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -878,15 +906,17 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 ListNetworkFirewallPoliciesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListNetworkFirewallPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListNetworkFirewallPolicies",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListNetworkFirewallPoliciesResponse>
-                transformer = ListNetworkFirewallPoliciesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall",
-                "ListNetworkFirewallPolicies",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ListNetworkFirewallPoliciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListNetworkFirewallPoliciesRequest, ListNetworkFirewallPoliciesResponse>
                 handlerToUse = handler;
@@ -925,12 +955,17 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 ListNetworkFirewallsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListNetworkFirewallsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListNetworkFirewalls",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListNetworkFirewallsResponse>
-                transformer = ListNetworkFirewallsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall", "ListNetworkFirewalls", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListNetworkFirewallsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListNetworkFirewallsRequest, ListNetworkFirewallsResponse>
                 handlerToUse = handler;
@@ -968,12 +1003,17 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -1011,12 +1051,17 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -1054,11 +1099,13 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall", "ListWorkRequests", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall", "ListWorkRequests", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -1095,12 +1142,17 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 UpdateNetworkFirewallConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateNetworkFirewallConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateNetworkFirewall",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateNetworkFirewallResponse>
-                transformer = UpdateNetworkFirewallConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall", "UpdateNetworkFirewall", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        UpdateNetworkFirewallConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateNetworkFirewallRequest, UpdateNetworkFirewallResponse>
                 handlerToUse = handler;
@@ -1145,15 +1197,17 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 UpdateNetworkFirewallPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateNetworkFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateNetworkFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateNetworkFirewallPolicyResponse>
-                transformer = UpdateNetworkFirewallPolicyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkFirewall",
-                "UpdateNetworkFirewallPolicy",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        UpdateNetworkFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateNetworkFirewallPolicyRequest, UpdateNetworkFirewallPolicyResponse>
                 handlerToUse = handler;

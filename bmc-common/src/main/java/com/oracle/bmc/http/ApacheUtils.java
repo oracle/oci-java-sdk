@@ -4,13 +4,11 @@
  */
 package com.oracle.bmc.http;
 
-import lombok.Getter;
 import com.oracle.bmc.util.internal.StringUtils;
 import org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy;
 
 import java.util.Optional;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 /**
  * Utility functions related to Apache
@@ -165,7 +163,6 @@ public final class ApacheUtils {
      * Disabling this will disable warnings to close the streams, logs about wrapping response stream in
      * an auto-closeble stream. Default is true.
      */
-    @Getter
     private static final boolean isExtraStreamLogsEnabled =
             isExtraStreamLogsEnabledViaSystemProperty();
 
@@ -196,5 +193,9 @@ public final class ApacheUtils {
             result = result || clazz.isInstance(c);
         }
         return result;
+    }
+
+    public static boolean isExtraStreamLogsEnabled() {
+        return ApacheUtils.isExtraStreamLogsEnabled;
     }
 }

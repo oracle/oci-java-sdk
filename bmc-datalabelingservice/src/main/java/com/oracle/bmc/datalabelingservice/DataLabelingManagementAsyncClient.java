@@ -399,15 +399,17 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 AddDatasetLabelsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AddDatasetLabelsConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AddDatasetLabelsResponse>
-                transformer = AddDatasetLabelsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "AddDatasetLabels",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/AddDatasetLabels");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "AddDatasetLabels",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/AddDatasetLabels");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddDatasetLabelsResponse>
+                transformer =
+                        AddDatasetLabelsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AddDatasetLabelsRequest, AddDatasetLabelsResponse>
                 handlerToUse = handler;
 
@@ -449,15 +451,17 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 ChangeDatasetCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeDatasetCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "ChangeDatasetCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/ChangeDatasetCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDatasetCompartmentResponse>
-                transformer = ChangeDatasetCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "ChangeDatasetCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/ChangeDatasetCompartment");
-
+                transformer =
+                        ChangeDatasetCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDatasetCompartmentRequest, ChangeDatasetCompartmentResponse>
                 handlerToUse = handler;
@@ -499,15 +503,16 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 CreateDatasetConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDatasetConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDatasetResponse>
-                transformer = CreateDatasetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "CreateDataset",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/CreateDataset");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "CreateDataset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/CreateDataset");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDatasetResponse>
+                transformer =
+                        CreateDatasetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateDatasetRequest, CreateDatasetResponse>
                 handlerToUse = handler;
 
@@ -548,14 +553,15 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 DeleteDatasetConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDatasetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "DeleteDataset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/DeleteDataset");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDatasetResponse>
-                transformer = DeleteDatasetConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "DeleteDataset",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/DeleteDataset");
-
+                transformer =
+                        DeleteDatasetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteDatasetRequest, DeleteDatasetResponse>
                 handlerToUse = handler;
 
@@ -592,16 +598,18 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 GenerateDatasetRecordsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GenerateDatasetRecordsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "GenerateDatasetRecords",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/GenerateDatasetRecords");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateDatasetRecordsResponse>
-                transformer = GenerateDatasetRecordsConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "GenerateDatasetRecords",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/GenerateDatasetRecords");
-
+                transformer =
+                        GenerateDatasetRecordsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateDatasetRecordsRequest, GenerateDatasetRecordsResponse>
                 handlerToUse = handler;
@@ -642,14 +650,15 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
         final GetDatasetRequest interceptedRequest = GetDatasetConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDatasetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "GetDataset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/GetDataset");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDatasetResponse>
-                transformer = GetDatasetConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "GetDataset",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/GetDataset");
-
+                transformer =
+                        GetDatasetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDatasetRequest, GetDatasetResponse> handlerToUse =
                 handler;
 
@@ -686,14 +695,15 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/WorkRequest/GetWorkRequest");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "GetWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/WorkRequest/GetWorkRequest");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -730,15 +740,17 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 ListAnnotationFormatsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAnnotationFormatsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "ListAnnotationFormats",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/AnnotationFormat/ListAnnotationFormats");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAnnotationFormatsResponse>
-                transformer = ListAnnotationFormatsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "ListAnnotationFormats",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/AnnotationFormat/ListAnnotationFormats");
-
+                transformer =
+                        ListAnnotationFormatsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAnnotationFormatsRequest, ListAnnotationFormatsResponse>
                 handlerToUse = handler;
@@ -775,14 +787,15 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 ListDatasetsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDatasetsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "ListDatasets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/DatasetCollection/ListDatasets");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDatasetsResponse>
-                transformer = ListDatasetsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "ListDatasets",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/DatasetCollection/ListDatasets");
-
+                transformer =
+                        ListDatasetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDatasetsRequest, ListDatasetsResponse>
                 handlerToUse = handler;
 
@@ -819,15 +832,17 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/WorkRequest/ListWorkRequestErrors");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "ListWorkRequestErrors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/WorkRequest/ListWorkRequestErrors");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -865,15 +880,17 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/WorkRequest/ListWorkRequestLogs");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "ListWorkRequestLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/WorkRequest/ListWorkRequestLogs");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -911,14 +928,16 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/WorkRequest/ListWorkRequests");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "ListWorkRequests",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/WorkRequest/ListWorkRequests");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -955,16 +974,18 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 RemoveDatasetLabelsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemoveDatasetLabelsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "RemoveDatasetLabels",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/RemoveDatasetLabels");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveDatasetLabelsResponse>
-                transformer = RemoveDatasetLabelsConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "RemoveDatasetLabels",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/RemoveDatasetLabels");
-
+                transformer =
+                        RemoveDatasetLabelsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveDatasetLabelsRequest, RemoveDatasetLabelsResponse>
                 handlerToUse = handler;
@@ -1007,16 +1028,18 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 RenameDatasetLabelsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RenameDatasetLabelsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "RenameDatasetLabels",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/RenameDatasetLabels");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RenameDatasetLabelsResponse>
-                transformer = RenameDatasetLabelsConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "RenameDatasetLabels",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/RenameDatasetLabels");
-
+                transformer =
+                        RenameDatasetLabelsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RenameDatasetLabelsRequest, RenameDatasetLabelsResponse>
                 handlerToUse = handler;
@@ -1059,15 +1082,17 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 SnapshotDatasetConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SnapshotDatasetConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, SnapshotDatasetResponse>
-                transformer = SnapshotDatasetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "SnapshotDataset",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/SnapshotDataset");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "SnapshotDataset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/SnapshotDataset");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, SnapshotDatasetResponse>
+                transformer =
+                        SnapshotDatasetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<SnapshotDatasetRequest, SnapshotDatasetResponse>
                 handlerToUse = handler;
 
@@ -1108,14 +1133,15 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
                 UpdateDatasetConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDatasetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "UpdateDataset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/UpdateDataset");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDatasetResponse>
-                transformer = UpdateDatasetConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DataLabelingManagement",
-                "UpdateDataset",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/UpdateDataset");
-
+                transformer =
+                        UpdateDatasetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateDatasetRequest, UpdateDatasetResponse>
                 handlerToUse = handler;
 

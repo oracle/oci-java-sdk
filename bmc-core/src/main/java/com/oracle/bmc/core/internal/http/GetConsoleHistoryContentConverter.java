@@ -72,6 +72,13 @@ public class GetConsoleHistoryContentConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.core.responses.GetConsoleHistoryContentResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetConsoleHistoryContentResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.core.responses.GetConsoleHistoryContentResponse>
@@ -84,11 +91,17 @@ public class GetConsoleHistoryContentConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.core.responses.GetConsoleHistoryContentResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<String>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(String.class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    String.class, serviceDetails.get());
+                                } else {
+                                    responseFn = RESPONSE_CONVERSION_FACTORY.create(String.class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<String> response =
                                         responseFn.apply(rawResponse);

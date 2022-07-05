@@ -64,6 +64,13 @@ public class UpdateComputeImageCapabilitySchemaConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.core.responses.UpdateComputeImageCapabilitySchemaResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateComputeImageCapabilitySchemaResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.core.responses.UpdateComputeImageCapabilitySchemaResponse>
@@ -78,16 +85,26 @@ public class UpdateComputeImageCapabilitySchemaConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.core.responses.UpdateComputeImageCapabilitySchemaResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.core.model
                                                                 .ComputeImageCapabilitySchema>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.core.model
-                                                                        .ComputeImageCapabilitySchema
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.core.model
+                                                                    .ComputeImageCapabilitySchema
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.core.model
+                                                                    .ComputeImageCapabilitySchema
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.core.model

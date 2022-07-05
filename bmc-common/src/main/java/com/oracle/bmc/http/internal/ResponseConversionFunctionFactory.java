@@ -6,10 +6,8 @@ package com.oracle.bmc.http.internal;
 
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
-
 import com.google.common.base.Function;
-
-import lombok.RequiredArgsConstructor;
+import com.oracle.bmc.ServiceDetails;
 
 /**
  * Factory class to create the appropriate type of Function to convert a REST
@@ -24,7 +22,17 @@ public class ResponseConversionFunctionFactory {
      * @return A new Function.
      */
     public Function<Response, WithHeaders<Void>> create() {
-        return new ParseResponseOnlyHeadersFunction();
+        return new ParseResponseOnlyHeadersFunction(ServiceDetails.UNKNOWN_SERVICE_DETAILS);
+    }
+
+    /**
+     * Creates a Function that will not convert the Response into any given type, just
+     * return the headers.
+     * @param serviceDetails service details of the Response
+     * @return A new Function.
+     */
+    public Function<Response, WithHeaders<Void>> create(ServiceDetails serviceDetails) {
+        return new ParseResponseOnlyHeadersFunction(serviceDetails);
     }
 
     /**
@@ -34,7 +42,20 @@ public class ResponseConversionFunctionFactory {
      * @return A new Function.
      */
     public <T> Function<Response, WithHeaders<T>> create(Class<T> clazz) {
-        return new ParseResponseWithHeadersFunction<>(clazz);
+        return new ParseResponseWithHeadersFunction<>(
+                clazz, ServiceDetails.UNKNOWN_SERVICE_DETAILS);
+    }
+
+    /**
+     * Creates a Function that will convert the Response into the given object type.
+     *
+     * @param clazz The type of instance to convert to.
+     * @param serviceDetails service details of the Response
+     * @return A new Function.
+     */
+    public <T> Function<Response, WithHeaders<T>> create(
+            Class<T> clazz, ServiceDetails serviceDetails) {
+        return new ParseResponseWithHeadersFunction<>(clazz, serviceDetails);
     }
 
     /**
@@ -45,10 +66,23 @@ public class ResponseConversionFunctionFactory {
      * @return A new Function.
      */
     public <T> Function<Response, WithHeaders<T>> create(GenericType<T> type) {
-        return new ParseGenericResponseWithHeadersFunction<>(type);
+        return new ParseGenericResponseWithHeadersFunction<>(
+                type, ServiceDetails.UNKNOWN_SERVICE_DETAILS);
     }
 
-    @RequiredArgsConstructor
+    /**
+     * Creates a Function that will convert the Response into a parameterized collection object,
+     * or some other parameterized type.
+     *
+     * @param type The generic type to convert to.
+     * @param serviceDetails service details of the Response
+     * @return A new Function.
+     */
+    public <T> Function<Response, WithHeaders<T>> create(
+            GenericType<T> type, ServiceDetails serviceDetails) {
+        return new ParseGenericResponseWithHeadersFunction<>(type, serviceDetails);
+    }
+
     private static final class ParseResponseWithHeadersFunction<T>
             extends ValidatingParseResponseFunction<WithHeaders<T>> {
         private final Class<T> responseClass;
@@ -58,9 +92,15 @@ public class ResponseConversionFunctionFactory {
             T entity = ResponseHelper.readEntity(response, responseClass);
             return new WithHeaders<>(entity, response.getStringHeaders(), response.getStatus());
         }
+
+        @java.beans.ConstructorProperties({"responseClass", "serviceDetails"})
+        public ParseResponseWithHeadersFunction(
+                final Class<T> responseClass, final ServiceDetails serviceDetails) {
+            super(serviceDetails);
+            this.responseClass = responseClass;
+        }
     }
 
-    @RequiredArgsConstructor
     private static final class ParseGenericResponseWithHeadersFunction<T>
             extends ValidatingParseResponseFunction<WithHeaders<T>> {
         private final GenericType<T> genericType;
@@ -70,10 +110,22 @@ public class ResponseConversionFunctionFactory {
             T entity = ResponseHelper.readEntity(response, genericType);
             return new WithHeaders<>(entity, response.getStringHeaders(), response.getStatus());
         }
+
+        @java.beans.ConstructorProperties({"genericType", "serviceDetails"})
+        public ParseGenericResponseWithHeadersFunction(
+                final GenericType<T> genericType, final ServiceDetails serviceDetails) {
+            super(serviceDetails);
+            this.genericType = genericType;
+        }
     }
 
     private static final class ParseResponseOnlyHeadersFunction
             extends ValidatingParseResponseFunction<WithHeaders<Void>> {
+
+        ParseResponseOnlyHeadersFunction(ServiceDetails serviceDetails) {
+            super(serviceDetails);
+        }
+
         @Override
         protected WithHeaders<Void> doApply(Response response) {
             ResponseHelper.readWithoutEntity(response);
@@ -83,9 +135,16 @@ public class ResponseConversionFunctionFactory {
 
     private static abstract class ValidatingParseResponseFunction<T>
             implements Function<Response, T> {
+        protected ServiceDetails serviceDetails;
+
+        @java.beans.ConstructorProperties({"serviceDetails"})
+        ValidatingParseResponseFunction(final ServiceDetails serviceDetails) {
+            this.serviceDetails = serviceDetails;
+        }
+
         @Override
         public final T apply(Response response) {
-            ResponseHelper.throwIfNotSuccessful(response);
+            ResponseHelper.throwIfNotSuccessful(response, serviceDetails);
             return doApply(response);
         }
 

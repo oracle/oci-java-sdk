@@ -79,6 +79,13 @@ public class RequestSummarizedRiskScoresConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.cloudguard.responses.RequestSummarizedRiskScoresResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.cloudguard.responses.RequestSummarizedRiskScoresResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.cloudguard.responses.RequestSummarizedRiskScoresResponse>
@@ -93,16 +100,26 @@ public class RequestSummarizedRiskScoresConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.cloudguard.responses.RequestSummarizedRiskScoresResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.cloudguard.model
                                                                 .RiskScoreAggregationCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.cloudguard.model
-                                                                        .RiskScoreAggregationCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.cloudguard.model
+                                                                    .RiskScoreAggregationCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.cloudguard.model
+                                                                    .RiskScoreAggregationCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.cloudguard.model

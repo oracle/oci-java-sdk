@@ -5,13 +5,9 @@
 package com.oracle.bmc.http.internal;
 
 import javax.ws.rs.core.Response;
-
 import com.google.common.base.Function;
 import com.oracle.bmc.responses.AsyncHandler;
 import com.oracle.bmc.util.internal.Consumer;
-
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Basic Consumer to handle successful calls.
@@ -19,9 +15,9 @@ import lombok.extern.slf4j.Slf4j;
  * @param <REQUEST> The request type.
  * @param <RESPONSE> The response type.
  */
-@Slf4j
-@RequiredArgsConstructor
 public class SuccessConsumer<REQUEST, RESPONSE> implements Consumer<Response> {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(SuccessConsumer.class);
     private final AsyncHandler<REQUEST, RESPONSE> handler;
     private final Function<Response, RESPONSE> transformer;
     private final REQUEST request;
@@ -35,5 +31,15 @@ public class SuccessConsumer<REQUEST, RESPONSE> implements Consumer<Response> {
         } else {
             LOG.debug("Request successful, but no handler configured");
         }
+    }
+
+    @java.beans.ConstructorProperties({"handler", "transformer", "request"})
+    public SuccessConsumer(
+            final AsyncHandler<REQUEST, RESPONSE> handler,
+            final Function<Response, RESPONSE> transformer,
+            final REQUEST request) {
+        this.handler = handler;
+        this.transformer = transformer;
+        this.request = request;
     }
 }

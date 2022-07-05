@@ -60,6 +60,13 @@ public class GetAnnouncementUserStatusConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.announcementsservice.responses.GetAnnouncementUserStatusResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.announcementsservice.responses.GetAnnouncementUserStatusResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.announcementsservice.responses
@@ -75,16 +82,26 @@ public class GetAnnouncementUserStatusConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.announcementsservice.responses.GetAnnouncementUserStatusResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.announcementsservice.model
                                                                 .AnnouncementUserStatusDetails>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.announcementsservice.model
-                                                                        .AnnouncementUserStatusDetails
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.announcementsservice.model
+                                                                    .AnnouncementUserStatusDetails
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.announcementsservice.model
+                                                                    .AnnouncementUserStatusDetails
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.announcementsservice.model

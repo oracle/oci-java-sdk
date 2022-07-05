@@ -4,9 +4,6 @@
  */
 package com.oracle.bmc.util.internal;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
 /**
  * Utility functions related to naming
  */

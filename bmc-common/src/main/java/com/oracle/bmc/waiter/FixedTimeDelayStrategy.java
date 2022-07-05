@@ -6,12 +6,9 @@ package com.oracle.bmc.waiter;
 
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
 
-import lombok.RequiredArgsConstructor;
-
 /**
  * Delay strategy that waits a constant amount of time between poll attempts.
  */
-@RequiredArgsConstructor
 public class FixedTimeDelayStrategy implements DelayStrategy {
     /**
      * The amount of time to wait (in millis) between each condition check.
@@ -21,5 +18,10 @@ public class FixedTimeDelayStrategy implements DelayStrategy {
     @Override
     public long nextDelay(WaitContext context) {
         return timeBetweenAttempsInMillis;
+    }
+
+    @java.beans.ConstructorProperties({"timeBetweenAttempsInMillis"})
+    public FixedTimeDelayStrategy(final long timeBetweenAttempsInMillis) {
+        this.timeBetweenAttempsInMillis = timeBetweenAttempsInMillis;
     }
 }

@@ -399,16 +399,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ChangeAccessPolicyCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeAccessPolicyCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ChangeAccessPolicyCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ChangeAccessPolicyCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeAccessPolicyCompartmentResponse>
-                transformer = ChangeAccessPolicyCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ChangeAccessPolicyCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ChangeAccessPolicyCompartment");
-
+                transformer =
+                        ChangeAccessPolicyCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAccessPolicyCompartmentRequest, ChangeAccessPolicyCompartmentResponse>
                 handlerToUse = handler;
@@ -454,16 +456,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ChangeIngressGatewayCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeIngressGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ChangeIngressGatewayCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ChangeIngressGatewayCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeIngressGatewayCompartmentResponse>
-                transformer = ChangeIngressGatewayCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ChangeIngressGatewayCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ChangeIngressGatewayCompartment");
-
+                transformer =
+                        ChangeIngressGatewayCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeIngressGatewayCompartmentRequest,
                         ChangeIngressGatewayCompartmentResponse>
@@ -512,17 +516,19 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeIngressGatewayRouteTableCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ChangeIngressGatewayRouteTableCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ChangeIngressGatewayRouteTableCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ChangeIngressGatewayRouteTableCompartmentResponse>
-                transformer = ChangeIngressGatewayRouteTableCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ChangeIngressGatewayRouteTableCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ChangeIngressGatewayRouteTableCompartment");
-
+                transformer =
+                        ChangeIngressGatewayRouteTableCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeIngressGatewayRouteTableCompartmentRequest,
                         ChangeIngressGatewayRouteTableCompartmentResponse>
@@ -570,16 +576,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ChangeMeshCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeMeshCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ChangeMeshCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ChangeMeshCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeMeshCompartmentResponse>
-                transformer = ChangeMeshCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ChangeMeshCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ChangeMeshCompartment");
-
+                transformer =
+                        ChangeMeshCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeMeshCompartmentRequest, ChangeMeshCompartmentResponse>
                 handlerToUse = handler;
@@ -624,16 +632,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ChangeVirtualDeploymentCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeVirtualDeploymentCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ChangeVirtualDeploymentCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ChangeVirtualDeploymentCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVirtualDeploymentCompartmentResponse>
-                transformer = ChangeVirtualDeploymentCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ChangeVirtualDeploymentCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ChangeVirtualDeploymentCompartment");
-
+                transformer =
+                        ChangeVirtualDeploymentCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVirtualDeploymentCompartmentRequest,
                         ChangeVirtualDeploymentCompartmentResponse>
@@ -681,16 +691,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ChangeVirtualServiceCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeVirtualServiceCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ChangeVirtualServiceCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ChangeVirtualServiceCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVirtualServiceCompartmentResponse>
-                transformer = ChangeVirtualServiceCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ChangeVirtualServiceCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ChangeVirtualServiceCompartment");
-
+                transformer =
+                        ChangeVirtualServiceCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVirtualServiceCompartmentRequest,
                         ChangeVirtualServiceCompartmentResponse>
@@ -739,17 +751,19 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeVirtualServiceRouteTableCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ChangeVirtualServiceRouteTableCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ChangeVirtualServiceRouteTableCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ChangeVirtualServiceRouteTableCompartmentResponse>
-                transformer = ChangeVirtualServiceRouteTableCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ChangeVirtualServiceRouteTableCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ChangeVirtualServiceRouteTableCompartment");
-
+                transformer =
+                        ChangeVirtualServiceRouteTableCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVirtualServiceRouteTableCompartmentRequest,
                         ChangeVirtualServiceRouteTableCompartmentResponse>
@@ -797,15 +811,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 CreateAccessPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAccessPolicyConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAccessPolicyResponse>
-                transformer = CreateAccessPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "CreateAccessPolicy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/CreateAccessPolicy");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "CreateAccessPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/CreateAccessPolicy");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAccessPolicyResponse>
+                transformer =
+                        CreateAccessPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateAccessPolicyRequest, CreateAccessPolicyResponse>
                 handlerToUse = handler;
 
@@ -847,16 +863,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 CreateIngressGatewayConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateIngressGatewayConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "CreateIngressGateway",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/CreateIngressGateway");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateIngressGatewayResponse>
-                transformer = CreateIngressGatewayConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "CreateIngressGateway",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/CreateIngressGateway");
-
+                transformer =
+                        CreateIngressGatewayConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateIngressGatewayRequest, CreateIngressGatewayResponse>
                 handlerToUse = handler;
@@ -901,16 +919,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 CreateIngressGatewayRouteTableConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateIngressGatewayRouteTableConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "CreateIngressGatewayRouteTable",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/CreateIngressGatewayRouteTable");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateIngressGatewayRouteTableResponse>
-                transformer = CreateIngressGatewayRouteTableConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "CreateIngressGatewayRouteTable",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/CreateIngressGatewayRouteTable");
-
+                transformer =
+                        CreateIngressGatewayRouteTableConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateIngressGatewayRouteTableRequest,
                         CreateIngressGatewayRouteTableResponse>
@@ -953,15 +973,16 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
         final CreateMeshRequest interceptedRequest = CreateMeshConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateMeshConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateMeshResponse>
-                transformer = CreateMeshConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "CreateMesh",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/CreateMesh");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "CreateMesh",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/CreateMesh");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateMeshResponse>
+                transformer =
+                        CreateMeshConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateMeshRequest, CreateMeshResponse> handlerToUse =
                 handler;
 
@@ -1003,16 +1024,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 CreateVirtualDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVirtualDeploymentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "CreateVirtualDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/CreateVirtualDeployment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVirtualDeploymentResponse>
-                transformer = CreateVirtualDeploymentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "CreateVirtualDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/CreateVirtualDeployment");
-
+                transformer =
+                        CreateVirtualDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVirtualDeploymentRequest, CreateVirtualDeploymentResponse>
                 handlerToUse = handler;
@@ -1055,16 +1078,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 CreateVirtualServiceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVirtualServiceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "CreateVirtualService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/CreateVirtualService");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVirtualServiceResponse>
-                transformer = CreateVirtualServiceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "CreateVirtualService",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/CreateVirtualService");
-
+                transformer =
+                        CreateVirtualServiceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVirtualServiceRequest, CreateVirtualServiceResponse>
                 handlerToUse = handler;
@@ -1109,16 +1134,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 CreateVirtualServiceRouteTableConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVirtualServiceRouteTableConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "CreateVirtualServiceRouteTable",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/CreateVirtualServiceRouteTable");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVirtualServiceRouteTableResponse>
-                transformer = CreateVirtualServiceRouteTableConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "CreateVirtualServiceRouteTable",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/CreateVirtualServiceRouteTable");
-
+                transformer =
+                        CreateVirtualServiceRouteTableConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVirtualServiceRouteTableRequest,
                         CreateVirtualServiceRouteTableResponse>
@@ -1163,14 +1190,16 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 DeleteAccessPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteAccessPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "DeleteAccessPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/DeleteAccessPolicy");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAccessPolicyResponse>
-                transformer = DeleteAccessPolicyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "DeleteAccessPolicy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/DeleteAccessPolicy");
-
+                transformer =
+                        DeleteAccessPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteAccessPolicyRequest, DeleteAccessPolicyResponse>
                 handlerToUse = handler;
 
@@ -1207,15 +1236,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 DeleteIngressGatewayConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteIngressGatewayConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "DeleteIngressGateway",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/DeleteIngressGateway");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteIngressGatewayResponse>
-                transformer = DeleteIngressGatewayConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "DeleteIngressGateway",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/DeleteIngressGateway");
-
+                transformer =
+                        DeleteIngressGatewayConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteIngressGatewayRequest, DeleteIngressGatewayResponse>
                 handlerToUse = handler;
@@ -1255,15 +1286,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 DeleteIngressGatewayRouteTableConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteIngressGatewayRouteTableConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "DeleteIngressGatewayRouteTable",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/DeleteIngressGatewayRouteTable");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteIngressGatewayRouteTableResponse>
-                transformer = DeleteIngressGatewayRouteTableConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "DeleteIngressGatewayRouteTable",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/DeleteIngressGatewayRouteTable");
-
+                transformer =
+                        DeleteIngressGatewayRouteTableConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteIngressGatewayRouteTableRequest,
                         DeleteIngressGatewayRouteTableResponse>
@@ -1301,14 +1334,15 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
         final DeleteMeshRequest interceptedRequest = DeleteMeshConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteMeshConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "DeleteMesh",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/DeleteMesh");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMeshResponse>
-                transformer = DeleteMeshConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "DeleteMesh",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/DeleteMesh");
-
+                transformer =
+                        DeleteMeshConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteMeshRequest, DeleteMeshResponse> handlerToUse =
                 handler;
 
@@ -1345,15 +1379,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 DeleteVirtualDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVirtualDeploymentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "DeleteVirtualDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/DeleteVirtualDeployment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteVirtualDeploymentResponse>
-                transformer = DeleteVirtualDeploymentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "DeleteVirtualDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/DeleteVirtualDeployment");
-
+                transformer =
+                        DeleteVirtualDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteVirtualDeploymentRequest, DeleteVirtualDeploymentResponse>
                 handlerToUse = handler;
@@ -1391,15 +1427,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 DeleteVirtualServiceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVirtualServiceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "DeleteVirtualService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/DeleteVirtualService");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteVirtualServiceResponse>
-                transformer = DeleteVirtualServiceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "DeleteVirtualService",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/DeleteVirtualService");
-
+                transformer =
+                        DeleteVirtualServiceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteVirtualServiceRequest, DeleteVirtualServiceResponse>
                 handlerToUse = handler;
@@ -1439,15 +1477,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 DeleteVirtualServiceRouteTableConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVirtualServiceRouteTableConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "DeleteVirtualServiceRouteTable",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/DeleteVirtualServiceRouteTable");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteVirtualServiceRouteTableResponse>
-                transformer = DeleteVirtualServiceRouteTableConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "DeleteVirtualServiceRouteTable",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/DeleteVirtualServiceRouteTable");
-
+                transformer =
+                        DeleteVirtualServiceRouteTableConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteVirtualServiceRouteTableRequest,
                         DeleteVirtualServiceRouteTableResponse>
@@ -1487,14 +1527,16 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 GetAccessPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAccessPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "GetAccessPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/GetAccessPolicy");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAccessPolicyResponse>
-                transformer = GetAccessPolicyConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "GetAccessPolicy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/GetAccessPolicy");
-
+                transformer =
+                        GetAccessPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetAccessPolicyRequest, GetAccessPolicyResponse>
                 handlerToUse = handler;
 
@@ -1531,14 +1573,16 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 GetIngressGatewayConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIngressGatewayConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "GetIngressGateway",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/GetIngressGateway");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetIngressGatewayResponse>
-                transformer = GetIngressGatewayConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "GetIngressGateway",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/GetIngressGateway");
-
+                transformer =
+                        GetIngressGatewayConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetIngressGatewayRequest, GetIngressGatewayResponse>
                 handlerToUse = handler;
 
@@ -1577,15 +1621,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 GetIngressGatewayRouteTableConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIngressGatewayRouteTableConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "GetIngressGatewayRouteTable",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/GetIngressGatewayRouteTable");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetIngressGatewayRouteTableResponse>
-                transformer = GetIngressGatewayRouteTableConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "GetIngressGatewayRouteTable",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/GetIngressGatewayRouteTable");
-
+                transformer =
+                        GetIngressGatewayRouteTableConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetIngressGatewayRouteTableRequest, GetIngressGatewayRouteTableResponse>
                 handlerToUse = handler;
@@ -1621,14 +1667,14 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
         final GetMeshRequest interceptedRequest = GetMeshConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetMeshConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "GetMesh",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/GetMesh");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetMeshResponse>
-                transformer = GetMeshConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "GetMesh",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/GetMesh");
-
+                transformer = GetMeshConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetMeshRequest, GetMeshResponse> handlerToUse =
                 handler;
 
@@ -1664,14 +1710,16 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 GetProxyDetailsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetProxyDetailsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "GetProxyDetails",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/ProxyDetails/GetProxyDetails");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetProxyDetailsResponse>
-                transformer = GetProxyDetailsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "GetProxyDetails",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/ProxyDetails/GetProxyDetails");
-
+                transformer =
+                        GetProxyDetailsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetProxyDetailsRequest, GetProxyDetailsResponse>
                 handlerToUse = handler;
 
@@ -1708,15 +1756,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 GetVirtualDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVirtualDeploymentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "GetVirtualDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/GetVirtualDeployment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVirtualDeploymentResponse>
-                transformer = GetVirtualDeploymentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "GetVirtualDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/GetVirtualDeployment");
-
+                transformer =
+                        GetVirtualDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetVirtualDeploymentRequest, GetVirtualDeploymentResponse>
                 handlerToUse = handler;
@@ -1754,14 +1804,16 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 GetVirtualServiceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVirtualServiceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "GetVirtualService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/GetVirtualService");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVirtualServiceResponse>
-                transformer = GetVirtualServiceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "GetVirtualService",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/GetVirtualService");
-
+                transformer =
+                        GetVirtualServiceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetVirtualServiceRequest, GetVirtualServiceResponse>
                 handlerToUse = handler;
 
@@ -1800,15 +1852,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 GetVirtualServiceRouteTableConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVirtualServiceRouteTableConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "GetVirtualServiceRouteTable",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/GetVirtualServiceRouteTable");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVirtualServiceRouteTableResponse>
-                transformer = GetVirtualServiceRouteTableConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "GetVirtualServiceRouteTable",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/GetVirtualServiceRouteTable");
-
+                transformer =
+                        GetVirtualServiceRouteTableConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetVirtualServiceRouteTableRequest, GetVirtualServiceRouteTableResponse>
                 handlerToUse = handler;
@@ -1847,14 +1901,15 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/GetWorkRequest");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "GetWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/GetWorkRequest");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -1891,14 +1946,16 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ListAccessPoliciesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAccessPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ListAccessPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ListAccessPolicies");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAccessPoliciesResponse>
-                transformer = ListAccessPoliciesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ListAccessPolicies",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ListAccessPolicies");
-
+                transformer =
+                        ListAccessPoliciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListAccessPoliciesRequest, ListAccessPoliciesResponse>
                 handlerToUse = handler;
 
@@ -1937,15 +1994,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ListIngressGatewayRouteTablesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIngressGatewayRouteTablesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ListIngressGatewayRouteTables",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ListIngressGatewayRouteTables");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIngressGatewayRouteTablesResponse>
-                transformer = ListIngressGatewayRouteTablesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ListIngressGatewayRouteTables",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ListIngressGatewayRouteTables");
-
+                transformer =
+                        ListIngressGatewayRouteTablesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListIngressGatewayRouteTablesRequest, ListIngressGatewayRouteTablesResponse>
                 handlerToUse = handler;
@@ -1984,15 +2043,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ListIngressGatewaysConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIngressGatewaysConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ListIngressGateways",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ListIngressGateways");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIngressGatewaysResponse>
-                transformer = ListIngressGatewaysConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ListIngressGateways",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ListIngressGateways");
-
+                transformer =
+                        ListIngressGatewaysConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListIngressGatewaysRequest, ListIngressGatewaysResponse>
                 handlerToUse = handler;
@@ -2028,14 +2089,15 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
         final ListMeshesRequest interceptedRequest = ListMeshesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListMeshesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ListMeshes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ListMeshes");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListMeshesResponse>
-                transformer = ListMeshesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ListMeshes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ListMeshes");
-
+                transformer =
+                        ListMeshesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListMeshesRequest, ListMeshesResponse> handlerToUse =
                 handler;
 
@@ -2072,15 +2134,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ListVirtualDeploymentsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVirtualDeploymentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ListVirtualDeployments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ListVirtualDeployments");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVirtualDeploymentsResponse>
-                transformer = ListVirtualDeploymentsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ListVirtualDeployments",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ListVirtualDeployments");
-
+                transformer =
+                        ListVirtualDeploymentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListVirtualDeploymentsRequest, ListVirtualDeploymentsResponse>
                 handlerToUse = handler;
@@ -2120,15 +2184,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ListVirtualServiceRouteTablesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVirtualServiceRouteTablesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ListVirtualServiceRouteTables",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ListVirtualServiceRouteTables");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVirtualServiceRouteTablesResponse>
-                transformer = ListVirtualServiceRouteTablesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ListVirtualServiceRouteTables",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ListVirtualServiceRouteTables");
-
+                transformer =
+                        ListVirtualServiceRouteTablesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListVirtualServiceRouteTablesRequest, ListVirtualServiceRouteTablesResponse>
                 handlerToUse = handler;
@@ -2167,15 +2233,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ListVirtualServicesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVirtualServicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ListVirtualServices",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ListVirtualServices");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVirtualServicesResponse>
-                transformer = ListVirtualServicesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ListVirtualServices",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ListVirtualServices");
-
+                transformer =
+                        ListVirtualServicesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListVirtualServicesRequest, ListVirtualServicesResponse>
                 handlerToUse = handler;
@@ -2213,15 +2281,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestErrors");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ListWorkRequestErrors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestErrors");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -2259,15 +2329,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestLogs");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ListWorkRequestLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestLogs");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -2305,14 +2377,16 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequests");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "ListWorkRequests",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequests");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -2349,15 +2423,17 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 UpdateAccessPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAccessPolicyConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAccessPolicyResponse>
-                transformer = UpdateAccessPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "UpdateAccessPolicy",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/UpdateAccessPolicy");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "UpdateAccessPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/UpdateAccessPolicy");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAccessPolicyResponse>
+                transformer =
+                        UpdateAccessPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateAccessPolicyRequest, UpdateAccessPolicyResponse>
                 handlerToUse = handler;
 
@@ -2399,16 +2475,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 UpdateIngressGatewayConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateIngressGatewayConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "UpdateIngressGateway",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/UpdateIngressGateway");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateIngressGatewayResponse>
-                transformer = UpdateIngressGatewayConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "UpdateIngressGateway",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/UpdateIngressGateway");
-
+                transformer =
+                        UpdateIngressGatewayConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateIngressGatewayRequest, UpdateIngressGatewayResponse>
                 handlerToUse = handler;
@@ -2453,16 +2531,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 UpdateIngressGatewayRouteTableConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateIngressGatewayRouteTableConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "UpdateIngressGatewayRouteTable",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/UpdateIngressGatewayRouteTable");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateIngressGatewayRouteTableResponse>
-                transformer = UpdateIngressGatewayRouteTableConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "UpdateIngressGatewayRouteTable",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/UpdateIngressGatewayRouteTable");
-
+                transformer =
+                        UpdateIngressGatewayRouteTableConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateIngressGatewayRouteTableRequest,
                         UpdateIngressGatewayRouteTableResponse>
@@ -2505,15 +2585,16 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
         final UpdateMeshRequest interceptedRequest = UpdateMeshConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateMeshConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMeshResponse>
-                transformer = UpdateMeshConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "UpdateMesh",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/UpdateMesh");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "UpdateMesh",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/UpdateMesh");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMeshResponse>
+                transformer =
+                        UpdateMeshConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateMeshRequest, UpdateMeshResponse> handlerToUse =
                 handler;
 
@@ -2555,16 +2636,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 UpdateVirtualDeploymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVirtualDeploymentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "UpdateVirtualDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/UpdateVirtualDeployment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateVirtualDeploymentResponse>
-                transformer = UpdateVirtualDeploymentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "UpdateVirtualDeployment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/UpdateVirtualDeployment");
-
+                transformer =
+                        UpdateVirtualDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateVirtualDeploymentRequest, UpdateVirtualDeploymentResponse>
                 handlerToUse = handler;
@@ -2607,16 +2690,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 UpdateVirtualServiceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVirtualServiceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "UpdateVirtualService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/UpdateVirtualService");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateVirtualServiceResponse>
-                transformer = UpdateVirtualServiceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "UpdateVirtualService",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/UpdateVirtualService");
-
+                transformer =
+                        UpdateVirtualServiceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateVirtualServiceRequest, UpdateVirtualServiceResponse>
                 handlerToUse = handler;
@@ -2661,16 +2746,18 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                 UpdateVirtualServiceRouteTableConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVirtualServiceRouteTableConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ServiceMesh",
+                        "UpdateVirtualServiceRouteTable",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/UpdateVirtualServiceRouteTable");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateVirtualServiceRouteTableResponse>
-                transformer = UpdateVirtualServiceRouteTableConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh",
-                "UpdateVirtualServiceRouteTable",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/UpdateVirtualServiceRouteTable");
-
+                transformer =
+                        UpdateVirtualServiceRouteTableConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateVirtualServiceRouteTableRequest,
                         UpdateVirtualServiceRouteTableResponse>

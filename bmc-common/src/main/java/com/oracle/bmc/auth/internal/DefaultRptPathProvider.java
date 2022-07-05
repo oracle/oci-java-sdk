@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 import java.util.Map;
 
@@ -21,8 +21,9 @@ import java.util.Map;
  *
  * This path provider is used when the caller doesn't provide a specific path provider to the resource principals signer
  */
-@Slf4j
 public class DefaultRptPathProvider extends AbstractTemplateRptPathProvider {
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DefaultRptPathProvider.class);
     private final Map<String, String> replacements;
 
     public DefaultRptPathProvider() {

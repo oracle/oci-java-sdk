@@ -9,20 +9,25 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 import com.google.common.base.Supplier;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
 
 /**
  * Supplier for private key in String format
  */
-@RequiredArgsConstructor
-@ToString
 public class StringPrivateKeySupplier implements Supplier<InputStream> {
 
     private final String privateKey;
 
+    @java.beans.ConstructorProperties({"privateKey"})
+    public StringPrivateKeySupplier(String privateKey) {
+        this.privateKey = privateKey;
+    }
+
     @Override
     public InputStream get() {
         return new ByteArrayInputStream(privateKey.getBytes(StandardCharsets.UTF_8));
+    }
+
+    public String toString() {
+        return "StringPrivateKeySupplier(privateKey=" + this.privateKey + ")";
     }
 }
