@@ -7,7 +7,7 @@ package com.oracle.bmc.http.internal;
 import com.oracle.bmc.retrier.BmcGenericRetrier;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import com.oracle.bmc.waiter.TerminationStrategy;
-import lombok.NonNull;
+import javax.annotation.Nonnull;
 
 public class RetryUtils {
     private static final String OPC_CLIENT_RETRIES_HEADER = "opc-client-retries";
@@ -18,7 +18,14 @@ public class RetryUtils {
      * @param retrier used to determine if the SDK will send the opc-client-retries header as {@code true} or {@code false}.
      */
     public static void setClientRetriesHeader(
-            @NonNull WrappedInvocationBuilder ib, @NonNull BmcGenericRetrier retrier) {
+            @Nonnull WrappedInvocationBuilder ib, @Nonnull BmcGenericRetrier retrier) {
+        if (ib == null) {
+            throw new NullPointerException("ib is marked non-null but is null");
+        }
+        if (retrier == null) {
+            throw new NullPointerException("retrier is marked non-null but is null");
+        }
+
         if (ib.getHeaders() != null
                 && ib.getHeaders().getFirst(OPC_CLIENT_RETRIES_HEADER) != null) {
             // OPC_CLIENT_RETRIES_HEADER is already set.

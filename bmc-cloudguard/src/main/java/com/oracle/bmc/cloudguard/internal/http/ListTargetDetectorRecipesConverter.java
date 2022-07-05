@@ -114,6 +114,13 @@ public class ListTargetDetectorRecipesConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.cloudguard.responses.ListTargetDetectorRecipesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.cloudguard.responses.ListTargetDetectorRecipesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.cloudguard.responses.ListTargetDetectorRecipesResponse>
@@ -128,16 +135,26 @@ public class ListTargetDetectorRecipesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.cloudguard.responses.ListTargetDetectorRecipesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.cloudguard.model
                                                                 .TargetDetectorRecipeCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.cloudguard.model
-                                                                        .TargetDetectorRecipeCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.cloudguard.model
+                                                                    .TargetDetectorRecipeCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.cloudguard.model
+                                                                    .TargetDetectorRecipeCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.cloudguard.model

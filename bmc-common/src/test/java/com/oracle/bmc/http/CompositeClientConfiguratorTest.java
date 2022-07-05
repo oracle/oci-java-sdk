@@ -4,12 +4,11 @@
  */
 package com.oracle.bmc.http;
 
-import lombok.AllArgsConstructor;
-import lombok.NonNull;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentMatcher;
 
+import javax.annotation.Nonnull;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import java.util.Arrays;
@@ -72,9 +71,15 @@ public class CompositeClientConfiguratorTest {
     }
 
     // We can't use lambdas, so we define Matchers here to verify what args a mock was called with.
-    @AllArgsConstructor
     private static final class StringArgVerifier extends ArgumentMatcher {
-        @NonNull private final String expectedString;
+        @Nonnull private final String expectedString;
+
+        public StringArgVerifier(@Nonnull String expectedString) {
+            if (expectedString == null) {
+                throw new NullPointerException("expectedString is marked non-null but is null");
+            }
+            this.expectedString = expectedString;
+        }
 
         @Override
         public boolean matches(Object s) {

@@ -402,16 +402,18 @@ public class NetworkValidationAsyncClient implements NetworkValidationAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetNetworkConnectivityStatusCollectionConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkValidation",
+                        "GetNetworkConnectivityStatusCollection",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetNetworkConnectivityStatusCollectionResponse>
-                transformer = GetNetworkConnectivityStatusCollectionConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "NetworkValidation",
-                "GetNetworkConnectivityStatusCollection",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        GetNetworkConnectivityStatusCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetNetworkConnectivityStatusCollectionRequest,
                         GetNetworkConnectivityStatusCollectionResponse>

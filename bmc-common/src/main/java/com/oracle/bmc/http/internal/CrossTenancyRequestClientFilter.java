@@ -5,13 +5,11 @@
 package com.oracle.bmc.http.internal;
 
 import com.google.common.base.Joiner;
-import lombok.NonNull;
-
+import javax.annotation.Nonnull;
 import javax.annotation.Priority;
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
 import java.io.IOException;
-
 import static com.oracle.bmc.http.signing.internal.Constants.CROSS_TENANCY_REQUEST_HEADER_NAME;
 
 /**
@@ -21,7 +19,6 @@ import static com.oracle.bmc.http.signing.internal.Constants.CROSS_TENANCY_REQUE
 public class CrossTenancyRequestClientFilter implements ClientRequestFilter {
     // run before javax.ws.rs.Priorities.AUTHENTICATION
     public static final int PRIORITY = javax.ws.rs.Priorities.AUTHENTICATION - 1;
-
     private final String authorizedTenancyIdsValue;
 
     public CrossTenancyRequestClientFilter(String[] authorizedTenancyIds) {
@@ -37,7 +34,11 @@ public class CrossTenancyRequestClientFilter implements ClientRequestFilter {
     }
 
     @Override
-    public void filter(@NonNull ClientRequestContext clientRequestContext) throws IOException {
+    public void filter(@Nonnull ClientRequestContext clientRequestContext) throws IOException {
+        if (clientRequestContext == null) {
+            throw new java.lang.NullPointerException(
+                    "clientRequestContext is marked non-null but is null");
+        }
         clientRequestContext
                 .getHeaders()
                 .putSingle(CROSS_TENANCY_REQUEST_HEADER_NAME, authorizedTenancyIdsValue);

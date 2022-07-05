@@ -5,7 +5,7 @@
 package com.oracle.bmc.auth.internal;
 
 import com.oracle.bmc.util.internal.StringUtils;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 import java.util.Map;
 
@@ -13,9 +13,10 @@ import java.util.Map;
  * This abstract path provider has a string template with placeholders like {id}, and provides a way
  * to get a mapping of substitutions to fill in.
  */
-@Slf4j
 public abstract class AbstractTemplateRptPathProvider implements RptPathProvider {
 
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AbstractTemplateRptPathProvider.class);
     private final String pathTemplate;
 
     /**

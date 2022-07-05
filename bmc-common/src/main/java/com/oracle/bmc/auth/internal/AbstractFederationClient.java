@@ -22,7 +22,7 @@ import com.oracle.bmc.http.signing.DefaultRequestSigner;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.core.Response;
@@ -35,13 +35,14 @@ import java.util.Optional;
  * This class gets a security token from the auth service by signing the request with a PKI issued leaf certificate,
  * passing along a temporary public key that is bounded to the the security token, and the leaf certificate.
  */
-@Slf4j
 public abstract class AbstractFederationClient
         implements FederationClient, ProvidesConfigurableRefresh {
     protected static final Function<Response, WithHeaders<X509FederationClient.SecurityToken>>
             SECURITY_TOKEN_FN =
                     new ResponseConversionFunctionFactory()
                             .create(X509FederationClient.SecurityToken.class);
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AbstractFederationClient.class);
 
     protected final SessionKeySupplier sessionKeySupplier;
     protected final String resourcePrincipalTokenEndpoint;

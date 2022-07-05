@@ -399,15 +399,17 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                 ChangePathAnalyzerTestCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangePathAnalyzerTestCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VnMonitoring",
+                        "ChangePathAnalyzerTestCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangePathAnalyzerTestCompartmentResponse>
-                transformer = ChangePathAnalyzerTestCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "VnMonitoring",
-                "ChangePathAnalyzerTestCompartment",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ChangePathAnalyzerTestCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangePathAnalyzerTestCompartmentRequest,
                         ChangePathAnalyzerTestCompartmentResponse>
@@ -453,13 +455,18 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                 CreatePathAnalyzerTestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreatePathAnalyzerTestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VnMonitoring",
+                        "CreatePathAnalyzerTest",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreatePathAnalyzerTestResponse>
-                transformer = CreatePathAnalyzerTestConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "VnMonitoring", "CreatePathAnalyzerTest", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        CreatePathAnalyzerTestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreatePathAnalyzerTestRequest, CreatePathAnalyzerTestResponse>
                 handlerToUse = handler;
@@ -502,12 +509,17 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                 DeletePathAnalyzerTestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeletePathAnalyzerTestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VnMonitoring",
+                        "DeletePathAnalyzerTest",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeletePathAnalyzerTestResponse>
-                transformer = DeletePathAnalyzerTestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "VnMonitoring", "DeletePathAnalyzerTest", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        DeletePathAnalyzerTestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeletePathAnalyzerTestRequest, DeletePathAnalyzerTestResponse>
                 handlerToUse = handler;
@@ -545,12 +557,14 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                 GetPathAnalysisConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPathAnalysisConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPathAnalysisResponse>
-                transformer = GetPathAnalysisConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "VnMonitoring", "GetPathAnalysis", ib.getRequestUri().toString(), "");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VnMonitoring", "GetPathAnalysis", ib.getRequestUri().toString(), "");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPathAnalysisResponse>
+                transformer =
+                        GetPathAnalysisConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetPathAnalysisRequest, GetPathAnalysisResponse>
                 handlerToUse = handler;
 
@@ -592,12 +606,14 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                 GetPathAnalyzerTestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPathAnalyzerTestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VnMonitoring", "GetPathAnalyzerTest", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetPathAnalyzerTestResponse>
-                transformer = GetPathAnalyzerTestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "VnMonitoring", "GetPathAnalyzerTest", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetPathAnalyzerTestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetPathAnalyzerTestRequest, GetPathAnalyzerTestResponse>
                 handlerToUse = handler;
@@ -635,11 +651,12 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VnMonitoring", "GetWorkRequest", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "VnMonitoring", "GetWorkRequest", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -676,12 +693,14 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                 ListPathAnalyzerTestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPathAnalyzerTestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VnMonitoring", "ListPathAnalyzerTests", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPathAnalyzerTestsResponse>
-                transformer = ListPathAnalyzerTestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "VnMonitoring", "ListPathAnalyzerTests", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListPathAnalyzerTestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListPathAnalyzerTestsRequest, ListPathAnalyzerTestsResponse>
                 handlerToUse = handler;
@@ -719,12 +738,14 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VnMonitoring", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "VnMonitoring", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -762,12 +783,14 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VnMonitoring", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "VnMonitoring", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -805,12 +828,17 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                 ListWorkRequestResultsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestResultsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VnMonitoring",
+                        "ListWorkRequestResults",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestResultsResponse>
-                transformer = ListWorkRequestResultsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "VnMonitoring", "ListWorkRequestResults", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestResultsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestResultsRequest, ListWorkRequestResultsResponse>
                 handlerToUse = handler;
@@ -848,11 +876,13 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VnMonitoring", "ListWorkRequests", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "VnMonitoring", "ListWorkRequests", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -889,13 +919,18 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                 UpdatePathAnalyzerTestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdatePathAnalyzerTestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VnMonitoring",
+                        "UpdatePathAnalyzerTest",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdatePathAnalyzerTestResponse>
-                transformer = UpdatePathAnalyzerTestConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "VnMonitoring", "UpdatePathAnalyzerTest", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        UpdatePathAnalyzerTestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdatePathAnalyzerTestRequest, UpdatePathAnalyzerTestResponse>
                 handlerToUse = handler;

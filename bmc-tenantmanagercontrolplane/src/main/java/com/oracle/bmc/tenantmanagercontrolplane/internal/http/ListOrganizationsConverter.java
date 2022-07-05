@@ -76,6 +76,13 @@ public class ListOrganizationsConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.tenantmanagercontrolplane.responses.ListOrganizationsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.tenantmanagercontrolplane.responses.ListOrganizationsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.tenantmanagercontrolplane.responses
@@ -91,17 +98,26 @@ public class ListOrganizationsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.tenantmanagercontrolplane.responses.ListOrganizationsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.tenantmanagercontrolplane
                                                                 .model.OrganizationCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.tenantmanagercontrolplane
-                                                                        .model
-                                                                        .OrganizationCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.tenantmanagercontrolplane.model
+                                                                    .OrganizationCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.tenantmanagercontrolplane.model
+                                                                    .OrganizationCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.tenantmanagercontrolplane.model

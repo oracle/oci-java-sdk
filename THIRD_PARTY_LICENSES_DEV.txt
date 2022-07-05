@@ -37,12 +37,6 @@ googleformatter-maven-plugin
 * License: Apache License 2.0
 * Source code: https://github.com/talios/googleformatter-maven-plugin
 
-lombok
-* Copyright © 2009-2021 The Project Lombok Authors
-* License: MIT License
-* Source code: https://github.com/projectlombok/lombok
-* Project home: https://projectlombok.org
-
 license-maven-plugin
 * Copyright © 2010–2019 MojoHaus
 * License: GNU Lesser General Public License 3.0
@@ -746,8 +740,6 @@ Library.
 ------------------------------------------------------------------------
 
 ------------------------------ MIT License -----------------------------
-
-lombok Copyright © 2009-2021 The Project Lombok Authors
 
 mockito-core Copyright © 2007 Mockito contributors
 

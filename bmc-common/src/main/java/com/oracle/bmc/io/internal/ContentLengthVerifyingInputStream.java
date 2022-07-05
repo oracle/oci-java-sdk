@@ -4,9 +4,6 @@
  */
 package com.oracle.bmc.io.internal;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -17,9 +14,9 @@ import java.io.InputStream;
  * NOTE: This implementation of content length verification does not support {@link InputStream#reset()}
  * and the verification is disabled upon invocation of {@link InputStream#reset()}.
  */
-@Slf4j
-@RequiredArgsConstructor
 public class ContentLengthVerifyingInputStream extends InputStream {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ContentLengthVerifyingInputStream.class);
     protected final InputStream delegate;
     protected final long contentLength;
 
@@ -36,14 +33,14 @@ public class ContentLengthVerifyingInputStream extends InputStream {
     }
 
     @Override
-    public int read(byte b[]) throws IOException {
+    public int read(byte[] b) throws IOException {
         final int bytesRead = delegate.read(b);
         processBytesRead(bytesRead);
         return bytesRead;
     }
 
     @Override
-    public int read(byte b[], int off, int len) throws IOException {
+    public int read(byte[] b, int off, int len) throws IOException {
         final int bytesRead = delegate.read(b, off, len);
         processBytesRead(bytesRead);
         return bytesRead;
@@ -99,5 +96,11 @@ public class ContentLengthVerifyingInputStream extends InputStream {
         } else {
             totalBytesProcessed += bytesRead;
         }
+    }
+
+    @java.beans.ConstructorProperties({"delegate", "contentLength"})
+    public ContentLengthVerifyingInputStream(final InputStream delegate, final long contentLength) {
+        this.delegate = delegate;
+        this.contentLength = contentLength;
     }
 }

@@ -7,11 +7,13 @@ package com.oracle.bmc.auth;
 import com.oracle.bmc.OCID;
 
 import com.oracle.bmc.util.internal.StringUtils;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
-@Slf4j
 public abstract class CustomerAuthenticationDetailsProvider
         implements AuthenticationDetailsProvider {
+
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(CustomerAuthenticationDetailsProvider.class);
 
     @Override
     public String getKeyId() {

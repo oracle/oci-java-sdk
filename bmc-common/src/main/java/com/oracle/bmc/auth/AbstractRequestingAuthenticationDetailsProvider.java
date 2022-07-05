@@ -77,7 +77,11 @@ public class AbstractRequestingAuthenticationDetailsProvider
          * @return this builder
          */
         public B additionalFederationClientConfigurator(
-                @lombok.NonNull ClientConfigurator additionalClientConfigurator) {
+                @javax.annotation.Nonnull ClientConfigurator additionalClientConfigurator) {
+            if (additionalClientConfigurator == null) {
+                throw new NullPointerException(
+                        "additionalClientConfigurator is marked non-null but is null");
+            }
             this.additionalFederationClientConfigurators.add(additionalClientConfigurator);
             return (B) this;
         }

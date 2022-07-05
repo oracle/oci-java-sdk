@@ -4,9 +4,6 @@
  */
 package com.oracle.bmc.http.internal;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
@@ -16,19 +13,18 @@ import java.net.URI;
  * An {@link Invocation.Builder} that stores the headers being set, allowing access to them.
  * Delegates to an underlying builder.
  */
-@RequiredArgsConstructor
 public class WrappedInvocationBuilder extends ForwardingInvocationBuilder {
     private final Invocation.Builder delegate;
 
     /**
      * This structure stores all the headers set by the customer in the invocation callback.
      */
-    @Getter private MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
+    private MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
 
     /**
      * This structure stores the request URI set by the customer in the invocation callback.
      */
-    @Getter private final URI requestUri;
+    private final URI requestUri;
 
     @Override
     public Invocation.Builder delegate() {
@@ -64,5 +60,25 @@ public class WrappedInvocationBuilder extends ForwardingInvocationBuilder {
             this.headers.clear();
         }
         return this;
+    }
+
+    @java.beans.ConstructorProperties({"delegate", "requestUri"})
+    public WrappedInvocationBuilder(final Invocation.Builder delegate, final URI requestUri) {
+        this.delegate = delegate;
+        this.requestUri = requestUri;
+    }
+
+    /**
+     * This structure stores all the headers set by the customer in the invocation callback.
+     */
+    public MultivaluedMap<String, Object> getHeaders() {
+        return this.headers;
+    }
+
+    /**
+     * This structure stores the request URI set by the customer in the invocation callback.
+     */
+    public URI getRequestUri() {
+        return this.requestUri;
     }
 }

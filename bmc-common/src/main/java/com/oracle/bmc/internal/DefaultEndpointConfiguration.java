@@ -4,9 +4,7 @@
  */
 package com.oracle.bmc.internal;
 
-import lombok.AccessLevel;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import javax.annotation.Nonnull;
 
 /**
  * DefaultEndpointConfiguration provides a way to construct the host endpoint for a service
@@ -18,7 +16,6 @@ import lombok.RequiredArgsConstructor;
  * - {region} : The public region id, ex, "us-phoenix-1".
  * - {secondLevelDomain} : The second level domain associated with the Realm.
  */
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class DefaultEndpointConfiguration {
     private static final String SERVICE_ENDPOINT_PREFIX_TEMPLATE = "{serviceEndpointPrefix}";
     private static final String REGION_ID_TEMPLATE =
@@ -39,7 +36,11 @@ public class DefaultEndpointConfiguration {
      * @param endpointTemplate The template
      * @return A new builder.
      */
-    public static DefaultEndpointConfiguration builder(@NonNull String endpointTemplate) {
+    public static DefaultEndpointConfiguration builder(@Nonnull String endpointTemplate) {
+        if (endpointTemplate == null) {
+            throw new java.lang.NullPointerException(
+                    "endpointTemplate is marked non-null but is null");
+        }
         return new DefaultEndpointConfiguration(endpointTemplate);
     }
 
@@ -106,5 +107,10 @@ public class DefaultEndpointConfiguration {
             endpoint = endpoint.replace(ENDPOINT_SERVICE_NAME_TEMPLATE, endpointServiceName);
         }
         return endpoint;
+    }
+
+    @java.beans.ConstructorProperties({"endpointTemplate"})
+    private DefaultEndpointConfiguration(final String endpointTemplate) {
+        this.endpointTemplate = endpointTemplate;
     }
 }

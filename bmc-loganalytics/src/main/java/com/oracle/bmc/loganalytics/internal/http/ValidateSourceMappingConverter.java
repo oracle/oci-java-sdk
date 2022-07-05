@@ -82,6 +82,13 @@ public class ValidateSourceMappingConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.loganalytics.responses.ValidateSourceMappingResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loganalytics.responses.ValidateSourceMappingResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.loganalytics.responses.ValidateSourceMappingResponse>
@@ -96,16 +103,26 @@ public class ValidateSourceMappingConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.loganalytics.responses.ValidateSourceMappingResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.loganalytics.model
                                                                 .SourceMappingResponse>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.loganalytics.model
-                                                                        .SourceMappingResponse
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.loganalytics.model
+                                                                    .SourceMappingResponse
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.loganalytics.model
+                                                                    .SourceMappingResponse
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.loganalytics.model

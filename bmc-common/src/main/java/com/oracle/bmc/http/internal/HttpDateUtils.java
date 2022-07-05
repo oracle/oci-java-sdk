@@ -15,19 +15,18 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Date parsing utils.
  * <p>
  * Handles reusing date formatters, as well as which date formats that will be
  * used to parse various headers.
  */
-@Slf4j
 public class HttpDateUtils {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(HttpDateUtils.class);
+
     private static final TimeZone TIMEZONE_GMT = TimeZone.getTimeZone("GMT");
     private static final Date AMBIGUOUS_YEAR_TWO_DIGIT_YEAR_START;
-
     private static final ThreadLocal<List<DateFormat>> RFC2616_DATE_FORMATS =
             new ThreadLocal<List<DateFormat>>() {
                 @Override

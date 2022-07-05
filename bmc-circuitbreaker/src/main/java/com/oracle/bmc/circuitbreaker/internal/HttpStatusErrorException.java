@@ -4,19 +4,24 @@
  */
 package com.oracle.bmc.circuitbreaker.internal;
 
-import lombok.Getter;
-import lombok.NonNull;
-
 import javax.ws.rs.core.Response;
+import javax.annotation.Nonnull;
 
 /**
  * A {@link HttpStatusErrorException} signals that the JaxRs client call returned an error state
  */
 final class HttpStatusErrorException extends RuntimeException {
 
-    @Getter @NonNull private final Response response;
+    @Nonnull private final Response response;
 
-    HttpStatusErrorException(Response response) {
+    HttpStatusErrorException(@Nonnull Response response) {
+        if (response == null) {
+            throw new NullPointerException("response is marked non-null but is null");
+        }
         this.response = response;
+    }
+
+    public @Nonnull Response getResponse() {
+        return this.response;
     }
 }

@@ -397,16 +397,18 @@ public class DbBackupsAsyncClient implements DbBackupsAsync {
                 ChangeBackupCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeBackupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbBackups",
+                        "ChangeBackupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/ChangeBackupCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeBackupCompartmentResponse>
-                transformer = ChangeBackupCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DbBackups",
-                "ChangeBackupCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/ChangeBackupCompartment");
-
+                transformer =
+                        ChangeBackupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeBackupCompartmentRequest, ChangeBackupCompartmentResponse>
                 handlerToUse = handler;
@@ -448,15 +450,16 @@ public class DbBackupsAsyncClient implements DbBackupsAsync {
                 CreateBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBackupConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupResponse>
-                transformer = CreateBackupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DbBackups",
-                "CreateBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/CreateBackup");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbBackups",
+                        "CreateBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/CreateBackup");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupResponse>
+                transformer =
+                        CreateBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateBackupRequest, CreateBackupResponse>
                 handlerToUse = handler;
 
@@ -497,14 +500,15 @@ public class DbBackupsAsyncClient implements DbBackupsAsync {
                 DeleteBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbBackups",
+                        "DeleteBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/DeleteBackup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupResponse>
-                transformer = DeleteBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DbBackups",
-                "DeleteBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/DeleteBackup");
-
+                transformer =
+                        DeleteBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteBackupRequest, DeleteBackupResponse>
                 handlerToUse = handler;
 
@@ -539,14 +543,15 @@ public class DbBackupsAsyncClient implements DbBackupsAsync {
         final GetBackupRequest interceptedRequest = GetBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbBackups",
+                        "GetBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/GetBackup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupResponse>
-                transformer = GetBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DbBackups",
-                "GetBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/GetBackup");
-
+                transformer =
+                        GetBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetBackupRequest, GetBackupResponse> handlerToUse =
                 handler;
 
@@ -581,14 +586,15 @@ public class DbBackupsAsyncClient implements DbBackupsAsync {
                 ListBackupsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBackupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbBackups",
+                        "ListBackups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/BackupSummary/ListBackups");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupsResponse>
-                transformer = ListBackupsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DbBackups",
-                "ListBackups",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/BackupSummary/ListBackups");
-
+                transformer =
+                        ListBackupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListBackupsRequest, ListBackupsResponse>
                 handlerToUse = handler;
 
@@ -624,14 +630,15 @@ public class DbBackupsAsyncClient implements DbBackupsAsync {
                 UpdateBackupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbBackups",
+                        "UpdateBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/UpdateBackup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackupResponse>
-                transformer = UpdateBackupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DbBackups",
-                "UpdateBackup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/UpdateBackup");
-
+                transformer =
+                        UpdateBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateBackupRequest, UpdateBackupResponse>
                 handlerToUse = handler;
 

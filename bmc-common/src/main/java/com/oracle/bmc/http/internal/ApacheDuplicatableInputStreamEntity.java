@@ -5,8 +5,6 @@
 package com.oracle.bmc.http.internal;
 
 import com.oracle.bmc.io.DuplicatableInputStream;
-import lombok.RequiredArgsConstructor;
-
 import java.io.InputStream;
 
 /**

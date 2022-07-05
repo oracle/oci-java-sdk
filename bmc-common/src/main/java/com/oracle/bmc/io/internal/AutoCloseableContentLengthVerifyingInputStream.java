@@ -4,8 +4,6 @@
  */
 package com.oracle.bmc.io.internal;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -18,10 +16,10 @@ import java.io.InputStream;
  * NOTE: This implementation of auto closesable content length verification does not support {@link InputStream#reset()}
  * and throws an IOException when reset is called
  */
-@Slf4j
 public class AutoCloseableContentLengthVerifyingInputStream
         extends ContentLengthVerifyingInputStream {
-
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AutoCloseableContentLengthVerifyingInputStream.class);
     private boolean isStreamClosed = false;
 
     public AutoCloseableContentLengthVerifyingInputStream(
@@ -39,7 +37,7 @@ public class AutoCloseableContentLengthVerifyingInputStream
     }
 
     @Override
-    public int read(byte b[]) throws IOException {
+    public int read(byte[] b) throws IOException {
         // if stream has been closed, return -1
         if (isStreamClosed) return -1;
         final int bytesRead = super.read(b);
@@ -48,7 +46,7 @@ public class AutoCloseableContentLengthVerifyingInputStream
     }
 
     @Override
-    public int read(byte b[], int off, int len) throws IOException {
+    public int read(byte[] b, int off, int len) throws IOException {
         // if stream has been closed, return -1
         if (isStreamClosed) return -1;
         final int bytesRead = super.read(b, off, len);

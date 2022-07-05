@@ -62,6 +62,14 @@ public class CreateManagementAgentInstallKeyConverter {
                     com.oracle.bmc.managementagent.responses
                             .CreateManagementAgentInstallKeyResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.managementagent.responses
+                            .CreateManagementAgentInstallKeyResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.managementagent.responses
@@ -77,16 +85,26 @@ public class CreateManagementAgentInstallKeyConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.managementagent.responses.CreateManagementAgentInstallKeyResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.managementagent.model
                                                                 .ManagementAgentInstallKey>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.managementagent.model
-                                                                        .ManagementAgentInstallKey
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.managementagent.model
+                                                                    .ManagementAgentInstallKey
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.managementagent.model
+                                                                    .ManagementAgentInstallKey
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.managementagent.model

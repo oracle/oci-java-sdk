@@ -8,9 +8,6 @@ import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
 /**
  * Class that exposes a way to create a {@link RequestSigner} for use with OCI.
  * The returned signers implement signing strategies outlined by <a href=
@@ -22,7 +19,6 @@ import lombok.NoArgsConstructor;
  * notice -- users are encouraged to use the SDK provided clients.
  */
 @InternalSdk
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class DefaultRequestSigner {
 
     /**
@@ -52,4 +48,6 @@ public class DefaultRequestSigner {
         return new DefaultRequestSignerFactory(signingStrategy)
                 .createRequestSigner(null, authProvider);
     }
+
+    private DefaultRequestSigner() {}
 }

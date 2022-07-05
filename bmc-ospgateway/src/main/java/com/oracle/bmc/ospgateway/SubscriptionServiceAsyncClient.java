@@ -400,16 +400,18 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                 AuthorizeSubscriptionPaymentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AuthorizeSubscriptionPaymentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SubscriptionService",
+                        "AuthorizeSubscriptionPayment",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AuthorizeSubscriptionPaymentResponse>
-                transformer = AuthorizeSubscriptionPaymentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "SubscriptionService",
-                "AuthorizeSubscriptionPayment",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        AuthorizeSubscriptionPaymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AuthorizeSubscriptionPaymentRequest, AuthorizeSubscriptionPaymentResponse>
                 handlerToUse = handler;
@@ -453,11 +455,16 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                 GetSubscriptionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SubscriptionService",
+                        "GetSubscription",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
-                transformer = GetSubscriptionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "SubscriptionService", "GetSubscription", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        GetSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSubscriptionRequest, GetSubscriptionResponse>
                 handlerToUse = handler;
 
@@ -494,11 +501,16 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                 ListSubscriptionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSubscriptionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SubscriptionService",
+                        "ListSubscriptions",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
-                transformer = ListSubscriptionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "SubscriptionService", "ListSubscriptions", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListSubscriptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResponse>
                 handlerToUse = handler;
 
@@ -535,12 +547,17 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                 PaySubscriptionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 PaySubscriptionConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PaySubscriptionResponse>
-                transformer = PaySubscriptionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "SubscriptionService", "PaySubscription", ib.getRequestUri().toString(), "");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SubscriptionService",
+                        "PaySubscription",
+                        ib.getRequestUri().toString(),
+                        "");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, PaySubscriptionResponse>
+                transformer =
+                        PaySubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<PaySubscriptionRequest, PaySubscriptionResponse>
                 handlerToUse = handler;
 
@@ -582,11 +599,16 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                 UpdateSubscriptionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SubscriptionService",
+                        "UpdateSubscription",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
-                transformer = UpdateSubscriptionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "SubscriptionService", "UpdateSubscription", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        UpdateSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateSubscriptionRequest, UpdateSubscriptionResponse>
                 handlerToUse = handler;
 

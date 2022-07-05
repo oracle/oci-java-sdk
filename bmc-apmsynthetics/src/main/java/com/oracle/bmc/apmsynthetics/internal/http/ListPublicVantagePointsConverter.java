@@ -107,6 +107,13 @@ public class ListPublicVantagePointsConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.apmsynthetics.responses.ListPublicVantagePointsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.apmsynthetics.responses.ListPublicVantagePointsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.apmsynthetics.responses.ListPublicVantagePointsResponse>
@@ -121,16 +128,26 @@ public class ListPublicVantagePointsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.apmsynthetics.responses.ListPublicVantagePointsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.apmsynthetics.model
                                                                 .PublicVantagePointCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.apmsynthetics.model
-                                                                        .PublicVantagePointCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.apmsynthetics.model
+                                                                    .PublicVantagePointCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.apmsynthetics.model
+                                                                    .PublicVantagePointCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.apmsynthetics.model

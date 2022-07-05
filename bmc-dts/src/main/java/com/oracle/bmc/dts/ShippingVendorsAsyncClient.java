@@ -399,12 +399,17 @@ public class ShippingVendorsAsyncClient implements ShippingVendorsAsync {
                 ListShippingVendorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListShippingVendorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ShippingVendors",
+                        "ListShippingVendors",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListShippingVendorsResponse>
-                transformer = ListShippingVendorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ShippingVendors", "ListShippingVendors", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListShippingVendorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListShippingVendorsRequest, ListShippingVendorsResponse>
                 handlerToUse = handler;

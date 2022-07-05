@@ -94,6 +94,14 @@ public class ListResourceProfileImpactedResourcesConverter {
                     com.oracle.bmc.cloudguard.responses
                             .ListResourceProfileImpactedResourcesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.cloudguard.responses
+                            .ListResourceProfileImpactedResourcesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.cloudguard.responses
@@ -109,16 +117,26 @@ public class ListResourceProfileImpactedResourcesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.cloudguard.responses.ListResourceProfileImpactedResourcesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.cloudguard.model
                                                                 .ResourceProfileImpactedResourceCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.cloudguard.model
-                                                                        .ResourceProfileImpactedResourceCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.cloudguard.model
+                                                                    .ResourceProfileImpactedResourceCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.cloudguard.model
+                                                                    .ResourceProfileImpactedResourceCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.cloudguard.model

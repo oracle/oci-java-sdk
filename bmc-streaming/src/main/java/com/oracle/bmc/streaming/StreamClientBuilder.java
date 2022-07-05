@@ -7,6 +7,8 @@ package com.oracle.bmc.streaming;
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 
+import javax.annotation.Nonnull;
+
 public class StreamClientBuilder
         extends AbstractStreamBasedClientBuilder<StreamClientBuilder, StreamClient> {
     public StreamClientBuilder(Service service) {
@@ -14,7 +16,13 @@ public class StreamClientBuilder
     }
 
     @Override
-    public StreamClient build(AbstractAuthenticationDetailsProvider authenticationDetailsProvider) {
+    public StreamClient build(
+            @Nonnull AbstractAuthenticationDetailsProvider authenticationDetailsProvider) {
+        if (authenticationDetailsProvider == null) {
+            throw new NullPointerException(
+                    "authenticationDetailsProvider is marked non-null but is null");
+        }
+
         String cryptoEndpoint = getEndpoint();
 
         return new StreamClient(

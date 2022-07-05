@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.objectstorage.internal;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ObjectStorageUtils {
+
+    private ObjectStorageUtils() {}
 
     public static String getIfNoneMatchHeader(boolean allowOverwrite) {
         return allowOverwrite ? null : "*";

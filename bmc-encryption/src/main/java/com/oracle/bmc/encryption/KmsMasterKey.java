@@ -23,7 +23,7 @@ import com.oracle.bmc.keymanagement.responses.GenerateDataEncryptionKeyResponse;
 import com.oracle.bmc.keymanagement.responses.GetKeyResponse;
 import com.oracle.bmc.keymanagement.responses.GetVaultResponse;
 import com.oracle.bmc.model.BmcException;
-import lombok.Getter;
+
 /**
  * Represents a MasterKey contained in the OCI Key Management Service.
  */
@@ -32,13 +32,13 @@ public class KmsMasterKey implements MasterKey {
     private final KmsManagementClient kmsManagementClient;
     private final KmsVaultClient kmsVaultClient;
 
-    @Getter private final BasicAuthenticationDetailsProvider provider;
+    private final BasicAuthenticationDetailsProvider provider;
 
-    @Getter private final String vaultId;
+    private final String vaultId;
 
-    @Getter private final String kmsMasterKeyId;
+    private final String kmsMasterKeyId;
 
-    @Getter private final String region;
+    private final String region;
 
     /**
      * Initialize KmsMasterKey for encryption.
@@ -203,5 +203,21 @@ public class KmsMasterKey implements MasterKey {
         if (kmsVaultClient != null) kmsVaultClient.close();
         if (kmsManagementClient != null) kmsManagementClient.close();
         if (kmsCryptoClient != null) kmsCryptoClient.close();
+    }
+
+    public BasicAuthenticationDetailsProvider getProvider() {
+        return this.provider;
+    }
+
+    public String getVaultId() {
+        return this.vaultId;
+    }
+
+    public String getKmsMasterKeyId() {
+        return this.kmsMasterKeyId;
+    }
+
+    public String getRegion() {
+        return this.region;
     }
 }

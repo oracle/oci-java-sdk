@@ -6,8 +6,7 @@ package com.oracle.bmc.auth;
 
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.internal.FederationClient;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 import java.time.Duration;
 
@@ -19,14 +18,15 @@ import java.time.Duration;
  * Also uses {@link AuthCachingPolicy} to disable caching (as the values for signing requests
  * may be rotated periodically).
  */
-@Slf4j
 @AuthCachingPolicy(cacheKeyId = false, cachePrivateKey = false)
 public class InstancePrincipalsAuthenticationDetailsProvider
         extends AbstractRequestingAuthenticationDetailsProvider
         implements RegionProvider, RefreshableOnNotAuthenticatedProvider<String>,
                 ConfigurableRefreshOnNotAuthenticatedProvider<String> {
 
-    @Getter(onMethod = @__({@Override}))
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(
+                    InstancePrincipalsAuthenticationDetailsProvider.class);
     private final Region region;
 
     private InstancePrincipalsAuthenticationDetailsProvider(
@@ -69,6 +69,11 @@ public class InstancePrincipalsAuthenticationDetailsProvider
                     .refreshAndGetSecurityTokenIfExpiringWithin(time);
         }
         return this.federationClient.refreshAndGetSecurityToken();
+    }
+
+    @Override
+    public Region getRegion() {
+        return this.region;
     }
 
     /**

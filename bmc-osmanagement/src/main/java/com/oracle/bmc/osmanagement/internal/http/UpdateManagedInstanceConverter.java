@@ -65,6 +65,13 @@ public class UpdateManagedInstanceConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.osmanagement.responses.UpdateManagedInstanceResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.UpdateManagedInstanceResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.osmanagement.responses.UpdateManagedInstanceResponse>
@@ -79,16 +86,26 @@ public class UpdateManagedInstanceConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.osmanagement.responses.UpdateManagedInstanceResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.osmanagement.model
                                                                 .ManagedInstance>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.osmanagement.model
-                                                                        .ManagedInstance
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.osmanagement.model
+                                                                    .ManagedInstance
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.osmanagement.model
+                                                                    .ManagedInstance
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.osmanagement.model.ManagedInstance>

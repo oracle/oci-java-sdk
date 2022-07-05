@@ -67,6 +67,14 @@ public class DisableAutonomousDatabaseOperationsInsightsConverter {
                     com.oracle.bmc.database.responses
                             .DisableAutonomousDatabaseOperationsInsightsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses
+                            .DisableAutonomousDatabaseOperationsInsightsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.database.responses
@@ -82,10 +90,17 @@ public class DisableAutonomousDatabaseOperationsInsightsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.database.responses.DisableAutonomousDatabaseOperationsInsightsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create();
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn = RESPONSE_CONVERSION_FACTORY.create();
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<Void> response =
                                         responseFn.apply(rawResponse);

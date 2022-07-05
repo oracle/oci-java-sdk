@@ -63,6 +63,13 @@ public class GetTransferApplianceEncryptionPassphraseConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.dts.responses.GetTransferApplianceEncryptionPassphraseResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.GetTransferApplianceEncryptionPassphraseResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.dts.responses
@@ -78,16 +85,26 @@ public class GetTransferApplianceEncryptionPassphraseConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.dts.responses.GetTransferApplianceEncryptionPassphraseResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.dts.model
                                                                 .TransferApplianceEncryptionPassphrase>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.dts.model
-                                                                        .TransferApplianceEncryptionPassphrase
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.dts.model
+                                                                    .TransferApplianceEncryptionPassphrase
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.dts.model
+                                                                    .TransferApplianceEncryptionPassphrase
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.dts.model

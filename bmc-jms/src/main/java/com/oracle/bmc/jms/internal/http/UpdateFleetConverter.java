@@ -61,6 +61,12 @@ public class UpdateFleetConverter {
     public static com.google.common.base.Function<
                     javax.ws.rs.core.Response, com.oracle.bmc.jms.responses.UpdateFleetResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.jms.responses.UpdateFleetResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, com.oracle.bmc.jms.responses.UpdateFleetResponse>
                 transformer =
@@ -72,10 +78,17 @@ public class UpdateFleetConverter {
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.jms.responses.UpdateFleetResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create();
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn = RESPONSE_CONVERSION_FACTORY.create();
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<Void> response =
                                         responseFn.apply(rawResponse);

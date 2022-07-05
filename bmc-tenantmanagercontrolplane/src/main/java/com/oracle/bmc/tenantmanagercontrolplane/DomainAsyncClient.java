@@ -397,12 +397,13 @@ public class DomainAsyncClient implements DomainAsync {
                 CreateDomainConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDomainConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDomainResponse>
-                transformer = CreateDomainConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Domain", "CreateDomain", ib.getRequestUri().toString(), "");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Domain", "CreateDomain", ib.getRequestUri().toString(), "");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDomainResponse>
+                transformer =
+                        CreateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateDomainRequest, CreateDomainResponse>
                 handlerToUse = handler;
 
@@ -443,14 +444,15 @@ public class DomainAsyncClient implements DomainAsync {
                 DeleteDomainConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Domain",
+                        "DeleteDomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/DeleteDomain");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDomainResponse>
-                transformer = DeleteDomainConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Domain",
-                "DeleteDomain",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/DeleteDomain");
-
+                transformer =
+                        DeleteDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteDomainRequest, DeleteDomainResponse>
                 handlerToUse = handler;
 
@@ -485,14 +487,15 @@ public class DomainAsyncClient implements DomainAsync {
         final GetDomainRequest interceptedRequest = GetDomainConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Domain",
+                        "GetDomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/GetDomain");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDomainResponse>
-                transformer = GetDomainConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Domain",
-                "GetDomain",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/GetDomain");
-
+                transformer =
+                        GetDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDomainRequest, GetDomainResponse> handlerToUse =
                 handler;
 
@@ -527,14 +530,15 @@ public class DomainAsyncClient implements DomainAsync {
                 ListDomainsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDomainsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Domain",
+                        "ListDomains",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/ListDomains");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDomainsResponse>
-                transformer = ListDomainsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Domain",
-                "ListDomains",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/ListDomains");
-
+                transformer =
+                        ListDomainsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDomainsRequest, ListDomainsResponse>
                 handlerToUse = handler;
 
@@ -570,14 +574,15 @@ public class DomainAsyncClient implements DomainAsync {
                 UpdateDomainConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Domain",
+                        "UpdateDomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/UpdateDomain");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDomainResponse>
-                transformer = UpdateDomainConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Domain",
-                "UpdateDomain",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/UpdateDomain");
-
+                transformer =
+                        UpdateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateDomainRequest, UpdateDomainResponse>
                 handlerToUse = handler;
 

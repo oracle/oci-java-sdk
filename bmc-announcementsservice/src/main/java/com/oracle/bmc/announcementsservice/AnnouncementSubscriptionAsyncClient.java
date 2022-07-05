@@ -402,16 +402,18 @@ public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscrip
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeAnnouncementSubscriptionCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "ChangeAnnouncementSubscriptionCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/ChangeAnnouncementSubscriptionCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ChangeAnnouncementSubscriptionCompartmentResponse>
-                transformer = ChangeAnnouncementSubscriptionCompartmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementSubscription",
-                "ChangeAnnouncementSubscriptionCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/ChangeAnnouncementSubscriptionCompartment");
-
+                transformer =
+                        ChangeAnnouncementSubscriptionCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAnnouncementSubscriptionCompartmentRequest,
                         ChangeAnnouncementSubscriptionCompartmentResponse>
@@ -461,16 +463,18 @@ public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscrip
                 CreateAnnouncementSubscriptionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAnnouncementSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "CreateAnnouncementSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/CreateAnnouncementSubscription");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAnnouncementSubscriptionResponse>
-                transformer = CreateAnnouncementSubscriptionConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementSubscription",
-                "CreateAnnouncementSubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/CreateAnnouncementSubscription");
-
+                transformer =
+                        CreateAnnouncementSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAnnouncementSubscriptionRequest,
                         CreateAnnouncementSubscriptionResponse>
@@ -515,15 +519,17 @@ public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscrip
                 CreateFilterGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateFilterGroupConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFilterGroupResponse>
-                transformer = CreateFilterGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementSubscription",
-                "CreateFilterGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/CreateFilterGroup");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "CreateFilterGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/CreateFilterGroup");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFilterGroupResponse>
+                transformer =
+                        CreateFilterGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateFilterGroupRequest, CreateFilterGroupResponse>
                 handlerToUse = handler;
 
@@ -567,15 +573,17 @@ public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscrip
                 DeleteAnnouncementSubscriptionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteAnnouncementSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "DeleteAnnouncementSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/DeleteAnnouncementSubscription");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAnnouncementSubscriptionResponse>
-                transformer = DeleteAnnouncementSubscriptionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementSubscription",
-                "DeleteAnnouncementSubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/DeleteAnnouncementSubscription");
-
+                transformer =
+                        DeleteAnnouncementSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteAnnouncementSubscriptionRequest,
                         DeleteAnnouncementSubscriptionResponse>
@@ -615,14 +623,16 @@ public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscrip
                 DeleteFilterGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteFilterGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "DeleteFilterGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/DeleteFilterGroup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFilterGroupResponse>
-                transformer = DeleteFilterGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementSubscription",
-                "DeleteFilterGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/DeleteFilterGroup");
-
+                transformer =
+                        DeleteFilterGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteFilterGroupRequest, DeleteFilterGroupResponse>
                 handlerToUse = handler;
 
@@ -661,15 +671,17 @@ public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscrip
                 GetAnnouncementSubscriptionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAnnouncementSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "GetAnnouncementSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/GetAnnouncementSubscription");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAnnouncementSubscriptionResponse>
-                transformer = GetAnnouncementSubscriptionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementSubscription",
-                "GetAnnouncementSubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/GetAnnouncementSubscription");
-
+                transformer =
+                        GetAnnouncementSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAnnouncementSubscriptionRequest, GetAnnouncementSubscriptionResponse>
                 handlerToUse = handler;
@@ -710,15 +722,17 @@ public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscrip
                 ListAnnouncementSubscriptionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAnnouncementSubscriptionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "ListAnnouncementSubscriptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscriptionCollection/ListAnnouncementSubscriptions");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAnnouncementSubscriptionsResponse>
-                transformer = ListAnnouncementSubscriptionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementSubscription",
-                "ListAnnouncementSubscriptions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscriptionCollection/ListAnnouncementSubscriptions");
-
+                transformer =
+                        ListAnnouncementSubscriptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAnnouncementSubscriptionsRequest, ListAnnouncementSubscriptionsResponse>
                 handlerToUse = handler;
@@ -759,15 +773,17 @@ public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscrip
                 UpdateAnnouncementSubscriptionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAnnouncementSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "UpdateAnnouncementSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/UpdateAnnouncementSubscription");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAnnouncementSubscriptionResponse>
-                transformer = UpdateAnnouncementSubscriptionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementSubscription",
-                "UpdateAnnouncementSubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/UpdateAnnouncementSubscription");
-
+                transformer =
+                        UpdateAnnouncementSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAnnouncementSubscriptionRequest,
                         UpdateAnnouncementSubscriptionResponse>
@@ -812,14 +828,16 @@ public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscrip
                 UpdateFilterGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateFilterGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "UpdateFilterGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/UpdateFilterGroup");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFilterGroupResponse>
-                transformer = UpdateFilterGroupConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AnnouncementSubscription",
-                "UpdateFilterGroup",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/UpdateFilterGroup");
-
+                transformer =
+                        UpdateFilterGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateFilterGroupRequest, UpdateFilterGroupResponse>
                 handlerToUse = handler;
 

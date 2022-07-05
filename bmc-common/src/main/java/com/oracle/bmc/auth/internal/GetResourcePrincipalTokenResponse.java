@@ -6,15 +6,28 @@ package com.oracle.bmc.auth.internal;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Setter
-@Getter
 public class GetResourcePrincipalTokenResponse {
     @JsonProperty("resourcePrincipalToken")
     private String resourcePrincipalToken;
 
     @JsonProperty("servicePrincipalSessionToken")
     private String servicePrincipalSessionToken;
+
+    public String getResourcePrincipalToken() {
+        return this.resourcePrincipalToken;
+    }
+
+    public String getServicePrincipalSessionToken() {
+        return this.servicePrincipalSessionToken;
+    }
+
+    @JsonProperty("resourcePrincipalToken")
+    public void setResourcePrincipalToken(String resourcePrincipalToken) {
+        this.resourcePrincipalToken = resourcePrincipalToken;
+    }
+
+    @JsonProperty("servicePrincipalSessionToken")
+    public void setServicePrincipalSessionToken(String servicePrincipalSessionToken) {
+        this.servicePrincipalSessionToken = servicePrincipalSessionToken;
+    }
 }

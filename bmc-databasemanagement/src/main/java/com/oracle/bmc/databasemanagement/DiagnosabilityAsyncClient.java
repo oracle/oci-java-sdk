@@ -397,14 +397,15 @@ public class DiagnosabilityAsyncClient implements DiagnosabilityAsync {
                 ListAlertLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAlertLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Diagnosability",
+                        "ListAlertLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAlertLogs");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertLogsResponse>
-                transformer = ListAlertLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Diagnosability",
-                "ListAlertLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAlertLogs");
-
+                transformer =
+                        ListAlertLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListAlertLogsRequest, ListAlertLogsResponse>
                 handlerToUse = handler;
 
@@ -441,14 +442,16 @@ public class DiagnosabilityAsyncClient implements DiagnosabilityAsync {
                 ListAttentionLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAttentionLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Diagnosability",
+                        "ListAttentionLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAttentionLogs");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAttentionLogsResponse>
-                transformer = ListAttentionLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Diagnosability",
-                "ListAttentionLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAttentionLogs");
-
+                transformer =
+                        ListAttentionLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListAttentionLogsRequest, ListAttentionLogsResponse>
                 handlerToUse = handler;
 
@@ -485,15 +488,17 @@ public class DiagnosabilityAsyncClient implements DiagnosabilityAsync {
                 SummarizeAlertLogCountsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SummarizeAlertLogCountsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Diagnosability",
+                        "SummarizeAlertLogCounts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAlertLogCounts");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SummarizeAlertLogCountsResponse>
-                transformer = SummarizeAlertLogCountsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Diagnosability",
-                "SummarizeAlertLogCounts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAlertLogCounts");
-
+                transformer =
+                        SummarizeAlertLogCountsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         SummarizeAlertLogCountsRequest, SummarizeAlertLogCountsResponse>
                 handlerToUse = handler;
@@ -533,15 +538,17 @@ public class DiagnosabilityAsyncClient implements DiagnosabilityAsync {
                 SummarizeAttentionLogCountsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SummarizeAttentionLogCountsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Diagnosability",
+                        "SummarizeAttentionLogCounts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAttentionLogCounts");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SummarizeAttentionLogCountsResponse>
-                transformer = SummarizeAttentionLogCountsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Diagnosability",
-                "SummarizeAttentionLogCounts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAttentionLogCounts");
-
+                transformer =
+                        SummarizeAttentionLogCountsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         SummarizeAttentionLogCountsRequest, SummarizeAttentionLogCountsResponse>
                 handlerToUse = handler;

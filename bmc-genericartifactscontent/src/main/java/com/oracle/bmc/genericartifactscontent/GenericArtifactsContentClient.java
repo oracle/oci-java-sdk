@@ -411,19 +411,22 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
                 GetGenericArtifactContentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetGenericArtifactContentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetGenericArtifactContentResponse>
-                transformer = GetGenericArtifactContentConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GenericArtifactsContent",
-                "GetGenericArtifactContent",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContent");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenericArtifactsContent",
+                        "GetGenericArtifactContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContent");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetGenericArtifactContentResponse>
+                transformer =
+                        GetGenericArtifactContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -457,19 +460,22 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
                 GetGenericArtifactContentByPathConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetGenericArtifactContentByPathConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetGenericArtifactContentByPathResponse>
-                transformer = GetGenericArtifactContentByPathConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "GenericArtifactsContent",
-                "GetGenericArtifactContentByPath",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContentByPath");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenericArtifactsContent",
+                        "GetGenericArtifactContentByPath",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContentByPath");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetGenericArtifactContentByPathResponse>
+                transformer =
+                        GetGenericArtifactContentByPathConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -507,19 +513,22 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
             com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                     PutGenericArtifactContentByPathConverter.fromRequest(
                             client, interceptedRequest);
-            com.google.common.base.Function<
-                            javax.ws.rs.core.Response, PutGenericArtifactContentByPathResponse>
-                    transformer = PutGenericArtifactContentByPathConverter.fromResponse();
 
             ib.property(
                     com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                     com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-            com.oracle.bmc.ServiceDetails.setServiceDetails(
-                    "GenericArtifactsContent",
-                    "PutGenericArtifactContentByPath",
-                    ib.getRequestUri().toString(),
-                    "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/PutGenericArtifactContentByPath");
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "GenericArtifactsContent",
+                            "PutGenericArtifactContentByPath",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/PutGenericArtifactContentByPath");
+            com.google.common.base.Function<
+                            javax.ws.rs.core.Response, PutGenericArtifactContentByPathResponse>
+                    transformer =
+                            PutGenericArtifactContentByPathConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {

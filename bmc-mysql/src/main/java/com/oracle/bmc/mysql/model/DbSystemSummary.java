@@ -41,6 +41,8 @@ public final class DbSystemSummary {
         "deletionPolicy",
         "freeformTags",
         "definedTags",
+        "backupPolicy",
+        "shapeName",
         "crashRecovery"
     })
     public DbSystemSummary(
@@ -64,6 +66,8 @@ public final class DbSystemSummary {
             DeletionPolicyDetails deletionPolicy,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            BackupPolicy backupPolicy,
+            String shapeName,
             CrashRecoveryStatus crashRecovery) {
         super();
         this.id = id;
@@ -86,6 +90,8 @@ public final class DbSystemSummary {
         this.deletionPolicy = deletionPolicy;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.backupPolicy = backupPolicy;
+        this.shapeName = shapeName;
         this.crashRecovery = crashRecovery;
     }
 
@@ -430,6 +436,41 @@ public final class DbSystemSummary {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
+        private BackupPolicy backupPolicy;
+
+        public Builder backupPolicy(BackupPolicy backupPolicy) {
+            this.backupPolicy = backupPolicy;
+            this.__explicitlySet__.add("backupPolicy");
+            return this;
+        }
+        /**
+         * The shape of the primary instances of the DB System. The shape
+         * determines resources allocated to a DB System - CPU cores
+         * and memory for VM shapes; CPU cores, memory and storage for non-VM
+         * (or bare metal) shapes. To get a list of shapes, use (the
+         * {@link #listShapes(ListShapesRequest) listShapes} operation.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
+        private String shapeName;
+
+        /**
+         * The shape of the primary instances of the DB System. The shape
+         * determines resources allocated to a DB System - CPU cores
+         * and memory for VM shapes; CPU cores, memory and storage for non-VM
+         * (or bare metal) shapes. To get a list of shapes, use (the
+         * {@link #listShapes(ListShapesRequest) listShapes} operation.
+         *
+         * @param shapeName the value to set
+         * @return this builder
+         **/
+        public Builder shapeName(String shapeName) {
+            this.shapeName = shapeName;
+            this.__explicitlySet__.add("shapeName");
+            return this;
+        }
         /**
          * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
          * and whether to enable or disable syncing of the Binary Logs.
@@ -477,6 +518,8 @@ public final class DbSystemSummary {
                             deletionPolicy,
                             freeformTags,
                             definedTags,
+                            backupPolicy,
+                            shapeName,
                             crashRecovery);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -505,6 +548,8 @@ public final class DbSystemSummary {
                             .deletionPolicy(o.getDeletionPolicy())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .backupPolicy(o.getBackupPolicy())
+                            .shapeName(o.getShapeName())
                             .crashRecovery(o.getCrashRecovery());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -821,6 +866,37 @@ public final class DbSystemSummary {
         return definedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
+    private final BackupPolicy backupPolicy;
+
+    public BackupPolicy getBackupPolicy() {
+        return backupPolicy;
+    }
+
+    /**
+     * The shape of the primary instances of the DB System. The shape
+     * determines resources allocated to a DB System - CPU cores
+     * and memory for VM shapes; CPU cores, memory and storage for non-VM
+     * (or bare metal) shapes. To get a list of shapes, use (the
+     * {@link #listShapes(ListShapesRequest) listShapes} operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
+    private final String shapeName;
+
+    /**
+     * The shape of the primary instances of the DB System. The shape
+     * determines resources allocated to a DB System - CPU cores
+     * and memory for VM shapes; CPU cores, memory and storage for non-VM
+     * (or bare metal) shapes. To get a list of shapes, use (the
+     * {@link #listShapes(ListShapesRequest) listShapes} operation.
+     *
+     * @return the value
+     **/
+    public String getShapeName() {
+        return shapeName;
+    }
+
     /**
      * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
      * and whether to enable or disable syncing of the Binary Logs.
@@ -865,6 +941,8 @@ public final class DbSystemSummary {
         sb.append(", deletionPolicy=").append(String.valueOf(this.deletionPolicy));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
+        sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
@@ -903,6 +981,8 @@ public final class DbSystemSummary {
                 && java.util.Objects.equals(this.deletionPolicy, other.deletionPolicy)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
+                && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
@@ -957,6 +1037,8 @@ public final class DbSystemSummary {
                         + (this.deletionPolicy == null ? 43 : this.deletionPolicy.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.backupPolicy == null ? 43 : this.backupPolicy.hashCode());
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result =
                 (result * PRIME)
                         + (this.crashRecovery == null ? 43 : this.crashRecovery.hashCode());

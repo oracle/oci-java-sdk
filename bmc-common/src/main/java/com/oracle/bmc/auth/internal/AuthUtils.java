@@ -4,6 +4,20 @@
  */
 package com.oracle.bmc.auth.internal;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.base.Optional;
+import com.google.common.base.Preconditions;
+import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
+import com.oracle.bmc.http.internal.RestClientFactory;
+import com.oracle.bmc.util.internal.Validate;
+import org.bouncycastle.asn1.ASN1ObjectIdentifier;
+import org.bouncycastle.asn1.x500.AttributeTypeAndValue;
+import org.bouncycastle.asn1.x500.RDN;
+import org.bouncycastle.asn1.x500.X500Name;
+import org.bouncycastle.asn1.x500.style.BCStyle;
+import org.bouncycastle.openssl.jcajce.JcaPEMWriter;
+import org.slf4j.Logger;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -19,31 +33,15 @@ import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.Base64;
 
-import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
-import com.oracle.bmc.http.internal.RestClientFactory;
-import com.oracle.bmc.util.internal.Validate;
-import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-import org.bouncycastle.asn1.x500.AttributeTypeAndValue;
-import org.bouncycastle.asn1.x500.RDN;
-import org.bouncycastle.asn1.x500.X500Name;
-import org.bouncycastle.asn1.x500.style.BCStyle;
-import org.bouncycastle.openssl.jcajce.JcaPEMWriter;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.base.Optional;
-
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Utilities dealing with authorization.
  */
-@Slf4j
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AuthUtils {
     private static final ObjectMapper OBJECT_MAPPER = RestClientFactory.getObjectMapper();
     private static final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(AuthUtils.class);
+
+    private AuthUtils() {}
 
     /**
      * Gets the fingerprint of a certificate using Sha256. This is the same value that you would get by running,

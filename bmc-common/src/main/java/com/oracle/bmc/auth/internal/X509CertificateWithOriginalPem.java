@@ -7,9 +7,6 @@ package com.oracle.bmc.auth.internal;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
 /**
  * X509CertificateWithOriginalPem is specifically used so that we can keep track of
  * the original PEM encoded certificate, along with the parsed X509Certificate that
@@ -26,16 +23,25 @@ import lombok.RequiredArgsConstructor;
  * specifically, we will attempt to get the encoded bytes from the original PEM file instead and pass
  * them back as is, without parsing it to a X509Certificate.
  */
-@RequiredArgsConstructor
 public class X509CertificateWithOriginalPem extends ForwardingX509Certificate {
     private final X509Certificate delegate;
     /**
      * The original PEM encoded X509.
      */
-    @Getter private final String pemEncodedCertificate;
+    private final String pemEncodedCertificate;
+
+    @java.beans.ConstructorProperties({"delegate", "pemEncodedCertificate"})
+    public X509CertificateWithOriginalPem(X509Certificate delegate, String pemEncodedCertificate) {
+        this.delegate = delegate;
+        this.pemEncodedCertificate = pemEncodedCertificate;
+    }
 
     @Override
     protected X509Certificate delegate() {
         return delegate;
+    }
+
+    public String getPemEncodedCertificate() {
+        return this.pemEncodedCertificate;
     }
 }

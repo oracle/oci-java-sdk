@@ -5,9 +5,6 @@
 package com.oracle.bmc.model;
 
 import com.oracle.bmc.util.internal.StringUtils;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Class specifying a range-request is being made. Request mostly follows
@@ -23,26 +20,25 @@ import lombok.extern.slf4j.Slf4j;
  * Also used to represent the range returned by the server (including the full
  * content length, if known).
  */
-@RequiredArgsConstructor
-@Slf4j
 public class Range {
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Range.class);
     private static final String HEADER_VALUE_FORMAT = "bytes=%s-%s";
     private static final String START_ONLY_HEADER_VALUE_FORMAT = "bytes=%s-";
     private static final String END_ONLY_HEADER_VALUE_FORMAT = "bytes=-%s";
-
     /**
      * The start byte, if given.
      */
-    @Getter private final Long startByte;
+    private final Long startByte;
+
     /**
      * The end byte, if given.
      */
-    @Getter private final Long endByte;
+    private final Long endByte;
 
     /**
      * The content length as returned by the server, or null if unknown.
      */
-    @Getter private Long contentLength = null;
+    private Long contentLength = null;
 
     // toString is used for header serialization by Jersey
     // TODO: register a provider that can serialize this class with Jersey
@@ -94,5 +90,32 @@ public class Range {
         Range range = new Range(startByte, endByte);
         range.contentLength = contentLength;
         return range;
+    }
+
+    @java.beans.ConstructorProperties({"startByte", "endByte"})
+    public Range(final Long startByte, final Long endByte) {
+        this.startByte = startByte;
+        this.endByte = endByte;
+    }
+
+    /**
+     * The start byte, if given.
+     */
+    public Long getStartByte() {
+        return this.startByte;
+    }
+
+    /**
+     * The end byte, if given.
+     */
+    public Long getEndByte() {
+        return this.endByte;
+    }
+
+    /**
+     * The content length as returned by the server, or null if unknown.
+     */
+    public Long getContentLength() {
+        return this.contentLength;
     }
 }

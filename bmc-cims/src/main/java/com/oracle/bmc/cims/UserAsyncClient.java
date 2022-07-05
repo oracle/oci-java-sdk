@@ -396,14 +396,15 @@ public class UserAsyncClient implements UserAsync {
         final CreateUserRequest interceptedRequest = CreateUserConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateUserConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "User",
+                        "CreateUser",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/User/CreateUser");
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse>
-                transformer = CreateUserConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "User",
-                "CreateUser",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/User/CreateUser");
-
+                transformer =
+                        CreateUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateUserRequest, CreateUserResponse> handlerToUse =
                 handler;
 

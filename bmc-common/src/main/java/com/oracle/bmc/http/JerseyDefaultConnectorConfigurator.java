@@ -6,13 +6,13 @@ package com.oracle.bmc.http;
 
 import com.oracle.bmc.util.JavaRuntimeUtils;
 import com.oracle.bmc.util.internal.Validate;
-import lombok.extern.slf4j.Slf4j;
 import org.glassfish.jersey.SslConfigurator;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.client.HttpUrlConnectorProvider;
 import org.glassfish.jersey.client.RequestEntityProcessing;
 import org.glassfish.jersey.client.spi.ConnectorProvider;
+import org.slf4j.Logger;
 
 import javax.net.ssl.SSLContext;
 import javax.ws.rs.client.Client;
@@ -33,12 +33,13 @@ import java.util.List;
  * If the JerseyDefaultConnectorConfigurator results in any issues, callers can provide their
  * own implementation when constructing service objects.
  */
-@Slf4j
 public class JerseyDefaultConnectorConfigurator
         implements ClientConfigurator, SetsClientBuilderProperties {
 
     static final String SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS =
             "sun.net.http.allowRestrictedHeaders";
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(JerseyDefaultConnectorConfigurator.class);
 
     static {
         setAllowRestrictedHeadersProperty(

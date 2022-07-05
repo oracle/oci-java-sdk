@@ -119,6 +119,14 @@ public class ListAnnouncementSubscriptionsConverter {
                     com.oracle.bmc.announcementsservice.responses
                             .ListAnnouncementSubscriptionsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.announcementsservice.responses
+                            .ListAnnouncementSubscriptionsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.announcementsservice.responses
@@ -134,16 +142,26 @@ public class ListAnnouncementSubscriptionsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.announcementsservice.responses.ListAnnouncementSubscriptionsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.announcementsservice.model
                                                                 .AnnouncementSubscriptionCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.announcementsservice.model
-                                                                        .AnnouncementSubscriptionCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.announcementsservice.model
+                                                                    .AnnouncementSubscriptionCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.announcementsservice.model
+                                                                    .AnnouncementSubscriptionCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.announcementsservice.model

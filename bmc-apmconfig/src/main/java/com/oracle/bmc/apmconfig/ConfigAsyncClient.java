@@ -396,15 +396,16 @@ public class ConfigAsyncClient implements ConfigAsync {
                 CreateConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateConfigConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateConfigResponse>
-                transformer = CreateConfigConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Config",
-                "CreateConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/CreateConfig");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "CreateConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/CreateConfig");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateConfigResponse>
+                transformer =
+                        CreateConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateConfigRequest, CreateConfigResponse>
                 handlerToUse = handler;
 
@@ -445,14 +446,15 @@ public class ConfigAsyncClient implements ConfigAsync {
                 DeleteConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "DeleteConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/DeleteConfig");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConfigResponse>
-                transformer = DeleteConfigConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Config",
-                "DeleteConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/DeleteConfig");
-
+                transformer =
+                        DeleteConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteConfigRequest, DeleteConfigResponse>
                 handlerToUse = handler;
 
@@ -487,14 +489,15 @@ public class ConfigAsyncClient implements ConfigAsync {
         final GetConfigRequest interceptedRequest = GetConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "GetConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/GetConfig");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigResponse>
-                transformer = GetConfigConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Config",
-                "GetConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/GetConfig");
-
+                transformer =
+                        GetConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetConfigRequest, GetConfigResponse> handlerToUse =
                 handler;
 
@@ -529,14 +532,15 @@ public class ConfigAsyncClient implements ConfigAsync {
                 ListConfigsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListConfigsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "ListConfigs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ConfigCollection/ListConfigs");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListConfigsResponse>
-                transformer = ListConfigsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Config",
-                "ListConfigs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ConfigCollection/ListConfigs");
-
+                transformer =
+                        ListConfigsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListConfigsRequest, ListConfigsResponse>
                 handlerToUse = handler;
 
@@ -573,15 +577,17 @@ public class ConfigAsyncClient implements ConfigAsync {
                 RetrieveNamespaceMetricsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RetrieveNamespaceMetricsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "RetrieveNamespaceMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MetricGroup/RetrieveNamespaceMetrics");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RetrieveNamespaceMetricsResponse>
-                transformer = RetrieveNamespaceMetricsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Config",
-                "RetrieveNamespaceMetrics",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MetricGroup/RetrieveNamespaceMetrics");
-
+                transformer =
+                        RetrieveNamespaceMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RetrieveNamespaceMetricsRequest, RetrieveNamespaceMetricsResponse>
                 handlerToUse = handler;
@@ -624,14 +630,16 @@ public class ConfigAsyncClient implements ConfigAsync {
                 RetrieveNamespacesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RetrieveNamespacesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "RetrieveNamespaces",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MetricGroup/RetrieveNamespaces");
         final com.google.common.base.Function<javax.ws.rs.core.Response, RetrieveNamespacesResponse>
-                transformer = RetrieveNamespacesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Config",
-                "RetrieveNamespaces",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MetricGroup/RetrieveNamespaces");
-
+                transformer =
+                        RetrieveNamespacesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RetrieveNamespacesRequest, RetrieveNamespacesResponse>
                 handlerToUse = handler;
 
@@ -667,14 +675,15 @@ public class ConfigAsyncClient implements ConfigAsync {
                 UpdateConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "UpdateConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/UpdateConfig");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigResponse>
-                transformer = UpdateConfigConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Config",
-                "UpdateConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/UpdateConfig");
-
+                transformer =
+                        UpdateConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateConfigRequest, UpdateConfigResponse>
                 handlerToUse = handler;
 
@@ -716,15 +725,17 @@ public class ConfigAsyncClient implements ConfigAsync {
                 ValidateSpanFilterPatternConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ValidateSpanFilterPatternConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "ValidateSpanFilterPattern",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/SpanFilter/ValidateSpanFilterPattern");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ValidateSpanFilterPatternResponse>
-                transformer = ValidateSpanFilterPatternConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Config",
-                "ValidateSpanFilterPattern",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/SpanFilter/ValidateSpanFilterPattern");
-
+                transformer =
+                        ValidateSpanFilterPatternConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ValidateSpanFilterPatternRequest, ValidateSpanFilterPatternResponse>
                 handlerToUse = handler;

@@ -397,15 +397,16 @@ public class OrdersAsyncClient implements OrdersAsync {
                 ActivateOrderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ActivateOrderConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ActivateOrderResponse>
-                transformer = ActivateOrderConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Orders",
-                "ActivateOrder",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/ActivateOrder");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Orders",
+                        "ActivateOrder",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/ActivateOrder");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ActivateOrderResponse>
+                transformer =
+                        ActivateOrderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ActivateOrderRequest, ActivateOrderResponse>
                 handlerToUse = handler;
 
@@ -445,14 +446,14 @@ public class OrdersAsyncClient implements OrdersAsync {
         final GetOrderRequest interceptedRequest = GetOrderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetOrderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Orders",
+                        "GetOrder",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/GetOrder");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetOrderResponse>
-                transformer = GetOrderConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Orders",
-                "GetOrder",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/GetOrder");
-
+                transformer = GetOrderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetOrderRequest, GetOrderResponse> handlerToUse =
                 handler;
 

@@ -126,6 +126,14 @@ public class ListDatabaseToolsPrivateEndpointsConverter {
                     com.oracle.bmc.databasetools.responses
                             .ListDatabaseToolsPrivateEndpointsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.databasetools.responses
+                            .ListDatabaseToolsPrivateEndpointsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.databasetools.responses
@@ -141,16 +149,26 @@ public class ListDatabaseToolsPrivateEndpointsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.databasetools.responses.ListDatabaseToolsPrivateEndpointsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.databasetools.model
                                                                 .DatabaseToolsPrivateEndpointCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.databasetools.model
-                                                                        .DatabaseToolsPrivateEndpointCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.databasetools.model
+                                                                    .DatabaseToolsPrivateEndpointCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.databasetools.model
+                                                                    .DatabaseToolsPrivateEndpointCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.databasetools.model

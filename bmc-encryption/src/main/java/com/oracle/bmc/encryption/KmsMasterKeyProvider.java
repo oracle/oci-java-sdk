@@ -6,7 +6,6 @@ package com.oracle.bmc.encryption;
 
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.encryption.internal.CryptoAlgorithm;
-import lombok.Getter;
 
 /**
  * Represents a KmsMasterKeyProvider that holds KmsMasterKeys.

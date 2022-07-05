@@ -4,14 +4,13 @@
  */
 package com.oracle.bmc.circuitbreaker.internal;
 
-import lombok.NonNull;
-
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import javax.ws.rs.core.Response;
+import javax.annotation.Nonnull;
 
 final class PreCircuitBreakerFuture implements Future<Response> {
 
@@ -19,7 +18,14 @@ final class PreCircuitBreakerFuture implements Future<Response> {
     private final Set<Integer> recordHttpStatuses;
 
     PreCircuitBreakerFuture(
-            @NonNull Future<Response> future, @NonNull Set<Integer> recordHttpStatuses) {
+            @Nonnull Future<Response> future, @Nonnull Set<Integer> recordHttpStatuses) {
+        if (future == null) {
+            throw new NullPointerException("future is marked non-null but is null");
+        }
+        if (recordHttpStatuses == null) {
+            throw new NullPointerException("recordHttpStatuses is marked non-null but is null");
+        }
+
         this.future = future;
         this.recordHttpStatuses = recordHttpStatuses;
     }
@@ -49,8 +55,12 @@ final class PreCircuitBreakerFuture implements Future<Response> {
     }
 
     @Override
-    public Response get(long timeout, @NonNull TimeUnit unit)
+    public Response get(long timeout, @Nonnull TimeUnit unit)
             throws InterruptedException, ExecutionException, TimeoutException {
+        if (unit == null) {
+            throw new NullPointerException("unit is marked non-null but is null");
+        }
+
         Response response = this.future.get(timeout, unit);
         if (recordHttpStatuses.contains(response.getStatus())) {
             throw new HttpStatusErrorException(response);

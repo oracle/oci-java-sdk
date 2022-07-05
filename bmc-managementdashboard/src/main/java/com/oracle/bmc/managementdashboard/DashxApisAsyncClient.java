@@ -401,16 +401,18 @@ public class DashxApisAsyncClient implements DashxApisAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeManagementDashboardsCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "ChangeManagementDashboardsCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/ChangeManagementDashboardsCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeManagementDashboardsCompartmentResponse>
-                transformer = ChangeManagementDashboardsCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "ChangeManagementDashboardsCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/ChangeManagementDashboardsCompartment");
-
+                transformer =
+                        ChangeManagementDashboardsCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeManagementDashboardsCompartmentRequest,
                         ChangeManagementDashboardsCompartmentResponse>
@@ -460,16 +462,18 @@ public class DashxApisAsyncClient implements DashxApisAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeManagementSavedSearchesCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "ChangeManagementSavedSearchesCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/ChangeManagementSavedSearchesCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeManagementSavedSearchesCompartmentResponse>
-                transformer = ChangeManagementSavedSearchesCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "ChangeManagementSavedSearchesCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/ChangeManagementSavedSearchesCompartment");
-
+                transformer =
+                        ChangeManagementSavedSearchesCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeManagementSavedSearchesCompartmentRequest,
                         ChangeManagementSavedSearchesCompartmentResponse>
@@ -517,16 +521,18 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 CreateManagementDashboardConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateManagementDashboardConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "CreateManagementDashboard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/CreateManagementDashboard");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateManagementDashboardResponse>
-                transformer = CreateManagementDashboardConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "CreateManagementDashboard",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/CreateManagementDashboard");
-
+                transformer =
+                        CreateManagementDashboardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateManagementDashboardRequest, CreateManagementDashboardResponse>
                 handlerToUse = handler;
@@ -572,16 +578,18 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 CreateManagementSavedSearchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateManagementSavedSearchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "CreateManagementSavedSearch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/CreateManagementSavedSearch");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateManagementSavedSearchResponse>
-                transformer = CreateManagementSavedSearchConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "CreateManagementSavedSearch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/CreateManagementSavedSearch");
-
+                transformer =
+                        CreateManagementSavedSearchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateManagementSavedSearchRequest, CreateManagementSavedSearchResponse>
                 handlerToUse = handler;
@@ -625,15 +633,17 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 DeleteManagementDashboardConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteManagementDashboardConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "DeleteManagementDashboard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/DeleteManagementDashboard");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteManagementDashboardResponse>
-                transformer = DeleteManagementDashboardConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "DeleteManagementDashboard",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/DeleteManagementDashboard");
-
+                transformer =
+                        DeleteManagementDashboardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteManagementDashboardRequest, DeleteManagementDashboardResponse>
                 handlerToUse = handler;
@@ -674,15 +684,17 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 DeleteManagementSavedSearchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteManagementSavedSearchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "DeleteManagementSavedSearch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/DeleteManagementSavedSearch");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteManagementSavedSearchResponse>
-                transformer = DeleteManagementSavedSearchConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "DeleteManagementSavedSearch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/DeleteManagementSavedSearch");
-
+                transformer =
+                        DeleteManagementSavedSearchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteManagementSavedSearchRequest, DeleteManagementSavedSearchResponse>
                 handlerToUse = handler;
@@ -721,15 +733,17 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 ExportDashboardConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ExportDashboardConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ExportDashboardResponse>
-                transformer = ExportDashboardConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "ExportDashboard",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/ExportDashboard");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "ExportDashboard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/ExportDashboard");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ExportDashboardResponse>
+                transformer =
+                        ExportDashboardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ExportDashboardRequest, ExportDashboardResponse>
                 handlerToUse = handler;
 
@@ -766,16 +780,18 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 GetManagementDashboardConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetManagementDashboardConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "GetManagementDashboard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/GetManagementDashboard");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetManagementDashboardResponse>
-                transformer = GetManagementDashboardConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "GetManagementDashboard",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/GetManagementDashboard");
-
+                transformer =
+                        GetManagementDashboardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetManagementDashboardRequest, GetManagementDashboardResponse>
                 handlerToUse = handler;
@@ -813,16 +829,18 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 GetManagementSavedSearchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetManagementSavedSearchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "GetManagementSavedSearch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/GetManagementSavedSearch");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetManagementSavedSearchResponse>
-                transformer = GetManagementSavedSearchConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "GetManagementSavedSearch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/GetManagementSavedSearch");
-
+                transformer =
+                        GetManagementSavedSearchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetManagementSavedSearchRequest, GetManagementSavedSearchResponse>
                 handlerToUse = handler;
@@ -860,15 +878,17 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 ImportDashboardConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ImportDashboardConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportDashboardResponse>
-                transformer = ImportDashboardConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "ImportDashboard",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/ImportDashboard");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "ImportDashboard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/ImportDashboard");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportDashboardResponse>
+                transformer =
+                        ImportDashboardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ImportDashboardRequest, ImportDashboardResponse>
                 handlerToUse = handler;
 
@@ -910,15 +930,17 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 ListManagementDashboardsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListManagementDashboardsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "ListManagementDashboards",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/ListManagementDashboards");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListManagementDashboardsResponse>
-                transformer = ListManagementDashboardsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "ListManagementDashboards",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/ListManagementDashboards");
-
+                transformer =
+                        ListManagementDashboardsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListManagementDashboardsRequest, ListManagementDashboardsResponse>
                 handlerToUse = handler;
@@ -958,15 +980,17 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 ListManagementSavedSearchesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListManagementSavedSearchesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "ListManagementSavedSearches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/ListManagementSavedSearches");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListManagementSavedSearchesResponse>
-                transformer = ListManagementSavedSearchesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "ListManagementSavedSearches",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/ListManagementSavedSearches");
-
+                transformer =
+                        ListManagementSavedSearchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListManagementSavedSearchesRequest, ListManagementSavedSearchesResponse>
                 handlerToUse = handler;
@@ -1005,16 +1029,18 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 UpdateManagementDashboardConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateManagementDashboardConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "UpdateManagementDashboard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/UpdateManagementDashboard");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateManagementDashboardResponse>
-                transformer = UpdateManagementDashboardConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "UpdateManagementDashboard",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/UpdateManagementDashboard");
-
+                transformer =
+                        UpdateManagementDashboardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateManagementDashboardRequest, UpdateManagementDashboardResponse>
                 handlerToUse = handler;
@@ -1060,16 +1086,18 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 UpdateManagementSavedSearchConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateManagementSavedSearchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "UpdateManagementSavedSearch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/UpdateManagementSavedSearch");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateManagementSavedSearchResponse>
-                transformer = UpdateManagementSavedSearchConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashxApis",
-                "UpdateManagementSavedSearch",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/UpdateManagementSavedSearch");
-
+                transformer =
+                        UpdateManagementSavedSearchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateManagementSavedSearchRequest, UpdateManagementSavedSearchResponse>
                 handlerToUse = handler;

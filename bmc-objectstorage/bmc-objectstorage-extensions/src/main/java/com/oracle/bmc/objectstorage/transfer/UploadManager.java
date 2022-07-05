@@ -23,12 +23,7 @@ import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.util.StreamUtils;
 import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategy;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
-
+import javax.annotation.Nonnull;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -50,9 +45,10 @@ import java.util.concurrent.Executors;
  * Callers who want even more control, or need to combine multiple files should look at using {@link MultipartObjectAssembler}
  * directly.
  */
-@RequiredArgsConstructor
-@Slf4j
 public class UploadManager {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(UploadManager.class);
+
     private static final int DEFAULT_NUM_MULTIPART_THREADS_PER_REQUEST = 3;
     private static final String UPLOAD_MANAGER_DEBUG_INFORMATION_LOG =
             String.format(
@@ -66,7 +62,11 @@ public class UploadManager {
     private static final RetryCondition RETRY_CONDITION =
             new DefaultRetryCondition() {
                 @Override
-                public boolean shouldBeRetried(@NonNull BmcException e) {
+                public boolean shouldBeRetried(@Nonnull BmcException e) {
+                    if (e == null) {
+                        throw new java.lang.NullPointerException(
+                                "e is marked non-null but is null");
+                    }
                     return super.shouldBeRetried(e)
                             || e.getStatusCode() == -1
                             || (e.getStatusCode() == 409
@@ -370,7 +370,6 @@ public class UploadManager {
         return StreamHelper.base64Encode(digestOutputStream.getMessageDigest());
     }
 
-    @RequiredArgsConstructor
     public static class UploadRequest {
         private final PutObjectRequest putObjectRequest;
         private final ExecutorService parallelUploadExecutorService;
@@ -409,7 +408,6 @@ public class UploadManager {
             }
         }
 
-        @RequiredArgsConstructor
         public static class UploadRequestBuilder {
             private final InputStream inputStream;
             private final long contentLength;
@@ -481,15 +479,35 @@ public class UploadManager {
                         allowOverwrite,
                         progressReporter);
             }
+
+            @java.beans.ConstructorProperties({"inputStream", "contentLength"})
+            public UploadRequestBuilder(final InputStream inputStream, final long contentLength) {
+                this.inputStream = inputStream;
+                this.contentLength = contentLength;
+            }
+        }
+
+        @java.beans.ConstructorProperties({
+            "putObjectRequest",
+            "parallelUploadExecutorService",
+            "allowOverwrite",
+            "progressReporter"
+        })
+        public UploadRequest(
+                final PutObjectRequest putObjectRequest,
+                final ExecutorService parallelUploadExecutorService,
+                final boolean allowOverwrite,
+                final ProgressReporter progressReporter) {
+            this.putObjectRequest = putObjectRequest;
+            this.parallelUploadExecutorService = parallelUploadExecutorService;
+            this.allowOverwrite = allowOverwrite;
+            this.progressReporter = progressReporter;
         }
     }
 
     /**
      * The result referencing the uploaded object.
      */
-    @RequiredArgsConstructor
-    @Getter
-    @ToString
     public static class UploadResponse {
         /**
          * The etag of the object uploaded.
@@ -517,11 +535,99 @@ public class UploadManager {
          * The opc-client-request-id sent with every request, if provided.
          */
         private final String opcClientRequestId;
+
+        @java.beans.ConstructorProperties({
+            "eTag",
+            "contentMd5",
+            "multipartMd5",
+            "opcRequestId",
+            "opcClientRequestId"
+        })
+        public UploadResponse(
+                final String eTag,
+                final String contentMd5,
+                final String multipartMd5,
+                final String opcRequestId,
+                final String opcClientRequestId) {
+            this.eTag = eTag;
+            this.contentMd5 = contentMd5;
+            this.multipartMd5 = multipartMd5;
+            this.opcRequestId = opcRequestId;
+            this.opcClientRequestId = opcClientRequestId;
+        }
+
+        /**
+         * The etag of the object uploaded.
+         */
+        public String getETag() {
+            return this.eTag;
+        }
+
+        /**
+         * The MD5 of the object uploaded.
+         * <p>
+         * Will be null if the object was uploaded using multi-part.  See {@link #getMultipartMd5()} instead.
+         */
+        public String getContentMd5() {
+            return this.contentMd5;
+        }
+
+        /**
+         * The multipart MD5 of the object uploaded.
+         * <p>
+         * Will be null if the object was uploaded using standard put-object.  See {@link #getContentMd5()} instead.
+         */
+        public String getMultipartMd5() {
+            return this.multipartMd5;
+        }
+
+        /**
+         * The opc-request-id associated with either the PutObject call
+         * or the final CommitMultipartUpload call (if multi-part upload
+         * was used).
+         */
+        public String getOpcRequestId() {
+            return this.opcRequestId;
+        }
+
+        /**
+         * The opc-client-request-id sent with every request, if provided.
+         */
+        public String getOpcClientRequestId() {
+            return this.opcClientRequestId;
+        }
+
+        @java.lang.Override
+        public java.lang.String toString() {
+            return "UploadManager.UploadResponse(eTag="
+                    + this.getETag()
+                    + ", contentMd5="
+                    + this.getContentMd5()
+                    + ", multipartMd5="
+                    + this.getMultipartMd5()
+                    + ", opcRequestId="
+                    + this.getOpcRequestId()
+                    + ", opcClientRequestId="
+                    + this.getOpcClientRequestId()
+                    + ")";
+        }
     }
 
-    @RequiredArgsConstructor
     private static class MD5Calculation {
         private final InputStream streamToUse;
         private final String md5;
+
+        @java.beans.ConstructorProperties({"streamToUse", "md5"})
+        public MD5Calculation(final InputStream streamToUse, final String md5) {
+            this.streamToUse = streamToUse;
+            this.md5 = md5;
+        }
+    }
+
+    @java.beans.ConstructorProperties({"objectStorage", "uploadConfiguration"})
+    public UploadManager(
+            final ObjectStorage objectStorage, final UploadConfiguration uploadConfiguration) {
+        this.objectStorage = objectStorage;
+        this.uploadConfiguration = uploadConfiguration;
     }
 }

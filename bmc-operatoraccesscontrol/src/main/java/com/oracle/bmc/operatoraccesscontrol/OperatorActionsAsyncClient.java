@@ -399,14 +399,16 @@ public class OperatorActionsAsyncClient implements OperatorActionsAsync {
                 GetOperatorActionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetOperatorActionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperatorActions",
+                        "GetOperatorAction",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/GetOperatorAction");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetOperatorActionResponse>
-                transformer = GetOperatorActionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OperatorActions",
-                "GetOperatorAction",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/GetOperatorAction");
-
+                transformer =
+                        GetOperatorActionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetOperatorActionRequest, GetOperatorActionResponse>
                 handlerToUse = handler;
 
@@ -443,15 +445,17 @@ public class OperatorActionsAsyncClient implements OperatorActionsAsync {
                 ListOperatorActionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListOperatorActionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperatorActions",
+                        "ListOperatorActions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/ListOperatorActions");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListOperatorActionsResponse>
-                transformer = ListOperatorActionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "OperatorActions",
-                "ListOperatorActions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/ListOperatorActions");
-
+                transformer =
+                        ListOperatorActionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListOperatorActionsRequest, ListOperatorActionsResponse>
                 handlerToUse = handler;

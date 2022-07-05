@@ -7,6 +7,7 @@ package com.oracle.bmc.common;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import javax.annotation.Nonnull;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableMap;
@@ -66,9 +67,10 @@ public abstract class ClientBuilderBase<B extends ClientBuilderBase, C> {
      * @return this builder
      */
     public B additionalClientConfigurator(
-            @lombok.NonNull com.oracle.bmc.http.ClientConfigurator additionalClientConfigurator) {
+            @Nonnull com.oracle.bmc.http.ClientConfigurator additionalClientConfigurator) {
         if (additionalClientConfigurator == null) {
-            throw new NullPointerException("additionalClientConfigurator");
+            throw new NullPointerException(
+                    "additionalClientConfigurator is marked non-null but is null");
         }
         this.additionalClientConfigurators.add(additionalClientConfigurator);
         return (B) this;
@@ -131,7 +133,7 @@ public abstract class ClientBuilderBase<B extends ClientBuilderBase, C> {
      * @return a builder that can build the client
      */
     public abstract C build(
-            @lombok.NonNull
+            @Nonnull
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider);
 }

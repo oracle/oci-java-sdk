@@ -65,6 +65,13 @@ public class DeleteAutoScalingConfigurationConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.autoscaling.responses.DeleteAutoScalingConfigurationResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.autoscaling.responses.DeleteAutoScalingConfigurationResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.autoscaling.responses.DeleteAutoScalingConfigurationResponse>
@@ -79,10 +86,17 @@ public class DeleteAutoScalingConfigurationConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.autoscaling.responses.DeleteAutoScalingConfigurationResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create();
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn = RESPONSE_CONVERSION_FACTORY.create();
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<Void> response =
                                         responseFn.apply(rawResponse);

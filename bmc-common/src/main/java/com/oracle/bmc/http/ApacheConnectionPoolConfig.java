@@ -4,14 +4,11 @@
  */
 package com.oracle.bmc.http;
 
-import lombok.Data;
-
 import java.util.AbstractMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /** The configurable parameters for a client's connection pool */
-@Data
 public class ApacheConnectionPoolConfig {
     /**
      * Creates a new default {@code ApacheConnectionPoolConfig}.
@@ -41,6 +38,56 @@ public class ApacheConnectionPoolConfig {
         totalOpenConnections = builder.totalOpenConnections;
         defaultMaxConnectionsPerRoute = builder.defaultMaxConnectionsPerRoute;
         ttl = builder.ttl;
+    }
+
+    public int getTotalOpenConnections() {
+        return this.totalOpenConnections;
+    }
+
+    public int getDefaultMaxConnectionsPerRoute() {
+        return this.defaultMaxConnectionsPerRoute;
+    }
+
+    public Map.Entry<Integer, TimeUnit> getTtl() {
+        return this.ttl;
+    }
+
+    public boolean equals(final Object o) {
+        if (o == this) return true;
+        if (!(o instanceof ApacheConnectionPoolConfig)) return false;
+        final ApacheConnectionPoolConfig other = (ApacheConnectionPoolConfig) o;
+        if (!other.canEqual((Object) this)) return false;
+        if (this.getTotalOpenConnections() != other.getTotalOpenConnections()) return false;
+        if (this.getDefaultMaxConnectionsPerRoute() != other.getDefaultMaxConnectionsPerRoute())
+            return false;
+        final Object this$ttl = this.getTtl();
+        final Object other$ttl = other.getTtl();
+        if (this$ttl == null ? other$ttl != null : !this$ttl.equals(other$ttl)) return false;
+        return true;
+    }
+
+    protected boolean canEqual(final Object other) {
+        return other instanceof ApacheConnectionPoolConfig;
+    }
+
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = result * PRIME + this.getTotalOpenConnections();
+        result = result * PRIME + this.getDefaultMaxConnectionsPerRoute();
+        final Object $ttl = this.getTtl();
+        result = result * PRIME + ($ttl == null ? 43 : $ttl.hashCode());
+        return result;
+    }
+
+    public String toString() {
+        return "ApacheConnectionPoolConfig(totalOpenConnections="
+                + this.getTotalOpenConnections()
+                + ", defaultMaxConnectionsPerRoute="
+                + this.getDefaultMaxConnectionsPerRoute()
+                + ", ttl="
+                + this.getTtl()
+                + ")";
     }
 
     public final static class Builder {

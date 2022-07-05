@@ -6,7 +6,7 @@ package com.oracle.bmc.auth.internal;
 
 import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
@@ -19,7 +19,6 @@ import java.util.Map;
  * For the resource id, use IMDS to get the instance id
  *
  */
-@Slf4j
 public class ImdsRptPathProvider extends AbstractTemplateRptPathProvider {
 
     /**
@@ -36,6 +35,7 @@ public class ImdsRptPathProvider extends AbstractTemplateRptPathProvider {
      * The Authorization header value to be sent for requests to the metadata service.
      */
     private static final String AUTHORIZATION_HEADER_VALUE = "Bearer Oracle";
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(ImdsRptPathProvider.class);
 
     private final Map<String, String> replacements;
 

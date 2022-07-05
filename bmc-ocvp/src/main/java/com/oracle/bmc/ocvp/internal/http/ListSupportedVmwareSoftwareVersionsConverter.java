@@ -76,6 +76,13 @@ public class ListSupportedVmwareSoftwareVersionsConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.ocvp.responses.ListSupportedVmwareSoftwareVersionsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.ocvp.responses.ListSupportedVmwareSoftwareVersionsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.ocvp.responses.ListSupportedVmwareSoftwareVersionsResponse>
@@ -90,16 +97,26 @@ public class ListSupportedVmwareSoftwareVersionsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.ocvp.responses.ListSupportedVmwareSoftwareVersionsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.ocvp.model
                                                                 .SupportedVmwareSoftwareVersionCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.ocvp.model
-                                                                        .SupportedVmwareSoftwareVersionCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.ocvp.model
+                                                                    .SupportedVmwareSoftwareVersionCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.ocvp.model
+                                                                    .SupportedVmwareSoftwareVersionCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.ocvp.model

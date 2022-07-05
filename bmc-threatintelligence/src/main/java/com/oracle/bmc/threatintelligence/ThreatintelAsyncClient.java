@@ -397,14 +397,15 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                 GetIndicatorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIndicatorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Threatintel",
+                        "GetIndicator",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/Indicator/GetIndicator");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetIndicatorResponse>
-                transformer = GetIndicatorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Threatintel",
-                "GetIndicator",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/Indicator/GetIndicator");
-
+                transformer =
+                        GetIndicatorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetIndicatorRequest, GetIndicatorResponse>
                 handlerToUse = handler;
 
@@ -441,15 +442,17 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                 ListIndicatorCountsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIndicatorCountsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Threatintel",
+                        "ListIndicatorCounts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorCountCollection/ListIndicatorCounts");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIndicatorCountsResponse>
-                transformer = ListIndicatorCountsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Threatintel",
-                "ListIndicatorCounts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorCountCollection/ListIndicatorCounts");
-
+                transformer =
+                        ListIndicatorCountsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListIndicatorCountsRequest, ListIndicatorCountsResponse>
                 handlerToUse = handler;
@@ -487,14 +490,15 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                 ListIndicatorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIndicatorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Threatintel",
+                        "ListIndicators",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorSummaryCollection/ListIndicators");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListIndicatorsResponse>
-                transformer = ListIndicatorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Threatintel",
-                "ListIndicators",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorSummaryCollection/ListIndicators");
-
+                transformer =
+                        ListIndicatorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListIndicatorsRequest, ListIndicatorsResponse>
                 handlerToUse = handler;
 
@@ -531,14 +535,16 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                 ListThreatTypesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListThreatTypesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Threatintel",
+                        "ListThreatTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/ThreatTypesCollection/ListThreatTypes");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListThreatTypesResponse>
-                transformer = ListThreatTypesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Threatintel",
-                "ListThreatTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/ThreatTypesCollection/ListThreatTypes");
-
+                transformer =
+                        ListThreatTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListThreatTypesRequest, ListThreatTypesResponse>
                 handlerToUse = handler;
 

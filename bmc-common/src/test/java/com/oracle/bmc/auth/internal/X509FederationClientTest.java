@@ -139,7 +139,7 @@ public class X509FederationClientTest {
     @Test
     public void jacksonCanDeserializeSecurityToken() throws IOException {
         final String strToken = "{\"token\" : \"abcdef\"}";
-        // this line will fail on original code if Lombok and Jackson are not at exactly the right versions
+        // this line will fail on original code if Jackson is not at exactly the right version
         RestClientFactory.getObjectMapper()
                 .readValue(strToken, X509FederationClient.SecurityToken.class);
     }

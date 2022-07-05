@@ -4,26 +4,26 @@
  */
 package com.oracle.bmc.auth;
 
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
-
-import static com.oracle.bmc.util.internal.FileUtils.expandUserHome;
+import com.google.common.base.Supplier;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-import com.google.common.base.Supplier;
+import static com.oracle.bmc.util.internal.FileUtils.expandUserHome;
 
 /**
  * Simple Supplier for the private key that handles missing files.
  */
-@RequiredArgsConstructor
-@ToString
 public class SimplePrivateKeySupplier implements Supplier<InputStream> {
 
     private final String pemFilePath;
+
+    @java.beans.ConstructorProperties({"pemFilePath"})
+    public SimplePrivateKeySupplier(String pemFilePath) {
+        this.pemFilePath = pemFilePath;
+    }
 
     @Override
     public InputStream get() {
@@ -32,5 +32,9 @@ public class SimplePrivateKeySupplier implements Supplier<InputStream> {
         } catch (FileNotFoundException e) {
             throw new IllegalArgumentException("Could not find private key: " + pemFilePath, e);
         }
+    }
+
+    public String toString() {
+        return "SimplePrivateKeySupplier(pemFilePath=" + this.pemFilePath + ")";
     }
 }

@@ -89,6 +89,14 @@ public class ListNetworkLoadBalancersPoliciesConverter {
                     com.oracle.bmc.networkloadbalancer.responses
                             .ListNetworkLoadBalancersPoliciesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.networkloadbalancer.responses
+                            .ListNetworkLoadBalancersPoliciesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.networkloadbalancer.responses
@@ -104,16 +112,26 @@ public class ListNetworkLoadBalancersPoliciesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.networkloadbalancer.responses.ListNetworkLoadBalancersPoliciesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.networkloadbalancer.model
                                                                 .NetworkLoadBalancersPolicyCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.networkloadbalancer.model
-                                                                        .NetworkLoadBalancersPolicyCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.networkloadbalancer.model
+                                                                    .NetworkLoadBalancersPolicyCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.networkloadbalancer.model
+                                                                    .NetworkLoadBalancersPolicyCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.networkloadbalancer.model

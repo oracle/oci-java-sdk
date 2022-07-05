@@ -396,14 +396,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final CancelJobRequest interceptedRequest = CancelJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "CancelJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/CancelJob");
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelJobResponse>
-                transformer = CancelJobConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "CancelJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/CancelJob");
-
+                transformer =
+                        CancelJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CancelJobRequest, CancelJobResponse> handlerToUse =
                 handler;
 
@@ -442,17 +443,19 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeConfigurationSourceProviderCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ChangeConfigurationSourceProviderCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/ChangeConfigurationSourceProviderCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         ChangeConfigurationSourceProviderCompartmentResponse>
-                transformer = ChangeConfigurationSourceProviderCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ChangeConfigurationSourceProviderCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/ChangeConfigurationSourceProviderCompartment");
-
+                transformer =
+                        ChangeConfigurationSourceProviderCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeConfigurationSourceProviderCompartmentRequest,
                         ChangeConfigurationSourceProviderCompartmentResponse>
@@ -502,16 +505,18 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ChangePrivateEndpointCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangePrivateEndpointCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ChangePrivateEndpointCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/ChangePrivateEndpointCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangePrivateEndpointCompartmentResponse>
-                transformer = ChangePrivateEndpointCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ChangePrivateEndpointCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/ChangePrivateEndpointCompartment");
-
+                transformer =
+                        ChangePrivateEndpointCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangePrivateEndpointCompartmentRequest,
                         ChangePrivateEndpointCompartmentResponse>
@@ -557,16 +562,18 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ChangeStackCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeStackCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ChangeStackCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ChangeStackCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeStackCompartmentResponse>
-                transformer = ChangeStackCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ChangeStackCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ChangeStackCompartment");
-
+                transformer =
+                        ChangeStackCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeStackCompartmentRequest, ChangeStackCompartmentResponse>
                 handlerToUse = handler;
@@ -609,16 +616,18 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ChangeTemplateCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeTemplateCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ChangeTemplateCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/ChangeTemplateCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeTemplateCompartmentResponse>
-                transformer = ChangeTemplateCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ChangeTemplateCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/ChangeTemplateCompartment");
-
+                transformer =
+                        ChangeTemplateCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeTemplateCompartmentRequest, ChangeTemplateCompartmentResponse>
                 handlerToUse = handler;
@@ -664,16 +673,18 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 CreateConfigurationSourceProviderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateConfigurationSourceProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "CreateConfigurationSourceProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/CreateConfigurationSourceProvider");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateConfigurationSourceProviderResponse>
-                transformer = CreateConfigurationSourceProviderConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "CreateConfigurationSourceProvider",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/CreateConfigurationSourceProvider");
-
+                transformer =
+                        CreateConfigurationSourceProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateConfigurationSourceProviderRequest,
                         CreateConfigurationSourceProviderResponse>
@@ -717,15 +728,16 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final CreateJobRequest interceptedRequest = CreateJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateJobConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobResponse>
-                transformer = CreateJobConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "CreateJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/CreateJob");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "CreateJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/CreateJob");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobResponse>
+                transformer =
+                        CreateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handlerToUse =
                 handler;
 
@@ -766,16 +778,18 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 CreatePrivateEndpointConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreatePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "CreatePrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/CreatePrivateEndpoint");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreatePrivateEndpointResponse>
-                transformer = CreatePrivateEndpointConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "CreatePrivateEndpoint",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/CreatePrivateEndpoint");
-
+                transformer =
+                        CreatePrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>
                 handlerToUse = handler;
@@ -817,15 +831,16 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 CreateStackConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateStackConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateStackResponse>
-                transformer = CreateStackConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "CreateStack",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/CreateStack");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "CreateStack",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/CreateStack");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateStackResponse>
+                transformer =
+                        CreateStackConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateStackRequest, CreateStackResponse>
                 handlerToUse = handler;
 
@@ -867,15 +882,16 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 CreateTemplateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTemplateConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTemplateResponse>
-                transformer = CreateTemplateConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "CreateTemplate",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/CreateTemplate");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "CreateTemplate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/CreateTemplate");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTemplateResponse>
+                transformer =
+                        CreateTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateTemplateRequest, CreateTemplateResponse>
                 handlerToUse = handler;
 
@@ -919,15 +935,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 DeleteConfigurationSourceProviderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteConfigurationSourceProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "DeleteConfigurationSourceProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/DeleteConfigurationSourceProvider");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteConfigurationSourceProviderResponse>
-                transformer = DeleteConfigurationSourceProviderConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "DeleteConfigurationSourceProvider",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/DeleteConfigurationSourceProvider");
-
+                transformer =
+                        DeleteConfigurationSourceProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteConfigurationSourceProviderRequest,
                         DeleteConfigurationSourceProviderResponse>
@@ -968,15 +986,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 DeletePrivateEndpointConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeletePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "DeletePrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/DeletePrivateEndpoint");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeletePrivateEndpointResponse>
-                transformer = DeletePrivateEndpointConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "DeletePrivateEndpoint",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/DeletePrivateEndpoint");
-
+                transformer =
+                        DeletePrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeletePrivateEndpointRequest, DeletePrivateEndpointResponse>
                 handlerToUse = handler;
@@ -1013,14 +1033,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 DeleteStackConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteStackConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "DeleteStack",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/DeleteStack");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteStackResponse>
-                transformer = DeleteStackConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "DeleteStack",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/DeleteStack");
-
+                transformer =
+                        DeleteStackConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteStackRequest, DeleteStackResponse>
                 handlerToUse = handler;
 
@@ -1057,14 +1078,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 DeleteTemplateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteTemplateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "DeleteTemplate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/DeleteTemplate");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTemplateResponse>
-                transformer = DeleteTemplateConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "DeleteTemplate",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/DeleteTemplate");
-
+                transformer =
+                        DeleteTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteTemplateRequest, DeleteTemplateResponse>
                 handlerToUse = handler;
 
@@ -1101,15 +1123,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 DetectStackDriftConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetectStackDriftConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DetectStackDriftResponse>
-                transformer = DetectStackDriftConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "DetectStackDrift",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/DetectStackDrift");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "DetectStackDrift",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/DetectStackDrift");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DetectStackDriftResponse>
+                transformer =
+                        DetectStackDriftConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DetectStackDriftRequest, DetectStackDriftResponse>
                 handlerToUse = handler;
 
@@ -1153,15 +1177,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetConfigurationSourceProviderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetConfigurationSourceProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetConfigurationSourceProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/GetConfigurationSourceProvider");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetConfigurationSourceProviderResponse>
-                transformer = GetConfigurationSourceProviderConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetConfigurationSourceProvider",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/GetConfigurationSourceProvider");
-
+                transformer =
+                        GetConfigurationSourceProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetConfigurationSourceProviderRequest,
                         GetConfigurationSourceProviderResponse>
@@ -1198,14 +1224,14 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final GetJobRequest interceptedRequest = GetJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJob");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobResponse>
-                transformer = GetJobConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJob");
-
+                transformer = GetJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handlerToUse = handler;
 
         java.util.function.Function<
@@ -1240,15 +1266,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetJobDetailedLogContentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetJobDetailedLogContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetJobDetailedLogContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobDetailedLogContent");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetJobDetailedLogContentResponse>
-                transformer = GetJobDetailedLogContentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetJobDetailedLogContent",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobDetailedLogContent");
-
+                transformer =
+                        GetJobDetailedLogContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetJobDetailedLogContentRequest, GetJobDetailedLogContentResponse>
                 handlerToUse = handler;
@@ -1284,14 +1312,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final GetJobLogsRequest interceptedRequest = GetJobLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetJobLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetJobLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobLogs");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobLogsResponse>
-                transformer = GetJobLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetJobLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobLogs");
-
+                transformer =
+                        GetJobLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetJobLogsRequest, GetJobLogsResponse> handlerToUse =
                 handler;
 
@@ -1328,14 +1357,16 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetJobLogsContentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetJobLogsContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetJobLogsContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobLogsContent");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobLogsContentResponse>
-                transformer = GetJobLogsContentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetJobLogsContent",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobLogsContent");
-
+                transformer =
+                        GetJobLogsContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetJobLogsContentRequest, GetJobLogsContentResponse>
                 handlerToUse = handler;
 
@@ -1382,14 +1413,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetJobTfConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetJobTfConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetJobTfConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfConfig");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobTfConfigResponse>
-                transformer = GetJobTfConfigConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetJobTfConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfConfig");
-
+                transformer =
+                        GetJobTfConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetJobTfConfigRequest, GetJobTfConfigResponse>
                 handlerToUse = handler;
 
@@ -1435,14 +1467,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetJobTfPlanConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetJobTfPlanConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetJobTfPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfPlan");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobTfPlanResponse>
-                transformer = GetJobTfPlanConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetJobTfPlan",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfPlan");
-
+                transformer =
+                        GetJobTfPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetJobTfPlanRequest, GetJobTfPlanResponse>
                 handlerToUse = handler;
 
@@ -1488,14 +1521,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetJobTfStateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetJobTfStateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetJobTfState",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfState");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobTfStateResponse>
-                transformer = GetJobTfStateConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetJobTfState",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfState");
-
+                transformer =
+                        GetJobTfStateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetJobTfStateRequest, GetJobTfStateResponse>
                 handlerToUse = handler;
 
@@ -1532,14 +1566,16 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetPrivateEndpointConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetPrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/GetPrivateEndpoint");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateEndpointResponse>
-                transformer = GetPrivateEndpointConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetPrivateEndpoint",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/GetPrivateEndpoint");
-
+                transformer =
+                        GetPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetPrivateEndpointRequest, GetPrivateEndpointResponse>
                 handlerToUse = handler;
 
@@ -1576,15 +1612,16 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetReachableIpConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetReachableIpConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetReachableIpResponse>
-                transformer = GetReachableIpConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetReachableIp",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ReachableIp/GetReachableIp");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetReachableIp",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ReachableIp/GetReachableIp");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetReachableIpResponse>
+                transformer =
+                        GetReachableIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetReachableIpRequest, GetReachableIpResponse>
                 handlerToUse = handler;
 
@@ -1619,14 +1656,14 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final GetStackRequest interceptedRequest = GetStackConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetStackConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetStack",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStack");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetStackResponse>
-                transformer = GetStackConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetStack",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStack");
-
+                transformer = GetStackConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetStackRequest, GetStackResponse> handlerToUse =
                 handler;
 
@@ -1672,14 +1709,16 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetStackTfConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetStackTfConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetStackTfConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStackTfConfig");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetStackTfConfigResponse>
-                transformer = GetStackTfConfigConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetStackTfConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStackTfConfig");
-
+                transformer =
+                        GetStackTfConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetStackTfConfigRequest, GetStackTfConfigResponse>
                 handlerToUse = handler;
 
@@ -1726,14 +1765,16 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetStackTfStateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetStackTfStateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetStackTfState",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStackTfState");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetStackTfStateResponse>
-                transformer = GetStackTfStateConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetStackTfState",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStackTfState");
-
+                transformer =
+                        GetStackTfStateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetStackTfStateRequest, GetStackTfStateResponse>
                 handlerToUse = handler;
 
@@ -1769,14 +1810,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetTemplateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTemplateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetTemplate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplate");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTemplateResponse>
-                transformer = GetTemplateConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetTemplate",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplate");
-
+                transformer =
+                        GetTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTemplateRequest, GetTemplateResponse>
                 handlerToUse = handler;
 
@@ -1823,14 +1865,16 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetTemplateLogoConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTemplateLogoConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetTemplateLogo",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplateLogo");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTemplateLogoResponse>
-                transformer = GetTemplateLogoConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetTemplateLogo",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplateLogo");
-
+                transformer =
+                        GetTemplateLogoConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTemplateLogoRequest, GetTemplateLogoResponse>
                 handlerToUse = handler;
 
@@ -1877,15 +1921,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetTemplateTfConfigConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTemplateTfConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetTemplateTfConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplateTfConfig");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTemplateTfConfigResponse>
-                transformer = GetTemplateTfConfigConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetTemplateTfConfig",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplateTfConfig");
-
+                transformer =
+                        GetTemplateTfConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetTemplateTfConfigRequest, GetTemplateTfConfigResponse>
                 handlerToUse = handler;
@@ -1923,14 +1969,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/GetWorkRequest");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "GetWorkRequest",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/GetWorkRequest");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -1969,15 +2016,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListConfigurationSourceProvidersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListConfigurationSourceProvidersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListConfigurationSourceProviders",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProviderSummary/ListConfigurationSourceProviders");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListConfigurationSourceProvidersResponse>
-                transformer = ListConfigurationSourceProvidersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ListConfigurationSourceProviders",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProviderSummary/ListConfigurationSourceProviders");
-
+                transformer =
+                        ListConfigurationSourceProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListConfigurationSourceProvidersRequest,
                         ListConfigurationSourceProvidersResponse>
@@ -2016,14 +2065,14 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final ListJobsRequest interceptedRequest = ListJobsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListJobsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListJobs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/JobSummary/ListJobs");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobsResponse>
-                transformer = ListJobsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ListJobs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/JobSummary/ListJobs");
-
+                transformer = ListJobsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handlerToUse =
                 handler;
 
@@ -2059,15 +2108,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListPrivateEndpointsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPrivateEndpointsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListPrivateEndpoints",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpointSummary/ListPrivateEndpoints");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPrivateEndpointsResponse>
-                transformer = ListPrivateEndpointsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ListPrivateEndpoints",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpointSummary/ListPrivateEndpoints");
-
+                transformer =
+                        ListPrivateEndpointsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>
                 handlerToUse = handler;
@@ -2107,15 +2158,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListResourceDiscoveryServicesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListResourceDiscoveryServicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListResourceDiscoveryServices",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ListResourceDiscoveryServices");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListResourceDiscoveryServicesResponse>
-                transformer = ListResourceDiscoveryServicesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ListResourceDiscoveryServices",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ListResourceDiscoveryServices");
-
+                transformer =
+                        ListResourceDiscoveryServicesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListResourceDiscoveryServicesRequest, ListResourceDiscoveryServicesResponse>
                 handlerToUse = handler;
@@ -2156,15 +2209,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListStackResourceDriftDetailsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListStackResourceDriftDetailsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListStackResourceDriftDetails",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/StackResourceDriftSummary/ListStackResourceDriftDetails");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListStackResourceDriftDetailsResponse>
-                transformer = ListStackResourceDriftDetailsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ListStackResourceDriftDetails",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/StackResourceDriftSummary/ListStackResourceDriftDetails");
-
+                transformer =
+                        ListStackResourceDriftDetailsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListStackResourceDriftDetailsRequest, ListStackResourceDriftDetailsResponse>
                 handlerToUse = handler;
@@ -2201,14 +2256,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final ListStacksRequest interceptedRequest = ListStacksConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListStacksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListStacks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/StackSummary/ListStacks");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListStacksResponse>
-                transformer = ListStacksConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ListStacks",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/StackSummary/ListStacks");
-
+                transformer =
+                        ListStacksConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListStacksRequest, ListStacksResponse> handlerToUse =
                 handler;
 
@@ -2245,15 +2301,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListTemplateCategoriesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTemplateCategoriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListTemplateCategories",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/TemplateCategorySummary/ListTemplateCategories");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTemplateCategoriesResponse>
-                transformer = ListTemplateCategoriesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ListTemplateCategories",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/TemplateCategorySummary/ListTemplateCategories");
-
+                transformer =
+                        ListTemplateCategoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListTemplateCategoriesRequest, ListTemplateCategoriesResponse>
                 handlerToUse = handler;
@@ -2290,14 +2348,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListTemplatesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTemplatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListTemplates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/ListTemplates");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTemplatesResponse>
-                transformer = ListTemplatesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ListTemplates",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/ListTemplates");
-
+                transformer =
+                        ListTemplatesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTemplatesRequest, ListTemplatesResponse>
                 handlerToUse = handler;
 
@@ -2334,15 +2393,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListTerraformVersionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTerraformVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListTerraformVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ListTerraformVersions");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTerraformVersionsResponse>
-                transformer = ListTerraformVersionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ListTerraformVersions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ListTerraformVersions");
-
+                transformer =
+                        ListTerraformVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListTerraformVersionsRequest, ListTerraformVersionsResponse>
                 handlerToUse = handler;
@@ -2380,15 +2441,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequestErrors");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ListWorkRequestErrors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequestErrors");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -2426,15 +2489,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequestLogs");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ListWorkRequestLogs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequestLogs");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -2472,14 +2537,16 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequests");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "ListWorkRequests",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequests");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -2518,15 +2585,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 UpdateConfigurationSourceProviderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateConfigurationSourceProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "UpdateConfigurationSourceProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/UpdateConfigurationSourceProvider");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateConfigurationSourceProviderResponse>
-                transformer = UpdateConfigurationSourceProviderConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "UpdateConfigurationSourceProvider",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/UpdateConfigurationSourceProvider");
-
+                transformer =
+                        UpdateConfigurationSourceProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateConfigurationSourceProviderRequest,
                         UpdateConfigurationSourceProviderResponse>
@@ -2570,14 +2639,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final UpdateJobRequest interceptedRequest = UpdateJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "UpdateJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/UpdateJob");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJobResponse>
-                transformer = UpdateJobConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "UpdateJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/UpdateJob");
-
+                transformer =
+                        UpdateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handlerToUse =
                 handler;
 
@@ -2618,15 +2688,17 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 UpdatePrivateEndpointConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdatePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "UpdatePrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/UpdatePrivateEndpoint");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdatePrivateEndpointResponse>
-                transformer = UpdatePrivateEndpointConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "UpdatePrivateEndpoint",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/UpdatePrivateEndpoint");
-
+                transformer =
+                        UpdatePrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>
                 handlerToUse = handler;
@@ -2668,14 +2740,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 UpdateStackConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateStackConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "UpdateStack",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/UpdateStack");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateStackResponse>
-                transformer = UpdateStackConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "UpdateStack",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/UpdateStack");
-
+                transformer =
+                        UpdateStackConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateStackRequest, UpdateStackResponse>
                 handlerToUse = handler;
 
@@ -2717,14 +2790,15 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 UpdateTemplateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateTemplateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "UpdateTemplate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/UpdateTemplate");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTemplateResponse>
-                transformer = UpdateTemplateConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ResourceManager",
-                "UpdateTemplate",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/UpdateTemplate");
-
+                transformer =
+                        UpdateTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateTemplateRequest, UpdateTemplateResponse>
                 handlerToUse = handler;
 

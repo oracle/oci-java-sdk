@@ -399,16 +399,18 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                 CancelTranscriptionJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelTranscriptionJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "CancelTranscriptionJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CancelTranscriptionJob");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CancelTranscriptionJobResponse>
-                transformer = CancelTranscriptionJobConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech",
-                "CancelTranscriptionJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CancelTranscriptionJob");
-
+                transformer =
+                        CancelTranscriptionJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CancelTranscriptionJobRequest, CancelTranscriptionJobResponse>
                 handlerToUse = handler;
@@ -446,16 +448,18 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                 CancelTranscriptionTaskConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelTranscriptionTaskConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "CancelTranscriptionTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/CancelTranscriptionTask");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CancelTranscriptionTaskResponse>
-                transformer = CancelTranscriptionTaskConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech",
-                "CancelTranscriptionTask",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/CancelTranscriptionTask");
-
+                transformer =
+                        CancelTranscriptionTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CancelTranscriptionTaskRequest, CancelTranscriptionTaskResponse>
                 handlerToUse = handler;
@@ -495,16 +499,18 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                 ChangeTranscriptionJobCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeTranscriptionJobCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "ChangeTranscriptionJobCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ChangeTranscriptionJobCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeTranscriptionJobCompartmentResponse>
-                transformer = ChangeTranscriptionJobCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech",
-                "ChangeTranscriptionJobCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ChangeTranscriptionJobCompartment");
-
+                transformer =
+                        ChangeTranscriptionJobCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeTranscriptionJobCompartmentRequest,
                         ChangeTranscriptionJobCompartmentResponse>
@@ -550,16 +556,18 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                 CreateTranscriptionJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTranscriptionJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "CreateTranscriptionJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CreateTranscriptionJob");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateTranscriptionJobResponse>
-                transformer = CreateTranscriptionJobConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech",
-                "CreateTranscriptionJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CreateTranscriptionJob");
-
+                transformer =
+                        CreateTranscriptionJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTranscriptionJobRequest, CreateTranscriptionJobResponse>
                 handlerToUse = handler;
@@ -602,15 +610,17 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                 GetTranscriptionJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTranscriptionJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "GetTranscriptionJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/GetTranscriptionJob");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTranscriptionJobResponse>
-                transformer = GetTranscriptionJobConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech",
-                "GetTranscriptionJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/GetTranscriptionJob");
-
+                transformer =
+                        GetTranscriptionJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetTranscriptionJobRequest, GetTranscriptionJobResponse>
                 handlerToUse = handler;
@@ -648,15 +658,17 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                 GetTranscriptionTaskConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTranscriptionTaskConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "GetTranscriptionTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/GetTranscriptionTask");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTranscriptionTaskResponse>
-                transformer = GetTranscriptionTaskConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech",
-                "GetTranscriptionTask",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/GetTranscriptionTask");
-
+                transformer =
+                        GetTranscriptionTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetTranscriptionTaskRequest, GetTranscriptionTaskResponse>
                 handlerToUse = handler;
@@ -694,15 +706,17 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                 ListTranscriptionJobsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTranscriptionJobsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "ListTranscriptionJobs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ListTranscriptionJobs");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTranscriptionJobsResponse>
-                transformer = ListTranscriptionJobsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech",
-                "ListTranscriptionJobs",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ListTranscriptionJobs");
-
+                transformer =
+                        ListTranscriptionJobsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListTranscriptionJobsRequest, ListTranscriptionJobsResponse>
                 handlerToUse = handler;
@@ -740,15 +754,17 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                 ListTranscriptionTasksConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTranscriptionTasksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "ListTranscriptionTasks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/ListTranscriptionTasks");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTranscriptionTasksResponse>
-                transformer = ListTranscriptionTasksConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech",
-                "ListTranscriptionTasks",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/ListTranscriptionTasks");
-
+                transformer =
+                        ListTranscriptionTasksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListTranscriptionTasksRequest, ListTranscriptionTasksResponse>
                 handlerToUse = handler;
@@ -786,15 +802,17 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                 UpdateTranscriptionJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateTranscriptionJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "UpdateTranscriptionJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/UpdateTranscriptionJob");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateTranscriptionJobResponse>
-                transformer = UpdateTranscriptionJobConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech",
-                "UpdateTranscriptionJob",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/UpdateTranscriptionJob");
-
+                transformer =
+                        UpdateTranscriptionJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTranscriptionJobRequest, UpdateTranscriptionJobResponse>
                 handlerToUse = handler;

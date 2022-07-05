@@ -6,36 +6,33 @@ package com.oracle.bmc.objectstorage.transfer;
 
 import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
 import com.oracle.bmc.util.internal.Validate;
-import lombok.Getter;
-
 import java.time.Duration;
 import java.util.concurrent.ExecutorService;
 
 /**
  * Configuration for the {@link DownloadManager}.
  */
-@Getter
 public class DownloadConfiguration {
 
     /**
      * The smallest part size we will use.
      */
-    final static int MIN_PART_SIZE_IN_BYTES = 4 * 1024 * 1024;
+    static final int MIN_PART_SIZE_IN_BYTES = 4 * 1024 * 1024;
 
     /**
      * The largest part size we will allow.
      */
-    private final static int MAX_PART_SIZE_IN_BYTES = 1024 * 1024 * 1024;
+    private static final int MAX_PART_SIZE_IN_BYTES = 1024 * 1024 * 1024;
 
     /**
      * The largest value we will acceept for {@link #getParallelDownloads()}.
      */
-    private final static int MAX_PARALLEL_DOWNLOADS = 256;
+    private static final int MAX_PARALLEL_DOWNLOADS = 256;
 
     /**
      * The largest value we will accept as {@link #getMultipartDownloadThresholdInBytes()}.
      */
-    private final static long MAX_MULTIPART_DOWNLOAD_THRESHOLD = 5L * 1024L * 1024L * 1024L;
+    private static final long MAX_MULTIPART_DOWNLOAD_THRESHOLD = 5L * 1024L * 1024L * 1024L;
 
     /**
      * Maximum number of retries, not including the initial attempt.
@@ -312,5 +309,64 @@ public class DownloadConfiguration {
             this.executorService = value;
             return this;
         }
+    }
+
+    /**
+     * Maximum number of retries, not including the initial attempt.
+     */
+    public int getMaxRetries() {
+        return this.maxRetries;
+    }
+
+    /**
+     * Initial backoff, before a retry is performed.
+     */
+    public Duration getInitialBackoff() {
+        return this.initialBackoff;
+    }
+
+    /**
+     * Maximum backoff between retries.
+     */
+    public Duration getMaxBackoff() {
+        return this.maxBackoff;
+    }
+
+    /**
+     * The size in bytes of the individual parts as which the object is downloaded.
+     */
+    public int getPartSizeInBytes() {
+        return this.partSizeInBytes;
+    }
+
+    /**
+     * The threshold size in bytes at which we will start splitting the object into parts.
+     */
+    public long getMultipartDownloadThresholdInBytes() {
+        return this.multipartDownloadThresholdInBytes;
+    }
+
+    /**
+     * The number of parallel operations to perform when downloading an
+     * object in multiple parts. Decreasing this value will make multipart
+     * downloads less resource intensive but they may take longer.
+     * Increasing this value may improve download times, but the download
+     * process will consume more system resources and network bandwidth.
+     *
+     * Note that this is per object. If you call {@link DownloadManager#getObject(GetObjectRequest)}
+     * multiple times concurrently from separate threads, you will get this many parallel operations
+     * per object. If you want to limit the overall number of parallel parts being downloaded, you can
+     * provide an {@link ExecutorService} using {@link Builder#executorService(ExecutorService)} that limits
+     * the number of threads.
+     */
+    public int getParallelDownloads() {
+        return this.parallelDownloads;
+    }
+
+    /**
+     * Executor service for parallel downloads.
+     */
+    public ExecutorService getExecutorService() {
+        return this.executorService;
     }
 }

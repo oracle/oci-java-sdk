@@ -17,10 +17,16 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Invocation;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
+import static org.mockito.Mockito.when;
 
 @Ignore("DEX-1801: Fix Mockito Problem in Release TeamCity Job")
 public class ExplicitlySetFilterTest {
@@ -173,8 +179,6 @@ public class ExplicitlySetFilterTest {
         }
     }
 
-    @lombok.Value
-    @lombok.experimental.NonFinal
     @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -188,10 +192,10 @@ public class ExplicitlySetFilterTest {
             com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
     static class Baseclass {
         @com.fasterxml.jackson.annotation.JsonProperty("baseVal")
-        Integer baseVal;
+        private final Integer baseVal;
 
         @com.fasterxml.jackson.annotation.JsonProperty("major_version")
-        String majorVersion;
+        private final String majorVersion;
 
         protected Baseclass(
                 @com.fasterxml.jackson.annotation.JsonProperty("baseVal") Integer baseVal,
@@ -203,11 +207,70 @@ public class ExplicitlySetFilterTest {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public Integer getBaseVal() {
+            return this.baseVal;
+        }
+
+        public String getMajorVersion() {
+            return this.majorVersion;
+        }
+
+        public Set<String> get__explicitlySet__() {
+            return this.__explicitlySet__;
+        }
+
+        public boolean equals(final Object o) {
+            if (o == this) return true;
+            if (!(o instanceof Baseclass)) return false;
+            final Baseclass other = (Baseclass) o;
+            if (!other.canEqual((Object) this)) return false;
+            final Object this$baseVal = this.getBaseVal();
+            final Object other$baseVal = other.getBaseVal();
+            if (this$baseVal == null ? other$baseVal != null : !this$baseVal.equals(other$baseVal))
+                return false;
+            final Object this$majorVersion = this.getMajorVersion();
+            final Object other$majorVersion = other.getMajorVersion();
+            if (this$majorVersion == null
+                    ? other$majorVersion != null
+                    : !this$majorVersion.equals(other$majorVersion)) return false;
+            final Object this$__explicitlySet__ = this.get__explicitlySet__();
+            final Object other$__explicitlySet__ = other.get__explicitlySet__();
+            if (this$__explicitlySet__ == null
+                    ? other$__explicitlySet__ != null
+                    : !this$__explicitlySet__.equals(other$__explicitlySet__)) return false;
+            return true;
+        }
+
+        protected boolean canEqual(final Object other) {
+            return other instanceof Baseclass;
+        }
+
+        public int hashCode() {
+            final int PRIME = 59;
+            int result = 1;
+            final Object $baseVal = this.getBaseVal();
+            result = result * PRIME + ($baseVal == null ? 43 : $baseVal.hashCode());
+            final Object $majorVersion = this.getMajorVersion();
+            result = result * PRIME + ($majorVersion == null ? 43 : $majorVersion.hashCode());
+            final Object $__explicitlySet__ = this.get__explicitlySet__();
+            result =
+                    result * PRIME
+                            + ($__explicitlySet__ == null ? 43 : $__explicitlySet__.hashCode());
+            return result;
+        }
+
+        public String toString() {
+            return "ExplicitlySetFilterTest.Baseclass(baseVal="
+                    + this.getBaseVal()
+                    + ", majorVersion="
+                    + this.getMajorVersion()
+                    + ", __explicitlySet__="
+                    + this.get__explicitlySet__()
+                    + ")";
+        }
     }
 
-    @lombok.Value
-    @lombok.ToString(callSuper = true)
-    @lombok.EqualsAndHashCode(callSuper = true)
     @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Subclass.Builder.class)
     @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
@@ -216,9 +279,60 @@ public class ExplicitlySetFilterTest {
     )
     @com.fasterxml.jackson.annotation.JsonFilter(
             com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-    static class Subclass extends Baseclass {
+    static final class Subclass extends Baseclass {
+        public String getSubVal() {
+            return this.subVal;
+        }
+
+        public Set<String> get__explicitlySet__() {
+            return this.__explicitlySet__;
+        }
+
+        public boolean equals(final Object o) {
+            if (o == this) return true;
+            if (!(o instanceof Subclass)) return false;
+            final Subclass other = (Subclass) o;
+            if (!other.canEqual((Object) this)) return false;
+            if (!super.equals(o)) return false;
+            final Object this$subVal = this.getSubVal();
+            final Object other$subVal = other.getSubVal();
+            if (this$subVal == null ? other$subVal != null : !this$subVal.equals(other$subVal))
+                return false;
+            final Object this$__explicitlySet__ = this.get__explicitlySet__();
+            final Object other$__explicitlySet__ = other.get__explicitlySet__();
+            if (this$__explicitlySet__ == null
+                    ? other$__explicitlySet__ != null
+                    : !this$__explicitlySet__.equals(other$__explicitlySet__)) return false;
+            return true;
+        }
+
+        protected boolean canEqual(final Object other) {
+            return other instanceof Subclass;
+        }
+
+        public int hashCode() {
+            final int PRIME = 59;
+            int result = super.hashCode();
+            final Object $subVal = this.getSubVal();
+            result = result * PRIME + ($subVal == null ? 43 : $subVal.hashCode());
+            final Object $__explicitlySet__ = this.get__explicitlySet__();
+            result =
+                    result * PRIME
+                            + ($__explicitlySet__ == null ? 43 : $__explicitlySet__.hashCode());
+            return result;
+        }
+
+        public String toString() {
+            return "ExplicitlySetFilterTest.Subclass(super="
+                    + super.toString()
+                    + ", subVal="
+                    + this.getSubVal()
+                    + ", __explicitlySet__="
+                    + this.get__explicitlySet__()
+                    + ")";
+        }
+
         @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-        @lombok.experimental.Accessors(fluent = true)
         public static class Builder {
             @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
             private Integer baseVal;
@@ -275,7 +389,7 @@ public class ExplicitlySetFilterTest {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("subVal")
-        String subVal;
+        private final String subVal;
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

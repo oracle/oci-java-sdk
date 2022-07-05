@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.auth;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
@@ -20,24 +18,23 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Collectors;
+import javax.annotation.Nonnull;
 import javax.security.auth.Refreshable;
+
+import org.slf4j.Logger;
 
 import com.oracle.bmc.auth.internal.X509CertificateWithOriginalPem;
 import com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier;
 import com.oracle.bmc.util.StreamUtils;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 /**
  * {@link X509CertificateSupplier} implementation that reads both certificate and private key
  * off of URL.  This class also provides a way to manually refresh the certificate and
  * private key at any point.
  */
-@Slf4j
 public class URLBasedX509CertificateSupplier implements X509CertificateSupplier, Refreshable {
+
     /**
      * Provide a way for the application environment to disable the X509 workaround by setting
      * a system property to "true". On the command line, this can be done using
@@ -45,13 +42,13 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
      */
     private static final boolean EXPERIMENTAL_SUPPRESS_X509_WORKAROUND =
             Boolean.getBoolean("oci.sdk.experimental.suppressX509Workaround");
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(URLBasedX509CertificateSupplier.class);
 
     static {
         LOG.info("suppressX509Workaround flag set to {}", EXPERIMENTAL_SUPPRESS_X509_WORKAROUND);
     }
 
-    @Builder
-    @Data
     public static class ResourceDetails {
         /**
          * The url of the resource
@@ -62,6 +59,90 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
          * Headers to be sent along with the resource fetch request
          */
         private final Map<String, String> headers;
+
+        @java.beans.ConstructorProperties({"url", "headers"})
+        ResourceDetails(URL url, Map<String, String> headers) {
+            this.url = url;
+            this.headers = headers;
+        }
+
+        public static ResourceDetailsBuilder builder() {
+            return new ResourceDetailsBuilder();
+        }
+
+        public URL getUrl() {
+            return this.url;
+        }
+
+        public Map<String, String> getHeaders() {
+            return this.headers;
+        }
+
+        public boolean equals(final Object o) {
+            if (o == this) return true;
+            if (!(o instanceof ResourceDetails)) return false;
+            final ResourceDetails other = (ResourceDetails) o;
+            if (!other.canEqual((Object) this)) return false;
+            final Object this$url = this.getUrl();
+            final Object other$url = other.getUrl();
+            if (this$url == null ? other$url != null : !this$url.equals(other$url)) return false;
+            final Object this$headers = this.getHeaders();
+            final Object other$headers = other.getHeaders();
+            if (this$headers == null ? other$headers != null : !this$headers.equals(other$headers))
+                return false;
+            return true;
+        }
+
+        protected boolean canEqual(final Object other) {
+            return other instanceof ResourceDetails;
+        }
+
+        public int hashCode() {
+            final int PRIME = 59;
+            int result = 1;
+            final Object $url = this.getUrl();
+            result = result * PRIME + ($url == null ? 43 : $url.hashCode());
+            final Object $headers = this.getHeaders();
+            result = result * PRIME + ($headers == null ? 43 : $headers.hashCode());
+            return result;
+        }
+
+        public String toString() {
+            return "URLBasedX509CertificateSupplier.ResourceDetails(url="
+                    + this.getUrl()
+                    + ", headers="
+                    + this.getHeaders()
+                    + ")";
+        }
+
+        public static class ResourceDetailsBuilder {
+            private URL url;
+            private Map<String, String> headers;
+
+            ResourceDetailsBuilder() {}
+
+            public ResourceDetailsBuilder url(URL url) {
+                this.url = url;
+                return this;
+            }
+
+            public ResourceDetailsBuilder headers(Map<String, String> headers) {
+                this.headers = headers;
+                return this;
+            }
+
+            public ResourceDetails build() {
+                return new ResourceDetails(url, headers);
+            }
+
+            public String toString() {
+                return "URLBasedX509CertificateSupplier.ResourceDetails.ResourceDetailsBuilder(url="
+                        + this.url
+                        + ", headers="
+                        + this.headers
+                        + ")";
+            }
+        }
     }
 
     /**
@@ -87,8 +168,9 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
 
     /**
      * Constructor.
-     * @param certificateResourceDetails The certificate resource details
-     * @param privateKeyResourceDetails The private key resource details, may be null for intermediate certificates
+     *
+     * @param certificateResourceDetails     The certificate resource details
+     * @param privateKeyResourceDetails      The private key resource details, may be null for intermediate certificates
      * @param privateKeyPassphraseCharacters The private key passphrase, may be null for unencrypted private keys
      */
     public URLBasedX509CertificateSupplier(
@@ -104,8 +186,9 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
 
     /**
      * Constructor.
-     * @param certificateUrl The certificate url
-     * @param privateKeyUrl The private key url, may be null for intermediate certificates
+     *
+     * @param certificateUrl                 The certificate url
+     * @param privateKeyUrl                  The private key url, may be null for intermediate certificates
      * @param privateKeyPassphraseCharacters The private key passphrase, may be null for unencrypted private keys
      */
     public URLBasedX509CertificateSupplier(
@@ -118,10 +201,10 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
 
     /**
      * Constructor.
-     * @param certificateUrl The certificate url
-     * @param privateKeyUrl The private key url, may be null for intermediate certificates
-     * @param privateKeyPassphrase The private key passphrase, may be null for unencrypted private keys
      *
+     * @param certificateUrl       The certificate url
+     * @param privateKeyUrl        The private key url, may be null for intermediate certificates
+     * @param privateKeyPassphrase The private key passphrase, may be null for unencrypted private keys
      * @deprecated use {@link URLBasedX509CertificateSupplier#URLBasedX509CertificateSupplier(URL, URL, char[])} instead
      */
     @Deprecated
@@ -135,6 +218,7 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
 
     /**
      * Gets the certificate
+     *
      * @return The certificate, must not be null
      * @deprecated use {@link X509CertificateSupplier#getCertificateAndKeyPair()} instead
      */
@@ -166,6 +250,7 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
 
     /**
      * So far we don't care whether the certificate is current or not.
+     *
      * @return false always.
      */
     @Override
@@ -175,6 +260,7 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
 
     /**
      * Read the certificate from a raw string.
+     *
      * @param certificate the certificate
      * @return the certificate
      */
@@ -201,7 +287,8 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
                     Thread.sleep(TimeUnit.SECONDS.toMillis(30));
                 } catch (InterruptedException interruptedException) {
                     LOG.debug(
-                            "Thread interrupted while waiting to make next readRawCertificate call to instance metadata service",
+                            "Thread interrupted while waiting to make next readRawCertificate call to instance "
+                                    + "metadata service",
                             interruptedException);
                     Thread.currentThread().interrupt();
                     break;
@@ -211,8 +298,12 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
         throw new IllegalArgumentException("Open stream of certificate failed.", lastException);
     }
 
-    private static InputStream getResourceStream(@NonNull final ResourceDetails resourceDetails)
+    private static InputStream getResourceStream(@Nonnull final ResourceDetails resourceDetails)
             throws IOException {
+        if (resourceDetails == null) {
+            throw new java.lang.NullPointerException(
+                    "resourceDetails is marked non-null but is null");
+        }
         Objects.requireNonNull(resourceDetails.getUrl(), "Resource url cannot be null.");
         final URLConnection urlConnection = resourceDetails.getUrl().openConnection();
         if (resourceDetails.getHeaders() != null) {
@@ -223,8 +314,9 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
 
     /**
      * Read the private key from url.
+     *
      * @param privateKeyResourceDetails the private key resource details.
-     * @param privateKeyPassphrase the private key passhprase
+     * @param privateKeyPassphrase      the private key passhprase
      * @return the private key
      */
     private static RSAPrivateKey readPrivateKey(
@@ -248,7 +340,8 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
                     Thread.sleep(TimeUnit.SECONDS.toMillis(30));
                 } catch (InterruptedException interruptedException) {
                     LOG.debug(
-                            "Thread interrupted while waiting to make next readPrivateKey call to instance metadata service ",
+                            "Thread interrupted while waiting to make next readPrivateKey call to instance"
+                                    + " metadata service ",
                             interruptedException);
                     Thread.currentThread().interrupt();
                     break;
@@ -262,6 +355,7 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
      * Corresponding private key of the certificate. You must implement this
      * method for leaf certificates (to sign the request made to the auth service
      * to get a security token). For intermediate certificates, you can return null.
+     *
      * @return The private key
      * @deprecated use {@link X509CertificateSupplier#getCertificateAndKeyPair()} instead
      */
@@ -275,6 +369,7 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
      * Returns the X509 certificate and private key.  The X509 certificate will always
      * be valid.  The private key may be null for intermediate certificates.  For leaf
      * certificates, the private key will always be valid.
+     *
      * @return The certificate and private key pair.
      */
     @Override

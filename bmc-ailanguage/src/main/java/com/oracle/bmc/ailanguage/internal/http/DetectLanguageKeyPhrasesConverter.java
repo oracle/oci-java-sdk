@@ -58,6 +58,13 @@ public class DetectLanguageKeyPhrasesConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.ailanguage.responses.DetectLanguageKeyPhrasesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.ailanguage.responses.DetectLanguageKeyPhrasesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.ailanguage.responses.DetectLanguageKeyPhrasesResponse>
@@ -72,16 +79,26 @@ public class DetectLanguageKeyPhrasesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.ailanguage.responses.DetectLanguageKeyPhrasesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.ailanguage.model
                                                                 .DetectLanguageKeyPhrasesResult>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.ailanguage.model
-                                                                        .DetectLanguageKeyPhrasesResult
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.ailanguage.model
+                                                                    .DetectLanguageKeyPhrasesResult
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.ailanguage.model
+                                                                    .DetectLanguageKeyPhrasesResult
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.ailanguage.model

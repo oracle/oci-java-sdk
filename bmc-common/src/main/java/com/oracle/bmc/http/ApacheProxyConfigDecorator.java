@@ -5,18 +5,19 @@
 package com.oracle.bmc.http;
 
 import com.oracle.bmc.util.internal.Validate;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Nonnull;
 import org.glassfish.jersey.apache.connector.ApacheConnectorProvider;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.client.spi.ConnectorProvider;
+import org.slf4j.Logger;
 
 /**
  * A {@code ClientConfigDecorator} implementation that configures an HTTP or HTTPS proxy for the specific client instance.
  */
-@Slf4j
 public class ApacheProxyConfigDecorator implements ClientConfigDecorator {
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ApacheProxyConfigDecorator.class);
     private final ApacheProxyConfig proxyConfig;
 
     /**
@@ -24,7 +25,10 @@ public class ApacheProxyConfigDecorator implements ClientConfigDecorator {
      *
      * @param proxyConfig the proxy configuration
      */
-    public ApacheProxyConfigDecorator(@NonNull final ApacheProxyConfig proxyConfig) {
+    public ApacheProxyConfigDecorator(@Nonnull final ApacheProxyConfig proxyConfig) {
+        if (proxyConfig == null) {
+            throw new java.lang.NullPointerException("proxyConfig is marked non-null but is null");
+        }
         this.proxyConfig = proxyConfig;
     }
 

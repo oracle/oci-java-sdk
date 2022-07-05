@@ -77,6 +77,13 @@ public class UpdateAutoScalingPolicyConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.autoscaling.responses.UpdateAutoScalingPolicyResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.autoscaling.responses.UpdateAutoScalingPolicyResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.autoscaling.responses.UpdateAutoScalingPolicyResponse>
@@ -91,16 +98,26 @@ public class UpdateAutoScalingPolicyConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.autoscaling.responses.UpdateAutoScalingPolicyResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.autoscaling.model
                                                                 .AutoScalingPolicy>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.autoscaling.model
-                                                                        .AutoScalingPolicy
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.autoscaling.model
+                                                                    .AutoScalingPolicy
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.autoscaling.model
+                                                                    .AutoScalingPolicy
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.autoscaling.model.AutoScalingPolicy>

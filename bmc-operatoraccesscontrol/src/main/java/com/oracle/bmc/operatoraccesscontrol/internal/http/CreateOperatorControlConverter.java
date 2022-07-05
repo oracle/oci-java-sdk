@@ -60,6 +60,13 @@ public class CreateOperatorControlConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.operatoraccesscontrol.responses.CreateOperatorControlResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.operatoraccesscontrol.responses.CreateOperatorControlResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.operatoraccesscontrol.responses
@@ -75,16 +82,26 @@ public class CreateOperatorControlConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.operatoraccesscontrol.responses.CreateOperatorControlResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.operatoraccesscontrol.model
                                                                 .OperatorControl>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.operatoraccesscontrol.model
-                                                                        .OperatorControl
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.operatoraccesscontrol.model
+                                                                    .OperatorControl
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.operatoraccesscontrol.model
+                                                                    .OperatorControl
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.operatoraccesscontrol.model

@@ -4,8 +4,10 @@
  */
 package com.oracle.bmc;
 
-import static com.oracle.bmc.util.internal.FileUtils.expandUserHome;
+import org.slf4j.Logger;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,8 +23,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.oracle.bmc.util.internal.StringUtils;
-import lombok.AccessLevel;
-import lombok.RequiredArgsConstructor;
+import static com.oracle.bmc.util.internal.FileUtils.expandUserHome;
 
 /**
  * Simple implementation to read OCI configuration files.
@@ -30,7 +31,6 @@ import lombok.RequiredArgsConstructor;
  * Note, config files <b>MUST</b> contain a "DEFAULT" profile, else validation
  * will fail. Additional profiles are optional.
  */
-@lombok.extern.slf4j.Slf4j
 public final class ConfigFileReader {
     /**
      * Default location of the config file.
@@ -49,6 +49,7 @@ public final class ConfigFileReader {
      * Environment variable name for the config file location
      */
     public static final String OCI_CONFIG_FILE_PATH_ENV_VAR_NAME = "OCI_CONFIG_FILE";
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(ConfigFileReader.class);
 
     /**
      * Creates a new ConfigFile instance using the configuration at the default location,
@@ -190,10 +191,15 @@ public final class ConfigFileReader {
     /**
      * ConfigFile represents a simple lookup mechanism for a OCI config file.
      */
-    @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
     public static final class ConfigFile {
         private final ConfigAccumulator accumulator;
         private final String profile;
+
+        @java.beans.ConstructorProperties({"accumulator", "profile"})
+        private ConfigFile(ConfigAccumulator accumulator, String profile) {
+            this.accumulator = accumulator;
+            this.profile = profile;
+        }
 
         /**
          * Gets the value associated with a given key. The value returned will

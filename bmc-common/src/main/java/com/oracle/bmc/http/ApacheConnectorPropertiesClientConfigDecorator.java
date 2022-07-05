@@ -6,13 +6,13 @@ package com.oracle.bmc.http;
 
 import com.oracle.bmc.util.JavaRuntimeUtils;
 import com.oracle.bmc.util.internal.Validate;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Nonnull;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.ssl.SSLInitializationException;
@@ -21,22 +21,24 @@ import org.glassfish.jersey.apache.connector.ApacheClientProperties;
 import org.glassfish.jersey.apache.connector.ApacheConnectorProvider;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.spi.ConnectorProvider;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-
+import org.slf4j.Logger;
 import javax.net.ssl.SSLContext;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-@Slf4j
 public class ApacheConnectorPropertiesClientConfigDecorator implements ClientConfigDecorator {
-
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ApacheConnectorPropertiesClientConfigDecorator.class);
     private final ApacheConnectorProperties config;
 
     /**
      * Creates a new {@code ApacheConnectorPropertiesClientConfigDecorator} object.
      */
     public ApacheConnectorPropertiesClientConfigDecorator(
-            @NonNull final ApacheConnectorProperties config) {
+            @Nonnull final ApacheConnectorProperties config) {
+        if (config == null) {
+            throw new java.lang.NullPointerException("config is marked non-null but is null");
+        }
         this.config = config;
     }
 

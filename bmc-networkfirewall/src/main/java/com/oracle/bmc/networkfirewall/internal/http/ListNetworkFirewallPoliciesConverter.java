@@ -116,6 +116,13 @@ public class ListNetworkFirewallPoliciesConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.networkfirewall.responses.ListNetworkFirewallPoliciesResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.networkfirewall.responses.ListNetworkFirewallPoliciesResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.networkfirewall.responses
@@ -131,16 +138,26 @@ public class ListNetworkFirewallPoliciesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.networkfirewall.responses.ListNetworkFirewallPoliciesResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.networkfirewall.model
                                                                 .NetworkFirewallPolicySummaryCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.networkfirewall.model
-                                                                        .NetworkFirewallPolicySummaryCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.networkfirewall.model
+                                                                    .NetworkFirewallPolicySummaryCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.networkfirewall.model
+                                                                    .NetworkFirewallPolicySummaryCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.networkfirewall.model

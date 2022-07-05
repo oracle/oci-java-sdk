@@ -400,16 +400,18 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 AttachInstancePoolInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AttachInstancePoolInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "AttachInstancePoolInstance",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AttachInstancePoolInstanceResponse>
-                transformer = AttachInstancePoolInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "AttachInstancePoolInstance",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        AttachInstancePoolInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         AttachInstancePoolInstanceRequest, AttachInstancePoolInstanceResponse>
                 handlerToUse = handler;
@@ -453,15 +455,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 AttachLoadBalancerConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AttachLoadBalancerConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AttachLoadBalancerResponse>
-                transformer = AttachLoadBalancerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "AttachLoadBalancer",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/AttachLoadBalancer");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "AttachLoadBalancer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/AttachLoadBalancer");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AttachLoadBalancerResponse>
+                transformer =
+                        AttachLoadBalancerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AttachLoadBalancerRequest, AttachLoadBalancerResponse>
                 handlerToUse = handler;
 
@@ -505,16 +509,18 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 ChangeClusterNetworkCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeClusterNetworkCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "ChangeClusterNetworkCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ChangeClusterNetworkCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeClusterNetworkCompartmentResponse>
-                transformer = ChangeClusterNetworkCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "ChangeClusterNetworkCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ChangeClusterNetworkCompartment");
-
+                transformer =
+                        ChangeClusterNetworkCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeClusterNetworkCompartmentRequest,
                         ChangeClusterNetworkCompartmentResponse>
@@ -563,16 +569,18 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeInstanceConfigurationCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "ChangeInstanceConfigurationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/ChangeInstanceConfigurationCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeInstanceConfigurationCompartmentResponse>
-                transformer = ChangeInstanceConfigurationCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "ChangeInstanceConfigurationCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/ChangeInstanceConfigurationCompartment");
-
+                transformer =
+                        ChangeInstanceConfigurationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeInstanceConfigurationCompartmentRequest,
                         ChangeInstanceConfigurationCompartmentResponse>
@@ -621,16 +629,18 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 ChangeInstancePoolCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeInstancePoolCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "ChangeInstancePoolCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ChangeInstancePoolCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeInstancePoolCompartmentResponse>
-                transformer = ChangeInstancePoolCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "ChangeInstancePoolCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ChangeInstancePoolCompartment");
-
+                transformer =
+                        ChangeInstancePoolCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeInstancePoolCompartmentRequest, ChangeInstancePoolCompartmentResponse>
                 handlerToUse = handler;
@@ -674,16 +684,18 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 CreateClusterNetworkConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "CreateClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/CreateClusterNetwork");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateClusterNetworkResponse>
-                transformer = CreateClusterNetworkConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "CreateClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/CreateClusterNetwork");
-
+                transformer =
+                        CreateClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateClusterNetworkRequest, CreateClusterNetworkResponse>
                 handlerToUse = handler;
@@ -728,16 +740,18 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 CreateInstanceConfigurationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateInstanceConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "CreateInstanceConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateInstanceConfigurationResponse>
-                transformer = CreateInstanceConfigurationConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "CreateInstanceConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration");
-
+                transformer =
+                        CreateInstanceConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateInstanceConfigurationRequest, CreateInstanceConfigurationResponse>
                 handlerToUse = handler;
@@ -781,15 +795,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 CreateInstancePoolConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateInstancePoolConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateInstancePoolResponse>
-                transformer = CreateInstancePoolConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "CreateInstancePool",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/CreateInstancePool");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "CreateInstancePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/CreateInstancePool");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateInstancePoolResponse>
+                transformer =
+                        CreateInstancePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateInstancePoolRequest, CreateInstancePoolResponse>
                 handlerToUse = handler;
 
@@ -833,15 +849,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 DeleteInstanceConfigurationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteInstanceConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "DeleteInstanceConfiguration",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteInstanceConfigurationResponse>
-                transformer = DeleteInstanceConfigurationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "DeleteInstanceConfiguration",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        DeleteInstanceConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteInstanceConfigurationRequest, DeleteInstanceConfigurationResponse>
                 handlerToUse = handler;
@@ -882,16 +900,18 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 DetachInstancePoolInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetachInstancePoolInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "DetachInstancePoolInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/DetachInstancePoolInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DetachInstancePoolInstanceResponse>
-                transformer = DetachInstancePoolInstanceConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "DetachInstancePoolInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/DetachInstancePoolInstance");
-
+                transformer =
+                        DetachInstancePoolInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DetachInstancePoolInstanceRequest, DetachInstancePoolInstanceResponse>
                 handlerToUse = handler;
@@ -935,15 +955,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 DetachLoadBalancerConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetachLoadBalancerConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DetachLoadBalancerResponse>
-                transformer = DetachLoadBalancerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "DetachLoadBalancer",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/DetachLoadBalancer");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "DetachLoadBalancer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/DetachLoadBalancer");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DetachLoadBalancerResponse>
+                transformer =
+                        DetachLoadBalancerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DetachLoadBalancerRequest, DetachLoadBalancerResponse>
                 handlerToUse = handler;
 
@@ -985,14 +1007,16 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 GetClusterNetworkConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "GetClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/GetClusterNetwork");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterNetworkResponse>
-                transformer = GetClusterNetworkConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "GetClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/GetClusterNetwork");
-
+                transformer =
+                        GetClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetClusterNetworkRequest, GetClusterNetworkResponse>
                 handlerToUse = handler;
 
@@ -1029,15 +1053,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 GetInstanceConfigurationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInstanceConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "GetInstanceConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/GetInstanceConfiguration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetInstanceConfigurationResponse>
-                transformer = GetInstanceConfigurationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "GetInstanceConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/GetInstanceConfiguration");
-
+                transformer =
+                        GetInstanceConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetInstanceConfigurationRequest, GetInstanceConfigurationResponse>
                 handlerToUse = handler;
@@ -1075,14 +1101,16 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 GetInstancePoolConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInstancePoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "GetInstancePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/GetInstancePool");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetInstancePoolResponse>
-                transformer = GetInstancePoolConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "GetInstancePool",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/GetInstancePool");
-
+                transformer =
+                        GetInstancePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetInstancePoolRequest, GetInstancePoolResponse>
                 handlerToUse = handler;
 
@@ -1119,15 +1147,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 GetInstancePoolInstanceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInstancePoolInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "GetInstancePoolInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/GetInstancePoolInstance");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetInstancePoolInstanceResponse>
-                transformer = GetInstancePoolInstanceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "GetInstancePoolInstance",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/GetInstancePoolInstance");
-
+                transformer =
+                        GetInstancePoolInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetInstancePoolInstanceRequest, GetInstancePoolInstanceResponse>
                 handlerToUse = handler;
@@ -1168,15 +1198,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInstancePoolLoadBalancerAttachmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "GetInstancePoolLoadBalancerAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolLoadBalancerAttachment/GetInstancePoolLoadBalancerAttachment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetInstancePoolLoadBalancerAttachmentResponse>
-                transformer = GetInstancePoolLoadBalancerAttachmentConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "GetInstancePoolLoadBalancerAttachment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolLoadBalancerAttachment/GetInstancePoolLoadBalancerAttachment");
-
+                transformer =
+                        GetInstancePoolLoadBalancerAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetInstancePoolLoadBalancerAttachmentRequest,
                         GetInstancePoolLoadBalancerAttachmentResponse>
@@ -1219,16 +1251,18 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 LaunchInstanceConfigurationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 LaunchInstanceConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "LaunchInstanceConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstanceConfiguration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, LaunchInstanceConfigurationResponse>
-                transformer = LaunchInstanceConfigurationConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "LaunchInstanceConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstanceConfiguration");
-
+                transformer =
+                        LaunchInstanceConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         LaunchInstanceConfigurationRequest, LaunchInstanceConfigurationResponse>
                 handlerToUse = handler;
@@ -1274,15 +1308,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 ListClusterNetworkInstancesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListClusterNetworkInstancesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "ListClusterNetworkInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworkInstances");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListClusterNetworkInstancesResponse>
-                transformer = ListClusterNetworkInstancesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "ListClusterNetworkInstances",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworkInstances");
-
+                transformer =
+                        ListClusterNetworkInstancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListClusterNetworkInstancesRequest, ListClusterNetworkInstancesResponse>
                 handlerToUse = handler;
@@ -1321,15 +1357,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 ListClusterNetworksConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListClusterNetworksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "ListClusterNetworks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworks");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListClusterNetworksResponse>
-                transformer = ListClusterNetworksConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "ListClusterNetworks",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworks");
-
+                transformer =
+                        ListClusterNetworksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListClusterNetworksRequest, ListClusterNetworksResponse>
                 handlerToUse = handler;
@@ -1369,15 +1407,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 ListInstanceConfigurationsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInstanceConfigurationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "ListInstanceConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfigurationSummary/ListInstanceConfigurations");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListInstanceConfigurationsResponse>
-                transformer = ListInstanceConfigurationsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "ListInstanceConfigurations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfigurationSummary/ListInstanceConfigurations");
-
+                transformer =
+                        ListInstanceConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListInstanceConfigurationsRequest, ListInstanceConfigurationsResponse>
                 handlerToUse = handler;
@@ -1416,15 +1456,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 ListInstancePoolInstancesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInstancePoolInstancesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "ListInstancePoolInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceSummary/ListInstancePoolInstances");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListInstancePoolInstancesResponse>
-                transformer = ListInstancePoolInstancesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "ListInstancePoolInstances",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceSummary/ListInstancePoolInstances");
-
+                transformer =
+                        ListInstancePoolInstancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListInstancePoolInstancesRequest, ListInstancePoolInstancesResponse>
                 handlerToUse = handler;
@@ -1463,14 +1505,16 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 ListInstancePoolsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInstancePoolsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "ListInstancePools",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolSummary/ListInstancePools");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListInstancePoolsResponse>
-                transformer = ListInstancePoolsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "ListInstancePools",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolSummary/ListInstancePools");
-
+                transformer =
+                        ListInstancePoolsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListInstancePoolsRequest, ListInstancePoolsResponse>
                 handlerToUse = handler;
 
@@ -1507,15 +1551,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 ResetInstancePoolConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ResetInstancePoolConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ResetInstancePoolResponse>
-                transformer = ResetInstancePoolConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "ResetInstancePool",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ResetInstancePool");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "ResetInstancePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ResetInstancePool");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ResetInstancePoolResponse>
+                transformer =
+                        ResetInstancePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ResetInstancePoolRequest, ResetInstancePoolResponse>
                 handlerToUse = handler;
 
@@ -1552,16 +1598,18 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 SoftresetInstancePoolConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 SoftresetInstancePoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "SoftresetInstancePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/SoftresetInstancePool");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SoftresetInstancePoolResponse>
-                transformer = SoftresetInstancePoolConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "SoftresetInstancePool",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/SoftresetInstancePool");
-
+                transformer =
+                        SoftresetInstancePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         SoftresetInstancePoolRequest, SoftresetInstancePoolResponse>
                 handlerToUse = handler;
@@ -1599,15 +1647,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 StartInstancePoolConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StartInstancePoolConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StartInstancePoolResponse>
-                transformer = StartInstancePoolConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "StartInstancePool",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StartInstancePool");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "StartInstancePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StartInstancePool");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, StartInstancePoolResponse>
+                transformer =
+                        StartInstancePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<StartInstancePoolRequest, StartInstancePoolResponse>
                 handlerToUse = handler;
 
@@ -1644,15 +1694,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 StopInstancePoolConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StopInstancePoolConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StopInstancePoolResponse>
-                transformer = StopInstancePoolConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "StopInstancePool",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StopInstancePool");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "StopInstancePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StopInstancePool");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, StopInstancePoolResponse>
+                transformer =
+                        StopInstancePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<StopInstancePoolRequest, StopInstancePoolResponse>
                 handlerToUse = handler;
 
@@ -1689,15 +1741,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 TerminateClusterNetworkConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 TerminateClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "TerminateClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/TerminateClusterNetwork");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, TerminateClusterNetworkResponse>
-                transformer = TerminateClusterNetworkConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "TerminateClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/TerminateClusterNetwork");
-
+                transformer =
+                        TerminateClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         TerminateClusterNetworkRequest, TerminateClusterNetworkResponse>
                 handlerToUse = handler;
@@ -1735,12 +1789,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 TerminateInstancePoolConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 TerminateInstancePoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "TerminateInstancePool",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, TerminateInstancePoolResponse>
-                transformer = TerminateInstancePoolConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement", "TerminateInstancePool", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        TerminateInstancePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         TerminateInstancePoolRequest, TerminateInstancePoolResponse>
                 handlerToUse = handler;
@@ -1778,16 +1837,18 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 UpdateClusterNetworkConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "UpdateClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/UpdateClusterNetwork");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateClusterNetworkResponse>
-                transformer = UpdateClusterNetworkConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "UpdateClusterNetwork",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/UpdateClusterNetwork");
-
+                transformer =
+                        UpdateClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateClusterNetworkRequest, UpdateClusterNetworkResponse>
                 handlerToUse = handler;
@@ -1832,16 +1893,18 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 UpdateInstanceConfigurationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateInstanceConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "UpdateInstanceConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/UpdateInstanceConfiguration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateInstanceConfigurationResponse>
-                transformer = UpdateInstanceConfigurationConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "UpdateInstanceConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/UpdateInstanceConfiguration");
-
+                transformer =
+                        UpdateInstanceConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>
                 handlerToUse = handler;
@@ -1885,15 +1948,17 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 UpdateInstancePoolConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateInstancePoolConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInstancePoolResponse>
-                transformer = UpdateInstancePoolConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ComputeManagement",
-                "UpdateInstancePool",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/UpdateInstancePool");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "UpdateInstancePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/UpdateInstancePool");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInstancePoolResponse>
+                transformer =
+                        UpdateInstancePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateInstancePoolRequest, UpdateInstancePoolResponse>
                 handlerToUse = handler;
 

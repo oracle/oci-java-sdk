@@ -397,15 +397,17 @@ public class TraceAsyncClient implements TraceAsync {
                 GetAggregatedSnapshotConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAggregatedSnapshotConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Trace",
+                        "GetAggregatedSnapshot",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/AggregatedSnapshot/GetAggregatedSnapshot");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAggregatedSnapshotResponse>
-                transformer = GetAggregatedSnapshotConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Trace",
-                "GetAggregatedSnapshot",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/AggregatedSnapshot/GetAggregatedSnapshot");
-
+                transformer =
+                        GetAggregatedSnapshotConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAggregatedSnapshotRequest, GetAggregatedSnapshotResponse>
                 handlerToUse = handler;
@@ -440,14 +442,14 @@ public class TraceAsyncClient implements TraceAsync {
         final GetSpanRequest interceptedRequest = GetSpanConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSpanConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Trace",
+                        "GetSpan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Span/GetSpan");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSpanResponse>
-                transformer = GetSpanConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Trace",
-                "GetSpan",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Span/GetSpan");
-
+                transformer = GetSpanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSpanRequest, GetSpanResponse> handlerToUse =
                 handler;
 
@@ -481,14 +483,14 @@ public class TraceAsyncClient implements TraceAsync {
         final GetTraceRequest interceptedRequest = GetTraceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTraceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Trace",
+                        "GetTrace",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Trace/GetTrace");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTraceResponse>
-                transformer = GetTraceConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Trace",
-                "GetTrace",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Trace/GetTrace");
-
+                transformer = GetTraceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTraceRequest, GetTraceResponse> handlerToUse =
                 handler;
 
@@ -524,14 +526,16 @@ public class TraceAsyncClient implements TraceAsync {
                 GetTraceSnapshotConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTraceSnapshotConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Trace",
+                        "GetTraceSnapshot",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/TraceSnapshot/GetTraceSnapshot");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTraceSnapshotResponse>
-                transformer = GetTraceSnapshotConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Trace",
-                "GetTraceSnapshot",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/TraceSnapshot/GetTraceSnapshot");
-
+                transformer =
+                        GetTraceSnapshotConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTraceSnapshotRequest, GetTraceSnapshotResponse>
                 handlerToUse = handler;
 

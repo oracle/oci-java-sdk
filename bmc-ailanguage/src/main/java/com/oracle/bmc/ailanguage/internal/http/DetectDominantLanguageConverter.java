@@ -57,6 +57,13 @@ public class DetectDominantLanguageConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.ailanguage.responses.DetectDominantLanguageResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.ailanguage.responses.DetectDominantLanguageResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.ailanguage.responses.DetectDominantLanguageResponse>
@@ -71,16 +78,26 @@ public class DetectDominantLanguageConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.ailanguage.responses.DetectDominantLanguageResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.ailanguage.model
                                                                 .DetectDominantLanguageResult>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.ailanguage.model
-                                                                        .DetectDominantLanguageResult
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.ailanguage.model
+                                                                    .DetectDominantLanguageResult
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.ailanguage.model
+                                                                    .DetectDominantLanguageResult
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.ailanguage.model

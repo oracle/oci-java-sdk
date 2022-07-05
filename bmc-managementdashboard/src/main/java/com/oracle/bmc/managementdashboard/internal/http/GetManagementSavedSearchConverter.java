@@ -64,6 +64,13 @@ public class GetManagementSavedSearchConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.managementdashboard.responses.GetManagementSavedSearchResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.managementdashboard.responses.GetManagementSavedSearchResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.managementdashboard.responses
@@ -79,16 +86,26 @@ public class GetManagementSavedSearchConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.managementdashboard.responses.GetManagementSavedSearchResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.managementdashboard.model
                                                                 .ManagementSavedSearch>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.managementdashboard.model
-                                                                        .ManagementSavedSearch
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.managementdashboard.model
+                                                                    .ManagementSavedSearch
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.managementdashboard.model
+                                                                    .ManagementSavedSearch
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.managementdashboard.model

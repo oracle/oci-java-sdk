@@ -399,16 +399,18 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                 ChangeRoverClusterCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeRoverClusterCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverCluster",
+                        "ChangeRoverClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/ChangeRoverClusterCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeRoverClusterCompartmentResponse>
-                transformer = ChangeRoverClusterCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverCluster",
-                "ChangeRoverClusterCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/ChangeRoverClusterCompartment");
-
+                transformer =
+                        ChangeRoverClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeRoverClusterCompartmentRequest, ChangeRoverClusterCompartmentResponse>
                 handlerToUse = handler;
@@ -452,15 +454,17 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                 CreateRoverClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateRoverClusterConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRoverClusterResponse>
-                transformer = CreateRoverClusterConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverCluster",
-                "CreateRoverCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/CreateRoverCluster");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverCluster",
+                        "CreateRoverCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/CreateRoverCluster");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRoverClusterResponse>
+                transformer =
+                        CreateRoverClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateRoverClusterRequest, CreateRoverClusterResponse>
                 handlerToUse = handler;
 
@@ -502,15 +506,17 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                 DeleteRoverClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteRoverClusterConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRoverClusterResponse>
-                transformer = DeleteRoverClusterConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverCluster",
-                "DeleteRoverCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/DeleteRoverCluster");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverCluster",
+                        "DeleteRoverCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/DeleteRoverCluster");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRoverClusterResponse>
+                transformer =
+                        DeleteRoverClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteRoverClusterRequest, DeleteRoverClusterResponse>
                 handlerToUse = handler;
 
@@ -547,14 +553,16 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                 GetRoverClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRoverClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverCluster",
+                        "GetRoverCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/GetRoverCluster");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRoverClusterResponse>
-                transformer = GetRoverClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverCluster",
-                "GetRoverCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/GetRoverCluster");
-
+                transformer =
+                        GetRoverClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetRoverClusterRequest, GetRoverClusterResponse>
                 handlerToUse = handler;
 
@@ -593,15 +601,17 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                 GetRoverClusterCertificateConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRoverClusterCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverCluster",
+                        "GetRoverClusterCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverClusterCertificate/GetRoverClusterCertificate");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetRoverClusterCertificateResponse>
-                transformer = GetRoverClusterCertificateConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverCluster",
-                "GetRoverClusterCertificate",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverClusterCertificate/GetRoverClusterCertificate");
-
+                transformer =
+                        GetRoverClusterCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetRoverClusterCertificateRequest, GetRoverClusterCertificateResponse>
                 handlerToUse = handler;
@@ -640,14 +650,16 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                 ListRoverClustersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRoverClustersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverCluster",
+                        "ListRoverClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/ListRoverClusters");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRoverClustersResponse>
-                transformer = ListRoverClustersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverCluster",
-                "ListRoverClusters",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/ListRoverClusters");
-
+                transformer =
+                        ListRoverClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRoverClustersRequest, ListRoverClustersResponse>
                 handlerToUse = handler;
 
@@ -684,14 +696,16 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                 UpdateRoverClusterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateRoverClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverCluster",
+                        "UpdateRoverCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/UpdateRoverCluster");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRoverClusterResponse>
-                transformer = UpdateRoverClusterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverCluster",
-                "UpdateRoverCluster",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/UpdateRoverCluster");
-
+                transformer =
+                        UpdateRoverClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateRoverClusterRequest, UpdateRoverClusterResponse>
                 handlerToUse = handler;
 

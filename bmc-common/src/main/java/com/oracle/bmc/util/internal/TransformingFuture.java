@@ -4,14 +4,12 @@
  */
 package com.oracle.bmc.util.internal;
 
+import com.google.common.base.Function;
+
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
-import com.google.common.base.Function;
-
-import lombok.RequiredArgsConstructor;
 
 /**
  * Future that both delegates to another one and provides the ability to transform
@@ -20,10 +18,15 @@ import lombok.RequiredArgsConstructor;
  * @param <FROM> The type returned by the delegate Future.
  * @param <TO> The type to convert to.
  */
-@RequiredArgsConstructor
 public class TransformingFuture<FROM, TO> implements Future<TO> {
     private final Future<FROM> delegate;
     private final Function<FROM, TO> transformer;
+
+    @java.beans.ConstructorProperties({"delegate", "transformer"})
+    public TransformingFuture(Future<FROM> delegate, Function<FROM, TO> transformer) {
+        this.delegate = delegate;
+        this.transformer = transformer;
+    }
 
     @Override
     public boolean cancel(boolean mayInterruptIfRunning) {

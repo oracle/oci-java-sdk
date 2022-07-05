@@ -13,22 +13,19 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import javax.annotation.Nullable;
-
 import com.oracle.bmc.model.Range;
 import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
 import com.oracle.bmc.objectstorage.transfer.DownloadManager;
 import com.oracle.bmc.util.StreamUtils;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Value;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * An InputStream that can resume a broken download by making a range read
  * request to Object Storage.
  */
-@Slf4j
 public class MultithreadStream extends InputStream {
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(MultithreadStream.class);
 
     /**
      * Download manager we can use to create new requests.
@@ -189,7 +186,7 @@ public class MultithreadStream extends InputStream {
     }
 
     @Override
-    public synchronized int read(byte b[], int off, int len) throws IOException {
+    public synchronized int read(byte[] b, int off, int len) throws IOException {
         if (len == 0) {
             return 0;
         }
@@ -451,9 +448,55 @@ public class MultithreadStream extends InputStream {
         return new RangeWrapper(rangeSize, range);
     }
 
-    @Value
-    private class RangeWrapper {
+    private final class RangeWrapper {
         private final long rangeSize;
         private final Range range;
+
+        @java.beans.ConstructorProperties({"rangeSize", "range"})
+        public RangeWrapper(final long rangeSize, final Range range) {
+            this.rangeSize = rangeSize;
+            this.range = range;
+        }
+
+        public long getRangeSize() {
+            return this.rangeSize;
+        }
+
+        public Range getRange() {
+            return this.range;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object o) {
+            if (o == this) return true;
+            if (!(o instanceof MultithreadStream.RangeWrapper)) return false;
+            final MultithreadStream.RangeWrapper other = (MultithreadStream.RangeWrapper) o;
+            if (this.getRangeSize() != other.getRangeSize()) return false;
+            final java.lang.Object this$range = this.getRange();
+            final java.lang.Object other$range = other.getRange();
+            if (this$range == null ? other$range != null : !this$range.equals(other$range))
+                return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            final int PRIME = 59;
+            int result = 1;
+            final long $rangeSize = this.getRangeSize();
+            result = result * PRIME + (int) ($rangeSize >>> 32 ^ $rangeSize);
+            final java.lang.Object $range = this.getRange();
+            result = result * PRIME + ($range == null ? 43 : $range.hashCode());
+            return result;
+        }
+
+        @java.lang.Override
+        public java.lang.String toString() {
+            return "MultithreadStream.RangeWrapper(rangeSize="
+                    + this.getRangeSize()
+                    + ", range="
+                    + this.getRange()
+                    + ")";
+        }
     }
 }

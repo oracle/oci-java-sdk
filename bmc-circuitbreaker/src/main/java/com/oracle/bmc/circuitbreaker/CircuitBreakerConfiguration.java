@@ -5,21 +5,17 @@
 package com.oracle.bmc.circuitbreaker;
 
 import com.oracle.bmc.circuitbreaker.internal.JaxRsCircuitBreakerImpl;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 
+import javax.ws.rs.InternalServerErrorException;
+import javax.ws.rs.ProcessingException;
+import javax.ws.rs.ServiceUnavailableException;
+import javax.ws.rs.core.Response;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import javax.ws.rs.InternalServerErrorException;
-import javax.ws.rs.ProcessingException;
-import javax.ws.rs.ServiceUnavailableException;
-import javax.ws.rs.core.Response;
 
 /**
  * A {@link CircuitBreakerConfiguration} configures a {@link JaxRsCircuitBreakerImpl}
@@ -27,9 +23,6 @@ import javax.ws.rs.core.Response;
  * Setting an invocation response timeout lower that the slow call threshold will bypass the intended effect of the circuit
  * breaker
  */
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class CircuitBreakerConfiguration {
 
     public static final int DEFAULT_FAILURE_RATE_THRESHOLD = 80; // Percentage
@@ -49,45 +42,26 @@ public class CircuitBreakerConfiguration {
     public static final int BAD_GATEWAY = Response.Status.BAD_GATEWAY.getStatusCode();
     public static final int GATEWAY_TIMEOUT = Response.Status.GATEWAY_TIMEOUT.getStatusCode();
 
-    @Getter @Builder.Default
-    private final int failureRateThreshold = DEFAULT_FAILURE_RATE_THRESHOLD;
+    private final int failureRateThreshold;
 
-    @Getter @Builder.Default
-    private final int slowCallRateThreshold = DEFAULT_SLOW_CALL_RATE_THRESHOLD;
+    private final int slowCallRateThreshold;
 
-    @Getter @Builder.Default
-    private final Duration waitDurationInOpenState =
-            Duration.ofSeconds(DEFAULT_WAIT_DURATION_IN_OPEN_STATE);
+    private final Duration waitDurationInOpenState;
 
-    @Getter @Builder.Default
-    private final int permittedNumberOfCallsInHalfOpenState =
-            DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE;
+    private final int permittedNumberOfCallsInHalfOpenState;
 
-    @Getter @Builder.Default
-    private final int minimumNumberOfCalls = DEFAULT_MINIMUM_NUMBER_OF_CALLS;
+    private final int minimumNumberOfCalls;
 
-    @Getter @Builder.Default private final int slidingWindowSize = DEFAULT_SLIDING_WINDOW_SIZE;
+    private final int slidingWindowSize;
 
-    @Getter @Builder.Default
-    private final Duration slowCallDurationThreshold =
-            Duration.ofMinutes(DEFAULT_SLOW_CALL_DURATION_THRESHOLD);
+    private final Duration slowCallDurationThreshold;
 
-    @Getter @Builder.Default
-    private final boolean writableStackTraceEnabled = DEFAULT_WRITABLE_STACK_TRACE_ENABLED;
+    private final boolean writableStackTraceEnabled;
 
     /**
      * List of default http error codes to record as circuit breaker failure
      */
-    @Getter @Builder.Default
-    private final Set<Integer> recordHttpStatuses =
-            Collections.unmodifiableSet(
-                    new HashSet<>(
-                            Arrays.asList(
-                                    TOO_MANY_REQUESTS,
-                                    INTERNAL_SERVER_ERROR,
-                                    BAD_GATEWAY,
-                                    SERVICE_UNAVAILABLE,
-                                    GATEWAY_TIMEOUT)));
+    private final Set<Integer> recordHttpStatuses;
 
     public static final Class<ProcessingException> PROCESSING_EXCEPTION_CLASS =
             ProcessingException.class;
@@ -100,11 +74,292 @@ public class CircuitBreakerConfiguration {
      * List of exceptions for circuitBreaker to consider as failures, we are limiting the list to subclasses of
      * RuntimeException because all JaxRs exceptions inherit from the RuntimeException
      */
-    @Getter @Builder.Default
-    private final List<Class<? extends RuntimeException>> recordExceptions =
-            Collections.unmodifiableList(
-                    Arrays.asList(
-                            PROCESSING_EXCEPTION_CLASS,
-                            SERVICE_UNAVAILABLE_EXCEPTION_CLASS,
-                            INTERNAL_SERVER_ERROR_EXCEPTION_CLASS));
+    private final List<Class<? extends RuntimeException>> recordExceptions;
+
+    @java.beans.ConstructorProperties({
+        "failureRateThreshold",
+        "slowCallRateThreshold",
+        "waitDurationInOpenState",
+        "permittedNumberOfCallsInHalfOpenState",
+        "minimumNumberOfCalls",
+        "slidingWindowSize",
+        "slowCallDurationThreshold",
+        "writableStackTraceEnabled",
+        "recordHttpStatuses",
+        "recordExceptions"
+    })
+    public CircuitBreakerConfiguration(
+            int failureRateThreshold,
+            int slowCallRateThreshold,
+            Duration waitDurationInOpenState,
+            int permittedNumberOfCallsInHalfOpenState,
+            int minimumNumberOfCalls,
+            int slidingWindowSize,
+            Duration slowCallDurationThreshold,
+            boolean writableStackTraceEnabled,
+            Set<Integer> recordHttpStatuses,
+            List<Class<? extends RuntimeException>> recordExceptions) {
+        this.failureRateThreshold = failureRateThreshold;
+        this.slowCallRateThreshold = slowCallRateThreshold;
+        this.waitDurationInOpenState = waitDurationInOpenState;
+        this.permittedNumberOfCallsInHalfOpenState = permittedNumberOfCallsInHalfOpenState;
+        this.minimumNumberOfCalls = minimumNumberOfCalls;
+        this.slidingWindowSize = slidingWindowSize;
+        this.slowCallDurationThreshold = slowCallDurationThreshold;
+        this.writableStackTraceEnabled = writableStackTraceEnabled;
+        this.recordHttpStatuses = recordHttpStatuses;
+        this.recordExceptions = recordExceptions;
+    }
+
+    public CircuitBreakerConfiguration() {
+        this.failureRateThreshold = DEFAULT_FAILURE_RATE_THRESHOLD;
+        this.slowCallRateThreshold = DEFAULT_SLOW_CALL_RATE_THRESHOLD;
+        this.waitDurationInOpenState = Duration.ofSeconds(DEFAULT_WAIT_DURATION_IN_OPEN_STATE);
+        this.permittedNumberOfCallsInHalfOpenState = DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE;
+        this.minimumNumberOfCalls = DEFAULT_MINIMUM_NUMBER_OF_CALLS;
+        this.slidingWindowSize = DEFAULT_SLIDING_WINDOW_SIZE;
+        this.slowCallDurationThreshold = Duration.ofMinutes(DEFAULT_SLOW_CALL_DURATION_THRESHOLD);
+        this.writableStackTraceEnabled = DEFAULT_WRITABLE_STACK_TRACE_ENABLED;
+        this.recordHttpStatuses = defaultRecordHttpStatuses();
+        this.recordExceptions = defaultRecordExceptions();
+    }
+
+    private static Set<Integer> defaultRecordHttpStatuses() {
+        return Collections.unmodifiableSet(
+                new HashSet<>(
+                        Arrays.asList(
+                                TOO_MANY_REQUESTS,
+                                INTERNAL_SERVER_ERROR,
+                                BAD_GATEWAY,
+                                SERVICE_UNAVAILABLE,
+                                GATEWAY_TIMEOUT)));
+    }
+
+    private static List<Class<? extends RuntimeException>> defaultRecordExceptions() {
+        return Collections.unmodifiableList(
+                Arrays.asList(
+                        PROCESSING_EXCEPTION_CLASS,
+                        SERVICE_UNAVAILABLE_EXCEPTION_CLASS,
+                        INTERNAL_SERVER_ERROR_EXCEPTION_CLASS));
+    }
+
+    public static CircuitBreakerConfigurationBuilder builder() {
+        return new CircuitBreakerConfigurationBuilder();
+    }
+
+    public int getFailureRateThreshold() {
+        return this.failureRateThreshold;
+    }
+
+    public int getSlowCallRateThreshold() {
+        return this.slowCallRateThreshold;
+    }
+
+    public Duration getWaitDurationInOpenState() {
+        return this.waitDurationInOpenState;
+    }
+
+    public int getPermittedNumberOfCallsInHalfOpenState() {
+        return this.permittedNumberOfCallsInHalfOpenState;
+    }
+
+    public int getMinimumNumberOfCalls() {
+        return this.minimumNumberOfCalls;
+    }
+
+    public int getSlidingWindowSize() {
+        return this.slidingWindowSize;
+    }
+
+    public Duration getSlowCallDurationThreshold() {
+        return this.slowCallDurationThreshold;
+    }
+
+    public boolean isWritableStackTraceEnabled() {
+        return this.writableStackTraceEnabled;
+    }
+
+    public Set<Integer> getRecordHttpStatuses() {
+        return this.recordHttpStatuses;
+    }
+
+    public List<Class<? extends RuntimeException>> getRecordExceptions() {
+        return this.recordExceptions;
+    }
+
+    public static class CircuitBreakerConfigurationBuilder {
+        private int failureRateThreshold$value;
+        private boolean failureRateThreshold$set;
+        private int slowCallRateThreshold$value;
+        private boolean slowCallRateThreshold$set;
+        private Duration waitDurationInOpenState$value;
+        private boolean waitDurationInOpenState$set;
+        private int permittedNumberOfCallsInHalfOpenState$value;
+        private boolean permittedNumberOfCallsInHalfOpenState$set;
+        private int minimumNumberOfCalls$value;
+        private boolean minimumNumberOfCalls$set;
+        private int slidingWindowSize$value;
+        private boolean slidingWindowSize$set;
+        private Duration slowCallDurationThreshold$value;
+        private boolean slowCallDurationThreshold$set;
+        private boolean writableStackTraceEnabled$value;
+        private boolean writableStackTraceEnabled$set;
+        private Set<Integer> recordHttpStatuses$value;
+        private boolean recordHttpStatuses$set;
+        private List<Class<? extends RuntimeException>> recordExceptions$value;
+        private boolean recordExceptions$set;
+
+        CircuitBreakerConfigurationBuilder() {}
+
+        public CircuitBreakerConfigurationBuilder failureRateThreshold(int failureRateThreshold) {
+            this.failureRateThreshold$value = failureRateThreshold;
+            this.failureRateThreshold$set = true;
+            return this;
+        }
+
+        public CircuitBreakerConfigurationBuilder slowCallRateThreshold(int slowCallRateThreshold) {
+            this.slowCallRateThreshold$value = slowCallRateThreshold;
+            this.slowCallRateThreshold$set = true;
+            return this;
+        }
+
+        public CircuitBreakerConfigurationBuilder waitDurationInOpenState(
+                Duration waitDurationInOpenState) {
+            this.waitDurationInOpenState$value = waitDurationInOpenState;
+            this.waitDurationInOpenState$set = true;
+            return this;
+        }
+
+        public CircuitBreakerConfigurationBuilder permittedNumberOfCallsInHalfOpenState(
+                int permittedNumberOfCallsInHalfOpenState) {
+            this.permittedNumberOfCallsInHalfOpenState$value =
+                    permittedNumberOfCallsInHalfOpenState;
+            this.permittedNumberOfCallsInHalfOpenState$set = true;
+            return this;
+        }
+
+        public CircuitBreakerConfigurationBuilder minimumNumberOfCalls(int minimumNumberOfCalls) {
+            this.minimumNumberOfCalls$value = minimumNumberOfCalls;
+            this.minimumNumberOfCalls$set = true;
+            return this;
+        }
+
+        public CircuitBreakerConfigurationBuilder slidingWindowSize(int slidingWindowSize) {
+            this.slidingWindowSize$value = slidingWindowSize;
+            this.slidingWindowSize$set = true;
+            return this;
+        }
+
+        public CircuitBreakerConfigurationBuilder slowCallDurationThreshold(
+                Duration slowCallDurationThreshold) {
+            this.slowCallDurationThreshold$value = slowCallDurationThreshold;
+            this.slowCallDurationThreshold$set = true;
+            return this;
+        }
+
+        public CircuitBreakerConfigurationBuilder writableStackTraceEnabled(
+                boolean writableStackTraceEnabled) {
+            this.writableStackTraceEnabled$value = writableStackTraceEnabled;
+            this.writableStackTraceEnabled$set = true;
+            return this;
+        }
+
+        public CircuitBreakerConfigurationBuilder recordHttpStatuses(
+                Set<Integer> recordHttpStatuses) {
+            this.recordHttpStatuses$value = recordHttpStatuses;
+            this.recordHttpStatuses$set = true;
+            return this;
+        }
+
+        public CircuitBreakerConfigurationBuilder recordExceptions(
+                List<Class<? extends RuntimeException>> recordExceptions) {
+            this.recordExceptions$value = recordExceptions;
+            this.recordExceptions$set = true;
+            return this;
+        }
+
+        public CircuitBreakerConfiguration build() {
+            int failureRateThreshold$value = this.failureRateThreshold$value;
+            if (!this.failureRateThreshold$set) {
+                failureRateThreshold$value = DEFAULT_FAILURE_RATE_THRESHOLD;
+            }
+            int slowCallRateThreshold$value = this.slowCallRateThreshold$value;
+            if (!this.slowCallRateThreshold$set) {
+                slowCallRateThreshold$value = DEFAULT_SLOW_CALL_RATE_THRESHOLD;
+            }
+            Duration waitDurationInOpenState$value = this.waitDurationInOpenState$value;
+            if (!this.waitDurationInOpenState$set) {
+                waitDurationInOpenState$value =
+                        Duration.ofSeconds(DEFAULT_WAIT_DURATION_IN_OPEN_STATE);
+                ;
+            }
+            int permittedNumberOfCallsInHalfOpenState$value =
+                    this.permittedNumberOfCallsInHalfOpenState$value;
+            if (!this.permittedNumberOfCallsInHalfOpenState$set) {
+                permittedNumberOfCallsInHalfOpenState$value =
+                        DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE;
+            }
+            int minimumNumberOfCalls$value = this.minimumNumberOfCalls$value;
+            if (!this.minimumNumberOfCalls$set) {
+                minimumNumberOfCalls$value = DEFAULT_MINIMUM_NUMBER_OF_CALLS;
+            }
+            int slidingWindowSize$value = this.slidingWindowSize$value;
+            if (!this.slidingWindowSize$set) {
+                slidingWindowSize$value = DEFAULT_SLIDING_WINDOW_SIZE;
+            }
+            Duration slowCallDurationThreshold$value = this.slowCallDurationThreshold$value;
+            if (!this.slowCallDurationThreshold$set) {
+                slowCallDurationThreshold$value =
+                        Duration.ofMinutes(DEFAULT_SLOW_CALL_DURATION_THRESHOLD);
+            }
+            boolean writableStackTraceEnabled$value = this.writableStackTraceEnabled$value;
+            if (!this.writableStackTraceEnabled$set) {
+                writableStackTraceEnabled$value = DEFAULT_WRITABLE_STACK_TRACE_ENABLED;
+            }
+            Set<Integer> recordHttpStatuses$value = this.recordHttpStatuses$value;
+            if (!this.recordHttpStatuses$set) {
+                recordHttpStatuses$value = defaultRecordHttpStatuses();
+            }
+            List<Class<? extends RuntimeException>> recordExceptions$value =
+                    this.recordExceptions$value;
+            if (!this.recordExceptions$set) {
+                recordExceptions$value = defaultRecordExceptions();
+            }
+            return new CircuitBreakerConfiguration(
+                    failureRateThreshold$value,
+                    slowCallRateThreshold$value,
+                    waitDurationInOpenState$value,
+                    permittedNumberOfCallsInHalfOpenState$value,
+                    minimumNumberOfCalls$value,
+                    slidingWindowSize$value,
+                    slowCallDurationThreshold$value,
+                    writableStackTraceEnabled$value,
+                    recordHttpStatuses$value,
+                    recordExceptions$value);
+        }
+
+        public String toString() {
+            return "CircuitBreakerConfiguration.CircuitBreakerConfigurationBuilder(failureRateThreshold$value="
+                    + this.failureRateThreshold$value
+                    + ", slowCallRateThreshold$value="
+                    + this.slowCallRateThreshold$value
+                    + ", waitDurationInOpenState$value="
+                    + this.waitDurationInOpenState$value
+                    + ", permittedNumberOfCallsInHalfOpenState$value="
+                    + this.permittedNumberOfCallsInHalfOpenState$value
+                    + ", minimumNumberOfCalls$value="
+                    + this.minimumNumberOfCalls$value
+                    + ", slidingWindowSize$value="
+                    + this.slidingWindowSize$value
+                    + ", slowCallDurationThreshold$value="
+                    + this.slowCallDurationThreshold$value
+                    + ", writableStackTraceEnabled$value="
+                    + this.writableStackTraceEnabled$value
+                    + ", recordHttpStatuses$value="
+                    + this.recordHttpStatuses$value
+                    + ", recordExceptions$value="
+                    + this.recordExceptions$value
+                    + ")";
+        }
+    }
 }

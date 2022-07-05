@@ -10,15 +10,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.channels.FileChannel;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 /**
  * A wrapper around a {@link FileInputStream} that provides mark-and-reset capabilities.
  *
  * This allows for retries on a {@link FileInputStream}.
  */
 public class ResettableFileInputStream extends FilterInputStream {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ResettableFileInputStream.class);
     private final boolean alreadyWrapped;
     private final State state;
 

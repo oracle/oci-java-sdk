@@ -15,9 +15,7 @@ mvn install -Pdev -Ddev.profile.skip.javadoc=false
 ```
 
 ## Javadoc Generation
-The build steps will also run delombok to create class files with appropriate documentation.  The delomboked files will be placed in a separate directory in the 'target' folder that will be used as input for the javadoc generation.
-
-Additionally, during javadoc generation, any javadocs with the template '*{{DOC_SERVER_URL}}*' will have that template replaced with the actual doc server URL.
+During javadoc generation, any javadocs with the template '*{{DOC_SERVER_URL}}*' will have that template replaced with the actual doc server URL.
 
 ## <a id="KnownDevelopmentIssues"></a>Known Development Issues
 

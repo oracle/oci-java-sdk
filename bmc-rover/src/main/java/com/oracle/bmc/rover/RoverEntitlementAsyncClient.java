@@ -400,16 +400,18 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                 ChangeRoverEntitlementCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeRoverEntitlementCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverEntitlement",
+                        "ChangeRoverEntitlementCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/ChangeRoverEntitlementCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeRoverEntitlementCompartmentResponse>
-                transformer = ChangeRoverEntitlementCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverEntitlement",
-                "ChangeRoverEntitlementCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/ChangeRoverEntitlementCompartment");
-
+                transformer =
+                        ChangeRoverEntitlementCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeRoverEntitlementCompartmentRequest,
                         ChangeRoverEntitlementCompartmentResponse>
@@ -455,16 +457,18 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                 CreateRoverEntitlementConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateRoverEntitlementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverEntitlement",
+                        "CreateRoverEntitlement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/CreateRoverEntitlement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateRoverEntitlementResponse>
-                transformer = CreateRoverEntitlementConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverEntitlement",
-                "CreateRoverEntitlement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/CreateRoverEntitlement");
-
+                transformer =
+                        CreateRoverEntitlementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateRoverEntitlementRequest, CreateRoverEntitlementResponse>
                 handlerToUse = handler;
@@ -507,16 +511,18 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                 DeleteRoverEntitlementConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteRoverEntitlementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverEntitlement",
+                        "DeleteRoverEntitlement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/DeleteRoverEntitlement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteRoverEntitlementResponse>
-                transformer = DeleteRoverEntitlementConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverEntitlement",
-                "DeleteRoverEntitlement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/DeleteRoverEntitlement");
-
+                transformer =
+                        DeleteRoverEntitlementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteRoverEntitlementRequest, DeleteRoverEntitlementResponse>
                 handlerToUse = handler;
@@ -554,16 +560,18 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                 GetRoverEntitlementConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRoverEntitlementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverEntitlement",
+                        "GetRoverEntitlement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/GetRoverEntitlement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetRoverEntitlementResponse>
-                transformer = GetRoverEntitlementConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverEntitlement",
-                "GetRoverEntitlement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/GetRoverEntitlement");
-
+                transformer =
+                        GetRoverEntitlementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetRoverEntitlementRequest, GetRoverEntitlementResponse>
                 handlerToUse = handler;
@@ -601,15 +609,17 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                 ListRoverEntitlementsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRoverEntitlementsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverEntitlement",
+                        "ListRoverEntitlements",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/ListRoverEntitlements");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListRoverEntitlementsResponse>
-                transformer = ListRoverEntitlementsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverEntitlement",
-                "ListRoverEntitlements",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/ListRoverEntitlements");
-
+                transformer =
+                        ListRoverEntitlementsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListRoverEntitlementsRequest, ListRoverEntitlementsResponse>
                 handlerToUse = handler;
@@ -647,15 +657,17 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                 UpdateRoverEntitlementConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateRoverEntitlementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverEntitlement",
+                        "UpdateRoverEntitlement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/UpdateRoverEntitlement");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateRoverEntitlementResponse>
-                transformer = UpdateRoverEntitlementConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "RoverEntitlement",
-                "UpdateRoverEntitlement",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/UpdateRoverEntitlement");
-
+                transformer =
+                        UpdateRoverEntitlementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateRoverEntitlementRequest, UpdateRoverEntitlementResponse>
                 handlerToUse = handler;

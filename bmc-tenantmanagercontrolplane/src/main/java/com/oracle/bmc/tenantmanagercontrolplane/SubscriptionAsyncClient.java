@@ -398,16 +398,18 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 CreateSubscriptionMappingConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSubscriptionMappingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "CreateSubscriptionMapping",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/CreateSubscriptionMapping");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateSubscriptionMappingResponse>
-                transformer = CreateSubscriptionMappingConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscription",
-                "CreateSubscriptionMapping",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/CreateSubscriptionMapping");
-
+                transformer =
+                        CreateSubscriptionMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSubscriptionMappingRequest, CreateSubscriptionMappingResponse>
                 handlerToUse = handler;
@@ -451,15 +453,17 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 DeleteSubscriptionMappingConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSubscriptionMappingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "DeleteSubscriptionMapping",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/DeleteSubscriptionMapping");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSubscriptionMappingResponse>
-                transformer = DeleteSubscriptionMappingConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscription",
-                "DeleteSubscriptionMapping",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/DeleteSubscriptionMapping");
-
+                transformer =
+                        DeleteSubscriptionMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSubscriptionMappingRequest, DeleteSubscriptionMappingResponse>
                 handlerToUse = handler;
@@ -498,15 +502,17 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 GetAssignedSubscriptionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAssignedSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "GetAssignedSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/GetAssignedSubscription");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAssignedSubscriptionResponse>
-                transformer = GetAssignedSubscriptionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscription",
-                "GetAssignedSubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/GetAssignedSubscription");
-
+                transformer =
+                        GetAssignedSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAssignedSubscriptionRequest, GetAssignedSubscriptionResponse>
                 handlerToUse = handler;
@@ -544,14 +550,16 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 GetSubscriptionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "GetSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/GetSubscription");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
-                transformer = GetSubscriptionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscription",
-                "GetSubscription",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/GetSubscription");
-
+                transformer =
+                        GetSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSubscriptionRequest, GetSubscriptionResponse>
                 handlerToUse = handler;
 
@@ -588,15 +596,17 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 GetSubscriptionMappingConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSubscriptionMappingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "GetSubscriptionMapping",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/GetSubscriptionMapping");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetSubscriptionMappingResponse>
-                transformer = GetSubscriptionMappingConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscription",
-                "GetSubscriptionMapping",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/GetSubscriptionMapping");
-
+                transformer =
+                        GetSubscriptionMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetSubscriptionMappingRequest, GetSubscriptionMappingResponse>
                 handlerToUse = handler;
@@ -634,15 +644,17 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 ListAssignedSubscriptionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAssignedSubscriptionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "ListAssignedSubscriptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/ListAssignedSubscriptions");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAssignedSubscriptionsResponse>
-                transformer = ListAssignedSubscriptionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscription",
-                "ListAssignedSubscriptions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/ListAssignedSubscriptions");
-
+                transformer =
+                        ListAssignedSubscriptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAssignedSubscriptionsRequest, ListAssignedSubscriptionsResponse>
                 handlerToUse = handler;
@@ -681,15 +693,17 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 ListAvailableRegionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAvailableRegionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "ListAvailableRegions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListAvailableRegions");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAvailableRegionsResponse>
-                transformer = ListAvailableRegionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscription",
-                "ListAvailableRegions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListAvailableRegions");
-
+                transformer =
+                        ListAvailableRegionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAvailableRegionsRequest, ListAvailableRegionsResponse>
                 handlerToUse = handler;
@@ -727,15 +741,17 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 ListSubscriptionMappingsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSubscriptionMappingsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "ListSubscriptionMappings",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/ListSubscriptionMappings");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSubscriptionMappingsResponse>
-                transformer = ListSubscriptionMappingsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscription",
-                "ListSubscriptionMappings",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/ListSubscriptionMappings");
-
+                transformer =
+                        ListSubscriptionMappingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListSubscriptionMappingsRequest, ListSubscriptionMappingsResponse>
                 handlerToUse = handler;
@@ -773,14 +789,16 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 ListSubscriptionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSubscriptionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "ListSubscriptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListSubscriptions");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
-                transformer = ListSubscriptionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Subscription",
-                "ListSubscriptions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListSubscriptions");
-
+                transformer =
+                        ListSubscriptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResponse>
                 handlerToUse = handler;
 

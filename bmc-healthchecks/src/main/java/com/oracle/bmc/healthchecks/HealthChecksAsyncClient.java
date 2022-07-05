@@ -400,16 +400,18 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 ChangeHttpMonitorCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeHttpMonitorCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "ChangeHttpMonitorCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/ChangeHttpMonitorCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeHttpMonitorCompartmentResponse>
-                transformer = ChangeHttpMonitorCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "ChangeHttpMonitorCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/ChangeHttpMonitorCompartment");
-
+                transformer =
+                        ChangeHttpMonitorCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeHttpMonitorCompartmentRequest, ChangeHttpMonitorCompartmentResponse>
                 handlerToUse = handler;
@@ -455,16 +457,18 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 ChangePingMonitorCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangePingMonitorCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "ChangePingMonitorCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/ChangePingMonitorCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangePingMonitorCompartmentResponse>
-                transformer = ChangePingMonitorCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "ChangePingMonitorCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/ChangePingMonitorCompartment");
-
+                transformer =
+                        ChangePingMonitorCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangePingMonitorCompartmentRequest, ChangePingMonitorCompartmentResponse>
                 handlerToUse = handler;
@@ -508,15 +512,17 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 CreateHttpMonitorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateHttpMonitorConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateHttpMonitorResponse>
-                transformer = CreateHttpMonitorConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "CreateHttpMonitor",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/CreateHttpMonitor");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "CreateHttpMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/CreateHttpMonitor");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateHttpMonitorResponse>
+                transformer =
+                        CreateHttpMonitorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateHttpMonitorRequest, CreateHttpMonitorResponse>
                 handlerToUse = handler;
 
@@ -558,15 +564,17 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 CreateOnDemandHttpProbeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateOnDemandHttpProbeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "CreateOnDemandHttpProbe",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpProbe/CreateOnDemandHttpProbe");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateOnDemandHttpProbeResponse>
-                transformer = CreateOnDemandHttpProbeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "CreateOnDemandHttpProbe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpProbe/CreateOnDemandHttpProbe");
-
+                transformer =
+                        CreateOnDemandHttpProbeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateOnDemandHttpProbeRequest, CreateOnDemandHttpProbeResponse>
                 handlerToUse = handler;
@@ -609,15 +617,17 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 CreateOnDemandPingProbeConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateOnDemandPingProbeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "CreateOnDemandPingProbe",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingProbe/CreateOnDemandPingProbe");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateOnDemandPingProbeResponse>
-                transformer = CreateOnDemandPingProbeConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "CreateOnDemandPingProbe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingProbe/CreateOnDemandPingProbe");
-
+                transformer =
+                        CreateOnDemandPingProbeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateOnDemandPingProbeRequest, CreateOnDemandPingProbeResponse>
                 handlerToUse = handler;
@@ -660,15 +670,17 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 CreatePingMonitorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreatePingMonitorConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePingMonitorResponse>
-                transformer = CreatePingMonitorConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "CreatePingMonitor",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/CreatePingMonitor");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "CreatePingMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/CreatePingMonitor");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePingMonitorResponse>
+                transformer =
+                        CreatePingMonitorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreatePingMonitorRequest, CreatePingMonitorResponse>
                 handlerToUse = handler;
 
@@ -710,14 +722,16 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 DeleteHttpMonitorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteHttpMonitorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "DeleteHttpMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/DeleteHttpMonitor");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHttpMonitorResponse>
-                transformer = DeleteHttpMonitorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "DeleteHttpMonitor",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/DeleteHttpMonitor");
-
+                transformer =
+                        DeleteHttpMonitorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteHttpMonitorRequest, DeleteHttpMonitorResponse>
                 handlerToUse = handler;
 
@@ -754,14 +768,16 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 DeletePingMonitorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeletePingMonitorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "DeletePingMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/DeletePingMonitor");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePingMonitorResponse>
-                transformer = DeletePingMonitorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "DeletePingMonitor",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/DeletePingMonitor");
-
+                transformer =
+                        DeletePingMonitorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeletePingMonitorRequest, DeletePingMonitorResponse>
                 handlerToUse = handler;
 
@@ -798,14 +814,15 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 GetHttpMonitorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetHttpMonitorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "GetHttpMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/GetHttpMonitor");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetHttpMonitorResponse>
-                transformer = GetHttpMonitorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "GetHttpMonitor",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/GetHttpMonitor");
-
+                transformer =
+                        GetHttpMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetHttpMonitorRequest, GetHttpMonitorResponse>
                 handlerToUse = handler;
 
@@ -842,14 +859,15 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 GetPingMonitorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPingMonitorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "GetPingMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/GetPingMonitor");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPingMonitorResponse>
-                transformer = GetPingMonitorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "GetPingMonitor",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/GetPingMonitor");
-
+                transformer =
+                        GetPingMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetPingMonitorRequest, GetPingMonitorResponse>
                 handlerToUse = handler;
 
@@ -888,15 +906,17 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 ListHealthChecksVantagePointsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListHealthChecksVantagePointsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "ListHealthChecksVantagePoints",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HealthChecksVantagePointSummary/ListHealthChecksVantagePoints");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListHealthChecksVantagePointsResponse>
-                transformer = ListHealthChecksVantagePointsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "ListHealthChecksVantagePoints",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HealthChecksVantagePointSummary/ListHealthChecksVantagePoints");
-
+                transformer =
+                        ListHealthChecksVantagePointsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListHealthChecksVantagePointsRequest, ListHealthChecksVantagePointsResponse>
                 handlerToUse = handler;
@@ -935,14 +955,16 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 ListHttpMonitorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListHttpMonitorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "ListHttpMonitors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitorSummary/ListHttpMonitors");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListHttpMonitorsResponse>
-                transformer = ListHttpMonitorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "ListHttpMonitors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitorSummary/ListHttpMonitors");
-
+                transformer =
+                        ListHttpMonitorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListHttpMonitorsRequest, ListHttpMonitorsResponse>
                 handlerToUse = handler;
 
@@ -979,15 +1001,17 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 ListHttpProbeResultsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListHttpProbeResultsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "ListHttpProbeResults",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpProbeResultSummary/ListHttpProbeResults");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListHttpProbeResultsResponse>
-                transformer = ListHttpProbeResultsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "ListHttpProbeResults",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpProbeResultSummary/ListHttpProbeResults");
-
+                transformer =
+                        ListHttpProbeResultsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListHttpProbeResultsRequest, ListHttpProbeResultsResponse>
                 handlerToUse = handler;
@@ -1025,14 +1049,16 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 ListPingMonitorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPingMonitorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "ListPingMonitors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitorSummary/ListPingMonitors");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPingMonitorsResponse>
-                transformer = ListPingMonitorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "ListPingMonitors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitorSummary/ListPingMonitors");
-
+                transformer =
+                        ListPingMonitorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListPingMonitorsRequest, ListPingMonitorsResponse>
                 handlerToUse = handler;
 
@@ -1069,15 +1095,17 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 ListPingProbeResultsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPingProbeResultsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "ListPingProbeResults",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingProbeResultSummary/ListPingProbeResults");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPingProbeResultsResponse>
-                transformer = ListPingProbeResultsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "ListPingProbeResults",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingProbeResultSummary/ListPingProbeResults");
-
+                transformer =
+                        ListPingProbeResultsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListPingProbeResultsRequest, ListPingProbeResultsResponse>
                 handlerToUse = handler;
@@ -1115,14 +1143,16 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 UpdateHttpMonitorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateHttpMonitorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "UpdateHttpMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/UpdateHttpMonitor");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHttpMonitorResponse>
-                transformer = UpdateHttpMonitorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "UpdateHttpMonitor",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/UpdateHttpMonitor");
-
+                transformer =
+                        UpdateHttpMonitorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateHttpMonitorRequest, UpdateHttpMonitorResponse>
                 handlerToUse = handler;
 
@@ -1164,14 +1194,16 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 UpdatePingMonitorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdatePingMonitorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "HealthChecks",
+                        "UpdatePingMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/UpdatePingMonitor");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePingMonitorResponse>
-                transformer = UpdatePingMonitorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "HealthChecks",
-                "UpdatePingMonitor",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/UpdatePingMonitor");
-
+                transformer =
+                        UpdatePingMonitorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdatePingMonitorRequest, UpdatePingMonitorResponse>
                 handlerToUse = handler;
 

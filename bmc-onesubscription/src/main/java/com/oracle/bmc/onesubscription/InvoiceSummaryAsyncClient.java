@@ -400,15 +400,17 @@ public class InvoiceSummaryAsyncClient implements InvoiceSummaryAsync {
                 ListInvoicelineComputedUsagesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInvoicelineComputedUsagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "InvoiceSummary",
+                        "ListInvoicelineComputedUsages",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListInvoicelineComputedUsagesResponse>
-                transformer = ListInvoicelineComputedUsagesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "InvoiceSummary",
-                "ListInvoicelineComputedUsages",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ListInvoicelineComputedUsagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListInvoicelineComputedUsagesRequest, ListInvoicelineComputedUsagesResponse>
                 handlerToUse = handler;
@@ -446,11 +448,12 @@ public class InvoiceSummaryAsyncClient implements InvoiceSummaryAsync {
                 ListInvoicesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInvoicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "InvoiceSummary", "ListInvoices", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoicesResponse>
-                transformer = ListInvoicesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "InvoiceSummary", "ListInvoices", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        ListInvoicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListInvoicesRequest, ListInvoicesResponse>
                 handlerToUse = handler;
 

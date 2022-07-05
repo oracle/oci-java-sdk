@@ -8,11 +8,8 @@ import com.google.common.base.Optional;
 import com.google.common.base.Suppliers;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.waiter.GenericWaiter;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Nonnull;
 import org.checkerframework.checker.nullness.qual.Nullable;
-
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
@@ -21,16 +18,21 @@ import java.util.function.Function;
  * A generic retrier that can be used to implement custom retry behavior for specific
  * types of calls.
  */
-@Slf4j
 public class BmcGenericRetrier {
-    @Getter private final GenericWaiter waiter;
-    @Getter private final RetryCondition retryCondition;
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(BmcGenericRetrier.class);
+    private final GenericWaiter waiter;
+    private final RetryCondition retryCondition;
 
     /**
      * Creates a new retrier with the given configuration.
      * @param retryConfiguration The retry configuration to use.
      */
-    public BmcGenericRetrier(@NonNull final RetryConfiguration retryConfiguration) {
+    public BmcGenericRetrier(@Nonnull final RetryConfiguration retryConfiguration) {
+        if (retryConfiguration == null) {
+            throw new java.lang.NullPointerException(
+                    "retryConfiguration is marked non-null but is null");
+        }
         this.waiter = new GenericWaiter(retryConfiguration);
         this.retryCondition = retryConfiguration.getRetryCondition();
     }
@@ -44,8 +46,14 @@ public class BmcGenericRetrier {
      * @return The successful response
      */
     public <REQUEST, RESPONSE> RESPONSE execute(
-            @NonNull final REQUEST requestToUse,
-            @NonNull final Function<REQUEST, RESPONSE> functionCall) {
+            @Nonnull final REQUEST requestToUse,
+            @Nonnull final Function<REQUEST, RESPONSE> functionCall) {
+        if (requestToUse == null) {
+            throw new java.lang.NullPointerException("requestToUse is marked non-null but is null");
+        }
+        if (functionCall == null) {
+            throw new java.lang.NullPointerException("functionCall is marked non-null but is null");
+        }
         AtomicReference<BmcException> lastKnownException = new AtomicReference<>();
         LOG.debug(
                 "Retry policy to use: {MaximumNumberAttempts={}, MinSleepBetween=0, MaxSleepBetween={}ms, ExponentialBackoffBase=2}",
@@ -96,7 +104,21 @@ public class BmcGenericRetrier {
      * @return The successful response
      */
     protected <REQUEST, RESPONSE> RESPONSE doFunctionCall(
-            @Nullable @NonNull REQUEST request, @NonNull Function<REQUEST, RESPONSE> functionCall) {
+            @Nonnull REQUEST request, @Nonnull Function<REQUEST, RESPONSE> functionCall) {
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
+        if (functionCall == null) {
+            throw new java.lang.NullPointerException("functionCall is marked non-null but is null");
+        }
         return functionCall.apply(request);
+    }
+
+    public GenericWaiter getWaiter() {
+        return this.waiter;
+    }
+
+    public RetryCondition getRetryCondition() {
+        return this.retryCondition;
     }
 }

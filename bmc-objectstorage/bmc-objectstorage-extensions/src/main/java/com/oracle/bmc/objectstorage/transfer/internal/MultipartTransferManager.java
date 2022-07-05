@@ -12,21 +12,18 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
-
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.requests.UploadPartRequest;
 import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
-
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * MultiPartTransferManager handles the job submission, cancellation, and completion
  * of parts to the manifest.
  */
-@RequiredArgsConstructor
-@Slf4j
 public class MultipartTransferManager {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(MultipartTransferManager.class);
+
     private static final int MAX_RANDOM_SLEEP_BEFORE_UPLOAD_START_MS = 1000;
     private final SecureRandom random = new SecureRandom();
     private final ExecutorService executor;
@@ -84,5 +81,15 @@ public class MultipartTransferManager {
         for (Future<Void> f : responses) {
             f.cancel(true);
         }
+    }
+
+    @java.beans.ConstructorProperties({"executor", "manifest", "client"})
+    public MultipartTransferManager(
+            final ExecutorService executor,
+            final MultipartManifestImpl manifest,
+            final ObjectStorage client) {
+        this.executor = executor;
+        this.manifest = manifest;
+        this.client = client;
     }
 }

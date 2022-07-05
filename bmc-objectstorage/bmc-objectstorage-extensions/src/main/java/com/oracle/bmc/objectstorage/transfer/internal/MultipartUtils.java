@@ -9,15 +9,14 @@ import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
 import com.oracle.bmc.objectstorage.transfer.UploadConfiguration;
 
 import com.oracle.bmc.util.internal.Validate;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Nonnull;
 
-@Slf4j
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class MultipartUtils {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(MultipartUtils.class);
+
     @VisibleForTesting public static final long MiB = 1024L * 1024L;
+
     /*
      * Max supported sizes are specified @
      * https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm
@@ -32,7 +31,10 @@ public final class MultipartUtils {
      * @return true if multi-part uploads should be used, false if not.
      */
     public static boolean shouldUseMultipart(
-            @NonNull UploadConfiguration config, long contentLength) {
+            @Nonnull UploadConfiguration config, long contentLength) {
+        if (config == null) {
+            throw new java.lang.NullPointerException("config is marked non-null but is null");
+        }
         return config.isAllowMultipartUploads() && meetsMinimumSize(config, contentLength);
     }
 
@@ -43,7 +45,10 @@ public final class MultipartUtils {
      * @param contentLength The length of the object in bytes.
      * @return The part size to use.
      */
-    public static long calculatePartSize(@NonNull UploadConfiguration config, long contentLength) {
+    public static long calculatePartSize(@Nonnull UploadConfiguration config, long contentLength) {
+        if (config == null) {
+            throw new java.lang.NullPointerException("config is marked non-null but is null");
+        }
         Validate.isTrue(
                 contentLength <= MAX_SUPPORTED_CONTENT_LENGTH,
                 String.format(
@@ -66,7 +71,13 @@ public final class MultipartUtils {
      * @return true to calculate MD5, false if it's not necessary.
      */
     public static boolean shouldCalculateMd5(
-            @NonNull UploadConfiguration config, @NonNull PutObjectRequest request) {
+            @Nonnull UploadConfiguration config, @Nonnull PutObjectRequest request) {
+        if (config == null) {
+            throw new java.lang.NullPointerException("config is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         return config.isEnforceMd5BeforeUpload() && request.getContentMD5() == null;
     }
 
@@ -82,7 +93,6 @@ public final class MultipartUtils {
         if (calculatedNumParts <= UploadConfiguration.MAXIMUM_NUM_ALLOWED_PARTS) {
             return true;
         }
-
         LOG.warn(
                 "Number of parts to upload [%s] is greater than the maximum number of parts allowed [%s] for given "
                         + "content length [%s]. Consider increasing the MinimumLengthPerUploadPart configuration option",
@@ -126,4 +136,6 @@ public final class MultipartUtils {
 
         return sizePerPart;
     }
+
+    private MultipartUtils() {}
 }

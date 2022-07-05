@@ -10,23 +10,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.atomic.AtomicInteger;
-
 import com.oracle.bmc.objectstorage.model.CommitMultipartUploadPartDetails;
 import com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary;
 import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
 import com.oracle.bmc.objectstorage.transfer.MultipartManifest;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-
 /**
  * Manifest impl that provides thread-safe access to an ongoing manifest upload.
  */
-@RequiredArgsConstructor
 public class MultipartManifestImpl implements MultipartManifest {
-    @Getter(onMethod = @__({@Override}))
     private final String uploadId;
 
     private final Map<Integer, PartAndStatus> parts = new HashMap<>();
@@ -205,10 +197,27 @@ public class MultipartManifestImpl implements MultipartManifest {
         return nextPartNumber.getAndIncrement();
     }
 
-    @NoArgsConstructor
-    @AllArgsConstructor
     private static final class PartAndStatus {
         private CommitMultipartUploadPartDetails details;
         private boolean complete = false;
+
+        public PartAndStatus() {}
+
+        @java.beans.ConstructorProperties({"details", "complete"})
+        public PartAndStatus(
+                final CommitMultipartUploadPartDetails details, final boolean complete) {
+            this.details = details;
+            this.complete = complete;
+        }
+    }
+
+    @java.beans.ConstructorProperties({"uploadId"})
+    public MultipartManifestImpl(final String uploadId) {
+        this.uploadId = uploadId;
+    }
+
+    @Override
+    public String getUploadId() {
+        return this.uploadId;
     }
 }

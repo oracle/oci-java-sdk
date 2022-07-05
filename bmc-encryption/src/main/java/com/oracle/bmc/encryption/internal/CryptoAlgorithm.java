@@ -4,11 +4,6 @@
  */
 package com.oracle.bmc.encryption.internal;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
-@AllArgsConstructor
-@Getter
 public enum CryptoAlgorithm {
     /**
      * AES-GCM 128
@@ -31,4 +26,65 @@ public enum CryptoAlgorithm {
     private final int tagLen;
     private final int padding;
     private final int blockSize;
+
+    @java.beans.ConstructorProperties({
+        "algorithmId",
+        "algorithm",
+        "mode",
+        "dataKeyLen",
+        "ivLen",
+        "tagLen",
+        "padding",
+        "blockSize"
+    })
+    CryptoAlgorithm(
+            int algorithmId,
+            String algorithm,
+            String mode,
+            int dataKeyLen,
+            int ivLen,
+            int tagLen,
+            int padding,
+            int blockSize) {
+        this.algorithmId = algorithmId;
+        this.algorithm = algorithm;
+        this.mode = mode;
+        this.dataKeyLen = dataKeyLen;
+        this.ivLen = ivLen;
+        this.tagLen = tagLen;
+        this.padding = padding;
+        this.blockSize = blockSize;
+    }
+
+    public int getAlgorithmId() {
+        return this.algorithmId;
+    }
+
+    public String getAlgorithm() {
+        return this.algorithm;
+    }
+
+    public String getMode() {
+        return this.mode;
+    }
+
+    public int getDataKeyLen() {
+        return this.dataKeyLen;
+    }
+
+    public int getIvLen() {
+        return this.ivLen;
+    }
+
+    public int getTagLen() {
+        return this.tagLen;
+    }
+
+    public int getPadding() {
+        return this.padding;
+    }
+
+    public int getBlockSize() {
+        return this.blockSize;
+    }
 }

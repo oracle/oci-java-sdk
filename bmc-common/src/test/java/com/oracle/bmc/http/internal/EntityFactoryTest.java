@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.http.internal;
 
-import lombok.Value;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,9 +29,29 @@ public class EntityFactoryTest {
         assertEquals(input, bodyAsString);
     }
 
-    @Value
     static class Record {
         int i;
         String s;
+
+        public Record(int i, String s) {
+            this.i = i;
+            this.s = s;
+        }
+
+        public int getI() {
+            return this.i;
+        }
+
+        public void setI(int i) {
+            this.i = i;
+        }
+
+        public String getS() {
+            return this.s;
+        }
+
+        public void setS(String s) {
+            this.s = s;
+        }
     }
 }

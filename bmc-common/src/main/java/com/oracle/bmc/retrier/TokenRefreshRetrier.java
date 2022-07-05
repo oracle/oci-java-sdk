@@ -10,8 +10,7 @@ import com.oracle.bmc.waiter.DelayStrategy;
 import com.oracle.bmc.waiter.FixedTimeDelayStrategy;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import com.oracle.bmc.waiter.TerminationStrategy;
-import lombok.NonNull;
-
+import javax.annotation.Nonnull;
 import javax.ws.rs.core.Response;
 
 /**
@@ -24,7 +23,11 @@ public class TokenRefreshRetrier extends BmcGenericRetrier {
     private static DelayStrategy TOKEN_REFRESH_DELAY_STRATEGY = new FixedTimeDelayStrategy(0L);
 
     private static RetryConfiguration createTokenRefreshRetryConfiguration(
-            @NonNull final AbstractAuthenticationDetailsProvider authenticationDetailsProvider) {
+            @Nonnull final AbstractAuthenticationDetailsProvider authenticationDetailsProvider) {
+        if (authenticationDetailsProvider == null) {
+            throw new java.lang.NullPointerException(
+                    "authenticationDetailsProvider is marked non-null but is null");
+        }
         final RetryConfiguration tokenRefreshRetryConfiguration =
                 RetryConfiguration.builder()
                         .terminationStrategy(TOKEN_REFRESH_TERMINATION_STRATEGY)
@@ -55,7 +58,11 @@ public class TokenRefreshRetrier extends BmcGenericRetrier {
      * @param authenticationDetailsProvider The authentication provider used by the client.
      */
     public TokenRefreshRetrier(
-            @NonNull final AbstractAuthenticationDetailsProvider authenticationDetailsProvider) {
+            @Nonnull final AbstractAuthenticationDetailsProvider authenticationDetailsProvider) {
         super(createTokenRefreshRetryConfiguration(authenticationDetailsProvider));
+        if (authenticationDetailsProvider == null) {
+            throw new java.lang.NullPointerException(
+                    "authenticationDetailsProvider is marked non-null but is null");
+        }
     }
 }

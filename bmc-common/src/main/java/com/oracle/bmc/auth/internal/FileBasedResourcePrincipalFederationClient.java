@@ -7,7 +7,7 @@ package com.oracle.bmc.auth.internal;
 import com.google.common.base.Preconditions;
 import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
 import com.oracle.bmc.auth.SessionKeySupplier;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -21,10 +21,11 @@ import java.util.Optional;
 /**
  * This class gets a security token from file.
  */
-@Slf4j
 public class FileBasedResourcePrincipalFederationClient
         implements FederationClient, ProvidesConfigurableRefresh {
 
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(FileBasedResourcePrincipalFederationClient.class);
     private final SessionKeySupplier sessionKeySupplier;
     private volatile SecurityTokenAdapter securityTokenAdapter;
     private final String resourcePrincipalSessionTokenPath;

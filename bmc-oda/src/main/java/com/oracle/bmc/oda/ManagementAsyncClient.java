@@ -401,16 +401,18 @@ public class ManagementAsyncClient implements ManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ConfigureDigitalAssistantParametersConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ConfigureDigitalAssistantParameters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/ConfigureDigitalAssistantParameters");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ConfigureDigitalAssistantParametersResponse>
-                transformer = ConfigureDigitalAssistantParametersConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "ConfigureDigitalAssistantParameters",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/ConfigureDigitalAssistantParameters");
-
+                transformer =
+                        ConfigureDigitalAssistantParametersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ConfigureDigitalAssistantParametersRequest,
                         ConfigureDigitalAssistantParametersResponse>
@@ -458,16 +460,18 @@ public class ManagementAsyncClient implements ManagementAsync {
                 CreateAuthenticationProviderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateAuthenticationProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "CreateAuthenticationProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/CreateAuthenticationProvider");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAuthenticationProviderResponse>
-                transformer = CreateAuthenticationProviderConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "CreateAuthenticationProvider",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/CreateAuthenticationProvider");
-
+                transformer =
+                        CreateAuthenticationProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAuthenticationProviderRequest, CreateAuthenticationProviderResponse>
                 handlerToUse = handler;
@@ -510,15 +514,16 @@ public class ManagementAsyncClient implements ManagementAsync {
                 CreateChannelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateChannelConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateChannelResponse>
-                transformer = CreateChannelConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "CreateChannel",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/CreateChannel");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "CreateChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/CreateChannel");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateChannelResponse>
+                transformer =
+                        CreateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateChannelRequest, CreateChannelResponse>
                 handlerToUse = handler;
 
@@ -560,16 +565,18 @@ public class ManagementAsyncClient implements ManagementAsync {
                 CreateDigitalAssistantConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDigitalAssistantConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "CreateDigitalAssistant",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/CreateDigitalAssistant");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDigitalAssistantResponse>
-                transformer = CreateDigitalAssistantConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "CreateDigitalAssistant",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/CreateDigitalAssistant");
-
+                transformer =
+                        CreateDigitalAssistantConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDigitalAssistantRequest, CreateDigitalAssistantResponse>
                 handlerToUse = handler;
@@ -611,15 +618,16 @@ public class ManagementAsyncClient implements ManagementAsync {
                 CreateSkillConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSkillConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSkillResponse>
-                transformer = CreateSkillConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "CreateSkill",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/CreateSkill");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "CreateSkill",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/CreateSkill");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSkillResponse>
+                transformer =
+                        CreateSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateSkillRequest, CreateSkillResponse>
                 handlerToUse = handler;
 
@@ -661,16 +669,18 @@ public class ManagementAsyncClient implements ManagementAsync {
                 CreateSkillParameterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSkillParameterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "CreateSkillParameter",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/CreateSkillParameter");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateSkillParameterResponse>
-                transformer = CreateSkillParameterConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "CreateSkillParameter",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/CreateSkillParameter");
-
+                transformer =
+                        CreateSkillParameterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSkillParameterRequest, CreateSkillParameterResponse>
                 handlerToUse = handler;
@@ -713,15 +723,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 CreateTranslatorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTranslatorConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTranslatorResponse>
-                transformer = CreateTranslatorConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "CreateTranslator",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/CreateTranslator");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "CreateTranslator",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/CreateTranslator");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTranslatorResponse>
+                transformer =
+                        CreateTranslatorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateTranslatorRequest, CreateTranslatorResponse>
                 handlerToUse = handler;
 
@@ -765,15 +777,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 DeleteAuthenticationProviderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteAuthenticationProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "DeleteAuthenticationProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/DeleteAuthenticationProvider");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAuthenticationProviderResponse>
-                transformer = DeleteAuthenticationProviderConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "DeleteAuthenticationProvider",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/DeleteAuthenticationProvider");
-
+                transformer =
+                        DeleteAuthenticationProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteAuthenticationProviderRequest, DeleteAuthenticationProviderResponse>
                 handlerToUse = handler;
@@ -811,14 +825,15 @@ public class ManagementAsyncClient implements ManagementAsync {
                 DeleteChannelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteChannelConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "DeleteChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/DeleteChannel");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteChannelResponse>
-                transformer = DeleteChannelConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "DeleteChannel",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/DeleteChannel");
-
+                transformer =
+                        DeleteChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteChannelRequest, DeleteChannelResponse>
                 handlerToUse = handler;
 
@@ -855,15 +870,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 DeleteDigitalAssistantConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDigitalAssistantConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "DeleteDigitalAssistant",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/DeleteDigitalAssistant");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDigitalAssistantResponse>
-                transformer = DeleteDigitalAssistantConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "DeleteDigitalAssistant",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/DeleteDigitalAssistant");
-
+                transformer =
+                        DeleteDigitalAssistantConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDigitalAssistantRequest, DeleteDigitalAssistantResponse>
                 handlerToUse = handler;
@@ -900,14 +917,15 @@ public class ManagementAsyncClient implements ManagementAsync {
                 DeleteSkillConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSkillConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "DeleteSkill",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/DeleteSkill");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSkillResponse>
-                transformer = DeleteSkillConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "DeleteSkill",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/DeleteSkill");
-
+                transformer =
+                        DeleteSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteSkillRequest, DeleteSkillResponse>
                 handlerToUse = handler;
 
@@ -944,15 +962,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 DeleteSkillParameterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSkillParameterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "DeleteSkillParameter",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/DeleteSkillParameter");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSkillParameterResponse>
-                transformer = DeleteSkillParameterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "DeleteSkillParameter",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/DeleteSkillParameter");
-
+                transformer =
+                        DeleteSkillParameterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSkillParameterRequest, DeleteSkillParameterResponse>
                 handlerToUse = handler;
@@ -990,14 +1010,16 @@ public class ManagementAsyncClient implements ManagementAsync {
                 DeleteTranslatorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteTranslatorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "DeleteTranslator",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/DeleteTranslator");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTranslatorResponse>
-                transformer = DeleteTranslatorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "DeleteTranslator",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/DeleteTranslator");
-
+                transformer =
+                        DeleteTranslatorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteTranslatorRequest, DeleteTranslatorResponse>
                 handlerToUse = handler;
 
@@ -1034,15 +1056,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 ExportDigitalAssistantConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ExportDigitalAssistantConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ExportDigitalAssistant",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/ExportDigitalAssistant");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ExportDigitalAssistantResponse>
-                transformer = ExportDigitalAssistantConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "ExportDigitalAssistant",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/ExportDigitalAssistant");
-
+                transformer =
+                        ExportDigitalAssistantConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ExportDigitalAssistantRequest, ExportDigitalAssistantResponse>
                 handlerToUse = handler;
@@ -1084,14 +1108,15 @@ public class ManagementAsyncClient implements ManagementAsync {
                 ExportSkillConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ExportSkillConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ExportSkill",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/ExportSkill");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ExportSkillResponse>
-                transformer = ExportSkillConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "ExportSkill",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/ExportSkill");
-
+                transformer =
+                        ExportSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ExportSkillRequest, ExportSkillResponse>
                 handlerToUse = handler;
 
@@ -1133,15 +1158,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 GetAuthenticationProviderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetAuthenticationProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "GetAuthenticationProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/GetAuthenticationProvider");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAuthenticationProviderResponse>
-                transformer = GetAuthenticationProviderConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "GetAuthenticationProvider",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/GetAuthenticationProvider");
-
+                transformer =
+                        GetAuthenticationProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetAuthenticationProviderRequest, GetAuthenticationProviderResponse>
                 handlerToUse = handler;
@@ -1178,14 +1205,15 @@ public class ManagementAsyncClient implements ManagementAsync {
         final GetChannelRequest interceptedRequest = GetChannelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetChannelConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "GetChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/GetChannel");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetChannelResponse>
-                transformer = GetChannelConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "GetChannel",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/GetChannel");
-
+                transformer =
+                        GetChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetChannelRequest, GetChannelResponse> handlerToUse =
                 handler;
 
@@ -1222,15 +1250,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 GetDigitalAssistantConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDigitalAssistantConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "GetDigitalAssistant",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/GetDigitalAssistant");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDigitalAssistantResponse>
-                transformer = GetDigitalAssistantConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "GetDigitalAssistant",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/GetDigitalAssistant");
-
+                transformer =
+                        GetDigitalAssistantConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetDigitalAssistantRequest, GetDigitalAssistantResponse>
                 handlerToUse = handler;
@@ -1270,15 +1300,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 GetDigitalAssistantParameterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDigitalAssistantParameterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "GetDigitalAssistantParameter",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/GetDigitalAssistantParameter");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDigitalAssistantParameterResponse>
-                transformer = GetDigitalAssistantParameterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "GetDigitalAssistantParameter",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/GetDigitalAssistantParameter");
-
+                transformer =
+                        GetDigitalAssistantParameterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetDigitalAssistantParameterRequest, GetDigitalAssistantParameterResponse>
                 handlerToUse = handler;
@@ -1315,14 +1347,14 @@ public class ManagementAsyncClient implements ManagementAsync {
         final GetSkillRequest interceptedRequest = GetSkillConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSkillConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "GetSkill",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/GetSkill");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSkillResponse>
-                transformer = GetSkillConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "GetSkill",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/GetSkill");
-
+                transformer = GetSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSkillRequest, GetSkillResponse> handlerToUse =
                 handler;
 
@@ -1358,14 +1390,16 @@ public class ManagementAsyncClient implements ManagementAsync {
                 GetSkillParameterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSkillParameterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "GetSkillParameter",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/GetSkillParameter");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSkillParameterResponse>
-                transformer = GetSkillParameterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "GetSkillParameter",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/GetSkillParameter");
-
+                transformer =
+                        GetSkillParameterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSkillParameterRequest, GetSkillParameterResponse>
                 handlerToUse = handler;
 
@@ -1401,14 +1435,15 @@ public class ManagementAsyncClient implements ManagementAsync {
                 GetTranslatorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetTranslatorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "GetTranslator",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/GetTranslator");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTranslatorResponse>
-                transformer = GetTranslatorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "GetTranslator",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/GetTranslator");
-
+                transformer =
+                        GetTranslatorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTranslatorRequest, GetTranslatorResponse>
                 handlerToUse = handler;
 
@@ -1443,15 +1478,16 @@ public class ManagementAsyncClient implements ManagementAsync {
         final ImportBotRequest interceptedRequest = ImportBotConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ImportBotConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportBotResponse>
-                transformer = ImportBotConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "ImportBot",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Bot/ImportBot");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ImportBot",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Bot/ImportBot");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportBotResponse>
+                transformer =
+                        ImportBotConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ImportBotRequest, ImportBotResponse> handlerToUse =
                 handler;
 
@@ -1494,15 +1530,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 ListAuthenticationProvidersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAuthenticationProvidersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ListAuthenticationProviders",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/ListAuthenticationProviders");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAuthenticationProvidersResponse>
-                transformer = ListAuthenticationProvidersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "ListAuthenticationProviders",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/ListAuthenticationProviders");
-
+                transformer =
+                        ListAuthenticationProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListAuthenticationProvidersRequest, ListAuthenticationProvidersResponse>
                 handlerToUse = handler;
@@ -1540,14 +1578,15 @@ public class ManagementAsyncClient implements ManagementAsync {
                 ListChannelsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListChannelsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ListChannels",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/ListChannels");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListChannelsResponse>
-                transformer = ListChannelsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "ListChannels",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/ListChannels");
-
+                transformer =
+                        ListChannelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListChannelsRequest, ListChannelsResponse>
                 handlerToUse = handler;
 
@@ -1586,15 +1625,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 ListDigitalAssistantParametersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDigitalAssistantParametersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ListDigitalAssistantParameters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/ListDigitalAssistantParameters");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDigitalAssistantParametersResponse>
-                transformer = ListDigitalAssistantParametersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "ListDigitalAssistantParameters",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/ListDigitalAssistantParameters");
-
+                transformer =
+                        ListDigitalAssistantParametersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDigitalAssistantParametersRequest,
                         ListDigitalAssistantParametersResponse>
@@ -1634,15 +1675,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 ListDigitalAssistantsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDigitalAssistantsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ListDigitalAssistants",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/ListDigitalAssistants");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDigitalAssistantsResponse>
-                transformer = ListDigitalAssistantsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "ListDigitalAssistants",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/ListDigitalAssistants");
-
+                transformer =
+                        ListDigitalAssistantsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListDigitalAssistantsRequest, ListDigitalAssistantsResponse>
                 handlerToUse = handler;
@@ -1680,15 +1723,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 ListSkillParametersConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSkillParametersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ListSkillParameters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/ListSkillParameters");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSkillParametersResponse>
-                transformer = ListSkillParametersConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "ListSkillParameters",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/ListSkillParameters");
-
+                transformer =
+                        ListSkillParametersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListSkillParametersRequest, ListSkillParametersResponse>
                 handlerToUse = handler;
@@ -1724,14 +1769,15 @@ public class ManagementAsyncClient implements ManagementAsync {
         final ListSkillsRequest interceptedRequest = ListSkillsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSkillsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ListSkills",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/ListSkills");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSkillsResponse>
-                transformer = ListSkillsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "ListSkills",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/ListSkills");
-
+                transformer =
+                        ListSkillsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSkillsRequest, ListSkillsResponse> handlerToUse =
                 handler;
 
@@ -1768,14 +1814,16 @@ public class ManagementAsyncClient implements ManagementAsync {
                 ListTranslatorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListTranslatorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ListTranslators",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/ListTranslators");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTranslatorsResponse>
-                transformer = ListTranslatorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "ListTranslators",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/ListTranslators");
-
+                transformer =
+                        ListTranslatorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTranslatorsRequest, ListTranslatorsResponse>
                 handlerToUse = handler;
 
@@ -1812,15 +1860,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 PublishDigitalAssistantConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 PublishDigitalAssistantConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "PublishDigitalAssistant",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/PublishDigitalAssistant");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, PublishDigitalAssistantResponse>
-                transformer = PublishDigitalAssistantConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "PublishDigitalAssistant",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/PublishDigitalAssistant");
-
+                transformer =
+                        PublishDigitalAssistantConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         PublishDigitalAssistantRequest, PublishDigitalAssistantResponse>
                 handlerToUse = handler;
@@ -1857,14 +1907,15 @@ public class ManagementAsyncClient implements ManagementAsync {
                 PublishSkillConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 PublishSkillConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "PublishSkill",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/PublishSkill");
         final com.google.common.base.Function<javax.ws.rs.core.Response, PublishSkillResponse>
-                transformer = PublishSkillConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "PublishSkill",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/PublishSkill");
-
+                transformer =
+                        PublishSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<PublishSkillRequest, PublishSkillResponse>
                 handlerToUse = handler;
 
@@ -1901,15 +1952,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 RotateChannelKeysConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateChannelKeysConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RotateChannelKeysResponse>
-                transformer = RotateChannelKeysConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "RotateChannelKeys",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/RotateChannelKeys");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "RotateChannelKeys",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/RotateChannelKeys");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RotateChannelKeysResponse>
+                transformer =
+                        RotateChannelKeysConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RotateChannelKeysRequest, RotateChannelKeysResponse>
                 handlerToUse = handler;
 
@@ -1945,15 +1998,16 @@ public class ManagementAsyncClient implements ManagementAsync {
                 StartChannelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StartChannelConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StartChannelResponse>
-                transformer = StartChannelConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "StartChannel",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/StartChannel");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "StartChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/StartChannel");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, StartChannelResponse>
+                transformer =
+                        StartChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<StartChannelRequest, StartChannelResponse>
                 handlerToUse = handler;
 
@@ -1989,15 +2043,16 @@ public class ManagementAsyncClient implements ManagementAsync {
                 StopChannelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StopChannelConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StopChannelResponse>
-                transformer = StopChannelConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "StopChannel",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/StopChannel");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "StopChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/StopChannel");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, StopChannelResponse>
+                transformer =
+                        StopChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<StopChannelRequest, StopChannelResponse>
                 handlerToUse = handler;
 
@@ -2036,15 +2091,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 UpdateAuthenticationProviderConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateAuthenticationProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "UpdateAuthenticationProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/UpdateAuthenticationProvider");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAuthenticationProviderResponse>
-                transformer = UpdateAuthenticationProviderConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "UpdateAuthenticationProvider",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/UpdateAuthenticationProvider");
-
+                transformer =
+                        UpdateAuthenticationProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAuthenticationProviderRequest, UpdateAuthenticationProviderResponse>
                 handlerToUse = handler;
@@ -2087,14 +2144,15 @@ public class ManagementAsyncClient implements ManagementAsync {
                 UpdateChannelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateChannelConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "UpdateChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/UpdateChannel");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateChannelResponse>
-                transformer = UpdateChannelConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "UpdateChannel",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/UpdateChannel");
-
+                transformer =
+                        UpdateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateChannelRequest, UpdateChannelResponse>
                 handlerToUse = handler;
 
@@ -2136,15 +2194,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 UpdateDigitalAssistantConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDigitalAssistantConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "UpdateDigitalAssistant",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/UpdateDigitalAssistant");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDigitalAssistantResponse>
-                transformer = UpdateDigitalAssistantConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "UpdateDigitalAssistant",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/UpdateDigitalAssistant");
-
+                transformer =
+                        UpdateDigitalAssistantConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDigitalAssistantRequest, UpdateDigitalAssistantResponse>
                 handlerToUse = handler;
@@ -2189,15 +2249,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 UpdateDigitalAssistantParameterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDigitalAssistantParameterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "UpdateDigitalAssistantParameter",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/UpdateDigitalAssistantParameter");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDigitalAssistantParameterResponse>
-                transformer = UpdateDigitalAssistantParameterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "UpdateDigitalAssistantParameter",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/UpdateDigitalAssistantParameter");
-
+                transformer =
+                        UpdateDigitalAssistantParameterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDigitalAssistantParameterRequest,
                         UpdateDigitalAssistantParameterResponse>
@@ -2242,14 +2304,15 @@ public class ManagementAsyncClient implements ManagementAsync {
                 UpdateSkillConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSkillConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "UpdateSkill",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/UpdateSkill");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSkillResponse>
-                transformer = UpdateSkillConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "UpdateSkill",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/UpdateSkill");
-
+                transformer =
+                        UpdateSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateSkillRequest, UpdateSkillResponse>
                 handlerToUse = handler;
 
@@ -2291,15 +2354,17 @@ public class ManagementAsyncClient implements ManagementAsync {
                 UpdateSkillParameterConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSkillParameterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "UpdateSkillParameter",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/UpdateSkillParameter");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateSkillParameterResponse>
-                transformer = UpdateSkillParameterConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "UpdateSkillParameter",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/UpdateSkillParameter");
-
+                transformer =
+                        UpdateSkillParameterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSkillParameterRequest, UpdateSkillParameterResponse>
                 handlerToUse = handler;
@@ -2342,14 +2407,16 @@ public class ManagementAsyncClient implements ManagementAsync {
                 UpdateTranslatorConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateTranslatorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "UpdateTranslator",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/UpdateTranslator");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTranslatorResponse>
-                transformer = UpdateTranslatorConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Management",
-                "UpdateTranslator",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/UpdateTranslator");
-
+                transformer =
+                        UpdateTranslatorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateTranslatorRequest, UpdateTranslatorResponse>
                 handlerToUse = handler;
 

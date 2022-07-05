@@ -398,18 +398,21 @@ public class AccountClient implements Account {
                 GetLaunchEligibilityConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetLaunchEligibilityConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLaunchEligibilityResponse>
-                transformer = GetLaunchEligibilityConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Account",
-                "GetLaunchEligibility",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/LaunchEligibility/GetLaunchEligibility");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Account",
+                        "GetLaunchEligibility",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/LaunchEligibility/GetLaunchEligibility");
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetLaunchEligibilityResponse>
+                transformer =
+                        GetLaunchEligibilityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -434,19 +437,22 @@ public class AccountClient implements Account {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetThirdPartyPaidListingEligibilityConverter.fromRequest(
                         client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetThirdPartyPaidListingEligibilityResponse>
-                transformer = GetThirdPartyPaidListingEligibilityConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Account",
-                "GetThirdPartyPaidListingEligibility",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ThirdPartyPaidListingEligibility/GetThirdPartyPaidListingEligibility");
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Account",
+                        "GetThirdPartyPaidListingEligibility",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ThirdPartyPaidListingEligibility/GetThirdPartyPaidListingEligibility");
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetThirdPartyPaidListingEligibilityResponse>
+                transformer =
+                        GetThirdPartyPaidListingEligibilityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

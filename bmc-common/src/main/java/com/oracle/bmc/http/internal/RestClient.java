@@ -18,12 +18,8 @@ import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.AsyncHandler;
 import com.oracle.bmc.util.internal.Consumer;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.Value;
-import lombok.extern.slf4j.Slf4j;
-
+import javax.annotation.Nonnull;
+import com.oracle.bmc.util.internal.StringUtils;
 import javax.annotation.Nullable;
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.client.AsyncInvoker;
@@ -53,8 +49,9 @@ import java.util.function.Supplier;
  * For asynchronous call, please refer to https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-2rd-edition/en/part1/chapter13/async_invoker_client_api.html
  * to understand why we'd better not mix to using callback or Java Future.
  */
-@Slf4j
 public class RestClient implements AutoCloseable {
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(RestClient.class);
+
     private static final String PATCH_VERB = "PATCH";
     private static final String STREAM_POTENTIAL_DATA_CORRUPTION_WARN_MSG =
             "Stream size to upload is 0 bytes, this could potentially represent data corruption in what is uploaded "
@@ -69,8 +66,7 @@ public class RestClient implements AutoCloseable {
     /**
      * The client configurator used for configuring the client. May be null.
      */
-    @Getter private final ClientConfigurator clientConfigurator;
-
+    private final ClientConfigurator clientConfigurator;
     private WrappedWebTarget baseTarget;
 
     /**
@@ -82,8 +78,8 @@ public class RestClient implements AutoCloseable {
      * @param circuitBreaker A circuit breaker instance to decorate http client
      */
     public RestClient(
-            @NonNull Client client,
-            @NonNull EntityFactory entityFactory,
+            @Nonnull Client client,
+            @Nonnull EntityFactory entityFactory,
             JaxRsCircuitBreaker circuitBreaker) {
         this(client, entityFactory, circuitBreaker, false);
     }
@@ -98,8 +94,8 @@ public class RestClient implements AutoCloseable {
      * @param isApacheNonBufferingClient A boolean value to disable buffering of entities in memory for Apache client
      */
     public RestClient(
-            @NonNull Client client,
-            @NonNull EntityFactory entityFactory,
+            @Nonnull Client client,
+            @Nonnull EntityFactory entityFactory,
             JaxRsCircuitBreaker circuitBreaker,
             boolean isApacheNonBufferingClient) {
         this(client, entityFactory, circuitBreaker, isApacheNonBufferingClient, null);
@@ -116,11 +112,18 @@ public class RestClient implements AutoCloseable {
      * @param clientConfigurator The client configurator used when creating the client
      */
     public RestClient(
-            @NonNull Client client,
-            @NonNull EntityFactory entityFactory,
+            @Nonnull Client client,
+            @Nonnull EntityFactory entityFactory,
             JaxRsCircuitBreaker circuitBreaker,
             boolean isApacheNonBufferingClient,
             ClientConfigurator clientConfigurator) {
+        if (client == null) {
+            throw new java.lang.NullPointerException("client is marked non-null but is null");
+        }
+        if (entityFactory == null) {
+            throw new java.lang.NullPointerException(
+                    "entityFactory is marked non-null but is null");
+        }
         this.client = client;
         this.entityFactory = entityFactory;
         this.circuitBreaker = circuitBreaker;
@@ -133,7 +136,10 @@ public class RestClient implements AutoCloseable {
      *
      * @param endpoint The endpoint.
      */
-    public void setEndpoint(@NonNull String endpoint) {
+    public void setEndpoint(@Nonnull String endpoint) {
+        if (endpoint == null) {
+            throw new java.lang.NullPointerException("endpoint is marked non-null but is null");
+        }
         this.baseTarget = new WrappedWebTarget(client.target(endpoint));
     }
 
@@ -208,7 +214,6 @@ public class RestClient implements AutoCloseable {
     }
 
     // Rest APIs
-
     /**
      * Request a resource.
      *
@@ -219,7 +224,13 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException If an error was encountered while invoking the request.
      */
     public <T extends BmcRequest> Response get(
-            @NonNull WrappedInvocationBuilder ib, @NonNull T request) throws BmcException {
+            @Nonnull WrappedInvocationBuilder ib, @Nonnull T request) throws BmcException {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         InvocationInformation info = preprocessRequest(ib, request);
         try {
             return decorateSupplier(ib::get).get();
@@ -242,10 +253,16 @@ public class RestClient implements AutoCloseable {
      * not be able to support being consumed twice.
      */
     public <T extends BmcRequest> Future<Response> get(
-            @NonNull WrappedInvocationBuilder ib,
-            @NonNull T request,
+            @Nonnull WrappedInvocationBuilder ib,
+            @Nonnull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         InvocationInformation info = preprocessRequest(ib, request);
 
         if (onSuccess == null && onError == null) {
@@ -301,8 +318,14 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException If an error was encountered while invoking the request.
      */
     public <T extends BmcRequest> Response post(
-            @NonNull WrappedInvocationBuilder ib, @Nullable Object body, @NonNull T request)
+            @Nonnull WrappedInvocationBuilder ib, @Nullable Object body, @Nonnull T request)
             throws BmcException {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         InvocationInformation info = preprocessRequest(ib, request);
         try {
             Entity<?> requestBody =
@@ -329,11 +352,17 @@ public class RestClient implements AutoCloseable {
      * not be able to support being consumed twice.
      */
     public <T extends BmcRequest> Future<Response> post(
-            @NonNull WrappedInvocationBuilder ib,
+            @Nonnull WrappedInvocationBuilder ib,
             @Nullable Object body,
-            @NonNull T request,
+            @Nonnull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         InvocationInformation info = preprocessRequest(ib, request);
         Entity<?> requestBody =
                 this.entityFactory.forPost(request, attemptToSerialize(request, body));
@@ -422,7 +451,13 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException If an error was encountered while invoking the request.
      */
     public <T extends BmcRequest> Response post(
-            @NonNull WrappedInvocationBuilder ib, @NonNull T request) {
+            @Nonnull WrappedInvocationBuilder ib, @Nonnull T request) {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         return post(ib, null, request);
     }
 
@@ -441,10 +476,16 @@ public class RestClient implements AutoCloseable {
      * not be able to support being consumed twice.
      */
     public <T extends BmcRequest> Future<Response> post(
-            @NonNull WrappedInvocationBuilder ib,
-            @NonNull T request,
+            @Nonnull WrappedInvocationBuilder ib,
+            @Nonnull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         return post(ib, null, request, onSuccess, onError);
     }
 
@@ -459,7 +500,13 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException If an error was encountered while invoking the request.
      */
     public <T extends BmcRequest> Response patch(
-            @NonNull WrappedInvocationBuilder ib, @NonNull T request) {
+            @Nonnull WrappedInvocationBuilder ib, @Nonnull T request) {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         return patch(ib, null, request);
     }
 
@@ -475,8 +522,14 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException If an error was encountered while invoking the request.
      */
     public <T extends BmcRequest> Response patch(
-            @NonNull WrappedInvocationBuilder ib, @Nullable Object body, @NonNull T request)
+            @Nonnull WrappedInvocationBuilder ib, @Nullable Object body, @Nonnull T request)
             throws BmcException {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         InvocationInformation info = preprocessRequest(ib, request);
         try {
             Entity<?> requestBody =
@@ -502,10 +555,16 @@ public class RestClient implements AutoCloseable {
      * not be able to support being consumed twice.
      */
     public <T extends BmcRequest> Future<Response> patch(
-            @NonNull WrappedInvocationBuilder ib,
-            @NonNull T request,
+            @Nonnull WrappedInvocationBuilder ib,
+            @Nonnull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         return patch(ib, null, request, onSuccess, onError);
     }
 
@@ -525,11 +584,17 @@ public class RestClient implements AutoCloseable {
      * not be able to support being consumed twice.
      */
     public <T extends BmcRequest> Future<Response> patch(
-            @NonNull WrappedInvocationBuilder ib,
+            @Nonnull WrappedInvocationBuilder ib,
             @Nullable Object body,
-            @NonNull T request,
+            @Nonnull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         InvocationInformation info = preprocessRequest(ib, request);
         Entity<?> requestBody =
                 this.entityFactory.forPatch(request, attemptToSerialize(request, body));
@@ -619,7 +684,7 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException If an error was encountered while invoking the request.
      */
     public <T extends BmcRequest> Response put(
-            @NonNull WrappedInvocationBuilder ib, @NonNull T request) {
+            @Nonnull WrappedInvocationBuilder ib, @Nonnull T request) {
         return put(ib, null, request);
     }
 
@@ -639,8 +704,14 @@ public class RestClient implements AutoCloseable {
      *             If an error was encountered while invoking the request.
      */
     public <T extends BmcRequest> Response put(
-            @NonNull WrappedInvocationBuilder ib, @Nullable Object body, @NonNull T request)
+            @Nonnull WrappedInvocationBuilder ib, @Nullable Object body, @Nonnull T request)
             throws BmcException {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         InvocationInformation info = preprocessRequest(ib, request);
         try {
             Entity<?> requestBody =
@@ -670,10 +741,16 @@ public class RestClient implements AutoCloseable {
      *         not be able to support being consumed twice.
      */
     public <T extends BmcRequest> Future<Response> put(
-            @NonNull WrappedInvocationBuilder ib,
-            @NonNull T request,
+            @Nonnull WrappedInvocationBuilder ib,
+            @Nonnull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         return put(ib, null, request, onSuccess, onError);
     }
 
@@ -698,11 +775,17 @@ public class RestClient implements AutoCloseable {
      *         not be able to support being consumed twice.
      */
     public <T extends BmcRequest> Future<Response> put(
-            @NonNull WrappedInvocationBuilder ib,
+            @Nonnull WrappedInvocationBuilder ib,
             @Nullable Object body,
-            @NonNull T request,
+            @Nonnull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         InvocationInformation info = preprocessRequest(ib, request);
         Entity<?> requestBody =
                 this.entityFactory.forPut(request, attemptToSerialize(request, body));
@@ -792,7 +875,13 @@ public class RestClient implements AutoCloseable {
      *             If an error was encountered while invoking the request.
      */
     public <T extends BmcRequest> Response delete(
-            @NonNull WrappedInvocationBuilder ib, @NonNull T request) throws BmcException {
+            @Nonnull WrappedInvocationBuilder ib, @Nonnull T request) throws BmcException {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         InvocationInformation info = preprocessRequest(ib, request);
         try {
             return decorateSupplier(() -> ib.delete(Response.class)).get();
@@ -819,12 +908,17 @@ public class RestClient implements AutoCloseable {
      *         not be able to support being consumed twice.
      */
     public <T extends BmcRequest> Future<Response> delete(
-            @NonNull WrappedInvocationBuilder ib,
-            @NonNull T request,
+            @Nonnull WrappedInvocationBuilder ib,
+            @Nonnull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         InvocationInformation info = preprocessRequest(ib, request);
-
         if (onSuccess == null && onError == null) {
             return decorateFuture(() -> ib.async().delete()).get();
         } else {
@@ -879,7 +973,13 @@ public class RestClient implements AutoCloseable {
      *             If an error was encountered while invoking the request.
      */
     public <T extends BmcRequest> Response head(
-            @NonNull WrappedInvocationBuilder ib, @NonNull T request) throws BmcException {
+            @Nonnull WrappedInvocationBuilder ib, @Nonnull T request) throws BmcException {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         InvocationInformation info = preprocessRequest(ib, request);
         try {
             return decorateSupplier(ib::head).get();
@@ -907,10 +1007,16 @@ public class RestClient implements AutoCloseable {
      *         not be able to support being consumed twice.
      */
     public <T extends BmcRequest> Future<Response> head(
-            @NonNull WrappedInvocationBuilder ib,
-            @NonNull T request,
+            @Nonnull WrappedInvocationBuilder ib,
+            @Nonnull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
+        if (ib == null) {
+            throw new java.lang.NullPointerException("ib is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
         InvocationInformation info = preprocessRequest(ib, request);
 
         if (onSuccess == null && onError == null) {
@@ -1046,7 +1152,6 @@ public class RestClient implements AutoCloseable {
     }
 
     // prevents users from being able to call any method that actually submits the request
-    @RequiredArgsConstructor
     static class NonSubmittingInvocationBuilder extends ForwardingInvocationBuilder {
         private final WrappedInvocationBuilder delegate;
 
@@ -1224,10 +1329,16 @@ public class RestClient implements AutoCloseable {
         public <T extends RxInvoker> T rx(Class<T> aClass) {
             throw new UnsupportedOperationException("Cannot issue request directly");
         }
+
+        @java.beans.ConstructorProperties({"delegate"})
+        public NonSubmittingInvocationBuilder(final WrappedInvocationBuilder delegate) {
+            this.delegate = delegate;
+        }
     }
 
-    @Slf4j
     private static class Callback implements InvocationCallback<Response> {
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Callback.class);
 
         private final WebTarget baseTarget;
         private final InvocationInformation info;
@@ -1235,10 +1346,17 @@ public class RestClient implements AutoCloseable {
         private final Consumer<Throwable> onError;
 
         private Callback(
-                @NonNull WebTarget baseTarget,
-                @NonNull InvocationInformation info,
+                @Nonnull WebTarget baseTarget,
+                @Nonnull InvocationInformation info,
                 @Nullable Consumer<Response> onSuccess,
                 @Nullable Consumer<Throwable> onError) {
+            if (baseTarget == null) {
+                throw new java.lang.NullPointerException(
+                        "baseTarget is marked non-null but is null");
+            }
+            if (info == null) {
+                throw new java.lang.NullPointerException("info is marked non-null but is null");
+            }
             this.baseTarget = baseTarget;
             this.info = info;
             this.onSuccess = onSuccess;
@@ -1278,11 +1396,68 @@ public class RestClient implements AutoCloseable {
         }
     }
 
-    @Value
-    static class InvocationInformation {
+    static final class InvocationInformation {
         private final String requestId;
         private final MultivaluedMap<String, Object> headersSetInCallback;
+
+        @java.beans.ConstructorProperties({"requestId", "headersSetInCallback"})
+        public InvocationInformation(
+                final String requestId, final MultivaluedMap<String, Object> headersSetInCallback) {
+            this.requestId = requestId;
+            this.headersSetInCallback = headersSetInCallback;
+        }
+
+        public String getRequestId() {
+            return this.requestId;
+        }
+
+        public MultivaluedMap<String, Object> getHeadersSetInCallback() {
+            return this.headersSetInCallback;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object o) {
+            if (o == this) return true;
+            if (!(o instanceof RestClient.InvocationInformation)) return false;
+            final RestClient.InvocationInformation other = (RestClient.InvocationInformation) o;
+            final java.lang.Object this$requestId = this.getRequestId();
+            final java.lang.Object other$requestId = other.getRequestId();
+            if (this$requestId == null
+                    ? other$requestId != null
+                    : !this$requestId.equals(other$requestId)) return false;
+            final java.lang.Object this$headersSetInCallback = this.getHeadersSetInCallback();
+            final java.lang.Object other$headersSetInCallback = other.getHeadersSetInCallback();
+            if (this$headersSetInCallback == null
+                    ? other$headersSetInCallback != null
+                    : !this$headersSetInCallback.equals(other$headersSetInCallback)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            final int PRIME = 59;
+            int result = 1;
+            final java.lang.Object $requestId = this.getRequestId();
+            result = result * PRIME + ($requestId == null ? 43 : $requestId.hashCode());
+            final java.lang.Object $headersSetInCallback = this.getHeadersSetInCallback();
+            result =
+                    result * PRIME
+                            + ($headersSetInCallback == null
+                                    ? 43
+                                    : $headersSetInCallback.hashCode());
+            return result;
+        }
+
+        @java.lang.Override
+        public java.lang.String toString() {
+            return "RestClient.InvocationInformation(requestId="
+                    + this.getRequestId()
+                    + ", headersSetInCallback="
+                    + this.getHeadersSetInCallback()
+                    + ")";
+        }
     }
+
     /**
      * Convert the body to a JSON string, unless it is already a string, or if it is an InputStream
      * @param request The original client request object given to the service
@@ -1356,5 +1531,12 @@ public class RestClient implements AutoCloseable {
         } else {
             return null;
         }
+    }
+
+    /**
+     * The client configurator used for configuring the client. May be null.
+     */
+    public ClientConfigurator getClientConfigurator() {
+        return this.clientConfigurator;
     }
 }

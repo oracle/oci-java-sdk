@@ -64,6 +64,13 @@ public class UpdateEnrollmentStatusConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.optimizer.responses.UpdateEnrollmentStatusResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.optimizer.responses.UpdateEnrollmentStatusResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.optimizer.responses.UpdateEnrollmentStatusResponse>
@@ -77,16 +84,24 @@ public class UpdateEnrollmentStatusConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.optimizer.responses.UpdateEnrollmentStatusResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.optimizer.model
                                                                 .EnrollmentStatus>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.optimizer.model
-                                                                        .EnrollmentStatus
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.optimizer.model.EnrollmentStatus
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.optimizer.model.EnrollmentStatus
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.optimizer.model.EnrollmentStatus>

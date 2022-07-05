@@ -5,13 +5,12 @@
 package com.oracle.bmc.objectstorage.transfer.internal;
 
 import com.oracle.bmc.io.DuplicatableInputStream;
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.IOException;
 import java.io.InputStream;
 
-@Slf4j
 public class StreamChunkCreator {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(StreamChunkCreator.class);
     private final InputStream source;
     private final long chunkLength;
     private final long sourceLength;

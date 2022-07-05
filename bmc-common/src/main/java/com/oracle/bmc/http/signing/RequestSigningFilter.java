@@ -9,8 +9,7 @@ import com.oracle.bmc.ClientRuntime;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.http.internal.AuthnClientFilter;
-import lombok.NonNull;
-
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.Priority;
 import javax.ws.rs.Priorities;
@@ -32,9 +31,17 @@ public class RequestSigningFilter extends AuthnClientFilter {
      * @param requestSigners the strategies used to sign requests, per signing strategy
      */
     public RequestSigningFilter(
-            @NonNull final RequestSigner requestSigner,
-            @NonNull final Map<SigningStrategy, RequestSigner> requestSigners) {
+            @Nonnull final RequestSigner requestSigner,
+            @Nonnull final Map<SigningStrategy, RequestSigner> requestSigners) {
         super(requestSigner, requestSigners);
+        if (requestSigner == null) {
+            throw new java.lang.NullPointerException(
+                    "requestSigner is marked non-null but is null");
+        }
+        if (requestSigners == null) {
+            throw new java.lang.NullPointerException(
+                    "requestSigners is marked non-null but is null");
+        }
     }
 
     /**
@@ -42,7 +49,7 @@ public class RequestSigningFilter extends AuthnClientFilter {
      *
      * @param requestSigner the request signer instance
      */
-    public RequestSigningFilter(@NonNull final RequestSigner requestSigner) {
+    public RequestSigningFilter(@Nonnull final RequestSigner requestSigner) {
         this(requestSigner, ImmutableMap.of());
     }
 
@@ -53,7 +60,11 @@ public class RequestSigningFilter extends AuthnClientFilter {
      * @return a new RequestSigningFilter instance
      */
     public static RequestSigningFilter fromAuthProvider(
-            @NonNull final BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+            @Nonnull final BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        if (authenticationDetailsProvider == null) {
+            throw new java.lang.NullPointerException(
+                    "authenticationDetailsProvider is marked non-null but is null");
+        }
         return new RequestSigningFilter(
                 DefaultRequestSigner.createRequestSigner(authenticationDetailsProvider));
     }
@@ -67,8 +78,12 @@ public class RequestSigningFilter extends AuthnClientFilter {
      * @throws IOException if the config file could not be read
      */
     public static RequestSigningFilter fromConfigFile(
-            @NonNull final String configurationFilePath, @Nullable final String profile)
+            @Nonnull final String configurationFilePath, @Nullable final String profile)
             throws IOException {
+        if (configurationFilePath == null) {
+            throw new java.lang.NullPointerException(
+                    "configurationFilePath is marked non-null but is null");
+        }
         return fromAuthProvider(
                 new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile));
     }
@@ -84,7 +99,11 @@ public class RequestSigningFilter extends AuthnClientFilter {
      * @throws IOException if an I/O exception occurs.
      */
     @Override
-    public void filter(@NonNull ClientRequestContext requestContext) throws IOException {
+    public void filter(@Nonnull ClientRequestContext requestContext) throws IOException {
+        if (requestContext == null) {
+            throw new java.lang.NullPointerException(
+                    "requestContext is marked non-null but is null");
+        }
         super.filter(requestContext);
 
         requestContext

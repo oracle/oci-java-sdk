@@ -63,6 +63,13 @@ public class GetModelArtifactContentConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.datascience.responses.GetModelArtifactContentResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.GetModelArtifactContentResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.datascience.responses.GetModelArtifactContentResponse>
@@ -77,13 +84,21 @@ public class GetModelArtifactContentConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.datascience.responses.GetModelArtifactContentResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.io.InputStream>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        java.io.InputStream.class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    java.io.InputStream.class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    java.io.InputStream.class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<java.io.InputStream>
                                         response = responseFn.apply(rawResponse);

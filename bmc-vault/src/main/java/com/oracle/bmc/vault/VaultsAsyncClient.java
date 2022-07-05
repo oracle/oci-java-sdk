@@ -397,15 +397,17 @@ public class VaultsAsyncClient implements VaultsAsync {
                 CancelSecretDeletionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelSecretDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "CancelSecretDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretDeletion");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CancelSecretDeletionResponse>
-                transformer = CancelSecretDeletionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults",
-                "CancelSecretDeletion",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretDeletion");
-
+                transformer =
+                        CancelSecretDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CancelSecretDeletionRequest, CancelSecretDeletionResponse>
                 handlerToUse = handler;
@@ -445,15 +447,17 @@ public class VaultsAsyncClient implements VaultsAsync {
                 CancelSecretVersionDeletionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelSecretVersionDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "CancelSecretVersionDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/CancelSecretVersionDeletion");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CancelSecretVersionDeletionResponse>
-                transformer = CancelSecretVersionDeletionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults",
-                "CancelSecretVersionDeletion",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/CancelSecretVersionDeletion");
-
+                transformer =
+                        CancelSecretVersionDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CancelSecretVersionDeletionRequest, CancelSecretVersionDeletionResponse>
                 handlerToUse = handler;
@@ -492,16 +496,18 @@ public class VaultsAsyncClient implements VaultsAsync {
                 ChangeSecretCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeSecretCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "ChangeSecretCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ChangeSecretCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeSecretCompartmentResponse>
-                transformer = ChangeSecretCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults",
-                "ChangeSecretCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ChangeSecretCompartment");
-
+                transformer =
+                        ChangeSecretCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSecretCompartmentRequest, ChangeSecretCompartmentResponse>
                 handlerToUse = handler;
@@ -543,15 +549,16 @@ public class VaultsAsyncClient implements VaultsAsync {
                 CreateSecretConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSecretConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecretResponse>
-                transformer = CreateSecretConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults",
-                "CreateSecret",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CreateSecret");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "CreateSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CreateSecret");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecretResponse>
+                transformer =
+                        CreateSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateSecretRequest, CreateSecretResponse>
                 handlerToUse = handler;
 
@@ -591,14 +598,15 @@ public class VaultsAsyncClient implements VaultsAsync {
         final GetSecretRequest interceptedRequest = GetSecretConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSecretConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "GetSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/GetSecret");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecretResponse>
-                transformer = GetSecretConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults",
-                "GetSecret",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/GetSecret");
-
+                transformer =
+                        GetSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSecretRequest, GetSecretResponse> handlerToUse =
                 handler;
 
@@ -634,14 +642,16 @@ public class VaultsAsyncClient implements VaultsAsync {
                 GetSecretVersionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSecretVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "GetSecretVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/GetSecretVersion");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecretVersionResponse>
-                transformer = GetSecretVersionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults",
-                "GetSecretVersion",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/GetSecretVersion");
-
+                transformer =
+                        GetSecretVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSecretVersionRequest, GetSecretVersionResponse>
                 handlerToUse = handler;
 
@@ -678,14 +688,16 @@ public class VaultsAsyncClient implements VaultsAsync {
                 ListSecretVersionsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSecretVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "ListSecretVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersionSummary/ListSecretVersions");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSecretVersionsResponse>
-                transformer = ListSecretVersionsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults",
-                "ListSecretVersions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersionSummary/ListSecretVersions");
-
+                transformer =
+                        ListSecretVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSecretVersionsRequest, ListSecretVersionsResponse>
                 handlerToUse = handler;
 
@@ -721,14 +733,15 @@ public class VaultsAsyncClient implements VaultsAsync {
                 ListSecretsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSecretsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "ListSecrets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretSummary/ListSecrets");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSecretsResponse>
-                transformer = ListSecretsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults",
-                "ListSecrets",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretSummary/ListSecrets");
-
+                transformer =
+                        ListSecretsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSecretsRequest, ListSecretsResponse>
                 handlerToUse = handler;
 
@@ -765,15 +778,17 @@ public class VaultsAsyncClient implements VaultsAsync {
                 ScheduleSecretDeletionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ScheduleSecretDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "ScheduleSecretDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ScheduleSecretDeletion");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ScheduleSecretDeletionResponse>
-                transformer = ScheduleSecretDeletionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults",
-                "ScheduleSecretDeletion",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ScheduleSecretDeletion");
-
+                transformer =
+                        ScheduleSecretDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ScheduleSecretDeletionRequest, ScheduleSecretDeletionResponse>
                 handlerToUse = handler;
@@ -818,15 +833,17 @@ public class VaultsAsyncClient implements VaultsAsync {
                 ScheduleSecretVersionDeletionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ScheduleSecretVersionDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "ScheduleSecretVersionDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/ScheduleSecretVersionDeletion");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ScheduleSecretVersionDeletionResponse>
-                transformer = ScheduleSecretVersionDeletionConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults",
-                "ScheduleSecretVersionDeletion",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/ScheduleSecretVersionDeletion");
-
+                transformer =
+                        ScheduleSecretVersionDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ScheduleSecretVersionDeletionRequest, ScheduleSecretVersionDeletionResponse>
                 handlerToUse = handler;
@@ -869,14 +886,15 @@ public class VaultsAsyncClient implements VaultsAsync {
                 UpdateSecretConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSecretConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "UpdateSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/UpdateSecret");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecretResponse>
-                transformer = UpdateSecretConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults",
-                "UpdateSecret",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/UpdateSecret");
-
+                transformer =
+                        UpdateSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateSecretRequest, UpdateSecretResponse>
                 handlerToUse = handler;
 

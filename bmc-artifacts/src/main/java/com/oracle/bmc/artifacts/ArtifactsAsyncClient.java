@@ -400,16 +400,18 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeContainerRepositoryCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "ChangeContainerRepositoryCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ChangeContainerRepositoryCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeContainerRepositoryCompartmentResponse>
-                transformer = ChangeContainerRepositoryCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "ChangeContainerRepositoryCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ChangeContainerRepositoryCompartment");
-
+                transformer =
+                        ChangeContainerRepositoryCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeContainerRepositoryCompartmentRequest,
                         ChangeContainerRepositoryCompartmentResponse>
@@ -457,16 +459,18 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 ChangeRepositoryCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeRepositoryCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "ChangeRepositoryCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ChangeRepositoryCompartment");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeRepositoryCompartmentResponse>
-                transformer = ChangeRepositoryCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "ChangeRepositoryCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ChangeRepositoryCompartment");
-
+                transformer =
+                        ChangeRepositoryCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeRepositoryCompartmentRequest, ChangeRepositoryCompartmentResponse>
                 handlerToUse = handler;
@@ -512,16 +516,18 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 CreateContainerImageSignatureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "CreateContainerImageSignature",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/CreateContainerImageSignature");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateContainerImageSignatureResponse>
-                transformer = CreateContainerImageSignatureConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "CreateContainerImageSignature",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/CreateContainerImageSignature");
-
+                transformer =
+                        CreateContainerImageSignatureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateContainerImageSignatureRequest, CreateContainerImageSignatureResponse>
                 handlerToUse = handler;
@@ -565,16 +571,18 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 CreateContainerRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateContainerRepositoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "CreateContainerRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/CreateContainerRepository");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateContainerRepositoryResponse>
-                transformer = CreateContainerRepositoryConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "CreateContainerRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/CreateContainerRepository");
-
+                transformer =
+                        CreateContainerRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateContainerRepositoryRequest, CreateContainerRepositoryResponse>
                 handlerToUse = handler;
@@ -618,15 +626,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 CreateRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateRepositoryConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRepositoryResponse>
-                transformer = CreateRepositoryConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "CreateRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/CreateRepository");
-
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "CreateRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/CreateRepository");
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRepositoryResponse>
+                transformer =
+                        CreateRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResponse>
                 handlerToUse = handler;
 
@@ -668,15 +678,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 DeleteContainerImageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteContainerImageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "DeleteContainerImage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/DeleteContainerImage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteContainerImageResponse>
-                transformer = DeleteContainerImageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "DeleteContainerImage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/DeleteContainerImage");
-
+                transformer =
+                        DeleteContainerImageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteContainerImageRequest, DeleteContainerImageResponse>
                 handlerToUse = handler;
@@ -716,15 +728,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 DeleteContainerImageSignatureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "DeleteContainerImageSignature",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/DeleteContainerImageSignature");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteContainerImageSignatureResponse>
-                transformer = DeleteContainerImageSignatureConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "DeleteContainerImageSignature",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/DeleteContainerImageSignature");
-
+                transformer =
+                        DeleteContainerImageSignatureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteContainerImageSignatureRequest, DeleteContainerImageSignatureResponse>
                 handlerToUse = handler;
@@ -763,15 +777,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 DeleteContainerRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteContainerRepositoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "DeleteContainerRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/DeleteContainerRepository");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteContainerRepositoryResponse>
-                transformer = DeleteContainerRepositoryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "DeleteContainerRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/DeleteContainerRepository");
-
+                transformer =
+                        DeleteContainerRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteContainerRepositoryRequest, DeleteContainerRepositoryResponse>
                 handlerToUse = handler;
@@ -810,15 +826,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 DeleteGenericArtifactConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteGenericArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "DeleteGenericArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifact");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteGenericArtifactResponse>
-                transformer = DeleteGenericArtifactConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "DeleteGenericArtifact",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifact");
-
+                transformer =
+                        DeleteGenericArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteGenericArtifactRequest, DeleteGenericArtifactResponse>
                 handlerToUse = handler;
@@ -858,15 +876,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 DeleteGenericArtifactByPathConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteGenericArtifactByPathConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "DeleteGenericArtifactByPath",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifactByPath");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteGenericArtifactByPathResponse>
-                transformer = DeleteGenericArtifactByPathConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "DeleteGenericArtifactByPath",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifactByPath");
-
+                transformer =
+                        DeleteGenericArtifactByPathConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteGenericArtifactByPathRequest, DeleteGenericArtifactByPathResponse>
                 handlerToUse = handler;
@@ -905,14 +925,16 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 DeleteRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteRepositoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "DeleteRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/DeleteRepository");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRepositoryResponse>
-                transformer = DeleteRepositoryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "DeleteRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/DeleteRepository");
-
+                transformer =
+                        DeleteRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResponse>
                 handlerToUse = handler;
 
@@ -949,15 +971,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 GetContainerConfigurationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetContainerConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "GetContainerConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/GetContainerConfiguration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetContainerConfigurationResponse>
-                transformer = GetContainerConfigurationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "GetContainerConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/GetContainerConfiguration");
-
+                transformer =
+                        GetContainerConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetContainerConfigurationRequest, GetContainerConfigurationResponse>
                 handlerToUse = handler;
@@ -996,14 +1020,16 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 GetContainerImageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetContainerImageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "GetContainerImage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/GetContainerImage");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetContainerImageResponse>
-                transformer = GetContainerImageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "GetContainerImage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/GetContainerImage");
-
+                transformer =
+                        GetContainerImageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetContainerImageRequest, GetContainerImageResponse>
                 handlerToUse = handler;
 
@@ -1042,15 +1068,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 GetContainerImageSignatureConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "GetContainerImageSignature",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/GetContainerImageSignature");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetContainerImageSignatureResponse>
-                transformer = GetContainerImageSignatureConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "GetContainerImageSignature",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/GetContainerImageSignature");
-
+                transformer =
+                        GetContainerImageSignatureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetContainerImageSignatureRequest, GetContainerImageSignatureResponse>
                 handlerToUse = handler;
@@ -1089,15 +1117,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 GetContainerRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetContainerRepositoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "GetContainerRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/GetContainerRepository");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetContainerRepositoryResponse>
-                transformer = GetContainerRepositoryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "GetContainerRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/GetContainerRepository");
-
+                transformer =
+                        GetContainerRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetContainerRepositoryRequest, GetContainerRepositoryResponse>
                 handlerToUse = handler;
@@ -1135,14 +1165,16 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 GetGenericArtifactConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetGenericArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "GetGenericArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifact");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetGenericArtifactResponse>
-                transformer = GetGenericArtifactConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "GetGenericArtifact",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifact");
-
+                transformer =
+                        GetGenericArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetGenericArtifactRequest, GetGenericArtifactResponse>
                 handlerToUse = handler;
 
@@ -1179,15 +1211,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 GetGenericArtifactByPathConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetGenericArtifactByPathConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "GetGenericArtifactByPath",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifactByPath");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetGenericArtifactByPathResponse>
-                transformer = GetGenericArtifactByPathConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "GetGenericArtifactByPath",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifactByPath");
-
+                transformer =
+                        GetGenericArtifactByPathConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetGenericArtifactByPathRequest, GetGenericArtifactByPathResponse>
                 handlerToUse = handler;
@@ -1224,14 +1258,15 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 GetRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRepositoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "GetRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/GetRepository");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRepositoryResponse>
-                transformer = GetRepositoryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "GetRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/GetRepository");
-
+                transformer =
+                        GetRepositoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetRepositoryRequest, GetRepositoryResponse>
                 handlerToUse = handler;
 
@@ -1270,15 +1305,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 ListContainerImageSignaturesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListContainerImageSignaturesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "ListContainerImageSignatures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignatureSummary/ListContainerImageSignatures");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListContainerImageSignaturesResponse>
-                transformer = ListContainerImageSignaturesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "ListContainerImageSignatures",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignatureSummary/ListContainerImageSignatures");
-
+                transformer =
+                        ListContainerImageSignaturesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListContainerImageSignaturesRequest, ListContainerImageSignaturesResponse>
                 handlerToUse = handler;
@@ -1317,15 +1354,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 ListContainerImagesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListContainerImagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "ListContainerImages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSummary/ListContainerImages");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListContainerImagesResponse>
-                transformer = ListContainerImagesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "ListContainerImages",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSummary/ListContainerImages");
-
+                transformer =
+                        ListContainerImagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListContainerImagesRequest, ListContainerImagesResponse>
                 handlerToUse = handler;
@@ -1363,15 +1402,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 ListContainerRepositoriesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListContainerRepositoriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "ListContainerRepositories",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ListContainerRepositories");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListContainerRepositoriesResponse>
-                transformer = ListContainerRepositoriesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "ListContainerRepositories",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ListContainerRepositories");
-
+                transformer =
+                        ListContainerRepositoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListContainerRepositoriesRequest, ListContainerRepositoriesResponse>
                 handlerToUse = handler;
@@ -1410,15 +1451,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 ListGenericArtifactsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListGenericArtifactsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "ListGenericArtifacts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/ListGenericArtifacts");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListGenericArtifactsResponse>
-                transformer = ListGenericArtifactsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "ListGenericArtifacts",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/ListGenericArtifacts");
-
+                transformer =
+                        ListGenericArtifactsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListGenericArtifactsRequest, ListGenericArtifactsResponse>
                 handlerToUse = handler;
@@ -1456,14 +1499,16 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 ListRepositoriesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRepositoriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "ListRepositories",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ListRepositories");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRepositoriesResponse>
-                transformer = ListRepositoriesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "ListRepositories",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ListRepositories");
-
+                transformer =
+                        ListRepositoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResponse>
                 handlerToUse = handler;
 
@@ -1500,16 +1545,18 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 RemoveContainerVersionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemoveContainerVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "RemoveContainerVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RemoveContainerVersion");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveContainerVersionResponse>
-                transformer = RemoveContainerVersionConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "RemoveContainerVersion",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RemoveContainerVersion");
-
+                transformer =
+                        RemoveContainerVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveContainerVersionRequest, RemoveContainerVersionResponse>
                 handlerToUse = handler;
@@ -1552,16 +1599,18 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 RestoreContainerImageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RestoreContainerImageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "RestoreContainerImage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RestoreContainerImage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RestoreContainerImageResponse>
-                transformer = RestoreContainerImageConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "RestoreContainerImage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RestoreContainerImage");
-
+                transformer =
+                        RestoreContainerImageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         RestoreContainerImageRequest, RestoreContainerImageResponse>
                 handlerToUse = handler;
@@ -1606,15 +1655,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 UpdateContainerConfigurationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateContainerConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "UpdateContainerConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/UpdateContainerConfiguration");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateContainerConfigurationResponse>
-                transformer = UpdateContainerConfigurationConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "UpdateContainerConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/UpdateContainerConfiguration");
-
+                transformer =
+                        UpdateContainerConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateContainerConfigurationRequest, UpdateContainerConfigurationResponse>
                 handlerToUse = handler;
@@ -1658,15 +1709,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 UpdateContainerRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateContainerRepositoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "UpdateContainerRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/UpdateContainerRepository");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateContainerRepositoryResponse>
-                transformer = UpdateContainerRepositoryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "UpdateContainerRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/UpdateContainerRepository");
-
+                transformer =
+                        UpdateContainerRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateContainerRepositoryRequest, UpdateContainerRepositoryResponse>
                 handlerToUse = handler;
@@ -1710,15 +1763,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 UpdateGenericArtifactConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateGenericArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "UpdateGenericArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifact");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateGenericArtifactResponse>
-                transformer = UpdateGenericArtifactConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "UpdateGenericArtifact",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifact");
-
+                transformer =
+                        UpdateGenericArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateGenericArtifactRequest, UpdateGenericArtifactResponse>
                 handlerToUse = handler;
@@ -1763,15 +1818,17 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 UpdateGenericArtifactByPathConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateGenericArtifactByPathConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "UpdateGenericArtifactByPath",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifactByPath");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateGenericArtifactByPathResponse>
-                transformer = UpdateGenericArtifactByPathConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "UpdateGenericArtifactByPath",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifactByPath");
-
+                transformer =
+                        UpdateGenericArtifactByPathConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateGenericArtifactByPathRequest, UpdateGenericArtifactByPathResponse>
                 handlerToUse = handler;
@@ -1815,14 +1872,16 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 UpdateRepositoryConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateRepositoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "UpdateRepository",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/UpdateRepository");
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRepositoryResponse>
-                transformer = UpdateRepositoryConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts",
-                "UpdateRepository",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/UpdateRepository");
-
+                transformer =
+                        UpdateRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateRepositoryRequest, UpdateRepositoryResponse>
                 handlerToUse = handler;
 

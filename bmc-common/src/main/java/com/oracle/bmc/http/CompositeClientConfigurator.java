@@ -6,8 +6,6 @@ package com.oracle.bmc.http;
 
 import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.requests.BmcRequest;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -20,7 +18,7 @@ import java.util.List;
  * in this composite object will be used in the order they are added.
  */
 public class CompositeClientConfigurator implements ClientConfigurator {
-    @Getter private final List<ClientConfigurator> configurators;
+    private final List<ClientConfigurator> configurators;
 
     /**
      * Create a new composite client configurator.
@@ -74,5 +72,9 @@ public class CompositeClientConfigurator implements ClientConfigurator {
     @Override
     public int hashCode() {
         return configurators != null ? configurators.hashCode() : 0;
+    }
+
+    public List<ClientConfigurator> getConfigurators() {
+        return this.configurators;
     }
 }

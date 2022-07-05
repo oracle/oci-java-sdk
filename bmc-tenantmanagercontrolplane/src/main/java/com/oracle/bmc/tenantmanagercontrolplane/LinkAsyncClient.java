@@ -396,14 +396,15 @@ public class LinkAsyncClient implements LinkAsync {
         final DeleteLinkRequest interceptedRequest = DeleteLinkConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteLinkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Link",
+                        "DeleteLink",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/DeleteLink");
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLinkResponse>
-                transformer = DeleteLinkConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Link",
-                "DeleteLink",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/DeleteLink");
-
+                transformer =
+                        DeleteLinkConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteLinkRequest, DeleteLinkResponse> handlerToUse =
                 handler;
 
@@ -437,14 +438,14 @@ public class LinkAsyncClient implements LinkAsync {
         final GetLinkRequest interceptedRequest = GetLinkConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetLinkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Link",
+                        "GetLink",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/GetLink");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetLinkResponse>
-                transformer = GetLinkConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Link",
-                "GetLink",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/GetLink");
-
+                transformer = GetLinkConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetLinkRequest, GetLinkResponse> handlerToUse =
                 handler;
 
@@ -478,14 +479,15 @@ public class LinkAsyncClient implements LinkAsync {
         final ListLinksRequest interceptedRequest = ListLinksConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListLinksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Link",
+                        "ListLinks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/ListLinks");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListLinksResponse>
-                transformer = ListLinksConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Link",
-                "ListLinks",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/ListLinks");
-
+                transformer =
+                        ListLinksConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListLinksRequest, ListLinksResponse> handlerToUse =
                 handler;
 

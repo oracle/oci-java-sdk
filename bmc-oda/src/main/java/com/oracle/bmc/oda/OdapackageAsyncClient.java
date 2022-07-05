@@ -398,13 +398,15 @@ public class OdapackageAsyncClient implements OdapackageAsync {
                 CreateImportedPackageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateImportedPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Odapackage", "CreateImportedPackage", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateImportedPackageResponse>
-                transformer = CreateImportedPackageConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Odapackage", "CreateImportedPackage", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        CreateImportedPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateImportedPackageRequest, CreateImportedPackageResponse>
                 handlerToUse = handler;
@@ -447,16 +449,18 @@ public class OdapackageAsyncClient implements OdapackageAsync {
                 DeleteImportedPackageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteImportedPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Odapackage",
+                        "DeleteImportedPackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/ImportedPackage/DeleteImportedPackage");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteImportedPackageResponse>
-                transformer = DeleteImportedPackageConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Odapackage",
-                "DeleteImportedPackage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/ImportedPackage/DeleteImportedPackage");
-
+                transformer =
+                        DeleteImportedPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteImportedPackageRequest, DeleteImportedPackageResponse>
                 handlerToUse = handler;
@@ -494,14 +498,16 @@ public class OdapackageAsyncClient implements OdapackageAsync {
                 GetImportedPackageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetImportedPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Odapackage",
+                        "GetImportedPackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/ImportedPackage/GetImportedPackage");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetImportedPackageResponse>
-                transformer = GetImportedPackageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Odapackage",
-                "GetImportedPackage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/ImportedPackage/GetImportedPackage");
-
+                transformer =
+                        GetImportedPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetImportedPackageRequest, GetImportedPackageResponse>
                 handlerToUse = handler;
 
@@ -536,14 +542,15 @@ public class OdapackageAsyncClient implements OdapackageAsync {
         final GetPackageRequest interceptedRequest = GetPackageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Odapackage",
+                        "GetPackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/PackageItem/GetPackage");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPackageResponse>
-                transformer = GetPackageConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Odapackage",
-                "GetPackage",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/PackageItem/GetPackage");
-
+                transformer =
+                        GetPackageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetPackageRequest, GetPackageResponse> handlerToUse =
                 handler;
 
@@ -580,15 +587,17 @@ public class OdapackageAsyncClient implements OdapackageAsync {
                 ListImportedPackagesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListImportedPackagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Odapackage",
+                        "ListImportedPackages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/ImportedPackageSummary/ListImportedPackages");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListImportedPackagesResponse>
-                transformer = ListImportedPackagesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Odapackage",
-                "ListImportedPackages",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/ImportedPackageSummary/ListImportedPackages");
-
+                transformer =
+                        ListImportedPackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListImportedPackagesRequest, ListImportedPackagesResponse>
                 handlerToUse = handler;
@@ -625,14 +634,15 @@ public class OdapackageAsyncClient implements OdapackageAsync {
                 ListPackagesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPackagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Odapackage",
+                        "ListPackages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/PackageSummary/ListPackages");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPackagesResponse>
-                transformer = ListPackagesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Odapackage",
-                "ListPackages",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/PackageSummary/ListPackages");
-
+                transformer =
+                        ListPackagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListPackagesRequest, ListPackagesResponse>
                 handlerToUse = handler;
 
@@ -669,13 +679,15 @@ public class OdapackageAsyncClient implements OdapackageAsync {
                 UpdateImportedPackageConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateImportedPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Odapackage", "UpdateImportedPackage", ib.getRequestUri().toString(), "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateImportedPackageResponse>
-                transformer = UpdateImportedPackageConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Odapackage", "UpdateImportedPackage", ib.getRequestUri().toString(), "");
-
+                transformer =
+                        UpdateImportedPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateImportedPackageRequest, UpdateImportedPackageResponse>
                 handlerToUse = handler;

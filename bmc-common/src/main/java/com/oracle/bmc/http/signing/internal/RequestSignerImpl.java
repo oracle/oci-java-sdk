@@ -40,8 +40,6 @@ import com.oracle.bmc.io.internal.KeepOpenInputStream;
 import com.oracle.bmc.retrier.Retriers;
 import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.util.internal.Validate;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Implementation of the {@linkplain RequestSigner} interface
@@ -49,8 +47,10 @@ import lombok.extern.slf4j.Slf4j;
  * This contains the main code that is used for signing a request
  */
 @Immutable
-@Slf4j
 public class RequestSignerImpl implements RequestSigner {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(RequestSignerImpl.class);
+
     private static final SignatureSigner SIGNER = new SignatureSigner();
 
     private final KeySupplier<RSAPrivateKey> keySupplier;
@@ -518,7 +518,6 @@ public class RequestSignerImpl implements RequestSigner {
     /**
      * Basic configuration of what headers to sign.
      */
-    @RequiredArgsConstructor
     public static class SigningConfiguration {
         /**
          * Map of HTTP method to list of headers to sign.
@@ -532,5 +531,20 @@ public class RequestSignerImpl implements RequestSigner {
          * Flag indicating whether InputStreams in PUT requests are allowed to skip content headers.
          */
         private final boolean skipContentHeadersForStreamingPutRequests;
+
+        @java.beans.ConstructorProperties({
+            "headersToSign",
+            "optionalHeadersToSign",
+            "skipContentHeadersForStreamingPutRequests"
+        })
+        public SigningConfiguration(
+                final Map<String, List<String>> headersToSign,
+                final Map<String, List<String>> optionalHeadersToSign,
+                final boolean skipContentHeadersForStreamingPutRequests) {
+            this.headersToSign = headersToSign;
+            this.optionalHeadersToSign = optionalHeadersToSign;
+            this.skipContentHeadersForStreamingPutRequests =
+                    skipContentHeadersForStreamingPutRequests;
+        }
     }
 }

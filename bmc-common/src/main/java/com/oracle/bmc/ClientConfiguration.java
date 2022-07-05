@@ -4,19 +4,13 @@
  */
 package com.oracle.bmc;
 
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.retrier.RetryConfiguration;
-import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.ToString;
 
 /**
  * This class provides configuration options for client requests.
  */
-@Getter
-@ToString
 public class ClientConfiguration {
     private static final int CONNECTION_TIMEOUT_MILLIS = 10000;
     private static final int READ_TIMEOUT_MILLIS = 60000;
@@ -53,7 +47,6 @@ public class ClientConfiguration {
     private final JaxRsCircuitBreaker circuitBreaker;
 
     // Explicit @Builder on constructor so we can enforce default values.
-    @Builder
     private ClientConfiguration(
             Integer connectionTimeoutMillis,
             Integer readTimeoutMillis,
@@ -79,5 +72,128 @@ public class ClientConfiguration {
 
     private static <T> T getOrDefault(T value, T defaultValue) {
         return (value == null) ? defaultValue : value;
+    }
+
+    public static ClientConfigurationBuilder builder() {
+        return new ClientConfigurationBuilder();
+    }
+
+    public int getConnectionTimeoutMillis() {
+        return this.connectionTimeoutMillis;
+    }
+
+    public int getReadTimeoutMillis() {
+        return this.readTimeoutMillis;
+    }
+
+    public int getMaxAsyncThreads() {
+        return this.maxAsyncThreads;
+    }
+
+    public RetryConfiguration getRetryConfiguration() {
+        return this.retryConfiguration;
+    }
+
+    public CircuitBreakerConfiguration getCircuitBreakerConfiguration() {
+        return this.circuitBreakerConfiguration;
+    }
+
+    public JaxRsCircuitBreaker getCircuitBreaker() {
+        return this.circuitBreaker;
+    }
+
+    public String toString() {
+        return "ClientConfiguration(connectionTimeoutMillis="
+                + this.getConnectionTimeoutMillis()
+                + ", readTimeoutMillis="
+                + this.getReadTimeoutMillis()
+                + ", maxAsyncThreads="
+                + this.getMaxAsyncThreads()
+                + ", retryConfiguration="
+                + this.getRetryConfiguration()
+                + ", circuitBreakerConfiguration="
+                + this.getCircuitBreakerConfiguration()
+                + ", circuitBreaker="
+                + this.getCircuitBreaker()
+                + ")";
+    }
+
+    public static class ClientConfigurationBuilder {
+        private Integer connectionTimeoutMillis;
+        private Integer readTimeoutMillis;
+        private Integer maxAsyncThreads;
+        private Boolean disableDataBufferingOnUpload;
+        private RetryConfiguration retryConfiguration;
+        private CircuitBreakerConfiguration circuitBreakerConfiguration;
+        private JaxRsCircuitBreaker circuitBreaker;
+
+        ClientConfigurationBuilder() {}
+
+        public ClientConfigurationBuilder connectionTimeoutMillis(Integer connectionTimeoutMillis) {
+            this.connectionTimeoutMillis = connectionTimeoutMillis;
+            return this;
+        }
+
+        public ClientConfigurationBuilder readTimeoutMillis(Integer readTimeoutMillis) {
+            this.readTimeoutMillis = readTimeoutMillis;
+            return this;
+        }
+
+        public ClientConfigurationBuilder maxAsyncThreads(Integer maxAsyncThreads) {
+            this.maxAsyncThreads = maxAsyncThreads;
+            return this;
+        }
+
+        public ClientConfigurationBuilder disableDataBufferingOnUpload(
+                Boolean disableDataBufferingOnUpload) {
+            this.disableDataBufferingOnUpload = disableDataBufferingOnUpload;
+            return this;
+        }
+
+        public ClientConfigurationBuilder retryConfiguration(
+                RetryConfiguration retryConfiguration) {
+            this.retryConfiguration = retryConfiguration;
+            return this;
+        }
+
+        public ClientConfigurationBuilder circuitBreakerConfiguration(
+                CircuitBreakerConfiguration circuitBreakerConfiguration) {
+            this.circuitBreakerConfiguration = circuitBreakerConfiguration;
+            return this;
+        }
+
+        public ClientConfigurationBuilder circuitBreaker(JaxRsCircuitBreaker circuitBreaker) {
+            this.circuitBreaker = circuitBreaker;
+            return this;
+        }
+
+        public ClientConfiguration build() {
+            return new ClientConfiguration(
+                    connectionTimeoutMillis,
+                    readTimeoutMillis,
+                    maxAsyncThreads,
+                    disableDataBufferingOnUpload,
+                    retryConfiguration,
+                    circuitBreakerConfiguration,
+                    circuitBreaker);
+        }
+
+        public String toString() {
+            return "ClientConfiguration.ClientConfigurationBuilder(connectionTimeoutMillis="
+                    + this.connectionTimeoutMillis
+                    + ", readTimeoutMillis="
+                    + this.readTimeoutMillis
+                    + ", maxAsyncThreads="
+                    + this.maxAsyncThreads
+                    + ", disableDataBufferingOnUpload="
+                    + this.disableDataBufferingOnUpload
+                    + ", retryConfiguration="
+                    + this.retryConfiguration
+                    + ", circuitBreakerConfiguration="
+                    + this.circuitBreakerConfiguration
+                    + ", circuitBreaker="
+                    + this.circuitBreaker
+                    + ")";
+        }
     }
 }

@@ -399,14 +399,16 @@ public class ApplicationDependencyManagementAsyncClient
                 CancelWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
-                transformer = CancelWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "CancelWorkRequest",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        CancelWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -445,16 +447,18 @@ public class ApplicationDependencyManagementAsyncClient
                 ChangeKnowledgeBaseCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeKnowledgeBaseCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ChangeKnowledgeBaseCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeKnowledgeBaseCompartmentResponse>
-                transformer = ChangeKnowledgeBaseCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "ChangeKnowledgeBaseCompartment",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ChangeKnowledgeBaseCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeKnowledgeBaseCompartmentRequest,
                         ChangeKnowledgeBaseCompartmentResponse>
@@ -502,16 +506,18 @@ public class ApplicationDependencyManagementAsyncClient
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeVulnerabilityAuditCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ChangeVulnerabilityAuditCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVulnerabilityAuditCompartmentResponse>
-                transformer = ChangeVulnerabilityAuditCompartmentConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "ChangeVulnerabilityAuditCompartment",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ChangeVulnerabilityAuditCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVulnerabilityAuditCompartmentRequest,
                         ChangeVulnerabilityAuditCompartmentResponse>
@@ -557,16 +563,18 @@ public class ApplicationDependencyManagementAsyncClient
                 CreateKnowledgeBaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateKnowledgeBaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "CreateKnowledgeBase",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateKnowledgeBaseResponse>
-                transformer = CreateKnowledgeBaseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "CreateKnowledgeBase",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        CreateKnowledgeBaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateKnowledgeBaseRequest, CreateKnowledgeBaseResponse>
                 handlerToUse = handler;
@@ -609,16 +617,18 @@ public class ApplicationDependencyManagementAsyncClient
                 CreateVulnerabilityAuditConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVulnerabilityAuditConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "CreateVulnerabilityAudit",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVulnerabilityAuditResponse>
-                transformer = CreateVulnerabilityAuditConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "CreateVulnerabilityAudit",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        CreateVulnerabilityAuditConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVulnerabilityAuditRequest, CreateVulnerabilityAuditResponse>
                 handlerToUse = handler;
@@ -661,15 +671,17 @@ public class ApplicationDependencyManagementAsyncClient
                 DeleteKnowledgeBaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteKnowledgeBaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "DeleteKnowledgeBase",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteKnowledgeBaseResponse>
-                transformer = DeleteKnowledgeBaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "DeleteKnowledgeBase",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        DeleteKnowledgeBaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteKnowledgeBaseRequest, DeleteKnowledgeBaseResponse>
                 handlerToUse = handler;
@@ -707,15 +719,17 @@ public class ApplicationDependencyManagementAsyncClient
                 DeleteVulnerabilityAuditConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVulnerabilityAuditConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "DeleteVulnerabilityAudit",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteVulnerabilityAuditResponse>
-                transformer = DeleteVulnerabilityAuditConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "DeleteVulnerabilityAudit",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        DeleteVulnerabilityAuditConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteVulnerabilityAuditRequest, DeleteVulnerabilityAuditResponse>
                 handlerToUse = handler;
@@ -753,14 +767,16 @@ public class ApplicationDependencyManagementAsyncClient
                 GetKnowledgeBaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetKnowledgeBaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "GetKnowledgeBase",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetKnowledgeBaseResponse>
-                transformer = GetKnowledgeBaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "GetKnowledgeBase",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        GetKnowledgeBaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetKnowledgeBaseRequest, GetKnowledgeBaseResponse>
                 handlerToUse = handler;
 
@@ -797,15 +813,17 @@ public class ApplicationDependencyManagementAsyncClient
                 GetVulnerabilityAuditConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVulnerabilityAuditConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "GetVulnerabilityAudit",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVulnerabilityAuditResponse>
-                transformer = GetVulnerabilityAuditConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "GetVulnerabilityAudit",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        GetVulnerabilityAuditConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         GetVulnerabilityAuditRequest, GetVulnerabilityAuditResponse>
                 handlerToUse = handler;
@@ -843,14 +861,15 @@ public class ApplicationDependencyManagementAsyncClient
                 GetWorkRequestConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer = GetWorkRequestConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "GetWorkRequest",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
 
@@ -890,15 +909,17 @@ public class ApplicationDependencyManagementAsyncClient
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListApplicationDependencyVulnerabilitiesConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListApplicationDependencyVulnerabilities",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListApplicationDependencyVulnerabilitiesResponse>
-                transformer = ListApplicationDependencyVulnerabilitiesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "ListApplicationDependencyVulnerabilities",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ListApplicationDependencyVulnerabilitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListApplicationDependencyVulnerabilitiesRequest,
                         ListApplicationDependencyVulnerabilitiesResponse>
@@ -940,14 +961,16 @@ public class ApplicationDependencyManagementAsyncClient
                 ListKnowledgeBasesConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListKnowledgeBasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListKnowledgeBases",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListKnowledgeBasesResponse>
-                transformer = ListKnowledgeBasesConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "ListKnowledgeBases",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ListKnowledgeBasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>
                 handlerToUse = handler;
 
@@ -984,15 +1007,17 @@ public class ApplicationDependencyManagementAsyncClient
                 ListVulnerabilityAuditsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVulnerabilityAuditsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListVulnerabilityAudits",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVulnerabilityAuditsResponse>
-                transformer = ListVulnerabilityAuditsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "ListVulnerabilityAudits",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ListVulnerabilityAuditsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListVulnerabilityAuditsRequest, ListVulnerabilityAuditsResponse>
                 handlerToUse = handler;
@@ -1030,15 +1055,17 @@ public class ApplicationDependencyManagementAsyncClient
                 ListWorkRequestErrorsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer = ListWorkRequestErrorsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "ListWorkRequestErrors",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                 handlerToUse = handler;
@@ -1076,15 +1103,17 @@ public class ApplicationDependencyManagementAsyncClient
                 ListWorkRequestLogsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer = ListWorkRequestLogsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "ListWorkRequestLogs",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                 handlerToUse = handler;
@@ -1122,14 +1151,16 @@ public class ApplicationDependencyManagementAsyncClient
                 ListWorkRequestsConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer = ListWorkRequestsConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "ListWorkRequests",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
 
@@ -1166,15 +1197,17 @@ public class ApplicationDependencyManagementAsyncClient
                 UpdateKnowledgeBaseConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateKnowledgeBaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "UpdateKnowledgeBase",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateKnowledgeBaseResponse>
-                transformer = UpdateKnowledgeBaseConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "UpdateKnowledgeBase",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        UpdateKnowledgeBaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateKnowledgeBaseRequest, UpdateKnowledgeBaseResponse>
                 handlerToUse = handler;
@@ -1217,15 +1250,17 @@ public class ApplicationDependencyManagementAsyncClient
                 UpdateVulnerabilityAuditConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVulnerabilityAuditConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "UpdateVulnerabilityAudit",
+                        ib.getRequestUri().toString(),
+                        "");
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateVulnerabilityAuditResponse>
-                transformer = UpdateVulnerabilityAuditConverter.fromResponse();
-        com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ApplicationDependencyManagement",
-                "UpdateVulnerabilityAudit",
-                ib.getRequestUri().toString(),
-                "");
-
+                transformer =
+                        UpdateVulnerabilityAuditConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateVulnerabilityAuditRequest, UpdateVulnerabilityAuditResponse>
                 handlerToUse = handler;

@@ -110,6 +110,13 @@ public class ListProtectionCapabilityGroupTagsConverter {
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.waf.responses.ListProtectionCapabilityGroupTagsResponse>
             fromResponse() {
+        return fromResponse(java.util.Optional.empty());
+    }
+
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waf.responses.ListProtectionCapabilityGroupTagsResponse>
+            fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.waf.responses.ListProtectionCapabilityGroupTagsResponse>
@@ -124,16 +131,26 @@ public class ListProtectionCapabilityGroupTagsConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.waf.responses.ListProtectionCapabilityGroupTagsResponse");
-                                com.google.common.base.Function<
+                                final com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.waf.model
                                                                 .ProtectionCapabilityGroupTagCollection>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        com.oracle.bmc.waf.model
-                                                                        .ProtectionCapabilityGroupTagCollection
-                                                                .class);
+                                        responseFn;
+                                if (serviceDetails.isPresent()) {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.waf.model
+                                                                    .ProtectionCapabilityGroupTagCollection
+                                                            .class,
+                                                    serviceDetails.get());
+                                } else {
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.waf.model
+                                                                    .ProtectionCapabilityGroupTagCollection
+                                                            .class);
+                                }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.waf.model
