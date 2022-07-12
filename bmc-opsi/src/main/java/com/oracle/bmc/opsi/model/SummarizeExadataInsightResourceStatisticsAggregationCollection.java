@@ -27,7 +27,8 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
         "items",
         "usageUnit",
         "exadataResourceMetric",
-        "exadataInsightId"
+        "exadataInsightId",
+        "exadataDisplayName"
     })
     public SummarizeExadataInsightResourceStatisticsAggregationCollection(
             java.util.Date timeIntervalStart,
@@ -35,7 +36,8 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
             java.util.List<ExadataInsightResourceStatisticsAggregation> items,
             UsageUnit usageUnit,
             ExadataResourceMetric exadataResourceMetric,
-            String exadataInsightId) {
+            String exadataInsightId,
+            String exadataDisplayName) {
         super();
         this.timeIntervalStart = timeIntervalStart;
         this.timeIntervalEnd = timeIntervalEnd;
@@ -43,6 +45,7 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
         this.usageUnit = usageUnit;
         this.exadataResourceMetric = exadataResourceMetric;
         this.exadataInsightId = exadataInsightId;
+        this.exadataDisplayName = exadataDisplayName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -147,6 +150,22 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
             this.__explicitlySet__.add("exadataInsightId");
             return this;
         }
+        /**
+         * The user-friendly name for the Exadata system. The name does not have to be unique.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
+        private String exadataDisplayName;
+
+        /**
+         * The user-friendly name for the Exadata system. The name does not have to be unique.
+         * @param exadataDisplayName the value to set
+         * @return this builder
+         **/
+        public Builder exadataDisplayName(String exadataDisplayName) {
+            this.exadataDisplayName = exadataDisplayName;
+            this.__explicitlySet__.add("exadataDisplayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -159,7 +178,8 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
                             items,
                             usageUnit,
                             exadataResourceMetric,
-                            exadataInsightId);
+                            exadataInsightId,
+                            exadataDisplayName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -172,7 +192,8 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
                             .items(o.getItems())
                             .usageUnit(o.getUsageUnit())
                             .exadataResourceMetric(o.getExadataResourceMetric())
-                            .exadataInsightId(o.getExadataInsightId());
+                            .exadataInsightId(o.getExadataInsightId())
+                            .exadataDisplayName(o.getExadataDisplayName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -331,6 +352,20 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
         return exadataInsightId;
     }
 
+    /**
+     * The user-friendly name for the Exadata system. The name does not have to be unique.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
+    private final String exadataDisplayName;
+
+    /**
+     * The user-friendly name for the Exadata system. The name does not have to be unique.
+     * @return the value
+     **/
+    public String getExadataDisplayName() {
+        return exadataDisplayName;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
@@ -341,6 +376,7 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
         sb.append(", usageUnit=").append(String.valueOf(this.usageUnit));
         sb.append(", exadataResourceMetric=").append(String.valueOf(this.exadataResourceMetric));
         sb.append(", exadataInsightId=").append(String.valueOf(this.exadataInsightId));
+        sb.append(", exadataDisplayName=").append(String.valueOf(this.exadataDisplayName));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -363,6 +399,7 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
                 && java.util.Objects.equals(this.usageUnit, other.usageUnit)
                 && java.util.Objects.equals(this.exadataResourceMetric, other.exadataResourceMetric)
                 && java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
+                && java.util.Objects.equals(this.exadataDisplayName, other.exadataDisplayName)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -386,6 +423,11 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
         result =
                 (result * PRIME)
                         + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataDisplayName == null
+                                ? 43
+                                : this.exadataDisplayName.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

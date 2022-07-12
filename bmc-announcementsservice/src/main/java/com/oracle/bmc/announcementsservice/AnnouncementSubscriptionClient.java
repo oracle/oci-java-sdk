@@ -9,7 +9,6 @@ import com.oracle.bmc.announcementsservice.requests.*;
 import com.oracle.bmc.announcementsservice.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class AnnouncementSubscriptionClient implements AnnouncementSubscription {
@@ -335,9 +334,9 @@ public class AnnouncementSubscriptionClient implements AnnouncementSubscription 
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("AnnouncementSubscription-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("AnnouncementSubscription-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -406,7 +405,7 @@ public class AnnouncementSubscriptionClient implements AnnouncementSubscription 
          * @return the client
          */
         public AnnouncementSubscriptionClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -443,7 +442,8 @@ public class AnnouncementSubscriptionClient implements AnnouncementSubscription 
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -491,7 +491,7 @@ public class AnnouncementSubscriptionClient implements AnnouncementSubscription 
                         "ChangeAnnouncementSubscriptionCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/ChangeAnnouncementSubscriptionCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeAnnouncementSubscriptionCompartmentResponse>
                 transformer =
@@ -537,7 +537,7 @@ public class AnnouncementSubscriptionClient implements AnnouncementSubscription 
                         "CreateAnnouncementSubscription",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/CreateAnnouncementSubscription");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateAnnouncementSubscriptionResponse>
                 transformer =
                         CreateAnnouncementSubscriptionConverter.fromResponse(
@@ -581,7 +581,7 @@ public class AnnouncementSubscriptionClient implements AnnouncementSubscription 
                         "CreateFilterGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/CreateFilterGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateFilterGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateFilterGroupResponse>
                 transformer =
                         CreateFilterGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -623,7 +623,7 @@ public class AnnouncementSubscriptionClient implements AnnouncementSubscription 
                         "DeleteAnnouncementSubscription",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/DeleteAnnouncementSubscription");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteAnnouncementSubscriptionResponse>
                 transformer =
                         DeleteAnnouncementSubscriptionConverter.fromResponse(
@@ -662,7 +662,7 @@ public class AnnouncementSubscriptionClient implements AnnouncementSubscription 
                         "DeleteFilterGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/DeleteFilterGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFilterGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteFilterGroupResponse>
                 transformer =
                         DeleteFilterGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -701,8 +701,7 @@ public class AnnouncementSubscriptionClient implements AnnouncementSubscription 
                         "GetAnnouncementSubscription",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/GetAnnouncementSubscription");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAnnouncementSubscriptionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAnnouncementSubscriptionResponse>
                 transformer =
                         GetAnnouncementSubscriptionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -740,7 +739,7 @@ public class AnnouncementSubscriptionClient implements AnnouncementSubscription 
                         "ListAnnouncementSubscriptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscriptionCollection/ListAnnouncementSubscriptions");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListAnnouncementSubscriptionsResponse>
                 transformer =
                         ListAnnouncementSubscriptionsConverter.fromResponse(
@@ -779,7 +778,7 @@ public class AnnouncementSubscriptionClient implements AnnouncementSubscription 
                         "UpdateAnnouncementSubscription",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/UpdateAnnouncementSubscription");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateAnnouncementSubscriptionResponse>
                 transformer =
                         UpdateAnnouncementSubscriptionConverter.fromResponse(
@@ -822,7 +821,7 @@ public class AnnouncementSubscriptionClient implements AnnouncementSubscription 
                         "UpdateFilterGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/UpdateFilterGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFilterGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateFilterGroupResponse>
                 transformer =
                         UpdateFilterGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -4,8 +4,8 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.oracle.bmc.util.VisibleForTesting;
+import com.oracle.bmc.internal.ClientThreadFactory;
 import com.oracle.bmc.ClientRuntime;
 import com.oracle.bmc.io.DuplicatableInputStream;
 import com.oracle.bmc.model.BmcException;
@@ -303,9 +303,9 @@ public class UploadManager {
     private static ExecutorService buildDefaultParallelExecutor() {
         return Executors.newFixedThreadPool(
                 DEFAULT_NUM_MULTIPART_THREADS_PER_REQUEST,
-                new ThreadFactoryBuilder()
-                        .setNameFormat("multipart-upload-" + System.currentTimeMillis() + "-%d")
-                        .setDaemon(true)
+                ClientThreadFactory.builder()
+                        .nameFormat("multipart-upload-" + System.currentTimeMillis() + "-%d")
+                        .isDaemon(true)
                         .build());
     }
 

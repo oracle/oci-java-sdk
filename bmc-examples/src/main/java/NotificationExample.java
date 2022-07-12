@@ -2,9 +2,6 @@
  * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
-import com.google.common.base.Supplier;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -51,6 +48,10 @@ import com.oracle.bmc.waiter.BmcGenericWaiter;
 import com.oracle.bmc.waiter.Waiters;
 
 import java.util.UUID;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -146,7 +147,7 @@ public class NotificationExample {
                 },
                 new Predicate<GetTopicResponse>() {
                     @Override
-                    public boolean apply(GetTopicResponse response) {
+                    public boolean test(GetTopicResponse response) {
                         return response.getNotificationTopic().getLifecycleState()
                                 == NotificationTopic.LifecycleState.Active;
                     }

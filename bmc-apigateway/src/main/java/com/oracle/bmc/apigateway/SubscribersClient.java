@@ -9,7 +9,6 @@ import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class SubscribersClient implements Subscribers {
@@ -334,9 +333,9 @@ public class SubscribersClient implements Subscribers {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Subscribers-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Subscribers-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class SubscribersClient implements Subscribers {
          * @return the client
          */
         public SubscribersClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class SubscribersClient implements Subscribers {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,8 +488,7 @@ public class SubscribersClient implements Subscribers {
                         "ChangeSubscriberCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/ChangeSubscriberCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeSubscriberCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeSubscriberCompartmentResponse>
                 transformer =
                         ChangeSubscriberCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,7 +528,7 @@ public class SubscribersClient implements Subscribers {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Subscribers", "CreateSubscriber", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubscriberResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSubscriberResponse>
                 transformer =
                         CreateSubscriberConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -570,7 +569,7 @@ public class SubscribersClient implements Subscribers {
                         "DeleteSubscriber",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/DeleteSubscriber");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubscriberResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSubscriberResponse>
                 transformer =
                         DeleteSubscriberConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -608,9 +607,8 @@ public class SubscribersClient implements Subscribers {
                         "GetSubscriber",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/GetSubscriber");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriberResponse>
-                transformer =
-                        GetSubscriberConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetSubscriberResponse> transformer =
+                GetSubscriberConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -644,7 +642,7 @@ public class SubscribersClient implements Subscribers {
                         "ListSubscribers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/ListSubscribers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscribersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSubscribersResponse>
                 transformer =
                         ListSubscribersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -681,7 +679,7 @@ public class SubscribersClient implements Subscribers {
                         "UpdateSubscriber",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/UpdateSubscriber");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubscriberResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSubscriberResponse>
                 transformer =
                         UpdateSubscriberConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

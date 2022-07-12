@@ -9,7 +9,6 @@ import com.oracle.bmc.dataconnectivity.requests.*;
 import com.oracle.bmc.dataconnectivity.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class DataConnectivityManagementClient implements DataConnectivityManagement {
@@ -335,9 +334,9 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DataConnectivityManagement-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DataConnectivityManagement-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -406,7 +405,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
          * @return the client
          */
         public DataConnectivityManagementClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -443,7 +442,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -490,8 +490,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ChangeEndpointCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeEndpointCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeEndpointCompartmentResponse>
                 transformer =
                         ChangeEndpointCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -535,8 +534,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ChangeRegistryCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeRegistryCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeRegistryCompartmentResponse>
                 transformer =
                         ChangeRegistryCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -580,7 +578,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateAttachDataAsset",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAttachDataAssetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAttachDataAssetResponse>
                 transformer =
                         CreateAttachDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -622,7 +620,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateConnection",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
                 transformer =
                         CreateConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -665,8 +663,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateConnectionValidation",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateConnectionValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateConnectionValidationResponse>
                 transformer =
                         CreateConnectionValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -710,8 +707,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateConnectivityValidation",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateConnectivityValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateConnectivityValidationResponse>
                 transformer =
                         CreateConnectivityValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -754,7 +750,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateDataAsset",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
                 transformer =
                         CreateDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -796,7 +792,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateDataPreview",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataPreviewResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDataPreviewResponse>
                 transformer =
                         CreateDataPreviewConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -838,7 +834,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateDataProfile",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataProfileResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDataProfileResponse>
                 transformer =
                         CreateDataProfileConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -881,8 +877,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateDeReferenceArtifact",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateDeReferenceArtifactResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeReferenceArtifactResponse>
                 transformer =
                         CreateDeReferenceArtifactConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -926,7 +921,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateDetachDataAsset",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDetachDataAssetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDetachDataAssetResponse>
                 transformer =
                         CreateDetachDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -968,9 +963,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateEndpointResponse>
-                transformer =
-                        CreateEndpointConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateEndpointResponse> transformer =
+                CreateEndpointConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1009,7 +1003,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateEntityShape",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateEntityShapeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateEntityShapeResponse>
                 transformer =
                         CreateEntityShapeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1052,8 +1046,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateExecuteOperationJob",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateExecuteOperationJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateExecuteOperationJobResponse>
                 transformer =
                         CreateExecuteOperationJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1096,9 +1089,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateFolder",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateFolderResponse>
-                transformer =
-                        CreateFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateFolderResponse> transformer =
+                CreateFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1138,7 +1130,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateFullPushDownTask",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateFullPushDownTaskResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateFullPushDownTaskResponse>
                 transformer =
                         CreateFullPushDownTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1181,7 +1173,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateReferenceArtifact",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateReferenceArtifactResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateReferenceArtifactResponse>
                 transformer =
                         CreateReferenceArtifactConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1223,9 +1215,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateRegistry",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRegistryResponse>
-                transformer =
-                        CreateRegistryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRegistryResponse> transformer =
+                CreateRegistryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1265,7 +1256,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "CreateTestNetworkConnectivity",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateTestNetworkConnectivityResponse>
                 transformer =
                         CreateTestNetworkConnectivityConverter.fromResponse(
@@ -1308,7 +1299,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "DeleteConnection",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
                 transformer =
                         DeleteConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1347,8 +1338,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "DeleteConnectionValidation",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteConnectionValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteConnectionValidationResponse>
                 transformer =
                         DeleteConnectionValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1386,7 +1376,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "DeleteDataAsset",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
                 transformer =
                         DeleteDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1424,9 +1414,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "DeleteEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEndpointResponse>
-                transformer =
-                        DeleteEndpointConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteEndpointResponse> transformer =
+                DeleteEndpointConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1461,9 +1450,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "DeleteFolder",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFolderResponse>
-                transformer =
-                        DeleteFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteFolderResponse> transformer =
+                DeleteFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1499,7 +1487,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "DeleteNetworkConnectivityStatus",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteNetworkConnectivityStatusResponse>
                 transformer =
                         DeleteNetworkConnectivityStatusConverter.fromResponse(
@@ -1538,9 +1526,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "DeleteRegistry",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRegistryResponse>
-                transformer =
-                        DeleteRegistryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRegistryResponse> transformer =
+                DeleteRegistryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1575,9 +1562,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "GetConnection",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConnectionResponse>
-                transformer =
-                        GetConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetConnectionResponse> transformer =
+                GetConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1612,7 +1598,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "GetConnectionValidation",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConnectionValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetConnectionValidationResponse>
                 transformer =
                         GetConnectionValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1649,9 +1635,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "GetDataAsset",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDataAssetResponse>
-                transformer =
-                        GetDataAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDataAssetResponse> transformer =
+                GetDataAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1685,9 +1670,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "GetDataEntity",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDataEntityResponse>
-                transformer =
-                        GetDataEntityConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDataEntityResponse> transformer =
+                GetDataEntityConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1721,9 +1705,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "GetEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetEndpointResponse>
-                transformer =
-                        GetEndpointConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetEndpointResponse> transformer =
+                GetEndpointConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1758,7 +1741,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "GetExecuteOperationJob",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetExecuteOperationJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetExecuteOperationJobResponse>
                 transformer =
                         GetExecuteOperationJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1794,7 +1777,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "GetFolder",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetFolderResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetFolderResponse> transformer =
                 GetFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1831,8 +1814,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "GetNetworkConnectivityStatus",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetNetworkConnectivityStatusResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetNetworkConnectivityStatusResponse>
                 transformer =
                         GetNetworkConnectivityStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1869,9 +1851,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "GetOperation",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOperationResponse>
-                transformer =
-                        GetOperationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetOperationResponse> transformer =
+                GetOperationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1905,9 +1886,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "GetRegistry",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRegistryResponse>
-                transformer =
-                        GetRegistryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetRegistryResponse> transformer =
+                GetRegistryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1940,7 +1920,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "GetSchema",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSchemaResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetSchemaResponse> transformer =
                 GetSchemaConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1971,7 +1951,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DataConnectivityManagement", "GetType", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTypeResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetTypeResponse> transformer =
                 GetTypeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2006,9 +1986,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2043,8 +2022,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListConnectionValidations",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListConnectionValidationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListConnectionValidationsResponse>
                 transformer =
                         ListConnectionValidationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2081,7 +2059,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListConnections",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
                 transformer =
                         ListConnectionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2118,9 +2096,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListDataAssets",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDataAssetsResponse>
-                transformer =
-                        ListDataAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListDataAssetsResponse> transformer =
+                ListDataAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2154,7 +2131,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListDataEntities",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDataEntitiesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDataEntitiesResponse>
                 transformer =
                         ListDataEntitiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2191,9 +2168,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListEndpoints",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListEndpointsResponse>
-                transformer =
-                        ListEndpointsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListEndpointsResponse> transformer =
+                ListEndpointsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2227,9 +2203,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListFolders",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListFoldersResponse>
-                transformer =
-                        ListFoldersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListFoldersResponse> transformer =
+                ListFoldersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2263,9 +2238,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListOperations",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListOperationsResponse>
-                transformer =
-                        ListOperationsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListOperationsResponse> transformer =
+                ListOperationsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2300,7 +2274,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListReferenceArtifacts",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListReferenceArtifactsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListReferenceArtifactsResponse>
                 transformer =
                         ListReferenceArtifactsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2337,9 +2311,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListRegistries",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRegistriesResponse>
-                transformer =
-                        ListRegistriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListRegistriesResponse> transformer =
+                ListRegistriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2373,9 +2346,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListSchemas",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSchemasResponse>
-                transformer =
-                        ListSchemasConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSchemasResponse> transformer =
+                ListSchemasConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2408,7 +2380,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListTypes",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTypesResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListTypesResponse> transformer =
                 ListTypesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2444,7 +2416,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2481,7 +2453,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2518,7 +2490,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2555,7 +2527,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "UpdateConnection",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
                 transformer =
                         UpdateConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2596,7 +2568,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "UpdateDataAsset",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
                 transformer =
                         UpdateDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2637,9 +2609,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "UpdateEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEndpointResponse>
-                transformer =
-                        UpdateEndpointConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateEndpointResponse> transformer =
+                UpdateEndpointConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2677,9 +2648,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "UpdateFolder",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFolderResponse>
-                transformer =
-                        UpdateFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateFolderResponse> transformer =
+                UpdateFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2717,9 +2687,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "UpdateRegistry",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRegistryResponse>
-                transformer =
-                        UpdateRegistryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRegistryResponse> transformer =
+                UpdateRegistryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2760,7 +2729,7 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         "ValidateDataAssetNetworkReachablity",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateDataAssetNetworkReachablityResponse>
                 transformer =
                         ValidateDataAssetNetworkReachablityConverter.fromResponse(

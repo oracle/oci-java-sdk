@@ -46,19 +46,19 @@ public class NetworkFirewallPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListNetworkFirewallPoliciesRequest.Builder, ListNetworkFirewallPoliciesRequest,
                 ListNetworkFirewallPoliciesResponse>(
-                new com.google.common.base.Supplier<ListNetworkFirewallPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkFirewallPoliciesRequest.Builder>() {
                     @Override
                     public ListNetworkFirewallPoliciesRequest.Builder get() {
                         return ListNetworkFirewallPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNetworkFirewallPoliciesResponse, String>() {
+                new java.util.function.Function<ListNetworkFirewallPoliciesResponse, String>() {
                     @Override
                     public String apply(ListNetworkFirewallPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkFirewallPoliciesRequest.Builder>,
                         ListNetworkFirewallPoliciesRequest>() {
@@ -71,12 +71,12 @@ public class NetworkFirewallPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkFirewallPoliciesRequest, ListNetworkFirewallPoliciesResponse>() {
                     @Override
                     public ListNetworkFirewallPoliciesResponse apply(
@@ -102,19 +102,19 @@ public class NetworkFirewallPaginators {
                 ListNetworkFirewallPoliciesRequest.Builder, ListNetworkFirewallPoliciesRequest,
                 ListNetworkFirewallPoliciesResponse,
                 com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicySummary>(
-                new com.google.common.base.Supplier<ListNetworkFirewallPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkFirewallPoliciesRequest.Builder>() {
                     @Override
                     public ListNetworkFirewallPoliciesRequest.Builder get() {
                         return ListNetworkFirewallPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNetworkFirewallPoliciesResponse, String>() {
+                new java.util.function.Function<ListNetworkFirewallPoliciesResponse, String>() {
                     @Override
                     public String apply(ListNetworkFirewallPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkFirewallPoliciesRequest.Builder>,
                         ListNetworkFirewallPoliciesRequest>() {
@@ -127,12 +127,12 @@ public class NetworkFirewallPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkFirewallPoliciesRequest, ListNetworkFirewallPoliciesResponse>() {
                     @Override
                     public ListNetworkFirewallPoliciesResponse apply(
@@ -140,7 +140,7 @@ public class NetworkFirewallPaginators {
                         return client.listNetworkFirewallPolicies(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkFirewallPoliciesResponse,
                         java.util.List<
                                 com.oracle.bmc.networkfirewall.model
@@ -167,19 +167,19 @@ public class NetworkFirewallPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListNetworkFirewallsRequest.Builder, ListNetworkFirewallsRequest,
                 ListNetworkFirewallsResponse>(
-                new com.google.common.base.Supplier<ListNetworkFirewallsRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkFirewallsRequest.Builder>() {
                     @Override
                     public ListNetworkFirewallsRequest.Builder get() {
                         return ListNetworkFirewallsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNetworkFirewallsResponse, String>() {
+                new java.util.function.Function<ListNetworkFirewallsResponse, String>() {
                     @Override
                     public String apply(ListNetworkFirewallsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkFirewallsRequest.Builder>,
                         ListNetworkFirewallsRequest>() {
@@ -192,12 +192,12 @@ public class NetworkFirewallPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkFirewallsRequest, ListNetworkFirewallsResponse>() {
                     @Override
                     public ListNetworkFirewallsResponse apply(ListNetworkFirewallsRequest request) {
@@ -221,19 +221,19 @@ public class NetworkFirewallPaginators {
                 ListNetworkFirewallsRequest.Builder, ListNetworkFirewallsRequest,
                 ListNetworkFirewallsResponse,
                 com.oracle.bmc.networkfirewall.model.NetworkFirewallSummary>(
-                new com.google.common.base.Supplier<ListNetworkFirewallsRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkFirewallsRequest.Builder>() {
                     @Override
                     public ListNetworkFirewallsRequest.Builder get() {
                         return ListNetworkFirewallsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNetworkFirewallsResponse, String>() {
+                new java.util.function.Function<ListNetworkFirewallsResponse, String>() {
                     @Override
                     public String apply(ListNetworkFirewallsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkFirewallsRequest.Builder>,
                         ListNetworkFirewallsRequest>() {
@@ -246,19 +246,19 @@ public class NetworkFirewallPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkFirewallsRequest, ListNetworkFirewallsResponse>() {
                     @Override
                     public ListNetworkFirewallsResponse apply(ListNetworkFirewallsRequest request) {
                         return client.listNetworkFirewalls(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkFirewallsResponse,
                         java.util.List<
                                 com.oracle.bmc.networkfirewall.model.NetworkFirewallSummary>>() {
@@ -283,19 +283,19 @@ public class NetworkFirewallPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -308,12 +308,12 @@ public class NetworkFirewallPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -338,19 +338,19 @@ public class NetworkFirewallPaginators {
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse,
                 com.oracle.bmc.networkfirewall.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -363,12 +363,12 @@ public class NetworkFirewallPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -376,7 +376,7 @@ public class NetworkFirewallPaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<com.oracle.bmc.networkfirewall.model.WorkRequestError>>() {
                     @Override
@@ -399,19 +399,19 @@ public class NetworkFirewallPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -424,12 +424,12 @@ public class NetworkFirewallPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -453,19 +453,19 @@ public class NetworkFirewallPaginators {
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse,
                 com.oracle.bmc.networkfirewall.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -478,19 +478,19 @@ public class NetworkFirewallPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<
                                 com.oracle.bmc.networkfirewall.model.WorkRequestLogEntry>>() {
@@ -513,19 +513,19 @@ public class NetworkFirewallPaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -538,12 +538,12 @@ public class NetworkFirewallPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -566,19 +566,19 @@ public class NetworkFirewallPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.networkfirewall.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -591,19 +591,19 @@ public class NetworkFirewallPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<com.oracle.bmc.networkfirewall.model.WorkRequestSummary>>() {
                     @Override

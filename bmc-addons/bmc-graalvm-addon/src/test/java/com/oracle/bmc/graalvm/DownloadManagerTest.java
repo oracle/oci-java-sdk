@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.graalvm;
 
-import com.google.common.io.ByteStreams;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.model.Range;
 import com.oracle.bmc.objectstorage.ObjectStorage;
@@ -18,6 +17,7 @@ import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.objectstorage.responses.PutObjectResponse;
 import com.oracle.bmc.objectstorage.transfer.DownloadConfiguration;
 import com.oracle.bmc.objectstorage.transfer.DownloadManager;
+import com.oracle.bmc.util.StreamUtils;
 import com.oracle.bmc.util.internal.FileUtils;
 import com.oracle.bmc.util.internal.StringUtils;
 import org.junit.jupiter.api.AfterEach;
@@ -478,11 +478,12 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
         }
 
         InputStream expectedStream = new FileInputStream(testFile);
-        ByteStreams.skipFully(expectedStream, startByte);
+        StreamUtils.skipBytesInStream(expectedStream, startByte);
 
         // assume file length is 100; start of range is 1, end of range is 98 (but both are inclusive)
         // so we are allowed to read 98 - 1 + 1 = 98 bytes (just not the first byte and the last byte)
-        expectedStream = ByteStreams.limit(expectedStream, endByte - startByte + 1);
+        expectedStream =
+                StreamUtils.limitRemainingStreamLength(expectedStream, endByte - startByte + 1);
 
         return expectedStream;
     }

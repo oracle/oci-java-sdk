@@ -6,7 +6,6 @@ package com.oracle.bmc.tenantmanagercontrolplane;
 
 import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -117,8 +116,8 @@ public class SubscriptionWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetAssignedSubscriptionRequest, GetAssignedSubscriptionResponse>() {
                             @Override
                             public GetAssignedSubscriptionResponse apply(
@@ -126,9 +125,9 @@ public class SubscriptionWaiters {
                                 return client.getAssignedSubscription(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAssignedSubscriptionResponse>() {
+                        new java.util.function.Predicate<GetAssignedSubscriptionResponse>() {
                             @Override
-                            public boolean apply(GetAssignedSubscriptionResponse response) {
+                            public boolean test(GetAssignedSubscriptionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAssignedSubscription().getLifecycleState());
                             }
@@ -227,17 +226,17 @@ public class SubscriptionWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetSubscriptionRequest, GetSubscriptionResponse>() {
                             @Override
                             public GetSubscriptionResponse apply(GetSubscriptionRequest request) {
                                 return client.getSubscription(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSubscriptionResponse>() {
+                        new java.util.function.Predicate<GetSubscriptionResponse>() {
                             @Override
-                            public boolean apply(GetSubscriptionResponse response) {
+                            public boolean test(GetSubscriptionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSubscription().getLifecycleState());
                             }
@@ -344,8 +343,8 @@ public class SubscriptionWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetSubscriptionMappingRequest, GetSubscriptionMappingResponse>() {
                             @Override
                             public GetSubscriptionMappingResponse apply(
@@ -353,9 +352,9 @@ public class SubscriptionWaiters {
                                 return client.getSubscriptionMapping(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSubscriptionMappingResponse>() {
+                        new java.util.function.Predicate<GetSubscriptionMappingResponse>() {
                             @Override
-                            public boolean apply(GetSubscriptionMappingResponse response) {
+                            public boolean test(GetSubscriptionMappingResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSubscriptionMapping().getLifecycleState());
                             }

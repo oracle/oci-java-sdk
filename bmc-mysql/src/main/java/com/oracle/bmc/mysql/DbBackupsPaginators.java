@@ -44,19 +44,19 @@ public class DbBackupsPaginators {
             final ListBackupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBackupsRequest.Builder, ListBackupsRequest, ListBackupsResponse>(
-                new com.google.common.base.Supplier<ListBackupsRequest.Builder>() {
+                new java.util.function.Supplier<ListBackupsRequest.Builder>() {
                     @Override
                     public ListBackupsRequest.Builder get() {
                         return ListBackupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBackupsResponse, String>() {
+                new java.util.function.Function<ListBackupsResponse, String>() {
                     @Override
                     public String apply(ListBackupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBackupsRequest.Builder>,
                         ListBackupsRequest>() {
@@ -69,12 +69,12 @@ public class DbBackupsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListBackupsRequest, ListBackupsResponse>() {
+                new java.util.function.Function<ListBackupsRequest, ListBackupsResponse>() {
                     @Override
                     public ListBackupsResponse apply(ListBackupsRequest request) {
                         return client.listBackups(request);
@@ -96,19 +96,19 @@ public class DbBackupsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListBackupsRequest.Builder, ListBackupsRequest, ListBackupsResponse,
                 com.oracle.bmc.mysql.model.BackupSummary>(
-                new com.google.common.base.Supplier<ListBackupsRequest.Builder>() {
+                new java.util.function.Supplier<ListBackupsRequest.Builder>() {
                     @Override
                     public ListBackupsRequest.Builder get() {
                         return ListBackupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBackupsResponse, String>() {
+                new java.util.function.Function<ListBackupsResponse, String>() {
                     @Override
                     public String apply(ListBackupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBackupsRequest.Builder>,
                         ListBackupsRequest>() {
@@ -121,18 +121,18 @@ public class DbBackupsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListBackupsRequest, ListBackupsResponse>() {
+                new java.util.function.Function<ListBackupsRequest, ListBackupsResponse>() {
                     @Override
                     public ListBackupsResponse apply(ListBackupsRequest request) {
                         return client.listBackups(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBackupsResponse,
                         java.util.List<com.oracle.bmc.mysql.model.BackupSummary>>() {
                     @Override

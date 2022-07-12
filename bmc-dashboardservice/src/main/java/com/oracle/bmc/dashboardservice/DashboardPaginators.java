@@ -44,19 +44,19 @@ public class DashboardPaginators {
             final ListDashboardsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDashboardsRequest.Builder, ListDashboardsRequest, ListDashboardsResponse>(
-                new com.google.common.base.Supplier<ListDashboardsRequest.Builder>() {
+                new java.util.function.Supplier<ListDashboardsRequest.Builder>() {
                     @Override
                     public ListDashboardsRequest.Builder get() {
                         return ListDashboardsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDashboardsResponse, String>() {
+                new java.util.function.Function<ListDashboardsResponse, String>() {
                     @Override
                     public String apply(ListDashboardsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDashboardsRequest.Builder>,
                         ListDashboardsRequest>() {
@@ -69,13 +69,12 @@ public class DashboardPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListDashboardsRequest, ListDashboardsResponse>() {
+                new java.util.function.Function<ListDashboardsRequest, ListDashboardsResponse>() {
                     @Override
                     public ListDashboardsResponse apply(ListDashboardsRequest request) {
                         return client.listDashboards(request);
@@ -97,19 +96,19 @@ public class DashboardPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDashboardsRequest.Builder, ListDashboardsRequest, ListDashboardsResponse,
                 com.oracle.bmc.dashboardservice.model.DashboardSummary>(
-                new com.google.common.base.Supplier<ListDashboardsRequest.Builder>() {
+                new java.util.function.Supplier<ListDashboardsRequest.Builder>() {
                     @Override
                     public ListDashboardsRequest.Builder get() {
                         return ListDashboardsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDashboardsResponse, String>() {
+                new java.util.function.Function<ListDashboardsResponse, String>() {
                     @Override
                     public String apply(ListDashboardsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDashboardsRequest.Builder>,
                         ListDashboardsRequest>() {
@@ -122,19 +121,18 @@ public class DashboardPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListDashboardsRequest, ListDashboardsResponse>() {
+                new java.util.function.Function<ListDashboardsRequest, ListDashboardsResponse>() {
                     @Override
                     public ListDashboardsResponse apply(ListDashboardsRequest request) {
                         return client.listDashboards(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDashboardsResponse,
                         java.util.List<com.oracle.bmc.dashboardservice.model.DashboardSummary>>() {
                     @Override

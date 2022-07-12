@@ -965,7 +965,7 @@ public interface ComputeAsync extends AutoCloseable {
      * then powered back on.
      * <p>
      *
-     * - **SENDDIAGNOSTICINTERRUPT** - For advanced users. **Warning: Sending a diagnostic interrupt to a live system can
+     * - **SENDDIAGNOSTICINTERRUPT** - For advanced users. **Caution: Sending a diagnostic interrupt to a live system can
      * cause data corruption or system failure.** Sends a diagnostic interrupt that causes the instance's
      * OS to crash and then reboot. Before you send a diagnostic interrupt, you must configure the instance to generate a
      * crash dump file when it crashes. The crash dump captures information about the state of the OS at the time of
@@ -974,12 +974,16 @@ public interface ComputeAsync extends AutoCloseable {
      * <p>
      *
      * <p>
-     * - **DIAGNOSTICREBOOT** - Powers off the instance, rebuilds it on the physical host, and then powers it back on.
+     * - **DIAGNOSTICREBOOT** - Powers off the instance, rebuilds it, and then powers it back on.
      * Before you send a diagnostic reboot, restart the instance's OS, confirm that the instance and networking settings are configured
      * correctly, and try other [troubleshooting steps](https://docs.cloud.oracle.com/iaas/Content/Compute/References/troubleshooting-compute-instances.htm).
      * Use diagnostic reboot as a final attempt to troubleshoot an unreachable instance. For virtual machine (VM) instances only.
      * For more information, see [Performing a Diagnostic Reboot](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm).
      * <p>
+     *
+     * - **REBOOTMIGRATE** - Powers off the instance, moves it to new hardware, and then powers it back on.
+     * <p>
+     *
      * For more information about managing instance lifecycle states, see
      * [Stopping and Starting an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm).
      *
@@ -1502,12 +1506,9 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Terminates the specified instance. Any attached VNICs and volumes are automatically detached
      * when the instance terminates.
-     * <p>
+     *
      * To preserve the boot volume associated with the instance, specify `true` for `PreserveBootVolumeQueryParam`.
      * To delete the boot volume when the instance is deleted, specify `false` or do not specify a value for `PreserveBootVolumeQueryParam`.
-     * <p>
-     * To preserve data volumes created with the instance, specify `true` for `PreserveDataVolumesQueryParam`.
-     * To delete the data volumes when the instance itself is deleted, specify `false` or do not specify a value for `PreserveDataVolumesQueryParam`.
      * <p>
      * This is an asynchronous operation. The instance's `lifecycleState` will change to TERMINATING temporarily
      * until the instance is completely removed.

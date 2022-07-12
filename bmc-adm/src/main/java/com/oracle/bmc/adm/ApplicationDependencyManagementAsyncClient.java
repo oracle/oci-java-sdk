@@ -7,7 +7,6 @@ package com.oracle.bmc.adm;
 import com.oracle.bmc.adm.internal.http.*;
 import com.oracle.bmc.adm.requests.*;
 import com.oracle.bmc.adm.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ApplicationDependencyManagement service. <br/>
@@ -321,7 +320,7 @@ public class ApplicationDependencyManagementAsyncClient
          * @return the client
          */
         public ApplicationDependencyManagementAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class ApplicationDependencyManagementAsyncClient
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -405,7 +405,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "CancelWorkRequest",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -454,7 +454,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "ChangeKnowledgeBaseCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeKnowledgeBaseCompartmentResponse>
                 transformer =
                         ChangeKnowledgeBaseCompartmentConverter.fromResponse(
@@ -513,7 +513,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "ChangeVulnerabilityAuditCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeVulnerabilityAuditCompartmentResponse>
                 transformer =
                         ChangeVulnerabilityAuditCompartmentConverter.fromResponse(
@@ -570,8 +570,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "CreateKnowledgeBase",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateKnowledgeBaseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateKnowledgeBaseResponse>
                 transformer =
                         CreateKnowledgeBaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -624,7 +623,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "CreateVulnerabilityAudit",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateVulnerabilityAuditResponse>
                 transformer =
                         CreateVulnerabilityAuditConverter.fromResponse(
@@ -677,8 +676,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "DeleteKnowledgeBase",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteKnowledgeBaseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteKnowledgeBaseResponse>
                 transformer =
                         DeleteKnowledgeBaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -725,7 +723,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "DeleteVulnerabilityAudit",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteVulnerabilityAuditResponse>
                 transformer =
                         DeleteVulnerabilityAuditConverter.fromResponse(
@@ -773,7 +771,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "GetKnowledgeBase",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetKnowledgeBaseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetKnowledgeBaseResponse>
                 transformer =
                         GetKnowledgeBaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -819,8 +817,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "GetVulnerabilityAudit",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetVulnerabilityAuditResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetVulnerabilityAuditResponse>
                 transformer =
                         GetVulnerabilityAuditConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -867,7 +864,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -915,7 +912,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "ListApplicationDependencyVulnerabilities",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListApplicationDependencyVulnerabilitiesResponse>
                 transformer =
                         ListApplicationDependencyVulnerabilitiesConverter.fromResponse(
@@ -967,7 +964,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "ListKnowledgeBases",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListKnowledgeBasesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListKnowledgeBasesResponse>
                 transformer =
                         ListKnowledgeBasesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1013,7 +1010,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "ListVulnerabilityAudits",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListVulnerabilityAuditsResponse>
                 transformer =
                         ListVulnerabilityAuditsConverter.fromResponse(
@@ -1061,8 +1058,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1109,8 +1105,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1157,7 +1152,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1203,8 +1198,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "UpdateKnowledgeBase",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateKnowledgeBaseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateKnowledgeBaseResponse>
                 transformer =
                         UpdateKnowledgeBaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1256,7 +1250,7 @@ public class ApplicationDependencyManagementAsyncClient
                         "UpdateVulnerabilityAudit",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateVulnerabilityAuditResponse>
                 transformer =
                         UpdateVulnerabilityAuditConverter.fromResponse(

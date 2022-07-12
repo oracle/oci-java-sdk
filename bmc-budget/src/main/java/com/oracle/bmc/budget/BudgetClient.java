@@ -9,7 +9,6 @@ import com.oracle.bmc.budget.requests.*;
 import com.oracle.bmc.budget.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class BudgetClient implements Budget {
@@ -334,9 +333,9 @@ public class BudgetClient implements Budget {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Budget-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Budget-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class BudgetClient implements Budget {
          * @return the client
          */
         public BudgetClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class BudgetClient implements Budget {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,7 +487,7 @@ public class BudgetClient implements Budget {
                         "CreateAlertRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/CreateAlertRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAlertRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAlertRuleResponse>
                 transformer =
                         CreateAlertRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,9 +529,8 @@ public class BudgetClient implements Budget {
                         "CreateBudget",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/CreateBudget");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBudgetResponse>
-                transformer =
-                        CreateBudgetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBudgetResponse> transformer =
+                CreateBudgetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -569,7 +568,7 @@ public class BudgetClient implements Budget {
                         "DeleteAlertRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/DeleteAlertRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAlertRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAlertRuleResponse>
                 transformer =
                         DeleteAlertRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -607,9 +606,8 @@ public class BudgetClient implements Budget {
                         "DeleteBudget",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/DeleteBudget");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBudgetResponse>
-                transformer =
-                        DeleteBudgetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBudgetResponse> transformer =
+                DeleteBudgetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -644,9 +642,8 @@ public class BudgetClient implements Budget {
                         "GetAlertRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/GetAlertRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAlertRuleResponse>
-                transformer =
-                        GetAlertRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetAlertRuleResponse> transformer =
+                GetAlertRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -679,7 +676,7 @@ public class BudgetClient implements Budget {
                         "GetBudget",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/GetBudget");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBudgetResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetBudgetResponse> transformer =
                 GetBudgetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -714,9 +711,8 @@ public class BudgetClient implements Budget {
                         "ListAlertRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRuleSummary/ListAlertRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertRulesResponse>
-                transformer =
-                        ListAlertRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListAlertRulesResponse> transformer =
+                ListAlertRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -750,9 +746,8 @@ public class BudgetClient implements Budget {
                         "ListBudgets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/BudgetSummary/ListBudgets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBudgetsResponse>
-                transformer =
-                        ListBudgetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListBudgetsResponse> transformer =
+                ListBudgetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -786,7 +781,7 @@ public class BudgetClient implements Budget {
                         "UpdateAlertRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/UpdateAlertRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAlertRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAlertRuleResponse>
                 transformer =
                         UpdateAlertRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -827,9 +822,8 @@ public class BudgetClient implements Budget {
                         "UpdateBudget",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/UpdateBudget");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBudgetResponse>
-                transformer =
-                        UpdateBudgetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBudgetResponse> transformer =
+                UpdateBudgetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

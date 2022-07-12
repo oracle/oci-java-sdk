@@ -7,7 +7,6 @@ package com.oracle.bmc.datalabelingservicedataplane;
 import com.oracle.bmc.datalabelingservicedataplane.internal.http.*;
 import com.oracle.bmc.datalabelingservicedataplane.requests.*;
 import com.oracle.bmc.datalabelingservicedataplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for DataLabeling service. <br/>
@@ -320,7 +319,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
          * @return the client
          */
         public DataLabelingAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -405,7 +405,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "CreateAnnotation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/CreateAnnotation");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAnnotationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateAnnotationResponse>
                 transformer =
                         CreateAnnotationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -456,7 +456,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "CreateRecord",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/CreateRecord");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRecordResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateRecordResponse>
                 transformer =
                         CreateRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateRecordRequest, CreateRecordResponse>
@@ -506,7 +506,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "DeleteAnnotation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/DeleteAnnotation");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAnnotationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteAnnotationResponse>
                 transformer =
                         DeleteAnnotationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -551,7 +551,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "DeleteRecord",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/DeleteRecord");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRecordResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteRecordResponse>
                 transformer =
                         DeleteRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteRecordRequest, DeleteRecordResponse>
@@ -595,7 +595,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "GetAnnotation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/GetAnnotation");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetAnnotationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAnnotationResponse>
                 transformer =
                         GetAnnotationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetAnnotationRequest, GetAnnotationResponse>
@@ -638,7 +638,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "GetDataset",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Dataset/GetDataset");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDatasetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDatasetResponse>
                 transformer =
                         GetDatasetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDatasetRequest, GetDatasetResponse> handlerToUse =
@@ -681,7 +681,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "GetRecord",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/GetRecord");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRecordResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetRecordResponse>
                 transformer =
                         GetRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetRecordRequest, GetRecordResponse> handlerToUse =
@@ -735,7 +735,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "GetRecordContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/GetRecordContent");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRecordContentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetRecordContentResponse>
                 transformer =
                         GetRecordContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -791,7 +791,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "GetRecordPreviewContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/GetRecordPreviewContent");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetRecordPreviewContentResponse>
                 transformer =
                         GetRecordPreviewContentConverter.fromResponse(
@@ -839,7 +839,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "ListAnnotations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/AnnotationCollection/ListAnnotations");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAnnotationsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAnnotationsResponse>
                 transformer =
                         ListAnnotationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -884,7 +884,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "ListRecords",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/RecordCollection/ListRecords");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRecordsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRecordsResponse>
                 transformer =
                         ListRecordsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRecordsRequest, ListRecordsResponse>
@@ -931,7 +931,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "SummarizeAnnotationAnalytics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/AnnotationAnalyticsAggregationCollection/SummarizeAnnotationAnalytics");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeAnnotationAnalyticsResponse>
                 transformer =
                         SummarizeAnnotationAnalyticsConverter.fromResponse(
@@ -980,7 +980,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "SummarizeRecordAnalytics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/RecordAnalyticsAggregationCollection/SummarizeRecordAnalytics");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeRecordAnalyticsResponse>
                 transformer =
                         SummarizeRecordAnalyticsConverter.fromResponse(
@@ -1028,7 +1028,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "UpdateAnnotation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/UpdateAnnotation");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAnnotationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateAnnotationResponse>
                 transformer =
                         UpdateAnnotationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1078,7 +1078,7 @@ public class DataLabelingAsyncClient implements DataLabelingAsync {
                         "UpdateRecord",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/UpdateRecord");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRecordResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateRecordResponse>
                 transformer =
                         UpdateRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateRecordRequest, UpdateRecordResponse>

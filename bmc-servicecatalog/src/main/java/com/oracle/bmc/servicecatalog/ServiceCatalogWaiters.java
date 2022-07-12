@@ -6,7 +6,6 @@ package com.oracle.bmc.servicecatalog;
 
 import com.oracle.bmc.servicecatalog.requests.*;
 import com.oracle.bmc.servicecatalog.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -112,8 +111,8 @@ public class ServiceCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetPrivateApplicationRequest, GetPrivateApplicationResponse>() {
                             @Override
                             public GetPrivateApplicationResponse apply(
@@ -121,9 +120,9 @@ public class ServiceCatalogWaiters {
                                 return client.getPrivateApplication(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetPrivateApplicationResponse>() {
+                        new java.util.function.Predicate<GetPrivateApplicationResponse>() {
                             @Override
-                            public boolean apply(GetPrivateApplicationResponse response) {
+                            public boolean test(GetPrivateApplicationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getPrivateApplication().getLifecycleState());
                             }
@@ -219,8 +218,8 @@ public class ServiceCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetServiceCatalogRequest, GetServiceCatalogResponse>() {
                             @Override
                             public GetServiceCatalogResponse apply(
@@ -228,9 +227,9 @@ public class ServiceCatalogWaiters {
                                 return client.getServiceCatalog(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetServiceCatalogResponse>() {
+                        new java.util.function.Predicate<GetServiceCatalogResponse>() {
                             @Override
-                            public boolean apply(GetServiceCatalogResponse response) {
+                            public boolean test(GetServiceCatalogResponse response) {
                                 return targetStatesSet.contains(
                                         response.getServiceCatalog().getLifecycleState());
                             }
@@ -278,17 +277,17 @@ public class ServiceCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

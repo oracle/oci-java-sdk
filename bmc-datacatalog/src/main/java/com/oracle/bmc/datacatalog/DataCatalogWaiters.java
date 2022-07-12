@@ -6,7 +6,6 @@ package com.oracle.bmc.datacatalog;
 
 import com.oracle.bmc.datacatalog.requests.*;
 import com.oracle.bmc.datacatalog.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -103,17 +102,17 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetAttributeRequest, GetAttributeResponse>() {
                             @Override
                             public GetAttributeResponse apply(GetAttributeRequest request) {
                                 return client.getAttribute(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAttributeResponse>() {
+                        new java.util.function.Predicate<GetAttributeResponse>() {
                             @Override
-                            public boolean apply(GetAttributeResponse response) {
+                            public boolean test(GetAttributeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAttribute().getLifecycleState());
                             }
@@ -205,17 +204,17 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetAttributeTagRequest, GetAttributeTagResponse>() {
                             @Override
                             public GetAttributeTagResponse apply(GetAttributeTagRequest request) {
                                 return client.getAttributeTag(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAttributeTagResponse>() {
+                        new java.util.function.Predicate<GetAttributeTagResponse>() {
                             @Override
-                            public boolean apply(GetAttributeTagResponse response) {
+                            public boolean test(GetAttributeTagResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAttributeTag().getLifecycleState());
                             }
@@ -303,17 +302,16 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetCatalogRequest, GetCatalogResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetCatalogRequest, GetCatalogResponse>() {
                             @Override
                             public GetCatalogResponse apply(GetCatalogRequest request) {
                                 return client.getCatalog(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCatalogResponse>() {
+                        new java.util.function.Predicate<GetCatalogResponse>() {
                             @Override
-                            public boolean apply(GetCatalogResponse response) {
+                            public boolean test(GetCatalogResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCatalog().getLifecycleState());
                             }
@@ -409,8 +407,8 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetCatalogPrivateEndpointRequest,
                                 GetCatalogPrivateEndpointResponse>() {
                             @Override
@@ -419,9 +417,9 @@ public class DataCatalogWaiters {
                                 return client.getCatalogPrivateEndpoint(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCatalogPrivateEndpointResponse>() {
+                        new java.util.function.Predicate<GetCatalogPrivateEndpointResponse>() {
                             @Override
-                            public boolean apply(GetCatalogPrivateEndpointResponse response) {
+                            public boolean test(GetCatalogPrivateEndpointResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCatalogPrivateEndpoint().getLifecycleState());
                             }
@@ -509,17 +507,17 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetConnectionRequest, GetConnectionResponse>() {
                             @Override
                             public GetConnectionResponse apply(GetConnectionRequest request) {
                                 return client.getConnection(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetConnectionResponse>() {
+                        new java.util.function.Predicate<GetConnectionResponse>() {
                             @Override
-                            public boolean apply(GetConnectionResponse response) {
+                            public boolean test(GetConnectionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getConnection().getLifecycleState());
                             }
@@ -611,8 +609,8 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetCustomPropertyRequest, GetCustomPropertyResponse>() {
                             @Override
                             public GetCustomPropertyResponse apply(
@@ -620,9 +618,9 @@ public class DataCatalogWaiters {
                                 return client.getCustomProperty(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCustomPropertyResponse>() {
+                        new java.util.function.Predicate<GetCustomPropertyResponse>() {
                             @Override
-                            public boolean apply(GetCustomPropertyResponse response) {
+                            public boolean test(GetCustomPropertyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCustomProperty().getLifecycleState());
                             }
@@ -710,17 +708,17 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDataAssetRequest, GetDataAssetResponse>() {
                             @Override
                             public GetDataAssetResponse apply(GetDataAssetRequest request) {
                                 return client.getDataAsset(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDataAssetResponse>() {
+                        new java.util.function.Predicate<GetDataAssetResponse>() {
                             @Override
-                            public boolean apply(GetDataAssetResponse response) {
+                            public boolean test(GetDataAssetResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDataAsset().getLifecycleState());
                             }
@@ -812,17 +810,17 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDataAssetTagRequest, GetDataAssetTagResponse>() {
                             @Override
                             public GetDataAssetTagResponse apply(GetDataAssetTagRequest request) {
                                 return client.getDataAssetTag(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDataAssetTagResponse>() {
+                        new java.util.function.Predicate<GetDataAssetTagResponse>() {
                             @Override
-                            public boolean apply(GetDataAssetTagResponse response) {
+                            public boolean test(GetDataAssetTagResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDataAssetTag().getLifecycleState());
                             }
@@ -910,16 +908,16 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetEntityRequest, GetEntityResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetEntityRequest, GetEntityResponse>() {
                             @Override
                             public GetEntityResponse apply(GetEntityRequest request) {
                                 return client.getEntity(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetEntityResponse>() {
+                        new java.util.function.Predicate<GetEntityResponse>() {
                             @Override
-                            public boolean apply(GetEntityResponse response) {
+                            public boolean test(GetEntityResponse response) {
                                 return targetStatesSet.contains(
                                         response.getEntity().getLifecycleState());
                             }
@@ -1007,17 +1005,17 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetEntityTagRequest, GetEntityTagResponse>() {
                             @Override
                             public GetEntityTagResponse apply(GetEntityTagRequest request) {
                                 return client.getEntityTag(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetEntityTagResponse>() {
+                        new java.util.function.Predicate<GetEntityTagResponse>() {
                             @Override
-                            public boolean apply(GetEntityTagResponse response) {
+                            public boolean test(GetEntityTagResponse response) {
                                 return targetStatesSet.contains(
                                         response.getEntityTag().getLifecycleState());
                             }
@@ -1105,16 +1103,16 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetFolderRequest, GetFolderResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetFolderRequest, GetFolderResponse>() {
                             @Override
                             public GetFolderResponse apply(GetFolderRequest request) {
                                 return client.getFolder(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetFolderResponse>() {
+                        new java.util.function.Predicate<GetFolderResponse>() {
                             @Override
-                            public boolean apply(GetFolderResponse response) {
+                            public boolean test(GetFolderResponse response) {
                                 return targetStatesSet.contains(
                                         response.getFolder().getLifecycleState());
                             }
@@ -1202,17 +1200,17 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetFolderTagRequest, GetFolderTagResponse>() {
                             @Override
                             public GetFolderTagResponse apply(GetFolderTagRequest request) {
                                 return client.getFolderTag(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetFolderTagResponse>() {
+                        new java.util.function.Predicate<GetFolderTagResponse>() {
                             @Override
-                            public boolean apply(GetFolderTagResponse response) {
+                            public boolean test(GetFolderTagResponse response) {
                                 return targetStatesSet.contains(
                                         response.getFolderTag().getLifecycleState());
                             }
@@ -1300,17 +1298,16 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetGlossaryRequest, GetGlossaryResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetGlossaryRequest, GetGlossaryResponse>() {
                             @Override
                             public GetGlossaryResponse apply(GetGlossaryRequest request) {
                                 return client.getGlossary(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetGlossaryResponse>() {
+                        new java.util.function.Predicate<GetGlossaryResponse>() {
                             @Override
-                            public boolean apply(GetGlossaryResponse response) {
+                            public boolean test(GetGlossaryResponse response) {
                                 return targetStatesSet.contains(
                                         response.getGlossary().getLifecycleState());
                             }
@@ -1397,16 +1394,16 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetJobRequest, GetJobResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetJobRequest, GetJobResponse>() {
                             @Override
                             public GetJobResponse apply(GetJobRequest request) {
                                 return client.getJob(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetJobResponse>() {
+                        new java.util.function.Predicate<GetJobResponse>() {
                             @Override
-                            public boolean apply(GetJobResponse response) {
+                            public boolean test(GetJobResponse response) {
                                 return targetStatesSet.contains(
                                         response.getJob().getLifecycleState());
                             }
@@ -1497,17 +1494,17 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetJobDefinitionRequest, GetJobDefinitionResponse>() {
                             @Override
                             public GetJobDefinitionResponse apply(GetJobDefinitionRequest request) {
                                 return client.getJobDefinition(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetJobDefinitionResponse>() {
+                        new java.util.function.Predicate<GetJobDefinitionResponse>() {
                             @Override
-                            public boolean apply(GetJobDefinitionResponse response) {
+                            public boolean test(GetJobDefinitionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getJobDefinition().getLifecycleState());
                             }
@@ -1599,17 +1596,17 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetJobExecutionRequest, GetJobExecutionResponse>() {
                             @Override
                             public GetJobExecutionResponse apply(GetJobExecutionRequest request) {
                                 return client.getJobExecution(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetJobExecutionResponse>() {
+                        new java.util.function.Predicate<GetJobExecutionResponse>() {
                             @Override
-                            public boolean apply(GetJobExecutionResponse response) {
+                            public boolean test(GetJobExecutionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getJobExecution().getLifecycleState());
                             }
@@ -1696,17 +1693,17 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetMetastoreRequest, GetMetastoreResponse>() {
                             @Override
                             public GetMetastoreResponse apply(GetMetastoreRequest request) {
                                 return client.getMetastore(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetMetastoreResponse>() {
+                        new java.util.function.Predicate<GetMetastoreResponse>() {
                             @Override
-                            public boolean apply(GetMetastoreResponse response) {
+                            public boolean test(GetMetastoreResponse response) {
                                 return targetStatesSet.contains(
                                         response.getMetastore().getLifecycleState());
                             }
@@ -1794,17 +1791,17 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetNamespaceRequest, GetNamespaceResponse>() {
                             @Override
                             public GetNamespaceResponse apply(GetNamespaceRequest request) {
                                 return client.getNamespace(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetNamespaceResponse>() {
+                        new java.util.function.Predicate<GetNamespaceResponse>() {
                             @Override
-                            public boolean apply(GetNamespaceResponse response) {
+                            public boolean test(GetNamespaceResponse response) {
                                 return targetStatesSet.contains(
                                         response.getNamespace().getLifecycleState());
                             }
@@ -1892,17 +1889,16 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetPatternRequest, GetPatternResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetPatternRequest, GetPatternResponse>() {
                             @Override
                             public GetPatternResponse apply(GetPatternRequest request) {
                                 return client.getPattern(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetPatternResponse>() {
+                        new java.util.function.Predicate<GetPatternResponse>() {
                             @Override
-                            public boolean apply(GetPatternResponse response) {
+                            public boolean test(GetPatternResponse response) {
                                 return targetStatesSet.contains(
                                         response.getPattern().getLifecycleState());
                             }
@@ -1989,16 +1985,16 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetTermRequest, GetTermResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetTermRequest, GetTermResponse>() {
                             @Override
                             public GetTermResponse apply(GetTermRequest request) {
                                 return client.getTerm(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTermResponse>() {
+                        new java.util.function.Predicate<GetTermResponse>() {
                             @Override
-                            public boolean apply(GetTermResponse response) {
+                            public boolean test(GetTermResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTerm().getLifecycleState());
                             }
@@ -2090,8 +2086,8 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetTermRelationshipRequest, GetTermRelationshipResponse>() {
                             @Override
                             public GetTermRelationshipResponse apply(
@@ -2099,9 +2095,9 @@ public class DataCatalogWaiters {
                                 return client.getTermRelationship(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTermRelationshipResponse>() {
+                        new java.util.function.Predicate<GetTermRelationshipResponse>() {
                             @Override
-                            public boolean apply(GetTermRelationshipResponse response) {
+                            public boolean test(GetTermRelationshipResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTermRelationship().getLifecycleState());
                             }
@@ -2188,16 +2184,16 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetTypeRequest, GetTypeResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetTypeRequest, GetTypeResponse>() {
                             @Override
                             public GetTypeResponse apply(GetTypeRequest request) {
                                 return client.getType(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTypeResponse>() {
+                        new java.util.function.Predicate<GetTypeResponse>() {
                             @Override
-                            public boolean apply(GetTypeResponse response) {
+                            public boolean test(GetTypeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getType().getLifecycleState());
                             }
@@ -2244,17 +2240,17 @@ public class DataCatalogWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

@@ -13,7 +13,7 @@ import java.util.Map.Entry;
 
 import javax.ws.rs.core.MultivaluedMap;
 
-import com.google.common.base.Optional;
+import java.util.Optional;
 import com.oracle.bmc.model.Range;
 
 /**
@@ -31,7 +31,7 @@ public class HeaderUtils {
      */
     public static Optional<List<String>> get(MultivaluedMap<String, String> headers, String name) {
         if (headers == null) {
-            return Optional.absent();
+            return Optional.empty();
         }
         // NOTE: this multivaluedmap should be the case-insensitive-key version,
         // but opting to do a simple search instead.
@@ -41,7 +41,7 @@ public class HeaderUtils {
                 return Optional.of(entry.getValue());
             }
         }
-        return Optional.absent();
+        return Optional.empty();
     }
 
     /**

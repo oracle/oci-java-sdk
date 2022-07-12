@@ -7,7 +7,6 @@ package com.oracle.bmc.apmconfig;
 import com.oracle.bmc.apmconfig.internal.http.*;
 import com.oracle.bmc.apmconfig.requests.*;
 import com.oracle.bmc.apmconfig.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Config service. <br/>
@@ -319,7 +318,7 @@ public class ConfigAsyncClient implements ConfigAsync {
          * @return the client
          */
         public ConfigAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class ConfigAsyncClient implements ConfigAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -403,7 +403,7 @@ public class ConfigAsyncClient implements ConfigAsync {
                         "CreateConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/CreateConfig");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateConfigResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateConfigResponse>
                 transformer =
                         CreateConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateConfigRequest, CreateConfigResponse>
@@ -452,7 +452,7 @@ public class ConfigAsyncClient implements ConfigAsync {
                         "DeleteConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/DeleteConfig");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConfigResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteConfigResponse>
                 transformer =
                         DeleteConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteConfigRequest, DeleteConfigResponse>
@@ -495,7 +495,7 @@ public class ConfigAsyncClient implements ConfigAsync {
                         "GetConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/GetConfig");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetConfigResponse>
                 transformer =
                         GetConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetConfigRequest, GetConfigResponse> handlerToUse =
@@ -538,7 +538,7 @@ public class ConfigAsyncClient implements ConfigAsync {
                         "ListConfigs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ConfigCollection/ListConfigs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListConfigsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListConfigsResponse>
                 transformer =
                         ListConfigsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListConfigsRequest, ListConfigsResponse>
@@ -583,7 +583,7 @@ public class ConfigAsyncClient implements ConfigAsync {
                         "RetrieveNamespaceMetrics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MetricGroup/RetrieveNamespaceMetrics");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RetrieveNamespaceMetricsResponse>
                 transformer =
                         RetrieveNamespaceMetricsConverter.fromResponse(
@@ -636,7 +636,7 @@ public class ConfigAsyncClient implements ConfigAsync {
                         "RetrieveNamespaces",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MetricGroup/RetrieveNamespaces");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RetrieveNamespacesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RetrieveNamespacesResponse>
                 transformer =
                         RetrieveNamespacesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -681,7 +681,7 @@ public class ConfigAsyncClient implements ConfigAsync {
                         "UpdateConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/UpdateConfig");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateConfigResponse>
                 transformer =
                         UpdateConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateConfigRequest, UpdateConfigResponse>
@@ -731,7 +731,7 @@ public class ConfigAsyncClient implements ConfigAsync {
                         "ValidateSpanFilterPattern",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/SpanFilter/ValidateSpanFilterPattern");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateSpanFilterPatternResponse>
                 transformer =
                         ValidateSpanFilterPatternConverter.fromResponse(

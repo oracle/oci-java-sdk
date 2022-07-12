@@ -312,4 +312,18 @@ public enum StringUtils {
         }
         return s.contains(searchStr);
     }
+
+    /**
+     * Repeat the substring count times.
+     * @param substring substring
+     * @param count number of times to occur
+     * @return repeated substring
+     */
+    public static String repeat(String substring, int count) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < count; ++i) {
+            sb.append(substring);
+        }
+        return sb.toString();
+    }
 }

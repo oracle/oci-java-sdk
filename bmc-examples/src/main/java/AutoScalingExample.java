@@ -2,7 +2,6 @@
  * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -49,6 +48,7 @@ import com.oracle.bmc.identity.requests.ListTagDefaultsRequest;
 import com.oracle.bmc.identity.responses.ListTagDefaultsResponse;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -294,13 +294,15 @@ public class AutoScalingExample {
                         .action(scaleOutAction)
                         .build();
 
-        List<CreateConditionDetails> rules = ImmutableList.of(scaleInRule, scaleOutRule);
+        List<CreateConditionDetails> rules =
+                Collections.unmodifiableList(Arrays.asList(scaleInRule, scaleOutRule));
 
         // defining the threshold policy
         CreateAutoScalingPolicyDetails policy =
                 CreateThresholdPolicyDetails.builder().capacity(capacity).rules(rules).build();
 
-        List<CreateAutoScalingPolicyDetails> policies = ImmutableList.of(policy);
+        List<CreateAutoScalingPolicyDetails> policies =
+                Collections.unmodifiableList(Arrays.asList(policy));
 
         CreateAutoScalingConfigurationDetails createAutoScalingConfigurationDetails =
                 CreateAutoScalingConfigurationDetails.builder()

@@ -4,17 +4,18 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import com.google.common.base.Optional;
+import java.security.interfaces.RSAPublicKey;
+import java.text.ParseException;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.util.Optional;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import org.slf4j.Logger;
 
 import java.security.interfaces.RSAPublicKey;
-import java.text.ParseException;
-import java.time.Duration;
-import java.time.Instant;
-import java.util.Date;
 
 class SecurityTokenAdapter {
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(SecurityTokenAdapter.class);

@@ -9,7 +9,6 @@ import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 public class TransferPackageClient implements TransferPackage {
@@ -333,9 +332,9 @@ public class TransferPackageClient implements TransferPackage {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("TransferPackage-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("TransferPackage-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -401,7 +400,7 @@ public class TransferPackageClient implements TransferPackage {
          * @return the client
          */
         public TransferPackageClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -438,7 +437,8 @@ public class TransferPackageClient implements TransferPackage {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -484,7 +484,7 @@ public class TransferPackageClient implements TransferPackage {
                         "AttachDevicesToTransferPackage",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, AttachDevicesToTransferPackageResponse>
                 transformer =
                         AttachDevicesToTransferPackageConverter.fromResponse(
@@ -528,7 +528,7 @@ public class TransferPackageClient implements TransferPackage {
                         "CreateTransferPackage",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTransferPackageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTransferPackageResponse>
                 transformer =
                         CreateTransferPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -570,7 +570,7 @@ public class TransferPackageClient implements TransferPackage {
                         "DeleteTransferPackage",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTransferPackageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTransferPackageResponse>
                 transformer =
                         DeleteTransferPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -609,7 +609,7 @@ public class TransferPackageClient implements TransferPackage {
                         "DetachDevicesFromTransferPackage",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DetachDevicesFromTransferPackageResponse>
                 transformer =
                         DetachDevicesFromTransferPackageConverter.fromResponse(
@@ -648,7 +648,7 @@ public class TransferPackageClient implements TransferPackage {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferPackage", "GetTransferPackage", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTransferPackageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTransferPackageResponse>
                 transformer =
                         GetTransferPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -685,7 +685,7 @@ public class TransferPackageClient implements TransferPackage {
                         "ListTransferPackages",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTransferPackagesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTransferPackagesResponse>
                 transformer =
                         ListTransferPackagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -723,7 +723,7 @@ public class TransferPackageClient implements TransferPackage {
                         "UpdateTransferPackage",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTransferPackageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTransferPackageResponse>
                 transformer =
                         UpdateTransferPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

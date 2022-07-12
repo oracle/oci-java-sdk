@@ -9,7 +9,6 @@ import com.oracle.bmc.datascience.requests.*;
 import com.oracle.bmc.datascience.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class DataScienceClient implements DataScience {
@@ -334,9 +333,9 @@ public class DataScienceClient implements DataScience {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DataScience-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DataScience-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class DataScienceClient implements DataScience {
          * @return the client
          */
         public DataScienceClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class DataScienceClient implements DataScience {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -486,9 +486,8 @@ public class DataScienceClient implements DataScience {
                         "ActivateModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ActivateModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ActivateModelResponse>
-                transformer =
-                        ActivateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ActivateModelResponse> transformer =
+                ActivateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -524,7 +523,7 @@ public class DataScienceClient implements DataScience {
                         "ActivateModelDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/ActivateModelDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ActivateModelDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ActivateModelDeploymentResponse>
                 transformer =
                         ActivateModelDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -563,7 +562,7 @@ public class DataScienceClient implements DataScience {
                         "ActivateNotebookSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/ActivateNotebookSession");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ActivateNotebookSessionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ActivateNotebookSessionResponse>
                 transformer =
                         ActivateNotebookSessionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -601,9 +600,8 @@ public class DataScienceClient implements DataScience {
                         "CancelJobRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/CancelJobRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelJobRunResponse>
-                transformer =
-                        CancelJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CancelJobRunResponse> transformer =
+                CancelJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -638,7 +636,7 @@ public class DataScienceClient implements DataScience {
                         "CancelWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/CancelWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -676,7 +674,7 @@ public class DataScienceClient implements DataScience {
                         "ChangeJobCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/ChangeJobCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeJobCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeJobCompartmentResponse>
                 transformer =
                         ChangeJobCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -718,7 +716,7 @@ public class DataScienceClient implements DataScience {
                         "ChangeJobRunCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/ChangeJobRunCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeJobRunCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeJobRunCompartmentResponse>
                 transformer =
                         ChangeJobRunCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -761,7 +759,7 @@ public class DataScienceClient implements DataScience {
                         "ChangeModelCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ChangeModelCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
                 transformer =
                         ChangeModelCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -804,7 +802,7 @@ public class DataScienceClient implements DataScience {
                         "ChangeModelDeploymentCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/ChangeModelDeploymentCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeModelDeploymentCompartmentResponse>
                 transformer =
                         ChangeModelDeploymentCompartmentConverter.fromResponse(
@@ -849,7 +847,7 @@ public class DataScienceClient implements DataScience {
                         "ChangeNotebookSessionCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/ChangeNotebookSessionCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNotebookSessionCompartmentResponse>
                 transformer =
                         ChangeNotebookSessionCompartmentConverter.fromResponse(
@@ -894,7 +892,7 @@ public class DataScienceClient implements DataScience {
                         "ChangeProjectCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/ChangeProjectCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
                 transformer =
                         ChangeProjectCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -935,7 +933,7 @@ public class DataScienceClient implements DataScience {
                         "CreateJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/CreateJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateJobResponse> transformer =
                 CreateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -988,7 +986,7 @@ public class DataScienceClient implements DataScience {
                             "CreateJobArtifact",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/CreateJobArtifact");
-            com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobArtifactResponse>
+            java.util.function.Function<javax.ws.rs.core.Response, CreateJobArtifactResponse>
                     transformer =
                             CreateJobArtifactConverter.fromResponse(
                                     java.util.Optional.of(serviceDetails));
@@ -1050,9 +1048,8 @@ public class DataScienceClient implements DataScience {
                         "CreateJobRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/CreateJobRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobRunResponse>
-                transformer =
-                        CreateJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateJobRunResponse> transformer =
+                CreateJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1091,9 +1088,8 @@ public class DataScienceClient implements DataScience {
                         "CreateModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateModelResponse>
-                transformer =
-                        CreateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateModelResponse> transformer =
+                CreateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1145,7 +1141,7 @@ public class DataScienceClient implements DataScience {
                             "CreateModelArtifact",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelArtifact");
-            com.google.common.base.Function<javax.ws.rs.core.Response, CreateModelArtifactResponse>
+            java.util.function.Function<javax.ws.rs.core.Response, CreateModelArtifactResponse>
                     transformer =
                             CreateModelArtifactConverter.fromResponse(
                                     java.util.Optional.of(serviceDetails));
@@ -1208,7 +1204,7 @@ public class DataScienceClient implements DataScience {
                         "CreateModelDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/CreateModelDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateModelDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateModelDeploymentResponse>
                 transformer =
                         CreateModelDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1251,7 +1247,7 @@ public class DataScienceClient implements DataScience {
                         "CreateModelProvenance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelProvenance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateModelProvenanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateModelProvenanceResponse>
                 transformer =
                         CreateModelProvenanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1294,7 +1290,7 @@ public class DataScienceClient implements DataScience {
                         "CreateNotebookSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/CreateNotebookSession");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateNotebookSessionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateNotebookSessionResponse>
                 transformer =
                         CreateNotebookSessionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1336,9 +1332,8 @@ public class DataScienceClient implements DataScience {
                         "CreateProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/CreateProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
-                transformer =
-                        CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateProjectResponse> transformer =
+                CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1376,7 +1371,7 @@ public class DataScienceClient implements DataScience {
                         "DeactivateModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeactivateModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeactivateModelResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeactivateModelResponse>
                 transformer =
                         DeactivateModelConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1415,8 +1410,7 @@ public class DataScienceClient implements DataScience {
                         "DeactivateModelDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/DeactivateModelDeployment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeactivateModelDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeactivateModelDeploymentResponse>
                 transformer =
                         DeactivateModelDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1455,8 +1449,7 @@ public class DataScienceClient implements DataScience {
                         "DeactivateNotebookSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/DeactivateNotebookSession");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeactivateNotebookSessionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeactivateNotebookSessionResponse>
                 transformer =
                         DeactivateNotebookSessionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1493,7 +1486,7 @@ public class DataScienceClient implements DataScience {
                         "DeleteJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/DeleteJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteJobResponse> transformer =
                 DeleteJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1529,9 +1522,8 @@ public class DataScienceClient implements DataScience {
                         "DeleteJobRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/DeleteJobRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteJobRunResponse>
-                transformer =
-                        DeleteJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteJobRunResponse> transformer =
+                DeleteJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1566,9 +1558,8 @@ public class DataScienceClient implements DataScience {
                         "DeleteModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteModelResponse>
-                transformer =
-                        DeleteModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteModelResponse> transformer =
+                DeleteModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1604,7 +1595,7 @@ public class DataScienceClient implements DataScience {
                         "DeleteModelDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/DeleteModelDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteModelDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteModelDeploymentResponse>
                 transformer =
                         DeleteModelDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1643,7 +1634,7 @@ public class DataScienceClient implements DataScience {
                         "DeleteNotebookSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/DeleteNotebookSession");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNotebookSessionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteNotebookSessionResponse>
                 transformer =
                         DeleteNotebookSessionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1681,9 +1672,8 @@ public class DataScienceClient implements DataScience {
                         "DeleteProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/DeleteProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
-                transformer =
-                        DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteProjectResponse> transformer =
+                DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1717,7 +1707,7 @@ public class DataScienceClient implements DataScience {
                         "GetJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/GetJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetJobResponse> transformer =
                 GetJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1763,7 +1753,7 @@ public class DataScienceClient implements DataScience {
                         "GetJobArtifactContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/GetJobArtifactContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobArtifactContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetJobArtifactContentResponse>
                 transformer =
                         GetJobArtifactContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1799,7 +1789,7 @@ public class DataScienceClient implements DataScience {
                         "GetJobRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/GetJobRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobRunResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetJobRunResponse> transformer =
                 GetJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1833,7 +1823,7 @@ public class DataScienceClient implements DataScience {
                         "GetModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetModelResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetModelResponse> transformer =
                 GetModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1879,7 +1869,7 @@ public class DataScienceClient implements DataScience {
                         "GetModelArtifactContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelArtifactContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetModelArtifactContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetModelArtifactContentResponse>
                 transformer =
                         GetModelArtifactContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1916,7 +1906,7 @@ public class DataScienceClient implements DataScience {
                         "GetModelDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/GetModelDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetModelDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetModelDeploymentResponse>
                 transformer =
                         GetModelDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1953,7 +1943,7 @@ public class DataScienceClient implements DataScience {
                         "GetModelProvenance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelProvenance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetModelProvenanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetModelProvenanceResponse>
                 transformer =
                         GetModelProvenanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1990,7 +1980,7 @@ public class DataScienceClient implements DataScience {
                         "GetNotebookSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/GetNotebookSession");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNotebookSessionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetNotebookSessionResponse>
                 transformer =
                         GetNotebookSessionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2026,7 +2016,7 @@ public class DataScienceClient implements DataScience {
                         "GetProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/GetProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetProjectResponse> transformer =
                 GetProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2061,9 +2051,8 @@ public class DataScienceClient implements DataScience {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2097,7 +2086,7 @@ public class DataScienceClient implements DataScience {
                         "HeadJobArtifact",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/HeadJobArtifact");
-        com.google.common.base.Function<javax.ws.rs.core.Response, HeadJobArtifactResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, HeadJobArtifactResponse>
                 transformer =
                         HeadJobArtifactConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2135,7 +2124,7 @@ public class DataScienceClient implements DataScience {
                         "HeadModelArtifact",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelArtifact");
-        com.google.common.base.Function<javax.ws.rs.core.Response, HeadModelArtifactResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, HeadModelArtifactResponse>
                 transformer =
                         HeadModelArtifactConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2174,7 +2163,7 @@ public class DataScienceClient implements DataScience {
                         "ListFastLaunchJobConfigs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/FastLaunchJobConfigSummary/ListFastLaunchJobConfigs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListFastLaunchJobConfigsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListFastLaunchJobConfigsResponse>
                 transformer =
                         ListFastLaunchJobConfigsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2211,9 +2200,8 @@ public class DataScienceClient implements DataScience {
                         "ListJobRuns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRunSummary/ListJobRuns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListJobRunsResponse>
-                transformer =
-                        ListJobRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListJobRunsResponse> transformer =
+                ListJobRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2247,9 +2235,8 @@ public class DataScienceClient implements DataScience {
                         "ListJobShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobShapeSummary/ListJobShapes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListJobShapesResponse>
-                transformer =
-                        ListJobShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListJobShapesResponse> transformer =
+                ListJobShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2282,7 +2269,7 @@ public class DataScienceClient implements DataScience {
                         "ListJobs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobSummary/ListJobs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListJobsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListJobsResponse> transformer =
                 ListJobsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2318,8 +2305,7 @@ public class DataScienceClient implements DataScience {
                         "ListModelDeploymentShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeploymentShapeSummary/ListModelDeploymentShapes");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListModelDeploymentShapesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListModelDeploymentShapesResponse>
                 transformer =
                         ListModelDeploymentShapesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2356,7 +2342,7 @@ public class DataScienceClient implements DataScience {
                         "ListModelDeployments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeploymentSummary/ListModelDeployments");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListModelDeploymentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListModelDeploymentsResponse>
                 transformer =
                         ListModelDeploymentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2392,7 +2378,7 @@ public class DataScienceClient implements DataScience {
                         "ListModels",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelSummary/ListModels");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListModelsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListModelsResponse> transformer =
                 ListModelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2428,8 +2414,7 @@ public class DataScienceClient implements DataScience {
                         "ListNotebookSessionShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSessionShapeSummary/ListNotebookSessionShapes");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListNotebookSessionShapesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListNotebookSessionShapesResponse>
                 transformer =
                         ListNotebookSessionShapesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2466,7 +2451,7 @@ public class DataScienceClient implements DataScience {
                         "ListNotebookSessions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSessionSummary/ListNotebookSessions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListNotebookSessionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListNotebookSessionsResponse>
                 transformer =
                         ListNotebookSessionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2503,9 +2488,8 @@ public class DataScienceClient implements DataScience {
                         "ListProjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ProjectSummary/ListProjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
-                transformer =
-                        ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListProjectsResponse> transformer =
+                ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2540,7 +2524,7 @@ public class DataScienceClient implements DataScience {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2577,7 +2561,7 @@ public class DataScienceClient implements DataScience {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2614,7 +2598,7 @@ public class DataScienceClient implements DataScience {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequestSummary/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2650,7 +2634,7 @@ public class DataScienceClient implements DataScience {
                         "UpdateJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/UpdateJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateJobResponse> transformer =
                 UpdateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2689,9 +2673,8 @@ public class DataScienceClient implements DataScience {
                         "UpdateJobRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/UpdateJobRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJobRunResponse>
-                transformer =
-                        UpdateJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateJobRunResponse> transformer =
+                UpdateJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2729,9 +2712,8 @@ public class DataScienceClient implements DataScience {
                         "UpdateModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateModelResponse>
-                transformer =
-                        UpdateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateModelResponse> transformer =
+                UpdateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2770,7 +2752,7 @@ public class DataScienceClient implements DataScience {
                         "UpdateModelDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/UpdateModelDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateModelDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateModelDeploymentResponse>
                 transformer =
                         UpdateModelDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2812,7 +2794,7 @@ public class DataScienceClient implements DataScience {
                         "UpdateModelProvenance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelProvenance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateModelProvenanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateModelProvenanceResponse>
                 transformer =
                         UpdateModelProvenanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2854,7 +2836,7 @@ public class DataScienceClient implements DataScience {
                         "UpdateNotebookSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/UpdateNotebookSession");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNotebookSessionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateNotebookSessionResponse>
                 transformer =
                         UpdateNotebookSessionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2895,9 +2877,8 @@ public class DataScienceClient implements DataScience {
                         "UpdateProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/UpdateProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
-                transformer =
-                        UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateProjectResponse> transformer =
+                UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

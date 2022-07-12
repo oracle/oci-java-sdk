@@ -9,7 +9,6 @@ import com.oracle.bmc.datalabelingservicedataplane.requests.*;
 import com.oracle.bmc.datalabelingservicedataplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class DataLabelingClient implements DataLabeling {
@@ -335,9 +334,9 @@ public class DataLabelingClient implements DataLabeling {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DataLabeling-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DataLabeling-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class DataLabelingClient implements DataLabeling {
          * @return the client
          */
         public DataLabelingClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class DataLabelingClient implements DataLabeling {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class DataLabelingClient implements DataLabeling {
                         "CreateAnnotation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/CreateAnnotation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAnnotationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAnnotationResponse>
                 transformer =
                         CreateAnnotationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -530,9 +530,8 @@ public class DataLabelingClient implements DataLabeling {
                         "CreateRecord",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/CreateRecord");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRecordResponse>
-                transformer =
-                        CreateRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRecordResponse> transformer =
+                CreateRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -570,7 +569,7 @@ public class DataLabelingClient implements DataLabeling {
                         "DeleteAnnotation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/DeleteAnnotation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAnnotationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAnnotationResponse>
                 transformer =
                         DeleteAnnotationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -608,9 +607,8 @@ public class DataLabelingClient implements DataLabeling {
                         "DeleteRecord",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/DeleteRecord");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRecordResponse>
-                transformer =
-                        DeleteRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRecordResponse> transformer =
+                DeleteRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -645,9 +643,8 @@ public class DataLabelingClient implements DataLabeling {
                         "GetAnnotation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/GetAnnotation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAnnotationResponse>
-                transformer =
-                        GetAnnotationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetAnnotationResponse> transformer =
+                GetAnnotationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -680,7 +677,7 @@ public class DataLabelingClient implements DataLabeling {
                         "GetDataset",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Dataset/GetDataset");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDatasetResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetDatasetResponse> transformer =
                 GetDatasetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -714,7 +711,7 @@ public class DataLabelingClient implements DataLabeling {
                         "GetRecord",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/GetRecord");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRecordResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetRecordResponse> transformer =
                 GetRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -759,7 +756,7 @@ public class DataLabelingClient implements DataLabeling {
                         "GetRecordContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/GetRecordContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRecordContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRecordContentResponse>
                 transformer =
                         GetRecordContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -807,7 +804,7 @@ public class DataLabelingClient implements DataLabeling {
                         "GetRecordPreviewContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/GetRecordPreviewContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRecordPreviewContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRecordPreviewContentResponse>
                 transformer =
                         GetRecordPreviewContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -844,7 +841,7 @@ public class DataLabelingClient implements DataLabeling {
                         "ListAnnotations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/AnnotationCollection/ListAnnotations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAnnotationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAnnotationsResponse>
                 transformer =
                         ListAnnotationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -881,9 +878,8 @@ public class DataLabelingClient implements DataLabeling {
                         "ListRecords",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/RecordCollection/ListRecords");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRecordsResponse>
-                transformer =
-                        ListRecordsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListRecordsResponse> transformer =
+                ListRecordsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -918,8 +914,7 @@ public class DataLabelingClient implements DataLabeling {
                         "SummarizeAnnotationAnalytics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/AnnotationAnalyticsAggregationCollection/SummarizeAnnotationAnalytics");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SummarizeAnnotationAnalyticsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeAnnotationAnalyticsResponse>
                 transformer =
                         SummarizeAnnotationAnalyticsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -957,7 +952,7 @@ public class DataLabelingClient implements DataLabeling {
                         "SummarizeRecordAnalytics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/RecordAnalyticsAggregationCollection/SummarizeRecordAnalytics");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeRecordAnalyticsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeRecordAnalyticsResponse>
                 transformer =
                         SummarizeRecordAnalyticsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -994,7 +989,7 @@ public class DataLabelingClient implements DataLabeling {
                         "UpdateAnnotation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/UpdateAnnotation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAnnotationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAnnotationResponse>
                 transformer =
                         UpdateAnnotationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1035,9 +1030,8 @@ public class DataLabelingClient implements DataLabeling {
                         "UpdateRecord",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/UpdateRecord");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRecordResponse>
-                transformer =
-                        UpdateRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRecordResponse> transformer =
+                UpdateRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

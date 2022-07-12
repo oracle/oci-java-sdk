@@ -9,7 +9,6 @@ import com.oracle.bmc.marketplace.requests.*;
 import com.oracle.bmc.marketplace.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class MarketplaceClient implements Marketplace {
@@ -334,9 +333,9 @@ public class MarketplaceClient implements Marketplace {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Marketplace-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Marketplace-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class MarketplaceClient implements Marketplace {
          * @return the client
          */
         public MarketplaceClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class MarketplaceClient implements Marketplace {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,8 +488,7 @@ public class MarketplaceClient implements Marketplace {
                         "ChangePublicationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/ChangePublicationCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangePublicationCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangePublicationCompartmentResponse>
                 transformer =
                         ChangePublicationCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -533,7 +532,7 @@ public class MarketplaceClient implements Marketplace {
                         "CreateAcceptedAgreement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/CreateAcceptedAgreement");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAcceptedAgreementResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAcceptedAgreementResponse>
                 transformer =
                         CreateAcceptedAgreementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -575,7 +574,7 @@ public class MarketplaceClient implements Marketplace {
                         "CreatePublication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/CreatePublication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePublicationResponse>
                 transformer =
                         CreatePublicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -617,7 +616,7 @@ public class MarketplaceClient implements Marketplace {
                         "DeleteAcceptedAgreement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/DeleteAcceptedAgreement");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAcceptedAgreementResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAcceptedAgreementResponse>
                 transformer =
                         DeleteAcceptedAgreementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -655,7 +654,7 @@ public class MarketplaceClient implements Marketplace {
                         "DeletePublication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/DeletePublication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePublicationResponse>
                 transformer =
                         DeletePublicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -693,7 +692,7 @@ public class MarketplaceClient implements Marketplace {
                         "GetAcceptedAgreement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/GetAcceptedAgreement");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAcceptedAgreementResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAcceptedAgreementResponse>
                 transformer =
                         GetAcceptedAgreementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -730,9 +729,8 @@ public class MarketplaceClient implements Marketplace {
                         "GetAgreement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAgreementResponse>
-                transformer =
-                        GetAgreementConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetAgreementResponse> transformer =
+                GetAgreementConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -765,7 +763,7 @@ public class MarketplaceClient implements Marketplace {
                         "GetListing",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Listing/GetListing");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetListingResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetListingResponse> transformer =
                 GetListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -799,7 +797,7 @@ public class MarketplaceClient implements Marketplace {
                         "GetPackage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingPackage/GetPackage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPackageResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetPackageResponse> transformer =
                 GetPackageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -834,9 +832,8 @@ public class MarketplaceClient implements Marketplace {
                         "GetPublication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/GetPublication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicationResponse>
-                transformer =
-                        GetPublicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetPublicationResponse> transformer =
+                GetPublicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -871,7 +868,7 @@ public class MarketplaceClient implements Marketplace {
                         "GetPublicationPackage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublicationPackage/GetPublicationPackage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicationPackageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetPublicationPackageResponse>
                 transformer =
                         GetPublicationPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -909,7 +906,7 @@ public class MarketplaceClient implements Marketplace {
                         "ListAcceptedAgreements",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreementSummary/ListAcceptedAgreements");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAcceptedAgreementsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAcceptedAgreementsResponse>
                 transformer =
                         ListAcceptedAgreementsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -946,9 +943,8 @@ public class MarketplaceClient implements Marketplace {
                         "ListAgreements",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AgreementSummary/ListAgreements");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAgreementsResponse>
-                transformer =
-                        ListAgreementsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListAgreementsResponse> transformer =
+                ListAgreementsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -982,9 +978,8 @@ public class MarketplaceClient implements Marketplace {
                         "ListCategories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/CategorySummary/ListCategories");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCategoriesResponse>
-                transformer =
-                        ListCategoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListCategoriesResponse> transformer =
+                ListCategoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1018,9 +1013,8 @@ public class MarketplaceClient implements Marketplace {
                         "ListListings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingSummary/ListListings");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListListingsResponse>
-                transformer =
-                        ListListingsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListListingsResponse> transformer =
+                ListListingsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1054,9 +1048,8 @@ public class MarketplaceClient implements Marketplace {
                         "ListPackages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingPackageSummary/ListPackages");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPackagesResponse>
-                transformer =
-                        ListPackagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListPackagesResponse> transformer =
+                ListPackagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1091,7 +1084,7 @@ public class MarketplaceClient implements Marketplace {
                         "ListPublicationPackages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublicationPackageSummary/ListPublicationPackages");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicationPackagesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPublicationPackagesResponse>
                 transformer =
                         ListPublicationPackagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1128,7 +1121,7 @@ public class MarketplaceClient implements Marketplace {
                         "ListPublications",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublicationSummary/ListPublications");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPublicationsResponse>
                 transformer =
                         ListPublicationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1165,9 +1158,8 @@ public class MarketplaceClient implements Marketplace {
                         "ListPublishers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublisherSummary/ListPublishers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPublishersResponse>
-                transformer =
-                        ListPublishersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListPublishersResponse> transformer =
+                ListPublishersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1201,7 +1193,7 @@ public class MarketplaceClient implements Marketplace {
                         "ListReportTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ReportTypeCollection/ListReportTypes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListReportTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListReportTypesResponse>
                 transformer =
                         ListReportTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1238,9 +1230,8 @@ public class MarketplaceClient implements Marketplace {
                         "ListReports",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ReportCollection/ListReports");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListReportsResponse>
-                transformer =
-                        ListReportsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListReportsResponse> transformer =
+                ListReportsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1273,7 +1264,7 @@ public class MarketplaceClient implements Marketplace {
                         "ListTaxes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/TaxSummary/ListTaxes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTaxesResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListTaxesResponse> transformer =
                 ListTaxesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1308,9 +1299,8 @@ public class MarketplaceClient implements Marketplace {
                         "SearchListings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingSummary/SearchListings");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SearchListingsResponse>
-                transformer =
-                        SearchListingsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, SearchListingsResponse> transformer =
+                SearchListingsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1350,7 +1340,7 @@ public class MarketplaceClient implements Marketplace {
                         "UpdateAcceptedAgreement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/UpdateAcceptedAgreement");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAcceptedAgreementResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAcceptedAgreementResponse>
                 transformer =
                         UpdateAcceptedAgreementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1392,7 +1382,7 @@ public class MarketplaceClient implements Marketplace {
                         "UpdatePublication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/UpdatePublication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePublicationResponse>
                 transformer =
                         UpdatePublicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

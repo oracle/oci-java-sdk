@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.paginator.internal;
 
-import com.google.common.base.Optional;
+import java.util.Optional;
 
 /**
  * A container class for a request builder and next page token. These pieces will be used to create

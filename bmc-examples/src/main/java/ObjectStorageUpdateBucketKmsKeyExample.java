@@ -2,7 +2,6 @@
  * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
@@ -15,6 +14,10 @@ import com.oracle.bmc.objectstorage.requests.GetNamespaceRequest;
 import com.oracle.bmc.objectstorage.requests.UpdateBucketRequest;
 import com.oracle.bmc.objectstorage.responses.CreateBucketResponse;
 import com.oracle.bmc.objectstorage.responses.UpdateBucketResponse;
+
+import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
 
 public class ObjectStorageUpdateBucketKmsKeyExample {
 
@@ -88,11 +91,13 @@ public class ObjectStorageUpdateBucketKmsKeyExample {
         System.out.println("Updated kmsKeyId of a to " + updateResponse.getBucket().getKmsKeyId());
 
         // update bucket metadata without touching kmsKeyId
+        Map<String, String> metadata = new HashMap<>();
+        metadata.put("a", "b");
         final UpdateBucketDetails updateBucketMetadata =
                 UpdateBucketDetails.builder()
                         .namespace(namespace)
                         .name(bucketName)
-                        .metadata(ImmutableMap.of("a", "b"))
+                        .metadata(Collections.unmodifiableMap(metadata))
                         .build();
         updateResponse =
                 objectStorageClient.updateBucket(

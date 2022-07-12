@@ -6,7 +6,6 @@ package com.oracle.bmc.filestorage;
 
 import com.oracle.bmc.filestorage.requests.*;
 import com.oracle.bmc.filestorage.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -103,16 +102,16 @@ public class FileStorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetExportRequest, GetExportResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetExportRequest, GetExportResponse>() {
                             @Override
                             public GetExportResponse apply(GetExportRequest request) {
                                 return client.getExport(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetExportResponse>() {
+                        new java.util.function.Predicate<GetExportResponse>() {
                             @Override
-                            public boolean apply(GetExportResponse response) {
+                            public boolean test(GetExportResponse response) {
                                 return targetStatesSet.contains(
                                         response.getExport().getLifecycleState());
                             }
@@ -200,17 +199,17 @@ public class FileStorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetExportSetRequest, GetExportSetResponse>() {
                             @Override
                             public GetExportSetResponse apply(GetExportSetRequest request) {
                                 return client.getExportSet(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetExportSetResponse>() {
+                        new java.util.function.Predicate<GetExportSetResponse>() {
                             @Override
-                            public boolean apply(GetExportSetResponse response) {
+                            public boolean test(GetExportSetResponse response) {
                                 return targetStatesSet.contains(
                                         response.getExportSet().getLifecycleState());
                             }
@@ -298,17 +297,17 @@ public class FileStorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetFileSystemRequest, GetFileSystemResponse>() {
                             @Override
                             public GetFileSystemResponse apply(GetFileSystemRequest request) {
                                 return client.getFileSystem(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetFileSystemResponse>() {
+                        new java.util.function.Predicate<GetFileSystemResponse>() {
                             @Override
-                            public boolean apply(GetFileSystemResponse response) {
+                            public boolean test(GetFileSystemResponse response) {
                                 return targetStatesSet.contains(
                                         response.getFileSystem().getLifecycleState());
                             }
@@ -402,17 +401,17 @@ public class FileStorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetMountTargetRequest, GetMountTargetResponse>() {
                             @Override
                             public GetMountTargetResponse apply(GetMountTargetRequest request) {
                                 return client.getMountTarget(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetMountTargetResponse>() {
+                        new java.util.function.Predicate<GetMountTargetResponse>() {
                             @Override
-                            public boolean apply(GetMountTargetResponse response) {
+                            public boolean test(GetMountTargetResponse response) {
                                 return targetStatesSet.contains(
                                         response.getMountTarget().getLifecycleState());
                             }
@@ -501,17 +500,16 @@ public class FileStorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetSnapshotRequest, GetSnapshotResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetSnapshotRequest, GetSnapshotResponse>() {
                             @Override
                             public GetSnapshotResponse apply(GetSnapshotRequest request) {
                                 return client.getSnapshot(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSnapshotResponse>() {
+                        new java.util.function.Predicate<GetSnapshotResponse>() {
                             @Override
-                            public boolean apply(GetSnapshotResponse response) {
+                            public boolean test(GetSnapshotResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSnapshot().getLifecycleState());
                             }

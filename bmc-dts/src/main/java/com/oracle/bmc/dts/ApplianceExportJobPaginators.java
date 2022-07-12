@@ -45,19 +45,19 @@ public class ApplianceExportJobPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListApplianceExportJobsRequest.Builder, ListApplianceExportJobsRequest,
                 ListApplianceExportJobsResponse>(
-                new com.google.common.base.Supplier<ListApplianceExportJobsRequest.Builder>() {
+                new java.util.function.Supplier<ListApplianceExportJobsRequest.Builder>() {
                     @Override
                     public ListApplianceExportJobsRequest.Builder get() {
                         return ListApplianceExportJobsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListApplianceExportJobsResponse, String>() {
+                new java.util.function.Function<ListApplianceExportJobsResponse, String>() {
                     @Override
                     public String apply(ListApplianceExportJobsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListApplianceExportJobsRequest.Builder>,
                         ListApplianceExportJobsRequest>() {
@@ -70,12 +70,12 @@ public class ApplianceExportJobPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListApplianceExportJobsRequest, ListApplianceExportJobsResponse>() {
                     @Override
                     public ListApplianceExportJobsResponse apply(
@@ -100,19 +100,19 @@ public class ApplianceExportJobPaginators {
                 ListApplianceExportJobsRequest.Builder, ListApplianceExportJobsRequest,
                 ListApplianceExportJobsResponse,
                 com.oracle.bmc.dts.model.ApplianceExportJobSummary>(
-                new com.google.common.base.Supplier<ListApplianceExportJobsRequest.Builder>() {
+                new java.util.function.Supplier<ListApplianceExportJobsRequest.Builder>() {
                     @Override
                     public ListApplianceExportJobsRequest.Builder get() {
                         return ListApplianceExportJobsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListApplianceExportJobsResponse, String>() {
+                new java.util.function.Function<ListApplianceExportJobsResponse, String>() {
                     @Override
                     public String apply(ListApplianceExportJobsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListApplianceExportJobsRequest.Builder>,
                         ListApplianceExportJobsRequest>() {
@@ -125,12 +125,12 @@ public class ApplianceExportJobPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListApplianceExportJobsRequest, ListApplianceExportJobsResponse>() {
                     @Override
                     public ListApplianceExportJobsResponse apply(
@@ -138,7 +138,7 @@ public class ApplianceExportJobPaginators {
                         return client.listApplianceExportJobs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListApplianceExportJobsResponse,
                         java.util.List<com.oracle.bmc.dts.model.ApplianceExportJobSummary>>() {
                     @Override

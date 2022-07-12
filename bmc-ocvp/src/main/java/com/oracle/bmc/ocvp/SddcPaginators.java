@@ -43,19 +43,19 @@ public class SddcPaginators {
     public Iterable<ListSddcsResponse> listSddcsResponseIterator(final ListSddcsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSddcsRequest.Builder, ListSddcsRequest, ListSddcsResponse>(
-                new com.google.common.base.Supplier<ListSddcsRequest.Builder>() {
+                new java.util.function.Supplier<ListSddcsRequest.Builder>() {
                     @Override
                     public ListSddcsRequest.Builder get() {
                         return ListSddcsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSddcsResponse, String>() {
+                new java.util.function.Function<ListSddcsResponse, String>() {
                     @Override
                     public String apply(ListSddcsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSddcsRequest.Builder>,
                         ListSddcsRequest>() {
@@ -68,12 +68,12 @@ public class SddcPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListSddcsRequest, ListSddcsResponse>() {
+                new java.util.function.Function<ListSddcsRequest, ListSddcsResponse>() {
                     @Override
                     public ListSddcsResponse apply(ListSddcsRequest request) {
                         return client.listSddcs(request);
@@ -95,19 +95,19 @@ public class SddcPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSddcsRequest.Builder, ListSddcsRequest, ListSddcsResponse,
                 com.oracle.bmc.ocvp.model.SddcSummary>(
-                new com.google.common.base.Supplier<ListSddcsRequest.Builder>() {
+                new java.util.function.Supplier<ListSddcsRequest.Builder>() {
                     @Override
                     public ListSddcsRequest.Builder get() {
                         return ListSddcsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSddcsResponse, String>() {
+                new java.util.function.Function<ListSddcsResponse, String>() {
                     @Override
                     public String apply(ListSddcsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSddcsRequest.Builder>,
                         ListSddcsRequest>() {
@@ -120,18 +120,18 @@ public class SddcPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListSddcsRequest, ListSddcsResponse>() {
+                new java.util.function.Function<ListSddcsRequest, ListSddcsResponse>() {
                     @Override
                     public ListSddcsResponse apply(ListSddcsRequest request) {
                         return client.listSddcs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSddcsResponse,
                         java.util.List<com.oracle.bmc.ocvp.model.SddcSummary>>() {
                     @Override
@@ -154,19 +154,19 @@ public class SddcPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSupportedHostShapesRequest.Builder, ListSupportedHostShapesRequest,
                 ListSupportedHostShapesResponse>(
-                new com.google.common.base.Supplier<ListSupportedHostShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListSupportedHostShapesRequest.Builder>() {
                     @Override
                     public ListSupportedHostShapesRequest.Builder get() {
                         return ListSupportedHostShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSupportedHostShapesResponse, String>() {
+                new java.util.function.Function<ListSupportedHostShapesResponse, String>() {
                     @Override
                     public String apply(ListSupportedHostShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSupportedHostShapesRequest.Builder>,
                         ListSupportedHostShapesRequest>() {
@@ -179,12 +179,12 @@ public class SddcPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>() {
                     @Override
                     public ListSupportedHostShapesResponse apply(
@@ -209,19 +209,19 @@ public class SddcPaginators {
                 ListSupportedHostShapesRequest.Builder, ListSupportedHostShapesRequest,
                 ListSupportedHostShapesResponse,
                 com.oracle.bmc.ocvp.model.SupportedHostShapeSummary>(
-                new com.google.common.base.Supplier<ListSupportedHostShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListSupportedHostShapesRequest.Builder>() {
                     @Override
                     public ListSupportedHostShapesRequest.Builder get() {
                         return ListSupportedHostShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSupportedHostShapesResponse, String>() {
+                new java.util.function.Function<ListSupportedHostShapesResponse, String>() {
                     @Override
                     public String apply(ListSupportedHostShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSupportedHostShapesRequest.Builder>,
                         ListSupportedHostShapesRequest>() {
@@ -234,12 +234,12 @@ public class SddcPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>() {
                     @Override
                     public ListSupportedHostShapesResponse apply(
@@ -247,7 +247,7 @@ public class SddcPaginators {
                         return client.listSupportedHostShapes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSupportedHostShapesResponse,
                         java.util.List<com.oracle.bmc.ocvp.model.SupportedHostShapeSummary>>() {
                     @Override
@@ -270,19 +270,19 @@ public class SddcPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSupportedSkusRequest.Builder, ListSupportedSkusRequest,
                 ListSupportedSkusResponse>(
-                new com.google.common.base.Supplier<ListSupportedSkusRequest.Builder>() {
+                new java.util.function.Supplier<ListSupportedSkusRequest.Builder>() {
                     @Override
                     public ListSupportedSkusRequest.Builder get() {
                         return ListSupportedSkusRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSupportedSkusResponse, String>() {
+                new java.util.function.Function<ListSupportedSkusResponse, String>() {
                     @Override
                     public String apply(ListSupportedSkusResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSupportedSkusRequest.Builder>,
                         ListSupportedSkusRequest>() {
@@ -295,12 +295,12 @@ public class SddcPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSupportedSkusRequest, ListSupportedSkusResponse>() {
                     @Override
                     public ListSupportedSkusResponse apply(ListSupportedSkusRequest request) {
@@ -323,19 +323,19 @@ public class SddcPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSupportedSkusRequest.Builder, ListSupportedSkusRequest,
                 ListSupportedSkusResponse, com.oracle.bmc.ocvp.model.SupportedSkuSummary>(
-                new com.google.common.base.Supplier<ListSupportedSkusRequest.Builder>() {
+                new java.util.function.Supplier<ListSupportedSkusRequest.Builder>() {
                     @Override
                     public ListSupportedSkusRequest.Builder get() {
                         return ListSupportedSkusRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSupportedSkusResponse, String>() {
+                new java.util.function.Function<ListSupportedSkusResponse, String>() {
                     @Override
                     public String apply(ListSupportedSkusResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSupportedSkusRequest.Builder>,
                         ListSupportedSkusRequest>() {
@@ -348,19 +348,19 @@ public class SddcPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSupportedSkusRequest, ListSupportedSkusResponse>() {
                     @Override
                     public ListSupportedSkusResponse apply(ListSupportedSkusRequest request) {
                         return client.listSupportedSkus(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSupportedSkusResponse,
                         java.util.List<com.oracle.bmc.ocvp.model.SupportedSkuSummary>>() {
                     @Override
@@ -385,21 +385,21 @@ public class SddcPaginators {
                 ListSupportedVmwareSoftwareVersionsRequest.Builder,
                 ListSupportedVmwareSoftwareVersionsRequest,
                 ListSupportedVmwareSoftwareVersionsResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListSupportedVmwareSoftwareVersionsRequest.Builder>() {
                     @Override
                     public ListSupportedVmwareSoftwareVersionsRequest.Builder get() {
                         return ListSupportedVmwareSoftwareVersionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSupportedVmwareSoftwareVersionsResponse, String>() {
                     @Override
                     public String apply(ListSupportedVmwareSoftwareVersionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSupportedVmwareSoftwareVersionsRequest.Builder>,
                         ListSupportedVmwareSoftwareVersionsRequest>() {
@@ -412,12 +412,12 @@ public class SddcPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSupportedVmwareSoftwareVersionsRequest,
                         ListSupportedVmwareSoftwareVersionsResponse>() {
                     @Override
@@ -445,21 +445,21 @@ public class SddcPaginators {
                 ListSupportedVmwareSoftwareVersionsRequest,
                 ListSupportedVmwareSoftwareVersionsResponse,
                 com.oracle.bmc.ocvp.model.SupportedVmwareSoftwareVersionSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListSupportedVmwareSoftwareVersionsRequest.Builder>() {
                     @Override
                     public ListSupportedVmwareSoftwareVersionsRequest.Builder get() {
                         return ListSupportedVmwareSoftwareVersionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSupportedVmwareSoftwareVersionsResponse, String>() {
                     @Override
                     public String apply(ListSupportedVmwareSoftwareVersionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSupportedVmwareSoftwareVersionsRequest.Builder>,
                         ListSupportedVmwareSoftwareVersionsRequest>() {
@@ -472,12 +472,12 @@ public class SddcPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSupportedVmwareSoftwareVersionsRequest,
                         ListSupportedVmwareSoftwareVersionsResponse>() {
                     @Override
@@ -486,7 +486,7 @@ public class SddcPaginators {
                         return client.listSupportedVmwareSoftwareVersions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSupportedVmwareSoftwareVersionsResponse,
                         java.util.List<
                                 com.oracle.bmc.ocvp.model

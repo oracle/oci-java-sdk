@@ -6,7 +6,6 @@ package com.oracle.bmc.operatoraccesscontrol;
 
 import com.oracle.bmc.operatoraccesscontrol.requests.*;
 import com.oracle.bmc.operatoraccesscontrol.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -113,8 +112,8 @@ public class OperatorControlWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetOperatorControlRequest, GetOperatorControlResponse>() {
                             @Override
                             public GetOperatorControlResponse apply(
@@ -122,9 +121,9 @@ public class OperatorControlWaiters {
                                 return client.getOperatorControl(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetOperatorControlResponse>() {
+                        new java.util.function.Predicate<GetOperatorControlResponse>() {
                             @Override
-                            public boolean apply(GetOperatorControlResponse response) {
+                            public boolean test(GetOperatorControlResponse response) {
                                 return targetStatesSet.contains(
                                         response.getOperatorControl().getLifecycleState());
                             }

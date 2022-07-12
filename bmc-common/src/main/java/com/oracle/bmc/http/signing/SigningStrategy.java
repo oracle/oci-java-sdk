@@ -4,10 +4,11 @@
  */
 package com.oracle.bmc.http.signing;
 
-import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.http.signing.internal.Constants;
+
 import java.util.List;
+import java.util.Map;
 
 /**
  * Enum for the various signing strategies used by OCI.
@@ -40,12 +41,12 @@ public enum SigningStrategy {
     /**
      * The Map of headers (by HTTP method) to sign.
      */
-    private final ImmutableMap<String, List<String>> headersToSign;
+    private final Map<String, List<String>> headersToSign;
 
     /**
      * The Map of headers (by HTTP method) to sign, if they are set.
      */
-    private final ImmutableMap<String, List<String>> optionalHeadersToSign;
+    private final Map<String, List<String>> optionalHeadersToSign;
 
     /**
      * Flag to indicate whether a PUT requests require content-* headers
@@ -58,9 +59,9 @@ public enum SigningStrategy {
         "optionalHeadersToSign",
         "skipContentHeadersForStreamingPutRequests"
     })
-    private SigningStrategy(
-            final ImmutableMap<String, List<String>> headersToSign,
-            final ImmutableMap<String, List<String>> optionalHeadersToSign,
+    SigningStrategy(
+            final Map<String, List<String>> headersToSign,
+            final Map<String, List<String>> optionalHeadersToSign,
             final boolean skipContentHeadersForStreamingPutRequests) {
         this.headersToSign = headersToSign;
         this.optionalHeadersToSign = optionalHeadersToSign;
@@ -70,15 +71,21 @@ public enum SigningStrategy {
     /**
      * The Map of headers (by HTTP method) to sign.
      */
-    public ImmutableMap<String, List<String>> getHeadersToSign() {
-        return this.headersToSign;
+    public com.google.common /*Guava will be removed soon*/.collect.ImmutableMap<
+                    String, List<String>>
+            getHeadersToSign() {
+        return com.google.common /*Guava will be removed soon*/.collect.ImmutableMap.copyOf(
+                this.headersToSign);
     }
 
     /**
      * The Map of headers (by HTTP method) to sign, if they are set.
      */
-    public ImmutableMap<String, List<String>> getOptionalHeadersToSign() {
-        return this.optionalHeadersToSign;
+    public com.google.common /*Guava will be removed soon*/.collect.ImmutableMap<
+                    String, List<String>>
+            getOptionalHeadersToSign() {
+        return com.google.common /*Guava will be removed soon*/.collect.ImmutableMap.copyOf(
+                this.optionalHeadersToSign);
     }
 
     /**

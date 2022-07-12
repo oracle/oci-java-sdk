@@ -7,7 +7,6 @@ package com.oracle.bmc.ocvp;
 import com.oracle.bmc.ocvp.internal.http.*;
 import com.oracle.bmc.ocvp.requests.*;
 import com.oracle.bmc.ocvp.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for EsxiHost service. <br/>
@@ -319,7 +318,7 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
          * @return the client
          */
         public EsxiHostAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,7 +404,7 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
                         "CreateEsxiHost",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEsxiHostResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateEsxiHostResponse>
                 transformer =
                         CreateEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateEsxiHostRequest, CreateEsxiHostResponse>
@@ -454,7 +454,7 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
                         "DeleteEsxiHost",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/DeleteEsxiHost");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEsxiHostResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteEsxiHostResponse>
                 transformer =
                         DeleteEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteEsxiHostRequest, DeleteEsxiHostResponse>
@@ -498,7 +498,7 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
                         "GetEsxiHost",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/GetEsxiHost");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetEsxiHostResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEsxiHostResponse>
                 transformer =
                         GetEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetEsxiHostRequest, GetEsxiHostResponse>
@@ -542,7 +542,7 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
                         "ListEsxiHosts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHostSummary/ListEsxiHosts");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListEsxiHostsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEsxiHostsResponse>
                 transformer =
                         ListEsxiHostsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListEsxiHostsRequest, ListEsxiHostsResponse>
@@ -587,7 +587,7 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
                         "UpdateEsxiHost",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/UpdateEsxiHost");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEsxiHostResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateEsxiHostResponse>
                 transformer =
                         UpdateEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateEsxiHostRequest, UpdateEsxiHostResponse>

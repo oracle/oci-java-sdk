@@ -44,19 +44,19 @@ public class NetworkLoadBalancerPaginators {
             final ListBackendSetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBackendSetsRequest.Builder, ListBackendSetsRequest, ListBackendSetsResponse>(
-                new com.google.common.base.Supplier<ListBackendSetsRequest.Builder>() {
+                new java.util.function.Supplier<ListBackendSetsRequest.Builder>() {
                     @Override
                     public ListBackendSetsRequest.Builder get() {
                         return ListBackendSetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBackendSetsResponse, String>() {
+                new java.util.function.Function<ListBackendSetsResponse, String>() {
                     @Override
                     public String apply(ListBackendSetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBackendSetsRequest.Builder>,
                         ListBackendSetsRequest>() {
@@ -69,13 +69,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListBackendSetsRequest, ListBackendSetsResponse>() {
+                new java.util.function.Function<ListBackendSetsRequest, ListBackendSetsResponse>() {
                     @Override
                     public ListBackendSetsResponse apply(ListBackendSetsRequest request) {
                         return client.listBackendSets(request);
@@ -97,19 +96,19 @@ public class NetworkLoadBalancerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListBackendSetsRequest.Builder, ListBackendSetsRequest, ListBackendSetsResponse,
                 com.oracle.bmc.networkloadbalancer.model.BackendSetSummary>(
-                new com.google.common.base.Supplier<ListBackendSetsRequest.Builder>() {
+                new java.util.function.Supplier<ListBackendSetsRequest.Builder>() {
                     @Override
                     public ListBackendSetsRequest.Builder get() {
                         return ListBackendSetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBackendSetsResponse, String>() {
+                new java.util.function.Function<ListBackendSetsResponse, String>() {
                     @Override
                     public String apply(ListBackendSetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBackendSetsRequest.Builder>,
                         ListBackendSetsRequest>() {
@@ -122,19 +121,18 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListBackendSetsRequest, ListBackendSetsResponse>() {
+                new java.util.function.Function<ListBackendSetsRequest, ListBackendSetsResponse>() {
                     @Override
                     public ListBackendSetsResponse apply(ListBackendSetsRequest request) {
                         return client.listBackendSets(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBackendSetsResponse,
                         java.util.List<
                                 com.oracle.bmc.networkloadbalancer.model.BackendSetSummary>>() {
@@ -158,19 +156,19 @@ public class NetworkLoadBalancerPaginators {
             final ListBackendsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBackendsRequest.Builder, ListBackendsRequest, ListBackendsResponse>(
-                new com.google.common.base.Supplier<ListBackendsRequest.Builder>() {
+                new java.util.function.Supplier<ListBackendsRequest.Builder>() {
                     @Override
                     public ListBackendsRequest.Builder get() {
                         return ListBackendsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBackendsResponse, String>() {
+                new java.util.function.Function<ListBackendsResponse, String>() {
                     @Override
                     public String apply(ListBackendsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBackendsRequest.Builder>,
                         ListBackendsRequest>() {
@@ -183,12 +181,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListBackendsRequest, ListBackendsResponse>() {
+                new java.util.function.Function<ListBackendsRequest, ListBackendsResponse>() {
                     @Override
                     public ListBackendsResponse apply(ListBackendsRequest request) {
                         return client.listBackends(request);
@@ -210,19 +208,19 @@ public class NetworkLoadBalancerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListBackendsRequest.Builder, ListBackendsRequest, ListBackendsResponse,
                 com.oracle.bmc.networkloadbalancer.model.BackendSummary>(
-                new com.google.common.base.Supplier<ListBackendsRequest.Builder>() {
+                new java.util.function.Supplier<ListBackendsRequest.Builder>() {
                     @Override
                     public ListBackendsRequest.Builder get() {
                         return ListBackendsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBackendsResponse, String>() {
+                new java.util.function.Function<ListBackendsResponse, String>() {
                     @Override
                     public String apply(ListBackendsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBackendsRequest.Builder>,
                         ListBackendsRequest>() {
@@ -235,18 +233,18 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListBackendsRequest, ListBackendsResponse>() {
+                new java.util.function.Function<ListBackendsRequest, ListBackendsResponse>() {
                     @Override
                     public ListBackendsResponse apply(ListBackendsRequest request) {
                         return client.listBackends(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBackendsResponse,
                         java.util.List<com.oracle.bmc.networkloadbalancer.model.BackendSummary>>() {
                     @Override
@@ -268,19 +266,19 @@ public class NetworkLoadBalancerPaginators {
             final ListListenersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListListenersRequest.Builder, ListListenersRequest, ListListenersResponse>(
-                new com.google.common.base.Supplier<ListListenersRequest.Builder>() {
+                new java.util.function.Supplier<ListListenersRequest.Builder>() {
                     @Override
                     public ListListenersRequest.Builder get() {
                         return ListListenersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListListenersResponse, String>() {
+                new java.util.function.Function<ListListenersResponse, String>() {
                     @Override
                     public String apply(ListListenersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListListenersRequest.Builder>,
                         ListListenersRequest>() {
@@ -293,12 +291,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListListenersRequest, ListListenersResponse>() {
+                new java.util.function.Function<ListListenersRequest, ListListenersResponse>() {
                     @Override
                     public ListListenersResponse apply(ListListenersRequest request) {
                         return client.listListeners(request);
@@ -320,19 +318,19 @@ public class NetworkLoadBalancerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListListenersRequest.Builder, ListListenersRequest, ListListenersResponse,
                 com.oracle.bmc.networkloadbalancer.model.ListenerSummary>(
-                new com.google.common.base.Supplier<ListListenersRequest.Builder>() {
+                new java.util.function.Supplier<ListListenersRequest.Builder>() {
                     @Override
                     public ListListenersRequest.Builder get() {
                         return ListListenersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListListenersResponse, String>() {
+                new java.util.function.Function<ListListenersResponse, String>() {
                     @Override
                     public String apply(ListListenersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListListenersRequest.Builder>,
                         ListListenersRequest>() {
@@ -345,18 +343,18 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListListenersRequest, ListListenersResponse>() {
+                new java.util.function.Function<ListListenersRequest, ListListenersResponse>() {
                     @Override
                     public ListListenersResponse apply(ListListenersRequest request) {
                         return client.listListeners(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListListenersResponse,
                         java.util.List<
                                 com.oracle.bmc.networkloadbalancer.model.ListenerSummary>>() {
@@ -381,21 +379,19 @@ public class NetworkLoadBalancerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListNetworkLoadBalancerHealthsRequest.Builder,
                 ListNetworkLoadBalancerHealthsRequest, ListNetworkLoadBalancerHealthsResponse>(
-                new com.google.common.base.Supplier<
-                        ListNetworkLoadBalancerHealthsRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkLoadBalancerHealthsRequest.Builder>() {
                     @Override
                     public ListNetworkLoadBalancerHealthsRequest.Builder get() {
                         return ListNetworkLoadBalancerHealthsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListNetworkLoadBalancerHealthsResponse, String>() {
+                new java.util.function.Function<ListNetworkLoadBalancerHealthsResponse, String>() {
                     @Override
                     public String apply(ListNetworkLoadBalancerHealthsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkLoadBalancerHealthsRequest.Builder>,
                         ListNetworkLoadBalancerHealthsRequest>() {
@@ -408,12 +404,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancerHealthsRequest,
                         ListNetworkLoadBalancerHealthsResponse>() {
                     @Override
@@ -440,21 +436,19 @@ public class NetworkLoadBalancerPaginators {
                 ListNetworkLoadBalancerHealthsRequest.Builder,
                 ListNetworkLoadBalancerHealthsRequest, ListNetworkLoadBalancerHealthsResponse,
                 com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealthSummary>(
-                new com.google.common.base.Supplier<
-                        ListNetworkLoadBalancerHealthsRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkLoadBalancerHealthsRequest.Builder>() {
                     @Override
                     public ListNetworkLoadBalancerHealthsRequest.Builder get() {
                         return ListNetworkLoadBalancerHealthsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListNetworkLoadBalancerHealthsResponse, String>() {
+                new java.util.function.Function<ListNetworkLoadBalancerHealthsResponse, String>() {
                     @Override
                     public String apply(ListNetworkLoadBalancerHealthsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkLoadBalancerHealthsRequest.Builder>,
                         ListNetworkLoadBalancerHealthsRequest>() {
@@ -467,12 +461,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancerHealthsRequest,
                         ListNetworkLoadBalancerHealthsResponse>() {
                     @Override
@@ -481,7 +475,7 @@ public class NetworkLoadBalancerPaginators {
                         return client.listNetworkLoadBalancerHealths(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancerHealthsResponse,
                         java.util.List<
                                 com.oracle.bmc.networkloadbalancer.model
@@ -508,19 +502,19 @@ public class NetworkLoadBalancerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListNetworkLoadBalancersRequest.Builder, ListNetworkLoadBalancersRequest,
                 ListNetworkLoadBalancersResponse>(
-                new com.google.common.base.Supplier<ListNetworkLoadBalancersRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkLoadBalancersRequest.Builder>() {
                     @Override
                     public ListNetworkLoadBalancersRequest.Builder get() {
                         return ListNetworkLoadBalancersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNetworkLoadBalancersResponse, String>() {
+                new java.util.function.Function<ListNetworkLoadBalancersResponse, String>() {
                     @Override
                     public String apply(ListNetworkLoadBalancersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkLoadBalancersRequest.Builder>,
                         ListNetworkLoadBalancersRequest>() {
@@ -533,12 +527,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersRequest, ListNetworkLoadBalancersResponse>() {
                     @Override
                     public ListNetworkLoadBalancersResponse apply(
@@ -563,19 +557,19 @@ public class NetworkLoadBalancerPaginators {
                 ListNetworkLoadBalancersRequest.Builder, ListNetworkLoadBalancersRequest,
                 ListNetworkLoadBalancersResponse,
                 com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerSummary>(
-                new com.google.common.base.Supplier<ListNetworkLoadBalancersRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkLoadBalancersRequest.Builder>() {
                     @Override
                     public ListNetworkLoadBalancersRequest.Builder get() {
                         return ListNetworkLoadBalancersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNetworkLoadBalancersResponse, String>() {
+                new java.util.function.Function<ListNetworkLoadBalancersResponse, String>() {
                     @Override
                     public String apply(ListNetworkLoadBalancersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkLoadBalancersRequest.Builder>,
                         ListNetworkLoadBalancersRequest>() {
@@ -588,12 +582,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersRequest, ListNetworkLoadBalancersResponse>() {
                     @Override
                     public ListNetworkLoadBalancersResponse apply(
@@ -601,7 +595,7 @@ public class NetworkLoadBalancerPaginators {
                         return client.listNetworkLoadBalancers(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersResponse,
                         java.util.List<
                                 com.oracle.bmc.networkloadbalancer.model
@@ -629,21 +623,20 @@ public class NetworkLoadBalancerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListNetworkLoadBalancersPoliciesRequest.Builder,
                 ListNetworkLoadBalancersPoliciesRequest, ListNetworkLoadBalancersPoliciesResponse>(
-                new com.google.common.base.Supplier<
-                        ListNetworkLoadBalancersPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkLoadBalancersPoliciesRequest.Builder>() {
                     @Override
                     public ListNetworkLoadBalancersPoliciesRequest.Builder get() {
                         return ListNetworkLoadBalancersPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersPoliciesResponse, String>() {
                     @Override
                     public String apply(ListNetworkLoadBalancersPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkLoadBalancersPoliciesRequest.Builder>,
                         ListNetworkLoadBalancersPoliciesRequest>() {
@@ -656,12 +649,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersPoliciesRequest,
                         ListNetworkLoadBalancersPoliciesResponse>() {
                     @Override
@@ -688,21 +681,20 @@ public class NetworkLoadBalancerPaginators {
                 ListNetworkLoadBalancersPoliciesRequest.Builder,
                 ListNetworkLoadBalancersPoliciesRequest, ListNetworkLoadBalancersPoliciesResponse,
                 com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersPolicySummary>(
-                new com.google.common.base.Supplier<
-                        ListNetworkLoadBalancersPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkLoadBalancersPoliciesRequest.Builder>() {
                     @Override
                     public ListNetworkLoadBalancersPoliciesRequest.Builder get() {
                         return ListNetworkLoadBalancersPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersPoliciesResponse, String>() {
                     @Override
                     public String apply(ListNetworkLoadBalancersPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkLoadBalancersPoliciesRequest.Builder>,
                         ListNetworkLoadBalancersPoliciesRequest>() {
@@ -715,12 +707,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersPoliciesRequest,
                         ListNetworkLoadBalancersPoliciesResponse>() {
                     @Override
@@ -729,7 +721,7 @@ public class NetworkLoadBalancerPaginators {
                         return client.listNetworkLoadBalancersPolicies(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersPoliciesResponse,
                         java.util.List<
                                 com.oracle.bmc.networkloadbalancer.model
@@ -758,21 +750,21 @@ public class NetworkLoadBalancerPaginators {
                 ListNetworkLoadBalancersProtocolsRequest.Builder,
                 ListNetworkLoadBalancersProtocolsRequest,
                 ListNetworkLoadBalancersProtocolsResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListNetworkLoadBalancersProtocolsRequest.Builder>() {
                     @Override
                     public ListNetworkLoadBalancersProtocolsRequest.Builder get() {
                         return ListNetworkLoadBalancersProtocolsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersProtocolsResponse, String>() {
                     @Override
                     public String apply(ListNetworkLoadBalancersProtocolsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkLoadBalancersProtocolsRequest.Builder>,
                         ListNetworkLoadBalancersProtocolsRequest>() {
@@ -785,12 +777,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersProtocolsRequest,
                         ListNetworkLoadBalancersProtocolsResponse>() {
                     @Override
@@ -817,21 +809,21 @@ public class NetworkLoadBalancerPaginators {
                 ListNetworkLoadBalancersProtocolsRequest.Builder,
                 ListNetworkLoadBalancersProtocolsRequest, ListNetworkLoadBalancersProtocolsResponse,
                 com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListNetworkLoadBalancersProtocolsRequest.Builder>() {
                     @Override
                     public ListNetworkLoadBalancersProtocolsRequest.Builder get() {
                         return ListNetworkLoadBalancersProtocolsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersProtocolsResponse, String>() {
                     @Override
                     public String apply(ListNetworkLoadBalancersProtocolsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkLoadBalancersProtocolsRequest.Builder>,
                         ListNetworkLoadBalancersProtocolsRequest>() {
@@ -844,12 +836,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersProtocolsRequest,
                         ListNetworkLoadBalancersProtocolsResponse>() {
                     @Override
@@ -858,7 +850,7 @@ public class NetworkLoadBalancerPaginators {
                         return client.listNetworkLoadBalancersProtocols(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkLoadBalancersProtocolsResponse,
                         java.util.List<
                                 com.oracle.bmc.networkloadbalancer.model
@@ -885,19 +877,19 @@ public class NetworkLoadBalancerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -910,12 +902,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -940,19 +932,19 @@ public class NetworkLoadBalancerPaginators {
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse,
                 com.oracle.bmc.networkloadbalancer.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -965,12 +957,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -978,7 +970,7 @@ public class NetworkLoadBalancerPaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<
                                 com.oracle.bmc.networkloadbalancer.model.WorkRequestError>>() {
@@ -1002,19 +994,19 @@ public class NetworkLoadBalancerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -1027,12 +1019,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -1056,19 +1048,19 @@ public class NetworkLoadBalancerPaginators {
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse,
                 com.oracle.bmc.networkloadbalancer.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -1081,19 +1073,19 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<
                                 com.oracle.bmc.networkloadbalancer.model.WorkRequestLogEntry>>() {
@@ -1117,19 +1109,19 @@ public class NetworkLoadBalancerPaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -1142,12 +1134,12 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -1170,19 +1162,19 @@ public class NetworkLoadBalancerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.networkloadbalancer.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -1195,19 +1187,19 @@ public class NetworkLoadBalancerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<
                                 com.oracle.bmc.networkloadbalancer.model.WorkRequestSummary>>() {

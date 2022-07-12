@@ -11,16 +11,15 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.security.DigestOutputStream;
 
+import com.oracle.bmc.util.internal.StringUtils;
 import org.junit.Test;
-
-import com.google.common.base.Strings;
 
 public class StreamHelperTest {
     private static final String TEST_STR = "abcdefghijklmnopqrstuvwxyz";
 
     @Test
     public void copy() throws Exception {
-        String testString = Strings.repeat(TEST_STR, 10000);
+        String testString = StringUtils.repeat(TEST_STR, 10000);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         StreamHelper.copy(new ByteArrayInputStream(testString.getBytes()), baos);
         assertEquals(testString, new String(baos.toByteArray()));

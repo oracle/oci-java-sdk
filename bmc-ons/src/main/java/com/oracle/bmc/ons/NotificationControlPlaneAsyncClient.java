@@ -7,7 +7,6 @@ package com.oracle.bmc.ons;
 import com.oracle.bmc.ons.internal.http.*;
 import com.oracle.bmc.ons.requests.*;
 import com.oracle.bmc.ons.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for NotificationControlPlane service. <br/>
@@ -320,7 +319,7 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
          * @return the client
          */
         public NotificationControlPlaneAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -405,8 +405,7 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
                         "ChangeTopicCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/ChangeTopicCompartment");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeTopicCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeTopicCompartmentResponse>
                 transformer =
                         ChangeTopicCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -458,7 +457,7 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
                         "CreateTopic",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/CreateTopic");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTopicResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTopicResponse>
                 transformer =
                         CreateTopicConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateTopicRequest, CreateTopicResponse>
@@ -507,7 +506,7 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
                         "DeleteTopic",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/DeleteTopic");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTopicResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTopicResponse>
                 transformer =
                         DeleteTopicConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteTopicRequest, DeleteTopicResponse>
@@ -550,8 +549,8 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
                         "GetTopic",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/GetTopic");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTopicResponse>
-                transformer = GetTopicConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTopicResponse> transformer =
+                GetTopicConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTopicRequest, GetTopicResponse> handlerToUse =
                 handler;
 
@@ -591,7 +590,7 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
                         "ListTopics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/ListTopics");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTopicsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTopicsResponse>
                 transformer =
                         ListTopicsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTopicsRequest, ListTopicsResponse> handlerToUse =
@@ -635,7 +634,7 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
                         "UpdateTopic",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/UpdateTopic");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTopicResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTopicResponse>
                 transformer =
                         UpdateTopicConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateTopicRequest, UpdateTopicResponse>

@@ -6,7 +6,6 @@ package com.oracle.bmc.licensemanager;
 
 import com.oracle.bmc.licensemanager.requests.*;
 import com.oracle.bmc.licensemanager.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -107,17 +106,17 @@ public class LicenseManagerWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetLicenseRecordRequest, GetLicenseRecordResponse>() {
                             @Override
                             public GetLicenseRecordResponse apply(GetLicenseRecordRequest request) {
                                 return client.getLicenseRecord(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetLicenseRecordResponse>() {
+                        new java.util.function.Predicate<GetLicenseRecordResponse>() {
                             @Override
-                            public boolean apply(GetLicenseRecordResponse response) {
+                            public boolean test(GetLicenseRecordResponse response) {
                                 return targetStatesSet.contains(
                                         response.getLicenseRecord().getLifecycleState());
                             }
@@ -209,8 +208,8 @@ public class LicenseManagerWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetProductLicenseRequest, GetProductLicenseResponse>() {
                             @Override
                             public GetProductLicenseResponse apply(
@@ -218,9 +217,9 @@ public class LicenseManagerWaiters {
                                 return client.getProductLicense(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetProductLicenseResponse>() {
+                        new java.util.function.Predicate<GetProductLicenseResponse>() {
                             @Override
-                            public boolean apply(GetProductLicenseResponse response) {
+                            public boolean test(GetProductLicenseResponse response) {
                                 return targetStatesSet.contains(
                                         response.getProductLicense().getLifecycleState());
                             }

@@ -4,16 +4,18 @@
  */
 package com.oracle.bmc.paginator.internal;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.function.Function;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
 import static org.mockito.Mockito.when;
 
 @PrepareForTest(ResponseRecordIteratorTest.class)
@@ -40,20 +42,18 @@ public class ResponseRecordIteratorTest {
         pages.offer(new UserResponse("4", list2));
         pages.offer(new UserResponse(null, new ArrayList<>()));
 
-        com.google.common.base.Function<UserRequest, UserResponse> pageRetrieval =
-                input -> pages.peek();
+        Function<UserRequest, UserResponse> pageRetrieval = input -> pages.peek();
 
-        com.google.common.base.Function<UserResponse, String> nextPageRetrieval =
-                input -> pages.peek().getNextPage();
+        Function<UserResponse, String> nextPageRetrieval = input -> pages.peek().getNextPage();
 
-        com.google.common.base.Function<UserResponse, java.util.List<String>>
-                retrievalItemsResponse = input -> pages.poll().getItems();
+        Function<UserResponse, java.util.List<String>> retrievalItemsResponse =
+                input -> pages.poll().getItems();
 
-        com.google.common.base.Function<
+        Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 UserRequest.Builder>,
                         UserRequest>
-                requestBuilderFunction = Mockito.mock(com.google.common.base.Function.class);
+                requestBuilderFunction = Mockito.mock(Function.class);
 
         UserRequest request = new UserRequest();
         when(requestBuilderFunction.apply(Matchers.any())).thenReturn(request);
@@ -94,20 +94,18 @@ public class ResponseRecordIteratorTest {
         pages.offer(new UserResponse("1", list1));
         pages.offer(new UserResponse(null, list2));
 
-        com.google.common.base.Function<UserRequest, UserResponse> pageRetrieval =
-                input -> pages.peek();
+        Function<UserRequest, UserResponse> pageRetrieval = input -> pages.peek();
 
-        com.google.common.base.Function<UserResponse, String> nextPageRetrieval =
-                input -> pages.peek().getNextPage();
+        Function<UserResponse, String> nextPageRetrieval = input -> pages.peek().getNextPage();
 
-        com.google.common.base.Function<UserResponse, java.util.List<String>>
-                retrievalItemsResponse = input -> pages.poll().getItems();
+        Function<UserResponse, java.util.List<String>> retrievalItemsResponse =
+                input -> pages.poll().getItems();
 
-        com.google.common.base.Function<
+        Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 UserRequest.Builder>,
                         UserRequest>
-                requestBuilderFunction = Mockito.mock(com.google.common.base.Function.class);
+                requestBuilderFunction = Mockito.mock(Function.class);
 
         UserRequest request = new UserRequest();
         when(requestBuilderFunction.apply(Matchers.any())).thenReturn(request);

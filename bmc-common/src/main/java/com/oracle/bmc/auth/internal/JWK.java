@@ -11,8 +11,9 @@ import javax.annotation.concurrent.Immutable;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.base.Preconditions;
 import com.oracle.bmc.util.internal.Validate;
+
+import javax.annotation.concurrent.Immutable;
 
 /**
  * Representation of a RSA public key in JSON Web Key (JWK) format.
@@ -52,7 +53,7 @@ public final class JWK {
         Validate.notBlank(kid, "kid may not be blank");
         Validate.notBlank(n, "n may not be blank");
         Validate.notBlank(e, "e may not be blank");
-        Preconditions.checkArgument(type.trim().equals(KEY_TYPE));
+        Validate.isTrue(type.trim().equals(KEY_TYPE), "type must equal '" + KEY_TYPE + "'");
         this.n = n;
         this.e = e;
         this.kid = kid;

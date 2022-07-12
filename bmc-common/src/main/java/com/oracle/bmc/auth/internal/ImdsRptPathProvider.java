@@ -4,12 +4,13 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder;
 import org.slf4j.Logger;
 
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -60,7 +61,9 @@ public class ImdsRptPathProvider extends AbstractTemplateRptPathProvider {
 
     static Map<String, String> buildReplacements() {
         // Get instance Id from metadata service
-        return ImmutableMap.of("id", getInstanceIdFromIMDS());
+        Map<String, String> replacements = new HashMap<>();
+        replacements.put("id", getInstanceIdFromIMDS());
+        return Collections.unmodifiableMap(replacements);
     }
 
     private static String getInstanceIdFromIMDS() {

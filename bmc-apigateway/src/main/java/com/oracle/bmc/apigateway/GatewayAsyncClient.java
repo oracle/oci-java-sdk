@@ -7,7 +7,6 @@ package com.oracle.bmc.apigateway;
 import com.oracle.bmc.apigateway.internal.http.*;
 import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Gateway service. <br/>
@@ -319,7 +318,7 @@ public class GatewayAsyncClient implements GatewayAsync {
          * @return the client
          */
         public GatewayAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class GatewayAsyncClient implements GatewayAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,7 +404,7 @@ public class GatewayAsyncClient implements GatewayAsync {
                         "ChangeGatewayCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/ChangeGatewayCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeGatewayCompartmentResponse>
                 transformer =
                         ChangeGatewayCompartmentConverter.fromResponse(
@@ -454,7 +454,7 @@ public class GatewayAsyncClient implements GatewayAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Gateway", "CreateGateway", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateGatewayResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateGatewayResponse>
                 transformer =
                         CreateGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateGatewayRequest, CreateGatewayResponse>
@@ -503,7 +503,7 @@ public class GatewayAsyncClient implements GatewayAsync {
                         "DeleteGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/DeleteGateway");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGatewayResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteGatewayResponse>
                 transformer =
                         DeleteGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteGatewayRequest, DeleteGatewayResponse>
@@ -546,7 +546,7 @@ public class GatewayAsyncClient implements GatewayAsync {
                         "GetGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/GetGateway");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetGatewayResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetGatewayResponse>
                 transformer =
                         GetGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetGatewayRequest, GetGatewayResponse> handlerToUse =
@@ -590,7 +590,7 @@ public class GatewayAsyncClient implements GatewayAsync {
                         "ListGateways",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/GatewaySummary/ListGateways");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListGatewaysResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListGatewaysResponse>
                 transformer =
                         ListGatewaysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListGatewaysRequest, ListGatewaysResponse>
@@ -634,7 +634,7 @@ public class GatewayAsyncClient implements GatewayAsync {
                         "UpdateGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/UpdateGateway");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGatewayResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateGatewayResponse>
                 transformer =
                         UpdateGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateGatewayRequest, UpdateGatewayResponse>

@@ -7,7 +7,6 @@ package com.oracle.bmc.waas;
 import com.oracle.bmc.waas.internal.http.*;
 import com.oracle.bmc.waas.requests.*;
 import com.oracle.bmc.waas.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Redirect service. <br/>
@@ -319,7 +318,7 @@ public class RedirectAsyncClient implements RedirectAsync {
          * @return the client
          */
         public RedirectAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class RedirectAsyncClient implements RedirectAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class RedirectAsyncClient implements RedirectAsync {
                         "ChangeHttpRedirectCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/ChangeHttpRedirectCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeHttpRedirectCompartmentResponse>
                 transformer =
                         ChangeHttpRedirectCompartmentConverter.fromResponse(
@@ -461,7 +461,7 @@ public class RedirectAsyncClient implements RedirectAsync {
                         "CreateHttpRedirect",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/CreateHttpRedirect");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateHttpRedirectResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateHttpRedirectResponse>
                 transformer =
                         CreateHttpRedirectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -513,7 +513,7 @@ public class RedirectAsyncClient implements RedirectAsync {
                         "DeleteHttpRedirect",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/DeleteHttpRedirect");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHttpRedirectResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteHttpRedirectResponse>
                 transformer =
                         DeleteHttpRedirectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -559,7 +559,7 @@ public class RedirectAsyncClient implements RedirectAsync {
                         "GetHttpRedirect",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/GetHttpRedirect");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetHttpRedirectResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetHttpRedirectResponse>
                 transformer =
                         GetHttpRedirectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -605,7 +605,7 @@ public class RedirectAsyncClient implements RedirectAsync {
                         "ListHttpRedirects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/ListHttpRedirects");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListHttpRedirectsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListHttpRedirectsResponse>
                 transformer =
                         ListHttpRedirectsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -652,7 +652,7 @@ public class RedirectAsyncClient implements RedirectAsync {
                         "UpdateHttpRedirect",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/UpdateHttpRedirect");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHttpRedirectResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateHttpRedirectResponse>
                 transformer =
                         UpdateHttpRedirectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

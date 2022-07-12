@@ -6,7 +6,6 @@ package com.oracle.bmc.osmanagement;
 
 import com.oracle.bmc.osmanagement.requests.*;
 import com.oracle.bmc.osmanagement.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -111,8 +110,8 @@ public class OsManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetManagedInstanceGroupRequest, GetManagedInstanceGroupResponse>() {
                             @Override
                             public GetManagedInstanceGroupResponse apply(
@@ -120,9 +119,9 @@ public class OsManagementWaiters {
                                 return client.getManagedInstanceGroup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetManagedInstanceGroupResponse>() {
+                        new java.util.function.Predicate<GetManagedInstanceGroupResponse>() {
                             @Override
-                            public boolean apply(GetManagedInstanceGroupResponse response) {
+                            public boolean test(GetManagedInstanceGroupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getManagedInstanceGroup().getLifecycleState());
                             }
@@ -214,17 +213,17 @@ public class OsManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetScheduledJobRequest, GetScheduledJobResponse>() {
                             @Override
                             public GetScheduledJobResponse apply(GetScheduledJobRequest request) {
                                 return client.getScheduledJob(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetScheduledJobResponse>() {
+                        new java.util.function.Predicate<GetScheduledJobResponse>() {
                             @Override
-                            public boolean apply(GetScheduledJobResponse response) {
+                            public boolean test(GetScheduledJobResponse response) {
                                 return targetStatesSet.contains(
                                         response.getScheduledJob().getLifecycleState());
                             }
@@ -316,8 +315,8 @@ public class OsManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetSoftwareSourceRequest, GetSoftwareSourceResponse>() {
                             @Override
                             public GetSoftwareSourceResponse apply(
@@ -325,9 +324,9 @@ public class OsManagementWaiters {
                                 return client.getSoftwareSource(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSoftwareSourceResponse>() {
+                        new java.util.function.Predicate<GetSoftwareSourceResponse>() {
                             @Override
-                            public boolean apply(GetSoftwareSourceResponse response) {
+                            public boolean test(GetSoftwareSourceResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSoftwareSource().getLifecycleState());
                             }
@@ -374,17 +373,17 @@ public class OsManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

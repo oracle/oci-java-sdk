@@ -7,7 +7,6 @@ package com.oracle.bmc.computeinstanceagent;
 import com.oracle.bmc.computeinstanceagent.internal.http.*;
 import com.oracle.bmc.computeinstanceagent.requests.*;
 import com.oracle.bmc.computeinstanceagent.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ComputeInstanceAgent service. <br/>
@@ -320,7 +319,7 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
          * @return the client
          */
         public ComputeInstanceAgentAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                         "CancelInstanceAgentCommand",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CancelInstanceAgentCommand");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CancelInstanceAgentCommandResponse>
                 transformer =
                         CancelInstanceAgentCommandConverter.fromResponse(
@@ -458,7 +458,7 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                         "CreateInstanceAgentCommand",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CreateInstanceAgentCommand");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateInstanceAgentCommandResponse>
                 transformer =
                         CreateInstanceAgentCommandConverter.fromResponse(
@@ -512,7 +512,7 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                         "GetInstanceAgentCommand",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/GetInstanceAgentCommand");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetInstanceAgentCommandResponse>
                 transformer =
                         GetInstanceAgentCommandConverter.fromResponse(
@@ -562,7 +562,7 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                         "GetInstanceAgentCommandExecution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecution/GetInstanceAgentCommandExecution");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetInstanceAgentCommandExecutionResponse>
                 transformer =
                         GetInstanceAgentCommandExecutionConverter.fromResponse(
@@ -615,7 +615,7 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                         "ListInstanceAgentCommandExecutions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecutionSummary/ListInstanceAgentCommandExecutions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListInstanceAgentCommandExecutionsResponse>
                 transformer =
                         ListInstanceAgentCommandExecutionsConverter.fromResponse(
@@ -666,7 +666,7 @@ public class ComputeInstanceAgentAsyncClient implements ComputeInstanceAgentAsyn
                         "ListInstanceAgentCommands",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandSummary/ListInstanceAgentCommands");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListInstanceAgentCommandsResponse>
                 transformer =
                         ListInstanceAgentCommandsConverter.fromResponse(

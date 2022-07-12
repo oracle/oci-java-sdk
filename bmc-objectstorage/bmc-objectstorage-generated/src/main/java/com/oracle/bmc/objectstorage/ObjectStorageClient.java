@@ -9,7 +9,6 @@ import com.oracle.bmc.objectstorage.requests.*;
 import com.oracle.bmc.objectstorage.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ObjectStorageClient implements ObjectStorage {
@@ -336,9 +335,9 @@ public class ObjectStorageClient implements ObjectStorage {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("ObjectStorage-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("ObjectStorage-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -406,7 +405,7 @@ public class ObjectStorageClient implements ObjectStorage {
          * @return the client
          */
         public ObjectStorageClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -443,7 +442,8 @@ public class ObjectStorageClient implements ObjectStorage {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "AbortMultipartUpload",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/AbortMultipartUpload");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AbortMultipartUploadResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AbortMultipartUploadResponse>
                 transformer =
                         AbortMultipartUploadConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -526,7 +526,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "CancelWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/CancelWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -565,7 +565,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "CommitMultipartUpload",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/CommitMultipartUpload");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CommitMultipartUploadResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CommitMultipartUploadResponse>
                 transformer =
                         CommitMultipartUploadConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -605,7 +605,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "CopyObject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/CopyObject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CopyObjectResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CopyObjectResponse> transformer =
                 CopyObjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -644,9 +644,8 @@ public class ObjectStorageClient implements ObjectStorage {
                         "CreateBucket",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/CreateBucket");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBucketResponse>
-                transformer =
-                        CreateBucketConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBucketResponse> transformer =
+                CreateBucketConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -685,7 +684,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "CreateMultipartUpload",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/CreateMultipartUpload");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMultipartUploadResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateMultipartUploadResponse>
                 transformer =
                         CreateMultipartUploadConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -727,7 +726,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "CreatePreauthenticatedRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/CreatePreauthenticatedRequest");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreatePreauthenticatedRequestResponse>
                 transformer =
                         CreatePreauthenticatedRequestConverter.fromResponse(
@@ -771,7 +770,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "CreateReplicationPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/CreateReplicationPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateReplicationPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateReplicationPolicyResponse>
                 transformer =
                         CreateReplicationPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -812,7 +811,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "CreateRetentionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/CreateRetentionRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRetentionRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRetentionRuleResponse>
                 transformer =
                         CreateRetentionRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -853,9 +852,8 @@ public class ObjectStorageClient implements ObjectStorage {
                         "DeleteBucket",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/DeleteBucket");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBucketResponse>
-                transformer =
-                        DeleteBucketConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBucketResponse> transformer =
+                DeleteBucketConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -890,9 +888,8 @@ public class ObjectStorageClient implements ObjectStorage {
                         "DeleteObject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/DeleteObject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteObjectResponse>
-                transformer =
-                        DeleteObjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteObjectResponse> transformer =
+                DeleteObjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -928,8 +925,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "DeleteObjectLifecyclePolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/DeleteObjectLifecyclePolicy");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteObjectLifecyclePolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteObjectLifecyclePolicyResponse>
                 transformer =
                         DeleteObjectLifecyclePolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -968,7 +964,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "DeletePreauthenticatedRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/DeletePreauthenticatedRequest");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeletePreauthenticatedRequestResponse>
                 transformer =
                         DeletePreauthenticatedRequestConverter.fromResponse(
@@ -1008,7 +1004,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "DeleteReplicationPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/DeleteReplicationPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteReplicationPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteReplicationPolicyResponse>
                 transformer =
                         DeleteReplicationPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1046,7 +1042,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "DeleteRetentionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/DeleteRetentionRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRetentionRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRetentionRuleResponse>
                 transformer =
                         DeleteRetentionRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1083,7 +1079,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "GetBucket",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/GetBucket");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBucketResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetBucketResponse> transformer =
                 GetBucketConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1118,9 +1114,8 @@ public class ObjectStorageClient implements ObjectStorage {
                         "GetNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/GetNamespace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNamespaceResponse>
-                transformer =
-                        GetNamespaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetNamespaceResponse> transformer =
+                GetNamespaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1154,7 +1149,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "GetNamespaceMetadata",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/GetNamespaceMetadata");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNamespaceMetadataResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetNamespaceMetadataResponse>
                 transformer =
                         GetNamespaceMetadataConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1200,7 +1195,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "GetObject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/GetObject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetObjectResponse> transformer =
                 GetObjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1236,7 +1231,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "GetObjectLifecyclePolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/GetObjectLifecyclePolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectLifecyclePolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetObjectLifecyclePolicyResponse>
                 transformer =
                         GetObjectLifecyclePolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1274,8 +1269,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "GetPreauthenticatedRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/GetPreauthenticatedRequest");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetPreauthenticatedRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetPreauthenticatedRequestResponse>
                 transformer =
                         GetPreauthenticatedRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1312,7 +1306,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "GetReplicationPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/GetReplicationPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetReplicationPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetReplicationPolicyResponse>
                 transformer =
                         GetReplicationPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1349,7 +1343,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "GetRetentionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/GetRetentionRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRetentionRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRetentionRuleResponse>
                 transformer =
                         GetRetentionRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1386,9 +1380,8 @@ public class ObjectStorageClient implements ObjectStorage {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1421,7 +1414,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "HeadBucket",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/HeadBucket");
-        com.google.common.base.Function<javax.ws.rs.core.Response, HeadBucketResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, HeadBucketResponse> transformer =
                 HeadBucketConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1456,7 +1449,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "HeadObject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/HeadObject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, HeadObjectResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, HeadObjectResponse> transformer =
                 HeadObjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1492,9 +1485,8 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ListBuckets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/ListBuckets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBucketsResponse>
-                transformer =
-                        ListBucketsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListBucketsResponse> transformer =
+                ListBucketsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1529,7 +1521,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ListMultipartUploadParts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/ListMultipartUploadParts");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMultipartUploadPartsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMultipartUploadPartsResponse>
                 transformer =
                         ListMultipartUploadPartsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1566,7 +1558,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ListMultipartUploads",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/ListMultipartUploads");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMultipartUploadsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMultipartUploadsResponse>
                 transformer =
                         ListMultipartUploadsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1603,7 +1595,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ListObjectVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ListObjectVersions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListObjectVersionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListObjectVersionsResponse>
                 transformer =
                         ListObjectVersionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1640,9 +1632,8 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ListObjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ListObjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListObjectsResponse>
-                transformer =
-                        ListObjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListObjectsResponse> transformer =
+                ListObjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1677,8 +1668,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ListPreauthenticatedRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/ListPreauthenticatedRequests");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListPreauthenticatedRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPreauthenticatedRequestsResponse>
                 transformer =
                         ListPreauthenticatedRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1716,7 +1706,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ListReplicationPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/ListReplicationPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListReplicationPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListReplicationPoliciesResponse>
                 transformer =
                         ListReplicationPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1754,7 +1744,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ListReplicationSources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/ListReplicationSources");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListReplicationSourcesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListReplicationSourcesResponse>
                 transformer =
                         ListReplicationSourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1791,7 +1781,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ListRetentionRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/ListRetentionRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRetentionRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRetentionRulesResponse>
                 transformer =
                         ListRetentionRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1829,7 +1819,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1866,7 +1856,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1903,7 +1893,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1940,7 +1930,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "MakeBucketWritable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/MakeBucketWritable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, MakeBucketWritableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, MakeBucketWritableResponse>
                 transformer =
                         MakeBucketWritableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1991,9 +1981,8 @@ public class ObjectStorageClient implements ObjectStorage {
                             "PutObject",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/PutObject");
-            com.google.common.base.Function<javax.ws.rs.core.Response, PutObjectResponse>
-                    transformer =
-                            PutObjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+            java.util.function.Function<javax.ws.rs.core.Response, PutObjectResponse> transformer =
+                    PutObjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {
@@ -2052,7 +2041,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "PutObjectLifecyclePolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PutObjectLifecyclePolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PutObjectLifecyclePolicyResponse>
                 transformer =
                         PutObjectLifecyclePolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2093,7 +2082,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ReencryptBucket",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/ReencryptBucket");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ReencryptBucketResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ReencryptBucketResponse>
                 transformer =
                         ReencryptBucketConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2131,7 +2120,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "ReencryptObject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ReencryptObject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ReencryptObjectResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ReencryptObjectResponse>
                 transformer =
                         ReencryptObjectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2172,9 +2161,8 @@ public class ObjectStorageClient implements ObjectStorage {
                         "RenameObject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/RenameObject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RenameObjectResponse>
-                transformer =
-                        RenameObjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, RenameObjectResponse> transformer =
+                RenameObjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2212,9 +2200,8 @@ public class ObjectStorageClient implements ObjectStorage {
                         "RestoreObjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/RestoreObjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RestoreObjectsResponse>
-                transformer =
-                        RestoreObjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, RestoreObjectsResponse> transformer =
+                RestoreObjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2252,9 +2239,8 @@ public class ObjectStorageClient implements ObjectStorage {
                         "UpdateBucket",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/UpdateBucket");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBucketResponse>
-                transformer =
-                        UpdateBucketConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBucketResponse> transformer =
+                UpdateBucketConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2293,7 +2279,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "UpdateNamespaceMetadata",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/UpdateNamespaceMetadata");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNamespaceMetadataResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateNamespaceMetadataResponse>
                 transformer =
                         UpdateNamespaceMetadataConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2335,7 +2321,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "UpdateObjectStorageTier",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/UpdateObjectStorageTier");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateObjectStorageTierResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateObjectStorageTierResponse>
                 transformer =
                         UpdateObjectStorageTierConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2376,7 +2362,7 @@ public class ObjectStorageClient implements ObjectStorage {
                         "UpdateRetentionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/UpdateRetentionRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRetentionRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRetentionRuleResponse>
                 transformer =
                         UpdateRetentionRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2430,9 +2416,8 @@ public class ObjectStorageClient implements ObjectStorage {
                             "UploadPart",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/UploadPart");
-            com.google.common.base.Function<javax.ws.rs.core.Response, UploadPartResponse>
-                    transformer =
-                            UploadPartConverter.fromResponse(java.util.Optional.of(serviceDetails));
+            java.util.function.Function<javax.ws.rs.core.Response, UploadPartResponse> transformer =
+                    UploadPartConverter.fromResponse(java.util.Optional.of(serviceDetails));
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {

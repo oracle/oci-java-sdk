@@ -9,7 +9,6 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class KmsCryptoClient implements KmsCrypto {
@@ -330,7 +329,7 @@ public class KmsCryptoClient implements KmsCrypto {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsCrypto", "Decrypt", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DecryptResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DecryptResponse> transformer =
                 DecryptConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -365,7 +364,7 @@ public class KmsCryptoClient implements KmsCrypto {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsCrypto", "Encrypt", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, EncryptResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, EncryptResponse> transformer =
                 EncryptConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -400,7 +399,7 @@ public class KmsCryptoClient implements KmsCrypto {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsCrypto", "ExportKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ExportKeyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ExportKeyResponse> transformer =
                 ExportKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -440,8 +439,7 @@ public class KmsCryptoClient implements KmsCrypto {
                         "GenerateDataEncryptionKey",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GenerateDataEncryptionKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GenerateDataEncryptionKeyResponse>
                 transformer =
                         GenerateDataEncryptionKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -478,7 +476,7 @@ public class KmsCryptoClient implements KmsCrypto {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsCrypto", "Sign", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SignResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, SignResponse> transformer =
                 SignConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -513,7 +511,7 @@ public class KmsCryptoClient implements KmsCrypto {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsCrypto", "Verify", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, VerifyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, VerifyResponse> transformer =
                 VerifyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

@@ -45,19 +45,19 @@ public class AnnouncementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAnnouncementsRequest.Builder, ListAnnouncementsRequest,
                 ListAnnouncementsResponse>(
-                new com.google.common.base.Supplier<ListAnnouncementsRequest.Builder>() {
+                new java.util.function.Supplier<ListAnnouncementsRequest.Builder>() {
                     @Override
                     public ListAnnouncementsRequest.Builder get() {
                         return ListAnnouncementsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAnnouncementsResponse, String>() {
+                new java.util.function.Function<ListAnnouncementsResponse, String>() {
                     @Override
                     public String apply(ListAnnouncementsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAnnouncementsRequest.Builder>,
                         ListAnnouncementsRequest>() {
@@ -70,12 +70,12 @@ public class AnnouncementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAnnouncementsRequest, ListAnnouncementsResponse>() {
                     @Override
                     public ListAnnouncementsResponse apply(ListAnnouncementsRequest request) {
@@ -99,19 +99,19 @@ public class AnnouncementPaginators {
                 ListAnnouncementsRequest.Builder, ListAnnouncementsRequest,
                 ListAnnouncementsResponse,
                 com.oracle.bmc.announcementsservice.model.AnnouncementSummary>(
-                new com.google.common.base.Supplier<ListAnnouncementsRequest.Builder>() {
+                new java.util.function.Supplier<ListAnnouncementsRequest.Builder>() {
                     @Override
                     public ListAnnouncementsRequest.Builder get() {
                         return ListAnnouncementsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAnnouncementsResponse, String>() {
+                new java.util.function.Function<ListAnnouncementsResponse, String>() {
                     @Override
                     public String apply(ListAnnouncementsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAnnouncementsRequest.Builder>,
                         ListAnnouncementsRequest>() {
@@ -124,19 +124,19 @@ public class AnnouncementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAnnouncementsRequest, ListAnnouncementsResponse>() {
                     @Override
                     public ListAnnouncementsResponse apply(ListAnnouncementsRequest request) {
                         return client.listAnnouncements(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAnnouncementsResponse,
                         java.util.List<
                                 com.oracle.bmc.announcementsservice.model.AnnouncementSummary>>() {

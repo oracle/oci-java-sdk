@@ -45,19 +45,19 @@ public class LicenseManagerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListLicenseRecordsRequest.Builder, ListLicenseRecordsRequest,
                 ListLicenseRecordsResponse>(
-                new com.google.common.base.Supplier<ListLicenseRecordsRequest.Builder>() {
+                new java.util.function.Supplier<ListLicenseRecordsRequest.Builder>() {
                     @Override
                     public ListLicenseRecordsRequest.Builder get() {
                         return ListLicenseRecordsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListLicenseRecordsResponse, String>() {
+                new java.util.function.Function<ListLicenseRecordsResponse, String>() {
                     @Override
                     public String apply(ListLicenseRecordsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListLicenseRecordsRequest.Builder>,
                         ListLicenseRecordsRequest>() {
@@ -70,12 +70,12 @@ public class LicenseManagerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListLicenseRecordsRequest, ListLicenseRecordsResponse>() {
                     @Override
                     public ListLicenseRecordsResponse apply(ListLicenseRecordsRequest request) {
@@ -99,19 +99,19 @@ public class LicenseManagerPaginators {
                 ListLicenseRecordsRequest.Builder, ListLicenseRecordsRequest,
                 ListLicenseRecordsResponse,
                 com.oracle.bmc.licensemanager.model.LicenseRecordSummary>(
-                new com.google.common.base.Supplier<ListLicenseRecordsRequest.Builder>() {
+                new java.util.function.Supplier<ListLicenseRecordsRequest.Builder>() {
                     @Override
                     public ListLicenseRecordsRequest.Builder get() {
                         return ListLicenseRecordsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListLicenseRecordsResponse, String>() {
+                new java.util.function.Function<ListLicenseRecordsResponse, String>() {
                     @Override
                     public String apply(ListLicenseRecordsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListLicenseRecordsRequest.Builder>,
                         ListLicenseRecordsRequest>() {
@@ -124,19 +124,19 @@ public class LicenseManagerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListLicenseRecordsRequest, ListLicenseRecordsResponse>() {
                     @Override
                     public ListLicenseRecordsResponse apply(ListLicenseRecordsRequest request) {
                         return client.listLicenseRecords(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListLicenseRecordsResponse,
                         java.util.List<
                                 com.oracle.bmc.licensemanager.model.LicenseRecordSummary>>() {
@@ -161,19 +161,19 @@ public class LicenseManagerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListProductLicenseConsumersRequest.Builder, ListProductLicenseConsumersRequest,
                 ListProductLicenseConsumersResponse>(
-                new com.google.common.base.Supplier<ListProductLicenseConsumersRequest.Builder>() {
+                new java.util.function.Supplier<ListProductLicenseConsumersRequest.Builder>() {
                     @Override
                     public ListProductLicenseConsumersRequest.Builder get() {
                         return ListProductLicenseConsumersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProductLicenseConsumersResponse, String>() {
+                new java.util.function.Function<ListProductLicenseConsumersResponse, String>() {
                     @Override
                     public String apply(ListProductLicenseConsumersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProductLicenseConsumersRequest.Builder>,
                         ListProductLicenseConsumersRequest>() {
@@ -186,12 +186,12 @@ public class LicenseManagerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProductLicenseConsumersRequest, ListProductLicenseConsumersResponse>() {
                     @Override
                     public ListProductLicenseConsumersResponse apply(
@@ -217,19 +217,19 @@ public class LicenseManagerPaginators {
                 ListProductLicenseConsumersRequest.Builder, ListProductLicenseConsumersRequest,
                 ListProductLicenseConsumersResponse,
                 com.oracle.bmc.licensemanager.model.ProductLicenseConsumerSummary>(
-                new com.google.common.base.Supplier<ListProductLicenseConsumersRequest.Builder>() {
+                new java.util.function.Supplier<ListProductLicenseConsumersRequest.Builder>() {
                     @Override
                     public ListProductLicenseConsumersRequest.Builder get() {
                         return ListProductLicenseConsumersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProductLicenseConsumersResponse, String>() {
+                new java.util.function.Function<ListProductLicenseConsumersResponse, String>() {
                     @Override
                     public String apply(ListProductLicenseConsumersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProductLicenseConsumersRequest.Builder>,
                         ListProductLicenseConsumersRequest>() {
@@ -242,12 +242,12 @@ public class LicenseManagerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProductLicenseConsumersRequest, ListProductLicenseConsumersResponse>() {
                     @Override
                     public ListProductLicenseConsumersResponse apply(
@@ -255,7 +255,7 @@ public class LicenseManagerPaginators {
                         return client.listProductLicenseConsumers(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProductLicenseConsumersResponse,
                         java.util.List<
                                 com.oracle.bmc.licensemanager.model
@@ -282,19 +282,19 @@ public class LicenseManagerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListProductLicensesRequest.Builder, ListProductLicensesRequest,
                 ListProductLicensesResponse>(
-                new com.google.common.base.Supplier<ListProductLicensesRequest.Builder>() {
+                new java.util.function.Supplier<ListProductLicensesRequest.Builder>() {
                     @Override
                     public ListProductLicensesRequest.Builder get() {
                         return ListProductLicensesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProductLicensesResponse, String>() {
+                new java.util.function.Function<ListProductLicensesResponse, String>() {
                     @Override
                     public String apply(ListProductLicensesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProductLicensesRequest.Builder>,
                         ListProductLicensesRequest>() {
@@ -307,12 +307,12 @@ public class LicenseManagerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProductLicensesRequest, ListProductLicensesResponse>() {
                     @Override
                     public ListProductLicensesResponse apply(ListProductLicensesRequest request) {
@@ -336,19 +336,19 @@ public class LicenseManagerPaginators {
                 ListProductLicensesRequest.Builder, ListProductLicensesRequest,
                 ListProductLicensesResponse,
                 com.oracle.bmc.licensemanager.model.ProductLicenseSummary>(
-                new com.google.common.base.Supplier<ListProductLicensesRequest.Builder>() {
+                new java.util.function.Supplier<ListProductLicensesRequest.Builder>() {
                     @Override
                     public ListProductLicensesRequest.Builder get() {
                         return ListProductLicensesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProductLicensesResponse, String>() {
+                new java.util.function.Function<ListProductLicensesResponse, String>() {
                     @Override
                     public String apply(ListProductLicensesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProductLicensesRequest.Builder>,
                         ListProductLicensesRequest>() {
@@ -361,19 +361,19 @@ public class LicenseManagerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProductLicensesRequest, ListProductLicensesResponse>() {
                     @Override
                     public ListProductLicensesResponse apply(ListProductLicensesRequest request) {
                         return client.listProductLicenses(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProductLicensesResponse,
                         java.util.List<
                                 com.oracle.bmc.licensemanager.model.ProductLicenseSummary>>() {
@@ -398,21 +398,19 @@ public class LicenseManagerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListTopUtilizedProductLicensesRequest.Builder,
                 ListTopUtilizedProductLicensesRequest, ListTopUtilizedProductLicensesResponse>(
-                new com.google.common.base.Supplier<
-                        ListTopUtilizedProductLicensesRequest.Builder>() {
+                new java.util.function.Supplier<ListTopUtilizedProductLicensesRequest.Builder>() {
                     @Override
                     public ListTopUtilizedProductLicensesRequest.Builder get() {
                         return ListTopUtilizedProductLicensesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListTopUtilizedProductLicensesResponse, String>() {
+                new java.util.function.Function<ListTopUtilizedProductLicensesResponse, String>() {
                     @Override
                     public String apply(ListTopUtilizedProductLicensesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTopUtilizedProductLicensesRequest.Builder>,
                         ListTopUtilizedProductLicensesRequest>() {
@@ -425,12 +423,12 @@ public class LicenseManagerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTopUtilizedProductLicensesRequest,
                         ListTopUtilizedProductLicensesResponse>() {
                     @Override
@@ -457,21 +455,19 @@ public class LicenseManagerPaginators {
                 ListTopUtilizedProductLicensesRequest.Builder,
                 ListTopUtilizedProductLicensesRequest, ListTopUtilizedProductLicensesResponse,
                 com.oracle.bmc.licensemanager.model.TopUtilizedProductLicenseSummary>(
-                new com.google.common.base.Supplier<
-                        ListTopUtilizedProductLicensesRequest.Builder>() {
+                new java.util.function.Supplier<ListTopUtilizedProductLicensesRequest.Builder>() {
                     @Override
                     public ListTopUtilizedProductLicensesRequest.Builder get() {
                         return ListTopUtilizedProductLicensesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListTopUtilizedProductLicensesResponse, String>() {
+                new java.util.function.Function<ListTopUtilizedProductLicensesResponse, String>() {
                     @Override
                     public String apply(ListTopUtilizedProductLicensesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTopUtilizedProductLicensesRequest.Builder>,
                         ListTopUtilizedProductLicensesRequest>() {
@@ -484,12 +480,12 @@ public class LicenseManagerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTopUtilizedProductLicensesRequest,
                         ListTopUtilizedProductLicensesResponse>() {
                     @Override
@@ -498,7 +494,7 @@ public class LicenseManagerPaginators {
                         return client.listTopUtilizedProductLicenses(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTopUtilizedProductLicensesResponse,
                         java.util.List<
                                 com.oracle.bmc.licensemanager.model
@@ -525,19 +521,19 @@ public class LicenseManagerPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListTopUtilizedResourcesRequest.Builder, ListTopUtilizedResourcesRequest,
                 ListTopUtilizedResourcesResponse>(
-                new com.google.common.base.Supplier<ListTopUtilizedResourcesRequest.Builder>() {
+                new java.util.function.Supplier<ListTopUtilizedResourcesRequest.Builder>() {
                     @Override
                     public ListTopUtilizedResourcesRequest.Builder get() {
                         return ListTopUtilizedResourcesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTopUtilizedResourcesResponse, String>() {
+                new java.util.function.Function<ListTopUtilizedResourcesResponse, String>() {
                     @Override
                     public String apply(ListTopUtilizedResourcesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTopUtilizedResourcesRequest.Builder>,
                         ListTopUtilizedResourcesRequest>() {
@@ -550,12 +546,12 @@ public class LicenseManagerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTopUtilizedResourcesRequest, ListTopUtilizedResourcesResponse>() {
                     @Override
                     public ListTopUtilizedResourcesResponse apply(
@@ -580,19 +576,19 @@ public class LicenseManagerPaginators {
                 ListTopUtilizedResourcesRequest.Builder, ListTopUtilizedResourcesRequest,
                 ListTopUtilizedResourcesResponse,
                 com.oracle.bmc.licensemanager.model.TopUtilizedResourceSummary>(
-                new com.google.common.base.Supplier<ListTopUtilizedResourcesRequest.Builder>() {
+                new java.util.function.Supplier<ListTopUtilizedResourcesRequest.Builder>() {
                     @Override
                     public ListTopUtilizedResourcesRequest.Builder get() {
                         return ListTopUtilizedResourcesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTopUtilizedResourcesResponse, String>() {
+                new java.util.function.Function<ListTopUtilizedResourcesResponse, String>() {
                     @Override
                     public String apply(ListTopUtilizedResourcesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTopUtilizedResourcesRequest.Builder>,
                         ListTopUtilizedResourcesRequest>() {
@@ -605,12 +601,12 @@ public class LicenseManagerPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTopUtilizedResourcesRequest, ListTopUtilizedResourcesResponse>() {
                     @Override
                     public ListTopUtilizedResourcesResponse apply(
@@ -618,7 +614,7 @@ public class LicenseManagerPaginators {
                         return client.listTopUtilizedResources(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTopUtilizedResourcesResponse,
                         java.util.List<
                                 com.oracle.bmc.licensemanager.model.TopUtilizedResourceSummary>>() {

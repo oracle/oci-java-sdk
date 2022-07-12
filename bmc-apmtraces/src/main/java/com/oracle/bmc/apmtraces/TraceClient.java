@@ -9,7 +9,6 @@ import com.oracle.bmc.apmtraces.requests.*;
 import com.oracle.bmc.apmtraces.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class TraceClient implements Trace {
@@ -328,7 +327,7 @@ public class TraceClient implements Trace {
          * @return the client
          */
         public TraceClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -364,7 +363,8 @@ public class TraceClient implements Trace {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -410,7 +410,7 @@ public class TraceClient implements Trace {
                         "GetAggregatedSnapshot",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/AggregatedSnapshot/GetAggregatedSnapshot");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAggregatedSnapshotResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAggregatedSnapshotResponse>
                 transformer =
                         GetAggregatedSnapshotConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -446,7 +446,7 @@ public class TraceClient implements Trace {
                         "GetSpan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Span/GetSpan");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSpanResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetSpanResponse> transformer =
                 GetSpanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -480,7 +480,7 @@ public class TraceClient implements Trace {
                         "GetTrace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Trace/GetTrace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTraceResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetTraceResponse> transformer =
                 GetTraceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -515,7 +515,7 @@ public class TraceClient implements Trace {
                         "GetTraceSnapshot",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/TraceSnapshot/GetTraceSnapshot");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTraceSnapshotResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTraceSnapshotResponse>
                 transformer =
                         GetTraceSnapshotConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

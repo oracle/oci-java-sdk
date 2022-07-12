@@ -9,7 +9,6 @@ import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 public class TransferApplianceClient implements TransferAppliance {
@@ -333,9 +332,9 @@ public class TransferApplianceClient implements TransferAppliance {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("TransferAppliance-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("TransferAppliance-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -401,7 +400,7 @@ public class TransferApplianceClient implements TransferAppliance {
          * @return the client
          */
         public TransferApplianceClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -438,7 +437,8 @@ public class TransferApplianceClient implements TransferAppliance {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -485,7 +485,7 @@ public class TransferApplianceClient implements TransferAppliance {
                         "CreateTransferAppliance",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTransferApplianceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTransferApplianceResponse>
                 transformer =
                         CreateTransferApplianceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -528,7 +528,7 @@ public class TransferApplianceClient implements TransferAppliance {
                         "CreateTransferApplianceAdminCredentials",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateTransferApplianceAdminCredentialsResponse>
                 transformer =
                         CreateTransferApplianceAdminCredentialsConverter.fromResponse(
@@ -571,7 +571,7 @@ public class TransferApplianceClient implements TransferAppliance {
                         "DeleteTransferAppliance",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTransferApplianceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTransferApplianceResponse>
                 transformer =
                         DeleteTransferApplianceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -609,7 +609,7 @@ public class TransferApplianceClient implements TransferAppliance {
                         "GetTransferAppliance",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTransferApplianceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTransferApplianceResponse>
                 transformer =
                         GetTransferApplianceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -650,7 +650,7 @@ public class TransferApplianceClient implements TransferAppliance {
                         "GetTransferApplianceCertificateAuthorityCertificate",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetTransferApplianceCertificateAuthorityCertificateResponse>
                 transformer =
@@ -692,7 +692,7 @@ public class TransferApplianceClient implements TransferAppliance {
                         "GetTransferApplianceEncryptionPassphrase",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetTransferApplianceEncryptionPassphraseResponse>
                 transformer =
                         GetTransferApplianceEncryptionPassphraseConverter.fromResponse(
@@ -731,7 +731,7 @@ public class TransferApplianceClient implements TransferAppliance {
                         "ListTransferAppliances",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTransferAppliancesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTransferAppliancesResponse>
                 transformer =
                         ListTransferAppliancesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -769,7 +769,7 @@ public class TransferApplianceClient implements TransferAppliance {
                         "UpdateTransferAppliance",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTransferApplianceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTransferApplianceResponse>
                 transformer =
                         UpdateTransferApplianceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

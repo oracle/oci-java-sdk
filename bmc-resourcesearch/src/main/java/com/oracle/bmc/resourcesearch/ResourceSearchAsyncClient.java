@@ -7,7 +7,6 @@ package com.oracle.bmc.resourcesearch;
 import com.oracle.bmc.resourcesearch.internal.http.*;
 import com.oracle.bmc.resourcesearch.requests.*;
 import com.oracle.bmc.resourcesearch.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ResourceSearch service. <br/>
@@ -320,7 +319,7 @@ public class ResourceSearchAsyncClient implements ResourceSearchAsync {
          * @return the client
          */
         public ResourceSearchAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class ResourceSearchAsyncClient implements ResourceSearchAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,7 +404,7 @@ public class ResourceSearchAsyncClient implements ResourceSearchAsync {
                         "GetResourceType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/GetResourceType");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetResourceTypeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetResourceTypeResponse>
                 transformer =
                         GetResourceTypeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -450,7 +450,7 @@ public class ResourceSearchAsyncClient implements ResourceSearchAsync {
                         "ListResourceTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/ListResourceTypes");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListResourceTypesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListResourceTypesResponse>
                 transformer =
                         ListResourceTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -496,7 +496,7 @@ public class ResourceSearchAsyncClient implements ResourceSearchAsync {
                         "SearchResources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceSummary/SearchResources");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, SearchResourcesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, SearchResourcesResponse>
                 transformer =
                         SearchResourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

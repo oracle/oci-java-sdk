@@ -44,19 +44,19 @@ public class TransferJobPaginators {
             final ListTransferJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListTransferJobsRequest.Builder, ListTransferJobsRequest, ListTransferJobsResponse>(
-                new com.google.common.base.Supplier<ListTransferJobsRequest.Builder>() {
+                new java.util.function.Supplier<ListTransferJobsRequest.Builder>() {
                     @Override
                     public ListTransferJobsRequest.Builder get() {
                         return ListTransferJobsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTransferJobsResponse, String>() {
+                new java.util.function.Function<ListTransferJobsResponse, String>() {
                     @Override
                     public String apply(ListTransferJobsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTransferJobsRequest.Builder>,
                         ListTransferJobsRequest>() {
@@ -69,12 +69,12 @@ public class TransferJobPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTransferJobsRequest, ListTransferJobsResponse>() {
                     @Override
                     public ListTransferJobsResponse apply(ListTransferJobsRequest request) {
@@ -97,19 +97,19 @@ public class TransferJobPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListTransferJobsRequest.Builder, ListTransferJobsRequest, ListTransferJobsResponse,
                 com.oracle.bmc.dts.model.TransferJobSummary>(
-                new com.google.common.base.Supplier<ListTransferJobsRequest.Builder>() {
+                new java.util.function.Supplier<ListTransferJobsRequest.Builder>() {
                     @Override
                     public ListTransferJobsRequest.Builder get() {
                         return ListTransferJobsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTransferJobsResponse, String>() {
+                new java.util.function.Function<ListTransferJobsResponse, String>() {
                     @Override
                     public String apply(ListTransferJobsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTransferJobsRequest.Builder>,
                         ListTransferJobsRequest>() {
@@ -122,19 +122,19 @@ public class TransferJobPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTransferJobsRequest, ListTransferJobsResponse>() {
                     @Override
                     public ListTransferJobsResponse apply(ListTransferJobsRequest request) {
                         return client.listTransferJobs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTransferJobsResponse,
                         java.util.List<com.oracle.bmc.dts.model.TransferJobSummary>>() {
                     @Override

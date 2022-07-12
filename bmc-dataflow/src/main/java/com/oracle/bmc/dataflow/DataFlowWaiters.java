@@ -6,7 +6,6 @@ package com.oracle.bmc.dataflow;
 
 import com.oracle.bmc.dataflow.requests.*;
 import com.oracle.bmc.dataflow.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -106,17 +105,17 @@ public class DataFlowWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetApplicationRequest, GetApplicationResponse>() {
                             @Override
                             public GetApplicationResponse apply(GetApplicationRequest request) {
                                 return client.getApplication(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetApplicationResponse>() {
+                        new java.util.function.Predicate<GetApplicationResponse>() {
                             @Override
-                            public boolean apply(GetApplicationResponse response) {
+                            public boolean test(GetApplicationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getApplication().getLifecycleState());
                             }
@@ -209,8 +208,8 @@ public class DataFlowWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetPrivateEndpointRequest, GetPrivateEndpointResponse>() {
                             @Override
                             public GetPrivateEndpointResponse apply(
@@ -218,9 +217,9 @@ public class DataFlowWaiters {
                                 return client.getPrivateEndpoint(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetPrivateEndpointResponse>() {
+                        new java.util.function.Predicate<GetPrivateEndpointResponse>() {
                             @Override
-                            public boolean apply(GetPrivateEndpointResponse response) {
+                            public boolean test(GetPrivateEndpointResponse response) {
                                 return targetStatesSet.contains(
                                         response.getPrivateEndpoint().getLifecycleState());
                             }
@@ -308,16 +307,16 @@ public class DataFlowWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetRunRequest, GetRunResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetRunRequest, GetRunResponse>() {
                             @Override
                             public GetRunResponse apply(GetRunRequest request) {
                                 return client.getRun(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetRunResponse>() {
+                        new java.util.function.Predicate<GetRunResponse>() {
                             @Override
-                            public boolean apply(GetRunResponse response) {
+                            public boolean test(GetRunResponse response) {
                                 return targetStatesSet.contains(
                                         response.getRun().getLifecycleState());
                             }
@@ -363,17 +362,17 @@ public class DataFlowWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

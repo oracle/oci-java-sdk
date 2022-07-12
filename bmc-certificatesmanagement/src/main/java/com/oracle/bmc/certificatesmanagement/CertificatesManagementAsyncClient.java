@@ -7,7 +7,6 @@ package com.oracle.bmc.certificatesmanagement;
 import com.oracle.bmc.certificatesmanagement.internal.http.*;
 import com.oracle.bmc.certificatesmanagement.requests.*;
 import com.oracle.bmc.certificatesmanagement.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for CertificatesManagement service. <br/>
@@ -321,7 +320,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
          * @return the client
          */
         public CertificatesManagementAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -407,7 +407,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "CancelCertificateAuthorityDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CancelCertificateAuthorityDeletion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CancelCertificateAuthorityDeletionResponse>
                 transformer =
                         CancelCertificateAuthorityDeletionConverter.fromResponse(
@@ -461,7 +461,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "CancelCertificateAuthorityVersionDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/CancelCertificateAuthorityVersionDeletion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         CancelCertificateAuthorityVersionDeletionResponse>
                 transformer =
@@ -514,7 +514,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "CancelCertificateDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CancelCertificateDeletion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CancelCertificateDeletionResponse>
                 transformer =
                         CancelCertificateDeletionConverter.fromResponse(
@@ -565,7 +565,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "CancelCertificateVersionDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/CancelCertificateVersionDeletion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CancelCertificateVersionDeletionResponse>
                 transformer =
                         CancelCertificateVersionDeletionConverter.fromResponse(
@@ -617,7 +617,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ChangeCaBundleCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/ChangeCaBundleCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeCaBundleCompartmentResponse>
                 transformer =
                         ChangeCaBundleCompartmentConverter.fromResponse(
@@ -675,7 +675,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ChangeCertificateAuthorityCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ChangeCertificateAuthorityCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeCertificateAuthorityCompartmentResponse>
                 transformer =
                         ChangeCertificateAuthorityCompartmentConverter.fromResponse(
@@ -735,7 +735,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ChangeCertificateCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ChangeCertificateCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
                 transformer =
                         ChangeCertificateCompartmentConverter.fromResponse(
@@ -790,7 +790,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "CreateCaBundle",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/CreateCaBundle");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCaBundleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCaBundleResponse>
                 transformer =
                         CreateCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateCaBundleRequest, CreateCaBundleResponse>
@@ -841,7 +841,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "CreateCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CreateCertificate");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
                 transformer =
                         CreateCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -895,7 +895,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "CreateCertificateAuthority",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CreateCertificateAuthority");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateCertificateAuthorityResponse>
                 transformer =
                         CreateCertificateAuthorityConverter.fromResponse(
@@ -949,7 +949,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "DeleteCaBundle",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/DeleteCaBundle");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCaBundleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCaBundleResponse>
                 transformer =
                         DeleteCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteCaBundleRequest, DeleteCaBundleResponse>
@@ -994,7 +994,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "GetAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Association/GetAssociation");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetAssociationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAssociationResponse>
                 transformer =
                         GetAssociationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetAssociationRequest, GetAssociationResponse>
@@ -1038,7 +1038,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "GetCaBundle",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/GetCaBundle");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCaBundleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCaBundleResponse>
                 transformer =
                         GetCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCaBundleRequest, GetCaBundleResponse>
@@ -1083,7 +1083,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "GetCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/GetCertificate");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCertificateResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCertificateResponse>
                 transformer =
                         GetCertificateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCertificateRequest, GetCertificateResponse>
@@ -1128,7 +1128,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "GetCertificateAuthority",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/GetCertificateAuthority");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetCertificateAuthorityResponse>
                 transformer =
                         GetCertificateAuthorityConverter.fromResponse(
@@ -1178,7 +1178,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "GetCertificateAuthorityVersion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/GetCertificateAuthorityVersion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetCertificateAuthorityVersionResponse>
                 transformer =
                         GetCertificateAuthorityVersionConverter.fromResponse(
@@ -1228,8 +1228,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "GetCertificateVersion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/GetCertificateVersion");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetCertificateVersionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCertificateVersionResponse>
                 transformer =
                         GetCertificateVersionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1276,7 +1275,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ListAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/AssociationSummary/ListAssociations");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAssociationsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAssociationsResponse>
                 transformer =
                         ListAssociationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1321,7 +1320,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ListCaBundles",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundleSummary/ListCaBundles");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCaBundlesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCaBundlesResponse>
                 transformer =
                         ListCaBundlesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListCaBundlesRequest, ListCaBundlesResponse>
@@ -1368,7 +1367,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ListCertificateAuthorities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthoritySummary/ListCertificateAuthorities");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListCertificateAuthoritiesResponse>
                 transformer =
                         ListCertificateAuthoritiesConverter.fromResponse(
@@ -1419,7 +1418,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ListCertificateAuthorityVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersionSummary/ListCertificateAuthorityVersions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListCertificateAuthorityVersionsResponse>
                 transformer =
                         ListCertificateAuthorityVersionsConverter.fromResponse(
@@ -1470,7 +1469,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ListCertificateVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersionSummary/ListCertificateVersions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListCertificateVersionsResponse>
                 transformer =
                         ListCertificateVersionsConverter.fromResponse(
@@ -1518,7 +1517,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ListCertificates",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateSummary/ListCertificates");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer =
                         ListCertificatesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1567,7 +1566,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "RevokeCertificateAuthorityVersion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/RevokeCertificateAuthorityVersion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RevokeCertificateAuthorityVersionResponse>
                 transformer =
                         RevokeCertificateAuthorityVersionConverter.fromResponse(
@@ -1624,7 +1623,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "RevokeCertificateVersion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/RevokeCertificateVersion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RevokeCertificateVersionResponse>
                 transformer =
                         RevokeCertificateVersionConverter.fromResponse(
@@ -1680,7 +1679,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ScheduleCertificateAuthorityDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ScheduleCertificateAuthorityDeletion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ScheduleCertificateAuthorityDeletionResponse>
                 transformer =
                         ScheduleCertificateAuthorityDeletionConverter.fromResponse(
@@ -1739,7 +1738,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ScheduleCertificateAuthorityVersionDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/ScheduleCertificateAuthorityVersionDeletion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ScheduleCertificateAuthorityVersionDeletionResponse>
                 transformer =
@@ -1800,7 +1799,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ScheduleCertificateDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ScheduleCertificateDeletion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ScheduleCertificateDeletionResponse>
                 transformer =
                         ScheduleCertificateDeletionConverter.fromResponse(
@@ -1856,7 +1855,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "ScheduleCertificateVersionDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/ScheduleCertificateVersionDeletion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ScheduleCertificateVersionDeletionResponse>
                 transformer =
                         ScheduleCertificateVersionDeletionConverter.fromResponse(
@@ -1912,7 +1911,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "UpdateCaBundle",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/UpdateCaBundle");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCaBundleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCaBundleResponse>
                 transformer =
                         UpdateCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateCaBundleRequest, UpdateCaBundleResponse>
@@ -1962,7 +1961,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "UpdateCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/UpdateCertificate");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
                 transformer =
                         UpdateCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2015,7 +2014,7 @@ public class CertificatesManagementAsyncClient implements CertificatesManagement
                         "UpdateCertificateAuthority",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/UpdateCertificateAuthority");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateCertificateAuthorityResponse>
                 transformer =
                         UpdateCertificateAuthorityConverter.fromResponse(

@@ -7,7 +7,6 @@ package com.oracle.bmc.identity;
 import com.oracle.bmc.identity.internal.http.*;
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Identity service. <br/>
@@ -319,7 +318,7 @@ public class IdentityAsyncClient implements IdentityAsync {
          * @return the client
          */
         public IdentityAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class IdentityAsyncClient implements IdentityAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,7 +404,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ActivateDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ActivateDomain");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ActivateDomainResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ActivateDomainResponse>
                 transformer =
                         ActivateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ActivateDomainRequest, ActivateDomainResponse>
@@ -450,8 +450,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ActivateMfaTotpDevice",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/ActivateMfaTotpDevice");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ActivateMfaTotpDeviceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ActivateMfaTotpDeviceResponse>
                 transformer =
                         ActivateMfaTotpDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -504,7 +503,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "AddTagDefaultLock",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/AddTagDefaultLock");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AddTagDefaultLockResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AddTagDefaultLockResponse>
                 transformer =
                         AddTagDefaultLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -556,8 +555,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "AddTagNamespaceLock",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/AddTagNamespaceLock");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, AddTagNamespaceLockResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AddTagNamespaceLockResponse>
                 transformer =
                         AddTagNamespaceLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -610,7 +608,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "AddUserToGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/AddUserToGroup");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AddUserToGroupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AddUserToGroupResponse>
                 transformer =
                         AddUserToGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AddUserToGroupRequest, AddUserToGroupResponse>
@@ -660,7 +658,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "AssembleEffectiveTagSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/AssembleEffectiveTagSet");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, AssembleEffectiveTagSetResponse>
                 transformer =
                         AssembleEffectiveTagSetConverter.fromResponse(
@@ -709,8 +707,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "BulkDeleteResources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/BulkDeleteResources");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, BulkDeleteResourcesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkDeleteResourcesResponse>
                 transformer =
                         BulkDeleteResourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -763,7 +760,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "BulkDeleteTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/BulkDeleteTags");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, BulkDeleteTagsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkDeleteTagsResponse>
                 transformer =
                         BulkDeleteTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<BulkDeleteTagsRequest, BulkDeleteTagsResponse>
@@ -813,7 +810,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "BulkEditTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/BulkEditTags");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, BulkEditTagsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkEditTagsResponse>
                 transformer =
                         BulkEditTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<BulkEditTagsRequest, BulkEditTagsResponse>
@@ -864,7 +861,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "BulkMoveResources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/BulkMoveResources");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, BulkMoveResourcesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkMoveResourcesResponse>
                 transformer =
                         BulkMoveResourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -916,7 +913,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CascadeDeleteTagNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/CascadeDeleteTagNamespace");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CascadeDeleteTagNamespaceResponse>
                 transformer =
                         CascadeDeleteTagNamespaceConverter.fromResponse(
@@ -966,7 +963,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ChangeDomainCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ChangeDomainCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDomainCompartmentResponse>
                 transformer =
                         ChangeDomainCompartmentConverter.fromResponse(
@@ -1020,7 +1017,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ChangeDomainLicenseType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ChangeDomainLicenseType");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDomainLicenseTypeResponse>
                 transformer =
                         ChangeDomainLicenseTypeConverter.fromResponse(
@@ -1076,7 +1073,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ChangeTagNamespaceCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/ChangeTagNamespaceCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeTagNamespaceCompartmentResponse>
                 transformer =
                         ChangeTagNamespaceCompartmentConverter.fromResponse(
@@ -1131,7 +1128,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateAuthToken",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/CreateAuthToken");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAuthTokenResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateAuthTokenResponse>
                 transformer =
                         CreateAuthTokenConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1183,7 +1180,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/CreateCompartment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCompartmentResponse>
                 transformer =
                         CreateCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1235,7 +1232,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateCustomerSecretKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKey/CreateCustomerSecretKey");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateCustomerSecretKeyResponse>
                 transformer =
                         CreateCustomerSecretKeyConverter.fromResponse(
@@ -1289,7 +1286,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateDbCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateDbCredential");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbCredentialResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDbCredentialResponse>
                 transformer =
                         CreateDbCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1340,7 +1337,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/CreateDomain");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDomainResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDomainResponse>
                 transformer =
                         CreateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateDomainRequest, CreateDomainResponse>
@@ -1391,7 +1388,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateDynamicGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/CreateDynamicGroup");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDynamicGroupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDynamicGroupResponse>
                 transformer =
                         CreateDynamicGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1442,7 +1439,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/CreateGroup");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateGroupResponse>
                 transformer =
                         CreateGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateGroupRequest, CreateGroupResponse>
@@ -1493,8 +1490,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateIdentityProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/CreateIdentityProvider");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateIdentityProviderResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateIdentityProviderResponse>
                 transformer =
                         CreateIdentityProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1547,8 +1543,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateIdpGroupMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/CreateIdpGroupMapping");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateIdpGroupMappingResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateIdpGroupMappingResponse>
                 transformer =
                         CreateIdpGroupMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1601,8 +1596,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateMfaTotpDevice",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/CreateMfaTotpDevice");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateMfaTotpDeviceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateMfaTotpDeviceResponse>
                 transformer =
                         CreateMfaTotpDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1650,8 +1644,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateNetworkSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/CreateNetworkSource");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateNetworkSourceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkSourceResponse>
                 transformer =
                         CreateNetworkSourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1706,7 +1699,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateOAuthClientCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateOAuthClientCredential");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateOAuthClientCredentialResponse>
                 transformer =
                         CreateOAuthClientCredentialConverter.fromResponse(
@@ -1761,7 +1754,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateOrResetUIPassword",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UIPassword/CreateOrResetUIPassword");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>
                 transformer =
                         CreateOrResetUIPasswordConverter.fromResponse(
@@ -1809,7 +1802,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreatePolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/CreatePolicy");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePolicyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreatePolicyResponse>
                 transformer =
                         CreatePolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreatePolicyRequest, CreatePolicyResponse>
@@ -1860,7 +1853,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateRegionSubscription",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/RegionSubscription/CreateRegionSubscription");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>
                 transformer =
                         CreateRegionSubscriptionConverter.fromResponse(
@@ -1914,8 +1907,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateSmtpCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredential/CreateSmtpCredential");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateSmtpCredentialResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSmtpCredentialResponse>
                 transformer =
                         CreateSmtpCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1968,8 +1960,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateSwiftPassword",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/CreateSwiftPassword");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateSwiftPasswordResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSwiftPasswordResponse>
                 transformer =
                         CreateSwiftPasswordConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2020,7 +2011,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/CreateTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTagResponse>
                 transformer =
                         CreateTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateTagRequest, CreateTagResponse> handlerToUse =
@@ -2070,7 +2061,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateTagDefault",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/CreateTagDefault");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagDefaultResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTagDefaultResponse>
                 transformer =
                         CreateTagDefaultConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2122,7 +2113,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateTagNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/CreateTagNamespace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagNamespaceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTagNamespaceResponse>
                 transformer =
                         CreateTagNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2172,7 +2163,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "CreateUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateUser");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateUserResponse>
                 transformer =
                         CreateUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateUserRequest, CreateUserResponse> handlerToUse =
@@ -2223,7 +2214,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "DeactivateDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/DeactivateDomain");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeactivateDomainResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeactivateDomainResponse>
                 transformer =
                         DeactivateDomainConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2265,7 +2256,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteApiKey", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
                 transformer =
                         DeleteApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteApiKeyRequest, DeleteApiKeyResponse>
@@ -2307,7 +2298,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteAuthToken", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAuthTokenResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteAuthTokenResponse>
                 transformer =
                         DeleteAuthTokenConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2353,7 +2344,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "DeleteCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/DeleteCompartment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCompartmentResponse>
                 transformer =
                         DeleteCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2396,7 +2387,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteCustomerSecretKey", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteCustomerSecretKeyResponse>
                 transformer =
                         DeleteCustomerSecretKeyConverter.fromResponse(
@@ -2444,7 +2435,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "DeleteDbCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/DeleteDbCredential");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDbCredentialResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDbCredentialResponse>
                 transformer =
                         DeleteDbCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2489,7 +2480,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "DeleteDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/DeleteDomain");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDomainResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDomainResponse>
                 transformer =
                         DeleteDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteDomainRequest, DeleteDomainResponse>
@@ -2531,7 +2522,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteDynamicGroup", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDynamicGroupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDynamicGroupResponse>
                 transformer =
                         DeleteDynamicGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2573,7 +2564,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteGroup", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGroupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteGroupResponse>
                 transformer =
                         DeleteGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteGroupRequest, DeleteGroupResponse>
@@ -2615,8 +2606,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteIdentityProvider", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteIdentityProviderResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteIdentityProviderResponse>
                 transformer =
                         DeleteIdentityProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2660,8 +2650,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteIdpGroupMapping", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteIdpGroupMappingResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteIdpGroupMappingResponse>
                 transformer =
                         DeleteIdpGroupMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2708,8 +2697,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "DeleteMfaTotpDevice",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/DeleteMfaTotpDevice");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteMfaTotpDeviceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMfaTotpDeviceResponse>
                 transformer =
                         DeleteMfaTotpDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2756,8 +2744,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "DeleteNetworkSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/DeleteNetworkSource");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteNetworkSourceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkSourceResponse>
                 transformer =
                         DeleteNetworkSourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2806,7 +2793,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "DeleteOAuthClientCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/DeleteOAuthClientCredential");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOAuthClientCredentialResponse>
                 transformer =
                         DeleteOAuthClientCredentialConverter.fromResponse(
@@ -2851,7 +2838,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeletePolicy", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePolicyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeletePolicyResponse>
                 transformer =
                         DeletePolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeletePolicyRequest, DeletePolicyResponse>
@@ -2893,8 +2880,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteSmtpCredential", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteSmtpCredentialResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSmtpCredentialResponse>
                 transformer =
                         DeleteSmtpCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2938,8 +2924,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteSwiftPassword", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>
                 transformer =
                         DeleteSwiftPasswordConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2984,7 +2969,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "DeleteTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/DeleteTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTagResponse>
                 transformer =
                         DeleteTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteTagRequest, DeleteTagResponse> handlerToUse =
@@ -3028,7 +3013,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "DeleteTagDefault",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/DeleteTagDefault");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagDefaultResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTagDefaultResponse>
                 transformer =
                         DeleteTagDefaultConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3074,7 +3059,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "DeleteTagNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/DeleteTagNamespace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagNamespaceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTagNamespaceResponse>
                 transformer =
                         DeleteTagNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3115,7 +3100,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteUser", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUserResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteUserResponse>
                 transformer =
                         DeleteUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteUserRequest, DeleteUserResponse> handlerToUse =
@@ -3161,7 +3146,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "EnableReplicationToRegion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/EnableReplicationToRegion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, EnableReplicationToRegionResponse>
                 transformer =
                         EnableReplicationToRegionConverter.fromResponse(
@@ -3215,7 +3200,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GenerateTotpSeed",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/GenerateTotpSeed");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GenerateTotpSeedResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GenerateTotpSeedResponse>
                 transformer =
                         GenerateTotpSeedConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3261,7 +3246,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetAuthenticationPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthenticationPolicy/GetAuthenticationPolicy");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetAuthenticationPolicyResponse>
                 transformer =
                         GetAuthenticationPolicyConverter.fromResponse(
@@ -3309,7 +3294,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/GetCompartment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCompartmentResponse>
                 transformer =
                         GetCompartmentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCompartmentRequest, GetCompartmentResponse>
@@ -3352,7 +3337,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/GetDomain");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDomainResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDomainResponse>
                 transformer =
                         GetDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDomainRequest, GetDomainResponse> handlerToUse =
@@ -3396,7 +3381,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetDynamicGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/GetDynamicGroup");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDynamicGroupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDynamicGroupResponse>
                 transformer =
                         GetDynamicGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3440,8 +3425,8 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/GetGroup");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse>
-                transformer = GetGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetGroupResponse> transformer =
+                GetGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetGroupRequest, GetGroupResponse> handlerToUse =
                 handler;
 
@@ -3483,7 +3468,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetIamWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequest/GetIamWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetIamWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetIamWorkRequestResponse>
                 transformer =
                         GetIamWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3529,8 +3514,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetIdentityProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/GetIdentityProvider");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetIdentityProviderResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetIdentityProviderResponse>
                 transformer =
                         GetIdentityProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3577,7 +3561,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetIdpGroupMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/GetIdpGroupMapping");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetIdpGroupMappingResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetIdpGroupMappingResponse>
                 transformer =
                         GetIdpGroupMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3623,7 +3607,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetMfaTotpDevice",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/GetMfaTotpDevice");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetMfaTotpDeviceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMfaTotpDeviceResponse>
                 transformer =
                         GetMfaTotpDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3669,7 +3653,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetNetworkSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/GetNetworkSource");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkSourceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetNetworkSourceResponse>
                 transformer =
                         GetNetworkSourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3713,7 +3697,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/GetPolicy");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPolicyResponse>
                 transformer =
                         GetPolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetPolicyRequest, GetPolicyResponse> handlerToUse =
@@ -3757,8 +3741,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetStandardTagTemplate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/StandardTagNamespaceTemplate/GetStandardTagTemplate");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetStandardTagTemplateResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetStandardTagTemplateResponse>
                 transformer =
                         GetStandardTagTemplateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3802,8 +3785,8 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/GetTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTagResponse>
-                transformer = GetTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTagResponse> transformer =
+                GetTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTagRequest, GetTagResponse> handlerToUse = handler;
 
         java.util.function.Function<
@@ -3843,7 +3826,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetTagDefault",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/GetTagDefault");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTagDefaultResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTagDefaultResponse>
                 transformer =
                         GetTagDefaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTagDefaultRequest, GetTagDefaultResponse>
@@ -3888,7 +3871,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetTagNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/GetTagNamespace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTagNamespaceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTagNamespaceResponse>
                 transformer =
                         GetTagNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3934,8 +3917,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetTaggingWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequest/GetTaggingWorkRequest");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetTaggingWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTaggingWorkRequestResponse>
                 transformer =
                         GetTaggingWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3980,7 +3962,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetTenancy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tenancy/GetTenancy");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTenancyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTenancyResponse>
                 transformer =
                         GetTenancyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTenancyRequest, GetTenancyResponse> handlerToUse =
@@ -4022,8 +4004,8 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/GetUser");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetUserResponse>
-                transformer = GetUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetUserResponse> transformer =
+                GetUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse> handlerToUse =
                 handler;
 
@@ -4065,8 +4047,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetUserGroupMembership",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/GetUserGroupMembership");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetUserGroupMembershipResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetUserGroupMembershipResponse>
                 transformer =
                         GetUserGroupMembershipConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4115,7 +4096,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetUserUIPasswordInformation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UIPasswordInformation/GetUserUIPasswordInformation");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetUserUIPasswordInformationResponse>
                 transformer =
                         GetUserUIPasswordInformationConverter.fromResponse(
@@ -4164,7 +4145,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -4210,7 +4191,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ImportStandardTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/ImportStandardTags");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportStandardTagsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ImportStandardTagsResponse>
                 transformer =
                         ImportStandardTagsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4263,7 +4244,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListAllowedDomainLicenseTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ListAllowedDomainLicenseTypes");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAllowedDomainLicenseTypesResponse>
                 transformer =
                         ListAllowedDomainLicenseTypesConverter.fromResponse(
@@ -4311,7 +4292,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListApiKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ApiKey/ListApiKeys");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListApiKeysResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListApiKeysResponse>
                 transformer =
                         ListApiKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListApiKeysRequest, ListApiKeysResponse>
@@ -4356,7 +4337,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListAuthTokens",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/ListAuthTokens");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAuthTokensResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAuthTokensResponse>
                 transformer =
                         ListAuthTokensConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListAuthTokensRequest, ListAuthTokensResponse>
@@ -4401,7 +4382,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListAvailabilityDomains",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAvailabilityDomainsResponse>
                 transformer =
                         ListAvailabilityDomainsConverter.fromResponse(
@@ -4451,7 +4432,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListBulkActionResourceTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/BulkActionResourceTypeCollection/ListBulkActionResourceTypes");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListBulkActionResourceTypesResponse>
                 transformer =
                         ListBulkActionResourceTypesConverter.fromResponse(
@@ -4502,7 +4483,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListBulkEditTagsResourceTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/BulkEditTagsResourceTypeCollection/ListBulkEditTagsResourceTypes");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListBulkEditTagsResourceTypesResponse>
                 transformer =
                         ListBulkEditTagsResourceTypesConverter.fromResponse(
@@ -4551,7 +4532,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListCompartments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/ListCompartments");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCompartmentsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCompartmentsResponse>
                 transformer =
                         ListCompartmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4597,8 +4578,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListCostTrackingTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/ListCostTrackingTags");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCostTrackingTagsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCostTrackingTagsResponse>
                 transformer =
                         ListCostTrackingTagsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4645,8 +4625,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListCustomerSecretKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/ListCustomerSecretKeys");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>
                 transformer =
                         ListCustomerSecretKeysConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4693,7 +4672,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListDbCredentials",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListDbCredentials");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbCredentialsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDbCredentialsResponse>
                 transformer =
                         ListDbCredentialsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4738,7 +4717,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListDomains",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DomainSummary/ListDomains");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDomainsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDomainsResponse>
                 transformer =
                         ListDomainsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDomainsRequest, ListDomainsResponse>
@@ -4783,7 +4762,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListDynamicGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/ListDynamicGroups");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDynamicGroupsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDynamicGroupsResponse>
                 transformer =
                         ListDynamicGroupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4829,7 +4808,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListFaultDomains",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListFaultDomainsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListFaultDomainsResponse>
                 transformer =
                         ListFaultDomainsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4873,7 +4852,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/ListGroups");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListGroupsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListGroupsResponse>
                 transformer =
                         ListGroupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListGroupsRequest, ListGroupsResponse> handlerToUse =
@@ -4918,7 +4897,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListIamWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequest/ListIamWorkRequestErrors");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListIamWorkRequestErrorsResponse>
                 transformer =
                         ListIamWorkRequestErrorsConverter.fromResponse(
@@ -4966,8 +4945,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListIamWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequestLogSummary/ListIamWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListIamWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListIamWorkRequestLogsResponse>
                 transformer =
                         ListIamWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5014,8 +4992,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListIamWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequestSummary/ListIamWorkRequests");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListIamWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListIamWorkRequestsResponse>
                 transformer =
                         ListIamWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5064,7 +5041,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListIdentityProviderGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProviderGroupSummary/ListIdentityProviderGroups");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListIdentityProviderGroupsResponse>
                 transformer =
                         ListIdentityProviderGroupsConverter.fromResponse(
@@ -5113,8 +5090,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListIdentityProviders",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/ListIdentityProviders");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListIdentityProvidersResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListIdentityProvidersResponse>
                 transformer =
                         ListIdentityProvidersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5161,8 +5137,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListIdpGroupMappings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/ListIdpGroupMappings");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>
                 transformer =
                         ListIdpGroupMappingsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5209,7 +5184,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListMfaTotpDevices",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/ListMfaTotpDevices");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListMfaTotpDevicesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMfaTotpDevicesResponse>
                 transformer =
                         ListMfaTotpDevicesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5255,7 +5230,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListNetworkSources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSourcesSummary/ListNetworkSources");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListNetworkSourcesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListNetworkSourcesResponse>
                 transformer =
                         ListNetworkSourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5303,7 +5278,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListOAuthClientCredentials",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListOAuthClientCredentials");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOAuthClientCredentialsResponse>
                 transformer =
                         ListOAuthClientCredentialsConverter.fromResponse(
@@ -5351,7 +5326,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/ListPolicies");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
                 transformer =
                         ListPoliciesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListPoliciesRequest, ListPoliciesResponse>
@@ -5396,7 +5371,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListRegionSubscriptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/RegionSubscription/ListRegionSubscriptions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListRegionSubscriptionsResponse>
                 transformer =
                         ListRegionSubscriptionsConverter.fromResponse(
@@ -5443,7 +5418,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListRegions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Region/ListRegions");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRegionsResponse>
                 transformer =
                         ListRegionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRegionsRequest, ListRegionsResponse>
@@ -5488,8 +5463,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListSmtpCredentials",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/ListSmtpCredentials");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSmtpCredentialsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSmtpCredentialsResponse>
                 transformer =
                         ListSmtpCredentialsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5536,7 +5510,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListStandardTagNamespaces",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/StandardTagNamespaceTemplateSummary/ListStandardTagNamespaces");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListStandardTagNamespacesResponse>
                 transformer =
                         ListStandardTagNamespacesConverter.fromResponse(
@@ -5585,7 +5559,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListSwiftPasswords",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/ListSwiftPasswords");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSwiftPasswordsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSwiftPasswordsResponse>
                 transformer =
                         ListSwiftPasswordsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5631,7 +5605,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListTagDefaults",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefaultSummary/ListTagDefaults");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTagDefaultsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTagDefaultsResponse>
                 transformer =
                         ListTagDefaultsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5677,7 +5651,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListTagNamespaces",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespaceSummary/ListTagNamespaces");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTagNamespacesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTagNamespacesResponse>
                 transformer =
                         ListTagNamespacesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5725,7 +5699,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListTaggingWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestErrorSummary/ListTaggingWorkRequestErrors");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListTaggingWorkRequestErrorsResponse>
                 transformer =
                         ListTaggingWorkRequestErrorsConverter.fromResponse(
@@ -5776,7 +5750,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListTaggingWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestLogSummary/ListTaggingWorkRequestLogs");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListTaggingWorkRequestLogsResponse>
                 transformer =
                         ListTaggingWorkRequestLogsConverter.fromResponse(
@@ -5825,7 +5799,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListTaggingWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestSummary/ListTaggingWorkRequests");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListTaggingWorkRequestsResponse>
                 transformer =
                         ListTaggingWorkRequestsConverter.fromResponse(
@@ -5871,8 +5845,8 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagSummary/ListTags");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTagsResponse>
-                transformer = ListTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTagsResponse> transformer =
+                ListTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTagsRequest, ListTagsResponse> handlerToUse =
                 handler;
 
@@ -5914,7 +5888,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListUserGroupMemberships",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/ListUserGroupMemberships");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListUserGroupMembershipsResponse>
                 transformer =
                         ListUserGroupMembershipsConverter.fromResponse(
@@ -5960,7 +5934,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListUsers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListUsers");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListUsersResponse>
                 transformer =
                         ListUsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse> handlerToUse =
@@ -6004,7 +5978,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/WorkRequestSummary/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6051,7 +6025,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "MoveCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/MoveCompartment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, MoveCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, MoveCompartmentResponse>
                 transformer =
                         MoveCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6102,7 +6076,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "RecoverCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/RecoverCompartment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RecoverCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RecoverCompartmentResponse>
                 transformer =
                         RecoverCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6149,8 +6123,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "RemoveTagDefaultLock",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/RemoveTagDefaultLock");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RemoveTagDefaultLockResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveTagDefaultLockResponse>
                 transformer =
                         RemoveTagDefaultLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6203,8 +6176,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "RemoveTagNamespaceLock",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/RemoveTagNamespaceLock");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RemoveTagNamespaceLockResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveTagNamespaceLockResponse>
                 transformer =
                         RemoveTagNamespaceLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6256,8 +6228,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "RemoveUserFromGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/RemoveUserFromGroup");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RemoveUserFromGroupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveUserFromGroupResponse>
                 transformer =
                         RemoveUserFromGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6304,7 +6275,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "ResetIdpScimClient",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ScimClientCredentials/ResetIdpScimClient");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ResetIdpScimClientResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ResetIdpScimClientResponse>
                 transformer =
                         ResetIdpScimClientConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6350,7 +6321,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateAuthToken",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/UpdateAuthToken");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAuthTokenResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateAuthTokenResponse>
                 transformer =
                         UpdateAuthTokenConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6403,7 +6374,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateAuthenticationPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthenticationPolicy/UpdateAuthenticationPolicy");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateAuthenticationPolicyResponse>
                 transformer =
                         UpdateAuthenticationPolicyConverter.fromResponse(
@@ -6457,7 +6428,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/UpdateCompartment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCompartmentResponse>
                 transformer =
                         UpdateCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6508,7 +6479,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateCustomerSecretKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/UpdateCustomerSecretKey");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateCustomerSecretKeyResponse>
                 transformer =
                         UpdateCustomerSecretKeyConverter.fromResponse(
@@ -6560,7 +6531,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/UpdateDomain");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDomainResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDomainResponse>
                 transformer =
                         UpdateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateDomainRequest, UpdateDomainResponse>
@@ -6610,7 +6581,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateDynamicGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/UpdateDynamicGroup");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDynamicGroupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDynamicGroupResponse>
                 transformer =
                         UpdateDynamicGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6660,7 +6631,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/UpdateGroup");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
                 transformer =
                         UpdateGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateGroupRequest, UpdateGroupResponse>
@@ -6710,8 +6681,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateIdentityProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateIdentityProviderResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateIdentityProviderResponse>
                 transformer =
                         UpdateIdentityProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6763,8 +6733,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateIdpGroupMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/UpdateIdpGroupMapping");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>
                 transformer =
                         UpdateIdpGroupMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6816,8 +6785,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateNetworkSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/UpdateNetworkSource");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateNetworkSourceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkSourceResponse>
                 transformer =
                         UpdateNetworkSourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6871,7 +6839,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateOAuthClientCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateOAuthClientCredential");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateOAuthClientCredentialResponse>
                 transformer =
                         UpdateOAuthClientCredentialConverter.fromResponse(
@@ -6924,7 +6892,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdatePolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/UpdatePolicy");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePolicyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdatePolicyResponse>
                 transformer =
                         UpdatePolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdatePolicyRequest, UpdatePolicyResponse>
@@ -6974,8 +6942,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateSmtpCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/UpdateSmtpCredential");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateSmtpCredentialResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSmtpCredentialResponse>
                 transformer =
                         UpdateSmtpCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7027,8 +6994,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateSwiftPassword",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/UpdateSwiftPassword");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>
                 transformer =
                         UpdateSwiftPasswordConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7078,7 +7044,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/UpdateTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTagResponse>
                 transformer =
                         UpdateTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateTagRequest, UpdateTagResponse> handlerToUse =
@@ -7127,7 +7093,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateTagDefault",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/UpdateTagDefault");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagDefaultResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTagDefaultResponse>
                 transformer =
                         UpdateTagDefaultConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7178,7 +7144,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateTagNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/UpdateTagNamespace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagNamespaceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTagNamespaceResponse>
                 transformer =
                         UpdateTagNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7227,7 +7193,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUser");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateUserResponse>
                 transformer =
                         UpdateUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateUserRequest, UpdateUserResponse> handlerToUse =
@@ -7277,8 +7243,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateUserCapabilities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUserCapabilities");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateUserCapabilitiesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateUserCapabilitiesResponse>
                 transformer =
                         UpdateUserCapabilitiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7330,7 +7295,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UpdateUserState",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUserState");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserStateResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateUserStateResponse>
                 transformer =
                         UpdateUserStateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7381,7 +7346,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                         "UploadApiKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ApiKey/UploadApiKey");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UploadApiKeyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UploadApiKeyResponse>
                 transformer =
                         UploadApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UploadApiKeyRequest, UploadApiKeyResponse>

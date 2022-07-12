@@ -6,7 +6,6 @@ package com.oracle.bmc.waf;
 
 import com.oracle.bmc.waf.requests.*;
 import com.oracle.bmc.waf.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -108,8 +107,8 @@ public class WafWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetNetworkAddressListRequest, GetNetworkAddressListResponse>() {
                             @Override
                             public GetNetworkAddressListResponse apply(
@@ -117,9 +116,9 @@ public class WafWaiters {
                                 return client.getNetworkAddressList(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetNetworkAddressListResponse>() {
+                        new java.util.function.Predicate<GetNetworkAddressListResponse>() {
                             @Override
-                            public boolean apply(GetNetworkAddressListResponse response) {
+                            public boolean test(GetNetworkAddressListResponse response) {
                                 return targetStatesSet.contains(
                                         response.getNetworkAddressList().getLifecycleState());
                             }
@@ -212,8 +211,8 @@ public class WafWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWebAppFirewallRequest, GetWebAppFirewallResponse>() {
                             @Override
                             public GetWebAppFirewallResponse apply(
@@ -221,9 +220,9 @@ public class WafWaiters {
                                 return client.getWebAppFirewall(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWebAppFirewallResponse>() {
+                        new java.util.function.Predicate<GetWebAppFirewallResponse>() {
                             @Override
-                            public boolean apply(GetWebAppFirewallResponse response) {
+                            public boolean test(GetWebAppFirewallResponse response) {
                                 return targetStatesSet.contains(
                                         response.getWebAppFirewall().getLifecycleState());
                             }
@@ -320,8 +319,8 @@ public class WafWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWebAppFirewallPolicyRequest, GetWebAppFirewallPolicyResponse>() {
                             @Override
                             public GetWebAppFirewallPolicyResponse apply(
@@ -329,9 +328,9 @@ public class WafWaiters {
                                 return client.getWebAppFirewallPolicy(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWebAppFirewallPolicyResponse>() {
+                        new java.util.function.Predicate<GetWebAppFirewallPolicyResponse>() {
                             @Override
-                            public boolean apply(GetWebAppFirewallPolicyResponse response) {
+                            public boolean test(GetWebAppFirewallPolicyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getWebAppFirewallPolicy().getLifecycleState());
                             }
@@ -379,17 +378,17 @@ public class WafWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

@@ -7,13 +7,14 @@ package com.oracle.bmc.auth;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-
-import com.google.common.base.Supplier;
+import java.util.function.Supplier;
 
 /**
  * Supplier for private key in String format
  */
-public class StringPrivateKeySupplier implements Supplier<InputStream> {
+public class StringPrivateKeySupplier
+        implements Supplier<InputStream>,
+                com.google.common /*Guava will be removed soon*/.base.Supplier<InputStream> {
 
     private final String privateKey;
 

@@ -4,10 +4,12 @@
  */
 package com.oracle.bmc.http.signing.internal;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
-
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
+import java.util.Map;
 
 public class Constants {
 
@@ -29,14 +31,20 @@ public class Constants {
 
     static final String JSON_CONTENT_TYPE = "application/json";
 
-    public static final ImmutableList<String> GENERIC_HEADERS =
-            ImmutableList.of(DATE, REQUEST_TARGET, HOST);
-    public static final ImmutableList<String> BODY_HEADERS =
-            ImmutableList.of(CONTENT_LENGTH, CONTENT_TYPE, X_CONTENT_SHA256);
-    public static final ImmutableList<String> ALL_HEADERS =
-            ImmutableList.<String>builder().addAll(GENERIC_HEADERS).addAll(BODY_HEADERS).build();
+    public static final List<String> GENERIC_HEADERS =
+            Collections.unmodifiableList(Arrays.asList(DATE, REQUEST_TARGET, HOST));
+    public static final List<String> BODY_HEADERS =
+            Collections.unmodifiableList(
+                    Arrays.asList(CONTENT_LENGTH, CONTENT_TYPE, X_CONTENT_SHA256));
+    public static final List<String> ALL_HEADERS;
 
-    public static final ImmutableMap<String, List<String>> REQUIRED_SIGNING_HEADERS =
+    static {
+        List<String> tempAllHeaders = new ArrayList<>(GENERIC_HEADERS);
+        tempAllHeaders.addAll(BODY_HEADERS);
+        ALL_HEADERS = Collections.unmodifiableList(tempAllHeaders);
+    }
+
+    public static final Map<String, List<String>> REQUIRED_SIGNING_HEADERS =
             createHeadersToSignMap(
                     GENERIC_HEADERS,
                     GENERIC_HEADERS,
@@ -50,7 +58,7 @@ public class Constants {
      * A signing strategy that signs headers and body, except for PUT, where bodies are not signed
      * @deprecated use REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS instead; Object Storage has migrated to using STANDARD, with EXCLUDE_BODY as a per-operation override.  We therefore do not want to maintain a service-specific signing strategy.
      */
-    public static final ImmutableMap<String, List<String>> REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS =
+    public static final Map<String, List<String>> REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS =
             createHeadersToSignMap(
                     GENERIC_HEADERS,
                     GENERIC_HEADERS,
@@ -62,7 +70,7 @@ public class Constants {
     /**
      * A signing strategy that signs headers only.
      */
-    public static final ImmutableMap<String, List<String>> REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS =
+    public static final Map<String, List<String>> REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS =
             createHeadersToSignMap(
                     GENERIC_HEADERS,
                     GENERIC_HEADERS,
@@ -74,10 +82,12 @@ public class Constants {
     /**
      * Headers included in the signature if they are set.
      */
-    public static final ImmutableList<String> OPTIONAL_HEADERS_NAMES =
-            ImmutableList.of(OPC_OBO_TOKEN, CROSS_TENANCY_REQUEST_HEADER_NAME, X_SUBSCRIPTION);
+    public static final List<String> OPTIONAL_HEADERS_NAMES =
+            Collections.unmodifiableList(
+                    Arrays.asList(
+                            OPC_OBO_TOKEN, CROSS_TENANCY_REQUEST_HEADER_NAME, X_SUBSCRIPTION));
 
-    public static final ImmutableMap<String, List<String>> OPTIONAL_SIGNING_HEADERS =
+    public static final Map<String, List<String>> OPTIONAL_SIGNING_HEADERS =
             createHeadersToSignMap(
                     OPTIONAL_HEADERS_NAMES,
                     OPTIONAL_HEADERS_NAMES,
@@ -96,21 +106,21 @@ public class Constants {
      * @param patchHeaders headers for PATCH requests
      * @return A new immutable map of headers
      */
-    public static ImmutableMap<String, List<String>> createHeadersToSignMap(
+    public static Map<String, List<String>> createHeadersToSignMap(
             List<String> getHeaders,
             List<String> headHeaders,
             List<String> deleteHeaders,
             List<String> putHeaders,
             List<String> postHeaders,
             List<String> patchHeaders) {
-        return ImmutableMap.<String, List<String>>builder()
-                .put("get", getHeaders)
-                .put("head", headHeaders)
-                .put("delete", deleteHeaders)
-                .put("put", putHeaders)
-                .put("post", postHeaders)
-                .put("patch", patchHeaders)
-                .build();
+        Map<String, List<String>> headers = new HashMap<>();
+        headers.put("get", getHeaders);
+        headers.put("head", headHeaders);
+        headers.put("delete", deleteHeaders);
+        headers.put("put", putHeaders);
+        headers.put("post", postHeaders);
+        headers.put("patch", patchHeaders);
+        return Collections.unmodifiableMap(headers);
     }
 
     static final String DATE_FORMAT = "EEE, dd MMM yyyy HH:mm:ss z";

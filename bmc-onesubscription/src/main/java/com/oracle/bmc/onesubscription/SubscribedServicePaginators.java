@@ -45,19 +45,19 @@ public class SubscribedServicePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSubscribedServicesRequest.Builder, ListSubscribedServicesRequest,
                 ListSubscribedServicesResponse>(
-                new com.google.common.base.Supplier<ListSubscribedServicesRequest.Builder>() {
+                new java.util.function.Supplier<ListSubscribedServicesRequest.Builder>() {
                     @Override
                     public ListSubscribedServicesRequest.Builder get() {
                         return ListSubscribedServicesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSubscribedServicesResponse, String>() {
+                new java.util.function.Function<ListSubscribedServicesResponse, String>() {
                     @Override
                     public String apply(ListSubscribedServicesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSubscribedServicesRequest.Builder>,
                         ListSubscribedServicesRequest>() {
@@ -70,12 +70,12 @@ public class SubscribedServicePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSubscribedServicesRequest, ListSubscribedServicesResponse>() {
                     @Override
                     public ListSubscribedServicesResponse apply(
@@ -100,19 +100,19 @@ public class SubscribedServicePaginators {
                 ListSubscribedServicesRequest.Builder, ListSubscribedServicesRequest,
                 ListSubscribedServicesResponse,
                 com.oracle.bmc.onesubscription.model.SubscribedServiceSummary>(
-                new com.google.common.base.Supplier<ListSubscribedServicesRequest.Builder>() {
+                new java.util.function.Supplier<ListSubscribedServicesRequest.Builder>() {
                     @Override
                     public ListSubscribedServicesRequest.Builder get() {
                         return ListSubscribedServicesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSubscribedServicesResponse, String>() {
+                new java.util.function.Function<ListSubscribedServicesResponse, String>() {
                     @Override
                     public String apply(ListSubscribedServicesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSubscribedServicesRequest.Builder>,
                         ListSubscribedServicesRequest>() {
@@ -125,12 +125,12 @@ public class SubscribedServicePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSubscribedServicesRequest, ListSubscribedServicesResponse>() {
                     @Override
                     public ListSubscribedServicesResponse apply(
@@ -138,7 +138,7 @@ public class SubscribedServicePaginators {
                         return client.listSubscribedServices(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSubscribedServicesResponse,
                         java.util.List<
                                 com.oracle.bmc.onesubscription.model.SubscribedServiceSummary>>() {

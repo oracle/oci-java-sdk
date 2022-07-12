@@ -44,19 +44,19 @@ public class DiagnosabilityPaginators {
             final ListAlertLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAlertLogsRequest.Builder, ListAlertLogsRequest, ListAlertLogsResponse>(
-                new com.google.common.base.Supplier<ListAlertLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListAlertLogsRequest.Builder>() {
                     @Override
                     public ListAlertLogsRequest.Builder get() {
                         return ListAlertLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAlertLogsResponse, String>() {
+                new java.util.function.Function<ListAlertLogsResponse, String>() {
                     @Override
                     public String apply(ListAlertLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAlertLogsRequest.Builder>,
                         ListAlertLogsRequest>() {
@@ -69,12 +69,12 @@ public class DiagnosabilityPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListAlertLogsRequest, ListAlertLogsResponse>() {
+                new java.util.function.Function<ListAlertLogsRequest, ListAlertLogsResponse>() {
                     @Override
                     public ListAlertLogsResponse apply(ListAlertLogsRequest request) {
                         return client.listAlertLogs(request);
@@ -96,19 +96,19 @@ public class DiagnosabilityPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListAlertLogsRequest.Builder, ListAlertLogsRequest, ListAlertLogsResponse,
                 com.oracle.bmc.databasemanagement.model.AlertLogSummary>(
-                new com.google.common.base.Supplier<ListAlertLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListAlertLogsRequest.Builder>() {
                     @Override
                     public ListAlertLogsRequest.Builder get() {
                         return ListAlertLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAlertLogsResponse, String>() {
+                new java.util.function.Function<ListAlertLogsResponse, String>() {
                     @Override
                     public String apply(ListAlertLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAlertLogsRequest.Builder>,
                         ListAlertLogsRequest>() {
@@ -121,18 +121,18 @@ public class DiagnosabilityPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListAlertLogsRequest, ListAlertLogsResponse>() {
+                new java.util.function.Function<ListAlertLogsRequest, ListAlertLogsResponse>() {
                     @Override
                     public ListAlertLogsResponse apply(ListAlertLogsRequest request) {
                         return client.listAlertLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAlertLogsResponse,
                         java.util.List<com.oracle.bmc.databasemanagement.model.AlertLogSummary>>() {
                     @Override
@@ -155,19 +155,19 @@ public class DiagnosabilityPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAttentionLogsRequest.Builder, ListAttentionLogsRequest,
                 ListAttentionLogsResponse>(
-                new com.google.common.base.Supplier<ListAttentionLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListAttentionLogsRequest.Builder>() {
                     @Override
                     public ListAttentionLogsRequest.Builder get() {
                         return ListAttentionLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAttentionLogsResponse, String>() {
+                new java.util.function.Function<ListAttentionLogsResponse, String>() {
                     @Override
                     public String apply(ListAttentionLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAttentionLogsRequest.Builder>,
                         ListAttentionLogsRequest>() {
@@ -180,12 +180,12 @@ public class DiagnosabilityPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAttentionLogsRequest, ListAttentionLogsResponse>() {
                     @Override
                     public ListAttentionLogsResponse apply(ListAttentionLogsRequest request) {
@@ -209,19 +209,19 @@ public class DiagnosabilityPaginators {
                 ListAttentionLogsRequest.Builder, ListAttentionLogsRequest,
                 ListAttentionLogsResponse,
                 com.oracle.bmc.databasemanagement.model.AttentionLogSummary>(
-                new com.google.common.base.Supplier<ListAttentionLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListAttentionLogsRequest.Builder>() {
                     @Override
                     public ListAttentionLogsRequest.Builder get() {
                         return ListAttentionLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAttentionLogsResponse, String>() {
+                new java.util.function.Function<ListAttentionLogsResponse, String>() {
                     @Override
                     public String apply(ListAttentionLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAttentionLogsRequest.Builder>,
                         ListAttentionLogsRequest>() {
@@ -234,19 +234,19 @@ public class DiagnosabilityPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAttentionLogsRequest, ListAttentionLogsResponse>() {
                     @Override
                     public ListAttentionLogsResponse apply(ListAttentionLogsRequest request) {
                         return client.listAttentionLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAttentionLogsResponse,
                         java.util.List<
                                 com.oracle.bmc.databasemanagement.model.AttentionLogSummary>>() {

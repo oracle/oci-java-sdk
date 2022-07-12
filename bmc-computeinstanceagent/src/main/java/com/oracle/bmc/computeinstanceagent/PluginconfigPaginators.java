@@ -47,21 +47,21 @@ public class PluginconfigPaginators {
                 ListInstanceagentAvailablePluginsRequest.Builder,
                 ListInstanceagentAvailablePluginsRequest,
                 ListInstanceagentAvailablePluginsResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListInstanceagentAvailablePluginsRequest.Builder>() {
                     @Override
                     public ListInstanceagentAvailablePluginsRequest.Builder get() {
                         return ListInstanceagentAvailablePluginsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceagentAvailablePluginsResponse, String>() {
                     @Override
                     public String apply(ListInstanceagentAvailablePluginsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstanceagentAvailablePluginsRequest.Builder>,
                         ListInstanceagentAvailablePluginsRequest>() {
@@ -74,12 +74,12 @@ public class PluginconfigPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceagentAvailablePluginsRequest,
                         ListInstanceagentAvailablePluginsResponse>() {
                     @Override
@@ -106,21 +106,21 @@ public class PluginconfigPaginators {
                 ListInstanceagentAvailablePluginsRequest.Builder,
                 ListInstanceagentAvailablePluginsRequest, ListInstanceagentAvailablePluginsResponse,
                 com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListInstanceagentAvailablePluginsRequest.Builder>() {
                     @Override
                     public ListInstanceagentAvailablePluginsRequest.Builder get() {
                         return ListInstanceagentAvailablePluginsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceagentAvailablePluginsResponse, String>() {
                     @Override
                     public String apply(ListInstanceagentAvailablePluginsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstanceagentAvailablePluginsRequest.Builder>,
                         ListInstanceagentAvailablePluginsRequest>() {
@@ -133,12 +133,12 @@ public class PluginconfigPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceagentAvailablePluginsRequest,
                         ListInstanceagentAvailablePluginsResponse>() {
                     @Override
@@ -147,7 +147,7 @@ public class PluginconfigPaginators {
                         return client.listInstanceagentAvailablePlugins(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceagentAvailablePluginsResponse,
                         java.util.List<
                                 com.oracle.bmc.computeinstanceagent.model

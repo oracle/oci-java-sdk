@@ -9,7 +9,6 @@ import com.oracle.bmc.computeinstanceagent.requests.*;
 import com.oracle.bmc.computeinstanceagent.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 public class PluginClient implements Plugin {
@@ -331,7 +330,7 @@ public class PluginClient implements Plugin {
          * @return the client
          */
         public PluginClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class PluginClient implements Plugin {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -413,7 +413,7 @@ public class PluginClient implements Plugin {
                         "GetInstanceAgentPlugin",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/GetInstanceAgentPlugin");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetInstanceAgentPluginResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetInstanceAgentPluginResponse>
                 transformer =
                         GetInstanceAgentPluginConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -451,7 +451,7 @@ public class PluginClient implements Plugin {
                         "ListInstanceAgentPlugins",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceAgentPlugins");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListInstanceAgentPluginsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListInstanceAgentPluginsResponse>
                 transformer =
                         ListInstanceAgentPluginsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

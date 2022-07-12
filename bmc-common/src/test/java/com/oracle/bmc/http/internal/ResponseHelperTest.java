@@ -4,21 +4,25 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.io.internal.AutoCloseableContentLengthVerifyingInputStream;
 import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
 import com.oracle.bmc.io.internal.WrappedResponseInputStream;
 import com.oracle.bmc.model.BmcException;
-import org.junit.Test;
-
+import java.io.InputStream;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 
-import java.io.InputStream;
-import java.util.List;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
+import com.oracle.bmc.io.internal.WrappedResponseInputStream;
+import com.oracle.bmc.model.BmcException;
+import org.junit.Test;
 
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertEquals;
@@ -142,7 +146,7 @@ public class ResponseHelperTest {
         Response response = mock(Response.class);
         Response.StatusType statusInfo = mock(Response.StatusType.class);
         MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
-        List<Object> contentType = ImmutableList.<Object>of("text");
+        List<Object> contentType = Collections.unmodifiableList(Arrays.asList("text"));
         InputStream mockStream = mock(InputStream.class);
 
         Class<InputStream> entityType = InputStream.class;
@@ -163,7 +167,9 @@ public class ResponseHelperTest {
         verify(response, never()).bufferEntity();
         verify(response).getStringHeaders();
         verifyNoMoreInteractions(response, statusInfo, mockStream);
-        assertEquals(ImmutableList.of(contentType), headers.get(HttpHeaders.CONTENT_TYPE));
+        assertEquals(
+                Collections.unmodifiableList(Arrays.asList(contentType)),
+                headers.get(HttpHeaders.CONTENT_TYPE));
     }
 
     @Test
@@ -197,7 +203,7 @@ public class ResponseHelperTest {
         Response response = mock(Response.class);
         Response.StatusType statusInfo = mock(Response.StatusType.class);
         MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
-        List<Object> contentType = ImmutableList.<Object>of("text");
+        List<Object> contentType = Collections.unmodifiableList(Arrays.<Object>asList(("text")));
         InputStream mockStream = mock(InputStream.class);
 
         Class<InputStream> entityType = InputStream.class;
@@ -224,9 +230,15 @@ public class ResponseHelperTest {
         verifyNoMoreInteractions(response, statusInfo, mockStream);
         headers = response.getHeaders();
         stringHeaders = response.getStringHeaders();
-        assertEquals(ImmutableList.of(contentType), headers.get(HttpHeaders.CONTENT_TYPE));
-        assertEquals(ImmutableList.of("100"), headers.get(HttpHeaders.CONTENT_LENGTH));
-        assertEquals(ImmutableList.of("100"), stringHeaders.get(HttpHeaders.CONTENT_LENGTH));
+        assertEquals(
+                Collections.unmodifiableList(Arrays.asList(contentType)),
+                headers.get(HttpHeaders.CONTENT_TYPE));
+        assertEquals(
+                Collections.unmodifiableList(Arrays.asList("100")),
+                headers.get(HttpHeaders.CONTENT_LENGTH));
+        assertEquals(
+                Collections.unmodifiableList(Arrays.asList("100")),
+                stringHeaders.get(HttpHeaders.CONTENT_LENGTH));
     }
 
     @Test
@@ -234,7 +246,7 @@ public class ResponseHelperTest {
         Response response = mock(Response.class);
         Response.StatusType statusInfo = mock(Response.StatusType.class);
         MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
-        List<Object> contentType = ImmutableList.<Object>of("text");
+        List<Object> contentType = Collections.unmodifiableList(Arrays.<Object>asList("text"));
         InputStream mockStream = mock(InputStream.class);
 
         Class<InputStream> entityType = InputStream.class;
@@ -263,10 +275,18 @@ public class ResponseHelperTest {
         verifyNoMoreInteractions(response, statusInfo, mockStream);
         headers = response.getHeaders();
         stringHeaders = response.getStringHeaders();
-        assertEquals(ImmutableList.of(contentType), headers.get(HttpHeaders.CONTENT_TYPE));
-        assertEquals(ImmutableList.of("100"), headers.get(HttpHeaders.CONTENT_LENGTH));
-        assertEquals(ImmutableList.of("100"), stringHeaders.get(HttpHeaders.CONTENT_LENGTH));
-        assertEquals(ImmutableList.of("gzip"), headers.get(HttpHeaders.CONTENT_ENCODING));
+        assertEquals(
+                Collections.unmodifiableList(Arrays.asList(contentType)),
+                headers.get(HttpHeaders.CONTENT_TYPE));
+        assertEquals(
+                Collections.unmodifiableList(Arrays.asList("100")),
+                headers.get(HttpHeaders.CONTENT_LENGTH));
+        assertEquals(
+                Collections.unmodifiableList(Arrays.asList("100")),
+                stringHeaders.get(HttpHeaders.CONTENT_LENGTH));
+        assertEquals(
+                Collections.unmodifiableList(Arrays.asList("gzip")),
+                headers.get(HttpHeaders.CONTENT_ENCODING));
     }
 
     private static Response buildMockResponse(

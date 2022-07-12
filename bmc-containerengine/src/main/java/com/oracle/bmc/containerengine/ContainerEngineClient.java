@@ -9,7 +9,6 @@ import com.oracle.bmc.containerengine.requests.*;
 import com.oracle.bmc.containerengine.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class ContainerEngineClient implements ContainerEngine {
@@ -335,9 +334,9 @@ public class ContainerEngineClient implements ContainerEngine {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("ContainerEngine-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("ContainerEngine-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class ContainerEngineClient implements ContainerEngine {
          * @return the client
          */
         public ContainerEngineClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class ContainerEngineClient implements ContainerEngine {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,8 +488,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ClusterMigrateToNativeVcn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ClusterMigrateToNativeVcn");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ClusterMigrateToNativeVcnResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ClusterMigrateToNativeVcnResponse>
                 transformer =
                         ClusterMigrateToNativeVcnConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -532,9 +531,8 @@ public class ContainerEngineClient implements ContainerEngine {
                         "CreateCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateClusterResponse>
-                transformer =
-                        CreateClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateClusterResponse> transformer =
+                CreateClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -582,7 +580,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "CreateKubeconfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateKubeconfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateKubeconfigResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateKubeconfigResponse>
                 transformer =
                         CreateKubeconfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -625,9 +623,8 @@ public class ContainerEngineClient implements ContainerEngine {
                         "CreateNodePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/CreateNodePool");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateNodePoolResponse>
-                transformer =
-                        CreateNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateNodePoolResponse> transformer =
+                CreateNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -665,9 +662,8 @@ public class ContainerEngineClient implements ContainerEngine {
                         "DeleteCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/DeleteCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteClusterResponse>
-                transformer =
-                        DeleteClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteClusterResponse> transformer =
+                DeleteClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -701,7 +697,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "DeleteNode",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNode");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNodeResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteNodeResponse> transformer =
                 DeleteNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -737,9 +733,8 @@ public class ContainerEngineClient implements ContainerEngine {
                         "DeleteNodePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNodePool");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNodePoolResponse>
-                transformer =
-                        DeleteNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteNodePoolResponse> transformer =
+                DeleteNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -774,7 +769,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "DeleteWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/DeleteWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
                 transformer =
                         DeleteWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -811,7 +806,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "GetCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetClusterResponse> transformer =
                 GetClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -847,7 +842,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "GetClusterMigrateToNativeVcnStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterMigrateToNativeVcnStatus/GetClusterMigrateToNativeVcnStatus");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetClusterMigrateToNativeVcnStatusResponse>
                 transformer =
                         GetClusterMigrateToNativeVcnStatusConverter.fromResponse(
@@ -885,7 +880,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "GetClusterOptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterOptions/GetClusterOptions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterOptionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetClusterOptionsResponse>
                 transformer =
                         GetClusterOptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -922,9 +917,8 @@ public class ContainerEngineClient implements ContainerEngine {
                         "GetNodePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/GetNodePool");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNodePoolResponse>
-                transformer =
-                        GetNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetNodePoolResponse> transformer =
+                GetNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -958,7 +952,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "GetNodePoolOptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolOptions/GetNodePoolOptions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNodePoolOptionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetNodePoolOptionsResponse>
                 transformer =
                         GetNodePoolOptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -995,9 +989,8 @@ public class ContainerEngineClient implements ContainerEngine {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1031,9 +1024,8 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ListClusters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterSummary/ListClusters");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListClustersResponse>
-                transformer =
-                        ListClustersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListClustersResponse> transformer =
+                ListClustersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1067,9 +1059,8 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ListNodePools",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolSummary/ListNodePools");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListNodePoolsResponse>
-                transformer =
-                        ListNodePoolsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListNodePoolsResponse> transformer =
+                ListNodePoolsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1104,7 +1095,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1141,7 +1132,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1178,7 +1169,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestSummary/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1215,9 +1206,8 @@ public class ContainerEngineClient implements ContainerEngine {
                         "UpdateCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateClusterResponse>
-                transformer =
-                        UpdateClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateClusterResponse> transformer =
+                UpdateClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1256,8 +1246,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "UpdateClusterEndpointConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateClusterEndpointConfig");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateClusterEndpointConfigResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateClusterEndpointConfigResponse>
                 transformer =
                         UpdateClusterEndpointConfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1299,9 +1288,8 @@ public class ContainerEngineClient implements ContainerEngine {
                         "UpdateNodePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/UpdateNodePool");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNodePoolResponse>
-                transformer =
-                        UpdateNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateNodePoolResponse> transformer =
+                UpdateNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

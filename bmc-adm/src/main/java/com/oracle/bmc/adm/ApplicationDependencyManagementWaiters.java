@@ -6,7 +6,6 @@ package com.oracle.bmc.adm;
 
 import com.oracle.bmc.adm.requests.*;
 import com.oracle.bmc.adm.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -108,17 +107,17 @@ public class ApplicationDependencyManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetKnowledgeBaseRequest, GetKnowledgeBaseResponse>() {
                             @Override
                             public GetKnowledgeBaseResponse apply(GetKnowledgeBaseRequest request) {
                                 return client.getKnowledgeBase(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetKnowledgeBaseResponse>() {
+                        new java.util.function.Predicate<GetKnowledgeBaseResponse>() {
                             @Override
-                            public boolean apply(GetKnowledgeBaseResponse response) {
+                            public boolean test(GetKnowledgeBaseResponse response) {
                                 return targetStatesSet.contains(
                                         response.getKnowledgeBase().getLifecycleState());
                             }
@@ -212,8 +211,8 @@ public class ApplicationDependencyManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetVulnerabilityAuditRequest, GetVulnerabilityAuditResponse>() {
                             @Override
                             public GetVulnerabilityAuditResponse apply(
@@ -221,9 +220,9 @@ public class ApplicationDependencyManagementWaiters {
                                 return client.getVulnerabilityAudit(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVulnerabilityAuditResponse>() {
+                        new java.util.function.Predicate<GetVulnerabilityAuditResponse>() {
                             @Override
-                            public boolean apply(GetVulnerabilityAuditResponse response) {
+                            public boolean test(GetVulnerabilityAuditResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVulnerabilityAudit().getLifecycleState());
                             }
@@ -271,17 +270,17 @@ public class ApplicationDependencyManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

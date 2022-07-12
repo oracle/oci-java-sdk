@@ -7,7 +7,6 @@ package com.oracle.bmc.dataflow;
 import com.oracle.bmc.dataflow.internal.http.*;
 import com.oracle.bmc.dataflow.requests.*;
 import com.oracle.bmc.dataflow.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for DataFlow service. <br/>
@@ -319,7 +318,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
          * @return the client
          */
         public DataFlowAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class DataFlowAsyncClient implements DataFlowAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "ChangeApplicationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/ChangeApplicationCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>
                 transformer =
                         ChangeApplicationCompartmentConverter.fromResponse(
@@ -462,7 +462,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "ChangePrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/ChangePrivateEndpointCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangePrivateEndpointCompartmentResponse>
                 transformer =
                         ChangePrivateEndpointCompartmentConverter.fromResponse(
@@ -519,8 +519,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "ChangeRunCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/ChangeRunCompartment");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeRunCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeRunCompartmentResponse>
                 transformer =
                         ChangeRunCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -573,7 +572,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "CreateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/CreateApplication");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
                 transformer =
                         CreateApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -622,8 +621,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DataFlow", "CreatePrivateEndpoint", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreatePrivateEndpointResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreatePrivateEndpointResponse>
                 transformer =
                         CreatePrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -674,7 +672,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "CreateRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/CreateRun");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRunResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateRunResponse>
                 transformer =
                         CreateRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateRunRequest, CreateRunResponse> handlerToUse =
@@ -723,7 +721,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "DeleteApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/DeleteApplication");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
                 transformer =
                         DeleteApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -769,8 +767,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "DeletePrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/DeletePrivateEndpoint");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeletePrivateEndpointResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeletePrivateEndpointResponse>
                 transformer =
                         DeletePrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -815,7 +812,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "DeleteRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/DeleteRun");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRunResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteRunResponse>
                 transformer =
                         DeleteRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteRunRequest, DeleteRunResponse> handlerToUse =
@@ -859,7 +856,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "GetApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/GetApplication");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetApplicationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetApplicationResponse>
                 transformer =
                         GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetApplicationRequest, GetApplicationResponse>
@@ -904,7 +901,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "GetPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/GetPrivateEndpoint");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateEndpointResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPrivateEndpointResponse>
                 transformer =
                         GetPrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -947,8 +944,8 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "GetRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/GetRun");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRunResponse>
-                transformer = GetRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetRunResponse> transformer =
+                GetRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetRunRequest, GetRunResponse> handlerToUse = handler;
 
         java.util.function.Function<
@@ -997,7 +994,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "GetRunLog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/GetRunLog");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRunLogResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetRunLogResponse>
                 transformer =
                         GetRunLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetRunLogRequest, GetRunLogResponse> handlerToUse =
@@ -1041,7 +1038,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -1086,7 +1083,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "ListApplications",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/ApplicationSummary/ListApplications");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
                 transformer =
                         ListApplicationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1132,8 +1129,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "ListPrivateEndpoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/ListPrivateEndpoints");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListPrivateEndpointsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPrivateEndpointsResponse>
                 transformer =
                         ListPrivateEndpointsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1179,7 +1175,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "ListRunLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/RunLogSummary/ListRunLogs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRunLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRunLogsResponse>
                 transformer =
                         ListRunLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRunLogsRequest, ListRunLogsResponse>
@@ -1222,8 +1218,8 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "ListRuns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/RunSummary/ListRuns");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRunsResponse>
-                transformer = ListRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRunsResponse> transformer =
+                ListRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRunsRequest, ListRunsResponse> handlerToUse =
                 handler;
 
@@ -1265,8 +1261,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1313,8 +1308,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequestLog/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1361,7 +1355,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequest/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1407,7 +1401,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "UpdateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/UpdateApplication");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
                 transformer =
                         UpdateApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1458,8 +1452,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "UpdatePrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/UpdatePrivateEndpoint");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdatePrivateEndpointResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdatePrivateEndpointResponse>
                 transformer =
                         UpdatePrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1509,7 +1502,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                         "UpdateRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/UpdateRun");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRunResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateRunResponse>
                 transformer =
                         UpdateRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateRunRequest, UpdateRunResponse> handlerToUse =

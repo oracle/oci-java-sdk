@@ -7,7 +7,6 @@ package com.oracle.bmc.vnmonitoring;
 import com.oracle.bmc.vnmonitoring.internal.http.*;
 import com.oracle.bmc.vnmonitoring.requests.*;
 import com.oracle.bmc.vnmonitoring.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for VnMonitoring service. <br/>
@@ -319,7 +318,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
          * @return the client
          */
         public VnMonitoringAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -405,7 +405,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                         "ChangePathAnalyzerTestCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangePathAnalyzerTestCompartmentResponse>
                 transformer =
                         ChangePathAnalyzerTestCompartmentConverter.fromResponse(
@@ -462,8 +462,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                         "CreatePathAnalyzerTest",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreatePathAnalyzerTestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreatePathAnalyzerTestResponse>
                 transformer =
                         CreatePathAnalyzerTestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -515,8 +514,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                         "DeletePathAnalyzerTest",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeletePathAnalyzerTestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeletePathAnalyzerTestResponse>
                 transformer =
                         DeletePathAnalyzerTestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -561,7 +559,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VnMonitoring", "GetPathAnalysis", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPathAnalysisResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPathAnalysisResponse>
                 transformer =
                         GetPathAnalysisConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -609,8 +607,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VnMonitoring", "GetPathAnalyzerTest", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetPathAnalyzerTestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPathAnalyzerTestResponse>
                 transformer =
                         GetPathAnalyzerTestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -654,7 +651,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VnMonitoring", "GetWorkRequest", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -696,8 +693,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VnMonitoring", "ListPathAnalyzerTests", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListPathAnalyzerTestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPathAnalyzerTestsResponse>
                 transformer =
                         ListPathAnalyzerTestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -741,8 +737,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VnMonitoring", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -786,8 +781,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VnMonitoring", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -834,8 +828,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                         "ListWorkRequestResults",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestResultsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestResultsResponse>
                 transformer =
                         ListWorkRequestResultsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -879,7 +872,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VnMonitoring", "ListWorkRequests", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -926,8 +919,7 @@ public class VnMonitoringAsyncClient implements VnMonitoringAsync {
                         "UpdatePathAnalyzerTest",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdatePathAnalyzerTestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdatePathAnalyzerTestResponse>
                 transformer =
                         UpdatePathAnalyzerTestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

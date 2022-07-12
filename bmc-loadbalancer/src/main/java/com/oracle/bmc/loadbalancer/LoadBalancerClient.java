@@ -9,7 +9,6 @@ import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class LoadBalancerClient implements LoadBalancer {
@@ -334,9 +333,9 @@ public class LoadBalancerClient implements LoadBalancer {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("LoadBalancer-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("LoadBalancer-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class LoadBalancerClient implements LoadBalancer {
          * @return the client
          */
         public LoadBalancerClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class LoadBalancerClient implements LoadBalancer {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ChangeLoadBalancerCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/ChangeLoadBalancerCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeLoadBalancerCompartmentResponse>
                 transformer =
                         ChangeLoadBalancerCompartmentConverter.fromResponse(
@@ -529,9 +529,8 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "CreateBackend", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendResponse>
-                transformer =
-                        CreateBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBackendResponse> transformer =
+                CreateBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -567,7 +566,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "CreateBackendSet", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendSetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBackendSetResponse>
                 transformer =
                         CreateBackendSetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -606,7 +605,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "CreateCertificate", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
                 transformer =
                         CreateCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -645,9 +644,8 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "CreateHostname", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateHostnameResponse>
-                transformer =
-                        CreateHostnameConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateHostnameResponse> transformer =
+                CreateHostnameConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -683,9 +681,8 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "CreateListener", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateListenerResponse>
-                transformer =
-                        CreateListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateListenerResponse> transformer =
+                CreateListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -721,7 +718,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "CreateLoadBalancer", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateLoadBalancerResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLoadBalancerResponse>
                 transformer =
                         CreateLoadBalancerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -760,7 +757,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "CreatePathRouteSet", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePathRouteSetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePathRouteSetResponse>
                 transformer =
                         CreatePathRouteSetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -799,7 +796,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "CreateRoutingPolicy", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRoutingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRoutingPolicyResponse>
                 transformer =
                         CreateRoutingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -837,9 +834,8 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "CreateRuleSet", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRuleSetResponse>
-                transformer =
-                        CreateRuleSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRuleSetResponse> transformer =
+                CreateRuleSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -875,7 +871,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "CreateSSLCipherSuite", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSSLCipherSuiteResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSSLCipherSuiteResponse>
                 transformer =
                         CreateSSLCipherSuiteConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -913,9 +909,8 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "DeleteBackend", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackendResponse>
-                transformer =
-                        DeleteBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBackendResponse> transformer =
+                DeleteBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -947,7 +942,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "DeleteBackendSet", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackendSetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBackendSetResponse>
                 transformer =
                         DeleteBackendSetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -982,7 +977,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "DeleteCertificate", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
                 transformer =
                         DeleteCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1017,9 +1012,8 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "DeleteHostname", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHostnameResponse>
-                transformer =
-                        DeleteHostnameConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteHostnameResponse> transformer =
+                DeleteHostnameConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1051,9 +1045,8 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "DeleteListener", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteListenerResponse>
-                transformer =
-                        DeleteListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteListenerResponse> transformer =
+                DeleteListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1085,7 +1078,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "DeleteLoadBalancer", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLoadBalancerResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLoadBalancerResponse>
                 transformer =
                         DeleteLoadBalancerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1120,7 +1113,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "DeletePathRouteSet", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePathRouteSetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePathRouteSetResponse>
                 transformer =
                         DeletePathRouteSetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1155,7 +1148,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "DeleteRoutingPolicy", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRoutingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRoutingPolicyResponse>
                 transformer =
                         DeleteRoutingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1190,9 +1183,8 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "DeleteRuleSet", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRuleSetResponse>
-                transformer =
-                        DeleteRuleSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRuleSetResponse> transformer =
+                DeleteRuleSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1224,7 +1216,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "DeleteSSLCipherSuite", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSSLCipherSuiteResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSSLCipherSuiteResponse>
                 transformer =
                         DeleteSSLCipherSuiteConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1261,7 +1253,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetBackend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Backend/GetBackend");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetBackendResponse> transformer =
                 GetBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1296,7 +1288,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetBackendHealth",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendHealth/GetBackendHealth");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendHealthResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetBackendHealthResponse>
                 transformer =
                         GetBackendHealthConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1333,9 +1325,8 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetBackendSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/GetBackendSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendSetResponse>
-                transformer =
-                        GetBackendSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetBackendSetResponse> transformer =
+                GetBackendSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1369,7 +1360,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetBackendSetHealth",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSetHealth/GetBackendSetHealth");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendSetHealthResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetBackendSetHealthResponse>
                 transformer =
                         GetBackendSetHealthConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1406,7 +1397,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetHealthChecker",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/HealthChecker/GetHealthChecker");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetHealthCheckerResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetHealthCheckerResponse>
                 transformer =
                         GetHealthCheckerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1443,9 +1434,8 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetHostname",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Hostname/GetHostname");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetHostnameResponse>
-                transformer =
-                        GetHostnameConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetHostnameResponse> transformer =
+                GetHostnameConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1479,7 +1469,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetLoadBalancer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/GetLoadBalancer");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLoadBalancerResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLoadBalancerResponse>
                 transformer =
                         GetLoadBalancerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1517,7 +1507,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetLoadBalancerHealth",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerHealth/GetLoadBalancerHealth");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLoadBalancerHealthResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLoadBalancerHealthResponse>
                 transformer =
                         GetLoadBalancerHealthConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1554,7 +1544,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetPathRouteSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/GetPathRouteSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPathRouteSetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetPathRouteSetResponse>
                 transformer =
                         GetPathRouteSetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1591,7 +1581,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetRoutingPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RoutingPolicy/GetRoutingPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRoutingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRoutingPolicyResponse>
                 transformer =
                         GetRoutingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1627,7 +1617,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetRuleSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/GetRuleSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRuleSetResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetRuleSetResponse> transformer =
                 GetRuleSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1662,7 +1652,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetSSLCipherSuite",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/GetSSLCipherSuite");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSSLCipherSuiteResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSSLCipherSuiteResponse>
                 transformer =
                         GetSSLCipherSuiteConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1699,9 +1689,8 @@ public class LoadBalancerClient implements LoadBalancer {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1735,7 +1724,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListBackendSets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/ListBackendSets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBackendSetsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListBackendSetsResponse>
                 transformer =
                         ListBackendSetsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1772,9 +1761,8 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListBackends",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Backend/ListBackends");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBackendsResponse>
-                transformer =
-                        ListBackendsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListBackendsResponse> transformer =
+                ListBackendsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1808,7 +1796,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListCertificates",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Certificate/ListCertificates");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer =
                         ListCertificatesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1845,9 +1833,8 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListHostnames",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Hostname/ListHostnames");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListHostnamesResponse>
-                transformer =
-                        ListHostnamesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListHostnamesResponse> transformer =
+                ListHostnamesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1881,7 +1868,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListListenerRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/ListenerRuleSummary/ListListenerRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListListenerRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListListenerRulesResponse>
                 transformer =
                         ListListenerRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1919,7 +1906,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListLoadBalancerHealths",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerHealthSummary/ListLoadBalancerHealths");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLoadBalancerHealthsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLoadBalancerHealthsResponse>
                 transformer =
                         ListLoadBalancerHealthsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1956,7 +1943,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListLoadBalancers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/ListLoadBalancers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLoadBalancersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLoadBalancersResponse>
                 transformer =
                         ListLoadBalancersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1993,7 +1980,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListPathRouteSets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/ListPathRouteSets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPathRouteSetsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPathRouteSetsResponse>
                 transformer =
                         ListPathRouteSetsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2030,9 +2017,8 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
-                transformer =
-                        ListPoliciesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListPoliciesResponse> transformer =
+                ListPoliciesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2066,9 +2052,8 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListProtocols",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListProtocolsResponse>
-                transformer =
-                        ListProtocolsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListProtocolsResponse> transformer =
+                ListProtocolsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2102,7 +2087,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListRoutingPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RoutingPolicy/ListRoutingPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRoutingPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRoutingPoliciesResponse>
                 transformer =
                         ListRoutingPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2139,9 +2124,8 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListRuleSets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/ListRuleSets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRuleSetsResponse>
-                transformer =
-                        ListRuleSetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListRuleSetsResponse> transformer =
+                ListRuleSetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2175,7 +2159,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListSSLCipherSuites",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/ListSSLCipherSuites");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSSLCipherSuitesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSSLCipherSuitesResponse>
                 transformer =
                         ListSSLCipherSuitesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2211,7 +2195,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListShapesResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListShapesResponse> transformer =
                 ListShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2246,7 +2230,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2281,9 +2265,8 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "UpdateBackend", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackendResponse>
-                transformer =
-                        UpdateBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBackendResponse> transformer =
+                UpdateBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2319,7 +2302,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "UpdateBackendSet", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackendSetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBackendSetResponse>
                 transformer =
                         UpdateBackendSetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2358,7 +2341,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "UpdateHealthChecker", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHealthCheckerResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateHealthCheckerResponse>
                 transformer =
                         UpdateHealthCheckerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2396,9 +2379,8 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "UpdateHostname", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHostnameResponse>
-                transformer =
-                        UpdateHostnameConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateHostnameResponse> transformer =
+                UpdateHostnameConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2434,9 +2416,8 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "UpdateListener", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateListenerResponse>
-                transformer =
-                        UpdateListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateListenerResponse> transformer =
+                UpdateListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2472,7 +2453,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "UpdateLoadBalancer", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLoadBalancerResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLoadBalancerResponse>
                 transformer =
                         UpdateLoadBalancerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2515,7 +2496,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "UpdateLoadBalancerShape",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/UpdateLoadBalancerShape");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLoadBalancerShapeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLoadBalancerShapeResponse>
                 transformer =
                         UpdateLoadBalancerShapeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2558,8 +2539,7 @@ public class LoadBalancerClient implements LoadBalancer {
                         "UpdateNetworkSecurityGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/NetworkSecurityGroups/UpdateNetworkSecurityGroups");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateNetworkSecurityGroupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkSecurityGroupsResponse>
                 transformer =
                         UpdateNetworkSecurityGroupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2599,7 +2579,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "UpdatePathRouteSet", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePathRouteSetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePathRouteSetResponse>
                 transformer =
                         UpdatePathRouteSetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2638,7 +2618,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "UpdateRoutingPolicy", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRoutingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRoutingPolicyResponse>
                 transformer =
                         UpdateRoutingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2676,9 +2656,8 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "UpdateRuleSet", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRuleSetResponse>
-                transformer =
-                        UpdateRuleSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRuleSetResponse> transformer =
+                UpdateRuleSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2714,7 +2693,7 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "UpdateSSLCipherSuite", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSSLCipherSuiteResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSSLCipherSuiteResponse>
                 transformer =
                         UpdateSSLCipherSuiteConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

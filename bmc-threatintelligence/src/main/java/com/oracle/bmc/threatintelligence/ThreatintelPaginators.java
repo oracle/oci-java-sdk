@@ -44,19 +44,19 @@ public class ThreatintelPaginators {
             final ListIndicatorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListIndicatorsRequest.Builder, ListIndicatorsRequest, ListIndicatorsResponse>(
-                new com.google.common.base.Supplier<ListIndicatorsRequest.Builder>() {
+                new java.util.function.Supplier<ListIndicatorsRequest.Builder>() {
                     @Override
                     public ListIndicatorsRequest.Builder get() {
                         return ListIndicatorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListIndicatorsResponse, String>() {
+                new java.util.function.Function<ListIndicatorsResponse, String>() {
                     @Override
                     public String apply(ListIndicatorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIndicatorsRequest.Builder>,
                         ListIndicatorsRequest>() {
@@ -69,13 +69,12 @@ public class ThreatintelPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListIndicatorsRequest, ListIndicatorsResponse>() {
+                new java.util.function.Function<ListIndicatorsRequest, ListIndicatorsResponse>() {
                     @Override
                     public ListIndicatorsResponse apply(ListIndicatorsRequest request) {
                         return client.listIndicators(request);
@@ -97,19 +96,19 @@ public class ThreatintelPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListIndicatorsRequest.Builder, ListIndicatorsRequest, ListIndicatorsResponse,
                 com.oracle.bmc.threatintelligence.model.IndicatorSummary>(
-                new com.google.common.base.Supplier<ListIndicatorsRequest.Builder>() {
+                new java.util.function.Supplier<ListIndicatorsRequest.Builder>() {
                     @Override
                     public ListIndicatorsRequest.Builder get() {
                         return ListIndicatorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListIndicatorsResponse, String>() {
+                new java.util.function.Function<ListIndicatorsResponse, String>() {
                     @Override
                     public String apply(ListIndicatorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIndicatorsRequest.Builder>,
                         ListIndicatorsRequest>() {
@@ -122,19 +121,18 @@ public class ThreatintelPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListIndicatorsRequest, ListIndicatorsResponse>() {
+                new java.util.function.Function<ListIndicatorsRequest, ListIndicatorsResponse>() {
                     @Override
                     public ListIndicatorsResponse apply(ListIndicatorsRequest request) {
                         return client.listIndicators(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIndicatorsResponse,
                         java.util.List<
                                 com.oracle.bmc.threatintelligence.model.IndicatorSummary>>() {
@@ -157,19 +155,19 @@ public class ThreatintelPaginators {
             final ListThreatTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListThreatTypesRequest.Builder, ListThreatTypesRequest, ListThreatTypesResponse>(
-                new com.google.common.base.Supplier<ListThreatTypesRequest.Builder>() {
+                new java.util.function.Supplier<ListThreatTypesRequest.Builder>() {
                     @Override
                     public ListThreatTypesRequest.Builder get() {
                         return ListThreatTypesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListThreatTypesResponse, String>() {
+                new java.util.function.Function<ListThreatTypesResponse, String>() {
                     @Override
                     public String apply(ListThreatTypesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListThreatTypesRequest.Builder>,
                         ListThreatTypesRequest>() {
@@ -182,13 +180,12 @@ public class ThreatintelPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListThreatTypesRequest, ListThreatTypesResponse>() {
+                new java.util.function.Function<ListThreatTypesRequest, ListThreatTypesResponse>() {
                     @Override
                     public ListThreatTypesResponse apply(ListThreatTypesRequest request) {
                         return client.listThreatTypes(request);
@@ -210,19 +207,19 @@ public class ThreatintelPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListThreatTypesRequest.Builder, ListThreatTypesRequest, ListThreatTypesResponse,
                 com.oracle.bmc.threatintelligence.model.ThreatTypeSummary>(
-                new com.google.common.base.Supplier<ListThreatTypesRequest.Builder>() {
+                new java.util.function.Supplier<ListThreatTypesRequest.Builder>() {
                     @Override
                     public ListThreatTypesRequest.Builder get() {
                         return ListThreatTypesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListThreatTypesResponse, String>() {
+                new java.util.function.Function<ListThreatTypesResponse, String>() {
                     @Override
                     public String apply(ListThreatTypesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListThreatTypesRequest.Builder>,
                         ListThreatTypesRequest>() {
@@ -235,19 +232,18 @@ public class ThreatintelPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListThreatTypesRequest, ListThreatTypesResponse>() {
+                new java.util.function.Function<ListThreatTypesRequest, ListThreatTypesResponse>() {
                     @Override
                     public ListThreatTypesResponse apply(ListThreatTypesRequest request) {
                         return client.listThreatTypes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListThreatTypesResponse,
                         java.util.List<
                                 com.oracle.bmc.threatintelligence.model.ThreatTypeSummary>>() {

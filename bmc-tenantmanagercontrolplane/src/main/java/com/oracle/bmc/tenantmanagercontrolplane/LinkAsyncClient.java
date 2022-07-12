@@ -7,7 +7,6 @@ package com.oracle.bmc.tenantmanagercontrolplane;
 import com.oracle.bmc.tenantmanagercontrolplane.internal.http.*;
 import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Link service. <br/>
@@ -320,7 +319,7 @@ public class LinkAsyncClient implements LinkAsync {
          * @return the client
          */
         public LinkAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class LinkAsyncClient implements LinkAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -402,7 +402,7 @@ public class LinkAsyncClient implements LinkAsync {
                         "DeleteLink",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/DeleteLink");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLinkResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteLinkResponse>
                 transformer =
                         DeleteLinkConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteLinkRequest, DeleteLinkResponse> handlerToUse =
@@ -444,8 +444,8 @@ public class LinkAsyncClient implements LinkAsync {
                         "GetLink",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/GetLink");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetLinkResponse>
-                transformer = GetLinkConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetLinkResponse> transformer =
+                GetLinkConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetLinkRequest, GetLinkResponse> handlerToUse =
                 handler;
 
@@ -485,7 +485,7 @@ public class LinkAsyncClient implements LinkAsync {
                         "ListLinks",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/ListLinks");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListLinksResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListLinksResponse>
                 transformer =
                         ListLinksConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListLinksRequest, ListLinksResponse> handlerToUse =

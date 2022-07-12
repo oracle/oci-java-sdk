@@ -9,7 +9,6 @@ import com.oracle.bmc.functions.requests.*;
 import com.oracle.bmc.functions.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class FunctionsManagementClient implements FunctionsManagement {
@@ -334,9 +333,9 @@ public class FunctionsManagementClient implements FunctionsManagement {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("FunctionsManagement-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("FunctionsManagement-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
          * @return the client
          */
         public FunctionsManagementClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class FunctionsManagementClient implements FunctionsManagement {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,8 +488,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "ChangeApplicationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/ChangeApplicationCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>
                 transformer =
                         ChangeApplicationCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -531,7 +530,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "CreateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/CreateApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
                 transformer =
                         CreateApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -572,9 +571,8 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "CreateFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/CreateFunction");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateFunctionResponse>
-                transformer =
-                        CreateFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateFunctionResponse> transformer =
+                CreateFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -612,7 +610,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "DeleteApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/DeleteApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
                 transformer =
                         DeleteApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -650,9 +648,8 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "DeleteFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/DeleteFunction");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFunctionResponse>
-                transformer =
-                        DeleteFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteFunctionResponse> transformer =
+                DeleteFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -687,9 +684,8 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "GetApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/GetApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetApplicationResponse>
-                transformer =
-                        GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetApplicationResponse> transformer =
+                GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -723,9 +719,8 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "GetFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/GetFunction");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetFunctionResponse>
-                transformer =
-                        GetFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetFunctionResponse> transformer =
+                GetFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -759,7 +754,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "ListApplications",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/ApplicationSummary/ListApplications");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
                 transformer =
                         ListApplicationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -796,9 +791,8 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "ListFunctions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/FunctionSummary/ListFunctions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListFunctionsResponse>
-                transformer =
-                        ListFunctionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListFunctionsResponse> transformer =
+                ListFunctionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -832,7 +826,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "UpdateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/UpdateApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
                 transformer =
                         UpdateApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -873,9 +867,8 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "UpdateFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/UpdateFunction");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFunctionResponse>
-                transformer =
-                        UpdateFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateFunctionResponse> transformer =
+                UpdateFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

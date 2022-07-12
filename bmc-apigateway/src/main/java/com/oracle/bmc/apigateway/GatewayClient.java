@@ -9,7 +9,6 @@ import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class GatewayClient implements Gateway {
@@ -334,9 +333,9 @@ public class GatewayClient implements Gateway {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Gateway-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Gateway-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class GatewayClient implements Gateway {
          * @return the client
          */
         public GatewayClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class GatewayClient implements Gateway {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class GatewayClient implements Gateway {
                         "ChangeGatewayCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/ChangeGatewayCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeGatewayCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeGatewayCompartmentResponse>
                 transformer =
                         ChangeGatewayCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -527,9 +527,8 @@ public class GatewayClient implements Gateway {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Gateway", "CreateGateway", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateGatewayResponse>
-                transformer =
-                        CreateGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateGatewayResponse> transformer =
+                CreateGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -567,9 +566,8 @@ public class GatewayClient implements Gateway {
                         "DeleteGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/DeleteGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGatewayResponse>
-                transformer =
-                        DeleteGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteGatewayResponse> transformer =
+                DeleteGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -603,7 +601,7 @@ public class GatewayClient implements Gateway {
                         "GetGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/GetGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetGatewayResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetGatewayResponse> transformer =
                 GetGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -638,9 +636,8 @@ public class GatewayClient implements Gateway {
                         "ListGateways",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/GatewaySummary/ListGateways");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListGatewaysResponse>
-                transformer =
-                        ListGatewaysConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListGatewaysResponse> transformer =
+                ListGatewaysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -674,9 +671,8 @@ public class GatewayClient implements Gateway {
                         "UpdateGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/UpdateGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGatewayResponse>
-                transformer =
-                        UpdateGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateGatewayResponse> transformer =
+                UpdateGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

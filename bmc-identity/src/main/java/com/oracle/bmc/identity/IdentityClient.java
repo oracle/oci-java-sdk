@@ -9,7 +9,6 @@ import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class IdentityClient implements Identity {
@@ -334,9 +333,9 @@ public class IdentityClient implements Identity {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Identity-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Identity-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class IdentityClient implements Identity {
          * @return the client
          */
         public IdentityClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class IdentityClient implements Identity {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,9 +487,8 @@ public class IdentityClient implements Identity {
                         "ActivateDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ActivateDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ActivateDomainResponse>
-                transformer =
-                        ActivateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ActivateDomainResponse> transformer =
+                ActivateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -526,7 +525,7 @@ public class IdentityClient implements Identity {
                         "ActivateMfaTotpDevice",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/ActivateMfaTotpDevice");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ActivateMfaTotpDeviceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ActivateMfaTotpDeviceResponse>
                 transformer =
                         ActivateMfaTotpDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -568,7 +567,7 @@ public class IdentityClient implements Identity {
                         "AddTagDefaultLock",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/AddTagDefaultLock");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddTagDefaultLockResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddTagDefaultLockResponse>
                 transformer =
                         AddTagDefaultLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -610,7 +609,7 @@ public class IdentityClient implements Identity {
                         "AddTagNamespaceLock",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/AddTagNamespaceLock");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddTagNamespaceLockResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddTagNamespaceLockResponse>
                 transformer =
                         AddTagNamespaceLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -652,9 +651,8 @@ public class IdentityClient implements Identity {
                         "AddUserToGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/AddUserToGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddUserToGroupResponse>
-                transformer =
-                        AddUserToGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, AddUserToGroupResponse> transformer =
+                AddUserToGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -693,7 +691,7 @@ public class IdentityClient implements Identity {
                         "AssembleEffectiveTagSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/AssembleEffectiveTagSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AssembleEffectiveTagSetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AssembleEffectiveTagSetResponse>
                 transformer =
                         AssembleEffectiveTagSetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -731,7 +729,7 @@ public class IdentityClient implements Identity {
                         "BulkDeleteResources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/BulkDeleteResources");
-        com.google.common.base.Function<javax.ws.rs.core.Response, BulkDeleteResourcesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, BulkDeleteResourcesResponse>
                 transformer =
                         BulkDeleteResourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -773,9 +771,8 @@ public class IdentityClient implements Identity {
                         "BulkDeleteTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/BulkDeleteTags");
-        com.google.common.base.Function<javax.ws.rs.core.Response, BulkDeleteTagsResponse>
-                transformer =
-                        BulkDeleteTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, BulkDeleteTagsResponse> transformer =
+                BulkDeleteTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -814,9 +811,8 @@ public class IdentityClient implements Identity {
                         "BulkEditTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/BulkEditTags");
-        com.google.common.base.Function<javax.ws.rs.core.Response, BulkEditTagsResponse>
-                transformer =
-                        BulkEditTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, BulkEditTagsResponse> transformer =
+                BulkEditTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -855,7 +851,7 @@ public class IdentityClient implements Identity {
                         "BulkMoveResources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/BulkMoveResources");
-        com.google.common.base.Function<javax.ws.rs.core.Response, BulkMoveResourcesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, BulkMoveResourcesResponse>
                 transformer =
                         BulkMoveResourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -898,8 +894,7 @@ public class IdentityClient implements Identity {
                         "CascadeDeleteTagNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/CascadeDeleteTagNamespace");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CascadeDeleteTagNamespaceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CascadeDeleteTagNamespaceResponse>
                 transformer =
                         CascadeDeleteTagNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -939,7 +934,7 @@ public class IdentityClient implements Identity {
                         "ChangeDomainCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ChangeDomainCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeDomainCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeDomainCompartmentResponse>
                 transformer =
                         ChangeDomainCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -982,7 +977,7 @@ public class IdentityClient implements Identity {
                         "ChangeDomainLicenseType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ChangeDomainLicenseType");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeDomainLicenseTypeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeDomainLicenseTypeResponse>
                 transformer =
                         ChangeDomainLicenseTypeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1025,7 +1020,7 @@ public class IdentityClient implements Identity {
                         "ChangeTagNamespaceCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/ChangeTagNamespaceCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeTagNamespaceCompartmentResponse>
                 transformer =
                         ChangeTagNamespaceCompartmentConverter.fromResponse(
@@ -1069,7 +1064,7 @@ public class IdentityClient implements Identity {
                         "CreateAuthToken",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/CreateAuthToken");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAuthTokenResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAuthTokenResponse>
                 transformer =
                         CreateAuthTokenConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1111,7 +1106,7 @@ public class IdentityClient implements Identity {
                         "CreateCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/CreateCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCompartmentResponse>
                 transformer =
                         CreateCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1154,7 +1149,7 @@ public class IdentityClient implements Identity {
                         "CreateCustomerSecretKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKey/CreateCustomerSecretKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCustomerSecretKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCustomerSecretKeyResponse>
                 transformer =
                         CreateCustomerSecretKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1196,7 +1191,7 @@ public class IdentityClient implements Identity {
                         "CreateDbCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateDbCredential");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbCredentialResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDbCredentialResponse>
                 transformer =
                         CreateDbCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1238,9 +1233,8 @@ public class IdentityClient implements Identity {
                         "CreateDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/CreateDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDomainResponse>
-                transformer =
-                        CreateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDomainResponse> transformer =
+                CreateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1279,7 +1273,7 @@ public class IdentityClient implements Identity {
                         "CreateDynamicGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/CreateDynamicGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDynamicGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDynamicGroupResponse>
                 transformer =
                         CreateDynamicGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1321,9 +1315,8 @@ public class IdentityClient implements Identity {
                         "CreateGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/CreateGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupResponse>
-                transformer =
-                        CreateGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateGroupResponse> transformer =
+                CreateGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1363,7 +1356,7 @@ public class IdentityClient implements Identity {
                         "CreateIdentityProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/CreateIdentityProvider");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateIdentityProviderResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateIdentityProviderResponse>
                 transformer =
                         CreateIdentityProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1406,7 +1399,7 @@ public class IdentityClient implements Identity {
                         "CreateIdpGroupMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/CreateIdpGroupMapping");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateIdpGroupMappingResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateIdpGroupMappingResponse>
                 transformer =
                         CreateIdpGroupMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1448,7 +1441,7 @@ public class IdentityClient implements Identity {
                         "CreateMfaTotpDevice",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/CreateMfaTotpDevice");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMfaTotpDeviceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateMfaTotpDeviceResponse>
                 transformer =
                         CreateMfaTotpDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1487,7 +1480,7 @@ public class IdentityClient implements Identity {
                         "CreateNetworkSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/CreateNetworkSource");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateNetworkSourceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkSourceResponse>
                 transformer =
                         CreateNetworkSourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1530,8 +1523,7 @@ public class IdentityClient implements Identity {
                         "CreateOAuthClientCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateOAuthClientCredential");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateOAuthClientCredentialResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOAuthClientCredentialResponse>
                 transformer =
                         CreateOAuthClientCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1575,7 +1567,7 @@ public class IdentityClient implements Identity {
                         "CreateOrResetUIPassword",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UIPassword/CreateOrResetUIPassword");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>
                 transformer =
                         CreateOrResetUIPasswordConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1614,9 +1606,8 @@ public class IdentityClient implements Identity {
                         "CreatePolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/CreatePolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePolicyResponse>
-                transformer =
-                        CreatePolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePolicyResponse> transformer =
+                CreatePolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1656,7 +1647,7 @@ public class IdentityClient implements Identity {
                         "CreateRegionSubscription",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/RegionSubscription/CreateRegionSubscription");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>
                 transformer =
                         CreateRegionSubscriptionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1698,7 +1689,7 @@ public class IdentityClient implements Identity {
                         "CreateSmtpCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredential/CreateSmtpCredential");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSmtpCredentialResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSmtpCredentialResponse>
                 transformer =
                         CreateSmtpCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1740,7 +1731,7 @@ public class IdentityClient implements Identity {
                         "CreateSwiftPassword",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/CreateSwiftPassword");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSwiftPasswordResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSwiftPasswordResponse>
                 transformer =
                         CreateSwiftPasswordConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1781,7 +1772,7 @@ public class IdentityClient implements Identity {
                         "CreateTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/CreateTag");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTagResponse> transformer =
                 CreateTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1821,7 +1812,7 @@ public class IdentityClient implements Identity {
                         "CreateTagDefault",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/CreateTagDefault");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagDefaultResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTagDefaultResponse>
                 transformer =
                         CreateTagDefaultConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1863,7 +1854,7 @@ public class IdentityClient implements Identity {
                         "CreateTagNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/CreateTagNamespace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagNamespaceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTagNamespaceResponse>
                 transformer =
                         CreateTagNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1904,7 +1895,7 @@ public class IdentityClient implements Identity {
                         "CreateUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateUser");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateUserResponse> transformer =
                 CreateUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1944,7 +1935,7 @@ public class IdentityClient implements Identity {
                         "DeactivateDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/DeactivateDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeactivateDomainResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeactivateDomainResponse>
                 transformer =
                         DeactivateDomainConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1979,9 +1970,8 @@ public class IdentityClient implements Identity {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteApiKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
-                transformer =
-                        DeleteApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse> transformer =
+                DeleteApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2013,7 +2003,7 @@ public class IdentityClient implements Identity {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteAuthToken", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAuthTokenResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAuthTokenResponse>
                 transformer =
                         DeleteAuthTokenConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2051,7 +2041,7 @@ public class IdentityClient implements Identity {
                         "DeleteCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/DeleteCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCompartmentResponse>
                 transformer =
                         DeleteCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2087,7 +2077,7 @@ public class IdentityClient implements Identity {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteCustomerSecretKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCustomerSecretKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCustomerSecretKeyResponse>
                 transformer =
                         DeleteCustomerSecretKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2125,7 +2115,7 @@ public class IdentityClient implements Identity {
                         "DeleteDbCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/DeleteDbCredential");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDbCredentialResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDbCredentialResponse>
                 transformer =
                         DeleteDbCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2163,9 +2153,8 @@ public class IdentityClient implements Identity {
                         "DeleteDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/DeleteDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDomainResponse>
-                transformer =
-                        DeleteDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDomainResponse> transformer =
+                DeleteDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2197,7 +2186,7 @@ public class IdentityClient implements Identity {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteDynamicGroup", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDynamicGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDynamicGroupResponse>
                 transformer =
                         DeleteDynamicGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2232,9 +2221,8 @@ public class IdentityClient implements Identity {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteGroup", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGroupResponse>
-                transformer =
-                        DeleteGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteGroupResponse> transformer =
+                DeleteGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2267,7 +2255,7 @@ public class IdentityClient implements Identity {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteIdentityProvider", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIdentityProviderResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteIdentityProviderResponse>
                 transformer =
                         DeleteIdentityProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2303,7 +2291,7 @@ public class IdentityClient implements Identity {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteIdpGroupMapping", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIdpGroupMappingResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteIdpGroupMappingResponse>
                 transformer =
                         DeleteIdpGroupMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2341,7 +2329,7 @@ public class IdentityClient implements Identity {
                         "DeleteMfaTotpDevice",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/DeleteMfaTotpDevice");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMfaTotpDeviceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteMfaTotpDeviceResponse>
                 transformer =
                         DeleteMfaTotpDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2379,7 +2367,7 @@ public class IdentityClient implements Identity {
                         "DeleteNetworkSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/DeleteNetworkSource");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNetworkSourceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkSourceResponse>
                 transformer =
                         DeleteNetworkSourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2418,8 +2406,7 @@ public class IdentityClient implements Identity {
                         "DeleteOAuthClientCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/DeleteOAuthClientCredential");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteOAuthClientCredentialResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOAuthClientCredentialResponse>
                 transformer =
                         DeleteOAuthClientCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2454,9 +2441,8 @@ public class IdentityClient implements Identity {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeletePolicy", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePolicyResponse>
-                transformer =
-                        DeletePolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePolicyResponse> transformer =
+                DeletePolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2488,7 +2474,7 @@ public class IdentityClient implements Identity {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteSmtpCredential", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSmtpCredentialResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSmtpCredentialResponse>
                 transformer =
                         DeleteSmtpCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2523,7 +2509,7 @@ public class IdentityClient implements Identity {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteSwiftPassword", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>
                 transformer =
                         DeleteSwiftPasswordConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2560,7 +2546,7 @@ public class IdentityClient implements Identity {
                         "DeleteTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/DeleteTag");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTagResponse> transformer =
                 DeleteTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2596,7 +2582,7 @@ public class IdentityClient implements Identity {
                         "DeleteTagDefault",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/DeleteTagDefault");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagDefaultResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTagDefaultResponse>
                 transformer =
                         DeleteTagDefaultConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2634,7 +2620,7 @@ public class IdentityClient implements Identity {
                         "DeleteTagNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/DeleteTagNamespace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagNamespaceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTagNamespaceResponse>
                 transformer =
                         DeleteTagNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2668,7 +2654,7 @@ public class IdentityClient implements Identity {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Identity", "DeleteUser", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUserResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteUserResponse> transformer =
                 DeleteUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2706,8 +2692,7 @@ public class IdentityClient implements Identity {
                         "EnableReplicationToRegion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/EnableReplicationToRegion");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, EnableReplicationToRegionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, EnableReplicationToRegionResponse>
                 transformer =
                         EnableReplicationToRegionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2749,7 +2734,7 @@ public class IdentityClient implements Identity {
                         "GenerateTotpSeed",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/GenerateTotpSeed");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GenerateTotpSeedResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GenerateTotpSeedResponse>
                 transformer =
                         GenerateTotpSeedConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2788,7 +2773,7 @@ public class IdentityClient implements Identity {
                         "GetAuthenticationPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthenticationPolicy/GetAuthenticationPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAuthenticationPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAuthenticationPolicyResponse>
                 transformer =
                         GetAuthenticationPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2825,9 +2810,8 @@ public class IdentityClient implements Identity {
                         "GetCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/GetCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCompartmentResponse>
-                transformer =
-                        GetCompartmentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetCompartmentResponse> transformer =
+                GetCompartmentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2860,7 +2844,7 @@ public class IdentityClient implements Identity {
                         "GetDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/GetDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDomainResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetDomainResponse> transformer =
                 GetDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2895,7 +2879,7 @@ public class IdentityClient implements Identity {
                         "GetDynamicGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/GetDynamicGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDynamicGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDynamicGroupResponse>
                 transformer =
                         GetDynamicGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2931,7 +2915,7 @@ public class IdentityClient implements Identity {
                         "GetGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/GetGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetGroupResponse> transformer =
                 GetGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2966,7 +2950,7 @@ public class IdentityClient implements Identity {
                         "GetIamWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequest/GetIamWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetIamWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetIamWorkRequestResponse>
                 transformer =
                         GetIamWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3003,7 +2987,7 @@ public class IdentityClient implements Identity {
                         "GetIdentityProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/GetIdentityProvider");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetIdentityProviderResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetIdentityProviderResponse>
                 transformer =
                         GetIdentityProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3040,7 +3024,7 @@ public class IdentityClient implements Identity {
                         "GetIdpGroupMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/GetIdpGroupMapping");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetIdpGroupMappingResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetIdpGroupMappingResponse>
                 transformer =
                         GetIdpGroupMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3077,7 +3061,7 @@ public class IdentityClient implements Identity {
                         "GetMfaTotpDevice",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/GetMfaTotpDevice");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetMfaTotpDeviceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetMfaTotpDeviceResponse>
                 transformer =
                         GetMfaTotpDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3114,7 +3098,7 @@ public class IdentityClient implements Identity {
                         "GetNetworkSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/GetNetworkSource");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkSourceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetNetworkSourceResponse>
                 transformer =
                         GetNetworkSourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3150,7 +3134,7 @@ public class IdentityClient implements Identity {
                         "GetPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/GetPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetPolicyResponse> transformer =
                 GetPolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3186,7 +3170,7 @@ public class IdentityClient implements Identity {
                         "GetStandardTagTemplate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/StandardTagNamespaceTemplate/GetStandardTagTemplate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetStandardTagTemplateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetStandardTagTemplateResponse>
                 transformer =
                         GetStandardTagTemplateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3222,7 +3206,7 @@ public class IdentityClient implements Identity {
                         "GetTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/GetTag");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTagResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetTagResponse> transformer =
                 GetTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3257,9 +3241,8 @@ public class IdentityClient implements Identity {
                         "GetTagDefault",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/GetTagDefault");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTagDefaultResponse>
-                transformer =
-                        GetTagDefaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetTagDefaultResponse> transformer =
+                GetTagDefaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3293,7 +3276,7 @@ public class IdentityClient implements Identity {
                         "GetTagNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/GetTagNamespace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTagNamespaceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTagNamespaceResponse>
                 transformer =
                         GetTagNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3331,7 +3314,7 @@ public class IdentityClient implements Identity {
                         "GetTaggingWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequest/GetTaggingWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTaggingWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTaggingWorkRequestResponse>
                 transformer =
                         GetTaggingWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3367,7 +3350,7 @@ public class IdentityClient implements Identity {
                         "GetTenancy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tenancy/GetTenancy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTenancyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetTenancyResponse> transformer =
                 GetTenancyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3401,7 +3384,7 @@ public class IdentityClient implements Identity {
                         "GetUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/GetUser");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetUserResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetUserResponse> transformer =
                 GetUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3437,7 +3420,7 @@ public class IdentityClient implements Identity {
                         "GetUserGroupMembership",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/GetUserGroupMembership");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetUserGroupMembershipResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetUserGroupMembershipResponse>
                 transformer =
                         GetUserGroupMembershipConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3475,8 +3458,7 @@ public class IdentityClient implements Identity {
                         "GetUserUIPasswordInformation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UIPasswordInformation/GetUserUIPasswordInformation");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetUserUIPasswordInformationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetUserUIPasswordInformationResponse>
                 transformer =
                         GetUserUIPasswordInformationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3513,9 +3495,8 @@ public class IdentityClient implements Identity {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3550,7 +3531,7 @@ public class IdentityClient implements Identity {
                         "ImportStandardTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/ImportStandardTags");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ImportStandardTagsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ImportStandardTagsResponse>
                 transformer =
                         ImportStandardTagsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3592,7 +3573,7 @@ public class IdentityClient implements Identity {
                         "ListAllowedDomainLicenseTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ListAllowedDomainLicenseTypes");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListAllowedDomainLicenseTypesResponse>
                 transformer =
                         ListAllowedDomainLicenseTypesConverter.fromResponse(
@@ -3630,9 +3611,8 @@ public class IdentityClient implements Identity {
                         "ListApiKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ApiKey/ListApiKeys");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListApiKeysResponse>
-                transformer =
-                        ListApiKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListApiKeysResponse> transformer =
+                ListApiKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3666,9 +3646,8 @@ public class IdentityClient implements Identity {
                         "ListAuthTokens",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/ListAuthTokens");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAuthTokensResponse>
-                transformer =
-                        ListAuthTokensConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListAuthTokensResponse> transformer =
+                ListAuthTokensConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3703,7 +3682,7 @@ public class IdentityClient implements Identity {
                         "ListAvailabilityDomains",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAvailabilityDomainsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAvailabilityDomainsResponse>
                 transformer =
                         ListAvailabilityDomainsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3741,8 +3720,7 @@ public class IdentityClient implements Identity {
                         "ListBulkActionResourceTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/BulkActionResourceTypeCollection/ListBulkActionResourceTypes");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListBulkActionResourceTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListBulkActionResourceTypesResponse>
                 transformer =
                         ListBulkActionResourceTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3780,7 +3758,7 @@ public class IdentityClient implements Identity {
                         "ListBulkEditTagsResourceTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/BulkEditTagsResourceTypeCollection/ListBulkEditTagsResourceTypes");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListBulkEditTagsResourceTypesResponse>
                 transformer =
                         ListBulkEditTagsResourceTypesConverter.fromResponse(
@@ -3818,7 +3796,7 @@ public class IdentityClient implements Identity {
                         "ListCompartments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/ListCompartments");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCompartmentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCompartmentsResponse>
                 transformer =
                         ListCompartmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3855,7 +3833,7 @@ public class IdentityClient implements Identity {
                         "ListCostTrackingTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/ListCostTrackingTags");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCostTrackingTagsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCostTrackingTagsResponse>
                 transformer =
                         ListCostTrackingTagsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3893,7 +3871,7 @@ public class IdentityClient implements Identity {
                         "ListCustomerSecretKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/ListCustomerSecretKeys");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>
                 transformer =
                         ListCustomerSecretKeysConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3930,7 +3908,7 @@ public class IdentityClient implements Identity {
                         "ListDbCredentials",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListDbCredentials");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbCredentialsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDbCredentialsResponse>
                 transformer =
                         ListDbCredentialsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3967,9 +3945,8 @@ public class IdentityClient implements Identity {
                         "ListDomains",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DomainSummary/ListDomains");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDomainsResponse>
-                transformer =
-                        ListDomainsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListDomainsResponse> transformer =
+                ListDomainsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4003,7 +3980,7 @@ public class IdentityClient implements Identity {
                         "ListDynamicGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/ListDynamicGroups");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDynamicGroupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDynamicGroupsResponse>
                 transformer =
                         ListDynamicGroupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4040,7 +4017,7 @@ public class IdentityClient implements Identity {
                         "ListFaultDomains",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListFaultDomainsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListFaultDomainsResponse>
                 transformer =
                         ListFaultDomainsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4076,7 +4053,7 @@ public class IdentityClient implements Identity {
                         "ListGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/ListGroups");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListGroupsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListGroupsResponse> transformer =
                 ListGroupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4112,7 +4089,7 @@ public class IdentityClient implements Identity {
                         "ListIamWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequest/ListIamWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIamWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListIamWorkRequestErrorsResponse>
                 transformer =
                         ListIamWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4150,7 +4127,7 @@ public class IdentityClient implements Identity {
                         "ListIamWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequestLogSummary/ListIamWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIamWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListIamWorkRequestLogsResponse>
                 transformer =
                         ListIamWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4187,7 +4164,7 @@ public class IdentityClient implements Identity {
                         "ListIamWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequestSummary/ListIamWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIamWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListIamWorkRequestsResponse>
                 transformer =
                         ListIamWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4225,8 +4202,7 @@ public class IdentityClient implements Identity {
                         "ListIdentityProviderGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProviderGroupSummary/ListIdentityProviderGroups");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListIdentityProviderGroupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListIdentityProviderGroupsResponse>
                 transformer =
                         ListIdentityProviderGroupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4264,7 +4240,7 @@ public class IdentityClient implements Identity {
                         "ListIdentityProviders",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/ListIdentityProviders");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIdentityProvidersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListIdentityProvidersResponse>
                 transformer =
                         ListIdentityProvidersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4301,7 +4277,7 @@ public class IdentityClient implements Identity {
                         "ListIdpGroupMappings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/ListIdpGroupMappings");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>
                 transformer =
                         ListIdpGroupMappingsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4338,7 +4314,7 @@ public class IdentityClient implements Identity {
                         "ListMfaTotpDevices",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/ListMfaTotpDevices");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMfaTotpDevicesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMfaTotpDevicesResponse>
                 transformer =
                         ListMfaTotpDevicesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4375,7 +4351,7 @@ public class IdentityClient implements Identity {
                         "ListNetworkSources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSourcesSummary/ListNetworkSources");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListNetworkSourcesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListNetworkSourcesResponse>
                 transformer =
                         ListNetworkSourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4413,8 +4389,7 @@ public class IdentityClient implements Identity {
                         "ListOAuthClientCredentials",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListOAuthClientCredentials");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListOAuthClientCredentialsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListOAuthClientCredentialsResponse>
                 transformer =
                         ListOAuthClientCredentialsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4451,9 +4426,8 @@ public class IdentityClient implements Identity {
                         "ListPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/ListPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
-                transformer =
-                        ListPoliciesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListPoliciesResponse> transformer =
+                ListPoliciesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4488,7 +4462,7 @@ public class IdentityClient implements Identity {
                         "ListRegionSubscriptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/RegionSubscription/ListRegionSubscriptions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionSubscriptionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRegionSubscriptionsResponse>
                 transformer =
                         ListRegionSubscriptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4525,9 +4499,8 @@ public class IdentityClient implements Identity {
                         "ListRegions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Region/ListRegions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionsResponse>
-                transformer =
-                        ListRegionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListRegionsResponse> transformer =
+                ListRegionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4561,7 +4534,7 @@ public class IdentityClient implements Identity {
                         "ListSmtpCredentials",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/ListSmtpCredentials");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSmtpCredentialsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSmtpCredentialsResponse>
                 transformer =
                         ListSmtpCredentialsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4599,8 +4572,7 @@ public class IdentityClient implements Identity {
                         "ListStandardTagNamespaces",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/StandardTagNamespaceTemplateSummary/ListStandardTagNamespaces");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListStandardTagNamespacesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListStandardTagNamespacesResponse>
                 transformer =
                         ListStandardTagNamespacesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4637,7 +4609,7 @@ public class IdentityClient implements Identity {
                         "ListSwiftPasswords",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/ListSwiftPasswords");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSwiftPasswordsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSwiftPasswordsResponse>
                 transformer =
                         ListSwiftPasswordsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4674,7 +4646,7 @@ public class IdentityClient implements Identity {
                         "ListTagDefaults",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefaultSummary/ListTagDefaults");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTagDefaultsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTagDefaultsResponse>
                 transformer =
                         ListTagDefaultsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4711,7 +4683,7 @@ public class IdentityClient implements Identity {
                         "ListTagNamespaces",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespaceSummary/ListTagNamespaces");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTagNamespacesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTagNamespacesResponse>
                 transformer =
                         ListTagNamespacesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4749,8 +4721,7 @@ public class IdentityClient implements Identity {
                         "ListTaggingWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestErrorSummary/ListTaggingWorkRequestErrors");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTaggingWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTaggingWorkRequestErrorsResponse>
                 transformer =
                         ListTaggingWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4788,8 +4759,7 @@ public class IdentityClient implements Identity {
                         "ListTaggingWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestLogSummary/ListTaggingWorkRequestLogs");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTaggingWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTaggingWorkRequestLogsResponse>
                 transformer =
                         ListTaggingWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4827,7 +4797,7 @@ public class IdentityClient implements Identity {
                         "ListTaggingWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestSummary/ListTaggingWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTaggingWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTaggingWorkRequestsResponse>
                 transformer =
                         ListTaggingWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4863,7 +4833,7 @@ public class IdentityClient implements Identity {
                         "ListTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagSummary/ListTags");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTagsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListTagsResponse> transformer =
                 ListTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4899,7 +4869,7 @@ public class IdentityClient implements Identity {
                         "ListUserGroupMemberships",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/ListUserGroupMemberships");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListUserGroupMembershipsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListUserGroupMembershipsResponse>
                 transformer =
                         ListUserGroupMembershipsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4935,7 +4905,7 @@ public class IdentityClient implements Identity {
                         "ListUsers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListUsers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListUsersResponse> transformer =
                 ListUsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4970,7 +4940,7 @@ public class IdentityClient implements Identity {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/WorkRequestSummary/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5008,7 +4978,7 @@ public class IdentityClient implements Identity {
                         "MoveCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/MoveCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, MoveCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, MoveCompartmentResponse>
                 transformer =
                         MoveCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5049,7 +5019,7 @@ public class IdentityClient implements Identity {
                         "RecoverCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/RecoverCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RecoverCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RecoverCompartmentResponse>
                 transformer =
                         RecoverCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5088,7 +5058,7 @@ public class IdentityClient implements Identity {
                         "RemoveTagDefaultLock",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/RemoveTagDefaultLock");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveTagDefaultLockResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveTagDefaultLockResponse>
                 transformer =
                         RemoveTagDefaultLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5131,7 +5101,7 @@ public class IdentityClient implements Identity {
                         "RemoveTagNamespaceLock",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/RemoveTagNamespaceLock");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveTagNamespaceLockResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveTagNamespaceLockResponse>
                 transformer =
                         RemoveTagNamespaceLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5172,7 +5142,7 @@ public class IdentityClient implements Identity {
                         "RemoveUserFromGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/RemoveUserFromGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveUserFromGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveUserFromGroupResponse>
                 transformer =
                         RemoveUserFromGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5210,7 +5180,7 @@ public class IdentityClient implements Identity {
                         "ResetIdpScimClient",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ScimClientCredentials/ResetIdpScimClient");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ResetIdpScimClientResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ResetIdpScimClientResponse>
                 transformer =
                         ResetIdpScimClientConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5248,7 +5218,7 @@ public class IdentityClient implements Identity {
                         "UpdateAuthToken",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/UpdateAuthToken");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAuthTokenResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAuthTokenResponse>
                 transformer =
                         UpdateAuthTokenConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5290,8 +5260,7 @@ public class IdentityClient implements Identity {
                         "UpdateAuthenticationPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthenticationPolicy/UpdateAuthenticationPolicy");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAuthenticationPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAuthenticationPolicyResponse>
                 transformer =
                         UpdateAuthenticationPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5333,7 +5302,7 @@ public class IdentityClient implements Identity {
                         "UpdateCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/UpdateCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCompartmentResponse>
                 transformer =
                         UpdateCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5375,7 +5344,7 @@ public class IdentityClient implements Identity {
                         "UpdateCustomerSecretKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/UpdateCustomerSecretKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCustomerSecretKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCustomerSecretKeyResponse>
                 transformer =
                         UpdateCustomerSecretKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5416,9 +5385,8 @@ public class IdentityClient implements Identity {
                         "UpdateDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/UpdateDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDomainResponse>
-                transformer =
-                        UpdateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDomainResponse> transformer =
+                UpdateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5456,7 +5424,7 @@ public class IdentityClient implements Identity {
                         "UpdateDynamicGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/UpdateDynamicGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDynamicGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDynamicGroupResponse>
                 transformer =
                         UpdateDynamicGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5497,9 +5465,8 @@ public class IdentityClient implements Identity {
                         "UpdateGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/UpdateGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
-                transformer =
-                        UpdateGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateGroupResponse> transformer =
+                UpdateGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5538,7 +5505,7 @@ public class IdentityClient implements Identity {
                         "UpdateIdentityProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIdentityProviderResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateIdentityProviderResponse>
                 transformer =
                         UpdateIdentityProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5580,7 +5547,7 @@ public class IdentityClient implements Identity {
                         "UpdateIdpGroupMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/UpdateIdpGroupMapping");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>
                 transformer =
                         UpdateIdpGroupMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5621,7 +5588,7 @@ public class IdentityClient implements Identity {
                         "UpdateNetworkSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/UpdateNetworkSource");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNetworkSourceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkSourceResponse>
                 transformer =
                         UpdateNetworkSourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5663,8 +5630,7 @@ public class IdentityClient implements Identity {
                         "UpdateOAuthClientCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateOAuthClientCredential");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateOAuthClientCredentialResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOAuthClientCredentialResponse>
                 transformer =
                         UpdateOAuthClientCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5706,9 +5672,8 @@ public class IdentityClient implements Identity {
                         "UpdatePolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/UpdatePolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePolicyResponse>
-                transformer =
-                        UpdatePolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePolicyResponse> transformer =
+                UpdatePolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5746,7 +5711,7 @@ public class IdentityClient implements Identity {
                         "UpdateSmtpCredential",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/UpdateSmtpCredential");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSmtpCredentialResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSmtpCredentialResponse>
                 transformer =
                         UpdateSmtpCredentialConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5787,7 +5752,7 @@ public class IdentityClient implements Identity {
                         "UpdateSwiftPassword",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/UpdateSwiftPassword");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>
                 transformer =
                         UpdateSwiftPasswordConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5827,7 +5792,7 @@ public class IdentityClient implements Identity {
                         "UpdateTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/UpdateTag");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTagResponse> transformer =
                 UpdateTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5866,7 +5831,7 @@ public class IdentityClient implements Identity {
                         "UpdateTagDefault",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/UpdateTagDefault");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagDefaultResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTagDefaultResponse>
                 transformer =
                         UpdateTagDefaultConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5907,7 +5872,7 @@ public class IdentityClient implements Identity {
                         "UpdateTagNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/UpdateTagNamespace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagNamespaceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTagNamespaceResponse>
                 transformer =
                         UpdateTagNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5947,7 +5912,7 @@ public class IdentityClient implements Identity {
                         "UpdateUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUser");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateUserResponse> transformer =
                 UpdateUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5987,7 +5952,7 @@ public class IdentityClient implements Identity {
                         "UpdateUserCapabilities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUserCapabilities");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserCapabilitiesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateUserCapabilitiesResponse>
                 transformer =
                         UpdateUserCapabilitiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6028,7 +5993,7 @@ public class IdentityClient implements Identity {
                         "UpdateUserState",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUserState");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserStateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateUserStateResponse>
                 transformer =
                         UpdateUserStateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6070,9 +6035,8 @@ public class IdentityClient implements Identity {
                         "UploadApiKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ApiKey/UploadApiKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UploadApiKeyResponse>
-                transformer =
-                        UploadApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UploadApiKeyResponse> transformer =
+                UploadApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

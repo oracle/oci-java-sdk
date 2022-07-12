@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.auth.sasl;
 
-import com.google.common.base.Preconditions;
+import com.oracle.bmc.util.internal.Validate;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
@@ -122,7 +122,7 @@ public class OciSaslClient implements SaslClient {
 
     private Response signChallenge(byte[] serializedChallenge) throws SaslException {
 
-        Preconditions.checkArgument(currentPrivateKey != null);
+        Validate.isTrue(currentPrivateKey != null, "required: currentPrivateKey != null");
 
         final Challenge challenge = getAndValidateChallenge(serializedChallenge);
         final long epoch = OffsetDateTime.now().toEpochSecond();
@@ -136,7 +136,6 @@ public class OciSaslClient implements SaslClient {
         final RSAPrivateKey privateKey =
                 keySupplier
                         .getKey()
-                        .toJavaUtil()
                         .orElseThrow(() -> new SaslException("Unable to get private key"));
 
         final byte[] intentBytes = intent.getBytes(StandardCharsets.UTF_8);

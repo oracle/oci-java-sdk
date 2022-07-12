@@ -44,19 +44,19 @@ public class KmsManagementPaginators {
             final ListKeyVersionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListKeyVersionsRequest.Builder, ListKeyVersionsRequest, ListKeyVersionsResponse>(
-                new com.google.common.base.Supplier<ListKeyVersionsRequest.Builder>() {
+                new java.util.function.Supplier<ListKeyVersionsRequest.Builder>() {
                     @Override
                     public ListKeyVersionsRequest.Builder get() {
                         return ListKeyVersionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListKeyVersionsResponse, String>() {
+                new java.util.function.Function<ListKeyVersionsResponse, String>() {
                     @Override
                     public String apply(ListKeyVersionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListKeyVersionsRequest.Builder>,
                         ListKeyVersionsRequest>() {
@@ -69,13 +69,12 @@ public class KmsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListKeyVersionsRequest, ListKeyVersionsResponse>() {
+                new java.util.function.Function<ListKeyVersionsRequest, ListKeyVersionsResponse>() {
                     @Override
                     public ListKeyVersionsResponse apply(ListKeyVersionsRequest request) {
                         return client.listKeyVersions(request);
@@ -97,19 +96,19 @@ public class KmsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListKeyVersionsRequest.Builder, ListKeyVersionsRequest, ListKeyVersionsResponse,
                 com.oracle.bmc.keymanagement.model.KeyVersionSummary>(
-                new com.google.common.base.Supplier<ListKeyVersionsRequest.Builder>() {
+                new java.util.function.Supplier<ListKeyVersionsRequest.Builder>() {
                     @Override
                     public ListKeyVersionsRequest.Builder get() {
                         return ListKeyVersionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListKeyVersionsResponse, String>() {
+                new java.util.function.Function<ListKeyVersionsResponse, String>() {
                     @Override
                     public String apply(ListKeyVersionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListKeyVersionsRequest.Builder>,
                         ListKeyVersionsRequest>() {
@@ -122,19 +121,18 @@ public class KmsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListKeyVersionsRequest, ListKeyVersionsResponse>() {
+                new java.util.function.Function<ListKeyVersionsRequest, ListKeyVersionsResponse>() {
                     @Override
                     public ListKeyVersionsResponse apply(ListKeyVersionsRequest request) {
                         return client.listKeyVersions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListKeyVersionsResponse,
                         java.util.List<com.oracle.bmc.keymanagement.model.KeyVersionSummary>>() {
                     @Override
@@ -155,19 +153,19 @@ public class KmsManagementPaginators {
     public Iterable<ListKeysResponse> listKeysResponseIterator(final ListKeysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListKeysRequest.Builder, ListKeysRequest, ListKeysResponse>(
-                new com.google.common.base.Supplier<ListKeysRequest.Builder>() {
+                new java.util.function.Supplier<ListKeysRequest.Builder>() {
                     @Override
                     public ListKeysRequest.Builder get() {
                         return ListKeysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListKeysResponse, String>() {
+                new java.util.function.Function<ListKeysResponse, String>() {
                     @Override
                     public String apply(ListKeysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListKeysRequest.Builder>,
                         ListKeysRequest>() {
@@ -180,12 +178,12 @@ public class KmsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListKeysRequest, ListKeysResponse>() {
+                new java.util.function.Function<ListKeysRequest, ListKeysResponse>() {
                     @Override
                     public ListKeysResponse apply(ListKeysRequest request) {
                         return client.listKeys(request);
@@ -207,19 +205,19 @@ public class KmsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListKeysRequest.Builder, ListKeysRequest, ListKeysResponse,
                 com.oracle.bmc.keymanagement.model.KeySummary>(
-                new com.google.common.base.Supplier<ListKeysRequest.Builder>() {
+                new java.util.function.Supplier<ListKeysRequest.Builder>() {
                     @Override
                     public ListKeysRequest.Builder get() {
                         return ListKeysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListKeysResponse, String>() {
+                new java.util.function.Function<ListKeysResponse, String>() {
                     @Override
                     public String apply(ListKeysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListKeysRequest.Builder>,
                         ListKeysRequest>() {
@@ -232,18 +230,18 @@ public class KmsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListKeysRequest, ListKeysResponse>() {
+                new java.util.function.Function<ListKeysRequest, ListKeysResponse>() {
                     @Override
                     public ListKeysResponse apply(ListKeysRequest request) {
                         return client.listKeys(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListKeysResponse,
                         java.util.List<com.oracle.bmc.keymanagement.model.KeySummary>>() {
                     @Override

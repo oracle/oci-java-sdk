@@ -23,6 +23,7 @@ public final class ExadataInsightResourceInsightUtilizationItem {
     @Deprecated
     @java.beans.ConstructorProperties({
         "exadataInsightId",
+        "exadataDisplayName",
         "currentUtilization",
         "projectedUtilization",
         "daysToReachHighUtilization",
@@ -30,12 +31,14 @@ public final class ExadataInsightResourceInsightUtilizationItem {
     })
     public ExadataInsightResourceInsightUtilizationItem(
             String exadataInsightId,
+            String exadataDisplayName,
             Double currentUtilization,
             Double projectedUtilization,
             Integer daysToReachHighUtilization,
             Integer daysToReachLowUtilization) {
         super();
         this.exadataInsightId = exadataInsightId;
+        this.exadataDisplayName = exadataDisplayName;
         this.currentUtilization = currentUtilization;
         this.projectedUtilization = projectedUtilization;
         this.daysToReachHighUtilization = daysToReachHighUtilization;
@@ -58,6 +61,22 @@ public final class ExadataInsightResourceInsightUtilizationItem {
         public Builder exadataInsightId(String exadataInsightId) {
             this.exadataInsightId = exadataInsightId;
             this.__explicitlySet__.add("exadataInsightId");
+            return this;
+        }
+        /**
+         * The user-friendly name for the Exadata system. The name does not have to be unique.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
+        private String exadataDisplayName;
+
+        /**
+         * The user-friendly name for the Exadata system. The name does not have to be unique.
+         * @param exadataDisplayName the value to set
+         * @return this builder
+         **/
+        public Builder exadataDisplayName(String exadataDisplayName) {
+            this.exadataDisplayName = exadataDisplayName;
+            this.__explicitlySet__.add("exadataDisplayName");
             return this;
         }
         /**
@@ -132,6 +151,7 @@ public final class ExadataInsightResourceInsightUtilizationItem {
             ExadataInsightResourceInsightUtilizationItem __instance__ =
                     new ExadataInsightResourceInsightUtilizationItem(
                             exadataInsightId,
+                            exadataDisplayName,
                             currentUtilization,
                             projectedUtilization,
                             daysToReachHighUtilization,
@@ -144,6 +164,7 @@ public final class ExadataInsightResourceInsightUtilizationItem {
         public Builder copy(ExadataInsightResourceInsightUtilizationItem o) {
             Builder copiedBuilder =
                     exadataInsightId(o.getExadataInsightId())
+                            .exadataDisplayName(o.getExadataDisplayName())
                             .currentUtilization(o.getCurrentUtilization())
                             .projectedUtilization(o.getProjectedUtilization())
                             .daysToReachHighUtilization(o.getDaysToReachHighUtilization())
@@ -177,6 +198,20 @@ public final class ExadataInsightResourceInsightUtilizationItem {
      **/
     public String getExadataInsightId() {
         return exadataInsightId;
+    }
+
+    /**
+     * The user-friendly name for the Exadata system. The name does not have to be unique.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
+    private final String exadataDisplayName;
+
+    /**
+     * The user-friendly name for the Exadata system. The name does not have to be unique.
+     * @return the value
+     **/
+    public String getExadataDisplayName() {
+        return exadataDisplayName;
     }
 
     /**
@@ -240,6 +275,7 @@ public final class ExadataInsightResourceInsightUtilizationItem {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExadataInsightResourceInsightUtilizationItem(");
         sb.append("exadataInsightId=").append(String.valueOf(this.exadataInsightId));
+        sb.append(", exadataDisplayName=").append(String.valueOf(this.exadataDisplayName));
         sb.append(", currentUtilization=").append(String.valueOf(this.currentUtilization));
         sb.append(", projectedUtilization=").append(String.valueOf(this.projectedUtilization));
         sb.append(", daysToReachHighUtilization=")
@@ -263,6 +299,7 @@ public final class ExadataInsightResourceInsightUtilizationItem {
         ExadataInsightResourceInsightUtilizationItem other =
                 (ExadataInsightResourceInsightUtilizationItem) o;
         return java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
+                && java.util.Objects.equals(this.exadataDisplayName, other.exadataDisplayName)
                 && java.util.Objects.equals(this.currentUtilization, other.currentUtilization)
                 && java.util.Objects.equals(this.projectedUtilization, other.projectedUtilization)
                 && java.util.Objects.equals(
@@ -279,6 +316,11 @@ public final class ExadataInsightResourceInsightUtilizationItem {
         result =
                 (result * PRIME)
                         + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataDisplayName == null
+                                ? 43
+                                : this.exadataDisplayName.hashCode());
         result =
                 (result * PRIME)
                         + (this.currentUtilization == null

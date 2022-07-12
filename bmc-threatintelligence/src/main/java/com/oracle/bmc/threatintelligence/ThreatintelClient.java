@@ -9,7 +9,6 @@ import com.oracle.bmc.threatintelligence.requests.*;
 import com.oracle.bmc.threatintelligence.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
 public class ThreatintelClient implements Threatintel {
@@ -335,9 +334,9 @@ public class ThreatintelClient implements Threatintel {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Threatintel-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Threatintel-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class ThreatintelClient implements Threatintel {
          * @return the client
          */
         public ThreatintelClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class ThreatintelClient implements Threatintel {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,9 +487,8 @@ public class ThreatintelClient implements Threatintel {
                         "GetIndicator",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/Indicator/GetIndicator");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetIndicatorResponse>
-                transformer =
-                        GetIndicatorConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetIndicatorResponse> transformer =
+                GetIndicatorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -523,7 +522,7 @@ public class ThreatintelClient implements Threatintel {
                         "ListIndicatorCounts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorCountCollection/ListIndicatorCounts");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIndicatorCountsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListIndicatorCountsResponse>
                 transformer =
                         ListIndicatorCountsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -560,9 +559,8 @@ public class ThreatintelClient implements Threatintel {
                         "ListIndicators",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorSummaryCollection/ListIndicators");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIndicatorsResponse>
-                transformer =
-                        ListIndicatorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListIndicatorsResponse> transformer =
+                ListIndicatorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -596,7 +594,7 @@ public class ThreatintelClient implements Threatintel {
                         "ListThreatTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/ThreatTypesCollection/ListThreatTypes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListThreatTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListThreatTypesResponse>
                 transformer =
                         ListThreatTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

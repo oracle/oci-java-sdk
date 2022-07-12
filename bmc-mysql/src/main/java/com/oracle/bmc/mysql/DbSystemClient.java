@@ -9,7 +9,6 @@ import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class DbSystemClient implements DbSystem {
@@ -334,9 +333,9 @@ public class DbSystemClient implements DbSystem {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DbSystem-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DbSystem-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class DbSystemClient implements DbSystem {
          * @return the client
          */
         public DbSystemClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class DbSystemClient implements DbSystem {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,7 +487,7 @@ public class DbSystemClient implements DbSystem {
                         "AddAnalyticsCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/AddAnalyticsCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddAnalyticsClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddAnalyticsClusterResponse>
                 transformer =
                         AddAnalyticsClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,7 +529,7 @@ public class DbSystemClient implements DbSystem {
                         "AddHeatWaveCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/AddHeatWaveCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddHeatWaveClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddHeatWaveClusterResponse>
                 transformer =
                         AddHeatWaveClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -568,9 +568,8 @@ public class DbSystemClient implements DbSystem {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DbSystem", "CreateDbSystem", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbSystemResponse>
-                transformer =
-                        CreateDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDbSystemResponse> transformer =
+                CreateDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -609,7 +608,7 @@ public class DbSystemClient implements DbSystem {
                         "DeleteAnalyticsCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/DeleteAnalyticsCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAnalyticsClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAnalyticsClusterResponse>
                 transformer =
                         DeleteAnalyticsClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -647,9 +646,8 @@ public class DbSystemClient implements DbSystem {
                         "DeleteDbSystem",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/DeleteDbSystem");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDbSystemResponse>
-                transformer =
-                        DeleteDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDbSystemResponse> transformer =
+                DeleteDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -685,7 +683,7 @@ public class DbSystemClient implements DbSystem {
                         "DeleteHeatWaveCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/DeleteHeatWaveCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHeatWaveClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteHeatWaveClusterResponse>
                 transformer =
                         DeleteHeatWaveClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -726,7 +724,7 @@ public class DbSystemClient implements DbSystem {
                         "GenerateAnalyticsClusterMemoryEstimate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsClusterMemoryEstimate/GenerateAnalyticsClusterMemoryEstimate");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateAnalyticsClusterMemoryEstimateResponse>
                 transformer =
                         GenerateAnalyticsClusterMemoryEstimateConverter.fromResponse(
@@ -768,7 +766,7 @@ public class DbSystemClient implements DbSystem {
                         "GenerateHeatWaveClusterMemoryEstimate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveClusterMemoryEstimate/GenerateHeatWaveClusterMemoryEstimate");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateHeatWaveClusterMemoryEstimateResponse>
                 transformer =
                         GenerateHeatWaveClusterMemoryEstimateConverter.fromResponse(
@@ -807,7 +805,7 @@ public class DbSystemClient implements DbSystem {
                         "GetAnalyticsCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/GetAnalyticsCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAnalyticsClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAnalyticsClusterResponse>
                 transformer =
                         GetAnalyticsClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -845,7 +843,7 @@ public class DbSystemClient implements DbSystem {
                         "GetAnalyticsClusterMemoryEstimate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsClusterMemoryEstimate/GetAnalyticsClusterMemoryEstimate");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetAnalyticsClusterMemoryEstimateResponse>
                 transformer =
                         GetAnalyticsClusterMemoryEstimateConverter.fromResponse(
@@ -883,9 +881,8 @@ public class DbSystemClient implements DbSystem {
                         "GetDbSystem",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/GetDbSystem");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemResponse>
-                transformer =
-                        GetDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDbSystemResponse> transformer =
+                GetDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -919,7 +916,7 @@ public class DbSystemClient implements DbSystem {
                         "GetHeatWaveCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/GetHeatWaveCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetHeatWaveClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetHeatWaveClusterResponse>
                 transformer =
                         GetHeatWaveClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -957,7 +954,7 @@ public class DbSystemClient implements DbSystem {
                         "GetHeatWaveClusterMemoryEstimate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveClusterMemoryEstimate/GetHeatWaveClusterMemoryEstimate");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetHeatWaveClusterMemoryEstimateResponse>
                 transformer =
                         GetHeatWaveClusterMemoryEstimateConverter.fromResponse(
@@ -995,9 +992,8 @@ public class DbSystemClient implements DbSystem {
                         "ListDbSystems",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystemSummary/ListDbSystems");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemsResponse>
-                transformer =
-                        ListDbSystemsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListDbSystemsResponse> transformer =
+                ListDbSystemsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1033,7 +1029,7 @@ public class DbSystemClient implements DbSystem {
                         "RestartAnalyticsCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/RestartAnalyticsCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RestartAnalyticsClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RestartAnalyticsClusterResponse>
                 transformer =
                         RestartAnalyticsClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1072,7 +1068,7 @@ public class DbSystemClient implements DbSystem {
                         "RestartDbSystem",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/RestartDbSystem");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RestartDbSystemResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RestartDbSystemResponse>
                 transformer =
                         RestartDbSystemConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1115,7 +1111,7 @@ public class DbSystemClient implements DbSystem {
                         "RestartHeatWaveCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/RestartHeatWaveCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RestartHeatWaveClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RestartHeatWaveClusterResponse>
                 transformer =
                         RestartHeatWaveClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1155,7 +1151,7 @@ public class DbSystemClient implements DbSystem {
                         "StartAnalyticsCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/StartAnalyticsCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartAnalyticsClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StartAnalyticsClusterResponse>
                 transformer =
                         StartAnalyticsClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1194,9 +1190,8 @@ public class DbSystemClient implements DbSystem {
                         "StartDbSystem",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/StartDbSystem");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartDbSystemResponse>
-                transformer =
-                        StartDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, StartDbSystemResponse> transformer =
+                StartDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1232,7 +1227,7 @@ public class DbSystemClient implements DbSystem {
                         "StartHeatWaveCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/StartHeatWaveCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartHeatWaveClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StartHeatWaveClusterResponse>
                 transformer =
                         StartHeatWaveClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1271,7 +1266,7 @@ public class DbSystemClient implements DbSystem {
                         "StopAnalyticsCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/StopAnalyticsCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopAnalyticsClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StopAnalyticsClusterResponse>
                 transformer =
                         StopAnalyticsClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1310,9 +1305,8 @@ public class DbSystemClient implements DbSystem {
                         "StopDbSystem",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/StopDbSystem");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopDbSystemResponse>
-                transformer =
-                        StopDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, StopDbSystemResponse> transformer =
+                StopDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1351,7 +1345,7 @@ public class DbSystemClient implements DbSystem {
                         "StopHeatWaveCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/StopHeatWaveCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopHeatWaveClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StopHeatWaveClusterResponse>
                 transformer =
                         StopHeatWaveClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1390,7 +1384,7 @@ public class DbSystemClient implements DbSystem {
                         "UpdateAnalyticsCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/UpdateAnalyticsCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAnalyticsClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAnalyticsClusterResponse>
                 transformer =
                         UpdateAnalyticsClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1431,9 +1425,8 @@ public class DbSystemClient implements DbSystem {
                         "UpdateDbSystem",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/UpdateDbSystem");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDbSystemResponse>
-                transformer =
-                        UpdateDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDbSystemResponse> transformer =
+                UpdateDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1472,7 +1465,7 @@ public class DbSystemClient implements DbSystem {
                         "UpdateHeatWaveCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/UpdateHeatWaveCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHeatWaveClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateHeatWaveClusterResponse>
                 transformer =
                         UpdateHeatWaveClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

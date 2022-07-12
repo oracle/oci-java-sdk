@@ -6,7 +6,6 @@ package com.oracle.bmc.dataconnectivity;
 
 import com.oracle.bmc.dataconnectivity.requests.*;
 import com.oracle.bmc.dataconnectivity.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -104,17 +103,16 @@ public class DataConnectivityManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetEndpointRequest, GetEndpointResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetEndpointRequest, GetEndpointResponse>() {
                             @Override
                             public GetEndpointResponse apply(GetEndpointRequest request) {
                                 return client.getEndpoint(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetEndpointResponse>() {
+                        new java.util.function.Predicate<GetEndpointResponse>() {
                             @Override
-                            public boolean apply(GetEndpointResponse response) {
+                            public boolean test(GetEndpointResponse response) {
                                 return targetStatesSet.contains(
                                         response.getEndpoint().getLifecycleState());
                             }
@@ -203,17 +201,16 @@ public class DataConnectivityManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetRegistryRequest, GetRegistryResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetRegistryRequest, GetRegistryResponse>() {
                             @Override
                             public GetRegistryResponse apply(GetRegistryRequest request) {
                                 return client.getRegistry(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetRegistryResponse>() {
+                        new java.util.function.Predicate<GetRegistryResponse>() {
                             @Override
-                            public boolean apply(GetRegistryResponse response) {
+                            public boolean test(GetRegistryResponse response) {
                                 return targetStatesSet.contains(
                                         response.getRegistry().getLifecycleState());
                             }
@@ -261,17 +258,17 @@ public class DataConnectivityManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

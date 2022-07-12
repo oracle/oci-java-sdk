@@ -4,12 +4,11 @@
  */
 package com.oracle.bmc.util.internal;
 
-import com.google.common.base.Function;
-
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.function.Function;
 
 /**
  * Future that both delegates to another one and provides the ability to transform

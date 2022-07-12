@@ -6,7 +6,6 @@ package com.oracle.bmc.events;
 
 import com.oracle.bmc.events.requests.*;
 import com.oracle.bmc.events.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -101,16 +100,16 @@ public class EventsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetRuleRequest, GetRuleResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetRuleRequest, GetRuleResponse>() {
                             @Override
                             public GetRuleResponse apply(GetRuleRequest request) {
                                 return client.getRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetRuleResponse>() {
+                        new java.util.function.Predicate<GetRuleResponse>() {
                             @Override
-                            public boolean apply(GetRuleResponse response) {
+                            public boolean test(GetRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getRule().getLifecycleState());
                             }

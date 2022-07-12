@@ -6,7 +6,6 @@ package com.oracle.bmc.applicationmigration;
 
 import com.oracle.bmc.applicationmigration.requests.*;
 import com.oracle.bmc.applicationmigration.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -104,17 +103,17 @@ public class ApplicationMigrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetMigrationRequest, GetMigrationResponse>() {
                             @Override
                             public GetMigrationResponse apply(GetMigrationRequest request) {
                                 return client.getMigration(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetMigrationResponse>() {
+                        new java.util.function.Predicate<GetMigrationResponse>() {
                             @Override
-                            public boolean apply(GetMigrationResponse response) {
+                            public boolean test(GetMigrationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getMigration().getLifecycleState());
                             }
@@ -203,16 +202,16 @@ public class ApplicationMigrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetSourceRequest, GetSourceResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetSourceRequest, GetSourceResponse>() {
                             @Override
                             public GetSourceResponse apply(GetSourceRequest request) {
                                 return client.getSource(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSourceResponse>() {
+                        new java.util.function.Predicate<GetSourceResponse>() {
                             @Override
-                            public boolean apply(GetSourceResponse response) {
+                            public boolean test(GetSourceResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSource().getLifecycleState());
                             }
@@ -260,17 +259,17 @@ public class ApplicationMigrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

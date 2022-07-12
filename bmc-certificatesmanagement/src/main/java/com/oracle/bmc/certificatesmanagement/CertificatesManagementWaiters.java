@@ -6,7 +6,6 @@ package com.oracle.bmc.certificatesmanagement;
 
 import com.oracle.bmc.certificatesmanagement.requests.*;
 import com.oracle.bmc.certificatesmanagement.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -111,17 +110,17 @@ public class CertificatesManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetAssociationRequest, GetAssociationResponse>() {
                             @Override
                             public GetAssociationResponse apply(GetAssociationRequest request) {
                                 return client.getAssociation(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAssociationResponse>() {
+                        new java.util.function.Predicate<GetAssociationResponse>() {
                             @Override
-                            public boolean apply(GetAssociationResponse response) {
+                            public boolean test(GetAssociationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAssociation().getLifecycleState());
                             }
@@ -209,17 +208,16 @@ public class CertificatesManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetCaBundleRequest, GetCaBundleResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetCaBundleRequest, GetCaBundleResponse>() {
                             @Override
                             public GetCaBundleResponse apply(GetCaBundleRequest request) {
                                 return client.getCaBundle(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCaBundleResponse>() {
+                        new java.util.function.Predicate<GetCaBundleResponse>() {
                             @Override
-                            public boolean apply(GetCaBundleResponse response) {
+                            public boolean test(GetCaBundleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCaBundle().getLifecycleState());
                             }
@@ -316,17 +314,17 @@ public class CertificatesManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetCertificateRequest, GetCertificateResponse>() {
                             @Override
                             public GetCertificateResponse apply(GetCertificateRequest request) {
                                 return client.getCertificate(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCertificateResponse>() {
+                        new java.util.function.Predicate<GetCertificateResponse>() {
                             @Override
-                            public boolean apply(GetCertificateResponse response) {
+                            public boolean test(GetCertificateResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCertificate().getLifecycleState());
                             }
@@ -432,8 +430,8 @@ public class CertificatesManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetCertificateAuthorityRequest, GetCertificateAuthorityResponse>() {
                             @Override
                             public GetCertificateAuthorityResponse apply(
@@ -441,9 +439,9 @@ public class CertificatesManagementWaiters {
                                 return client.getCertificateAuthority(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCertificateAuthorityResponse>() {
+                        new java.util.function.Predicate<GetCertificateAuthorityResponse>() {
                             @Override
-                            public boolean apply(GetCertificateAuthorityResponse response) {
+                            public boolean test(GetCertificateAuthorityResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCertificateAuthority().getLifecycleState());
                             }

@@ -45,19 +45,19 @@ public class GoldenGatePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDatabaseRegistrationsRequest.Builder, ListDatabaseRegistrationsRequest,
                 ListDatabaseRegistrationsResponse>(
-                new com.google.common.base.Supplier<ListDatabaseRegistrationsRequest.Builder>() {
+                new java.util.function.Supplier<ListDatabaseRegistrationsRequest.Builder>() {
                     @Override
                     public ListDatabaseRegistrationsRequest.Builder get() {
                         return ListDatabaseRegistrationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDatabaseRegistrationsResponse, String>() {
+                new java.util.function.Function<ListDatabaseRegistrationsResponse, String>() {
                     @Override
                     public String apply(ListDatabaseRegistrationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDatabaseRegistrationsRequest.Builder>,
                         ListDatabaseRegistrationsRequest>() {
@@ -70,12 +70,12 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDatabaseRegistrationsRequest, ListDatabaseRegistrationsResponse>() {
                     @Override
                     public ListDatabaseRegistrationsResponse apply(
@@ -101,19 +101,19 @@ public class GoldenGatePaginators {
                 ListDatabaseRegistrationsRequest.Builder, ListDatabaseRegistrationsRequest,
                 ListDatabaseRegistrationsResponse,
                 com.oracle.bmc.goldengate.model.DatabaseRegistrationSummary>(
-                new com.google.common.base.Supplier<ListDatabaseRegistrationsRequest.Builder>() {
+                new java.util.function.Supplier<ListDatabaseRegistrationsRequest.Builder>() {
                     @Override
                     public ListDatabaseRegistrationsRequest.Builder get() {
                         return ListDatabaseRegistrationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDatabaseRegistrationsResponse, String>() {
+                new java.util.function.Function<ListDatabaseRegistrationsResponse, String>() {
                     @Override
                     public String apply(ListDatabaseRegistrationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDatabaseRegistrationsRequest.Builder>,
                         ListDatabaseRegistrationsRequest>() {
@@ -126,12 +126,12 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDatabaseRegistrationsRequest, ListDatabaseRegistrationsResponse>() {
                     @Override
                     public ListDatabaseRegistrationsResponse apply(
@@ -139,7 +139,7 @@ public class GoldenGatePaginators {
                         return client.listDatabaseRegistrations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDatabaseRegistrationsResponse,
                         java.util.List<
                                 com.oracle.bmc.goldengate.model.DatabaseRegistrationSummary>>() {
@@ -164,19 +164,19 @@ public class GoldenGatePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDeploymentBackupsRequest.Builder, ListDeploymentBackupsRequest,
                 ListDeploymentBackupsResponse>(
-                new com.google.common.base.Supplier<ListDeploymentBackupsRequest.Builder>() {
+                new java.util.function.Supplier<ListDeploymentBackupsRequest.Builder>() {
                     @Override
                     public ListDeploymentBackupsRequest.Builder get() {
                         return ListDeploymentBackupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeploymentBackupsResponse, String>() {
+                new java.util.function.Function<ListDeploymentBackupsResponse, String>() {
                     @Override
                     public String apply(ListDeploymentBackupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeploymentBackupsRequest.Builder>,
                         ListDeploymentBackupsRequest>() {
@@ -189,12 +189,12 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeploymentBackupsRequest, ListDeploymentBackupsResponse>() {
                     @Override
                     public ListDeploymentBackupsResponse apply(
@@ -219,19 +219,19 @@ public class GoldenGatePaginators {
                 ListDeploymentBackupsRequest.Builder, ListDeploymentBackupsRequest,
                 ListDeploymentBackupsResponse,
                 com.oracle.bmc.goldengate.model.DeploymentBackupSummary>(
-                new com.google.common.base.Supplier<ListDeploymentBackupsRequest.Builder>() {
+                new java.util.function.Supplier<ListDeploymentBackupsRequest.Builder>() {
                     @Override
                     public ListDeploymentBackupsRequest.Builder get() {
                         return ListDeploymentBackupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeploymentBackupsResponse, String>() {
+                new java.util.function.Function<ListDeploymentBackupsResponse, String>() {
                     @Override
                     public String apply(ListDeploymentBackupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeploymentBackupsRequest.Builder>,
                         ListDeploymentBackupsRequest>() {
@@ -244,12 +244,12 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeploymentBackupsRequest, ListDeploymentBackupsResponse>() {
                     @Override
                     public ListDeploymentBackupsResponse apply(
@@ -257,7 +257,7 @@ public class GoldenGatePaginators {
                         return client.listDeploymentBackups(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeploymentBackupsResponse,
                         java.util.List<com.oracle.bmc.goldengate.model.DeploymentBackupSummary>>() {
                     @Override
@@ -280,19 +280,19 @@ public class GoldenGatePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDeploymentUpgradesRequest.Builder, ListDeploymentUpgradesRequest,
                 ListDeploymentUpgradesResponse>(
-                new com.google.common.base.Supplier<ListDeploymentUpgradesRequest.Builder>() {
+                new java.util.function.Supplier<ListDeploymentUpgradesRequest.Builder>() {
                     @Override
                     public ListDeploymentUpgradesRequest.Builder get() {
                         return ListDeploymentUpgradesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeploymentUpgradesResponse, String>() {
+                new java.util.function.Function<ListDeploymentUpgradesResponse, String>() {
                     @Override
                     public String apply(ListDeploymentUpgradesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeploymentUpgradesRequest.Builder>,
                         ListDeploymentUpgradesRequest>() {
@@ -305,12 +305,12 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeploymentUpgradesRequest, ListDeploymentUpgradesResponse>() {
                     @Override
                     public ListDeploymentUpgradesResponse apply(
@@ -335,19 +335,19 @@ public class GoldenGatePaginators {
                 ListDeploymentUpgradesRequest.Builder, ListDeploymentUpgradesRequest,
                 ListDeploymentUpgradesResponse,
                 com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary>(
-                new com.google.common.base.Supplier<ListDeploymentUpgradesRequest.Builder>() {
+                new java.util.function.Supplier<ListDeploymentUpgradesRequest.Builder>() {
                     @Override
                     public ListDeploymentUpgradesRequest.Builder get() {
                         return ListDeploymentUpgradesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeploymentUpgradesResponse, String>() {
+                new java.util.function.Function<ListDeploymentUpgradesResponse, String>() {
                     @Override
                     public String apply(ListDeploymentUpgradesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeploymentUpgradesRequest.Builder>,
                         ListDeploymentUpgradesRequest>() {
@@ -360,12 +360,12 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeploymentUpgradesRequest, ListDeploymentUpgradesResponse>() {
                     @Override
                     public ListDeploymentUpgradesResponse apply(
@@ -373,7 +373,7 @@ public class GoldenGatePaginators {
                         return client.listDeploymentUpgrades(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeploymentUpgradesResponse,
                         java.util.List<
                                 com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary>>() {
@@ -396,19 +396,19 @@ public class GoldenGatePaginators {
             final ListDeploymentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDeploymentsRequest.Builder, ListDeploymentsRequest, ListDeploymentsResponse>(
-                new com.google.common.base.Supplier<ListDeploymentsRequest.Builder>() {
+                new java.util.function.Supplier<ListDeploymentsRequest.Builder>() {
                     @Override
                     public ListDeploymentsRequest.Builder get() {
                         return ListDeploymentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeploymentsResponse, String>() {
+                new java.util.function.Function<ListDeploymentsResponse, String>() {
                     @Override
                     public String apply(ListDeploymentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeploymentsRequest.Builder>,
                         ListDeploymentsRequest>() {
@@ -421,13 +421,12 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListDeploymentsRequest, ListDeploymentsResponse>() {
+                new java.util.function.Function<ListDeploymentsRequest, ListDeploymentsResponse>() {
                     @Override
                     public ListDeploymentsResponse apply(ListDeploymentsRequest request) {
                         return client.listDeployments(request);
@@ -449,19 +448,19 @@ public class GoldenGatePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDeploymentsRequest.Builder, ListDeploymentsRequest, ListDeploymentsResponse,
                 com.oracle.bmc.goldengate.model.DeploymentSummary>(
-                new com.google.common.base.Supplier<ListDeploymentsRequest.Builder>() {
+                new java.util.function.Supplier<ListDeploymentsRequest.Builder>() {
                     @Override
                     public ListDeploymentsRequest.Builder get() {
                         return ListDeploymentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeploymentsResponse, String>() {
+                new java.util.function.Function<ListDeploymentsResponse, String>() {
                     @Override
                     public String apply(ListDeploymentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeploymentsRequest.Builder>,
                         ListDeploymentsRequest>() {
@@ -474,19 +473,18 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListDeploymentsRequest, ListDeploymentsResponse>() {
+                new java.util.function.Function<ListDeploymentsRequest, ListDeploymentsResponse>() {
                     @Override
                     public ListDeploymentsResponse apply(ListDeploymentsRequest request) {
                         return client.listDeployments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeploymentsResponse,
                         java.util.List<com.oracle.bmc.goldengate.model.DeploymentSummary>>() {
                     @Override
@@ -509,19 +507,19 @@ public class GoldenGatePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -534,12 +532,12 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -563,19 +561,19 @@ public class GoldenGatePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse, com.oracle.bmc.goldengate.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -588,12 +586,12 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -601,7 +599,7 @@ public class GoldenGatePaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<com.oracle.bmc.goldengate.model.WorkRequestError>>() {
                     @Override
@@ -624,19 +622,19 @@ public class GoldenGatePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -649,12 +647,12 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -677,19 +675,19 @@ public class GoldenGatePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse, com.oracle.bmc.goldengate.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -702,19 +700,19 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<com.oracle.bmc.goldengate.model.WorkRequestLogEntry>>() {
                     @Override
@@ -736,19 +734,19 @@ public class GoldenGatePaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -761,12 +759,12 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -789,19 +787,19 @@ public class GoldenGatePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.goldengate.model.WorkRequest>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -814,19 +812,19 @@ public class GoldenGatePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<com.oracle.bmc.goldengate.model.WorkRequest>>() {
                     @Override

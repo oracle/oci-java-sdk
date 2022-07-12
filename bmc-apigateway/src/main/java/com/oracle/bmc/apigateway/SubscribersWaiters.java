@@ -6,7 +6,6 @@ package com.oracle.bmc.apigateway;
 
 import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -103,17 +102,17 @@ public class SubscribersWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetSubscriberRequest, GetSubscriberResponse>() {
                             @Override
                             public GetSubscriberResponse apply(GetSubscriberRequest request) {
                                 return client.getSubscriber(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSubscriberResponse>() {
+                        new java.util.function.Predicate<GetSubscriberResponse>() {
                             @Override
-                            public boolean apply(GetSubscriberResponse response) {
+                            public boolean test(GetSubscriberResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSubscriber().getLifecycleState());
                             }

@@ -9,7 +9,6 @@ import com.oracle.bmc.loganalytics.requests.*;
 import com.oracle.bmc.loganalytics.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class LogAnalyticsClient implements LogAnalytics {
@@ -335,9 +334,9 @@ public class LogAnalyticsClient implements LogAnalytics {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("LogAnalytics-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("LogAnalytics-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class LogAnalyticsClient implements LogAnalytics {
          * @return the client
          */
         public LogAnalyticsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class LogAnalyticsClient implements LogAnalytics {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "AddEntityAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/AddEntityAssociation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddEntityAssociationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddEntityAssociationResponse>
                 transformer =
                         AddEntityAssociationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -530,7 +530,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "AddSourceEventTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/AddSourceEventTypes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddSourceEventTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddSourceEventTypesResponse>
                 transformer =
                         AddSourceEventTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -581,7 +581,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                             "AppendLookupData",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/AppendLookupData");
-            com.google.common.base.Function<javax.ws.rs.core.Response, AppendLookupDataResponse>
+            java.util.function.Function<javax.ws.rs.core.Response, AppendLookupDataResponse>
                     transformer =
                             AppendLookupDataConverter.fromResponse(
                                     java.util.Optional.of(serviceDetails));
@@ -644,7 +644,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "BatchGetBasicInfo",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/BatchGetBasicInfo");
-        com.google.common.base.Function<javax.ws.rs.core.Response, BatchGetBasicInfoResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, BatchGetBasicInfoResponse>
                 transformer =
                         BatchGetBasicInfoConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -686,7 +686,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "CancelQueryWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/CancelQueryWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelQueryWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelQueryWorkRequestResponse>
                 transformer =
                         CancelQueryWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -727,7 +727,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ChangeLogAnalyticsEmBridgeCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/ChangeLogAnalyticsEmBridgeCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeLogAnalyticsEmBridgeCompartmentResponse>
                 transformer =
                         ChangeLogAnalyticsEmBridgeCompartmentConverter.fromResponse(
@@ -773,7 +773,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ChangeLogAnalyticsEntityCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ChangeLogAnalyticsEntityCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeLogAnalyticsEntityCompartmentResponse>
                 transformer =
                         ChangeLogAnalyticsEntityCompartmentConverter.fromResponse(
@@ -819,7 +819,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ChangeLogAnalyticsLogGroupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/ChangeLogAnalyticsLogGroupCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeLogAnalyticsLogGroupCompartmentResponse>
                 transformer =
                         ChangeLogAnalyticsLogGroupCompartmentConverter.fromResponse(
@@ -866,7 +866,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ChangeLogAnalyticsObjectCollectionRuleCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/ChangeLogAnalyticsObjectCollectionRuleCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeLogAnalyticsObjectCollectionRuleCompartmentResponse>
                 transformer =
@@ -912,7 +912,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ChangeScheduledTaskCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ChangeScheduledTaskCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeScheduledTaskCompartmentResponse>
                 transformer =
                         ChangeScheduledTaskCompartmentConverter.fromResponse(
@@ -955,7 +955,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "Clean",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Clean");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CleanResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CleanResponse> transformer =
                 CleanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -991,9 +991,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "CompareContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/CompareContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CompareContentResponse>
-                transformer =
-                        CompareContentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CompareContentResponse> transformer =
+                CompareContentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1033,8 +1032,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "CreateLogAnalyticsEmBridge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/CreateLogAnalyticsEmBridge");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateLogAnalyticsEmBridgeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLogAnalyticsEmBridgeResponse>
                 transformer =
                         CreateLogAnalyticsEmBridgeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1078,7 +1076,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "CreateLogAnalyticsEntity",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/CreateLogAnalyticsEntity");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateLogAnalyticsEntityResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLogAnalyticsEntityResponse>
                 transformer =
                         CreateLogAnalyticsEntityConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1121,8 +1119,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "CreateLogAnalyticsEntityType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/CreateLogAnalyticsEntityType");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateLogAnalyticsEntityTypeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLogAnalyticsEntityTypeResponse>
                 transformer =
                         CreateLogAnalyticsEntityTypeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1166,8 +1163,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "CreateLogAnalyticsLogGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/CreateLogAnalyticsLogGroup");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateLogAnalyticsLogGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLogAnalyticsLogGroupResponse>
                 transformer =
                         CreateLogAnalyticsLogGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1211,7 +1207,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "CreateLogAnalyticsObjectCollectionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/CreateLogAnalyticsObjectCollectionRule");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateLogAnalyticsObjectCollectionRuleResponse>
                 transformer =
                         CreateLogAnalyticsObjectCollectionRuleConverter.fromResponse(
@@ -1255,7 +1251,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "CreateScheduledTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/CreateScheduledTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateScheduledTaskResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateScheduledTaskResponse>
                 transformer =
                         CreateScheduledTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1297,7 +1293,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/DeleteAssociations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAssociationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAssociationsResponse>
                 transformer =
                         DeleteAssociationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1340,9 +1336,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteField",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/DeleteField");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFieldResponse>
-                transformer =
-                        DeleteFieldConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteFieldResponse> transformer =
+                DeleteFieldConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1378,9 +1373,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteLabel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/DeleteLabel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLabelResponse>
-                transformer =
-                        DeleteLabelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLabelResponse> transformer =
+                DeleteLabelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1416,8 +1410,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteLogAnalyticsEmBridge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/DeleteLogAnalyticsEmBridge");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteLogAnalyticsEmBridgeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogAnalyticsEmBridgeResponse>
                 transformer =
                         DeleteLogAnalyticsEmBridgeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1456,7 +1449,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteLogAnalyticsEntity",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/DeleteLogAnalyticsEntity");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLogAnalyticsEntityResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogAnalyticsEntityResponse>
                 transformer =
                         DeleteLogAnalyticsEntityConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1495,8 +1488,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteLogAnalyticsEntityType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/DeleteLogAnalyticsEntityType");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteLogAnalyticsEntityTypeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogAnalyticsEntityTypeResponse>
                 transformer =
                         DeleteLogAnalyticsEntityTypeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1535,8 +1527,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteLogAnalyticsLogGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/DeleteLogAnalyticsLogGroup");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteLogAnalyticsLogGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogAnalyticsLogGroupResponse>
                 transformer =
                         DeleteLogAnalyticsLogGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1576,7 +1567,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteLogAnalyticsObjectCollectionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/DeleteLogAnalyticsObjectCollectionRule");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteLogAnalyticsObjectCollectionRuleResponse>
                 transformer =
                         DeleteLogAnalyticsObjectCollectionRuleConverter.fromResponse(
@@ -1616,9 +1607,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteLookup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/DeleteLookup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLookupResponse>
-                transformer =
-                        DeleteLookupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLookupResponse> transformer =
+                DeleteLookupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1654,9 +1644,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteParser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/DeleteParser");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteParserResponse>
-                transformer =
-                        DeleteParserConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteParserResponse> transformer =
+                DeleteParserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1691,7 +1680,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteScheduledTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/DeleteScheduledTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteScheduledTaskResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteScheduledTaskResponse>
                 transformer =
                         DeleteScheduledTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1730,9 +1719,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DeleteSource");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSourceResponse>
-                transformer =
-                        DeleteSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSourceResponse> transformer =
+                DeleteSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1767,9 +1755,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteUpload",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUpload");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUploadResponse>
-                transformer =
-                        DeleteUploadConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteUploadResponse> transformer =
+                DeleteUploadConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1804,7 +1791,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteUploadFile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUploadFile");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUploadFileResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteUploadFileResponse>
                 transformer =
                         DeleteUploadFileConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1842,7 +1829,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DeleteUploadWarning",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUploadWarning");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUploadWarningResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteUploadWarningResponse>
                 transformer =
                         DeleteUploadWarningConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1880,7 +1867,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DisableArchiving",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/DisableArchiving");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DisableArchivingResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DisableArchivingResponse>
                 transformer =
                         DisableArchivingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1920,7 +1907,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DisableAutoAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DisableAutoAssociation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DisableAutoAssociationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DisableAutoAssociationResponse>
                 transformer =
                         DisableAutoAssociationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1963,7 +1950,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "DisableSourceEventTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DisableSourceEventTypes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DisableSourceEventTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DisableSourceEventTypesResponse>
                 transformer =
                         DisableSourceEventTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2004,7 +1991,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "EnableArchiving",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EnableArchiving");
-        com.google.common.base.Function<javax.ws.rs.core.Response, EnableArchivingResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, EnableArchivingResponse>
                 transformer =
                         EnableArchivingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2044,7 +2031,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "EnableAutoAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/EnableAutoAssociation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, EnableAutoAssociationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, EnableAutoAssociationResponse>
                 transformer =
                         EnableAutoAssociationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2087,7 +2074,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "EnableSourceEventTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/EnableSourceEventTypes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, EnableSourceEventTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, EnableSourceEventTypesResponse>
                 transformer =
                         EnableSourceEventTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2130,7 +2117,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "EstimatePurgeDataSize",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimatePurgeDataSize");
-        com.google.common.base.Function<javax.ws.rs.core.Response, EstimatePurgeDataSizeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, EstimatePurgeDataSizeResponse>
                 transformer =
                         EstimatePurgeDataSizeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2172,7 +2159,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "EstimateRecallDataSize",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimateRecallDataSize");
-        com.google.common.base.Function<javax.ws.rs.core.Response, EstimateRecallDataSizeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, EstimateRecallDataSizeResponse>
                 transformer =
                         EstimateRecallDataSizeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2214,7 +2201,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "EstimateReleaseDataSize",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimateReleaseDataSize");
-        com.google.common.base.Function<javax.ws.rs.core.Response, EstimateReleaseDataSizeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, EstimateReleaseDataSizeResponse>
                 transformer =
                         EstimateReleaseDataSizeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2263,7 +2250,7 @@ public class LogAnalyticsClient implements LogAnalytics {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LogAnalytics", "ExportCustomContent", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ExportCustomContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ExportCustomContentResponse>
                 transformer =
                         ExportCustomContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2314,7 +2301,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ExportQueryResult",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/ExportQueryResult");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ExportQueryResultResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ExportQueryResultResponse>
                 transformer =
                         ExportQueryResultConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2357,7 +2344,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ExtractStructuredLogFieldPaths",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ExtractStructuredLogFieldPaths");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ExtractStructuredLogFieldPathsResponse>
                 transformer =
                         ExtractStructuredLogFieldPathsConverter.fromResponse(
@@ -2401,7 +2388,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ExtractStructuredLogHeaderPaths",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ExtractStructuredLogHeaderPaths");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ExtractStructuredLogHeaderPathsResponse>
                 transformer =
                         ExtractStructuredLogHeaderPathsConverter.fromResponse(
@@ -2442,7 +2429,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "Filter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Filter");
-        com.google.common.base.Function<javax.ws.rs.core.Response, FilterResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, FilterResponse> transformer =
                 FilterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2482,7 +2469,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetAssociationSummary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/GetAssociationSummary");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAssociationSummaryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAssociationSummaryResponse>
                 transformer =
                         GetAssociationSummaryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2519,9 +2506,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetCategory",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/GetCategory");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCategoryResponse>
-                transformer =
-                        GetCategoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetCategoryResponse> transformer =
+                GetCategoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2556,9 +2542,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetColumnNames",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetColumnNames");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetColumnNamesResponse>
-                transformer =
-                        GetColumnNamesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetColumnNamesResponse> transformer =
+                GetColumnNamesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2592,7 +2577,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetConfigWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsConfigWorkRequest/GetConfigWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetConfigWorkRequestResponse>
                 transformer =
                         GetConfigWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2628,7 +2613,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetField",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetField");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetFieldResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetFieldResponse> transformer =
                 GetFieldConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2663,7 +2648,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetFieldsSummary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetFieldsSummary");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetFieldsSummaryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetFieldsSummaryResponse>
                 transformer =
                         GetFieldsSummaryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2699,7 +2684,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLabel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/GetLabel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLabelResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetLabelResponse> transformer =
                 GetLabelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2734,7 +2719,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLabelSummary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/GetLabelSummary");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLabelSummaryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLabelSummaryResponse>
                 transformer =
                         GetLabelSummaryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2772,7 +2757,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLogAnalyticsEmBridge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/GetLogAnalyticsEmBridge");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLogAnalyticsEmBridgeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogAnalyticsEmBridgeResponse>
                 transformer =
                         GetLogAnalyticsEmBridgeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2810,7 +2795,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLogAnalyticsEmBridgeSummary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/GetLogAnalyticsEmBridgeSummary");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsEmBridgeSummaryResponse>
                 transformer =
                         GetLogAnalyticsEmBridgeSummaryConverter.fromResponse(
@@ -2849,7 +2834,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLogAnalyticsEntitiesSummary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/GetLogAnalyticsEntitiesSummary");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsEntitiesSummaryResponse>
                 transformer =
                         GetLogAnalyticsEntitiesSummaryConverter.fromResponse(
@@ -2888,7 +2873,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLogAnalyticsEntity",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/GetLogAnalyticsEntity");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLogAnalyticsEntityResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogAnalyticsEntityResponse>
                 transformer =
                         GetLogAnalyticsEntityConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2926,8 +2911,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLogAnalyticsEntityType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/GetLogAnalyticsEntityType");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetLogAnalyticsEntityTypeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogAnalyticsEntityTypeResponse>
                 transformer =
                         GetLogAnalyticsEntityTypeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2965,7 +2949,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLogAnalyticsLogGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/GetLogAnalyticsLogGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLogAnalyticsLogGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogAnalyticsLogGroupResponse>
                 transformer =
                         GetLogAnalyticsLogGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3003,7 +2987,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLogAnalyticsLogGroupsSummary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/GetLogAnalyticsLogGroupsSummary");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsLogGroupsSummaryResponse>
                 transformer =
                         GetLogAnalyticsLogGroupsSummaryConverter.fromResponse(
@@ -3043,7 +3027,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLogAnalyticsObjectCollectionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/GetLogAnalyticsObjectCollectionRule");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsObjectCollectionRuleResponse>
                 transformer =
                         GetLogAnalyticsObjectCollectionRuleConverter.fromResponse(
@@ -3081,7 +3065,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLogSetsCount",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetLogSetsCount");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLogSetsCountResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogSetsCountResponse>
                 transformer =
                         GetLogSetsCountConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3117,7 +3101,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLookup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/GetLookup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLookupResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetLookupResponse> transformer =
                 GetLookupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3152,7 +3136,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetLookupSummary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/GetLookupSummary");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLookupSummaryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLookupSummaryResponse>
                 transformer =
                         GetLookupSummaryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3189,9 +3173,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/GetNamespace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNamespaceResponse>
-                transformer =
-                        GetNamespaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetNamespaceResponse> transformer =
+                GetNamespaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3224,7 +3207,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetParser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/GetParser");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetParserResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetParserResponse> transformer =
                 GetParserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3259,7 +3242,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetParserSummary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/GetParserSummary");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetParserSummaryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetParserSummaryResponse>
                 transformer =
                         GetParserSummaryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3296,9 +3279,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetPreferences",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/GetPreferences");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPreferencesResponse>
-                transformer =
-                        GetPreferencesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetPreferencesResponse> transformer =
+                GetPreferencesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3332,9 +3314,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetQueryResult",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/GetQueryResult");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetQueryResultResponse>
-                transformer =
-                        GetQueryResultConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetQueryResultResponse> transformer =
+                GetQueryResultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3368,7 +3349,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetQueryWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/GetQueryWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetQueryWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetQueryWorkRequestResponse>
                 transformer =
                         GetQueryWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3405,7 +3386,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetScheduledTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/GetScheduledTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduledTaskResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetScheduledTaskResponse>
                 transformer =
                         GetScheduledTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3441,7 +3422,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetSource");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSourceResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetSourceResponse> transformer =
                 GetSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3476,7 +3457,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetSourceSummary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetSourceSummary");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSourceSummaryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSourceSummaryResponse>
                 transformer =
                         GetSourceSummaryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3512,7 +3493,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetStorage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetStorageResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetStorageResponse> transformer =
                 GetStorageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3547,7 +3528,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetStorageUsage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorageUsage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetStorageUsageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetStorageUsageResponse>
                 transformer =
                         GetStorageUsageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3585,7 +3566,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetStorageWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorageWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetStorageWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetStorageWorkRequestResponse>
                 transformer =
                         GetStorageWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3623,7 +3604,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetUnprocessedDataBucket",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/GetUnprocessedDataBucket");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetUnprocessedDataBucketResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetUnprocessedDataBucketResponse>
                 transformer =
                         GetUnprocessedDataBucketConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3659,7 +3640,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetUpload",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/GetUpload");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetUploadResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetUploadResponse> transformer =
                 GetUploadConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3694,9 +3675,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3740,7 +3720,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                             "ImportCustomContent",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsImportCustomContent/ImportCustomContent");
-            com.google.common.base.Function<javax.ws.rs.core.Response, ImportCustomContentResponse>
+            java.util.function.Function<javax.ws.rs.core.Response, ImportCustomContentResponse>
                     transformer =
                             ImportCustomContentConverter.fromResponse(
                                     java.util.Optional.of(serviceDetails));
@@ -3806,7 +3786,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListAssociableEntities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListAssociableEntities");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAssociableEntitiesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAssociableEntitiesResponse>
                 transformer =
                         ListAssociableEntitiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3844,7 +3824,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListAssociatedEntities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListAssociatedEntities");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAssociatedEntitiesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAssociatedEntitiesResponse>
                 transformer =
                         ListAssociatedEntitiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3881,7 +3861,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListAutoAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListAutoAssociations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAutoAssociationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAutoAssociationsResponse>
                 transformer =
                         ListAutoAssociationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3918,9 +3898,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListCategories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/ListCategories");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCategoriesResponse>
-                transformer =
-                        ListCategoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListCategoriesResponse> transformer =
+                ListCategoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3955,7 +3934,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListConfigWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsConfigWorkRequest/ListConfigWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListConfigWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListConfigWorkRequestsResponse>
                 transformer =
                         ListConfigWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3993,7 +3972,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListEntityAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ListEntityAssociations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListEntityAssociationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListEntityAssociationsResponse>
                 transformer =
                         ListEntityAssociationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4031,8 +4010,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListEntitySourceAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListEntitySourceAssociations");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListEntitySourceAssociationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListEntitySourceAssociationsResponse>
                 transformer =
                         ListEntitySourceAssociationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4068,7 +4046,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListFields",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/ListFields");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListFieldsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListFieldsResponse> transformer =
                 ListFieldsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4103,7 +4081,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListLabelPriorities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabelPriorities");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLabelPrioritiesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLabelPrioritiesResponse>
                 transformer =
                         ListLabelPrioritiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4141,7 +4119,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListLabelSourceDetails",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabelSourceDetails");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLabelSourceDetailsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLabelSourceDetailsResponse>
                 transformer =
                         ListLabelSourceDetailsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4177,7 +4155,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListLabels",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabels");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLabelsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListLabelsResponse> transformer =
                 ListLabelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4213,8 +4191,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListLogAnalyticsEmBridges",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/ListLogAnalyticsEmBridges");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListLogAnalyticsEmBridgesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogAnalyticsEmBridgesResponse>
                 transformer =
                         ListLogAnalyticsEmBridgesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4252,7 +4229,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListLogAnalyticsEntities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ListLogAnalyticsEntities");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLogAnalyticsEntitiesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogAnalyticsEntitiesResponse>
                 transformer =
                         ListLogAnalyticsEntitiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4290,7 +4267,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListLogAnalyticsEntityTopology",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntitySummary/ListLogAnalyticsEntityTopology");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListLogAnalyticsEntityTopologyResponse>
                 transformer =
                         ListLogAnalyticsEntityTopologyConverter.fromResponse(
@@ -4329,8 +4306,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListLogAnalyticsEntityTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/ListLogAnalyticsEntityTypes");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListLogAnalyticsEntityTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogAnalyticsEntityTypesResponse>
                 transformer =
                         ListLogAnalyticsEntityTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4368,8 +4344,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListLogAnalyticsLogGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/ListLogAnalyticsLogGroups");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListLogAnalyticsLogGroupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogAnalyticsLogGroupsResponse>
                 transformer =
                         ListLogAnalyticsLogGroupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4408,7 +4383,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListLogAnalyticsObjectCollectionRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/ListLogAnalyticsObjectCollectionRules");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListLogAnalyticsObjectCollectionRulesResponse>
                 transformer =
                         ListLogAnalyticsObjectCollectionRulesConverter.fromResponse(
@@ -4446,9 +4421,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListLogSets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListLogSets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLogSetsResponse>
-                transformer =
-                        ListLogSetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogSetsResponse> transformer =
+                ListLogSetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4482,9 +4456,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListLookups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/ListLookups");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLookupsResponse>
-                transformer =
-                        ListLookupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListLookupsResponse> transformer =
+                ListLookupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4518,7 +4491,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListMetaSourceTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListMetaSourceTypes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMetaSourceTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMetaSourceTypesResponse>
                 transformer =
                         ListMetaSourceTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4555,9 +4528,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListNamespaces",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/ListNamespaces");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListNamespacesResponse>
-                transformer =
-                        ListNamespacesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListNamespacesResponse> transformer =
+                ListNamespacesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4591,7 +4563,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListParserFunctions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserFunctions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListParserFunctionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListParserFunctionsResponse>
                 transformer =
                         ListParserFunctionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4629,7 +4601,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListParserMetaPlugins",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserMetaPlugins");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListParserMetaPluginsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListParserMetaPluginsResponse>
                 transformer =
                         ListParserMetaPluginsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4666,9 +4638,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListParsers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParsers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListParsersResponse>
-                transformer =
-                        ListParsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListParsersResponse> transformer =
+                ListParsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4703,7 +4674,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListQueryWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/ListQueryWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListQueryWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListQueryWorkRequestsResponse>
                 transformer =
                         ListQueryWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4740,7 +4711,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListRecalledData",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListRecalledData");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRecalledDataResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRecalledDataResponse>
                 transformer =
                         ListRecalledDataConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4778,7 +4749,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListResourceCategories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/ListResourceCategories");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListResourceCategoriesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListResourceCategoriesResponse>
                 transformer =
                         ListResourceCategoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4815,7 +4786,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListScheduledTasks",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ListScheduledTasks");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListScheduledTasksResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListScheduledTasksResponse>
                 transformer =
                         ListScheduledTasksConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4853,7 +4824,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListSourceAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListSourceAssociations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSourceAssociationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSourceAssociationsResponse>
                 transformer =
                         ListSourceAssociationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4890,7 +4861,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListSourceEventTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceEventTypes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSourceEventTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSourceEventTypesResponse>
                 transformer =
                         ListSourceEventTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4928,7 +4899,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListSourceExtendedFieldDefinitions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceExtendedFieldDefinitions");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListSourceExtendedFieldDefinitionsResponse>
                 transformer =
                         ListSourceExtendedFieldDefinitionsConverter.fromResponse(
@@ -4967,7 +4938,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListSourceLabelOperators",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceLabelOperators");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSourceLabelOperatorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSourceLabelOperatorsResponse>
                 transformer =
                         ListSourceLabelOperatorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5005,7 +4976,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListSourceMetaFunctions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceMetaFunctions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSourceMetaFunctionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSourceMetaFunctionsResponse>
                 transformer =
                         ListSourceMetaFunctionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5042,7 +5013,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListSourcePatterns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourcePatterns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSourcePatternsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSourcePatternsResponse>
                 transformer =
                         ListSourcePatternsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5079,9 +5050,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListSources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSources");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSourcesResponse>
-                transformer =
-                        ListSourcesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSourcesResponse> transformer =
+                ListSourcesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5116,8 +5086,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListStorageWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListStorageWorkRequestErrors");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListStorageWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListStorageWorkRequestErrorsResponse>
                 transformer =
                         ListStorageWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5155,7 +5124,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListStorageWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListStorageWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListStorageWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListStorageWorkRequestsResponse>
                 transformer =
                         ListStorageWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5193,8 +5162,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListSupportedCharEncodings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/CharEncodingCollection/ListSupportedCharEncodings");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSupportedCharEncodingsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSupportedCharEncodingsResponse>
                 transformer =
                         ListSupportedCharEncodingsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5232,7 +5200,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListSupportedTimezones",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/TimezoneCollection/ListSupportedTimezones");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSupportedTimezonesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSupportedTimezonesResponse>
                 transformer =
                         ListSupportedTimezonesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5269,7 +5237,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListUploadFiles",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploadFiles");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListUploadFilesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListUploadFilesResponse>
                 transformer =
                         ListUploadFilesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5306,7 +5274,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListUploadWarnings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploadWarnings");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListUploadWarningsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListUploadWarningsResponse>
                 transformer =
                         ListUploadWarningsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5343,9 +5311,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListUploads",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploads");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListUploadsResponse>
-                transformer =
-                        ListUploadsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListUploadsResponse> transformer =
+                ListUploadsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5379,9 +5346,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListWarnings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/ListWarnings");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWarningsResponse>
-                transformer =
-                        ListWarningsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListWarningsResponse> transformer =
+                ListWarningsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5416,7 +5382,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5453,7 +5419,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequestLog/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5490,7 +5456,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5528,7 +5494,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "OffboardNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/OffboardNamespace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, OffboardNamespaceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, OffboardNamespaceResponse>
                 transformer =
                         OffboardNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5567,7 +5533,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "OnboardNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/OnboardNamespace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, OnboardNamespaceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, OnboardNamespaceResponse>
                 transformer =
                         OnboardNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5604,7 +5570,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ParseQuery",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/ParseQuery");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ParseQueryResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ParseQueryResponse> transformer =
                 ParseQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5643,7 +5609,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "PauseScheduledTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/PauseScheduledTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PauseScheduledTaskResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PauseScheduledTaskResponse>
                 transformer =
                         PauseScheduledTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5682,7 +5648,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "PurgeStorageData",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/PurgeStorageData");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PurgeStorageDataResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PurgeStorageDataResponse>
                 transformer =
                         PurgeStorageDataConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5724,7 +5690,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "PutQueryWorkRequestBackground",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/PutQueryWorkRequestBackground");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, PutQueryWorkRequestBackgroundResponse>
                 transformer =
                         PutQueryWorkRequestBackgroundConverter.fromResponse(
@@ -5761,7 +5727,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "Query",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Query");
-        com.google.common.base.Function<javax.ws.rs.core.Response, QueryResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, QueryResponse> transformer =
                 QueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5801,7 +5767,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "RecallArchivedData",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/RecallArchivedData");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RecallArchivedDataResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RecallArchivedDataResponse>
                 transformer =
                         RecallArchivedDataConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5852,7 +5818,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                             "RegisterLookup",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/RegisterLookup");
-            com.google.common.base.Function<javax.ws.rs.core.Response, RegisterLookupResponse>
+            java.util.function.Function<javax.ws.rs.core.Response, RegisterLookupResponse>
                     transformer =
                             RegisterLookupConverter.fromResponse(
                                     java.util.Optional.of(serviceDetails));
@@ -5918,7 +5884,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ReleaseRecalledData",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ReleaseRecalledData");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ReleaseRecalledDataResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ReleaseRecalledDataResponse>
                 transformer =
                         ReleaseRecalledDataConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5961,7 +5927,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "RemoveEntityAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/RemoveEntityAssociations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveEntityAssociationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveEntityAssociationsResponse>
                 transformer =
                         RemoveEntityAssociationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6003,7 +5969,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "RemovePreferences",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/RemovePreferences");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemovePreferencesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemovePreferencesResponse>
                 transformer =
                         RemovePreferencesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6045,7 +6011,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "RemoveResourceCategories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/RemoveResourceCategories");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveResourceCategoriesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveResourceCategoriesResponse>
                 transformer =
                         RemoveResourceCategoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6088,7 +6054,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "RemoveSourceEventTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/RemoveSourceEventTypes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveSourceEventTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveSourceEventTypesResponse>
                 transformer =
                         RemoveSourceEventTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6129,7 +6095,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ResumeScheduledTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ResumeScheduledTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ResumeScheduledTaskResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ResumeScheduledTaskResponse>
                 transformer =
                         ResumeScheduledTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6167,7 +6133,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "Run",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Run");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RunResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, RunResponse> transformer =
                 RunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6204,7 +6170,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "SetUnprocessedDataBucket",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/SetUnprocessedDataBucket");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SetUnprocessedDataBucketResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SetUnprocessedDataBucketResponse>
                 transformer =
                         SetUnprocessedDataBucketConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6241,7 +6207,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "Suggest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Suggest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SuggestResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, SuggestResponse> transformer =
                 SuggestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6281,7 +6247,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "SuppressWarning",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/SuppressWarning");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SuppressWarningResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SuppressWarningResponse>
                 transformer =
                         SuppressWarningConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6322,7 +6288,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "TestParser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/TestParser");
-        com.google.common.base.Function<javax.ws.rs.core.Response, TestParserResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, TestParserResponse> transformer =
                 TestParserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6362,7 +6328,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UnsuppressWarning",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/UnsuppressWarning");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UnsuppressWarningResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UnsuppressWarningResponse>
                 transformer =
                         UnsuppressWarningConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6404,8 +6370,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpdateLogAnalyticsEmBridge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/UpdateLogAnalyticsEmBridge");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateLogAnalyticsEmBridgeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogAnalyticsEmBridgeResponse>
                 transformer =
                         UpdateLogAnalyticsEmBridgeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6448,7 +6413,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpdateLogAnalyticsEntity",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/UpdateLogAnalyticsEntity");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLogAnalyticsEntityResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogAnalyticsEntityResponse>
                 transformer =
                         UpdateLogAnalyticsEntityConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6490,8 +6455,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpdateLogAnalyticsEntityType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/UpdateLogAnalyticsEntityType");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateLogAnalyticsEntityTypeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogAnalyticsEntityTypeResponse>
                 transformer =
                         UpdateLogAnalyticsEntityTypeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6534,8 +6498,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpdateLogAnalyticsLogGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/UpdateLogAnalyticsLogGroup");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateLogAnalyticsLogGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogAnalyticsLogGroupResponse>
                 transformer =
                         UpdateLogAnalyticsLogGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6579,7 +6542,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpdateLogAnalyticsObjectCollectionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/UpdateLogAnalyticsObjectCollectionRule");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateLogAnalyticsObjectCollectionRuleResponse>
                 transformer =
                         UpdateLogAnalyticsObjectCollectionRuleConverter.fromResponse(
@@ -6623,9 +6586,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpdateLookup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/UpdateLookup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLookupResponse>
-                transformer =
-                        UpdateLookupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLookupResponse> transformer =
+                UpdateLookupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6673,7 +6635,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                             "UpdateLookupData",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/UpdateLookupData");
-            com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLookupDataResponse>
+            java.util.function.Function<javax.ws.rs.core.Response, UpdateLookupDataResponse>
                     transformer =
                             UpdateLookupDataConverter.fromResponse(
                                     java.util.Optional.of(serviceDetails));
@@ -6737,7 +6699,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpdatePreferences",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/UpdatePreferences");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePreferencesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePreferencesResponse>
                 transformer =
                         UpdatePreferencesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6779,7 +6741,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpdateResourceCategories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/UpdateResourceCategories");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateResourceCategoriesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateResourceCategoriesResponse>
                 transformer =
                         UpdateResourceCategoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6820,7 +6782,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpdateScheduledTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/UpdateScheduledTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateScheduledTaskResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateScheduledTaskResponse>
                 transformer =
                         UpdateScheduledTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6861,9 +6823,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpdateStorage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/UpdateStorage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateStorageResponse>
-                transformer =
-                        UpdateStorageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateStorageResponse> transformer =
+                UpdateStorageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6915,7 +6876,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                             "UploadLogEventsFile",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadLogEventsFile");
-            com.google.common.base.Function<javax.ws.rs.core.Response, UploadLogEventsFileResponse>
+            java.util.function.Function<javax.ws.rs.core.Response, UploadLogEventsFileResponse>
                     transformer =
                             UploadLogEventsFileConverter.fromResponse(
                                     java.util.Optional.of(serviceDetails));
@@ -6994,7 +6955,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                             "UploadLogFile",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadLogFile");
-            com.google.common.base.Function<javax.ws.rs.core.Response, UploadLogFileResponse>
+            java.util.function.Function<javax.ws.rs.core.Response, UploadLogFileResponse>
                     transformer =
                             UploadLogFileConverter.fromResponse(
                                     java.util.Optional.of(serviceDetails));
@@ -7058,7 +7019,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpsertAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/UpsertAssociations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpsertAssociationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpsertAssociationsResponse>
                 transformer =
                         UpsertAssociationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7101,9 +7062,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpsertField",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/UpsertField");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpsertFieldResponse>
-                transformer =
-                        UpsertFieldConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpsertFieldResponse> transformer =
+                UpsertFieldConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7142,9 +7102,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpsertLabel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/UpsertLabel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpsertLabelResponse>
-                transformer =
-                        UpsertLabelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpsertLabelResponse> transformer =
+                UpsertLabelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7183,9 +7142,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpsertParser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/UpsertParser");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpsertParserResponse>
-                transformer =
-                        UpsertParserConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpsertParserResponse> transformer =
+                UpsertParserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7224,9 +7182,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "UpsertSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/UpsertSource");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpsertSourceResponse>
-                transformer =
-                        UpsertSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpsertSourceResponse> transformer =
+                UpsertSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7266,7 +7223,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ValidateAssociationParameters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ValidateAssociationParameters");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateAssociationParametersResponse>
                 transformer =
                         ValidateAssociationParametersConverter.fromResponse(
@@ -7309,9 +7266,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ValidateFile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ValidateFile");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ValidateFileResponse>
-                transformer =
-                        ValidateFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateFileResponse> transformer =
+                ValidateFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7347,9 +7303,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ValidateSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateSource");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ValidateSourceResponse>
-                transformer =
-                        ValidateSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateSourceResponse> transformer =
+                ValidateSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7389,7 +7344,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ValidateSourceExtendedFieldDetails",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateSourceExtendedFieldDetails");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateSourceExtendedFieldDetailsResponse>
                 transformer =
                         ValidateSourceExtendedFieldDetailsConverter.fromResponse(
@@ -7432,7 +7387,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "ValidateSourceMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ValidateSourceMapping");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ValidateSourceMappingResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateSourceMappingResponse>
                 transformer =
                         ValidateSourceMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7470,7 +7425,7 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "Verify",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Verify");
-        com.google.common.base.Function<javax.ws.rs.core.Response, VerifyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, VerifyResponse> transformer =
                 VerifyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

@@ -7,7 +7,6 @@ package com.oracle.bmc.rover;
 import com.oracle.bmc.rover.internal.http.*;
 import com.oracle.bmc.rover.requests.*;
 import com.oracle.bmc.rover.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Shape service. <br/>
@@ -319,7 +318,7 @@ public class ShapeAsyncClient implements ShapeAsync {
          * @return the client
          */
         public ShapeAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class ShapeAsyncClient implements ShapeAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -401,7 +401,7 @@ public class ShapeAsyncClient implements ShapeAsync {
                         "ListShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/ShapeSummary/ListShapes");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListShapesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListShapesResponse>
                 transformer =
                         ListShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListShapesRequest, ListShapesResponse> handlerToUse =

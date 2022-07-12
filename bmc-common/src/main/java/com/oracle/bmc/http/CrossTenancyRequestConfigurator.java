@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.http;
 
-import com.google.common.base.Preconditions;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.http.internal.CrossTenancyRequestClientFilter;
 
 import javax.ws.rs.client.Client;
@@ -33,7 +33,8 @@ public class CrossTenancyRequestConfigurator implements ClientConfigurator {
      */
     public CrossTenancyRequestConfigurator(
             String[] authorizedTenancyIds, ClientConfigurator baseConfigurator) {
-        this.baseConfigurator = Preconditions.checkNotNull(baseConfigurator);
+        this.baseConfigurator =
+                Validate.notNull(baseConfigurator, "baseConfigurator may not be null");
         if (authorizedTenancyIds == null || authorizedTenancyIds.length == 0) {
             throw new IllegalArgumentException("Must provide at least one authorized tenancyId");
         }

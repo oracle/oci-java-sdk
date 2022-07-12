@@ -9,7 +9,6 @@ import com.oracle.bmc.blockchain.requests.*;
 import com.oracle.bmc.blockchain.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 public class BlockchainPlatformClient implements BlockchainPlatform {
@@ -334,9 +333,9 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("BlockchainPlatform-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("BlockchainPlatform-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
          * @return the client
          */
         public BlockchainPlatformClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "ChangeBlockchainPlatformCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/ChangeBlockchainPlatformCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeBlockchainPlatformCompartmentResponse>
                 transformer =
                         ChangeBlockchainPlatformCompartmentConverter.fromResponse(
@@ -534,7 +534,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "CreateBlockchainPlatform",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/CreateBlockchainPlatform");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBlockchainPlatformResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBlockchainPlatformResponse>
                 transformer =
                         CreateBlockchainPlatformConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -575,7 +575,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "CreateOsn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/CreateOsn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateOsnResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOsnResponse> transformer =
                 CreateOsnConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -614,7 +614,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "CreatePeer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/CreatePeer");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePeerResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePeerResponse> transformer =
                 CreatePeerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -655,7 +655,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "DeleteBlockchainPlatform",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/DeleteBlockchainPlatform");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBlockchainPlatformResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBlockchainPlatformResponse>
                 transformer =
                         DeleteBlockchainPlatformConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -692,7 +692,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "DeleteOsn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/DeleteOsn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteOsnResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOsnResponse> transformer =
                 DeleteOsnConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -728,7 +728,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "DeletePeer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/DeletePeer");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePeerResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePeerResponse> transformer =
                 DeletePeerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -764,7 +764,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "DeleteWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequest/DeleteWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
                 transformer =
                         DeleteWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -803,7 +803,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "GetBlockchainPlatform",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/GetBlockchainPlatform");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBlockchainPlatformResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetBlockchainPlatformResponse>
                 transformer =
                         GetBlockchainPlatformConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -839,7 +839,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "GetOsn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/Osn/GetOsn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOsnResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetOsnResponse> transformer =
                 GetOsnConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -873,7 +873,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "GetPeer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/Peer/GetPeer");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPeerResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetPeerResponse> transformer =
                 GetPeerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -908,9 +908,8 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -945,7 +944,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "ListBlockchainPlatformPatches",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/ListBlockchainPlatformPatches");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListBlockchainPlatformPatchesResponse>
                 transformer =
                         ListBlockchainPlatformPatchesConverter.fromResponse(
@@ -984,7 +983,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "ListBlockchainPlatforms",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/ListBlockchainPlatforms");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBlockchainPlatformsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListBlockchainPlatformsResponse>
                 transformer =
                         ListBlockchainPlatformsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1021,7 +1020,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "ListOsns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/Osn/ListOsns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListOsnsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListOsnsResponse> transformer =
                 ListOsnsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1056,7 +1055,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "ListPeers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/Peer/ListPeers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPeersResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListPeersResponse> transformer =
                 ListPeersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1092,7 +1091,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1129,7 +1128,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1166,7 +1165,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1204,7 +1203,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "PreviewScaleBlockchainPlatform",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/PreviewScaleBlockchainPlatform");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, PreviewScaleBlockchainPlatformResponse>
                 transformer =
                         PreviewScaleBlockchainPlatformConverter.fromResponse(
@@ -1248,7 +1247,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "ScaleBlockchainPlatform",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/ScaleBlockchainPlatform");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ScaleBlockchainPlatformResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ScaleBlockchainPlatformResponse>
                 transformer =
                         ScaleBlockchainPlatformConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1291,7 +1290,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "StartBlockchainPlatform",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/StartBlockchainPlatform");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartBlockchainPlatformResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StartBlockchainPlatformResponse>
                 transformer =
                         StartBlockchainPlatformConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1331,7 +1330,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "StopBlockchainPlatform",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/StopBlockchainPlatform");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopBlockchainPlatformResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StopBlockchainPlatformResponse>
                 transformer =
                         StopBlockchainPlatformConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1371,7 +1370,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "UpdateBlockchainPlatform",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/UpdateBlockchainPlatform");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBlockchainPlatformResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBlockchainPlatformResponse>
                 transformer =
                         UpdateBlockchainPlatformConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1412,7 +1411,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "UpdateOsn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/UpdateOsn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOsnResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOsnResponse> transformer =
                 UpdateOsnConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1451,7 +1450,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "UpdatePeer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/UpdatePeer");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePeerResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePeerResponse> transformer =
                 UpdatePeerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1492,8 +1491,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         "UpgradeBlockchainPlatform",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/UpgradeBlockchainPlatform");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpgradeBlockchainPlatformResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpgradeBlockchainPlatformResponse>
                 transformer =
                         UpgradeBlockchainPlatformConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

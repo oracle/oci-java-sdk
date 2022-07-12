@@ -4,8 +4,8 @@
  */
 package com.oracle.bmc.auth.exception;
 
-import com.google.common.base.Preconditions;
 import com.oracle.bmc.model.BmcException;
+import com.oracle.bmc.util.internal.Validate;
 
 /**
  * Exception thrown when the client failed to authenticate to the auth service using configured key suppliers.
@@ -24,7 +24,14 @@ public class AuthClientNotAuthorizedException extends AuthClientException {
     }
 
     private static BmcException validate(BmcException cause) {
-        Preconditions.checkArgument(matches(cause));
+        Validate.notNull(cause, "cause must not be null");
+        Validate.isTrue(
+                matches(cause),
+                "status code of cause must match '"
+                        + STATUS_CODE_UNAUTHORIZED
+                        + "', but was '"
+                        + cause.getStatusCode()
+                        + "'");
         return cause;
     }
 

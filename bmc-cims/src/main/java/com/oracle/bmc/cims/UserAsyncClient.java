@@ -7,7 +7,6 @@ package com.oracle.bmc.cims;
 import com.oracle.bmc.cims.internal.http.*;
 import com.oracle.bmc.cims.requests.*;
 import com.oracle.bmc.cims.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for User service. <br/>
@@ -320,7 +319,7 @@ public class UserAsyncClient implements UserAsync {
          * @return the client
          */
         public UserAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class UserAsyncClient implements UserAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -402,7 +402,7 @@ public class UserAsyncClient implements UserAsync {
                         "CreateUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/User/CreateUser");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateUserResponse>
                 transformer =
                         CreateUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateUserRequest, CreateUserResponse> handlerToUse =

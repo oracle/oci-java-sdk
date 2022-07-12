@@ -7,7 +7,6 @@ package com.oracle.bmc.apigateway;
 import com.oracle.bmc.apigateway.internal.http.*;
 import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Subscribers service. <br/>
@@ -319,7 +318,7 @@ public class SubscribersAsyncClient implements SubscribersAsync {
          * @return the client
          */
         public SubscribersAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class SubscribersAsyncClient implements SubscribersAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class SubscribersAsyncClient implements SubscribersAsync {
                         "ChangeSubscriberCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/ChangeSubscriberCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeSubscriberCompartmentResponse>
                 transformer =
                         ChangeSubscriberCompartmentConverter.fromResponse(
@@ -458,7 +458,7 @@ public class SubscribersAsyncClient implements SubscribersAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Subscribers", "CreateSubscriber", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubscriberResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSubscriberResponse>
                 transformer =
                         CreateSubscriberConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -509,7 +509,7 @@ public class SubscribersAsyncClient implements SubscribersAsync {
                         "DeleteSubscriber",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/DeleteSubscriber");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubscriberResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSubscriberResponse>
                 transformer =
                         DeleteSubscriberConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -554,7 +554,7 @@ public class SubscribersAsyncClient implements SubscribersAsync {
                         "GetSubscriber",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/GetSubscriber");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriberResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSubscriberResponse>
                 transformer =
                         GetSubscriberConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSubscriberRequest, GetSubscriberResponse>
@@ -599,7 +599,7 @@ public class SubscribersAsyncClient implements SubscribersAsync {
                         "ListSubscribers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/ListSubscribers");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscribersResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSubscribersResponse>
                 transformer =
                         ListSubscribersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -645,7 +645,7 @@ public class SubscribersAsyncClient implements SubscribersAsync {
                         "UpdateSubscriber",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Subscriber/UpdateSubscriber");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubscriberResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSubscriberResponse>
                 transformer =
                         UpdateSubscriberConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

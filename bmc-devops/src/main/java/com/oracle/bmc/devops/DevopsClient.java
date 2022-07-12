@@ -9,7 +9,6 @@ import com.oracle.bmc.devops.requests.*;
 import com.oracle.bmc.devops.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class DevopsClient implements Devops {
@@ -334,9 +333,9 @@ public class DevopsClient implements Devops {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Devops-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Devops-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class DevopsClient implements Devops {
          * @return the client
          */
         public DevopsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class DevopsClient implements Devops {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,7 +487,7 @@ public class DevopsClient implements Devops {
                         "ApproveDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/ApproveDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ApproveDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ApproveDeploymentResponse>
                 transformer =
                         ApproveDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,9 +529,8 @@ public class DevopsClient implements Devops {
                         "CancelBuildRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CancelBuildRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelBuildRunResponse>
-                transformer =
-                        CancelBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CancelBuildRunResponse> transformer =
+                CancelBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -570,7 +569,7 @@ public class DevopsClient implements Devops {
                         "CancelDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CancelDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelDeploymentResponse>
                 transformer =
                         CancelDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -613,7 +612,7 @@ public class DevopsClient implements Devops {
                         "ChangeProjectCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/ChangeProjectCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
                 transformer =
                         ChangeProjectCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -655,7 +654,7 @@ public class DevopsClient implements Devops {
                         "CreateBuildPipeline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/CreateBuildPipeline");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBuildPipelineResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBuildPipelineResponse>
                 transformer =
                         CreateBuildPipelineConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -698,7 +697,7 @@ public class DevopsClient implements Devops {
                         "CreateBuildPipelineStage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/CreateBuildPipelineStage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBuildPipelineStageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBuildPipelineStageResponse>
                 transformer =
                         CreateBuildPipelineStageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -740,9 +739,8 @@ public class DevopsClient implements Devops {
                         "CreateBuildRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CreateBuildRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBuildRunResponse>
-                transformer =
-                        CreateBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBuildRunResponse> transformer =
+                CreateBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -781,7 +779,7 @@ public class DevopsClient implements Devops {
                         "CreateConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/CreateConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
                 transformer =
                         CreateConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -823,7 +821,7 @@ public class DevopsClient implements Devops {
                         "CreateDeployArtifact",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/CreateDeployArtifact");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeployArtifactResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeployArtifactResponse>
                 transformer =
                         CreateDeployArtifactConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -866,7 +864,7 @@ public class DevopsClient implements Devops {
                         "CreateDeployEnvironment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/CreateDeployEnvironment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeployEnvironmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeployEnvironmentResponse>
                 transformer =
                         CreateDeployEnvironmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -908,7 +906,7 @@ public class DevopsClient implements Devops {
                         "CreateDeployPipeline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/CreateDeployPipeline");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeployPipelineResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeployPipelineResponse>
                 transformer =
                         CreateDeployPipelineConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -950,7 +948,7 @@ public class DevopsClient implements Devops {
                         "CreateDeployStage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/CreateDeployStage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeployStageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeployStageResponse>
                 transformer =
                         CreateDeployStageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -992,7 +990,7 @@ public class DevopsClient implements Devops {
                         "CreateDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CreateDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
                 transformer =
                         CreateDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1034,9 +1032,8 @@ public class DevopsClient implements Devops {
                         "CreateProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/CreateProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
-                transformer =
-                        CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateProjectResponse> transformer =
+                CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1075,7 +1072,7 @@ public class DevopsClient implements Devops {
                         "CreateRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/CreateRepository");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRepositoryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRepositoryResponse>
                 transformer =
                         CreateRepositoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1117,9 +1114,8 @@ public class DevopsClient implements Devops {
                         "CreateTrigger",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/CreateTrigger");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTriggerResponse>
-                transformer =
-                        CreateTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTriggerResponse> transformer =
+                CreateTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1157,7 +1153,7 @@ public class DevopsClient implements Devops {
                         "DeleteBuildPipeline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/DeleteBuildPipeline");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBuildPipelineResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBuildPipelineResponse>
                 transformer =
                         DeleteBuildPipelineConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1196,7 +1192,7 @@ public class DevopsClient implements Devops {
                         "DeleteBuildPipelineStage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/DeleteBuildPipelineStage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBuildPipelineStageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBuildPipelineStageResponse>
                 transformer =
                         DeleteBuildPipelineStageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1234,7 +1230,7 @@ public class DevopsClient implements Devops {
                         "DeleteConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/DeleteConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
                 transformer =
                         DeleteConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1272,7 +1268,7 @@ public class DevopsClient implements Devops {
                         "DeleteDeployArtifact",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/DeleteDeployArtifact");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeployArtifactResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDeployArtifactResponse>
                 transformer =
                         DeleteDeployArtifactConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1311,7 +1307,7 @@ public class DevopsClient implements Devops {
                         "DeleteDeployEnvironment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/DeleteDeployEnvironment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeployEnvironmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDeployEnvironmentResponse>
                 transformer =
                         DeleteDeployEnvironmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1349,7 +1345,7 @@ public class DevopsClient implements Devops {
                         "DeleteDeployPipeline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/DeleteDeployPipeline");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeployPipelineResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDeployPipelineResponse>
                 transformer =
                         DeleteDeployPipelineConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1387,7 +1383,7 @@ public class DevopsClient implements Devops {
                         "DeleteDeployStage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/DeleteDeployStage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeployStageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDeployStageResponse>
                 transformer =
                         DeleteDeployStageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1425,9 +1421,8 @@ public class DevopsClient implements Devops {
                         "DeleteProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/DeleteProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
-                transformer =
-                        DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteProjectResponse> transformer =
+                DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1462,7 +1457,7 @@ public class DevopsClient implements Devops {
                         "DeleteRef",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRef");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRefResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRefResponse> transformer =
                 DeleteRefConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1498,7 +1493,7 @@ public class DevopsClient implements Devops {
                         "DeleteRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRepository");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRepositoryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRepositoryResponse>
                 transformer =
                         DeleteRepositoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1536,9 +1531,8 @@ public class DevopsClient implements Devops {
                         "DeleteTrigger",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/DeleteTrigger");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTriggerResponse>
-                transformer =
-                        DeleteTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTriggerResponse> transformer =
+                DeleteTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1573,7 +1567,7 @@ public class DevopsClient implements Devops {
                         "GetBuildPipeline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/GetBuildPipeline");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBuildPipelineResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetBuildPipelineResponse>
                 transformer =
                         GetBuildPipelineConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1611,7 +1605,7 @@ public class DevopsClient implements Devops {
                         "GetBuildPipelineStage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/GetBuildPipelineStage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBuildPipelineStageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetBuildPipelineStageResponse>
                 transformer =
                         GetBuildPipelineStageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1648,9 +1642,8 @@ public class DevopsClient implements Devops {
                         "GetBuildRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/GetBuildRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBuildRunResponse>
-                transformer =
-                        GetBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetBuildRunResponse> transformer =
+                GetBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1683,7 +1676,7 @@ public class DevopsClient implements Devops {
                         "GetCommit",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommit");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCommitResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetCommitResponse> transformer =
                 GetCommitConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1718,9 +1711,8 @@ public class DevopsClient implements Devops {
                         "GetCommitDiff",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommitDiff");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCommitDiffResponse>
-                transformer =
-                        GetCommitDiffConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetCommitDiffResponse> transformer =
+                GetCommitDiffConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1754,9 +1746,8 @@ public class DevopsClient implements Devops {
                         "GetConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/GetConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConnectionResponse>
-                transformer =
-                        GetConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetConnectionResponse> transformer =
+                GetConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1790,7 +1781,7 @@ public class DevopsClient implements Devops {
                         "GetDeployArtifact",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/GetDeployArtifact");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDeployArtifactResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeployArtifactResponse>
                 transformer =
                         GetDeployArtifactConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1827,7 +1818,7 @@ public class DevopsClient implements Devops {
                         "GetDeployEnvironment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/GetDeployEnvironment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDeployEnvironmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeployEnvironmentResponse>
                 transformer =
                         GetDeployEnvironmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1864,7 +1855,7 @@ public class DevopsClient implements Devops {
                         "GetDeployPipeline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/GetDeployPipeline");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDeployPipelineResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeployPipelineResponse>
                 transformer =
                         GetDeployPipelineConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1901,9 +1892,8 @@ public class DevopsClient implements Devops {
                         "GetDeployStage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/GetDeployStage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDeployStageResponse>
-                transformer =
-                        GetDeployStageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeployStageResponse> transformer =
+                GetDeployStageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1937,9 +1927,8 @@ public class DevopsClient implements Devops {
                         "GetDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/GetDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentResponse>
-                transformer =
-                        GetDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeploymentResponse> transformer =
+                GetDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1973,9 +1962,8 @@ public class DevopsClient implements Devops {
                         "GetFileDiff",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetFileDiff");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetFileDiffResponse>
-                transformer =
-                        GetFileDiffConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetFileDiffResponse> transformer =
+                GetFileDiffConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2009,7 +1997,7 @@ public class DevopsClient implements Devops {
                         "GetMirrorRecord",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetMirrorRecord");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetMirrorRecordResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetMirrorRecordResponse>
                 transformer =
                         GetMirrorRecordConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2045,7 +2033,7 @@ public class DevopsClient implements Devops {
                         "GetObject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryObject/GetObject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetObjectResponse> transformer =
                 GetObjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2090,7 +2078,7 @@ public class DevopsClient implements Devops {
                         "GetObjectContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetObjectContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetObjectContentResponse>
                 transformer =
                         GetObjectContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2126,7 +2114,7 @@ public class DevopsClient implements Devops {
                         "GetProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/GetProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetProjectResponse> transformer =
                 GetProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2160,7 +2148,7 @@ public class DevopsClient implements Devops {
                         "GetRef",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRef");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRefResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetRefResponse> transformer =
                 GetRefConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2195,7 +2183,7 @@ public class DevopsClient implements Devops {
                         "GetRepoFileDiff",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileDiff");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRepoFileDiffResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRepoFileDiffResponse>
                 transformer =
                         GetRepoFileDiffConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2232,7 +2220,7 @@ public class DevopsClient implements Devops {
                         "GetRepoFileLines",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileLines");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRepoFileLinesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRepoFileLinesResponse>
                 transformer =
                         GetRepoFileLinesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2269,9 +2257,8 @@ public class DevopsClient implements Devops {
                         "GetRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepository");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRepositoryResponse>
-                transformer =
-                        GetRepositoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetRepositoryResponse> transformer =
+                GetRepositoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2316,8 +2303,7 @@ public class DevopsClient implements Devops {
                         "GetRepositoryArchiveContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryArchiveContent");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetRepositoryArchiveContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRepositoryArchiveContentResponse>
                 transformer =
                         GetRepositoryArchiveContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2355,7 +2341,7 @@ public class DevopsClient implements Devops {
                         "GetRepositoryFileLines",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryFileLines");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRepositoryFileLinesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRepositoryFileLinesResponse>
                 transformer =
                         GetRepositoryFileLinesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2391,7 +2377,7 @@ public class DevopsClient implements Devops {
                         "GetTrigger",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/GetTrigger");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTriggerResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetTriggerResponse> transformer =
                 GetTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2426,9 +2412,8 @@ public class DevopsClient implements Devops {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2462,9 +2447,8 @@ public class DevopsClient implements Devops {
                         "ListAuthors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListAuthors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAuthorsResponse>
-                transformer =
-                        ListAuthorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListAuthorsResponse> transformer =
+                ListAuthorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2499,7 +2483,7 @@ public class DevopsClient implements Devops {
                         "ListBuildPipelineStages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStageSummary/ListBuildPipelineStages");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBuildPipelineStagesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListBuildPipelineStagesResponse>
                 transformer =
                         ListBuildPipelineStagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2536,7 +2520,7 @@ public class DevopsClient implements Devops {
                         "ListBuildPipelines",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineCollection/ListBuildPipelines");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBuildPipelinesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListBuildPipelinesResponse>
                 transformer =
                         ListBuildPipelinesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2573,9 +2557,8 @@ public class DevopsClient implements Devops {
                         "ListBuildRuns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRunSummary/ListBuildRuns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBuildRunsResponse>
-                transformer =
-                        ListBuildRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListBuildRunsResponse> transformer =
+                ListBuildRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2609,7 +2592,7 @@ public class DevopsClient implements Devops {
                         "ListCommitDiffs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListCommitDiffs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCommitDiffsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCommitDiffsResponse>
                 transformer =
                         ListCommitDiffsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2646,9 +2629,8 @@ public class DevopsClient implements Devops {
                         "ListCommits",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryCommit/ListCommits");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCommitsResponse>
-                transformer =
-                        ListCommitsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListCommitsResponse> transformer =
+                ListCommitsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2682,7 +2664,7 @@ public class DevopsClient implements Devops {
                         "ListConnections",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ConnectionCollection/ListConnections");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
                 transformer =
                         ListConnectionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2719,7 +2701,7 @@ public class DevopsClient implements Devops {
                         "ListDeployArtifacts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifactSummary/ListDeployArtifacts");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDeployArtifactsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeployArtifactsResponse>
                 transformer =
                         ListDeployArtifactsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2757,7 +2739,7 @@ public class DevopsClient implements Devops {
                         "ListDeployEnvironments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironmentSummary/ListDeployEnvironments");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDeployEnvironmentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeployEnvironmentsResponse>
                 transformer =
                         ListDeployEnvironmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2794,7 +2776,7 @@ public class DevopsClient implements Devops {
                         "ListDeployPipelines",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipelineSummary/ListDeployPipelines");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDeployPipelinesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeployPipelinesResponse>
                 transformer =
                         ListDeployPipelinesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2831,7 +2813,7 @@ public class DevopsClient implements Devops {
                         "ListDeployStages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStageSummary/ListDeployStages");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDeployStagesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeployStagesResponse>
                 transformer =
                         ListDeployStagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2868,7 +2850,7 @@ public class DevopsClient implements Devops {
                         "ListDeployments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeploymentSummary/ListDeployments");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
                 transformer =
                         ListDeploymentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2905,7 +2887,7 @@ public class DevopsClient implements Devops {
                         "ListMirrorRecords",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListMirrorRecords");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMirrorRecordsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMirrorRecordsResponse>
                 transformer =
                         ListMirrorRecordsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2941,7 +2923,7 @@ public class DevopsClient implements Devops {
                         "ListPaths",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryPathSummary/ListPaths");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPathsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListPathsResponse> transformer =
                 ListPathsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2976,9 +2958,8 @@ public class DevopsClient implements Devops {
                         "ListProjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectSummary/ListProjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
-                transformer =
-                        ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListProjectsResponse> transformer =
+                ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3011,7 +2992,7 @@ public class DevopsClient implements Devops {
                         "ListRefs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryRef/ListRefs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRefsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListRefsResponse> transformer =
                 ListRefsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3046,7 +3027,7 @@ public class DevopsClient implements Devops {
                         "ListRepositories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListRepositories");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRepositoriesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRepositoriesResponse>
                 transformer =
                         ListRepositoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3083,9 +3064,8 @@ public class DevopsClient implements Devops {
                         "ListTriggers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/TriggerCollection/ListTriggers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTriggersResponse>
-                transformer =
-                        ListTriggersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListTriggersResponse> transformer =
+                ListTriggersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3120,7 +3100,7 @@ public class DevopsClient implements Devops {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3157,7 +3137,7 @@ public class DevopsClient implements Devops {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3194,7 +3174,7 @@ public class DevopsClient implements Devops {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3231,7 +3211,7 @@ public class DevopsClient implements Devops {
                         "MirrorRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/MirrorRepository");
-        com.google.common.base.Function<javax.ws.rs.core.Response, MirrorRepositoryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, MirrorRepositoryResponse>
                 transformer =
                         MirrorRepositoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3270,7 +3250,7 @@ public class DevopsClient implements Devops {
                         "PutRepositoryRef",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/PutRepositoryRef");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PutRepositoryRefResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PutRepositoryRefResponse>
                 transformer =
                         PutRepositoryRefConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3311,7 +3291,7 @@ public class DevopsClient implements Devops {
                         "UpdateBuildPipeline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/UpdateBuildPipeline");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBuildPipelineResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBuildPipelineResponse>
                 transformer =
                         UpdateBuildPipelineConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3353,7 +3333,7 @@ public class DevopsClient implements Devops {
                         "UpdateBuildPipelineStage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/UpdateBuildPipelineStage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBuildPipelineStageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBuildPipelineStageResponse>
                 transformer =
                         UpdateBuildPipelineStageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3394,9 +3374,8 @@ public class DevopsClient implements Devops {
                         "UpdateBuildRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/UpdateBuildRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBuildRunResponse>
-                transformer =
-                        UpdateBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBuildRunResponse> transformer =
+                UpdateBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3434,7 +3413,7 @@ public class DevopsClient implements Devops {
                         "UpdateConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/UpdateConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
                 transformer =
                         UpdateConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3475,7 +3454,7 @@ public class DevopsClient implements Devops {
                         "UpdateDeployArtifact",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/UpdateDeployArtifact");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeployArtifactResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeployArtifactResponse>
                 transformer =
                         UpdateDeployArtifactConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3517,7 +3496,7 @@ public class DevopsClient implements Devops {
                         "UpdateDeployEnvironment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/UpdateDeployEnvironment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeployEnvironmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeployEnvironmentResponse>
                 transformer =
                         UpdateDeployEnvironmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3558,7 +3537,7 @@ public class DevopsClient implements Devops {
                         "UpdateDeployPipeline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/UpdateDeployPipeline");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeployPipelineResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeployPipelineResponse>
                 transformer =
                         UpdateDeployPipelineConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3599,7 +3578,7 @@ public class DevopsClient implements Devops {
                         "UpdateDeployStage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/UpdateDeployStage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeployStageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeployStageResponse>
                 transformer =
                         UpdateDeployStageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3640,7 +3619,7 @@ public class DevopsClient implements Devops {
                         "UpdateDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/UpdateDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
                 transformer =
                         UpdateDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3681,9 +3660,8 @@ public class DevopsClient implements Devops {
                         "UpdateProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/UpdateProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
-                transformer =
-                        UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateProjectResponse> transformer =
+                UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3721,7 +3699,7 @@ public class DevopsClient implements Devops {
                         "UpdateRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/UpdateRepository");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRepositoryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRepositoryResponse>
                 transformer =
                         UpdateRepositoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3762,9 +3740,8 @@ public class DevopsClient implements Devops {
                         "UpdateTrigger",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/UpdateTrigger");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTriggerResponse>
-                transformer =
-                        UpdateTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTriggerResponse> transformer =
+                UpdateTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -9,7 +9,6 @@ import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class SubscriptionClient implements Subscription {
@@ -335,9 +334,9 @@ public class SubscriptionClient implements Subscription {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Subscription-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Subscription-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class SubscriptionClient implements Subscription {
          * @return the client
          */
         public SubscriptionClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class SubscriptionClient implements Subscription {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,8 +489,7 @@ public class SubscriptionClient implements Subscription {
                         "CreateSubscriptionMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/CreateSubscriptionMapping");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateSubscriptionMappingResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSubscriptionMappingResponse>
                 transformer =
                         CreateSubscriptionMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -533,8 +532,7 @@ public class SubscriptionClient implements Subscription {
                         "DeleteSubscriptionMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/DeleteSubscriptionMapping");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteSubscriptionMappingResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSubscriptionMappingResponse>
                 transformer =
                         DeleteSubscriptionMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -573,7 +571,7 @@ public class SubscriptionClient implements Subscription {
                         "GetAssignedSubscription",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/GetAssignedSubscription");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAssignedSubscriptionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAssignedSubscriptionResponse>
                 transformer =
                         GetAssignedSubscriptionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -610,7 +608,7 @@ public class SubscriptionClient implements Subscription {
                         "GetSubscription",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/GetSubscription");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
                 transformer =
                         GetSubscriptionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -648,7 +646,7 @@ public class SubscriptionClient implements Subscription {
                         "GetSubscriptionMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/GetSubscriptionMapping");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionMappingResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionMappingResponse>
                 transformer =
                         GetSubscriptionMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -686,8 +684,7 @@ public class SubscriptionClient implements Subscription {
                         "ListAssignedSubscriptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/ListAssignedSubscriptions");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAssignedSubscriptionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAssignedSubscriptionsResponse>
                 transformer =
                         ListAssignedSubscriptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -724,7 +721,7 @@ public class SubscriptionClient implements Subscription {
                         "ListAvailableRegions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListAvailableRegions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAvailableRegionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAvailableRegionsResponse>
                 transformer =
                         ListAvailableRegionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -762,7 +759,7 @@ public class SubscriptionClient implements Subscription {
                         "ListSubscriptionMappings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/ListSubscriptionMappings");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionMappingsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSubscriptionMappingsResponse>
                 transformer =
                         ListSubscriptionMappingsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -799,7 +796,7 @@ public class SubscriptionClient implements Subscription {
                         "ListSubscriptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListSubscriptions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
                 transformer =
                         ListSubscriptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

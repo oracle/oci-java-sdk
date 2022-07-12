@@ -4,8 +4,8 @@
  */
 package com.oracle.bmc.paginator.internal;
 
-import com.google.common.base.Function;
-import com.google.common.base.Supplier;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 import java.util.List;
 import java.util.Iterator;

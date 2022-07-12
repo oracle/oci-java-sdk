@@ -7,7 +7,6 @@ package com.oracle.bmc.limits;
 import com.oracle.bmc.limits.internal.http.*;
 import com.oracle.bmc.limits.requests.*;
 import com.oracle.bmc.limits.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Quotas service. <br/>
@@ -319,7 +318,7 @@ public class QuotasAsyncClient implements QuotasAsync {
          * @return the client
          */
         public QuotasAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class QuotasAsyncClient implements QuotasAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -402,7 +402,7 @@ public class QuotasAsyncClient implements QuotasAsync {
                         "AddQuotaLock",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/AddQuotaLock");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AddQuotaLockResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AddQuotaLockResponse>
                 transformer =
                         AddQuotaLockConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AddQuotaLockRequest, AddQuotaLockResponse>
@@ -452,7 +452,7 @@ public class QuotasAsyncClient implements QuotasAsync {
                         "CreateQuota",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/CreateQuota");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateQuotaResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateQuotaResponse>
                 transformer =
                         CreateQuotaConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateQuotaRequest, CreateQuotaResponse>
@@ -501,7 +501,7 @@ public class QuotasAsyncClient implements QuotasAsync {
                         "DeleteQuota",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/DeleteQuota");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteQuotaResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteQuotaResponse>
                 transformer =
                         DeleteQuotaConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteQuotaRequest, DeleteQuotaResponse>
@@ -544,8 +544,8 @@ public class QuotasAsyncClient implements QuotasAsync {
                         "GetQuota",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/GetQuota");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetQuotaResponse>
-                transformer = GetQuotaConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetQuotaResponse> transformer =
+                GetQuotaConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetQuotaRequest, GetQuotaResponse> handlerToUse =
                 handler;
 
@@ -585,7 +585,7 @@ public class QuotasAsyncClient implements QuotasAsync {
                         "ListQuotas",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/QuotaSummary/ListQuotas");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListQuotasResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListQuotasResponse>
                 transformer =
                         ListQuotasConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListQuotasRequest, ListQuotasResponse> handlerToUse =
@@ -630,7 +630,7 @@ public class QuotasAsyncClient implements QuotasAsync {
                         "RemoveQuotaLock",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/RemoveQuotaLock");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveQuotaLockResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveQuotaLockResponse>
                 transformer =
                         RemoveQuotaLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -680,7 +680,7 @@ public class QuotasAsyncClient implements QuotasAsync {
                         "UpdateQuota",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/UpdateQuota");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateQuotaResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateQuotaResponse>
                 transformer =
                         UpdateQuotaConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateQuotaRequest, UpdateQuotaResponse>

@@ -9,7 +9,6 @@ import com.oracle.bmc.dataintegration.requests.*;
 import com.oracle.bmc.dataintegration.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class DataIntegrationClient implements DataIntegration {
@@ -335,9 +334,9 @@ public class DataIntegrationClient implements DataIntegration {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DataIntegration-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DataIntegration-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class DataIntegrationClient implements DataIntegration {
          * @return the client
          */
         public DataIntegrationClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class DataIntegrationClient implements DataIntegration {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ChangeCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/ChangeCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeCompartmentResponse>
                 transformer =
                         ChangeCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -531,7 +531,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ChangeDisApplicationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/ChangeDisApplicationCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDisApplicationCompartmentResponse>
                 transformer =
                         ChangeDisApplicationCompartmentConverter.fromResponse(
@@ -575,7 +575,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/CreateApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
                 transformer =
                         CreateApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -617,7 +617,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/CreateConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
                 transformer =
                         CreateConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -660,8 +660,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateConnectionValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/CreateConnectionValidation");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateConnectionValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateConnectionValidationResponse>
                 transformer =
                         CreateConnectionValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -704,7 +703,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateDataAsset",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/CreateDataAsset");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
                 transformer =
                         CreateDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -746,9 +745,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateDataFlow",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/CreateDataFlow");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataFlowResponse>
-                transformer =
-                        CreateDataFlowConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDataFlowResponse> transformer =
+                CreateDataFlowConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -788,7 +786,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateDataFlowValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/CreateDataFlowValidation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataFlowValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDataFlowValidationResponse>
                 transformer =
                         CreateDataFlowValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -830,7 +828,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateDisApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/CreateDisApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDisApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDisApplicationResponse>
                 transformer =
                         CreateDisApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -872,7 +870,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateEntityShape",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/CreateEntityShape");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateEntityShapeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateEntityShapeResponse>
                 transformer =
                         CreateEntityShapeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -915,8 +913,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateExternalPublication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/CreateExternalPublication");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateExternalPublicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateExternalPublicationResponse>
                 transformer =
                         CreateExternalPublicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -961,7 +958,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateExternalPublicationValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/CreateExternalPublicationValidation");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateExternalPublicationValidationResponse>
                 transformer =
                         CreateExternalPublicationValidationConverter.fromResponse(
@@ -1005,9 +1002,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateFolder",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/CreateFolder");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateFolderResponse>
-                transformer =
-                        CreateFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateFolderResponse> transformer =
+                CreateFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1047,7 +1043,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateFunctionLibrary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/CreateFunctionLibrary");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateFunctionLibraryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateFunctionLibraryResponse>
                 transformer =
                         CreateFunctionLibraryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1089,9 +1085,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreatePatch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/CreatePatch");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePatchResponse>
-                transformer =
-                        CreatePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePatchResponse> transformer =
+                CreatePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1130,9 +1125,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreatePipeline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/CreatePipeline");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePipelineResponse>
-                transformer =
-                        CreatePipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePipelineResponse> transformer =
+                CreatePipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1172,7 +1166,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreatePipelineValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/CreatePipelineValidation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePipelineValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePipelineValidationResponse>
                 transformer =
                         CreatePipelineValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1214,9 +1208,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/CreateProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
-                transformer =
-                        CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateProjectResponse> transformer =
+                CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1255,9 +1248,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/CreateSchedule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateScheduleResponse>
-                transformer =
-                        CreateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateScheduleResponse> transformer =
+                CreateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1295,7 +1287,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/CreateTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTaskResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTaskResponse> transformer =
                 CreateTaskConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1335,9 +1327,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateTaskRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/CreateTaskRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTaskRunResponse>
-                transformer =
-                        CreateTaskRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTaskRunResponse> transformer =
+                CreateTaskRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1376,7 +1367,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateTaskSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/CreateTaskSchedule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTaskScheduleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTaskScheduleResponse>
                 transformer =
                         CreateTaskScheduleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1418,7 +1409,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateTaskValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/CreateTaskValidation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTaskValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTaskValidationResponse>
                 transformer =
                         CreateTaskValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1461,8 +1452,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateUserDefinedFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/CreateUserDefinedFunction");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateUserDefinedFunctionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateUserDefinedFunctionResponse>
                 transformer =
                         CreateUserDefinedFunctionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1507,7 +1497,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateUserDefinedFunctionValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/CreateUserDefinedFunctionValidation");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateUserDefinedFunctionValidationResponse>
                 transformer =
                         CreateUserDefinedFunctionValidationConverter.fromResponse(
@@ -1551,7 +1541,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "CreateWorkspace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/CreateWorkspace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateWorkspaceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateWorkspaceResponse>
                 transformer =
                         CreateWorkspaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1592,7 +1582,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/DeleteApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
                 transformer =
                         DeleteApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1630,7 +1620,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/DeleteConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
                 transformer =
                         DeleteConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1669,8 +1659,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteConnectionValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/DeleteConnectionValidation");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteConnectionValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteConnectionValidationResponse>
                 transformer =
                         DeleteConnectionValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1708,7 +1697,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteDataAsset",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/DeleteDataAsset");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
                 transformer =
                         DeleteDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1746,9 +1735,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteDataFlow",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/DeleteDataFlow");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataFlowResponse>
-                transformer =
-                        DeleteDataFlowConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDataFlowResponse> transformer =
+                DeleteDataFlowConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1784,7 +1772,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteDataFlowValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/DeleteDataFlowValidation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataFlowValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDataFlowValidationResponse>
                 transformer =
                         DeleteDataFlowValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1822,7 +1810,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteDisApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/DeleteDisApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDisApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDisApplicationResponse>
                 transformer =
                         DeleteDisApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1861,8 +1849,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteExternalPublication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/DeleteExternalPublication");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteExternalPublicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteExternalPublicationResponse>
                 transformer =
                         DeleteExternalPublicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1902,7 +1889,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteExternalPublicationValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/DeleteExternalPublicationValidation");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteExternalPublicationValidationResponse>
                 transformer =
                         DeleteExternalPublicationValidationConverter.fromResponse(
@@ -1941,9 +1928,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteFolder",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/DeleteFolder");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFolderResponse>
-                transformer =
-                        DeleteFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteFolderResponse> transformer =
+                DeleteFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1979,7 +1965,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteFunctionLibrary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/DeleteFunctionLibrary");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFunctionLibraryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteFunctionLibraryResponse>
                 transformer =
                         DeleteFunctionLibraryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2017,9 +2003,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeletePatch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/DeletePatch");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePatchResponse>
-                transformer =
-                        DeletePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePatchResponse> transformer =
+                DeletePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2054,9 +2039,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeletePipeline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/DeletePipeline");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePipelineResponse>
-                transformer =
-                        DeletePipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePipelineResponse> transformer =
+                DeletePipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2092,7 +2076,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeletePipelineValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/DeletePipelineValidation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePipelineValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePipelineValidationResponse>
                 transformer =
                         DeletePipelineValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2130,9 +2114,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/DeleteProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
-                transformer =
-                        DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteProjectResponse> transformer =
+                DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2167,9 +2150,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/DeleteSchedule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteScheduleResponse>
-                transformer =
-                        DeleteScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteScheduleResponse> transformer =
+                DeleteScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2203,7 +2185,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/DeleteTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTaskResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTaskResponse> transformer =
                 DeleteTaskConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2239,9 +2221,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteTaskRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/DeleteTaskRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTaskRunResponse>
-                transformer =
-                        DeleteTaskRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTaskRunResponse> transformer =
+                DeleteTaskRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2276,7 +2257,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteTaskSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/DeleteTaskSchedule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTaskScheduleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTaskScheduleResponse>
                 transformer =
                         DeleteTaskScheduleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2314,7 +2295,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteTaskValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/DeleteTaskValidation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTaskValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTaskValidationResponse>
                 transformer =
                         DeleteTaskValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2353,8 +2334,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteUserDefinedFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/DeleteUserDefinedFunction");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteUserDefinedFunctionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteUserDefinedFunctionResponse>
                 transformer =
                         DeleteUserDefinedFunctionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2394,7 +2374,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteUserDefinedFunctionValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/DeleteUserDefinedFunctionValidation");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteUserDefinedFunctionValidationResponse>
                 transformer =
                         DeleteUserDefinedFunctionValidationConverter.fromResponse(
@@ -2433,7 +2413,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "DeleteWorkspace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteWorkspace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkspaceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkspaceResponse>
                 transformer =
                         DeleteWorkspaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2471,9 +2451,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetApplicationResponse>
-                transformer =
-                        GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetApplicationResponse> transformer =
+                GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2507,9 +2486,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/GetConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConnectionResponse>
-                transformer =
-                        GetConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetConnectionResponse> transformer =
+                GetConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2544,7 +2522,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetConnectionValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/GetConnectionValidation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConnectionValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetConnectionValidationResponse>
                 transformer =
                         GetConnectionValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2581,7 +2559,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetCountStatistic",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/GetCountStatistic");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCountStatisticResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetCountStatisticResponse>
                 transformer =
                         GetCountStatisticConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2618,9 +2596,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetDataAsset",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/GetDataAsset");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDataAssetResponse>
-                transformer =
-                        GetDataAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDataAssetResponse> transformer =
+                GetDataAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2654,9 +2631,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetDataEntity",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/GetDataEntity");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDataEntityResponse>
-                transformer =
-                        GetDataEntityConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDataEntityResponse> transformer =
+                GetDataEntityConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2690,9 +2666,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetDataFlow",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/GetDataFlow");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDataFlowResponse>
-                transformer =
-                        GetDataFlowConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDataFlowResponse> transformer =
+                GetDataFlowConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2727,7 +2702,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetDataFlowValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/GetDataFlowValidation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDataFlowValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDataFlowValidationResponse>
                 transformer =
                         GetDataFlowValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2764,7 +2739,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetDependentObject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetDependentObject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDependentObjectResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDependentObjectResponse>
                 transformer =
                         GetDependentObjectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2801,7 +2776,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetDisApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/GetDisApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDisApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDisApplicationResponse>
                 transformer =
                         GetDisApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2839,7 +2814,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetExternalPublication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/GetExternalPublication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetExternalPublicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetExternalPublicationResponse>
                 transformer =
                         GetExternalPublicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2877,7 +2852,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetExternalPublicationValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/GetExternalPublicationValidation");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetExternalPublicationValidationResponse>
                 transformer =
                         GetExternalPublicationValidationConverter.fromResponse(
@@ -2914,7 +2889,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetFolder",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/GetFolder");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetFolderResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetFolderResponse> transformer =
                 GetFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2949,7 +2924,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetFunctionLibrary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/GetFunctionLibrary");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetFunctionLibraryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetFunctionLibraryResponse>
                 transformer =
                         GetFunctionLibraryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2985,7 +2960,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetPatch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetPatch");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPatchResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetPatchResponse> transformer =
                 GetPatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3020,9 +2995,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetPipeline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/GetPipeline");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPipelineResponse>
-                transformer =
-                        GetPipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetPipelineResponse> transformer =
+                GetPipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3057,7 +3031,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetPipelineValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/GetPipelineValidation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPipelineValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetPipelineValidationResponse>
                 transformer =
                         GetPipelineValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3093,7 +3067,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/GetProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetProjectResponse> transformer =
                 GetProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3128,7 +3102,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetPublishedObject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetPublishedObject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublishedObjectResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetPublishedObjectResponse>
                 transformer =
                         GetPublishedObjectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3165,9 +3139,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetReference",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/GetReference");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetReferenceResponse>
-                transformer =
-                        GetReferenceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetReferenceResponse> transformer =
+                GetReferenceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3201,9 +3174,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/GetSchedule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduleResponse>
-                transformer =
-                        GetScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetScheduleResponse> transformer =
+                GetScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3236,7 +3208,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetSchema",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/GetSchema");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSchemaResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetSchemaResponse> transformer =
                 GetSchemaConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3270,7 +3242,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/GetTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTaskResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetTaskResponse> transformer =
                 GetTaskConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3304,7 +3276,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetTaskRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/GetTaskRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTaskRunResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetTaskRunResponse> transformer =
                 GetTaskRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3339,7 +3311,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetTaskSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/GetTaskSchedule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTaskScheduleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTaskScheduleResponse>
                 transformer =
                         GetTaskScheduleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3376,7 +3348,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetTaskValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/GetTaskValidation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTaskValidationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTaskValidationResponse>
                 transformer =
                         GetTaskValidationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3414,7 +3386,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetUserDefinedFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/GetUserDefinedFunction");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetUserDefinedFunctionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetUserDefinedFunctionResponse>
                 transformer =
                         GetUserDefinedFunctionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3452,7 +3424,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetUserDefinedFunctionValidation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/GetUserDefinedFunctionValidation");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetUserDefinedFunctionValidationResponse>
                 transformer =
                         GetUserDefinedFunctionValidationConverter.fromResponse(
@@ -3490,9 +3462,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3526,9 +3497,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "GetWorkspace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/GetWorkspace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkspaceResponse>
-                transformer =
-                        GetWorkspaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkspaceResponse> transformer =
+                GetWorkspaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3562,7 +3532,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListApplications",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListApplications");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
                 transformer =
                         ListApplicationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3600,8 +3570,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListConnectionValidations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/ListConnectionValidations");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListConnectionValidationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListConnectionValidationsResponse>
                 transformer =
                         ListConnectionValidationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3638,7 +3607,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListConnections",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/ListConnections");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
                 transformer =
                         ListConnectionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3675,9 +3644,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListDataAssets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/ListDataAssets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDataAssetsResponse>
-                transformer =
-                        ListDataAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListDataAssetsResponse> transformer =
+                ListDataAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3711,7 +3679,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListDataEntities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/ListDataEntities");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDataEntitiesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDataEntitiesResponse>
                 transformer =
                         ListDataEntitiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3749,7 +3717,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListDataFlowValidations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/ListDataFlowValidations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDataFlowValidationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDataFlowValidationsResponse>
                 transformer =
                         ListDataFlowValidationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3786,9 +3754,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListDataFlows",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/ListDataFlows");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDataFlowsResponse>
-                transformer =
-                        ListDataFlowsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListDataFlowsResponse> transformer =
+                ListDataFlowsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3822,7 +3789,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListDependentObjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListDependentObjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDependentObjectsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDependentObjectsResponse>
                 transformer =
                         ListDependentObjectsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3859,7 +3826,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListDisApplications",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/ListDisApplications");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDisApplicationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDisApplicationsResponse>
                 transformer =
                         ListDisApplicationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3897,7 +3864,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListExternalPublicationValidations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/ListExternalPublicationValidations");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListExternalPublicationValidationsResponse>
                 transformer =
                         ListExternalPublicationValidationsConverter.fromResponse(
@@ -3936,7 +3903,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListExternalPublications",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/ListExternalPublications");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListExternalPublicationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListExternalPublicationsResponse>
                 transformer =
                         ListExternalPublicationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3973,9 +3940,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListFolders",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/ListFolders");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListFoldersResponse>
-                transformer =
-                        ListFoldersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListFoldersResponse> transformer =
+                ListFoldersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4010,7 +3976,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListFunctionLibraries",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/ListFunctionLibraries");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListFunctionLibrariesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListFunctionLibrariesResponse>
                 transformer =
                         ListFunctionLibrariesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4047,7 +4013,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListPatchChanges",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPatchChanges");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPatchChangesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPatchChangesResponse>
                 transformer =
                         ListPatchChangesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4084,9 +4050,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListPatches",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPatches");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPatchesResponse>
-                transformer =
-                        ListPatchesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListPatchesResponse> transformer =
+                ListPatchesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4121,7 +4086,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListPipelineValidations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/ListPipelineValidations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPipelineValidationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPipelineValidationsResponse>
                 transformer =
                         ListPipelineValidationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4158,9 +4123,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListPipelines",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/ListPipelines");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPipelinesResponse>
-                transformer =
-                        ListPipelinesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListPipelinesResponse> transformer =
+                ListPipelinesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4194,9 +4158,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListProjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/ListProjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
-                transformer =
-                        ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListProjectsResponse> transformer =
+                ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4230,7 +4193,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListPublishedObjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPublishedObjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPublishedObjectsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPublishedObjectsResponse>
                 transformer =
                         ListPublishedObjectsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4267,9 +4230,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListReferences",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/ListReferences");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListReferencesResponse>
-                transformer =
-                        ListReferencesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListReferencesResponse> transformer =
+                ListReferencesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4303,9 +4265,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListSchedules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/ListSchedules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSchedulesResponse>
-                transformer =
-                        ListSchedulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSchedulesResponse> transformer =
+                ListSchedulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4339,9 +4300,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListSchemas",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/ListSchemas");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSchemasResponse>
-                transformer =
-                        ListSchemasConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSchemasResponse> transformer =
+                ListSchemasConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4375,7 +4335,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListTaskRunLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLogSummary/ListTaskRunLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTaskRunLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTaskRunLogsResponse>
                 transformer =
                         ListTaskRunLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4412,9 +4372,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListTaskRuns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/ListTaskRuns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTaskRunsResponse>
-                transformer =
-                        ListTaskRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListTaskRunsResponse> transformer =
+                ListTaskRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4448,7 +4407,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListTaskSchedules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/ListTaskSchedules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTaskSchedulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTaskSchedulesResponse>
                 transformer =
                         ListTaskSchedulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4485,7 +4444,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListTaskValidations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/ListTaskValidations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTaskValidationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTaskValidationsResponse>
                 transformer =
                         ListTaskValidationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4521,7 +4480,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListTasks",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/ListTasks");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTasksResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListTasksResponse> transformer =
                 ListTasksConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4557,7 +4516,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListUserDefinedFunctionValidations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/ListUserDefinedFunctionValidations");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListUserDefinedFunctionValidationsResponse>
                 transformer =
                         ListUserDefinedFunctionValidationsConverter.fromResponse(
@@ -4596,7 +4555,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListUserDefinedFunctions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/ListUserDefinedFunctions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListUserDefinedFunctionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListUserDefinedFunctionsResponse>
                 transformer =
                         ListUserDefinedFunctionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4634,7 +4593,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4671,7 +4630,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4708,7 +4667,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4745,9 +4704,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "ListWorkspaces",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/ListWorkspaces");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkspacesResponse>
-                transformer =
-                        ListWorkspacesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkspacesResponse> transformer =
+                ListWorkspacesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4782,9 +4740,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "StartWorkspace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/StartWorkspace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartWorkspaceResponse>
-                transformer =
-                        StartWorkspaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, StartWorkspaceResponse> transformer =
+                StartWorkspaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4820,9 +4777,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "StopWorkspace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/StopWorkspace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopWorkspaceResponse>
-                transformer =
-                        StopWorkspaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, StopWorkspaceResponse> transformer =
+                StopWorkspaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4857,7 +4813,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/UpdateApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
                 transformer =
                         UpdateApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4898,7 +4854,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/UpdateConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
                 transformer =
                         UpdateConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4939,7 +4895,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateDataAsset",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/UpdateDataAsset");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
                 transformer =
                         UpdateDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4980,9 +4936,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateDataFlow",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/UpdateDataFlow");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataFlowResponse>
-                transformer =
-                        UpdateDataFlowConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDataFlowResponse> transformer =
+                UpdateDataFlowConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5020,7 +4975,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateDisApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/UpdateDisApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDisApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDisApplicationResponse>
                 transformer =
                         UpdateDisApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5062,8 +5017,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateExternalPublication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/UpdateExternalPublication");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateExternalPublicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateExternalPublicationResponse>
                 transformer =
                         UpdateExternalPublicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5105,9 +5059,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateFolder",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/UpdateFolder");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFolderResponse>
-                transformer =
-                        UpdateFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateFolderResponse> transformer =
+                UpdateFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5146,7 +5099,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateFunctionLibrary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/UpdateFunctionLibrary");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFunctionLibraryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateFunctionLibraryResponse>
                 transformer =
                         UpdateFunctionLibraryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5187,9 +5140,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdatePipeline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/UpdatePipeline");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePipelineResponse>
-                transformer =
-                        UpdatePipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePipelineResponse> transformer =
+                UpdatePipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5227,9 +5179,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/UpdateProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
-                transformer =
-                        UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateProjectResponse> transformer =
+                UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5268,7 +5219,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateReference",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/UpdateReference");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateReferenceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateReferenceResponse>
                 transformer =
                         UpdateReferenceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5309,9 +5260,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/UpdateSchedule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateScheduleResponse>
-                transformer =
-                        UpdateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateScheduleResponse> transformer =
+                UpdateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5348,7 +5298,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/UpdateTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTaskResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTaskResponse> transformer =
                 UpdateTaskConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5387,9 +5337,8 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateTaskRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/UpdateTaskRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTaskRunResponse>
-                transformer =
-                        UpdateTaskRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTaskRunResponse> transformer =
+                UpdateTaskRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5427,7 +5376,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateTaskSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/UpdateTaskSchedule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTaskScheduleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTaskScheduleResponse>
                 transformer =
                         UpdateTaskScheduleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5469,8 +5418,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateUserDefinedFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/UpdateUserDefinedFunction");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateUserDefinedFunctionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateUserDefinedFunctionResponse>
                 transformer =
                         UpdateUserDefinedFunctionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5512,7 +5460,7 @@ public class DataIntegrationClient implements DataIntegration {
                         "UpdateWorkspace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateWorkspace");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateWorkspaceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateWorkspaceResponse>
                 transformer =
                         UpdateWorkspaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

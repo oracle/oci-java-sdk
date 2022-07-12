@@ -7,7 +7,6 @@ package com.oracle.bmc.databasemanagement;
 import com.oracle.bmc.databasemanagement.internal.http.*;
 import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for DbManagement service. <br/>
@@ -319,7 +318,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
          * @return the client
          */
         public DbManagementAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class DbManagementAsyncClient implements DbManagementAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -403,7 +403,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "AddDataFiles",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/AddDataFiles");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AddDataFilesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AddDataFilesResponse>
                 transformer =
                         AddDataFilesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AddDataFilesRequest, AddDataFilesResponse>
@@ -457,7 +457,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "AddManagedDatabaseToManagedDatabaseGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/AddManagedDatabaseToManagedDatabaseGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, AddManagedDatabaseToManagedDatabaseGroupResponse>
                 transformer =
                         AddManagedDatabaseToManagedDatabaseGroupConverter.fromResponse(
@@ -513,7 +513,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "AddmTasks",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/AddmTasksCollection/AddmTasks");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AddmTasksResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AddmTasksResponse>
                 transformer =
                         AddmTasksConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AddmTasksRequest, AddmTasksResponse> handlerToUse =
@@ -558,7 +558,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ChangeDatabaseParameters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ChangeDatabaseParameters");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseParametersResponse>
                 transformer =
                         ChangeDatabaseParametersConverter.fromResponse(
@@ -615,7 +615,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ChangeDbManagementPrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/ChangeDbManagementPrivateEndpointCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeDbManagementPrivateEndpointCompartmentResponse>
                 transformer =
@@ -675,8 +675,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ChangeJobCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/ChangeJobCompartment");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeJobCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeJobCompartmentResponse>
                 transformer =
                         ChangeJobCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -732,7 +731,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ChangeManagedDatabaseGroupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/ChangeManagedDatabaseGroupCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeManagedDatabaseGroupCompartmentResponse>
                 transformer =
                         ChangeManagedDatabaseGroupCompartmentConverter.fromResponse(
@@ -792,7 +791,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "CreateDbManagementPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/CreateDbManagementPrivateEndpoint");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateDbManagementPrivateEndpointResponse>
                 transformer =
                         CreateDbManagementPrivateEndpointConverter.fromResponse(
@@ -847,7 +846,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "CreateJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/CreateJob");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateJobResponse>
                 transformer =
                         CreateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handlerToUse =
@@ -899,7 +898,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "CreateManagedDatabaseGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/CreateManagedDatabaseGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateManagedDatabaseGroupResponse>
                 transformer =
                         CreateManagedDatabaseGroupConverter.fromResponse(
@@ -954,7 +953,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "CreateTablespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/CreateTablespace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTablespaceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTablespaceResponse>
                 transformer =
                         CreateTablespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1007,7 +1006,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "DeleteDbManagementPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/DeleteDbManagementPrivateEndpoint");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDbManagementPrivateEndpointResponse>
                 transformer =
                         DeleteDbManagementPrivateEndpointConverter.fromResponse(
@@ -1056,7 +1055,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "DeleteJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/DeleteJob");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteJobResponse>
                 transformer =
                         DeleteJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse> handlerToUse =
@@ -1102,7 +1101,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "DeleteManagedDatabaseGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/DeleteManagedDatabaseGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteManagedDatabaseGroupResponse>
                 transformer =
                         DeleteManagedDatabaseGroupConverter.fromResponse(
@@ -1152,7 +1151,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "DropTablespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/DropTablespace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DropTablespaceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DropTablespaceResponse>
                 transformer =
                         DropTablespaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DropTablespaceRequest, DropTablespaceResponse>
@@ -1203,8 +1202,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GenerateAwrSnapshot",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SnapshotDetails/GenerateAwrSnapshot");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GenerateAwrSnapshotResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GenerateAwrSnapshotResponse>
                 transformer =
                         GenerateAwrSnapshotConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1252,7 +1250,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetAwrDbReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetAwrDbReport");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetAwrDbReportResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAwrDbReportResponse>
                 transformer =
                         GetAwrDbReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetAwrDbReportRequest, GetAwrDbReportResponse>
@@ -1298,7 +1296,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetAwrDbSqlReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetAwrDbSqlReport");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetAwrDbSqlReportResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAwrDbSqlReportResponse>
                 transformer =
                         GetAwrDbSqlReportConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1344,8 +1342,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetClusterCacheMetric",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ClusterCacheMetric/GetClusterCacheMetric");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetClusterCacheMetricResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetClusterCacheMetricResponse>
                 transformer =
                         GetClusterCacheMetricConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1394,7 +1391,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetDatabaseFleetHealthMetrics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetHealthMetrics/GetDatabaseFleetHealthMetrics");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseFleetHealthMetricsResponse>
                 transformer =
                         GetDatabaseFleetHealthMetricsConverter.fromResponse(
@@ -1443,8 +1440,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetDatabaseHomeMetrics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseHomeMetrics/GetDatabaseHomeMetrics");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDatabaseHomeMetricsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseHomeMetricsResponse>
                 transformer =
                         GetDatabaseHomeMetricsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1493,7 +1489,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetDbManagementPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/GetDbManagementPrivateEndpoint");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDbManagementPrivateEndpointResponse>
                 transformer =
                         GetDbManagementPrivateEndpointConverter.fromResponse(
@@ -1540,8 +1536,8 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/GetJob");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobResponse>
-                transformer = GetJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJobResponse> transformer =
+                GetJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handlerToUse = handler;
 
         java.util.function.Function<
@@ -1582,7 +1578,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetJobExecution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobExecution/GetJobExecution");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobExecutionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJobExecutionResponse>
                 transformer =
                         GetJobExecutionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1626,7 +1622,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetJobRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobRun/GetJobRun");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobRunResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJobRunResponse>
                 transformer =
                         GetJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetJobRunRequest, GetJobRunResponse> handlerToUse =
@@ -1670,7 +1666,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetManagedDatabase",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetManagedDatabase");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetManagedDatabaseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetManagedDatabaseResponse>
                 transformer =
                         GetManagedDatabaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1716,7 +1712,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetManagedDatabaseGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/GetManagedDatabaseGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetManagedDatabaseGroupResponse>
                 transformer =
                         GetManagedDatabaseGroupConverter.fromResponse(
@@ -1763,7 +1759,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetPdbMetrics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PdbMetrics/GetPdbMetrics");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPdbMetricsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPdbMetricsResponse>
                 transformer =
                         GetPdbMetricsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetPdbMetricsRequest, GetPdbMetricsResponse>
@@ -1807,7 +1803,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetTablespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/GetTablespace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTablespaceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTablespaceResponse>
                 transformer =
                         GetTablespaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTablespaceRequest, GetTablespaceResponse>
@@ -1849,8 +1845,8 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetUser");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetUserResponse>
-                transformer = GetUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetUserResponse> transformer =
+                GetUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse> handlerToUse =
                 handler;
 
@@ -1892,7 +1888,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -1937,7 +1933,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListAsmProperties",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAsmProperties");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAsmPropertiesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAsmPropertiesResponse>
                 transformer =
                         ListAsmPropertiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1983,7 +1979,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListAssociatedDatabases",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/AssociatedDatabaseSummary/ListAssociatedDatabases");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAssociatedDatabasesResponse>
                 transformer =
                         ListAssociatedDatabasesConverter.fromResponse(
@@ -2032,7 +2028,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListAwrDbSnapshots",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAwrDbSnapshots");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAwrDbSnapshotsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAwrDbSnapshotsResponse>
                 transformer =
                         ListAwrDbSnapshotsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2077,7 +2073,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListAwrDbs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAwrDbs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAwrDbsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAwrDbsResponse>
                 transformer =
                         ListAwrDbsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListAwrDbsRequest, ListAwrDbsResponse> handlerToUse =
@@ -2124,7 +2120,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListConsumerGroupPrivileges",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListConsumerGroupPrivileges");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListConsumerGroupPrivilegesResponse>
                 transformer =
                         ListConsumerGroupPrivilegesConverter.fromResponse(
@@ -2173,7 +2169,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListDataAccessContainers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListDataAccessContainers");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDataAccessContainersResponse>
                 transformer =
                         ListDataAccessContainersConverter.fromResponse(
@@ -2221,8 +2217,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListDatabaseParameters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListDatabaseParameters");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDatabaseParametersResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseParametersResponse>
                 transformer =
                         ListDatabaseParametersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2271,7 +2266,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListDbManagementPrivateEndpoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/ListDbManagementPrivateEndpoints");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDbManagementPrivateEndpointsResponse>
                 transformer =
                         ListDbManagementPrivateEndpointsConverter.fromResponse(
@@ -2322,7 +2317,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListJobExecutions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobExecution/ListJobExecutions");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobExecutionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJobExecutionsResponse>
                 transformer =
                         ListJobExecutionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2367,7 +2362,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListJobRuns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobRun/ListJobRuns");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobRunsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJobRunsResponse>
                 transformer =
                         ListJobRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListJobRunsRequest, ListJobRunsResponse>
@@ -2410,8 +2405,8 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListJobs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/ListJobs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobsResponse>
-                transformer = ListJobsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJobsResponse> transformer =
+                ListJobsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handlerToUse =
                 handler;
 
@@ -2453,7 +2448,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListManagedDatabaseGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/ListManagedDatabaseGroups");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedDatabaseGroupsResponse>
                 transformer =
                         ListManagedDatabaseGroupsConverter.fromResponse(
@@ -2502,8 +2497,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListManagedDatabases",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListManagedDatabases");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListManagedDatabasesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListManagedDatabasesResponse>
                 transformer =
                         ListManagedDatabasesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2550,8 +2544,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListObjectPrivileges",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListObjectPrivileges");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListObjectPrivilegesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListObjectPrivilegesResponse>
                 transformer =
                         ListObjectPrivilegesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2598,8 +2591,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListProxiedForUsers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListProxiedForUsers");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListProxiedForUsersResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListProxiedForUsersResponse>
                 transformer =
                         ListProxiedForUsersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2646,7 +2638,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListProxyUsers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListProxyUsers");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListProxyUsersResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListProxyUsersResponse>
                 transformer =
                         ListProxyUsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListProxyUsersRequest, ListProxyUsersResponse>
@@ -2689,7 +2681,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListRoles",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListRoles");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRolesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRolesResponse>
                 transformer =
                         ListRolesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse> handlerToUse =
@@ -2733,8 +2725,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListSystemPrivileges",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSystemPrivileges");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSystemPrivilegesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSystemPrivilegesResponse>
                 transformer =
                         ListSystemPrivilegesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2781,7 +2772,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListTablespaces",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/ListTablespaces");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTablespacesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTablespacesResponse>
                 transformer =
                         ListTablespacesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2825,7 +2816,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListUsers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListUsers");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListUsersResponse>
                 transformer =
                         ListUsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse> handlerToUse =
@@ -2869,8 +2860,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2917,8 +2907,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequestLogEntry/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2965,7 +2954,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequest/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3012,7 +3001,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "RemoveDataFile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/RemoveDataFile");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveDataFileResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveDataFileResponse>
                 transformer =
                         RemoveDataFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RemoveDataFileRequest, RemoveDataFileResponse>
@@ -3066,7 +3055,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "RemoveManagedDatabaseFromManagedDatabaseGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/RemoveManagedDatabaseFromManagedDatabaseGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RemoveManagedDatabaseFromManagedDatabaseGroupResponse>
                 transformer =
@@ -3126,7 +3115,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ResetDatabaseParameters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ResetDatabaseParameters");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ResetDatabaseParametersResponse>
                 transformer =
                         ResetDatabaseParametersConverter.fromResponse(
@@ -3180,7 +3169,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "ResizeDataFile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/ResizeDataFile");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ResizeDataFileResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ResizeDataFileResponse>
                 transformer =
                         ResizeDataFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ResizeDataFileRequest, ResizeDataFileResponse>
@@ -3231,7 +3220,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "RunHistoricAddm",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/HistoricAddmResult/RunHistoricAddm");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RunHistoricAddmResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RunHistoricAddmResponse>
                 transformer =
                         RunHistoricAddmConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3283,7 +3272,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "SummarizeAwrDbCpuUsages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbCpuUsages");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeAwrDbCpuUsagesResponse>
                 transformer =
                         SummarizeAwrDbCpuUsagesConverter.fromResponse(
@@ -3332,8 +3321,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "SummarizeAwrDbMetrics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbMetrics");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SummarizeAwrDbMetricsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, SummarizeAwrDbMetricsResponse>
                 transformer =
                         SummarizeAwrDbMetricsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3383,7 +3371,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "SummarizeAwrDbParameterChanges",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbParameterChanges");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeAwrDbParameterChangesResponse>
                 transformer =
                         SummarizeAwrDbParameterChangesConverter.fromResponse(
@@ -3434,7 +3422,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "SummarizeAwrDbParameters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbParameters");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeAwrDbParametersResponse>
                 transformer =
                         SummarizeAwrDbParametersConverter.fromResponse(
@@ -3485,7 +3473,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "SummarizeAwrDbSnapshotRanges",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbSnapshotRanges");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeAwrDbSnapshotRangesResponse>
                 transformer =
                         SummarizeAwrDbSnapshotRangesConverter.fromResponse(
@@ -3535,8 +3523,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "SummarizeAwrDbSysstats",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbSysstats");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SummarizeAwrDbSysstatsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, SummarizeAwrDbSysstatsResponse>
                 transformer =
                         SummarizeAwrDbSysstatsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3586,7 +3573,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "SummarizeAwrDbTopWaitEvents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbTopWaitEvents");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeAwrDbTopWaitEventsResponse>
                 transformer =
                         SummarizeAwrDbTopWaitEventsConverter.fromResponse(
@@ -3638,7 +3625,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "SummarizeAwrDbWaitEventBuckets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbWaitEventBuckets");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeAwrDbWaitEventBucketsResponse>
                 transformer =
                         SummarizeAwrDbWaitEventBucketsConverter.fromResponse(
@@ -3689,7 +3676,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "SummarizeAwrDbWaitEvents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbWaitEvents");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeAwrDbWaitEventsResponse>
                 transformer =
                         SummarizeAwrDbWaitEventsConverter.fromResponse(
@@ -3739,7 +3726,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "SummarizeJobExecutionsStatuses",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobExecutionsStatusSummaryCollection/SummarizeJobExecutionsStatuses");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeJobExecutionsStatusesResponse>
                 transformer =
                         SummarizeJobExecutionsStatusesConverter.fromResponse(
@@ -3791,7 +3778,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "UpdateDbManagementPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/UpdateDbManagementPrivateEndpoint");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDbManagementPrivateEndpointResponse>
                 transformer =
                         UpdateDbManagementPrivateEndpointConverter.fromResponse(
@@ -3845,7 +3832,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "UpdateJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/UpdateJob");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateJobResponse>
                 transformer =
                         UpdateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handlerToUse =
@@ -3896,7 +3883,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "UpdateManagedDatabaseGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/UpdateManagedDatabaseGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateManagedDatabaseGroupResponse>
                 transformer =
                         UpdateManagedDatabaseGroupConverter.fromResponse(
@@ -3950,7 +3937,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                         "UpdateTablespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/UpdateTablespace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTablespaceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTablespaceResponse>
                 transformer =
                         UpdateTablespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

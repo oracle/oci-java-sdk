@@ -7,7 +7,6 @@ package com.oracle.bmc.osmanagement;
 import com.oracle.bmc.osmanagement.internal.http.*;
 import com.oracle.bmc.osmanagement.requests.*;
 import com.oracle.bmc.osmanagement.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for OsManagement service. <br/>
@@ -319,7 +318,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
          * @return the client
          */
         public OsManagementAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class OsManagementAsyncClient implements OsManagementAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -405,7 +405,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "AddPackagesToSoftwareSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/AddPackagesToSoftwareSource");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, AddPackagesToSoftwareSourceResponse>
                 transformer =
                         AddPackagesToSoftwareSourceConverter.fromResponse(
@@ -463,7 +463,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "AttachChildSoftwareSourceToManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachChildSoftwareSourceToManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         AttachChildSoftwareSourceToManagedInstanceResponse>
                 transformer =
@@ -526,7 +526,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "AttachManagedInstanceToManagedInstanceGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/AttachManagedInstanceToManagedInstanceGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         AttachManagedInstanceToManagedInstanceGroupResponse>
                 transformer =
@@ -583,7 +583,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "AttachParentSoftwareSourceToManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachParentSoftwareSourceToManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         AttachParentSoftwareSourceToManagedInstanceResponse>
                 transformer =
@@ -646,7 +646,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ChangeManagedInstanceGroupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeManagedInstanceGroupCompartmentResponse>
                 transformer =
                         ChangeManagedInstanceGroupCompartmentConverter.fromResponse(
@@ -706,7 +706,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ChangeScheduledJobCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ChangeScheduledJobCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeScheduledJobCompartmentResponse>
                 transformer =
                         ChangeScheduledJobCompartmentConverter.fromResponse(
@@ -763,7 +763,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ChangeSoftwareSourceCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ChangeSoftwareSourceCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeSoftwareSourceCompartmentResponse>
                 transformer =
                         ChangeSoftwareSourceCompartmentConverter.fromResponse(
@@ -822,7 +822,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "CreateManagedInstanceGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/CreateManagedInstanceGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateManagedInstanceGroupResponse>
                 transformer =
                         CreateManagedInstanceGroupConverter.fromResponse(
@@ -877,7 +877,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "CreateScheduledJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/CreateScheduledJob");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateScheduledJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateScheduledJobResponse>
                 transformer =
                         CreateScheduledJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -929,8 +929,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "CreateSoftwareSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/CreateSoftwareSource");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateSoftwareSourceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSoftwareSourceResponse>
                 transformer =
                         CreateSoftwareSourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -984,7 +983,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "DeleteManagedInstanceGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DeleteManagedInstanceGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteManagedInstanceGroupResponse>
                 transformer =
                         DeleteManagedInstanceGroupConverter.fromResponse(
@@ -1033,7 +1032,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "DeleteScheduledJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/DeleteScheduledJob");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteScheduledJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteScheduledJobResponse>
                 transformer =
                         DeleteScheduledJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1079,8 +1078,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "DeleteSoftwareSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/DeleteSoftwareSource");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteSoftwareSourceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSoftwareSourceResponse>
                 transformer =
                         DeleteSoftwareSourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1131,7 +1129,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "DetachChildSoftwareSourceFromManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachChildSoftwareSourceFromManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         DetachChildSoftwareSourceFromManagedInstanceResponse>
                 transformer =
@@ -1194,7 +1192,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "DetachManagedInstanceFromManagedInstanceGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DetachManagedInstanceFromManagedInstanceGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         DetachManagedInstanceFromManagedInstanceGroupResponse>
                 transformer =
@@ -1251,7 +1249,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "DetachParentSoftwareSourceFromManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachParentSoftwareSourceFromManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         DetachParentSoftwareSourceFromManagedInstanceResponse>
                 transformer =
@@ -1314,7 +1312,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "DisableModuleStreamOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/DisableModuleStreamOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DisableModuleStreamOnManagedInstanceResponse>
                 transformer =
                         DisableModuleStreamOnManagedInstanceConverter.fromResponse(
@@ -1369,7 +1367,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "EnableModuleStreamOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/EnableModuleStreamOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, EnableModuleStreamOnManagedInstanceResponse>
                 transformer =
                         EnableModuleStreamOnManagedInstanceConverter.fromResponse(
@@ -1418,7 +1416,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "GetErratum",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Erratum/GetErratum");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetErratumResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetErratumResponse>
                 transformer =
                         GetErratumConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetErratumRequest, GetErratumResponse> handlerToUse =
@@ -1463,7 +1461,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "GetManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/GetManagedInstance");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetManagedInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetManagedInstanceResponse>
                 transformer =
                         GetManagedInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1509,7 +1507,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "GetManagedInstanceGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/GetManagedInstanceGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetManagedInstanceGroupResponse>
                 transformer =
                         GetManagedInstanceGroupConverter.fromResponse(
@@ -1557,7 +1555,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "GetModuleStream",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStream/GetModuleStream");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetModuleStreamResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetModuleStreamResponse>
                 transformer =
                         GetModuleStreamConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1603,8 +1601,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "GetModuleStreamProfile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfile/GetModuleStreamProfile");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetModuleStreamProfileResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetModuleStreamProfileResponse>
                 transformer =
                         GetModuleStreamProfileConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1651,7 +1648,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "GetScheduledJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/GetScheduledJob");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduledJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetScheduledJobResponse>
                 transformer =
                         GetScheduledJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1697,7 +1694,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "GetSoftwarePackage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwarePackage");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSoftwarePackageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSoftwarePackageResponse>
                 transformer =
                         GetSoftwarePackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1743,7 +1740,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "GetSoftwareSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwareSource");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSoftwareSourceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSoftwareSourceResponse>
                 transformer =
                         GetSoftwareSourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1789,7 +1786,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "GetWindowsUpdate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdate/GetWindowsUpdate");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWindowsUpdateResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWindowsUpdateResponse>
                 transformer =
                         GetWindowsUpdateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1835,7 +1832,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -1884,7 +1881,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "InstallAllPackageUpdatesOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllPackageUpdatesOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         InstallAllPackageUpdatesOnManagedInstanceResponse>
                 transformer =
@@ -1941,7 +1938,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "InstallAllUpdatesOnManagedInstanceGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/InstallAllUpdatesOnManagedInstanceGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, InstallAllUpdatesOnManagedInstanceGroupResponse>
                 transformer =
                         InstallAllUpdatesOnManagedInstanceGroupConverter.fromResponse(
@@ -1997,7 +1994,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "InstallAllWindowsUpdatesOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllWindowsUpdatesOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         InstallAllWindowsUpdatesOnManagedInstanceResponse>
                 transformer =
@@ -2054,7 +2051,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "InstallModuleStreamProfileOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileDetails/InstallModuleStreamProfileOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         InstallModuleStreamProfileOnManagedInstanceResponse>
                 transformer =
@@ -2110,7 +2107,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "InstallPackageOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, InstallPackageOnManagedInstanceResponse>
                 transformer =
                         InstallPackageOnManagedInstanceConverter.fromResponse(
@@ -2165,7 +2162,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "InstallPackageUpdateOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageUpdateOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, InstallPackageUpdateOnManagedInstanceResponse>
                 transformer =
                         InstallPackageUpdateOnManagedInstanceConverter.fromResponse(
@@ -2220,7 +2217,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "InstallWindowsUpdateOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallWindowsUpdateOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, InstallWindowsUpdateOnManagedInstanceResponse>
                 transformer =
                         InstallWindowsUpdateOnManagedInstanceConverter.fromResponse(
@@ -2274,7 +2271,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListAvailablePackagesForManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailablePackagesForManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAvailablePackagesForManagedInstanceResponse>
                 transformer =
                         ListAvailablePackagesForManagedInstanceConverter.fromResponse(
@@ -2329,7 +2326,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListAvailableSoftwareSourcesForManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableSoftwareSourcesForManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListAvailableSoftwareSourcesForManagedInstanceResponse>
                 transformer =
@@ -2385,7 +2382,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListAvailableUpdatesForManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableUpdatesForManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAvailableUpdatesForManagedInstanceResponse>
                 transformer =
                         ListAvailableUpdatesForManagedInstanceConverter.fromResponse(
@@ -2439,7 +2436,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListAvailableWindowsUpdatesForManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableWindowsUpdatesForManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListAvailableWindowsUpdatesForManagedInstanceResponse>
                 transformer =
@@ -2490,7 +2487,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListErrata",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ErratumSummary/ListErrata");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListErrataResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListErrataResponse>
                 transformer =
                         ListErrataConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListErrataRequest, ListErrataResponse> handlerToUse =
@@ -2535,7 +2532,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListManagedInstanceErrata",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListManagedInstanceErrata");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceErrataResponse>
                 transformer =
                         ListManagedInstanceErrataConverter.fromResponse(
@@ -2584,7 +2581,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListManagedInstanceGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroupSummary/ListManagedInstanceGroups");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceGroupsResponse>
                 transformer =
                         ListManagedInstanceGroupsConverter.fromResponse(
@@ -2633,8 +2630,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListManagedInstances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceSummary/ListManagedInstances");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListManagedInstancesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListManagedInstancesResponse>
                 transformer =
                         ListManagedInstancesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2681,7 +2677,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListModuleStreamProfiles",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileSummary/ListModuleStreamProfiles");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListModuleStreamProfilesResponse>
                 transformer =
                         ListModuleStreamProfilesConverter.fromResponse(
@@ -2732,7 +2728,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListModuleStreamProfilesOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListModuleStreamProfilesOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListModuleStreamProfilesOnManagedInstanceResponse>
                 transformer =
@@ -2785,7 +2781,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListModuleStreams",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamSummary/ListModuleStreams");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListModuleStreamsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListModuleStreamsResponse>
                 transformer =
                         ListModuleStreamsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2833,7 +2829,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListModuleStreamsOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListModuleStreamsOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListModuleStreamsOnManagedInstanceResponse>
                 transformer =
                         ListModuleStreamsOnManagedInstanceConverter.fromResponse(
@@ -2887,7 +2883,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListPackagesInstalledOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListPackagesInstalledOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListPackagesInstalledOnManagedInstanceResponse>
                 transformer =
                         ListPackagesInstalledOnManagedInstanceConverter.fromResponse(
@@ -2938,7 +2934,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListScheduledJobs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListScheduledJobs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListScheduledJobsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListScheduledJobsResponse>
                 transformer =
                         ListScheduledJobsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2986,7 +2982,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListSoftwareSourcePackages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ListSoftwareSourcePackages");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSoftwareSourcePackagesResponse>
                 transformer =
                         ListSoftwareSourcePackagesConverter.fromResponse(
@@ -3035,8 +3031,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListSoftwareSources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSourceSummary/ListSoftwareSources");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSoftwareSourcesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSoftwareSourcesResponse>
                 transformer =
                         ListSoftwareSourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3083,7 +3078,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListUpcomingScheduledJobs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListUpcomingScheduledJobs");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListUpcomingScheduledJobsResponse>
                 transformer =
                         ListUpcomingScheduledJobsConverter.fromResponse(
@@ -3132,7 +3127,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListWindowsUpdates",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdateSummary/ListWindowsUpdates");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWindowsUpdatesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWindowsUpdatesResponse>
                 transformer =
                         ListWindowsUpdatesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3181,7 +3176,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListWindowsUpdatesInstalledOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListWindowsUpdatesInstalledOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListWindowsUpdatesInstalledOnManagedInstanceResponse>
                 transformer =
@@ -3234,8 +3229,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3282,8 +3276,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3330,7 +3323,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequestSummary/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3380,7 +3373,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "ManageModuleStreamsOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ManageModuleStreamsOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ManageModuleStreamsOnManagedInstanceResponse>
                 transformer =
                         ManageModuleStreamsOnManagedInstanceConverter.fromResponse(
@@ -3440,7 +3433,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "RemoveModuleStreamProfileFromManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileDetails/RemoveModuleStreamProfileFromManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RemoveModuleStreamProfileFromManagedInstanceResponse>
                 transformer =
@@ -3496,7 +3489,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "RemovePackageFromManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/RemovePackageFromManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RemovePackageFromManagedInstanceResponse>
                 transformer =
                         RemovePackageFromManagedInstanceConverter.fromResponse(
@@ -3549,7 +3542,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "RemovePackagesFromSoftwareSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/RemovePackagesFromSoftwareSource");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RemovePackagesFromSoftwareSourceResponse>
                 transformer =
                         RemovePackagesFromSoftwareSourceConverter.fromResponse(
@@ -3606,7 +3599,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "RunScheduledJobNow",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/RunScheduledJobNow");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RunScheduledJobNowResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RunScheduledJobNowResponse>
                 transformer =
                         RunScheduledJobNowConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3652,8 +3645,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "SearchSoftwarePackages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/SearchSoftwarePackages");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SearchSoftwarePackagesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, SearchSoftwarePackagesResponse>
                 transformer =
                         SearchSoftwarePackagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3703,7 +3695,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "SkipNextScheduledJobExecution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/SkipNextScheduledJobExecution");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SkipNextScheduledJobExecutionResponse>
                 transformer =
                         SkipNextScheduledJobExecutionConverter.fromResponse(
@@ -3756,7 +3748,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "SwitchModuleStreamOnManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/SwitchModuleStreamOnManagedInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SwitchModuleStreamOnManagedInstanceResponse>
                 transformer =
                         SwitchModuleStreamOnManagedInstanceConverter.fromResponse(
@@ -3807,8 +3799,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "UpdateManagedInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/UpdateManagedInstanceDetails/UpdateManagedInstance");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateManagedInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateManagedInstanceResponse>
                 transformer =
                         UpdateManagedInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3862,7 +3853,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "UpdateManagedInstanceGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/UpdateManagedInstanceGroup");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateManagedInstanceGroupResponse>
                 transformer =
                         UpdateManagedInstanceGroupConverter.fromResponse(
@@ -3916,7 +3907,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "UpdateScheduledJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/UpdateScheduledJob");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateScheduledJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateScheduledJobResponse>
                 transformer =
                         UpdateScheduledJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3967,8 +3958,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         "UpdateSoftwareSource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/UpdateSoftwareSource");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateSoftwareSourceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSoftwareSourceResponse>
                 transformer =
                         UpdateSoftwareSourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

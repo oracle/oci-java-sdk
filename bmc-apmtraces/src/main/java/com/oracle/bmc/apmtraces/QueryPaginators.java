@@ -44,19 +44,19 @@ public class QueryPaginators {
             final ListQuickPicksRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListQuickPicksRequest.Builder, ListQuickPicksRequest, ListQuickPicksResponse>(
-                new com.google.common.base.Supplier<ListQuickPicksRequest.Builder>() {
+                new java.util.function.Supplier<ListQuickPicksRequest.Builder>() {
                     @Override
                     public ListQuickPicksRequest.Builder get() {
                         return ListQuickPicksRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListQuickPicksResponse, String>() {
+                new java.util.function.Function<ListQuickPicksResponse, String>() {
                     @Override
                     public String apply(ListQuickPicksResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListQuickPicksRequest.Builder>,
                         ListQuickPicksRequest>() {
@@ -69,13 +69,12 @@ public class QueryPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListQuickPicksRequest, ListQuickPicksResponse>() {
+                new java.util.function.Function<ListQuickPicksRequest, ListQuickPicksResponse>() {
                     @Override
                     public ListQuickPicksResponse apply(ListQuickPicksRequest request) {
                         return client.listQuickPicks(request);
@@ -97,19 +96,19 @@ public class QueryPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListQuickPicksRequest.Builder, ListQuickPicksRequest, ListQuickPicksResponse,
                 com.oracle.bmc.apmtraces.model.QuickPickSummary>(
-                new com.google.common.base.Supplier<ListQuickPicksRequest.Builder>() {
+                new java.util.function.Supplier<ListQuickPicksRequest.Builder>() {
                     @Override
                     public ListQuickPicksRequest.Builder get() {
                         return ListQuickPicksRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListQuickPicksResponse, String>() {
+                new java.util.function.Function<ListQuickPicksResponse, String>() {
                     @Override
                     public String apply(ListQuickPicksResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListQuickPicksRequest.Builder>,
                         ListQuickPicksRequest>() {
@@ -122,19 +121,18 @@ public class QueryPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListQuickPicksRequest, ListQuickPicksResponse>() {
+                new java.util.function.Function<ListQuickPicksRequest, ListQuickPicksResponse>() {
                     @Override
                     public ListQuickPicksResponse apply(ListQuickPicksRequest request) {
                         return client.listQuickPicks(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListQuickPicksResponse,
                         java.util.List<com.oracle.bmc.apmtraces.model.QuickPickSummary>>() {
                     @Override

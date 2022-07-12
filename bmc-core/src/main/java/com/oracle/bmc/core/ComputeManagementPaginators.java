@@ -46,19 +46,19 @@ public class ComputeManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListClusterNetworkInstancesRequest.Builder, ListClusterNetworkInstancesRequest,
                 ListClusterNetworkInstancesResponse>(
-                new com.google.common.base.Supplier<ListClusterNetworkInstancesRequest.Builder>() {
+                new java.util.function.Supplier<ListClusterNetworkInstancesRequest.Builder>() {
                     @Override
                     public ListClusterNetworkInstancesRequest.Builder get() {
                         return ListClusterNetworkInstancesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListClusterNetworkInstancesResponse, String>() {
+                new java.util.function.Function<ListClusterNetworkInstancesResponse, String>() {
                     @Override
                     public String apply(ListClusterNetworkInstancesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListClusterNetworkInstancesRequest.Builder>,
                         ListClusterNetworkInstancesRequest>() {
@@ -71,12 +71,12 @@ public class ComputeManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListClusterNetworkInstancesRequest, ListClusterNetworkInstancesResponse>() {
                     @Override
                     public ListClusterNetworkInstancesResponse apply(
@@ -101,19 +101,19 @@ public class ComputeManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListClusterNetworkInstancesRequest.Builder, ListClusterNetworkInstancesRequest,
                 ListClusterNetworkInstancesResponse, com.oracle.bmc.core.model.InstanceSummary>(
-                new com.google.common.base.Supplier<ListClusterNetworkInstancesRequest.Builder>() {
+                new java.util.function.Supplier<ListClusterNetworkInstancesRequest.Builder>() {
                     @Override
                     public ListClusterNetworkInstancesRequest.Builder get() {
                         return ListClusterNetworkInstancesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListClusterNetworkInstancesResponse, String>() {
+                new java.util.function.Function<ListClusterNetworkInstancesResponse, String>() {
                     @Override
                     public String apply(ListClusterNetworkInstancesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListClusterNetworkInstancesRequest.Builder>,
                         ListClusterNetworkInstancesRequest>() {
@@ -126,12 +126,12 @@ public class ComputeManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListClusterNetworkInstancesRequest, ListClusterNetworkInstancesResponse>() {
                     @Override
                     public ListClusterNetworkInstancesResponse apply(
@@ -139,7 +139,7 @@ public class ComputeManagementPaginators {
                         return client.listClusterNetworkInstances(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListClusterNetworkInstancesResponse,
                         java.util.List<com.oracle.bmc.core.model.InstanceSummary>>() {
                     @Override
@@ -162,19 +162,19 @@ public class ComputeManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListClusterNetworksRequest.Builder, ListClusterNetworksRequest,
                 ListClusterNetworksResponse>(
-                new com.google.common.base.Supplier<ListClusterNetworksRequest.Builder>() {
+                new java.util.function.Supplier<ListClusterNetworksRequest.Builder>() {
                     @Override
                     public ListClusterNetworksRequest.Builder get() {
                         return ListClusterNetworksRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListClusterNetworksResponse, String>() {
+                new java.util.function.Function<ListClusterNetworksResponse, String>() {
                     @Override
                     public String apply(ListClusterNetworksResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListClusterNetworksRequest.Builder>,
                         ListClusterNetworksRequest>() {
@@ -187,12 +187,12 @@ public class ComputeManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListClusterNetworksRequest, ListClusterNetworksResponse>() {
                     @Override
                     public ListClusterNetworksResponse apply(ListClusterNetworksRequest request) {
@@ -215,19 +215,19 @@ public class ComputeManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListClusterNetworksRequest.Builder, ListClusterNetworksRequest,
                 ListClusterNetworksResponse, com.oracle.bmc.core.model.ClusterNetworkSummary>(
-                new com.google.common.base.Supplier<ListClusterNetworksRequest.Builder>() {
+                new java.util.function.Supplier<ListClusterNetworksRequest.Builder>() {
                     @Override
                     public ListClusterNetworksRequest.Builder get() {
                         return ListClusterNetworksRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListClusterNetworksResponse, String>() {
+                new java.util.function.Function<ListClusterNetworksResponse, String>() {
                     @Override
                     public String apply(ListClusterNetworksResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListClusterNetworksRequest.Builder>,
                         ListClusterNetworksRequest>() {
@@ -240,19 +240,19 @@ public class ComputeManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListClusterNetworksRequest, ListClusterNetworksResponse>() {
                     @Override
                     public ListClusterNetworksResponse apply(ListClusterNetworksRequest request) {
                         return client.listClusterNetworks(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListClusterNetworksResponse,
                         java.util.List<com.oracle.bmc.core.model.ClusterNetworkSummary>>() {
                     @Override
@@ -275,19 +275,19 @@ public class ComputeManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListInstanceConfigurationsRequest.Builder, ListInstanceConfigurationsRequest,
                 ListInstanceConfigurationsResponse>(
-                new com.google.common.base.Supplier<ListInstanceConfigurationsRequest.Builder>() {
+                new java.util.function.Supplier<ListInstanceConfigurationsRequest.Builder>() {
                     @Override
                     public ListInstanceConfigurationsRequest.Builder get() {
                         return ListInstanceConfigurationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInstanceConfigurationsResponse, String>() {
+                new java.util.function.Function<ListInstanceConfigurationsResponse, String>() {
                     @Override
                     public String apply(ListInstanceConfigurationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstanceConfigurationsRequest.Builder>,
                         ListInstanceConfigurationsRequest>() {
@@ -300,12 +300,12 @@ public class ComputeManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceConfigurationsRequest, ListInstanceConfigurationsResponse>() {
                     @Override
                     public ListInstanceConfigurationsResponse apply(
@@ -331,19 +331,19 @@ public class ComputeManagementPaginators {
                 ListInstanceConfigurationsRequest.Builder, ListInstanceConfigurationsRequest,
                 ListInstanceConfigurationsResponse,
                 com.oracle.bmc.core.model.InstanceConfigurationSummary>(
-                new com.google.common.base.Supplier<ListInstanceConfigurationsRequest.Builder>() {
+                new java.util.function.Supplier<ListInstanceConfigurationsRequest.Builder>() {
                     @Override
                     public ListInstanceConfigurationsRequest.Builder get() {
                         return ListInstanceConfigurationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInstanceConfigurationsResponse, String>() {
+                new java.util.function.Function<ListInstanceConfigurationsResponse, String>() {
                     @Override
                     public String apply(ListInstanceConfigurationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstanceConfigurationsRequest.Builder>,
                         ListInstanceConfigurationsRequest>() {
@@ -356,12 +356,12 @@ public class ComputeManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceConfigurationsRequest, ListInstanceConfigurationsResponse>() {
                     @Override
                     public ListInstanceConfigurationsResponse apply(
@@ -369,7 +369,7 @@ public class ComputeManagementPaginators {
                         return client.listInstanceConfigurations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceConfigurationsResponse,
                         java.util.List<com.oracle.bmc.core.model.InstanceConfigurationSummary>>() {
                     @Override
@@ -392,19 +392,19 @@ public class ComputeManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListInstancePoolInstancesRequest.Builder, ListInstancePoolInstancesRequest,
                 ListInstancePoolInstancesResponse>(
-                new com.google.common.base.Supplier<ListInstancePoolInstancesRequest.Builder>() {
+                new java.util.function.Supplier<ListInstancePoolInstancesRequest.Builder>() {
                     @Override
                     public ListInstancePoolInstancesRequest.Builder get() {
                         return ListInstancePoolInstancesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInstancePoolInstancesResponse, String>() {
+                new java.util.function.Function<ListInstancePoolInstancesResponse, String>() {
                     @Override
                     public String apply(ListInstancePoolInstancesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstancePoolInstancesRequest.Builder>,
                         ListInstancePoolInstancesRequest>() {
@@ -417,12 +417,12 @@ public class ComputeManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstancePoolInstancesRequest, ListInstancePoolInstancesResponse>() {
                     @Override
                     public ListInstancePoolInstancesResponse apply(
@@ -447,19 +447,19 @@ public class ComputeManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListInstancePoolInstancesRequest.Builder, ListInstancePoolInstancesRequest,
                 ListInstancePoolInstancesResponse, com.oracle.bmc.core.model.InstanceSummary>(
-                new com.google.common.base.Supplier<ListInstancePoolInstancesRequest.Builder>() {
+                new java.util.function.Supplier<ListInstancePoolInstancesRequest.Builder>() {
                     @Override
                     public ListInstancePoolInstancesRequest.Builder get() {
                         return ListInstancePoolInstancesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInstancePoolInstancesResponse, String>() {
+                new java.util.function.Function<ListInstancePoolInstancesResponse, String>() {
                     @Override
                     public String apply(ListInstancePoolInstancesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstancePoolInstancesRequest.Builder>,
                         ListInstancePoolInstancesRequest>() {
@@ -472,12 +472,12 @@ public class ComputeManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstancePoolInstancesRequest, ListInstancePoolInstancesResponse>() {
                     @Override
                     public ListInstancePoolInstancesResponse apply(
@@ -485,7 +485,7 @@ public class ComputeManagementPaginators {
                         return client.listInstancePoolInstances(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstancePoolInstancesResponse,
                         java.util.List<com.oracle.bmc.core.model.InstanceSummary>>() {
                     @Override
@@ -508,19 +508,19 @@ public class ComputeManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListInstancePoolsRequest.Builder, ListInstancePoolsRequest,
                 ListInstancePoolsResponse>(
-                new com.google.common.base.Supplier<ListInstancePoolsRequest.Builder>() {
+                new java.util.function.Supplier<ListInstancePoolsRequest.Builder>() {
                     @Override
                     public ListInstancePoolsRequest.Builder get() {
                         return ListInstancePoolsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInstancePoolsResponse, String>() {
+                new java.util.function.Function<ListInstancePoolsResponse, String>() {
                     @Override
                     public String apply(ListInstancePoolsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstancePoolsRequest.Builder>,
                         ListInstancePoolsRequest>() {
@@ -533,12 +533,12 @@ public class ComputeManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstancePoolsRequest, ListInstancePoolsResponse>() {
                     @Override
                     public ListInstancePoolsResponse apply(ListInstancePoolsRequest request) {
@@ -561,19 +561,19 @@ public class ComputeManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListInstancePoolsRequest.Builder, ListInstancePoolsRequest,
                 ListInstancePoolsResponse, com.oracle.bmc.core.model.InstancePoolSummary>(
-                new com.google.common.base.Supplier<ListInstancePoolsRequest.Builder>() {
+                new java.util.function.Supplier<ListInstancePoolsRequest.Builder>() {
                     @Override
                     public ListInstancePoolsRequest.Builder get() {
                         return ListInstancePoolsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInstancePoolsResponse, String>() {
+                new java.util.function.Function<ListInstancePoolsResponse, String>() {
                     @Override
                     public String apply(ListInstancePoolsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstancePoolsRequest.Builder>,
                         ListInstancePoolsRequest>() {
@@ -586,19 +586,19 @@ public class ComputeManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstancePoolsRequest, ListInstancePoolsResponse>() {
                     @Override
                     public ListInstancePoolsResponse apply(ListInstancePoolsRequest request) {
                         return client.listInstancePools(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstancePoolsResponse,
                         java.util.List<com.oracle.bmc.core.model.InstancePoolSummary>>() {
                     @Override

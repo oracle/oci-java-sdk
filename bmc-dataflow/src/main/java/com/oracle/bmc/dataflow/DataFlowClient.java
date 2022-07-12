@@ -9,7 +9,6 @@ import com.oracle.bmc.dataflow.requests.*;
 import com.oracle.bmc.dataflow.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 public class DataFlowClient implements DataFlow {
@@ -334,9 +333,9 @@ public class DataFlowClient implements DataFlow {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DataFlow-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DataFlow-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class DataFlowClient implements DataFlow {
          * @return the client
          */
         public DataFlowClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class DataFlowClient implements DataFlow {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,8 +488,7 @@ public class DataFlowClient implements DataFlow {
                         "ChangeApplicationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/ChangeApplicationCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>
                 transformer =
                         ChangeApplicationCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -532,7 +531,7 @@ public class DataFlowClient implements DataFlow {
                         "ChangePrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/ChangePrivateEndpointCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangePrivateEndpointCompartmentResponse>
                 transformer =
                         ChangePrivateEndpointCompartmentConverter.fromResponse(
@@ -576,7 +575,7 @@ public class DataFlowClient implements DataFlow {
                         "ChangeRunCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/ChangeRunCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeRunCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeRunCompartmentResponse>
                 transformer =
                         ChangeRunCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -618,7 +617,7 @@ public class DataFlowClient implements DataFlow {
                         "CreateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/CreateApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
                 transformer =
                         CreateApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -658,7 +657,7 @@ public class DataFlowClient implements DataFlow {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DataFlow", "CreatePrivateEndpoint", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePrivateEndpointResponse>
                 transformer =
                         CreatePrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -699,7 +698,7 @@ public class DataFlowClient implements DataFlow {
                         "CreateRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/CreateRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRunResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRunResponse> transformer =
                 CreateRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -738,7 +737,7 @@ public class DataFlowClient implements DataFlow {
                         "DeleteApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/DeleteApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
                 transformer =
                         DeleteApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -777,7 +776,7 @@ public class DataFlowClient implements DataFlow {
                         "DeletePrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/DeletePrivateEndpoint");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePrivateEndpointResponse>
                 transformer =
                         DeletePrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -814,7 +813,7 @@ public class DataFlowClient implements DataFlow {
                         "DeleteRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/DeleteRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRunResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRunResponse> transformer =
                 DeleteRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -850,9 +849,8 @@ public class DataFlowClient implements DataFlow {
                         "GetApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/GetApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetApplicationResponse>
-                transformer =
-                        GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetApplicationResponse> transformer =
+                GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -886,7 +884,7 @@ public class DataFlowClient implements DataFlow {
                         "GetPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/GetPrivateEndpoint");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetPrivateEndpointResponse>
                 transformer =
                         GetPrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -922,7 +920,7 @@ public class DataFlowClient implements DataFlow {
                         "GetRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/GetRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRunResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetRunResponse> transformer =
                 GetRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -966,7 +964,7 @@ public class DataFlowClient implements DataFlow {
                         "GetRunLog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/GetRunLog");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRunLogResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetRunLogResponse> transformer =
                 GetRunLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1001,9 +999,8 @@ public class DataFlowClient implements DataFlow {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1037,7 +1034,7 @@ public class DataFlowClient implements DataFlow {
                         "ListApplications",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/ApplicationSummary/ListApplications");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
                 transformer =
                         ListApplicationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1074,7 +1071,7 @@ public class DataFlowClient implements DataFlow {
                         "ListPrivateEndpoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/ListPrivateEndpoints");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPrivateEndpointsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPrivateEndpointsResponse>
                 transformer =
                         ListPrivateEndpointsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1111,9 +1108,8 @@ public class DataFlowClient implements DataFlow {
                         "ListRunLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/RunLogSummary/ListRunLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRunLogsResponse>
-                transformer =
-                        ListRunLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListRunLogsResponse> transformer =
+                ListRunLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1146,7 +1142,7 @@ public class DataFlowClient implements DataFlow {
                         "ListRuns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/RunSummary/ListRuns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRunsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListRunsResponse> transformer =
                 ListRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1182,7 +1178,7 @@ public class DataFlowClient implements DataFlow {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1219,7 +1215,7 @@ public class DataFlowClient implements DataFlow {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequestLog/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1256,7 +1252,7 @@ public class DataFlowClient implements DataFlow {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1293,7 +1289,7 @@ public class DataFlowClient implements DataFlow {
                         "UpdateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/UpdateApplication");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
                 transformer =
                         UpdateApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1335,7 +1331,7 @@ public class DataFlowClient implements DataFlow {
                         "UpdatePrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/UpdatePrivateEndpoint");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePrivateEndpointResponse>
                 transformer =
                         UpdatePrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1375,7 +1371,7 @@ public class DataFlowClient implements DataFlow {
                         "UpdateRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/UpdateRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRunResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRunResponse> transformer =
                 UpdateRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

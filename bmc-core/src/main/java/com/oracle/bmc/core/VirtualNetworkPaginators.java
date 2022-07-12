@@ -45,19 +45,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 GetAllDrgAttachmentsRequest.Builder, GetAllDrgAttachmentsRequest,
                 GetAllDrgAttachmentsResponse>(
-                new com.google.common.base.Supplier<GetAllDrgAttachmentsRequest.Builder>() {
+                new java.util.function.Supplier<GetAllDrgAttachmentsRequest.Builder>() {
                     @Override
                     public GetAllDrgAttachmentsRequest.Builder get() {
                         return GetAllDrgAttachmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<GetAllDrgAttachmentsResponse, String>() {
+                new java.util.function.Function<GetAllDrgAttachmentsResponse, String>() {
                     @Override
                     public String apply(GetAllDrgAttachmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 GetAllDrgAttachmentsRequest.Builder>,
                         GetAllDrgAttachmentsRequest>() {
@@ -70,12 +70,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetAllDrgAttachmentsRequest, GetAllDrgAttachmentsResponse>() {
                     @Override
                     public GetAllDrgAttachmentsResponse apply(GetAllDrgAttachmentsRequest request) {
@@ -98,19 +98,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 GetAllDrgAttachmentsRequest.Builder, GetAllDrgAttachmentsRequest,
                 GetAllDrgAttachmentsResponse, com.oracle.bmc.core.model.DrgAttachmentInfo>(
-                new com.google.common.base.Supplier<GetAllDrgAttachmentsRequest.Builder>() {
+                new java.util.function.Supplier<GetAllDrgAttachmentsRequest.Builder>() {
                     @Override
                     public GetAllDrgAttachmentsRequest.Builder get() {
                         return GetAllDrgAttachmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<GetAllDrgAttachmentsResponse, String>() {
+                new java.util.function.Function<GetAllDrgAttachmentsResponse, String>() {
                     @Override
                     public String apply(GetAllDrgAttachmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 GetAllDrgAttachmentsRequest.Builder>,
                         GetAllDrgAttachmentsRequest>() {
@@ -123,19 +123,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetAllDrgAttachmentsRequest, GetAllDrgAttachmentsResponse>() {
                     @Override
                     public GetAllDrgAttachmentsResponse apply(GetAllDrgAttachmentsRequest request) {
                         return client.getAllDrgAttachments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetAllDrgAttachmentsResponse,
                         java.util.List<com.oracle.bmc.core.model.DrgAttachmentInfo>>() {
                     @Override
@@ -158,19 +158,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListByoipAllocatedRangesRequest.Builder, ListByoipAllocatedRangesRequest,
                 ListByoipAllocatedRangesResponse>(
-                new com.google.common.base.Supplier<ListByoipAllocatedRangesRequest.Builder>() {
+                new java.util.function.Supplier<ListByoipAllocatedRangesRequest.Builder>() {
                     @Override
                     public ListByoipAllocatedRangesRequest.Builder get() {
                         return ListByoipAllocatedRangesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListByoipAllocatedRangesResponse, String>() {
+                new java.util.function.Function<ListByoipAllocatedRangesResponse, String>() {
                     @Override
                     public String apply(ListByoipAllocatedRangesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListByoipAllocatedRangesRequest.Builder>,
                         ListByoipAllocatedRangesRequest>() {
@@ -183,12 +183,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListByoipAllocatedRangesRequest, ListByoipAllocatedRangesResponse>() {
                     @Override
                     public ListByoipAllocatedRangesResponse apply(
@@ -213,19 +213,19 @@ public class VirtualNetworkPaginators {
                 ListByoipAllocatedRangesRequest.Builder, ListByoipAllocatedRangesRequest,
                 ListByoipAllocatedRangesResponse,
                 com.oracle.bmc.core.model.ByoipAllocatedRangeSummary>(
-                new com.google.common.base.Supplier<ListByoipAllocatedRangesRequest.Builder>() {
+                new java.util.function.Supplier<ListByoipAllocatedRangesRequest.Builder>() {
                     @Override
                     public ListByoipAllocatedRangesRequest.Builder get() {
                         return ListByoipAllocatedRangesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListByoipAllocatedRangesResponse, String>() {
+                new java.util.function.Function<ListByoipAllocatedRangesResponse, String>() {
                     @Override
                     public String apply(ListByoipAllocatedRangesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListByoipAllocatedRangesRequest.Builder>,
                         ListByoipAllocatedRangesRequest>() {
@@ -238,12 +238,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListByoipAllocatedRangesRequest, ListByoipAllocatedRangesResponse>() {
                     @Override
                     public ListByoipAllocatedRangesResponse apply(
@@ -251,7 +251,7 @@ public class VirtualNetworkPaginators {
                         return client.listByoipAllocatedRanges(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListByoipAllocatedRangesResponse,
                         java.util.List<com.oracle.bmc.core.model.ByoipAllocatedRangeSummary>>() {
                     @Override
@@ -273,19 +273,19 @@ public class VirtualNetworkPaginators {
             final ListByoipRangesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListByoipRangesRequest.Builder, ListByoipRangesRequest, ListByoipRangesResponse>(
-                new com.google.common.base.Supplier<ListByoipRangesRequest.Builder>() {
+                new java.util.function.Supplier<ListByoipRangesRequest.Builder>() {
                     @Override
                     public ListByoipRangesRequest.Builder get() {
                         return ListByoipRangesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListByoipRangesResponse, String>() {
+                new java.util.function.Function<ListByoipRangesResponse, String>() {
                     @Override
                     public String apply(ListByoipRangesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListByoipRangesRequest.Builder>,
                         ListByoipRangesRequest>() {
@@ -298,13 +298,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListByoipRangesRequest, ListByoipRangesResponse>() {
+                new java.util.function.Function<ListByoipRangesRequest, ListByoipRangesResponse>() {
                     @Override
                     public ListByoipRangesResponse apply(ListByoipRangesRequest request) {
                         return client.listByoipRanges(request);
@@ -326,19 +325,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListByoipRangesRequest.Builder, ListByoipRangesRequest, ListByoipRangesResponse,
                 com.oracle.bmc.core.model.ByoipRangeSummary>(
-                new com.google.common.base.Supplier<ListByoipRangesRequest.Builder>() {
+                new java.util.function.Supplier<ListByoipRangesRequest.Builder>() {
                     @Override
                     public ListByoipRangesRequest.Builder get() {
                         return ListByoipRangesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListByoipRangesResponse, String>() {
+                new java.util.function.Function<ListByoipRangesResponse, String>() {
                     @Override
                     public String apply(ListByoipRangesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListByoipRangesRequest.Builder>,
                         ListByoipRangesRequest>() {
@@ -351,19 +350,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListByoipRangesRequest, ListByoipRangesResponse>() {
+                new java.util.function.Function<ListByoipRangesRequest, ListByoipRangesResponse>() {
                     @Override
                     public ListByoipRangesResponse apply(ListByoipRangesRequest request) {
                         return client.listByoipRanges(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListByoipRangesResponse,
                         java.util.List<com.oracle.bmc.core.model.ByoipRangeSummary>>() {
                     @Override
@@ -386,19 +384,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCaptureFiltersRequest.Builder, ListCaptureFiltersRequest,
                 ListCaptureFiltersResponse>(
-                new com.google.common.base.Supplier<ListCaptureFiltersRequest.Builder>() {
+                new java.util.function.Supplier<ListCaptureFiltersRequest.Builder>() {
                     @Override
                     public ListCaptureFiltersRequest.Builder get() {
                         return ListCaptureFiltersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCaptureFiltersResponse, String>() {
+                new java.util.function.Function<ListCaptureFiltersResponse, String>() {
                     @Override
                     public String apply(ListCaptureFiltersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCaptureFiltersRequest.Builder>,
                         ListCaptureFiltersRequest>() {
@@ -411,12 +409,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCaptureFiltersRequest, ListCaptureFiltersResponse>() {
                     @Override
                     public ListCaptureFiltersResponse apply(ListCaptureFiltersRequest request) {
@@ -439,19 +437,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCaptureFiltersRequest.Builder, ListCaptureFiltersRequest,
                 ListCaptureFiltersResponse, com.oracle.bmc.core.model.CaptureFilter>(
-                new com.google.common.base.Supplier<ListCaptureFiltersRequest.Builder>() {
+                new java.util.function.Supplier<ListCaptureFiltersRequest.Builder>() {
                     @Override
                     public ListCaptureFiltersRequest.Builder get() {
                         return ListCaptureFiltersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCaptureFiltersResponse, String>() {
+                new java.util.function.Function<ListCaptureFiltersResponse, String>() {
                     @Override
                     public String apply(ListCaptureFiltersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCaptureFiltersRequest.Builder>,
                         ListCaptureFiltersRequest>() {
@@ -464,19 +462,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCaptureFiltersRequest, ListCaptureFiltersResponse>() {
                     @Override
                     public ListCaptureFiltersResponse apply(ListCaptureFiltersRequest request) {
                         return client.listCaptureFilters(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCaptureFiltersResponse,
                         java.util.List<com.oracle.bmc.core.model.CaptureFilter>>() {
                     @Override
@@ -499,19 +497,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCpeDeviceShapesRequest.Builder, ListCpeDeviceShapesRequest,
                 ListCpeDeviceShapesResponse>(
-                new com.google.common.base.Supplier<ListCpeDeviceShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListCpeDeviceShapesRequest.Builder>() {
                     @Override
                     public ListCpeDeviceShapesRequest.Builder get() {
                         return ListCpeDeviceShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCpeDeviceShapesResponse, String>() {
+                new java.util.function.Function<ListCpeDeviceShapesResponse, String>() {
                     @Override
                     public String apply(ListCpeDeviceShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCpeDeviceShapesRequest.Builder>,
                         ListCpeDeviceShapesRequest>() {
@@ -524,12 +522,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCpeDeviceShapesRequest, ListCpeDeviceShapesResponse>() {
                     @Override
                     public ListCpeDeviceShapesResponse apply(ListCpeDeviceShapesRequest request) {
@@ -552,19 +550,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCpeDeviceShapesRequest.Builder, ListCpeDeviceShapesRequest,
                 ListCpeDeviceShapesResponse, com.oracle.bmc.core.model.CpeDeviceShapeSummary>(
-                new com.google.common.base.Supplier<ListCpeDeviceShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListCpeDeviceShapesRequest.Builder>() {
                     @Override
                     public ListCpeDeviceShapesRequest.Builder get() {
                         return ListCpeDeviceShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCpeDeviceShapesResponse, String>() {
+                new java.util.function.Function<ListCpeDeviceShapesResponse, String>() {
                     @Override
                     public String apply(ListCpeDeviceShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCpeDeviceShapesRequest.Builder>,
                         ListCpeDeviceShapesRequest>() {
@@ -577,19 +575,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCpeDeviceShapesRequest, ListCpeDeviceShapesResponse>() {
                     @Override
                     public ListCpeDeviceShapesResponse apply(ListCpeDeviceShapesRequest request) {
                         return client.listCpeDeviceShapes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCpeDeviceShapesResponse,
                         java.util.List<com.oracle.bmc.core.model.CpeDeviceShapeSummary>>() {
                     @Override
@@ -610,19 +608,19 @@ public class VirtualNetworkPaginators {
     public Iterable<ListCpesResponse> listCpesResponseIterator(final ListCpesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCpesRequest.Builder, ListCpesRequest, ListCpesResponse>(
-                new com.google.common.base.Supplier<ListCpesRequest.Builder>() {
+                new java.util.function.Supplier<ListCpesRequest.Builder>() {
                     @Override
                     public ListCpesRequest.Builder get() {
                         return ListCpesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCpesResponse, String>() {
+                new java.util.function.Function<ListCpesResponse, String>() {
                     @Override
                     public String apply(ListCpesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCpesRequest.Builder>,
                         ListCpesRequest>() {
@@ -635,12 +633,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListCpesRequest, ListCpesResponse>() {
+                new java.util.function.Function<ListCpesRequest, ListCpesResponse>() {
                     @Override
                     public ListCpesResponse apply(ListCpesRequest request) {
                         return client.listCpes(request);
@@ -662,19 +660,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCpesRequest.Builder, ListCpesRequest, ListCpesResponse,
                 com.oracle.bmc.core.model.Cpe>(
-                new com.google.common.base.Supplier<ListCpesRequest.Builder>() {
+                new java.util.function.Supplier<ListCpesRequest.Builder>() {
                     @Override
                     public ListCpesRequest.Builder get() {
                         return ListCpesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCpesResponse, String>() {
+                new java.util.function.Function<ListCpesResponse, String>() {
                     @Override
                     public String apply(ListCpesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCpesRequest.Builder>,
                         ListCpesRequest>() {
@@ -687,18 +685,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListCpesRequest, ListCpesResponse>() {
+                new java.util.function.Function<ListCpesRequest, ListCpesResponse>() {
                     @Override
                     public ListCpesResponse apply(ListCpesRequest request) {
                         return client.listCpes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCpesResponse, java.util.List<com.oracle.bmc.core.model.Cpe>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.Cpe> apply(
@@ -720,19 +718,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCrossConnectGroupsRequest.Builder, ListCrossConnectGroupsRequest,
                 ListCrossConnectGroupsResponse>(
-                new com.google.common.base.Supplier<ListCrossConnectGroupsRequest.Builder>() {
+                new java.util.function.Supplier<ListCrossConnectGroupsRequest.Builder>() {
                     @Override
                     public ListCrossConnectGroupsRequest.Builder get() {
                         return ListCrossConnectGroupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCrossConnectGroupsResponse, String>() {
+                new java.util.function.Function<ListCrossConnectGroupsResponse, String>() {
                     @Override
                     public String apply(ListCrossConnectGroupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCrossConnectGroupsRequest.Builder>,
                         ListCrossConnectGroupsRequest>() {
@@ -745,12 +743,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCrossConnectGroupsRequest, ListCrossConnectGroupsResponse>() {
                     @Override
                     public ListCrossConnectGroupsResponse apply(
@@ -774,19 +772,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCrossConnectGroupsRequest.Builder, ListCrossConnectGroupsRequest,
                 ListCrossConnectGroupsResponse, com.oracle.bmc.core.model.CrossConnectGroup>(
-                new com.google.common.base.Supplier<ListCrossConnectGroupsRequest.Builder>() {
+                new java.util.function.Supplier<ListCrossConnectGroupsRequest.Builder>() {
                     @Override
                     public ListCrossConnectGroupsRequest.Builder get() {
                         return ListCrossConnectGroupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCrossConnectGroupsResponse, String>() {
+                new java.util.function.Function<ListCrossConnectGroupsResponse, String>() {
                     @Override
                     public String apply(ListCrossConnectGroupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCrossConnectGroupsRequest.Builder>,
                         ListCrossConnectGroupsRequest>() {
@@ -799,12 +797,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCrossConnectGroupsRequest, ListCrossConnectGroupsResponse>() {
                     @Override
                     public ListCrossConnectGroupsResponse apply(
@@ -812,7 +810,7 @@ public class VirtualNetworkPaginators {
                         return client.listCrossConnectGroups(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCrossConnectGroupsResponse,
                         java.util.List<com.oracle.bmc.core.model.CrossConnectGroup>>() {
                     @Override
@@ -835,19 +833,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCrossConnectLocationsRequest.Builder, ListCrossConnectLocationsRequest,
                 ListCrossConnectLocationsResponse>(
-                new com.google.common.base.Supplier<ListCrossConnectLocationsRequest.Builder>() {
+                new java.util.function.Supplier<ListCrossConnectLocationsRequest.Builder>() {
                     @Override
                     public ListCrossConnectLocationsRequest.Builder get() {
                         return ListCrossConnectLocationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCrossConnectLocationsResponse, String>() {
+                new java.util.function.Function<ListCrossConnectLocationsResponse, String>() {
                     @Override
                     public String apply(ListCrossConnectLocationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCrossConnectLocationsRequest.Builder>,
                         ListCrossConnectLocationsRequest>() {
@@ -860,12 +858,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCrossConnectLocationsRequest, ListCrossConnectLocationsResponse>() {
                     @Override
                     public ListCrossConnectLocationsResponse apply(
@@ -890,19 +888,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCrossConnectLocationsRequest.Builder, ListCrossConnectLocationsRequest,
                 ListCrossConnectLocationsResponse, com.oracle.bmc.core.model.CrossConnectLocation>(
-                new com.google.common.base.Supplier<ListCrossConnectLocationsRequest.Builder>() {
+                new java.util.function.Supplier<ListCrossConnectLocationsRequest.Builder>() {
                     @Override
                     public ListCrossConnectLocationsRequest.Builder get() {
                         return ListCrossConnectLocationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCrossConnectLocationsResponse, String>() {
+                new java.util.function.Function<ListCrossConnectLocationsResponse, String>() {
                     @Override
                     public String apply(ListCrossConnectLocationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCrossConnectLocationsRequest.Builder>,
                         ListCrossConnectLocationsRequest>() {
@@ -915,12 +913,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCrossConnectLocationsRequest, ListCrossConnectLocationsResponse>() {
                     @Override
                     public ListCrossConnectLocationsResponse apply(
@@ -928,7 +926,7 @@ public class VirtualNetworkPaginators {
                         return client.listCrossConnectLocations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCrossConnectLocationsResponse,
                         java.util.List<com.oracle.bmc.core.model.CrossConnectLocation>>() {
                     @Override
@@ -951,19 +949,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCrossConnectsRequest.Builder, ListCrossConnectsRequest,
                 ListCrossConnectsResponse>(
-                new com.google.common.base.Supplier<ListCrossConnectsRequest.Builder>() {
+                new java.util.function.Supplier<ListCrossConnectsRequest.Builder>() {
                     @Override
                     public ListCrossConnectsRequest.Builder get() {
                         return ListCrossConnectsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCrossConnectsResponse, String>() {
+                new java.util.function.Function<ListCrossConnectsResponse, String>() {
                     @Override
                     public String apply(ListCrossConnectsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCrossConnectsRequest.Builder>,
                         ListCrossConnectsRequest>() {
@@ -976,12 +974,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCrossConnectsRequest, ListCrossConnectsResponse>() {
                     @Override
                     public ListCrossConnectsResponse apply(ListCrossConnectsRequest request) {
@@ -1004,19 +1002,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCrossConnectsRequest.Builder, ListCrossConnectsRequest,
                 ListCrossConnectsResponse, com.oracle.bmc.core.model.CrossConnect>(
-                new com.google.common.base.Supplier<ListCrossConnectsRequest.Builder>() {
+                new java.util.function.Supplier<ListCrossConnectsRequest.Builder>() {
                     @Override
                     public ListCrossConnectsRequest.Builder get() {
                         return ListCrossConnectsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCrossConnectsResponse, String>() {
+                new java.util.function.Function<ListCrossConnectsResponse, String>() {
                     @Override
                     public String apply(ListCrossConnectsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCrossConnectsRequest.Builder>,
                         ListCrossConnectsRequest>() {
@@ -1029,19 +1027,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCrossConnectsRequest, ListCrossConnectsResponse>() {
                     @Override
                     public ListCrossConnectsResponse apply(ListCrossConnectsRequest request) {
                         return client.listCrossConnects(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCrossConnectsResponse,
                         java.util.List<com.oracle.bmc.core.model.CrossConnect>>() {
                     @Override
@@ -1065,21 +1063,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCrossconnectPortSpeedShapesRequest.Builder,
                 ListCrossconnectPortSpeedShapesRequest, ListCrossconnectPortSpeedShapesResponse>(
-                new com.google.common.base.Supplier<
-                        ListCrossconnectPortSpeedShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListCrossconnectPortSpeedShapesRequest.Builder>() {
                     @Override
                     public ListCrossconnectPortSpeedShapesRequest.Builder get() {
                         return ListCrossconnectPortSpeedShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListCrossconnectPortSpeedShapesResponse, String>() {
+                new java.util.function.Function<ListCrossconnectPortSpeedShapesResponse, String>() {
                     @Override
                     public String apply(ListCrossconnectPortSpeedShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCrossconnectPortSpeedShapesRequest.Builder>,
                         ListCrossconnectPortSpeedShapesRequest>() {
@@ -1092,12 +1088,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCrossconnectPortSpeedShapesRequest,
                         ListCrossconnectPortSpeedShapesResponse>() {
                     @Override
@@ -1124,21 +1120,19 @@ public class VirtualNetworkPaginators {
                 ListCrossconnectPortSpeedShapesRequest.Builder,
                 ListCrossconnectPortSpeedShapesRequest, ListCrossconnectPortSpeedShapesResponse,
                 com.oracle.bmc.core.model.CrossConnectPortSpeedShape>(
-                new com.google.common.base.Supplier<
-                        ListCrossconnectPortSpeedShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListCrossconnectPortSpeedShapesRequest.Builder>() {
                     @Override
                     public ListCrossconnectPortSpeedShapesRequest.Builder get() {
                         return ListCrossconnectPortSpeedShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListCrossconnectPortSpeedShapesResponse, String>() {
+                new java.util.function.Function<ListCrossconnectPortSpeedShapesResponse, String>() {
                     @Override
                     public String apply(ListCrossconnectPortSpeedShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCrossconnectPortSpeedShapesRequest.Builder>,
                         ListCrossconnectPortSpeedShapesRequest>() {
@@ -1151,12 +1145,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCrossconnectPortSpeedShapesRequest,
                         ListCrossconnectPortSpeedShapesResponse>() {
                     @Override
@@ -1165,7 +1159,7 @@ public class VirtualNetworkPaginators {
                         return client.listCrossconnectPortSpeedShapes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCrossconnectPortSpeedShapesResponse,
                         java.util.List<com.oracle.bmc.core.model.CrossConnectPortSpeedShape>>() {
                     @Override
@@ -1187,19 +1181,19 @@ public class VirtualNetworkPaginators {
             final ListDhcpOptionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDhcpOptionsRequest.Builder, ListDhcpOptionsRequest, ListDhcpOptionsResponse>(
-                new com.google.common.base.Supplier<ListDhcpOptionsRequest.Builder>() {
+                new java.util.function.Supplier<ListDhcpOptionsRequest.Builder>() {
                     @Override
                     public ListDhcpOptionsRequest.Builder get() {
                         return ListDhcpOptionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDhcpOptionsResponse, String>() {
+                new java.util.function.Function<ListDhcpOptionsResponse, String>() {
                     @Override
                     public String apply(ListDhcpOptionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDhcpOptionsRequest.Builder>,
                         ListDhcpOptionsRequest>() {
@@ -1212,13 +1206,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListDhcpOptionsRequest, ListDhcpOptionsResponse>() {
+                new java.util.function.Function<ListDhcpOptionsRequest, ListDhcpOptionsResponse>() {
                     @Override
                     public ListDhcpOptionsResponse apply(ListDhcpOptionsRequest request) {
                         return client.listDhcpOptions(request);
@@ -1240,19 +1233,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDhcpOptionsRequest.Builder, ListDhcpOptionsRequest, ListDhcpOptionsResponse,
                 com.oracle.bmc.core.model.DhcpOptions>(
-                new com.google.common.base.Supplier<ListDhcpOptionsRequest.Builder>() {
+                new java.util.function.Supplier<ListDhcpOptionsRequest.Builder>() {
                     @Override
                     public ListDhcpOptionsRequest.Builder get() {
                         return ListDhcpOptionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDhcpOptionsResponse, String>() {
+                new java.util.function.Function<ListDhcpOptionsResponse, String>() {
                     @Override
                     public String apply(ListDhcpOptionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDhcpOptionsRequest.Builder>,
                         ListDhcpOptionsRequest>() {
@@ -1265,19 +1258,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListDhcpOptionsRequest, ListDhcpOptionsResponse>() {
+                new java.util.function.Function<ListDhcpOptionsRequest, ListDhcpOptionsResponse>() {
                     @Override
                     public ListDhcpOptionsResponse apply(ListDhcpOptionsRequest request) {
                         return client.listDhcpOptions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDhcpOptionsResponse,
                         java.util.List<com.oracle.bmc.core.model.DhcpOptions>>() {
                     @Override
@@ -1300,19 +1292,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDrgAttachmentsRequest.Builder, ListDrgAttachmentsRequest,
                 ListDrgAttachmentsResponse>(
-                new com.google.common.base.Supplier<ListDrgAttachmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListDrgAttachmentsRequest.Builder>() {
                     @Override
                     public ListDrgAttachmentsRequest.Builder get() {
                         return ListDrgAttachmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDrgAttachmentsResponse, String>() {
+                new java.util.function.Function<ListDrgAttachmentsResponse, String>() {
                     @Override
                     public String apply(ListDrgAttachmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDrgAttachmentsRequest.Builder>,
                         ListDrgAttachmentsRequest>() {
@@ -1325,12 +1317,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgAttachmentsRequest, ListDrgAttachmentsResponse>() {
                     @Override
                     public ListDrgAttachmentsResponse apply(ListDrgAttachmentsRequest request) {
@@ -1353,19 +1345,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDrgAttachmentsRequest.Builder, ListDrgAttachmentsRequest,
                 ListDrgAttachmentsResponse, com.oracle.bmc.core.model.DrgAttachment>(
-                new com.google.common.base.Supplier<ListDrgAttachmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListDrgAttachmentsRequest.Builder>() {
                     @Override
                     public ListDrgAttachmentsRequest.Builder get() {
                         return ListDrgAttachmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDrgAttachmentsResponse, String>() {
+                new java.util.function.Function<ListDrgAttachmentsResponse, String>() {
                     @Override
                     public String apply(ListDrgAttachmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDrgAttachmentsRequest.Builder>,
                         ListDrgAttachmentsRequest>() {
@@ -1378,19 +1370,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgAttachmentsRequest, ListDrgAttachmentsResponse>() {
                     @Override
                     public ListDrgAttachmentsResponse apply(ListDrgAttachmentsRequest request) {
                         return client.listDrgAttachments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgAttachmentsResponse,
                         java.util.List<com.oracle.bmc.core.model.DrgAttachment>>() {
                     @Override
@@ -1415,21 +1407,21 @@ public class VirtualNetworkPaginators {
                 ListDrgRouteDistributionStatementsRequest.Builder,
                 ListDrgRouteDistributionStatementsRequest,
                 ListDrgRouteDistributionStatementsResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListDrgRouteDistributionStatementsRequest.Builder>() {
                     @Override
                     public ListDrgRouteDistributionStatementsRequest.Builder get() {
                         return ListDrgRouteDistributionStatementsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteDistributionStatementsResponse, String>() {
                     @Override
                     public String apply(ListDrgRouteDistributionStatementsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDrgRouteDistributionStatementsRequest.Builder>,
                         ListDrgRouteDistributionStatementsRequest>() {
@@ -1442,12 +1434,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteDistributionStatementsRequest,
                         ListDrgRouteDistributionStatementsResponse>() {
                     @Override
@@ -1475,21 +1467,21 @@ public class VirtualNetworkPaginators {
                 ListDrgRouteDistributionStatementsRequest,
                 ListDrgRouteDistributionStatementsResponse,
                 com.oracle.bmc.core.model.DrgRouteDistributionStatement>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListDrgRouteDistributionStatementsRequest.Builder>() {
                     @Override
                     public ListDrgRouteDistributionStatementsRequest.Builder get() {
                         return ListDrgRouteDistributionStatementsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteDistributionStatementsResponse, String>() {
                     @Override
                     public String apply(ListDrgRouteDistributionStatementsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDrgRouteDistributionStatementsRequest.Builder>,
                         ListDrgRouteDistributionStatementsRequest>() {
@@ -1502,12 +1494,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteDistributionStatementsRequest,
                         ListDrgRouteDistributionStatementsResponse>() {
                     @Override
@@ -1516,7 +1508,7 @@ public class VirtualNetworkPaginators {
                         return client.listDrgRouteDistributionStatements(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteDistributionStatementsResponse,
                         java.util.List<com.oracle.bmc.core.model.DrgRouteDistributionStatement>>() {
                     @Override
@@ -1539,19 +1531,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDrgRouteDistributionsRequest.Builder, ListDrgRouteDistributionsRequest,
                 ListDrgRouteDistributionsResponse>(
-                new com.google.common.base.Supplier<ListDrgRouteDistributionsRequest.Builder>() {
+                new java.util.function.Supplier<ListDrgRouteDistributionsRequest.Builder>() {
                     @Override
                     public ListDrgRouteDistributionsRequest.Builder get() {
                         return ListDrgRouteDistributionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDrgRouteDistributionsResponse, String>() {
+                new java.util.function.Function<ListDrgRouteDistributionsResponse, String>() {
                     @Override
                     public String apply(ListDrgRouteDistributionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDrgRouteDistributionsRequest.Builder>,
                         ListDrgRouteDistributionsRequest>() {
@@ -1564,12 +1556,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteDistributionsRequest, ListDrgRouteDistributionsResponse>() {
                     @Override
                     public ListDrgRouteDistributionsResponse apply(
@@ -1594,19 +1586,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDrgRouteDistributionsRequest.Builder, ListDrgRouteDistributionsRequest,
                 ListDrgRouteDistributionsResponse, com.oracle.bmc.core.model.DrgRouteDistribution>(
-                new com.google.common.base.Supplier<ListDrgRouteDistributionsRequest.Builder>() {
+                new java.util.function.Supplier<ListDrgRouteDistributionsRequest.Builder>() {
                     @Override
                     public ListDrgRouteDistributionsRequest.Builder get() {
                         return ListDrgRouteDistributionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDrgRouteDistributionsResponse, String>() {
+                new java.util.function.Function<ListDrgRouteDistributionsResponse, String>() {
                     @Override
                     public String apply(ListDrgRouteDistributionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDrgRouteDistributionsRequest.Builder>,
                         ListDrgRouteDistributionsRequest>() {
@@ -1619,12 +1611,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteDistributionsRequest, ListDrgRouteDistributionsResponse>() {
                     @Override
                     public ListDrgRouteDistributionsResponse apply(
@@ -1632,7 +1624,7 @@ public class VirtualNetworkPaginators {
                         return client.listDrgRouteDistributions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteDistributionsResponse,
                         java.util.List<com.oracle.bmc.core.model.DrgRouteDistribution>>() {
                     @Override
@@ -1655,19 +1647,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDrgRouteRulesRequest.Builder, ListDrgRouteRulesRequest,
                 ListDrgRouteRulesResponse>(
-                new com.google.common.base.Supplier<ListDrgRouteRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListDrgRouteRulesRequest.Builder>() {
                     @Override
                     public ListDrgRouteRulesRequest.Builder get() {
                         return ListDrgRouteRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDrgRouteRulesResponse, String>() {
+                new java.util.function.Function<ListDrgRouteRulesResponse, String>() {
                     @Override
                     public String apply(ListDrgRouteRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDrgRouteRulesRequest.Builder>,
                         ListDrgRouteRulesRequest>() {
@@ -1680,12 +1672,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteRulesRequest, ListDrgRouteRulesResponse>() {
                     @Override
                     public ListDrgRouteRulesResponse apply(ListDrgRouteRulesRequest request) {
@@ -1708,19 +1700,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDrgRouteRulesRequest.Builder, ListDrgRouteRulesRequest,
                 ListDrgRouteRulesResponse, com.oracle.bmc.core.model.DrgRouteRule>(
-                new com.google.common.base.Supplier<ListDrgRouteRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListDrgRouteRulesRequest.Builder>() {
                     @Override
                     public ListDrgRouteRulesRequest.Builder get() {
                         return ListDrgRouteRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDrgRouteRulesResponse, String>() {
+                new java.util.function.Function<ListDrgRouteRulesResponse, String>() {
                     @Override
                     public String apply(ListDrgRouteRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDrgRouteRulesRequest.Builder>,
                         ListDrgRouteRulesRequest>() {
@@ -1733,19 +1725,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteRulesRequest, ListDrgRouteRulesResponse>() {
                     @Override
                     public ListDrgRouteRulesResponse apply(ListDrgRouteRulesRequest request) {
                         return client.listDrgRouteRules(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteRulesResponse,
                         java.util.List<com.oracle.bmc.core.model.DrgRouteRule>>() {
                     @Override
@@ -1768,19 +1760,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDrgRouteTablesRequest.Builder, ListDrgRouteTablesRequest,
                 ListDrgRouteTablesResponse>(
-                new com.google.common.base.Supplier<ListDrgRouteTablesRequest.Builder>() {
+                new java.util.function.Supplier<ListDrgRouteTablesRequest.Builder>() {
                     @Override
                     public ListDrgRouteTablesRequest.Builder get() {
                         return ListDrgRouteTablesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDrgRouteTablesResponse, String>() {
+                new java.util.function.Function<ListDrgRouteTablesResponse, String>() {
                     @Override
                     public String apply(ListDrgRouteTablesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDrgRouteTablesRequest.Builder>,
                         ListDrgRouteTablesRequest>() {
@@ -1793,12 +1785,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteTablesRequest, ListDrgRouteTablesResponse>() {
                     @Override
                     public ListDrgRouteTablesResponse apply(ListDrgRouteTablesRequest request) {
@@ -1821,19 +1813,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDrgRouteTablesRequest.Builder, ListDrgRouteTablesRequest,
                 ListDrgRouteTablesResponse, com.oracle.bmc.core.model.DrgRouteTable>(
-                new com.google.common.base.Supplier<ListDrgRouteTablesRequest.Builder>() {
+                new java.util.function.Supplier<ListDrgRouteTablesRequest.Builder>() {
                     @Override
                     public ListDrgRouteTablesRequest.Builder get() {
                         return ListDrgRouteTablesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDrgRouteTablesResponse, String>() {
+                new java.util.function.Function<ListDrgRouteTablesResponse, String>() {
                     @Override
                     public String apply(ListDrgRouteTablesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDrgRouteTablesRequest.Builder>,
                         ListDrgRouteTablesRequest>() {
@@ -1846,19 +1838,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteTablesRequest, ListDrgRouteTablesResponse>() {
                     @Override
                     public ListDrgRouteTablesResponse apply(ListDrgRouteTablesRequest request) {
                         return client.listDrgRouteTables(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgRouteTablesResponse,
                         java.util.List<com.oracle.bmc.core.model.DrgRouteTable>>() {
                     @Override
@@ -1879,19 +1871,19 @@ public class VirtualNetworkPaginators {
     public Iterable<ListDrgsResponse> listDrgsResponseIterator(final ListDrgsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDrgsRequest.Builder, ListDrgsRequest, ListDrgsResponse>(
-                new com.google.common.base.Supplier<ListDrgsRequest.Builder>() {
+                new java.util.function.Supplier<ListDrgsRequest.Builder>() {
                     @Override
                     public ListDrgsRequest.Builder get() {
                         return ListDrgsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDrgsResponse, String>() {
+                new java.util.function.Function<ListDrgsResponse, String>() {
                     @Override
                     public String apply(ListDrgsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDrgsRequest.Builder>,
                         ListDrgsRequest>() {
@@ -1904,12 +1896,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListDrgsRequest, ListDrgsResponse>() {
+                new java.util.function.Function<ListDrgsRequest, ListDrgsResponse>() {
                     @Override
                     public ListDrgsResponse apply(ListDrgsRequest request) {
                         return client.listDrgs(request);
@@ -1931,19 +1923,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDrgsRequest.Builder, ListDrgsRequest, ListDrgsResponse,
                 com.oracle.bmc.core.model.Drg>(
-                new com.google.common.base.Supplier<ListDrgsRequest.Builder>() {
+                new java.util.function.Supplier<ListDrgsRequest.Builder>() {
                     @Override
                     public ListDrgsRequest.Builder get() {
                         return ListDrgsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDrgsResponse, String>() {
+                new java.util.function.Function<ListDrgsResponse, String>() {
                     @Override
                     public String apply(ListDrgsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDrgsRequest.Builder>,
                         ListDrgsRequest>() {
@@ -1956,18 +1948,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListDrgsRequest, ListDrgsResponse>() {
+                new java.util.function.Function<ListDrgsRequest, ListDrgsResponse>() {
                     @Override
                     public ListDrgsResponse apply(ListDrgsRequest request) {
                         return client.listDrgs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDrgsResponse, java.util.List<com.oracle.bmc.core.model.Drg>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.Drg> apply(
@@ -1990,21 +1982,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListFastConnectProviderServicesRequest.Builder,
                 ListFastConnectProviderServicesRequest, ListFastConnectProviderServicesResponse>(
-                new com.google.common.base.Supplier<
-                        ListFastConnectProviderServicesRequest.Builder>() {
+                new java.util.function.Supplier<ListFastConnectProviderServicesRequest.Builder>() {
                     @Override
                     public ListFastConnectProviderServicesRequest.Builder get() {
                         return ListFastConnectProviderServicesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListFastConnectProviderServicesResponse, String>() {
+                new java.util.function.Function<ListFastConnectProviderServicesResponse, String>() {
                     @Override
                     public String apply(ListFastConnectProviderServicesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListFastConnectProviderServicesRequest.Builder>,
                         ListFastConnectProviderServicesRequest>() {
@@ -2017,12 +2007,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListFastConnectProviderServicesRequest,
                         ListFastConnectProviderServicesResponse>() {
                     @Override
@@ -2049,21 +2039,19 @@ public class VirtualNetworkPaginators {
                 ListFastConnectProviderServicesRequest.Builder,
                 ListFastConnectProviderServicesRequest, ListFastConnectProviderServicesResponse,
                 com.oracle.bmc.core.model.FastConnectProviderService>(
-                new com.google.common.base.Supplier<
-                        ListFastConnectProviderServicesRequest.Builder>() {
+                new java.util.function.Supplier<ListFastConnectProviderServicesRequest.Builder>() {
                     @Override
                     public ListFastConnectProviderServicesRequest.Builder get() {
                         return ListFastConnectProviderServicesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListFastConnectProviderServicesResponse, String>() {
+                new java.util.function.Function<ListFastConnectProviderServicesResponse, String>() {
                     @Override
                     public String apply(ListFastConnectProviderServicesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListFastConnectProviderServicesRequest.Builder>,
                         ListFastConnectProviderServicesRequest>() {
@@ -2076,12 +2064,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListFastConnectProviderServicesRequest,
                         ListFastConnectProviderServicesResponse>() {
                     @Override
@@ -2090,7 +2078,7 @@ public class VirtualNetworkPaginators {
                         return client.listFastConnectProviderServices(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListFastConnectProviderServicesResponse,
                         java.util.List<com.oracle.bmc.core.model.FastConnectProviderService>>() {
                     @Override
@@ -2115,7 +2103,7 @@ public class VirtualNetworkPaginators {
                 ListFastConnectProviderVirtualCircuitBandwidthShapesRequest.Builder,
                 ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
                 ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListFastConnectProviderVirtualCircuitBandwidthShapesRequest.Builder>() {
                     @Override
                     public ListFastConnectProviderVirtualCircuitBandwidthShapesRequest.Builder
@@ -2124,7 +2112,7 @@ public class VirtualNetworkPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListFastConnectProviderVirtualCircuitBandwidthShapesResponse, String>() {
                     @Override
                     public String apply(
@@ -2132,7 +2120,7 @@ public class VirtualNetworkPaginators {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListFastConnectProviderVirtualCircuitBandwidthShapesRequest
                                         .Builder>,
@@ -2147,12 +2135,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
                         ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>() {
                     @Override
@@ -2180,7 +2168,7 @@ public class VirtualNetworkPaginators {
                 ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
                 ListFastConnectProviderVirtualCircuitBandwidthShapesResponse,
                 com.oracle.bmc.core.model.VirtualCircuitBandwidthShape>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListFastConnectProviderVirtualCircuitBandwidthShapesRequest.Builder>() {
                     @Override
                     public ListFastConnectProviderVirtualCircuitBandwidthShapesRequest.Builder
@@ -2189,7 +2177,7 @@ public class VirtualNetworkPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListFastConnectProviderVirtualCircuitBandwidthShapesResponse, String>() {
                     @Override
                     public String apply(
@@ -2197,7 +2185,7 @@ public class VirtualNetworkPaginators {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListFastConnectProviderVirtualCircuitBandwidthShapesRequest
                                         .Builder>,
@@ -2212,12 +2200,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
                         ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>() {
                     @Override
@@ -2226,7 +2214,7 @@ public class VirtualNetworkPaginators {
                         return client.listFastConnectProviderVirtualCircuitBandwidthShapes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListFastConnectProviderVirtualCircuitBandwidthShapesResponse,
                         java.util.List<com.oracle.bmc.core.model.VirtualCircuitBandwidthShape>>() {
                     @Override
@@ -2252,21 +2240,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListIPSecConnectionTunnelRoutesRequest.Builder,
                 ListIPSecConnectionTunnelRoutesRequest, ListIPSecConnectionTunnelRoutesResponse>(
-                new com.google.common.base.Supplier<
-                        ListIPSecConnectionTunnelRoutesRequest.Builder>() {
+                new java.util.function.Supplier<ListIPSecConnectionTunnelRoutesRequest.Builder>() {
                     @Override
                     public ListIPSecConnectionTunnelRoutesRequest.Builder get() {
                         return ListIPSecConnectionTunnelRoutesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListIPSecConnectionTunnelRoutesResponse, String>() {
+                new java.util.function.Function<ListIPSecConnectionTunnelRoutesResponse, String>() {
                     @Override
                     public String apply(ListIPSecConnectionTunnelRoutesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIPSecConnectionTunnelRoutesRequest.Builder>,
                         ListIPSecConnectionTunnelRoutesRequest>() {
@@ -2279,12 +2265,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionTunnelRoutesRequest,
                         ListIPSecConnectionTunnelRoutesResponse>() {
                     @Override
@@ -2311,21 +2297,19 @@ public class VirtualNetworkPaginators {
                 ListIPSecConnectionTunnelRoutesRequest.Builder,
                 ListIPSecConnectionTunnelRoutesRequest, ListIPSecConnectionTunnelRoutesResponse,
                 com.oracle.bmc.core.model.TunnelRouteSummary>(
-                new com.google.common.base.Supplier<
-                        ListIPSecConnectionTunnelRoutesRequest.Builder>() {
+                new java.util.function.Supplier<ListIPSecConnectionTunnelRoutesRequest.Builder>() {
                     @Override
                     public ListIPSecConnectionTunnelRoutesRequest.Builder get() {
                         return ListIPSecConnectionTunnelRoutesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListIPSecConnectionTunnelRoutesResponse, String>() {
+                new java.util.function.Function<ListIPSecConnectionTunnelRoutesResponse, String>() {
                     @Override
                     public String apply(ListIPSecConnectionTunnelRoutesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIPSecConnectionTunnelRoutesRequest.Builder>,
                         ListIPSecConnectionTunnelRoutesRequest>() {
@@ -2338,12 +2322,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionTunnelRoutesRequest,
                         ListIPSecConnectionTunnelRoutesResponse>() {
                     @Override
@@ -2352,7 +2336,7 @@ public class VirtualNetworkPaginators {
                         return client.listIPSecConnectionTunnelRoutes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionTunnelRoutesResponse,
                         java.util.List<com.oracle.bmc.core.model.TunnelRouteSummary>>() {
                     @Override
@@ -2377,7 +2361,7 @@ public class VirtualNetworkPaginators {
                 ListIPSecConnectionTunnelSecurityAssociationsRequest.Builder,
                 ListIPSecConnectionTunnelSecurityAssociationsRequest,
                 ListIPSecConnectionTunnelSecurityAssociationsResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListIPSecConnectionTunnelSecurityAssociationsRequest.Builder>() {
                     @Override
                     public ListIPSecConnectionTunnelSecurityAssociationsRequest.Builder get() {
@@ -2385,7 +2369,7 @@ public class VirtualNetworkPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionTunnelSecurityAssociationsResponse, String>() {
                     @Override
                     public String apply(
@@ -2393,7 +2377,7 @@ public class VirtualNetworkPaginators {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIPSecConnectionTunnelSecurityAssociationsRequest.Builder>,
                         ListIPSecConnectionTunnelSecurityAssociationsRequest>() {
@@ -2407,12 +2391,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionTunnelSecurityAssociationsRequest,
                         ListIPSecConnectionTunnelSecurityAssociationsResponse>() {
                     @Override
@@ -2440,7 +2424,7 @@ public class VirtualNetworkPaginators {
                 ListIPSecConnectionTunnelSecurityAssociationsRequest,
                 ListIPSecConnectionTunnelSecurityAssociationsResponse,
                 com.oracle.bmc.core.model.TunnelSecurityAssociationSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListIPSecConnectionTunnelSecurityAssociationsRequest.Builder>() {
                     @Override
                     public ListIPSecConnectionTunnelSecurityAssociationsRequest.Builder get() {
@@ -2448,7 +2432,7 @@ public class VirtualNetworkPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionTunnelSecurityAssociationsResponse, String>() {
                     @Override
                     public String apply(
@@ -2456,7 +2440,7 @@ public class VirtualNetworkPaginators {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIPSecConnectionTunnelSecurityAssociationsRequest.Builder>,
                         ListIPSecConnectionTunnelSecurityAssociationsRequest>() {
@@ -2470,12 +2454,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionTunnelSecurityAssociationsRequest,
                         ListIPSecConnectionTunnelSecurityAssociationsResponse>() {
                     @Override
@@ -2484,7 +2468,7 @@ public class VirtualNetworkPaginators {
                         return client.listIPSecConnectionTunnelSecurityAssociations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionTunnelSecurityAssociationsResponse,
                         java.util.List<
                                 com.oracle.bmc.core.model.TunnelSecurityAssociationSummary>>() {
@@ -2509,19 +2493,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListIPSecConnectionTunnelsRequest.Builder, ListIPSecConnectionTunnelsRequest,
                 ListIPSecConnectionTunnelsResponse>(
-                new com.google.common.base.Supplier<ListIPSecConnectionTunnelsRequest.Builder>() {
+                new java.util.function.Supplier<ListIPSecConnectionTunnelsRequest.Builder>() {
                     @Override
                     public ListIPSecConnectionTunnelsRequest.Builder get() {
                         return ListIPSecConnectionTunnelsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListIPSecConnectionTunnelsResponse, String>() {
+                new java.util.function.Function<ListIPSecConnectionTunnelsResponse, String>() {
                     @Override
                     public String apply(ListIPSecConnectionTunnelsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIPSecConnectionTunnelsRequest.Builder>,
                         ListIPSecConnectionTunnelsRequest>() {
@@ -2534,12 +2518,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionTunnelsRequest, ListIPSecConnectionTunnelsResponse>() {
                     @Override
                     public ListIPSecConnectionTunnelsResponse apply(
@@ -2565,19 +2549,19 @@ public class VirtualNetworkPaginators {
                 ListIPSecConnectionTunnelsRequest.Builder, ListIPSecConnectionTunnelsRequest,
                 ListIPSecConnectionTunnelsResponse,
                 com.oracle.bmc.core.model.IPSecConnectionTunnel>(
-                new com.google.common.base.Supplier<ListIPSecConnectionTunnelsRequest.Builder>() {
+                new java.util.function.Supplier<ListIPSecConnectionTunnelsRequest.Builder>() {
                     @Override
                     public ListIPSecConnectionTunnelsRequest.Builder get() {
                         return ListIPSecConnectionTunnelsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListIPSecConnectionTunnelsResponse, String>() {
+                new java.util.function.Function<ListIPSecConnectionTunnelsResponse, String>() {
                     @Override
                     public String apply(ListIPSecConnectionTunnelsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIPSecConnectionTunnelsRequest.Builder>,
                         ListIPSecConnectionTunnelsRequest>() {
@@ -2590,12 +2574,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionTunnelsRequest, ListIPSecConnectionTunnelsResponse>() {
                     @Override
                     public ListIPSecConnectionTunnelsResponse apply(
@@ -2603,7 +2587,7 @@ public class VirtualNetworkPaginators {
                         return client.listIPSecConnectionTunnels(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionTunnelsResponse,
                         java.util.List<com.oracle.bmc.core.model.IPSecConnectionTunnel>>() {
                     @Override
@@ -2626,19 +2610,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListIPSecConnectionsRequest.Builder, ListIPSecConnectionsRequest,
                 ListIPSecConnectionsResponse>(
-                new com.google.common.base.Supplier<ListIPSecConnectionsRequest.Builder>() {
+                new java.util.function.Supplier<ListIPSecConnectionsRequest.Builder>() {
                     @Override
                     public ListIPSecConnectionsRequest.Builder get() {
                         return ListIPSecConnectionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListIPSecConnectionsResponse, String>() {
+                new java.util.function.Function<ListIPSecConnectionsResponse, String>() {
                     @Override
                     public String apply(ListIPSecConnectionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIPSecConnectionsRequest.Builder>,
                         ListIPSecConnectionsRequest>() {
@@ -2651,12 +2635,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionsRequest, ListIPSecConnectionsResponse>() {
                     @Override
                     public ListIPSecConnectionsResponse apply(ListIPSecConnectionsRequest request) {
@@ -2679,19 +2663,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListIPSecConnectionsRequest.Builder, ListIPSecConnectionsRequest,
                 ListIPSecConnectionsResponse, com.oracle.bmc.core.model.IPSecConnection>(
-                new com.google.common.base.Supplier<ListIPSecConnectionsRequest.Builder>() {
+                new java.util.function.Supplier<ListIPSecConnectionsRequest.Builder>() {
                     @Override
                     public ListIPSecConnectionsRequest.Builder get() {
                         return ListIPSecConnectionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListIPSecConnectionsResponse, String>() {
+                new java.util.function.Function<ListIPSecConnectionsResponse, String>() {
                     @Override
                     public String apply(ListIPSecConnectionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIPSecConnectionsRequest.Builder>,
                         ListIPSecConnectionsRequest>() {
@@ -2704,19 +2688,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionsRequest, ListIPSecConnectionsResponse>() {
                     @Override
                     public ListIPSecConnectionsResponse apply(ListIPSecConnectionsRequest request) {
                         return client.listIPSecConnections(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIPSecConnectionsResponse,
                         java.util.List<com.oracle.bmc.core.model.IPSecConnection>>() {
                     @Override
@@ -2739,19 +2723,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListInternetGatewaysRequest.Builder, ListInternetGatewaysRequest,
                 ListInternetGatewaysResponse>(
-                new com.google.common.base.Supplier<ListInternetGatewaysRequest.Builder>() {
+                new java.util.function.Supplier<ListInternetGatewaysRequest.Builder>() {
                     @Override
                     public ListInternetGatewaysRequest.Builder get() {
                         return ListInternetGatewaysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInternetGatewaysResponse, String>() {
+                new java.util.function.Function<ListInternetGatewaysResponse, String>() {
                     @Override
                     public String apply(ListInternetGatewaysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInternetGatewaysRequest.Builder>,
                         ListInternetGatewaysRequest>() {
@@ -2764,12 +2748,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInternetGatewaysRequest, ListInternetGatewaysResponse>() {
                     @Override
                     public ListInternetGatewaysResponse apply(ListInternetGatewaysRequest request) {
@@ -2792,19 +2776,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListInternetGatewaysRequest.Builder, ListInternetGatewaysRequest,
                 ListInternetGatewaysResponse, com.oracle.bmc.core.model.InternetGateway>(
-                new com.google.common.base.Supplier<ListInternetGatewaysRequest.Builder>() {
+                new java.util.function.Supplier<ListInternetGatewaysRequest.Builder>() {
                     @Override
                     public ListInternetGatewaysRequest.Builder get() {
                         return ListInternetGatewaysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInternetGatewaysResponse, String>() {
+                new java.util.function.Function<ListInternetGatewaysResponse, String>() {
                     @Override
                     public String apply(ListInternetGatewaysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInternetGatewaysRequest.Builder>,
                         ListInternetGatewaysRequest>() {
@@ -2817,19 +2801,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInternetGatewaysRequest, ListInternetGatewaysResponse>() {
                     @Override
                     public ListInternetGatewaysResponse apply(ListInternetGatewaysRequest request) {
                         return client.listInternetGateways(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInternetGatewaysResponse,
                         java.util.List<com.oracle.bmc.core.model.InternetGateway>>() {
                     @Override
@@ -2850,19 +2834,19 @@ public class VirtualNetworkPaginators {
     public Iterable<ListIpv6sResponse> listIpv6sResponseIterator(final ListIpv6sRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListIpv6sRequest.Builder, ListIpv6sRequest, ListIpv6sResponse>(
-                new com.google.common.base.Supplier<ListIpv6sRequest.Builder>() {
+                new java.util.function.Supplier<ListIpv6sRequest.Builder>() {
                     @Override
                     public ListIpv6sRequest.Builder get() {
                         return ListIpv6sRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListIpv6sResponse, String>() {
+                new java.util.function.Function<ListIpv6sResponse, String>() {
                     @Override
                     public String apply(ListIpv6sResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIpv6sRequest.Builder>,
                         ListIpv6sRequest>() {
@@ -2875,12 +2859,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListIpv6sRequest, ListIpv6sResponse>() {
+                new java.util.function.Function<ListIpv6sRequest, ListIpv6sResponse>() {
                     @Override
                     public ListIpv6sResponse apply(ListIpv6sRequest request) {
                         return client.listIpv6s(request);
@@ -2902,19 +2886,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListIpv6sRequest.Builder, ListIpv6sRequest, ListIpv6sResponse,
                 com.oracle.bmc.core.model.Ipv6>(
-                new com.google.common.base.Supplier<ListIpv6sRequest.Builder>() {
+                new java.util.function.Supplier<ListIpv6sRequest.Builder>() {
                     @Override
                     public ListIpv6sRequest.Builder get() {
                         return ListIpv6sRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListIpv6sResponse, String>() {
+                new java.util.function.Function<ListIpv6sResponse, String>() {
                     @Override
                     public String apply(ListIpv6sResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIpv6sRequest.Builder>,
                         ListIpv6sRequest>() {
@@ -2927,18 +2911,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListIpv6sRequest, ListIpv6sResponse>() {
+                new java.util.function.Function<ListIpv6sRequest, ListIpv6sResponse>() {
                     @Override
                     public ListIpv6sResponse apply(ListIpv6sRequest request) {
                         return client.listIpv6s(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIpv6sResponse, java.util.List<com.oracle.bmc.core.model.Ipv6>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.Ipv6> apply(
@@ -2960,19 +2944,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListLocalPeeringGatewaysRequest.Builder, ListLocalPeeringGatewaysRequest,
                 ListLocalPeeringGatewaysResponse>(
-                new com.google.common.base.Supplier<ListLocalPeeringGatewaysRequest.Builder>() {
+                new java.util.function.Supplier<ListLocalPeeringGatewaysRequest.Builder>() {
                     @Override
                     public ListLocalPeeringGatewaysRequest.Builder get() {
                         return ListLocalPeeringGatewaysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListLocalPeeringGatewaysResponse, String>() {
+                new java.util.function.Function<ListLocalPeeringGatewaysResponse, String>() {
                     @Override
                     public String apply(ListLocalPeeringGatewaysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListLocalPeeringGatewaysRequest.Builder>,
                         ListLocalPeeringGatewaysRequest>() {
@@ -2985,12 +2969,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListLocalPeeringGatewaysRequest, ListLocalPeeringGatewaysResponse>() {
                     @Override
                     public ListLocalPeeringGatewaysResponse apply(
@@ -3014,19 +2998,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListLocalPeeringGatewaysRequest.Builder, ListLocalPeeringGatewaysRequest,
                 ListLocalPeeringGatewaysResponse, com.oracle.bmc.core.model.LocalPeeringGateway>(
-                new com.google.common.base.Supplier<ListLocalPeeringGatewaysRequest.Builder>() {
+                new java.util.function.Supplier<ListLocalPeeringGatewaysRequest.Builder>() {
                     @Override
                     public ListLocalPeeringGatewaysRequest.Builder get() {
                         return ListLocalPeeringGatewaysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListLocalPeeringGatewaysResponse, String>() {
+                new java.util.function.Function<ListLocalPeeringGatewaysResponse, String>() {
                     @Override
                     public String apply(ListLocalPeeringGatewaysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListLocalPeeringGatewaysRequest.Builder>,
                         ListLocalPeeringGatewaysRequest>() {
@@ -3039,12 +3023,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListLocalPeeringGatewaysRequest, ListLocalPeeringGatewaysResponse>() {
                     @Override
                     public ListLocalPeeringGatewaysResponse apply(
@@ -3052,7 +3036,7 @@ public class VirtualNetworkPaginators {
                         return client.listLocalPeeringGateways(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListLocalPeeringGatewaysResponse,
                         java.util.List<com.oracle.bmc.core.model.LocalPeeringGateway>>() {
                     @Override
@@ -3074,19 +3058,19 @@ public class VirtualNetworkPaginators {
             final ListNatGatewaysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListNatGatewaysRequest.Builder, ListNatGatewaysRequest, ListNatGatewaysResponse>(
-                new com.google.common.base.Supplier<ListNatGatewaysRequest.Builder>() {
+                new java.util.function.Supplier<ListNatGatewaysRequest.Builder>() {
                     @Override
                     public ListNatGatewaysRequest.Builder get() {
                         return ListNatGatewaysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNatGatewaysResponse, String>() {
+                new java.util.function.Function<ListNatGatewaysResponse, String>() {
                     @Override
                     public String apply(ListNatGatewaysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNatGatewaysRequest.Builder>,
                         ListNatGatewaysRequest>() {
@@ -3099,13 +3083,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListNatGatewaysRequest, ListNatGatewaysResponse>() {
+                new java.util.function.Function<ListNatGatewaysRequest, ListNatGatewaysResponse>() {
                     @Override
                     public ListNatGatewaysResponse apply(ListNatGatewaysRequest request) {
                         return client.listNatGateways(request);
@@ -3127,19 +3110,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListNatGatewaysRequest.Builder, ListNatGatewaysRequest, ListNatGatewaysResponse,
                 com.oracle.bmc.core.model.NatGateway>(
-                new com.google.common.base.Supplier<ListNatGatewaysRequest.Builder>() {
+                new java.util.function.Supplier<ListNatGatewaysRequest.Builder>() {
                     @Override
                     public ListNatGatewaysRequest.Builder get() {
                         return ListNatGatewaysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNatGatewaysResponse, String>() {
+                new java.util.function.Function<ListNatGatewaysResponse, String>() {
                     @Override
                     public String apply(ListNatGatewaysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNatGatewaysRequest.Builder>,
                         ListNatGatewaysRequest>() {
@@ -3152,19 +3135,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListNatGatewaysRequest, ListNatGatewaysResponse>() {
+                new java.util.function.Function<ListNatGatewaysRequest, ListNatGatewaysResponse>() {
                     @Override
                     public ListNatGatewaysResponse apply(ListNatGatewaysRequest request) {
                         return client.listNatGateways(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNatGatewaysResponse,
                         java.util.List<com.oracle.bmc.core.model.NatGateway>>() {
                     @Override
@@ -3189,21 +3171,21 @@ public class VirtualNetworkPaginators {
                 ListNetworkSecurityGroupSecurityRulesRequest.Builder,
                 ListNetworkSecurityGroupSecurityRulesRequest,
                 ListNetworkSecurityGroupSecurityRulesResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListNetworkSecurityGroupSecurityRulesRequest.Builder>() {
                     @Override
                     public ListNetworkSecurityGroupSecurityRulesRequest.Builder get() {
                         return ListNetworkSecurityGroupSecurityRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkSecurityGroupSecurityRulesResponse, String>() {
                     @Override
                     public String apply(ListNetworkSecurityGroupSecurityRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkSecurityGroupSecurityRulesRequest.Builder>,
                         ListNetworkSecurityGroupSecurityRulesRequest>() {
@@ -3216,12 +3198,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkSecurityGroupSecurityRulesRequest,
                         ListNetworkSecurityGroupSecurityRulesResponse>() {
                     @Override
@@ -3249,21 +3231,21 @@ public class VirtualNetworkPaginators {
                 ListNetworkSecurityGroupSecurityRulesRequest,
                 ListNetworkSecurityGroupSecurityRulesResponse,
                 com.oracle.bmc.core.model.SecurityRule>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListNetworkSecurityGroupSecurityRulesRequest.Builder>() {
                     @Override
                     public ListNetworkSecurityGroupSecurityRulesRequest.Builder get() {
                         return ListNetworkSecurityGroupSecurityRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkSecurityGroupSecurityRulesResponse, String>() {
                     @Override
                     public String apply(ListNetworkSecurityGroupSecurityRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkSecurityGroupSecurityRulesRequest.Builder>,
                         ListNetworkSecurityGroupSecurityRulesRequest>() {
@@ -3276,12 +3258,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkSecurityGroupSecurityRulesRequest,
                         ListNetworkSecurityGroupSecurityRulesResponse>() {
                     @Override
@@ -3290,7 +3272,7 @@ public class VirtualNetworkPaginators {
                         return client.listNetworkSecurityGroupSecurityRules(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkSecurityGroupSecurityRulesResponse,
                         java.util.List<com.oracle.bmc.core.model.SecurityRule>>() {
                     @Override
@@ -3314,21 +3296,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListNetworkSecurityGroupVnicsRequest.Builder, ListNetworkSecurityGroupVnicsRequest,
                 ListNetworkSecurityGroupVnicsResponse>(
-                new com.google.common.base.Supplier<
-                        ListNetworkSecurityGroupVnicsRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkSecurityGroupVnicsRequest.Builder>() {
                     @Override
                     public ListNetworkSecurityGroupVnicsRequest.Builder get() {
                         return ListNetworkSecurityGroupVnicsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListNetworkSecurityGroupVnicsResponse, String>() {
+                new java.util.function.Function<ListNetworkSecurityGroupVnicsResponse, String>() {
                     @Override
                     public String apply(ListNetworkSecurityGroupVnicsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkSecurityGroupVnicsRequest.Builder>,
                         ListNetworkSecurityGroupVnicsRequest>() {
@@ -3341,12 +3321,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkSecurityGroupVnicsRequest,
                         ListNetworkSecurityGroupVnicsResponse>() {
                     @Override
@@ -3373,21 +3353,19 @@ public class VirtualNetworkPaginators {
                 ListNetworkSecurityGroupVnicsRequest.Builder, ListNetworkSecurityGroupVnicsRequest,
                 ListNetworkSecurityGroupVnicsResponse,
                 com.oracle.bmc.core.model.NetworkSecurityGroupVnic>(
-                new com.google.common.base.Supplier<
-                        ListNetworkSecurityGroupVnicsRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkSecurityGroupVnicsRequest.Builder>() {
                     @Override
                     public ListNetworkSecurityGroupVnicsRequest.Builder get() {
                         return ListNetworkSecurityGroupVnicsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListNetworkSecurityGroupVnicsResponse, String>() {
+                new java.util.function.Function<ListNetworkSecurityGroupVnicsResponse, String>() {
                     @Override
                     public String apply(ListNetworkSecurityGroupVnicsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkSecurityGroupVnicsRequest.Builder>,
                         ListNetworkSecurityGroupVnicsRequest>() {
@@ -3400,12 +3378,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkSecurityGroupVnicsRequest,
                         ListNetworkSecurityGroupVnicsResponse>() {
                     @Override
@@ -3414,7 +3392,7 @@ public class VirtualNetworkPaginators {
                         return client.listNetworkSecurityGroupVnics(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkSecurityGroupVnicsResponse,
                         java.util.List<com.oracle.bmc.core.model.NetworkSecurityGroupVnic>>() {
                     @Override
@@ -3437,19 +3415,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListNetworkSecurityGroupsRequest.Builder, ListNetworkSecurityGroupsRequest,
                 ListNetworkSecurityGroupsResponse>(
-                new com.google.common.base.Supplier<ListNetworkSecurityGroupsRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkSecurityGroupsRequest.Builder>() {
                     @Override
                     public ListNetworkSecurityGroupsRequest.Builder get() {
                         return ListNetworkSecurityGroupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNetworkSecurityGroupsResponse, String>() {
+                new java.util.function.Function<ListNetworkSecurityGroupsResponse, String>() {
                     @Override
                     public String apply(ListNetworkSecurityGroupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkSecurityGroupsRequest.Builder>,
                         ListNetworkSecurityGroupsRequest>() {
@@ -3462,12 +3440,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkSecurityGroupsRequest, ListNetworkSecurityGroupsResponse>() {
                     @Override
                     public ListNetworkSecurityGroupsResponse apply(
@@ -3492,19 +3470,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListNetworkSecurityGroupsRequest.Builder, ListNetworkSecurityGroupsRequest,
                 ListNetworkSecurityGroupsResponse, com.oracle.bmc.core.model.NetworkSecurityGroup>(
-                new com.google.common.base.Supplier<ListNetworkSecurityGroupsRequest.Builder>() {
+                new java.util.function.Supplier<ListNetworkSecurityGroupsRequest.Builder>() {
                     @Override
                     public ListNetworkSecurityGroupsRequest.Builder get() {
                         return ListNetworkSecurityGroupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNetworkSecurityGroupsResponse, String>() {
+                new java.util.function.Function<ListNetworkSecurityGroupsResponse, String>() {
                     @Override
                     public String apply(ListNetworkSecurityGroupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNetworkSecurityGroupsRequest.Builder>,
                         ListNetworkSecurityGroupsRequest>() {
@@ -3517,12 +3495,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkSecurityGroupsRequest, ListNetworkSecurityGroupsResponse>() {
                     @Override
                     public ListNetworkSecurityGroupsResponse apply(
@@ -3530,7 +3508,7 @@ public class VirtualNetworkPaginators {
                         return client.listNetworkSecurityGroups(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNetworkSecurityGroupsResponse,
                         java.util.List<com.oracle.bmc.core.model.NetworkSecurityGroup>>() {
                     @Override
@@ -3552,19 +3530,19 @@ public class VirtualNetworkPaginators {
             final ListPrivateIpsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPrivateIpsRequest.Builder, ListPrivateIpsRequest, ListPrivateIpsResponse>(
-                new com.google.common.base.Supplier<ListPrivateIpsRequest.Builder>() {
+                new java.util.function.Supplier<ListPrivateIpsRequest.Builder>() {
                     @Override
                     public ListPrivateIpsRequest.Builder get() {
                         return ListPrivateIpsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPrivateIpsResponse, String>() {
+                new java.util.function.Function<ListPrivateIpsResponse, String>() {
                     @Override
                     public String apply(ListPrivateIpsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPrivateIpsRequest.Builder>,
                         ListPrivateIpsRequest>() {
@@ -3577,13 +3555,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListPrivateIpsRequest, ListPrivateIpsResponse>() {
+                new java.util.function.Function<ListPrivateIpsRequest, ListPrivateIpsResponse>() {
                     @Override
                     public ListPrivateIpsResponse apply(ListPrivateIpsRequest request) {
                         return client.listPrivateIps(request);
@@ -3605,19 +3582,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListPrivateIpsRequest.Builder, ListPrivateIpsRequest, ListPrivateIpsResponse,
                 com.oracle.bmc.core.model.PrivateIp>(
-                new com.google.common.base.Supplier<ListPrivateIpsRequest.Builder>() {
+                new java.util.function.Supplier<ListPrivateIpsRequest.Builder>() {
                     @Override
                     public ListPrivateIpsRequest.Builder get() {
                         return ListPrivateIpsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPrivateIpsResponse, String>() {
+                new java.util.function.Function<ListPrivateIpsResponse, String>() {
                     @Override
                     public String apply(ListPrivateIpsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPrivateIpsRequest.Builder>,
                         ListPrivateIpsRequest>() {
@@ -3630,19 +3607,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListPrivateIpsRequest, ListPrivateIpsResponse>() {
+                new java.util.function.Function<ListPrivateIpsRequest, ListPrivateIpsResponse>() {
                     @Override
                     public ListPrivateIpsResponse apply(ListPrivateIpsRequest request) {
                         return client.listPrivateIps(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPrivateIpsResponse,
                         java.util.List<com.oracle.bmc.core.model.PrivateIp>>() {
                     @Override
@@ -3665,19 +3641,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPublicIpPoolsRequest.Builder, ListPublicIpPoolsRequest,
                 ListPublicIpPoolsResponse>(
-                new com.google.common.base.Supplier<ListPublicIpPoolsRequest.Builder>() {
+                new java.util.function.Supplier<ListPublicIpPoolsRequest.Builder>() {
                     @Override
                     public ListPublicIpPoolsRequest.Builder get() {
                         return ListPublicIpPoolsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPublicIpPoolsResponse, String>() {
+                new java.util.function.Function<ListPublicIpPoolsResponse, String>() {
                     @Override
                     public String apply(ListPublicIpPoolsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPublicIpPoolsRequest.Builder>,
                         ListPublicIpPoolsRequest>() {
@@ -3690,12 +3666,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicIpPoolsRequest, ListPublicIpPoolsResponse>() {
                     @Override
                     public ListPublicIpPoolsResponse apply(ListPublicIpPoolsRequest request) {
@@ -3718,19 +3694,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListPublicIpPoolsRequest.Builder, ListPublicIpPoolsRequest,
                 ListPublicIpPoolsResponse, com.oracle.bmc.core.model.PublicIpPoolSummary>(
-                new com.google.common.base.Supplier<ListPublicIpPoolsRequest.Builder>() {
+                new java.util.function.Supplier<ListPublicIpPoolsRequest.Builder>() {
                     @Override
                     public ListPublicIpPoolsRequest.Builder get() {
                         return ListPublicIpPoolsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPublicIpPoolsResponse, String>() {
+                new java.util.function.Function<ListPublicIpPoolsResponse, String>() {
                     @Override
                     public String apply(ListPublicIpPoolsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPublicIpPoolsRequest.Builder>,
                         ListPublicIpPoolsRequest>() {
@@ -3743,19 +3719,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicIpPoolsRequest, ListPublicIpPoolsResponse>() {
                     @Override
                     public ListPublicIpPoolsResponse apply(ListPublicIpPoolsRequest request) {
                         return client.listPublicIpPools(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicIpPoolsResponse,
                         java.util.List<com.oracle.bmc.core.model.PublicIpPoolSummary>>() {
                     @Override
@@ -3777,19 +3753,19 @@ public class VirtualNetworkPaginators {
             final ListPublicIpsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPublicIpsRequest.Builder, ListPublicIpsRequest, ListPublicIpsResponse>(
-                new com.google.common.base.Supplier<ListPublicIpsRequest.Builder>() {
+                new java.util.function.Supplier<ListPublicIpsRequest.Builder>() {
                     @Override
                     public ListPublicIpsRequest.Builder get() {
                         return ListPublicIpsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPublicIpsResponse, String>() {
+                new java.util.function.Function<ListPublicIpsResponse, String>() {
                     @Override
                     public String apply(ListPublicIpsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPublicIpsRequest.Builder>,
                         ListPublicIpsRequest>() {
@@ -3802,12 +3778,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListPublicIpsRequest, ListPublicIpsResponse>() {
+                new java.util.function.Function<ListPublicIpsRequest, ListPublicIpsResponse>() {
                     @Override
                     public ListPublicIpsResponse apply(ListPublicIpsRequest request) {
                         return client.listPublicIps(request);
@@ -3829,19 +3805,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListPublicIpsRequest.Builder, ListPublicIpsRequest, ListPublicIpsResponse,
                 com.oracle.bmc.core.model.PublicIp>(
-                new com.google.common.base.Supplier<ListPublicIpsRequest.Builder>() {
+                new java.util.function.Supplier<ListPublicIpsRequest.Builder>() {
                     @Override
                     public ListPublicIpsRequest.Builder get() {
                         return ListPublicIpsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPublicIpsResponse, String>() {
+                new java.util.function.Function<ListPublicIpsResponse, String>() {
                     @Override
                     public String apply(ListPublicIpsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPublicIpsRequest.Builder>,
                         ListPublicIpsRequest>() {
@@ -3854,18 +3830,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListPublicIpsRequest, ListPublicIpsResponse>() {
+                new java.util.function.Function<ListPublicIpsRequest, ListPublicIpsResponse>() {
                     @Override
                     public ListPublicIpsResponse apply(ListPublicIpsRequest request) {
                         return client.listPublicIps(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicIpsResponse,
                         java.util.List<com.oracle.bmc.core.model.PublicIp>>() {
                     @Override
@@ -3889,20 +3865,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRemotePeeringConnectionsRequest.Builder, ListRemotePeeringConnectionsRequest,
                 ListRemotePeeringConnectionsResponse>(
-                new com.google.common.base.Supplier<ListRemotePeeringConnectionsRequest.Builder>() {
+                new java.util.function.Supplier<ListRemotePeeringConnectionsRequest.Builder>() {
                     @Override
                     public ListRemotePeeringConnectionsRequest.Builder get() {
                         return ListRemotePeeringConnectionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListRemotePeeringConnectionsResponse, String>() {
+                new java.util.function.Function<ListRemotePeeringConnectionsResponse, String>() {
                     @Override
                     public String apply(ListRemotePeeringConnectionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRemotePeeringConnectionsRequest.Builder>,
                         ListRemotePeeringConnectionsRequest>() {
@@ -3915,12 +3890,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRemotePeeringConnectionsRequest,
                         ListRemotePeeringConnectionsResponse>() {
                     @Override
@@ -3947,20 +3922,19 @@ public class VirtualNetworkPaginators {
                 ListRemotePeeringConnectionsRequest.Builder, ListRemotePeeringConnectionsRequest,
                 ListRemotePeeringConnectionsResponse,
                 com.oracle.bmc.core.model.RemotePeeringConnection>(
-                new com.google.common.base.Supplier<ListRemotePeeringConnectionsRequest.Builder>() {
+                new java.util.function.Supplier<ListRemotePeeringConnectionsRequest.Builder>() {
                     @Override
                     public ListRemotePeeringConnectionsRequest.Builder get() {
                         return ListRemotePeeringConnectionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListRemotePeeringConnectionsResponse, String>() {
+                new java.util.function.Function<ListRemotePeeringConnectionsResponse, String>() {
                     @Override
                     public String apply(ListRemotePeeringConnectionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRemotePeeringConnectionsRequest.Builder>,
                         ListRemotePeeringConnectionsRequest>() {
@@ -3973,12 +3947,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRemotePeeringConnectionsRequest,
                         ListRemotePeeringConnectionsResponse>() {
                     @Override
@@ -3987,7 +3961,7 @@ public class VirtualNetworkPaginators {
                         return client.listRemotePeeringConnections(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRemotePeeringConnectionsResponse,
                         java.util.List<com.oracle.bmc.core.model.RemotePeeringConnection>>() {
                     @Override
@@ -4009,19 +3983,19 @@ public class VirtualNetworkPaginators {
             final ListRouteTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRouteTablesRequest.Builder, ListRouteTablesRequest, ListRouteTablesResponse>(
-                new com.google.common.base.Supplier<ListRouteTablesRequest.Builder>() {
+                new java.util.function.Supplier<ListRouteTablesRequest.Builder>() {
                     @Override
                     public ListRouteTablesRequest.Builder get() {
                         return ListRouteTablesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRouteTablesResponse, String>() {
+                new java.util.function.Function<ListRouteTablesResponse, String>() {
                     @Override
                     public String apply(ListRouteTablesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRouteTablesRequest.Builder>,
                         ListRouteTablesRequest>() {
@@ -4034,13 +4008,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListRouteTablesRequest, ListRouteTablesResponse>() {
+                new java.util.function.Function<ListRouteTablesRequest, ListRouteTablesResponse>() {
                     @Override
                     public ListRouteTablesResponse apply(ListRouteTablesRequest request) {
                         return client.listRouteTables(request);
@@ -4062,19 +4035,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListRouteTablesRequest.Builder, ListRouteTablesRequest, ListRouteTablesResponse,
                 com.oracle.bmc.core.model.RouteTable>(
-                new com.google.common.base.Supplier<ListRouteTablesRequest.Builder>() {
+                new java.util.function.Supplier<ListRouteTablesRequest.Builder>() {
                     @Override
                     public ListRouteTablesRequest.Builder get() {
                         return ListRouteTablesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRouteTablesResponse, String>() {
+                new java.util.function.Function<ListRouteTablesResponse, String>() {
                     @Override
                     public String apply(ListRouteTablesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRouteTablesRequest.Builder>,
                         ListRouteTablesRequest>() {
@@ -4087,19 +4060,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListRouteTablesRequest, ListRouteTablesResponse>() {
+                new java.util.function.Function<ListRouteTablesRequest, ListRouteTablesResponse>() {
                     @Override
                     public ListRouteTablesResponse apply(ListRouteTablesRequest request) {
                         return client.listRouteTables(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRouteTablesResponse,
                         java.util.List<com.oracle.bmc.core.model.RouteTable>>() {
                     @Override
@@ -4122,19 +4094,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSecurityListsRequest.Builder, ListSecurityListsRequest,
                 ListSecurityListsResponse>(
-                new com.google.common.base.Supplier<ListSecurityListsRequest.Builder>() {
+                new java.util.function.Supplier<ListSecurityListsRequest.Builder>() {
                     @Override
                     public ListSecurityListsRequest.Builder get() {
                         return ListSecurityListsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSecurityListsResponse, String>() {
+                new java.util.function.Function<ListSecurityListsResponse, String>() {
                     @Override
                     public String apply(ListSecurityListsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSecurityListsRequest.Builder>,
                         ListSecurityListsRequest>() {
@@ -4147,12 +4119,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSecurityListsRequest, ListSecurityListsResponse>() {
                     @Override
                     public ListSecurityListsResponse apply(ListSecurityListsRequest request) {
@@ -4175,19 +4147,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSecurityListsRequest.Builder, ListSecurityListsRequest,
                 ListSecurityListsResponse, com.oracle.bmc.core.model.SecurityList>(
-                new com.google.common.base.Supplier<ListSecurityListsRequest.Builder>() {
+                new java.util.function.Supplier<ListSecurityListsRequest.Builder>() {
                     @Override
                     public ListSecurityListsRequest.Builder get() {
                         return ListSecurityListsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSecurityListsResponse, String>() {
+                new java.util.function.Function<ListSecurityListsResponse, String>() {
                     @Override
                     public String apply(ListSecurityListsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSecurityListsRequest.Builder>,
                         ListSecurityListsRequest>() {
@@ -4200,19 +4172,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSecurityListsRequest, ListSecurityListsResponse>() {
                     @Override
                     public ListSecurityListsResponse apply(ListSecurityListsRequest request) {
                         return client.listSecurityLists(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSecurityListsResponse,
                         java.util.List<com.oracle.bmc.core.model.SecurityList>>() {
                     @Override
@@ -4235,19 +4207,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListServiceGatewaysRequest.Builder, ListServiceGatewaysRequest,
                 ListServiceGatewaysResponse>(
-                new com.google.common.base.Supplier<ListServiceGatewaysRequest.Builder>() {
+                new java.util.function.Supplier<ListServiceGatewaysRequest.Builder>() {
                     @Override
                     public ListServiceGatewaysRequest.Builder get() {
                         return ListServiceGatewaysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListServiceGatewaysResponse, String>() {
+                new java.util.function.Function<ListServiceGatewaysResponse, String>() {
                     @Override
                     public String apply(ListServiceGatewaysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListServiceGatewaysRequest.Builder>,
                         ListServiceGatewaysRequest>() {
@@ -4260,12 +4232,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServiceGatewaysRequest, ListServiceGatewaysResponse>() {
                     @Override
                     public ListServiceGatewaysResponse apply(ListServiceGatewaysRequest request) {
@@ -4288,19 +4260,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListServiceGatewaysRequest.Builder, ListServiceGatewaysRequest,
                 ListServiceGatewaysResponse, com.oracle.bmc.core.model.ServiceGateway>(
-                new com.google.common.base.Supplier<ListServiceGatewaysRequest.Builder>() {
+                new java.util.function.Supplier<ListServiceGatewaysRequest.Builder>() {
                     @Override
                     public ListServiceGatewaysRequest.Builder get() {
                         return ListServiceGatewaysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListServiceGatewaysResponse, String>() {
+                new java.util.function.Function<ListServiceGatewaysResponse, String>() {
                     @Override
                     public String apply(ListServiceGatewaysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListServiceGatewaysRequest.Builder>,
                         ListServiceGatewaysRequest>() {
@@ -4313,19 +4285,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServiceGatewaysRequest, ListServiceGatewaysResponse>() {
                     @Override
                     public ListServiceGatewaysResponse apply(ListServiceGatewaysRequest request) {
                         return client.listServiceGateways(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServiceGatewaysResponse,
                         java.util.List<com.oracle.bmc.core.model.ServiceGateway>>() {
                     @Override
@@ -4347,19 +4319,19 @@ public class VirtualNetworkPaginators {
             final ListServicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListServicesRequest.Builder, ListServicesRequest, ListServicesResponse>(
-                new com.google.common.base.Supplier<ListServicesRequest.Builder>() {
+                new java.util.function.Supplier<ListServicesRequest.Builder>() {
                     @Override
                     public ListServicesRequest.Builder get() {
                         return ListServicesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListServicesResponse, String>() {
+                new java.util.function.Function<ListServicesResponse, String>() {
                     @Override
                     public String apply(ListServicesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListServicesRequest.Builder>,
                         ListServicesRequest>() {
@@ -4372,12 +4344,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListServicesRequest, ListServicesResponse>() {
+                new java.util.function.Function<ListServicesRequest, ListServicesResponse>() {
                     @Override
                     public ListServicesResponse apply(ListServicesRequest request) {
                         return client.listServices(request);
@@ -4399,19 +4371,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListServicesRequest.Builder, ListServicesRequest, ListServicesResponse,
                 com.oracle.bmc.core.model.Service>(
-                new com.google.common.base.Supplier<ListServicesRequest.Builder>() {
+                new java.util.function.Supplier<ListServicesRequest.Builder>() {
                     @Override
                     public ListServicesRequest.Builder get() {
                         return ListServicesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListServicesResponse, String>() {
+                new java.util.function.Function<ListServicesResponse, String>() {
                     @Override
                     public String apply(ListServicesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListServicesRequest.Builder>,
                         ListServicesRequest>() {
@@ -4424,18 +4396,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListServicesRequest, ListServicesResponse>() {
+                new java.util.function.Function<ListServicesRequest, ListServicesResponse>() {
                     @Override
                     public ListServicesResponse apply(ListServicesRequest request) {
                         return client.listServices(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServicesResponse, java.util.List<com.oracle.bmc.core.model.Service>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.Service> apply(
@@ -4456,19 +4428,19 @@ public class VirtualNetworkPaginators {
             final ListSubnetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSubnetsRequest.Builder, ListSubnetsRequest, ListSubnetsResponse>(
-                new com.google.common.base.Supplier<ListSubnetsRequest.Builder>() {
+                new java.util.function.Supplier<ListSubnetsRequest.Builder>() {
                     @Override
                     public ListSubnetsRequest.Builder get() {
                         return ListSubnetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSubnetsResponse, String>() {
+                new java.util.function.Function<ListSubnetsResponse, String>() {
                     @Override
                     public String apply(ListSubnetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSubnetsRequest.Builder>,
                         ListSubnetsRequest>() {
@@ -4481,12 +4453,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListSubnetsRequest, ListSubnetsResponse>() {
+                new java.util.function.Function<ListSubnetsRequest, ListSubnetsResponse>() {
                     @Override
                     public ListSubnetsResponse apply(ListSubnetsRequest request) {
                         return client.listSubnets(request);
@@ -4508,19 +4480,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSubnetsRequest.Builder, ListSubnetsRequest, ListSubnetsResponse,
                 com.oracle.bmc.core.model.Subnet>(
-                new com.google.common.base.Supplier<ListSubnetsRequest.Builder>() {
+                new java.util.function.Supplier<ListSubnetsRequest.Builder>() {
                     @Override
                     public ListSubnetsRequest.Builder get() {
                         return ListSubnetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSubnetsResponse, String>() {
+                new java.util.function.Function<ListSubnetsResponse, String>() {
                     @Override
                     public String apply(ListSubnetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSubnetsRequest.Builder>,
                         ListSubnetsRequest>() {
@@ -4533,18 +4505,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListSubnetsRequest, ListSubnetsResponse>() {
+                new java.util.function.Function<ListSubnetsRequest, ListSubnetsResponse>() {
                     @Override
                     public ListSubnetsResponse apply(ListSubnetsRequest request) {
                         return client.listSubnets(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSubnetsResponse, java.util.List<com.oracle.bmc.core.model.Subnet>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.Subnet> apply(
@@ -4564,19 +4536,19 @@ public class VirtualNetworkPaginators {
     public Iterable<ListVcnsResponse> listVcnsResponseIterator(final ListVcnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVcnsRequest.Builder, ListVcnsRequest, ListVcnsResponse>(
-                new com.google.common.base.Supplier<ListVcnsRequest.Builder>() {
+                new java.util.function.Supplier<ListVcnsRequest.Builder>() {
                     @Override
                     public ListVcnsRequest.Builder get() {
                         return ListVcnsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVcnsResponse, String>() {
+                new java.util.function.Function<ListVcnsResponse, String>() {
                     @Override
                     public String apply(ListVcnsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVcnsRequest.Builder>,
                         ListVcnsRequest>() {
@@ -4589,12 +4561,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListVcnsRequest, ListVcnsResponse>() {
+                new java.util.function.Function<ListVcnsRequest, ListVcnsResponse>() {
                     @Override
                     public ListVcnsResponse apply(ListVcnsRequest request) {
                         return client.listVcns(request);
@@ -4616,19 +4588,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVcnsRequest.Builder, ListVcnsRequest, ListVcnsResponse,
                 com.oracle.bmc.core.model.Vcn>(
-                new com.google.common.base.Supplier<ListVcnsRequest.Builder>() {
+                new java.util.function.Supplier<ListVcnsRequest.Builder>() {
                     @Override
                     public ListVcnsRequest.Builder get() {
                         return ListVcnsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVcnsResponse, String>() {
+                new java.util.function.Function<ListVcnsResponse, String>() {
                     @Override
                     public String apply(ListVcnsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVcnsRequest.Builder>,
                         ListVcnsRequest>() {
@@ -4641,18 +4613,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListVcnsRequest, ListVcnsResponse>() {
+                new java.util.function.Function<ListVcnsRequest, ListVcnsResponse>() {
                     @Override
                     public ListVcnsResponse apply(ListVcnsRequest request) {
                         return client.listVcns(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVcnsResponse, java.util.List<com.oracle.bmc.core.model.Vcn>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.Vcn> apply(
@@ -4676,21 +4648,21 @@ public class VirtualNetworkPaginators {
                 ListVirtualCircuitBandwidthShapesRequest.Builder,
                 ListVirtualCircuitBandwidthShapesRequest,
                 ListVirtualCircuitBandwidthShapesResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListVirtualCircuitBandwidthShapesRequest.Builder>() {
                     @Override
                     public ListVirtualCircuitBandwidthShapesRequest.Builder get() {
                         return ListVirtualCircuitBandwidthShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualCircuitBandwidthShapesResponse, String>() {
                     @Override
                     public String apply(ListVirtualCircuitBandwidthShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVirtualCircuitBandwidthShapesRequest.Builder>,
                         ListVirtualCircuitBandwidthShapesRequest>() {
@@ -4703,12 +4675,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualCircuitBandwidthShapesRequest,
                         ListVirtualCircuitBandwidthShapesResponse>() {
                     @Override
@@ -4735,21 +4707,21 @@ public class VirtualNetworkPaginators {
                 ListVirtualCircuitBandwidthShapesRequest.Builder,
                 ListVirtualCircuitBandwidthShapesRequest, ListVirtualCircuitBandwidthShapesResponse,
                 com.oracle.bmc.core.model.VirtualCircuitBandwidthShape>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListVirtualCircuitBandwidthShapesRequest.Builder>() {
                     @Override
                     public ListVirtualCircuitBandwidthShapesRequest.Builder get() {
                         return ListVirtualCircuitBandwidthShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualCircuitBandwidthShapesResponse, String>() {
                     @Override
                     public String apply(ListVirtualCircuitBandwidthShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVirtualCircuitBandwidthShapesRequest.Builder>,
                         ListVirtualCircuitBandwidthShapesRequest>() {
@@ -4762,12 +4734,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualCircuitBandwidthShapesRequest,
                         ListVirtualCircuitBandwidthShapesResponse>() {
                     @Override
@@ -4776,7 +4748,7 @@ public class VirtualNetworkPaginators {
                         return client.listVirtualCircuitBandwidthShapes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualCircuitBandwidthShapesResponse,
                         java.util.List<com.oracle.bmc.core.model.VirtualCircuitBandwidthShape>>() {
                     @Override
@@ -4799,19 +4771,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVirtualCircuitsRequest.Builder, ListVirtualCircuitsRequest,
                 ListVirtualCircuitsResponse>(
-                new com.google.common.base.Supplier<ListVirtualCircuitsRequest.Builder>() {
+                new java.util.function.Supplier<ListVirtualCircuitsRequest.Builder>() {
                     @Override
                     public ListVirtualCircuitsRequest.Builder get() {
                         return ListVirtualCircuitsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVirtualCircuitsResponse, String>() {
+                new java.util.function.Function<ListVirtualCircuitsResponse, String>() {
                     @Override
                     public String apply(ListVirtualCircuitsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVirtualCircuitsRequest.Builder>,
                         ListVirtualCircuitsRequest>() {
@@ -4824,12 +4796,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualCircuitsRequest, ListVirtualCircuitsResponse>() {
                     @Override
                     public ListVirtualCircuitsResponse apply(ListVirtualCircuitsRequest request) {
@@ -4852,19 +4824,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVirtualCircuitsRequest.Builder, ListVirtualCircuitsRequest,
                 ListVirtualCircuitsResponse, com.oracle.bmc.core.model.VirtualCircuit>(
-                new com.google.common.base.Supplier<ListVirtualCircuitsRequest.Builder>() {
+                new java.util.function.Supplier<ListVirtualCircuitsRequest.Builder>() {
                     @Override
                     public ListVirtualCircuitsRequest.Builder get() {
                         return ListVirtualCircuitsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVirtualCircuitsResponse, String>() {
+                new java.util.function.Function<ListVirtualCircuitsResponse, String>() {
                     @Override
                     public String apply(ListVirtualCircuitsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVirtualCircuitsRequest.Builder>,
                         ListVirtualCircuitsRequest>() {
@@ -4877,19 +4849,19 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualCircuitsRequest, ListVirtualCircuitsResponse>() {
                     @Override
                     public ListVirtualCircuitsResponse apply(ListVirtualCircuitsRequest request) {
                         return client.listVirtualCircuits(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualCircuitsResponse,
                         java.util.List<com.oracle.bmc.core.model.VirtualCircuit>>() {
                     @Override
@@ -4910,19 +4882,19 @@ public class VirtualNetworkPaginators {
     public Iterable<ListVlansResponse> listVlansResponseIterator(final ListVlansRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVlansRequest.Builder, ListVlansRequest, ListVlansResponse>(
-                new com.google.common.base.Supplier<ListVlansRequest.Builder>() {
+                new java.util.function.Supplier<ListVlansRequest.Builder>() {
                     @Override
                     public ListVlansRequest.Builder get() {
                         return ListVlansRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVlansResponse, String>() {
+                new java.util.function.Function<ListVlansResponse, String>() {
                     @Override
                     public String apply(ListVlansResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVlansRequest.Builder>,
                         ListVlansRequest>() {
@@ -4935,12 +4907,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListVlansRequest, ListVlansResponse>() {
+                new java.util.function.Function<ListVlansRequest, ListVlansResponse>() {
                     @Override
                     public ListVlansResponse apply(ListVlansRequest request) {
                         return client.listVlans(request);
@@ -4962,19 +4934,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVlansRequest.Builder, ListVlansRequest, ListVlansResponse,
                 com.oracle.bmc.core.model.Vlan>(
-                new com.google.common.base.Supplier<ListVlansRequest.Builder>() {
+                new java.util.function.Supplier<ListVlansRequest.Builder>() {
                     @Override
                     public ListVlansRequest.Builder get() {
                         return ListVlansRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVlansResponse, String>() {
+                new java.util.function.Function<ListVlansResponse, String>() {
                     @Override
                     public String apply(ListVlansResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVlansRequest.Builder>,
                         ListVlansRequest>() {
@@ -4987,18 +4959,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListVlansRequest, ListVlansResponse>() {
+                new java.util.function.Function<ListVlansRequest, ListVlansResponse>() {
                     @Override
                     public ListVlansResponse apply(ListVlansRequest request) {
                         return client.listVlans(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVlansResponse, java.util.List<com.oracle.bmc.core.model.Vlan>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.Vlan> apply(
@@ -5018,19 +4990,19 @@ public class VirtualNetworkPaginators {
     public Iterable<ListVtapsResponse> listVtapsResponseIterator(final ListVtapsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVtapsRequest.Builder, ListVtapsRequest, ListVtapsResponse>(
-                new com.google.common.base.Supplier<ListVtapsRequest.Builder>() {
+                new java.util.function.Supplier<ListVtapsRequest.Builder>() {
                     @Override
                     public ListVtapsRequest.Builder get() {
                         return ListVtapsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVtapsResponse, String>() {
+                new java.util.function.Function<ListVtapsResponse, String>() {
                     @Override
                     public String apply(ListVtapsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVtapsRequest.Builder>,
                         ListVtapsRequest>() {
@@ -5043,12 +5015,12 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListVtapsRequest, ListVtapsResponse>() {
+                new java.util.function.Function<ListVtapsRequest, ListVtapsResponse>() {
                     @Override
                     public ListVtapsResponse apply(ListVtapsRequest request) {
                         return client.listVtaps(request);
@@ -5070,19 +5042,19 @@ public class VirtualNetworkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVtapsRequest.Builder, ListVtapsRequest, ListVtapsResponse,
                 com.oracle.bmc.core.model.Vtap>(
-                new com.google.common.base.Supplier<ListVtapsRequest.Builder>() {
+                new java.util.function.Supplier<ListVtapsRequest.Builder>() {
                     @Override
                     public ListVtapsRequest.Builder get() {
                         return ListVtapsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVtapsResponse, String>() {
+                new java.util.function.Function<ListVtapsResponse, String>() {
                     @Override
                     public String apply(ListVtapsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVtapsRequest.Builder>,
                         ListVtapsRequest>() {
@@ -5095,18 +5067,18 @@ public class VirtualNetworkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListVtapsRequest, ListVtapsResponse>() {
+                new java.util.function.Function<ListVtapsRequest, ListVtapsResponse>() {
                     @Override
                     public ListVtapsResponse apply(ListVtapsRequest request) {
                         return client.listVtaps(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVtapsResponse, java.util.List<com.oracle.bmc.core.model.Vtap>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.Vtap> apply(

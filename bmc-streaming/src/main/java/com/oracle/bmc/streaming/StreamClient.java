@@ -9,7 +9,6 @@ import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 public class StreamClient implements Stream {
@@ -331,9 +330,8 @@ public class StreamClient implements Stream {
                         "ConsumerCommit",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/ConsumerCommit");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ConsumerCommitResponse>
-                transformer =
-                        ConsumerCommitConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ConsumerCommitResponse> transformer =
+                ConsumerCommitConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -368,7 +366,7 @@ public class StreamClient implements Stream {
                         "ConsumerHeartbeat",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/ConsumerHeartbeat");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ConsumerHeartbeatResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ConsumerHeartbeatResponse>
                 transformer =
                         ConsumerHeartbeatConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -406,9 +404,8 @@ public class StreamClient implements Stream {
                         "CreateCursor",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Cursor/CreateCursor");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCursorResponse>
-                transformer =
-                        CreateCursorConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCursorResponse> transformer =
+                CreateCursorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -446,7 +443,7 @@ public class StreamClient implements Stream {
                         "CreateGroupCursor",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Cursor/CreateGroupCursor");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupCursorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateGroupCursorResponse>
                 transformer =
                         CreateGroupCursorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -486,7 +483,7 @@ public class StreamClient implements Stream {
                         "GetGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/GetGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetGroupResponse> transformer =
                 GetGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -521,9 +518,8 @@ public class StreamClient implements Stream {
                         "GetMessages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Message/GetMessages");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetMessagesResponse>
-                transformer =
-                        GetMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetMessagesResponse> transformer =
+                GetMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -561,9 +557,8 @@ public class StreamClient implements Stream {
                         "PutMessages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Message/PutMessages");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PutMessagesResponse>
-                transformer =
-                        PutMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, PutMessagesResponse> transformer =
+                PutMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -601,9 +596,8 @@ public class StreamClient implements Stream {
                         "UpdateGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/UpdateGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
-                transformer =
-                        UpdateGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateGroupResponse> transformer =
+                UpdateGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

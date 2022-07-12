@@ -23,6 +23,7 @@ public final class ResourceUsageSummary {
     @Deprecated
     @java.beans.ConstructorProperties({
         "exadataInsightId",
+        "exadataDisplayName",
         "usage",
         "capacity",
         "utilizationPercent",
@@ -30,12 +31,14 @@ public final class ResourceUsageSummary {
     })
     public ResourceUsageSummary(
             String exadataInsightId,
+            String exadataDisplayName,
             Double usage,
             Double capacity,
             Double utilizationPercent,
             Double usageChangePercent) {
         super();
         this.exadataInsightId = exadataInsightId;
+        this.exadataDisplayName = exadataDisplayName;
         this.usage = usage;
         this.capacity = capacity;
         this.utilizationPercent = utilizationPercent;
@@ -58,6 +61,22 @@ public final class ResourceUsageSummary {
         public Builder exadataInsightId(String exadataInsightId) {
             this.exadataInsightId = exadataInsightId;
             this.__explicitlySet__.add("exadataInsightId");
+            return this;
+        }
+        /**
+         * The user-friendly name for the Exadata system. The name does not have to be unique.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
+        private String exadataDisplayName;
+
+        /**
+         * The user-friendly name for the Exadata system. The name does not have to be unique.
+         * @param exadataDisplayName the value to set
+         * @return this builder
+         **/
+        public Builder exadataDisplayName(String exadataDisplayName) {
+            this.exadataDisplayName = exadataDisplayName;
+            this.__explicitlySet__.add("exadataDisplayName");
             return this;
         }
         /**
@@ -136,6 +155,7 @@ public final class ResourceUsageSummary {
             ResourceUsageSummary __instance__ =
                     new ResourceUsageSummary(
                             exadataInsightId,
+                            exadataDisplayName,
                             usage,
                             capacity,
                             utilizationPercent,
@@ -148,6 +168,7 @@ public final class ResourceUsageSummary {
         public Builder copy(ResourceUsageSummary o) {
             Builder copiedBuilder =
                     exadataInsightId(o.getExadataInsightId())
+                            .exadataDisplayName(o.getExadataDisplayName())
                             .usage(o.getUsage())
                             .capacity(o.getCapacity())
                             .utilizationPercent(o.getUtilizationPercent())
@@ -181,6 +202,20 @@ public final class ResourceUsageSummary {
      **/
     public String getExadataInsightId() {
         return exadataInsightId;
+    }
+
+    /**
+     * The user-friendly name for the Exadata system. The name does not have to be unique.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
+    private final String exadataDisplayName;
+
+    /**
+     * The user-friendly name for the Exadata system. The name does not have to be unique.
+     * @return the value
+     **/
+    public String getExadataDisplayName() {
+        return exadataDisplayName;
     }
 
     /**
@@ -248,6 +283,7 @@ public final class ResourceUsageSummary {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResourceUsageSummary(");
         sb.append("exadataInsightId=").append(String.valueOf(this.exadataInsightId));
+        sb.append(", exadataDisplayName=").append(String.valueOf(this.exadataDisplayName));
         sb.append(", usage=").append(String.valueOf(this.usage));
         sb.append(", capacity=").append(String.valueOf(this.capacity));
         sb.append(", utilizationPercent=").append(String.valueOf(this.utilizationPercent));
@@ -268,6 +304,7 @@ public final class ResourceUsageSummary {
 
         ResourceUsageSummary other = (ResourceUsageSummary) o;
         return java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
+                && java.util.Objects.equals(this.exadataDisplayName, other.exadataDisplayName)
                 && java.util.Objects.equals(this.usage, other.usage)
                 && java.util.Objects.equals(this.capacity, other.capacity)
                 && java.util.Objects.equals(this.utilizationPercent, other.utilizationPercent)
@@ -282,6 +319,11 @@ public final class ResourceUsageSummary {
         result =
                 (result * PRIME)
                         + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataDisplayName == null
+                                ? 43
+                                : this.exadataDisplayName.hashCode());
         result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
         result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
         result =

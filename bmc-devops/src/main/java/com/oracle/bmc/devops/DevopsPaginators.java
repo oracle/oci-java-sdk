@@ -44,19 +44,19 @@ public class DevopsPaginators {
             final ListAuthorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAuthorsRequest.Builder, ListAuthorsRequest, ListAuthorsResponse>(
-                new com.google.common.base.Supplier<ListAuthorsRequest.Builder>() {
+                new java.util.function.Supplier<ListAuthorsRequest.Builder>() {
                     @Override
                     public ListAuthorsRequest.Builder get() {
                         return ListAuthorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAuthorsResponse, String>() {
+                new java.util.function.Function<ListAuthorsResponse, String>() {
                     @Override
                     public String apply(ListAuthorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAuthorsRequest.Builder>,
                         ListAuthorsRequest>() {
@@ -69,12 +69,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListAuthorsRequest, ListAuthorsResponse>() {
+                new java.util.function.Function<ListAuthorsRequest, ListAuthorsResponse>() {
                     @Override
                     public ListAuthorsResponse apply(ListAuthorsRequest request) {
                         return client.listAuthors(request);
@@ -96,19 +96,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListAuthorsRequest.Builder, ListAuthorsRequest, ListAuthorsResponse,
                 com.oracle.bmc.devops.model.RepositoryAuthorSummary>(
-                new com.google.common.base.Supplier<ListAuthorsRequest.Builder>() {
+                new java.util.function.Supplier<ListAuthorsRequest.Builder>() {
                     @Override
                     public ListAuthorsRequest.Builder get() {
                         return ListAuthorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAuthorsResponse, String>() {
+                new java.util.function.Function<ListAuthorsResponse, String>() {
                     @Override
                     public String apply(ListAuthorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAuthorsRequest.Builder>,
                         ListAuthorsRequest>() {
@@ -121,18 +121,18 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListAuthorsRequest, ListAuthorsResponse>() {
+                new java.util.function.Function<ListAuthorsRequest, ListAuthorsResponse>() {
                     @Override
                     public ListAuthorsResponse apply(ListAuthorsRequest request) {
                         return client.listAuthors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAuthorsResponse,
                         java.util.List<com.oracle.bmc.devops.model.RepositoryAuthorSummary>>() {
                     @Override
@@ -155,19 +155,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBuildPipelineStagesRequest.Builder, ListBuildPipelineStagesRequest,
                 ListBuildPipelineStagesResponse>(
-                new com.google.common.base.Supplier<ListBuildPipelineStagesRequest.Builder>() {
+                new java.util.function.Supplier<ListBuildPipelineStagesRequest.Builder>() {
                     @Override
                     public ListBuildPipelineStagesRequest.Builder get() {
                         return ListBuildPipelineStagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBuildPipelineStagesResponse, String>() {
+                new java.util.function.Function<ListBuildPipelineStagesResponse, String>() {
                     @Override
                     public String apply(ListBuildPipelineStagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBuildPipelineStagesRequest.Builder>,
                         ListBuildPipelineStagesRequest>() {
@@ -180,12 +180,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBuildPipelineStagesRequest, ListBuildPipelineStagesResponse>() {
                     @Override
                     public ListBuildPipelineStagesResponse apply(
@@ -210,19 +210,19 @@ public class DevopsPaginators {
                 ListBuildPipelineStagesRequest.Builder, ListBuildPipelineStagesRequest,
                 ListBuildPipelineStagesResponse,
                 com.oracle.bmc.devops.model.BuildPipelineStageSummary>(
-                new com.google.common.base.Supplier<ListBuildPipelineStagesRequest.Builder>() {
+                new java.util.function.Supplier<ListBuildPipelineStagesRequest.Builder>() {
                     @Override
                     public ListBuildPipelineStagesRequest.Builder get() {
                         return ListBuildPipelineStagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBuildPipelineStagesResponse, String>() {
+                new java.util.function.Function<ListBuildPipelineStagesResponse, String>() {
                     @Override
                     public String apply(ListBuildPipelineStagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBuildPipelineStagesRequest.Builder>,
                         ListBuildPipelineStagesRequest>() {
@@ -235,12 +235,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBuildPipelineStagesRequest, ListBuildPipelineStagesResponse>() {
                     @Override
                     public ListBuildPipelineStagesResponse apply(
@@ -248,7 +248,7 @@ public class DevopsPaginators {
                         return client.listBuildPipelineStages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBuildPipelineStagesResponse,
                         java.util.List<com.oracle.bmc.devops.model.BuildPipelineStageSummary>>() {
                     @Override
@@ -271,19 +271,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBuildPipelinesRequest.Builder, ListBuildPipelinesRequest,
                 ListBuildPipelinesResponse>(
-                new com.google.common.base.Supplier<ListBuildPipelinesRequest.Builder>() {
+                new java.util.function.Supplier<ListBuildPipelinesRequest.Builder>() {
                     @Override
                     public ListBuildPipelinesRequest.Builder get() {
                         return ListBuildPipelinesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBuildPipelinesResponse, String>() {
+                new java.util.function.Function<ListBuildPipelinesResponse, String>() {
                     @Override
                     public String apply(ListBuildPipelinesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBuildPipelinesRequest.Builder>,
                         ListBuildPipelinesRequest>() {
@@ -296,12 +296,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBuildPipelinesRequest, ListBuildPipelinesResponse>() {
                     @Override
                     public ListBuildPipelinesResponse apply(ListBuildPipelinesRequest request) {
@@ -324,19 +324,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListBuildPipelinesRequest.Builder, ListBuildPipelinesRequest,
                 ListBuildPipelinesResponse, com.oracle.bmc.devops.model.BuildPipelineSummary>(
-                new com.google.common.base.Supplier<ListBuildPipelinesRequest.Builder>() {
+                new java.util.function.Supplier<ListBuildPipelinesRequest.Builder>() {
                     @Override
                     public ListBuildPipelinesRequest.Builder get() {
                         return ListBuildPipelinesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBuildPipelinesResponse, String>() {
+                new java.util.function.Function<ListBuildPipelinesResponse, String>() {
                     @Override
                     public String apply(ListBuildPipelinesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBuildPipelinesRequest.Builder>,
                         ListBuildPipelinesRequest>() {
@@ -349,19 +349,19 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBuildPipelinesRequest, ListBuildPipelinesResponse>() {
                     @Override
                     public ListBuildPipelinesResponse apply(ListBuildPipelinesRequest request) {
                         return client.listBuildPipelines(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBuildPipelinesResponse,
                         java.util.List<com.oracle.bmc.devops.model.BuildPipelineSummary>>() {
                     @Override
@@ -383,19 +383,19 @@ public class DevopsPaginators {
             final ListBuildRunsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBuildRunsRequest.Builder, ListBuildRunsRequest, ListBuildRunsResponse>(
-                new com.google.common.base.Supplier<ListBuildRunsRequest.Builder>() {
+                new java.util.function.Supplier<ListBuildRunsRequest.Builder>() {
                     @Override
                     public ListBuildRunsRequest.Builder get() {
                         return ListBuildRunsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBuildRunsResponse, String>() {
+                new java.util.function.Function<ListBuildRunsResponse, String>() {
                     @Override
                     public String apply(ListBuildRunsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBuildRunsRequest.Builder>,
                         ListBuildRunsRequest>() {
@@ -408,12 +408,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListBuildRunsRequest, ListBuildRunsResponse>() {
+                new java.util.function.Function<ListBuildRunsRequest, ListBuildRunsResponse>() {
                     @Override
                     public ListBuildRunsResponse apply(ListBuildRunsRequest request) {
                         return client.listBuildRuns(request);
@@ -435,19 +435,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListBuildRunsRequest.Builder, ListBuildRunsRequest, ListBuildRunsResponse,
                 com.oracle.bmc.devops.model.BuildRunSummary>(
-                new com.google.common.base.Supplier<ListBuildRunsRequest.Builder>() {
+                new java.util.function.Supplier<ListBuildRunsRequest.Builder>() {
                     @Override
                     public ListBuildRunsRequest.Builder get() {
                         return ListBuildRunsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBuildRunsResponse, String>() {
+                new java.util.function.Function<ListBuildRunsResponse, String>() {
                     @Override
                     public String apply(ListBuildRunsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBuildRunsRequest.Builder>,
                         ListBuildRunsRequest>() {
@@ -460,18 +460,18 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListBuildRunsRequest, ListBuildRunsResponse>() {
+                new java.util.function.Function<ListBuildRunsRequest, ListBuildRunsResponse>() {
                     @Override
                     public ListBuildRunsResponse apply(ListBuildRunsRequest request) {
                         return client.listBuildRuns(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBuildRunsResponse,
                         java.util.List<com.oracle.bmc.devops.model.BuildRunSummary>>() {
                     @Override
@@ -493,19 +493,19 @@ public class DevopsPaginators {
             final ListCommitDiffsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCommitDiffsRequest.Builder, ListCommitDiffsRequest, ListCommitDiffsResponse>(
-                new com.google.common.base.Supplier<ListCommitDiffsRequest.Builder>() {
+                new java.util.function.Supplier<ListCommitDiffsRequest.Builder>() {
                     @Override
                     public ListCommitDiffsRequest.Builder get() {
                         return ListCommitDiffsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCommitDiffsResponse, String>() {
+                new java.util.function.Function<ListCommitDiffsResponse, String>() {
                     @Override
                     public String apply(ListCommitDiffsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCommitDiffsRequest.Builder>,
                         ListCommitDiffsRequest>() {
@@ -518,13 +518,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListCommitDiffsRequest, ListCommitDiffsResponse>() {
+                new java.util.function.Function<ListCommitDiffsRequest, ListCommitDiffsResponse>() {
                     @Override
                     public ListCommitDiffsResponse apply(ListCommitDiffsRequest request) {
                         return client.listCommitDiffs(request);
@@ -546,19 +545,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCommitDiffsRequest.Builder, ListCommitDiffsRequest, ListCommitDiffsResponse,
                 com.oracle.bmc.devops.model.DiffSummary>(
-                new com.google.common.base.Supplier<ListCommitDiffsRequest.Builder>() {
+                new java.util.function.Supplier<ListCommitDiffsRequest.Builder>() {
                     @Override
                     public ListCommitDiffsRequest.Builder get() {
                         return ListCommitDiffsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCommitDiffsResponse, String>() {
+                new java.util.function.Function<ListCommitDiffsResponse, String>() {
                     @Override
                     public String apply(ListCommitDiffsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCommitDiffsRequest.Builder>,
                         ListCommitDiffsRequest>() {
@@ -571,19 +570,18 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListCommitDiffsRequest, ListCommitDiffsResponse>() {
+                new java.util.function.Function<ListCommitDiffsRequest, ListCommitDiffsResponse>() {
                     @Override
                     public ListCommitDiffsResponse apply(ListCommitDiffsRequest request) {
                         return client.listCommitDiffs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCommitDiffsResponse,
                         java.util.List<com.oracle.bmc.devops.model.DiffSummary>>() {
                     @Override
@@ -605,19 +603,19 @@ public class DevopsPaginators {
             final ListCommitsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCommitsRequest.Builder, ListCommitsRequest, ListCommitsResponse>(
-                new com.google.common.base.Supplier<ListCommitsRequest.Builder>() {
+                new java.util.function.Supplier<ListCommitsRequest.Builder>() {
                     @Override
                     public ListCommitsRequest.Builder get() {
                         return ListCommitsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCommitsResponse, String>() {
+                new java.util.function.Function<ListCommitsResponse, String>() {
                     @Override
                     public String apply(ListCommitsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCommitsRequest.Builder>,
                         ListCommitsRequest>() {
@@ -630,12 +628,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListCommitsRequest, ListCommitsResponse>() {
+                new java.util.function.Function<ListCommitsRequest, ListCommitsResponse>() {
                     @Override
                     public ListCommitsResponse apply(ListCommitsRequest request) {
                         return client.listCommits(request);
@@ -657,19 +655,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCommitsRequest.Builder, ListCommitsRequest, ListCommitsResponse,
                 com.oracle.bmc.devops.model.RepositoryCommitSummary>(
-                new com.google.common.base.Supplier<ListCommitsRequest.Builder>() {
+                new java.util.function.Supplier<ListCommitsRequest.Builder>() {
                     @Override
                     public ListCommitsRequest.Builder get() {
                         return ListCommitsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCommitsResponse, String>() {
+                new java.util.function.Function<ListCommitsResponse, String>() {
                     @Override
                     public String apply(ListCommitsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCommitsRequest.Builder>,
                         ListCommitsRequest>() {
@@ -682,18 +680,18 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListCommitsRequest, ListCommitsResponse>() {
+                new java.util.function.Function<ListCommitsRequest, ListCommitsResponse>() {
                     @Override
                     public ListCommitsResponse apply(ListCommitsRequest request) {
                         return client.listCommits(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCommitsResponse,
                         java.util.List<com.oracle.bmc.devops.model.RepositoryCommitSummary>>() {
                     @Override
@@ -715,19 +713,19 @@ public class DevopsPaginators {
             final ListConnectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListConnectionsRequest.Builder, ListConnectionsRequest, ListConnectionsResponse>(
-                new com.google.common.base.Supplier<ListConnectionsRequest.Builder>() {
+                new java.util.function.Supplier<ListConnectionsRequest.Builder>() {
                     @Override
                     public ListConnectionsRequest.Builder get() {
                         return ListConnectionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListConnectionsResponse, String>() {
+                new java.util.function.Function<ListConnectionsResponse, String>() {
                     @Override
                     public String apply(ListConnectionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListConnectionsRequest.Builder>,
                         ListConnectionsRequest>() {
@@ -740,13 +738,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListConnectionsRequest, ListConnectionsResponse>() {
+                new java.util.function.Function<ListConnectionsRequest, ListConnectionsResponse>() {
                     @Override
                     public ListConnectionsResponse apply(ListConnectionsRequest request) {
                         return client.listConnections(request);
@@ -768,19 +765,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListConnectionsRequest.Builder, ListConnectionsRequest, ListConnectionsResponse,
                 com.oracle.bmc.devops.model.ConnectionSummary>(
-                new com.google.common.base.Supplier<ListConnectionsRequest.Builder>() {
+                new java.util.function.Supplier<ListConnectionsRequest.Builder>() {
                     @Override
                     public ListConnectionsRequest.Builder get() {
                         return ListConnectionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListConnectionsResponse, String>() {
+                new java.util.function.Function<ListConnectionsResponse, String>() {
                     @Override
                     public String apply(ListConnectionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListConnectionsRequest.Builder>,
                         ListConnectionsRequest>() {
@@ -793,19 +790,18 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListConnectionsRequest, ListConnectionsResponse>() {
+                new java.util.function.Function<ListConnectionsRequest, ListConnectionsResponse>() {
                     @Override
                     public ListConnectionsResponse apply(ListConnectionsRequest request) {
                         return client.listConnections(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListConnectionsResponse,
                         java.util.List<com.oracle.bmc.devops.model.ConnectionSummary>>() {
                     @Override
@@ -828,19 +824,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDeployArtifactsRequest.Builder, ListDeployArtifactsRequest,
                 ListDeployArtifactsResponse>(
-                new com.google.common.base.Supplier<ListDeployArtifactsRequest.Builder>() {
+                new java.util.function.Supplier<ListDeployArtifactsRequest.Builder>() {
                     @Override
                     public ListDeployArtifactsRequest.Builder get() {
                         return ListDeployArtifactsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeployArtifactsResponse, String>() {
+                new java.util.function.Function<ListDeployArtifactsResponse, String>() {
                     @Override
                     public String apply(ListDeployArtifactsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeployArtifactsRequest.Builder>,
                         ListDeployArtifactsRequest>() {
@@ -853,12 +849,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeployArtifactsRequest, ListDeployArtifactsResponse>() {
                     @Override
                     public ListDeployArtifactsResponse apply(ListDeployArtifactsRequest request) {
@@ -881,19 +877,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDeployArtifactsRequest.Builder, ListDeployArtifactsRequest,
                 ListDeployArtifactsResponse, com.oracle.bmc.devops.model.DeployArtifactSummary>(
-                new com.google.common.base.Supplier<ListDeployArtifactsRequest.Builder>() {
+                new java.util.function.Supplier<ListDeployArtifactsRequest.Builder>() {
                     @Override
                     public ListDeployArtifactsRequest.Builder get() {
                         return ListDeployArtifactsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeployArtifactsResponse, String>() {
+                new java.util.function.Function<ListDeployArtifactsResponse, String>() {
                     @Override
                     public String apply(ListDeployArtifactsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeployArtifactsRequest.Builder>,
                         ListDeployArtifactsRequest>() {
@@ -906,19 +902,19 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeployArtifactsRequest, ListDeployArtifactsResponse>() {
                     @Override
                     public ListDeployArtifactsResponse apply(ListDeployArtifactsRequest request) {
                         return client.listDeployArtifacts(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeployArtifactsResponse,
                         java.util.List<com.oracle.bmc.devops.model.DeployArtifactSummary>>() {
                     @Override
@@ -941,19 +937,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDeployEnvironmentsRequest.Builder, ListDeployEnvironmentsRequest,
                 ListDeployEnvironmentsResponse>(
-                new com.google.common.base.Supplier<ListDeployEnvironmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListDeployEnvironmentsRequest.Builder>() {
                     @Override
                     public ListDeployEnvironmentsRequest.Builder get() {
                         return ListDeployEnvironmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeployEnvironmentsResponse, String>() {
+                new java.util.function.Function<ListDeployEnvironmentsResponse, String>() {
                     @Override
                     public String apply(ListDeployEnvironmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeployEnvironmentsRequest.Builder>,
                         ListDeployEnvironmentsRequest>() {
@@ -966,12 +962,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeployEnvironmentsRequest, ListDeployEnvironmentsResponse>() {
                     @Override
                     public ListDeployEnvironmentsResponse apply(
@@ -996,19 +992,19 @@ public class DevopsPaginators {
                 ListDeployEnvironmentsRequest.Builder, ListDeployEnvironmentsRequest,
                 ListDeployEnvironmentsResponse,
                 com.oracle.bmc.devops.model.DeployEnvironmentSummary>(
-                new com.google.common.base.Supplier<ListDeployEnvironmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListDeployEnvironmentsRequest.Builder>() {
                     @Override
                     public ListDeployEnvironmentsRequest.Builder get() {
                         return ListDeployEnvironmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeployEnvironmentsResponse, String>() {
+                new java.util.function.Function<ListDeployEnvironmentsResponse, String>() {
                     @Override
                     public String apply(ListDeployEnvironmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeployEnvironmentsRequest.Builder>,
                         ListDeployEnvironmentsRequest>() {
@@ -1021,12 +1017,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeployEnvironmentsRequest, ListDeployEnvironmentsResponse>() {
                     @Override
                     public ListDeployEnvironmentsResponse apply(
@@ -1034,7 +1030,7 @@ public class DevopsPaginators {
                         return client.listDeployEnvironments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeployEnvironmentsResponse,
                         java.util.List<com.oracle.bmc.devops.model.DeployEnvironmentSummary>>() {
                     @Override
@@ -1057,19 +1053,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDeployPipelinesRequest.Builder, ListDeployPipelinesRequest,
                 ListDeployPipelinesResponse>(
-                new com.google.common.base.Supplier<ListDeployPipelinesRequest.Builder>() {
+                new java.util.function.Supplier<ListDeployPipelinesRequest.Builder>() {
                     @Override
                     public ListDeployPipelinesRequest.Builder get() {
                         return ListDeployPipelinesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeployPipelinesResponse, String>() {
+                new java.util.function.Function<ListDeployPipelinesResponse, String>() {
                     @Override
                     public String apply(ListDeployPipelinesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeployPipelinesRequest.Builder>,
                         ListDeployPipelinesRequest>() {
@@ -1082,12 +1078,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeployPipelinesRequest, ListDeployPipelinesResponse>() {
                     @Override
                     public ListDeployPipelinesResponse apply(ListDeployPipelinesRequest request) {
@@ -1110,19 +1106,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDeployPipelinesRequest.Builder, ListDeployPipelinesRequest,
                 ListDeployPipelinesResponse, com.oracle.bmc.devops.model.DeployPipelineSummary>(
-                new com.google.common.base.Supplier<ListDeployPipelinesRequest.Builder>() {
+                new java.util.function.Supplier<ListDeployPipelinesRequest.Builder>() {
                     @Override
                     public ListDeployPipelinesRequest.Builder get() {
                         return ListDeployPipelinesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeployPipelinesResponse, String>() {
+                new java.util.function.Function<ListDeployPipelinesResponse, String>() {
                     @Override
                     public String apply(ListDeployPipelinesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeployPipelinesRequest.Builder>,
                         ListDeployPipelinesRequest>() {
@@ -1135,19 +1131,19 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeployPipelinesRequest, ListDeployPipelinesResponse>() {
                     @Override
                     public ListDeployPipelinesResponse apply(ListDeployPipelinesRequest request) {
                         return client.listDeployPipelines(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeployPipelinesResponse,
                         java.util.List<com.oracle.bmc.devops.model.DeployPipelineSummary>>() {
                     @Override
@@ -1169,19 +1165,19 @@ public class DevopsPaginators {
             final ListDeployStagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDeployStagesRequest.Builder, ListDeployStagesRequest, ListDeployStagesResponse>(
-                new com.google.common.base.Supplier<ListDeployStagesRequest.Builder>() {
+                new java.util.function.Supplier<ListDeployStagesRequest.Builder>() {
                     @Override
                     public ListDeployStagesRequest.Builder get() {
                         return ListDeployStagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeployStagesResponse, String>() {
+                new java.util.function.Function<ListDeployStagesResponse, String>() {
                     @Override
                     public String apply(ListDeployStagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeployStagesRequest.Builder>,
                         ListDeployStagesRequest>() {
@@ -1194,12 +1190,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeployStagesRequest, ListDeployStagesResponse>() {
                     @Override
                     public ListDeployStagesResponse apply(ListDeployStagesRequest request) {
@@ -1222,19 +1218,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDeployStagesRequest.Builder, ListDeployStagesRequest, ListDeployStagesResponse,
                 com.oracle.bmc.devops.model.DeployStageSummary>(
-                new com.google.common.base.Supplier<ListDeployStagesRequest.Builder>() {
+                new java.util.function.Supplier<ListDeployStagesRequest.Builder>() {
                     @Override
                     public ListDeployStagesRequest.Builder get() {
                         return ListDeployStagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeployStagesResponse, String>() {
+                new java.util.function.Function<ListDeployStagesResponse, String>() {
                     @Override
                     public String apply(ListDeployStagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeployStagesRequest.Builder>,
                         ListDeployStagesRequest>() {
@@ -1247,19 +1243,19 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeployStagesRequest, ListDeployStagesResponse>() {
                     @Override
                     public ListDeployStagesResponse apply(ListDeployStagesRequest request) {
                         return client.listDeployStages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeployStagesResponse,
                         java.util.List<com.oracle.bmc.devops.model.DeployStageSummary>>() {
                     @Override
@@ -1281,19 +1277,19 @@ public class DevopsPaginators {
             final ListDeploymentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDeploymentsRequest.Builder, ListDeploymentsRequest, ListDeploymentsResponse>(
-                new com.google.common.base.Supplier<ListDeploymentsRequest.Builder>() {
+                new java.util.function.Supplier<ListDeploymentsRequest.Builder>() {
                     @Override
                     public ListDeploymentsRequest.Builder get() {
                         return ListDeploymentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeploymentsResponse, String>() {
+                new java.util.function.Function<ListDeploymentsResponse, String>() {
                     @Override
                     public String apply(ListDeploymentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeploymentsRequest.Builder>,
                         ListDeploymentsRequest>() {
@@ -1306,13 +1302,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListDeploymentsRequest, ListDeploymentsResponse>() {
+                new java.util.function.Function<ListDeploymentsRequest, ListDeploymentsResponse>() {
                     @Override
                     public ListDeploymentsResponse apply(ListDeploymentsRequest request) {
                         return client.listDeployments(request);
@@ -1334,19 +1329,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDeploymentsRequest.Builder, ListDeploymentsRequest, ListDeploymentsResponse,
                 com.oracle.bmc.devops.model.DeploymentSummary>(
-                new com.google.common.base.Supplier<ListDeploymentsRequest.Builder>() {
+                new java.util.function.Supplier<ListDeploymentsRequest.Builder>() {
                     @Override
                     public ListDeploymentsRequest.Builder get() {
                         return ListDeploymentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeploymentsResponse, String>() {
+                new java.util.function.Function<ListDeploymentsResponse, String>() {
                     @Override
                     public String apply(ListDeploymentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeploymentsRequest.Builder>,
                         ListDeploymentsRequest>() {
@@ -1359,19 +1354,18 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListDeploymentsRequest, ListDeploymentsResponse>() {
+                new java.util.function.Function<ListDeploymentsRequest, ListDeploymentsResponse>() {
                     @Override
                     public ListDeploymentsResponse apply(ListDeploymentsRequest request) {
                         return client.listDeployments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeploymentsResponse,
                         java.util.List<com.oracle.bmc.devops.model.DeploymentSummary>>() {
                     @Override
@@ -1394,19 +1388,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListMirrorRecordsRequest.Builder, ListMirrorRecordsRequest,
                 ListMirrorRecordsResponse>(
-                new com.google.common.base.Supplier<ListMirrorRecordsRequest.Builder>() {
+                new java.util.function.Supplier<ListMirrorRecordsRequest.Builder>() {
                     @Override
                     public ListMirrorRecordsRequest.Builder get() {
                         return ListMirrorRecordsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListMirrorRecordsResponse, String>() {
+                new java.util.function.Function<ListMirrorRecordsResponse, String>() {
                     @Override
                     public String apply(ListMirrorRecordsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListMirrorRecordsRequest.Builder>,
                         ListMirrorRecordsRequest>() {
@@ -1419,12 +1413,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListMirrorRecordsRequest, ListMirrorRecordsResponse>() {
                     @Override
                     public ListMirrorRecordsResponse apply(ListMirrorRecordsRequest request) {
@@ -1448,19 +1442,19 @@ public class DevopsPaginators {
                 ListMirrorRecordsRequest.Builder, ListMirrorRecordsRequest,
                 ListMirrorRecordsResponse,
                 com.oracle.bmc.devops.model.RepositoryMirrorRecordSummary>(
-                new com.google.common.base.Supplier<ListMirrorRecordsRequest.Builder>() {
+                new java.util.function.Supplier<ListMirrorRecordsRequest.Builder>() {
                     @Override
                     public ListMirrorRecordsRequest.Builder get() {
                         return ListMirrorRecordsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListMirrorRecordsResponse, String>() {
+                new java.util.function.Function<ListMirrorRecordsResponse, String>() {
                     @Override
                     public String apply(ListMirrorRecordsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListMirrorRecordsRequest.Builder>,
                         ListMirrorRecordsRequest>() {
@@ -1473,19 +1467,19 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListMirrorRecordsRequest, ListMirrorRecordsResponse>() {
                     @Override
                     public ListMirrorRecordsResponse apply(ListMirrorRecordsRequest request) {
                         return client.listMirrorRecords(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListMirrorRecordsResponse,
                         java.util.List<
                                 com.oracle.bmc.devops.model.RepositoryMirrorRecordSummary>>() {
@@ -1507,19 +1501,19 @@ public class DevopsPaginators {
     public Iterable<ListPathsResponse> listPathsResponseIterator(final ListPathsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPathsRequest.Builder, ListPathsRequest, ListPathsResponse>(
-                new com.google.common.base.Supplier<ListPathsRequest.Builder>() {
+                new java.util.function.Supplier<ListPathsRequest.Builder>() {
                     @Override
                     public ListPathsRequest.Builder get() {
                         return ListPathsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPathsResponse, String>() {
+                new java.util.function.Function<ListPathsResponse, String>() {
                     @Override
                     public String apply(ListPathsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPathsRequest.Builder>,
                         ListPathsRequest>() {
@@ -1532,12 +1526,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListPathsRequest, ListPathsResponse>() {
+                new java.util.function.Function<ListPathsRequest, ListPathsResponse>() {
                     @Override
                     public ListPathsResponse apply(ListPathsRequest request) {
                         return client.listPaths(request);
@@ -1559,19 +1553,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListPathsRequest.Builder, ListPathsRequest, ListPathsResponse,
                 com.oracle.bmc.devops.model.RepositoryPathSummary>(
-                new com.google.common.base.Supplier<ListPathsRequest.Builder>() {
+                new java.util.function.Supplier<ListPathsRequest.Builder>() {
                     @Override
                     public ListPathsRequest.Builder get() {
                         return ListPathsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPathsResponse, String>() {
+                new java.util.function.Function<ListPathsResponse, String>() {
                     @Override
                     public String apply(ListPathsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPathsRequest.Builder>,
                         ListPathsRequest>() {
@@ -1584,18 +1578,18 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListPathsRequest, ListPathsResponse>() {
+                new java.util.function.Function<ListPathsRequest, ListPathsResponse>() {
                     @Override
                     public ListPathsResponse apply(ListPathsRequest request) {
                         return client.listPaths(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPathsResponse,
                         java.util.List<com.oracle.bmc.devops.model.RepositoryPathSummary>>() {
                     @Override
@@ -1617,19 +1611,19 @@ public class DevopsPaginators {
             final ListProjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListProjectsRequest.Builder, ListProjectsRequest, ListProjectsResponse>(
-                new com.google.common.base.Supplier<ListProjectsRequest.Builder>() {
+                new java.util.function.Supplier<ListProjectsRequest.Builder>() {
                     @Override
                     public ListProjectsRequest.Builder get() {
                         return ListProjectsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProjectsResponse, String>() {
+                new java.util.function.Function<ListProjectsResponse, String>() {
                     @Override
                     public String apply(ListProjectsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProjectsRequest.Builder>,
                         ListProjectsRequest>() {
@@ -1642,12 +1636,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListProjectsRequest, ListProjectsResponse>() {
+                new java.util.function.Function<ListProjectsRequest, ListProjectsResponse>() {
                     @Override
                     public ListProjectsResponse apply(ListProjectsRequest request) {
                         return client.listProjects(request);
@@ -1669,19 +1663,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListProjectsRequest.Builder, ListProjectsRequest, ListProjectsResponse,
                 com.oracle.bmc.devops.model.ProjectSummary>(
-                new com.google.common.base.Supplier<ListProjectsRequest.Builder>() {
+                new java.util.function.Supplier<ListProjectsRequest.Builder>() {
                     @Override
                     public ListProjectsRequest.Builder get() {
                         return ListProjectsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProjectsResponse, String>() {
+                new java.util.function.Function<ListProjectsResponse, String>() {
                     @Override
                     public String apply(ListProjectsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProjectsRequest.Builder>,
                         ListProjectsRequest>() {
@@ -1694,18 +1688,18 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListProjectsRequest, ListProjectsResponse>() {
+                new java.util.function.Function<ListProjectsRequest, ListProjectsResponse>() {
                     @Override
                     public ListProjectsResponse apply(ListProjectsRequest request) {
                         return client.listProjects(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProjectsResponse,
                         java.util.List<com.oracle.bmc.devops.model.ProjectSummary>>() {
                     @Override
@@ -1726,19 +1720,19 @@ public class DevopsPaginators {
     public Iterable<ListRefsResponse> listRefsResponseIterator(final ListRefsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRefsRequest.Builder, ListRefsRequest, ListRefsResponse>(
-                new com.google.common.base.Supplier<ListRefsRequest.Builder>() {
+                new java.util.function.Supplier<ListRefsRequest.Builder>() {
                     @Override
                     public ListRefsRequest.Builder get() {
                         return ListRefsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRefsResponse, String>() {
+                new java.util.function.Function<ListRefsResponse, String>() {
                     @Override
                     public String apply(ListRefsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRefsRequest.Builder>,
                         ListRefsRequest>() {
@@ -1751,12 +1745,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListRefsRequest, ListRefsResponse>() {
+                new java.util.function.Function<ListRefsRequest, ListRefsResponse>() {
                     @Override
                     public ListRefsResponse apply(ListRefsRequest request) {
                         return client.listRefs(request);
@@ -1778,19 +1772,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListRefsRequest.Builder, ListRefsRequest, ListRefsResponse,
                 com.oracle.bmc.devops.model.RepositoryRefSummary>(
-                new com.google.common.base.Supplier<ListRefsRequest.Builder>() {
+                new java.util.function.Supplier<ListRefsRequest.Builder>() {
                     @Override
                     public ListRefsRequest.Builder get() {
                         return ListRefsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRefsResponse, String>() {
+                new java.util.function.Function<ListRefsResponse, String>() {
                     @Override
                     public String apply(ListRefsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRefsRequest.Builder>,
                         ListRefsRequest>() {
@@ -1803,18 +1797,18 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListRefsRequest, ListRefsResponse>() {
+                new java.util.function.Function<ListRefsRequest, ListRefsResponse>() {
                     @Override
                     public ListRefsResponse apply(ListRefsRequest request) {
                         return client.listRefs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRefsResponse,
                         java.util.List<com.oracle.bmc.devops.model.RepositoryRefSummary>>() {
                     @Override
@@ -1836,19 +1830,19 @@ public class DevopsPaginators {
             final ListRepositoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRepositoriesRequest.Builder, ListRepositoriesRequest, ListRepositoriesResponse>(
-                new com.google.common.base.Supplier<ListRepositoriesRequest.Builder>() {
+                new java.util.function.Supplier<ListRepositoriesRequest.Builder>() {
                     @Override
                     public ListRepositoriesRequest.Builder get() {
                         return ListRepositoriesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRepositoriesResponse, String>() {
+                new java.util.function.Function<ListRepositoriesResponse, String>() {
                     @Override
                     public String apply(ListRepositoriesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRepositoriesRequest.Builder>,
                         ListRepositoriesRequest>() {
@@ -1861,12 +1855,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRepositoriesRequest, ListRepositoriesResponse>() {
                     @Override
                     public ListRepositoriesResponse apply(ListRepositoriesRequest request) {
@@ -1889,19 +1883,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListRepositoriesRequest.Builder, ListRepositoriesRequest, ListRepositoriesResponse,
                 com.oracle.bmc.devops.model.RepositorySummary>(
-                new com.google.common.base.Supplier<ListRepositoriesRequest.Builder>() {
+                new java.util.function.Supplier<ListRepositoriesRequest.Builder>() {
                     @Override
                     public ListRepositoriesRequest.Builder get() {
                         return ListRepositoriesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRepositoriesResponse, String>() {
+                new java.util.function.Function<ListRepositoriesResponse, String>() {
                     @Override
                     public String apply(ListRepositoriesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRepositoriesRequest.Builder>,
                         ListRepositoriesRequest>() {
@@ -1914,19 +1908,19 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRepositoriesRequest, ListRepositoriesResponse>() {
                     @Override
                     public ListRepositoriesResponse apply(ListRepositoriesRequest request) {
                         return client.listRepositories(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRepositoriesResponse,
                         java.util.List<com.oracle.bmc.devops.model.RepositorySummary>>() {
                     @Override
@@ -1948,19 +1942,19 @@ public class DevopsPaginators {
             final ListTriggersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListTriggersRequest.Builder, ListTriggersRequest, ListTriggersResponse>(
-                new com.google.common.base.Supplier<ListTriggersRequest.Builder>() {
+                new java.util.function.Supplier<ListTriggersRequest.Builder>() {
                     @Override
                     public ListTriggersRequest.Builder get() {
                         return ListTriggersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTriggersResponse, String>() {
+                new java.util.function.Function<ListTriggersResponse, String>() {
                     @Override
                     public String apply(ListTriggersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTriggersRequest.Builder>,
                         ListTriggersRequest>() {
@@ -1973,12 +1967,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListTriggersRequest, ListTriggersResponse>() {
+                new java.util.function.Function<ListTriggersRequest, ListTriggersResponse>() {
                     @Override
                     public ListTriggersResponse apply(ListTriggersRequest request) {
                         return client.listTriggers(request);
@@ -2000,19 +1994,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListTriggersRequest.Builder, ListTriggersRequest, ListTriggersResponse,
                 com.oracle.bmc.devops.model.TriggerSummary>(
-                new com.google.common.base.Supplier<ListTriggersRequest.Builder>() {
+                new java.util.function.Supplier<ListTriggersRequest.Builder>() {
                     @Override
                     public ListTriggersRequest.Builder get() {
                         return ListTriggersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTriggersResponse, String>() {
+                new java.util.function.Function<ListTriggersResponse, String>() {
                     @Override
                     public String apply(ListTriggersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTriggersRequest.Builder>,
                         ListTriggersRequest>() {
@@ -2025,18 +2019,18 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListTriggersRequest, ListTriggersResponse>() {
+                new java.util.function.Function<ListTriggersRequest, ListTriggersResponse>() {
                     @Override
                     public ListTriggersResponse apply(ListTriggersRequest request) {
                         return client.listTriggers(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTriggersResponse,
                         java.util.List<com.oracle.bmc.devops.model.TriggerSummary>>() {
                     @Override
@@ -2059,19 +2053,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -2084,12 +2078,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -2113,19 +2107,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse, com.oracle.bmc.devops.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -2138,12 +2132,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -2151,7 +2145,7 @@ public class DevopsPaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<com.oracle.bmc.devops.model.WorkRequestError>>() {
                     @Override
@@ -2174,19 +2168,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -2199,12 +2193,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -2227,19 +2221,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse, com.oracle.bmc.devops.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -2252,19 +2246,19 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<com.oracle.bmc.devops.model.WorkRequestLogEntry>>() {
                     @Override
@@ -2286,19 +2280,19 @@ public class DevopsPaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -2311,12 +2305,12 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -2339,19 +2333,19 @@ public class DevopsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.devops.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -2364,19 +2358,19 @@ public class DevopsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<com.oracle.bmc.devops.model.WorkRequestSummary>>() {
                     @Override

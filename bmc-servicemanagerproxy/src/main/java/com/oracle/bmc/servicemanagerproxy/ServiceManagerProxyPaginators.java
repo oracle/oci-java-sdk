@@ -45,19 +45,19 @@ public class ServiceManagerProxyPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListServiceEnvironmentsRequest.Builder, ListServiceEnvironmentsRequest,
                 ListServiceEnvironmentsResponse>(
-                new com.google.common.base.Supplier<ListServiceEnvironmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListServiceEnvironmentsRequest.Builder>() {
                     @Override
                     public ListServiceEnvironmentsRequest.Builder get() {
                         return ListServiceEnvironmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListServiceEnvironmentsResponse, String>() {
+                new java.util.function.Function<ListServiceEnvironmentsResponse, String>() {
                     @Override
                     public String apply(ListServiceEnvironmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListServiceEnvironmentsRequest.Builder>,
                         ListServiceEnvironmentsRequest>() {
@@ -70,12 +70,12 @@ public class ServiceManagerProxyPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServiceEnvironmentsRequest, ListServiceEnvironmentsResponse>() {
                     @Override
                     public ListServiceEnvironmentsResponse apply(
@@ -100,19 +100,19 @@ public class ServiceManagerProxyPaginators {
                 ListServiceEnvironmentsRequest.Builder, ListServiceEnvironmentsRequest,
                 ListServiceEnvironmentsResponse,
                 com.oracle.bmc.servicemanagerproxy.model.ServiceEnvironmentSummary>(
-                new com.google.common.base.Supplier<ListServiceEnvironmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListServiceEnvironmentsRequest.Builder>() {
                     @Override
                     public ListServiceEnvironmentsRequest.Builder get() {
                         return ListServiceEnvironmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListServiceEnvironmentsResponse, String>() {
+                new java.util.function.Function<ListServiceEnvironmentsResponse, String>() {
                     @Override
                     public String apply(ListServiceEnvironmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListServiceEnvironmentsRequest.Builder>,
                         ListServiceEnvironmentsRequest>() {
@@ -125,12 +125,12 @@ public class ServiceManagerProxyPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServiceEnvironmentsRequest, ListServiceEnvironmentsResponse>() {
                     @Override
                     public ListServiceEnvironmentsResponse apply(
@@ -138,7 +138,7 @@ public class ServiceManagerProxyPaginators {
                         return client.listServiceEnvironments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServiceEnvironmentsResponse,
                         java.util.List<
                                 com.oracle.bmc.servicemanagerproxy.model

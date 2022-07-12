@@ -9,7 +9,6 @@ import com.oracle.bmc.nosql.requests.*;
 import com.oracle.bmc.nosql.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 public class NosqlClient implements Nosql {
@@ -334,9 +333,9 @@ public class NosqlClient implements Nosql {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Nosql-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Nosql-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class NosqlClient implements Nosql {
          * @return the client
          */
         public NosqlClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class NosqlClient implements Nosql {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class NosqlClient implements Nosql {
                         "ChangeTableCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/ChangeTableCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeTableCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeTableCompartmentResponse>
                 transformer =
                         ChangeTableCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -530,9 +530,8 @@ public class NosqlClient implements Nosql {
                         "CreateIndex",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/CreateIndex");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateIndexResponse>
-                transformer =
-                        CreateIndexConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateIndexResponse> transformer =
+                CreateIndexConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -571,9 +570,8 @@ public class NosqlClient implements Nosql {
                         "CreateTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/CreateTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTableResponse>
-                transformer =
-                        CreateTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTableResponse> transformer =
+                CreateTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -611,9 +609,8 @@ public class NosqlClient implements Nosql {
                         "DeleteIndex",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/DeleteIndex");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIndexResponse>
-                transformer =
-                        DeleteIndexConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteIndexResponse> transformer =
+                DeleteIndexConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -647,7 +644,7 @@ public class NosqlClient implements Nosql {
                         "DeleteRow",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Row/DeleteRow");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRowResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRowResponse> transformer =
                 DeleteRowConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -683,9 +680,8 @@ public class NosqlClient implements Nosql {
                         "DeleteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/DeleteTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTableResponse>
-                transformer =
-                        DeleteTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTableResponse> transformer =
+                DeleteTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -720,7 +716,7 @@ public class NosqlClient implements Nosql {
                         "DeleteWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/DeleteWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
                 transformer =
                         DeleteWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -757,7 +753,7 @@ public class NosqlClient implements Nosql {
                         "GetIndex",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/GetIndex");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetIndexResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetIndexResponse> transformer =
                 GetIndexConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -791,7 +787,7 @@ public class NosqlClient implements Nosql {
                         "GetRow",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Row/GetRow");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRowResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetRowResponse> transformer =
                 GetRowConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -825,7 +821,7 @@ public class NosqlClient implements Nosql {
                         "GetTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/GetTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTableResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetTableResponse> transformer =
                 GetTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -860,9 +856,8 @@ public class NosqlClient implements Nosql {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -896,9 +891,8 @@ public class NosqlClient implements Nosql {
                         "ListIndexes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/ListIndexes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIndexesResponse>
-                transformer =
-                        ListIndexesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListIndexesResponse> transformer =
+                ListIndexesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -932,9 +926,8 @@ public class NosqlClient implements Nosql {
                         "ListTableUsage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/ListTableUsage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTableUsageResponse>
-                transformer =
-                        ListTableUsageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListTableUsageResponse> transformer =
+                ListTableUsageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -967,7 +960,7 @@ public class NosqlClient implements Nosql {
                         "ListTables",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/ListTables");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTablesResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListTablesResponse> transformer =
                 ListTablesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1003,7 +996,7 @@ public class NosqlClient implements Nosql {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1040,7 +1033,7 @@ public class NosqlClient implements Nosql {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1077,7 +1070,7 @@ public class NosqlClient implements Nosql {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1114,7 +1107,7 @@ public class NosqlClient implements Nosql {
                         "PrepareStatement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/QueryResultCollection/PrepareStatement");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PrepareStatementResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PrepareStatementResponse>
                 transformer =
                         PrepareStatementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1150,7 +1143,7 @@ public class NosqlClient implements Nosql {
                         "Query",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/QueryResultCollection/Query");
-        com.google.common.base.Function<javax.ws.rs.core.Response, QueryResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, QueryResponse> transformer =
                 QueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1189,7 +1182,7 @@ public class NosqlClient implements Nosql {
                         "SummarizeStatement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/QueryResultCollection/SummarizeStatement");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeStatementResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeStatementResponse>
                 transformer =
                         SummarizeStatementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1225,7 +1218,7 @@ public class NosqlClient implements Nosql {
                         "UpdateRow",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Row/UpdateRow");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRowResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRowResponse> transformer =
                 UpdateRowConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1264,9 +1257,8 @@ public class NosqlClient implements Nosql {
                         "UpdateTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/UpdateTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTableResponse>
-                transformer =
-                        UpdateTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTableResponse> transformer =
+                UpdateTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

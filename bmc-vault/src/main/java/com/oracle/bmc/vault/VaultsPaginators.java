@@ -45,19 +45,19 @@ public class VaultsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSecretVersionsRequest.Builder, ListSecretVersionsRequest,
                 ListSecretVersionsResponse>(
-                new com.google.common.base.Supplier<ListSecretVersionsRequest.Builder>() {
+                new java.util.function.Supplier<ListSecretVersionsRequest.Builder>() {
                     @Override
                     public ListSecretVersionsRequest.Builder get() {
                         return ListSecretVersionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSecretVersionsResponse, String>() {
+                new java.util.function.Function<ListSecretVersionsResponse, String>() {
                     @Override
                     public String apply(ListSecretVersionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSecretVersionsRequest.Builder>,
                         ListSecretVersionsRequest>() {
@@ -70,12 +70,12 @@ public class VaultsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSecretVersionsRequest, ListSecretVersionsResponse>() {
                     @Override
                     public ListSecretVersionsResponse apply(ListSecretVersionsRequest request) {
@@ -98,19 +98,19 @@ public class VaultsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSecretVersionsRequest.Builder, ListSecretVersionsRequest,
                 ListSecretVersionsResponse, com.oracle.bmc.vault.model.SecretVersionSummary>(
-                new com.google.common.base.Supplier<ListSecretVersionsRequest.Builder>() {
+                new java.util.function.Supplier<ListSecretVersionsRequest.Builder>() {
                     @Override
                     public ListSecretVersionsRequest.Builder get() {
                         return ListSecretVersionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSecretVersionsResponse, String>() {
+                new java.util.function.Function<ListSecretVersionsResponse, String>() {
                     @Override
                     public String apply(ListSecretVersionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSecretVersionsRequest.Builder>,
                         ListSecretVersionsRequest>() {
@@ -123,19 +123,19 @@ public class VaultsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSecretVersionsRequest, ListSecretVersionsResponse>() {
                     @Override
                     public ListSecretVersionsResponse apply(ListSecretVersionsRequest request) {
                         return client.listSecretVersions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSecretVersionsResponse,
                         java.util.List<com.oracle.bmc.vault.model.SecretVersionSummary>>() {
                     @Override
@@ -157,19 +157,19 @@ public class VaultsPaginators {
             final ListSecretsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSecretsRequest.Builder, ListSecretsRequest, ListSecretsResponse>(
-                new com.google.common.base.Supplier<ListSecretsRequest.Builder>() {
+                new java.util.function.Supplier<ListSecretsRequest.Builder>() {
                     @Override
                     public ListSecretsRequest.Builder get() {
                         return ListSecretsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSecretsResponse, String>() {
+                new java.util.function.Function<ListSecretsResponse, String>() {
                     @Override
                     public String apply(ListSecretsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSecretsRequest.Builder>,
                         ListSecretsRequest>() {
@@ -182,12 +182,12 @@ public class VaultsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListSecretsRequest, ListSecretsResponse>() {
+                new java.util.function.Function<ListSecretsRequest, ListSecretsResponse>() {
                     @Override
                     public ListSecretsResponse apply(ListSecretsRequest request) {
                         return client.listSecrets(request);
@@ -209,19 +209,19 @@ public class VaultsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSecretsRequest.Builder, ListSecretsRequest, ListSecretsResponse,
                 com.oracle.bmc.vault.model.SecretSummary>(
-                new com.google.common.base.Supplier<ListSecretsRequest.Builder>() {
+                new java.util.function.Supplier<ListSecretsRequest.Builder>() {
                     @Override
                     public ListSecretsRequest.Builder get() {
                         return ListSecretsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSecretsResponse, String>() {
+                new java.util.function.Function<ListSecretsResponse, String>() {
                     @Override
                     public String apply(ListSecretsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSecretsRequest.Builder>,
                         ListSecretsRequest>() {
@@ -234,18 +234,18 @@ public class VaultsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListSecretsRequest, ListSecretsResponse>() {
+                new java.util.function.Function<ListSecretsRequest, ListSecretsResponse>() {
                     @Override
                     public ListSecretsResponse apply(ListSecretsRequest request) {
                         return client.listSecrets(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSecretsResponse,
                         java.util.List<com.oracle.bmc.vault.model.SecretSummary>>() {
                     @Override

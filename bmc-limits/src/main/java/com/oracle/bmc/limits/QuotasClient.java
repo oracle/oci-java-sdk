@@ -9,7 +9,6 @@ import com.oracle.bmc.limits.requests.*;
 import com.oracle.bmc.limits.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 public class QuotasClient implements Quotas {
@@ -334,9 +333,9 @@ public class QuotasClient implements Quotas {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Quotas-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Quotas-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class QuotasClient implements Quotas {
          * @return the client
          */
         public QuotasClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class QuotasClient implements Quotas {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -486,9 +486,8 @@ public class QuotasClient implements Quotas {
                         "AddQuotaLock",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/AddQuotaLock");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddQuotaLockResponse>
-                transformer =
-                        AddQuotaLockConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, AddQuotaLockResponse> transformer =
+                AddQuotaLockConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -527,9 +526,8 @@ public class QuotasClient implements Quotas {
                         "CreateQuota",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/CreateQuota");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateQuotaResponse>
-                transformer =
-                        CreateQuotaConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateQuotaResponse> transformer =
+                CreateQuotaConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -567,9 +565,8 @@ public class QuotasClient implements Quotas {
                         "DeleteQuota",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/DeleteQuota");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteQuotaResponse>
-                transformer =
-                        DeleteQuotaConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteQuotaResponse> transformer =
+                DeleteQuotaConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -603,7 +600,7 @@ public class QuotasClient implements Quotas {
                         "GetQuota",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/GetQuota");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetQuotaResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetQuotaResponse> transformer =
                 GetQuotaConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -637,7 +634,7 @@ public class QuotasClient implements Quotas {
                         "ListQuotas",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/QuotaSummary/ListQuotas");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListQuotasResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListQuotasResponse> transformer =
                 ListQuotasConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -672,7 +669,7 @@ public class QuotasClient implements Quotas {
                         "RemoveQuotaLock",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/RemoveQuotaLock");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveQuotaLockResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveQuotaLockResponse>
                 transformer =
                         RemoveQuotaLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -713,9 +710,8 @@ public class QuotasClient implements Quotas {
                         "UpdateQuota",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/UpdateQuota");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateQuotaResponse>
-                transformer =
-                        UpdateQuotaConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateQuotaResponse> transformer =
+                UpdateQuotaConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

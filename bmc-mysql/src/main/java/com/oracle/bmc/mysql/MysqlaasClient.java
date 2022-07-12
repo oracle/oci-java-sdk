@@ -9,7 +9,6 @@ import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class MysqlaasClient implements Mysqlaas {
@@ -334,9 +333,9 @@ public class MysqlaasClient implements Mysqlaas {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Mysqlaas-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Mysqlaas-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class MysqlaasClient implements Mysqlaas {
          * @return the client
          */
         public MysqlaasClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class MysqlaasClient implements Mysqlaas {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -484,7 +484,7 @@ public class MysqlaasClient implements Mysqlaas {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Mysqlaas", "CreateConfiguration", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateConfigurationResponse>
                 transformer =
                         CreateConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -525,7 +525,7 @@ public class MysqlaasClient implements Mysqlaas {
                         "DeleteConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Configuration/DeleteConfiguration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteConfigurationResponse>
                 transformer =
                         DeleteConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -563,7 +563,7 @@ public class MysqlaasClient implements Mysqlaas {
                         "GetConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Configuration/GetConfiguration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer =
                         GetConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -600,7 +600,7 @@ public class MysqlaasClient implements Mysqlaas {
                         "ListConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ConfigurationSummary/ListConfigurations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListConfigurationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListConfigurationsResponse>
                 transformer =
                         ListConfigurationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -636,7 +636,7 @@ public class MysqlaasClient implements Mysqlaas {
                         "ListShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListShapesResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListShapesResponse> transformer =
                 ListShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -671,9 +671,8 @@ public class MysqlaasClient implements Mysqlaas {
                         "ListVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/VersionSummary/ListVersions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVersionsResponse>
-                transformer =
-                        ListVersionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListVersionsResponse> transformer =
+                ListVersionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -707,7 +706,7 @@ public class MysqlaasClient implements Mysqlaas {
                         "UpdateConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Configuration/UpdateConfiguration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
                 transformer =
                         UpdateConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

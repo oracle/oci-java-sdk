@@ -45,19 +45,19 @@ public class SecretsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSecretBundleVersionsRequest.Builder, ListSecretBundleVersionsRequest,
                 ListSecretBundleVersionsResponse>(
-                new com.google.common.base.Supplier<ListSecretBundleVersionsRequest.Builder>() {
+                new java.util.function.Supplier<ListSecretBundleVersionsRequest.Builder>() {
                     @Override
                     public ListSecretBundleVersionsRequest.Builder get() {
                         return ListSecretBundleVersionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSecretBundleVersionsResponse, String>() {
+                new java.util.function.Function<ListSecretBundleVersionsResponse, String>() {
                     @Override
                     public String apply(ListSecretBundleVersionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSecretBundleVersionsRequest.Builder>,
                         ListSecretBundleVersionsRequest>() {
@@ -70,12 +70,12 @@ public class SecretsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSecretBundleVersionsRequest, ListSecretBundleVersionsResponse>() {
                     @Override
                     public ListSecretBundleVersionsResponse apply(
@@ -100,19 +100,19 @@ public class SecretsPaginators {
                 ListSecretBundleVersionsRequest.Builder, ListSecretBundleVersionsRequest,
                 ListSecretBundleVersionsResponse,
                 com.oracle.bmc.secrets.model.SecretBundleVersionSummary>(
-                new com.google.common.base.Supplier<ListSecretBundleVersionsRequest.Builder>() {
+                new java.util.function.Supplier<ListSecretBundleVersionsRequest.Builder>() {
                     @Override
                     public ListSecretBundleVersionsRequest.Builder get() {
                         return ListSecretBundleVersionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSecretBundleVersionsResponse, String>() {
+                new java.util.function.Function<ListSecretBundleVersionsResponse, String>() {
                     @Override
                     public String apply(ListSecretBundleVersionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSecretBundleVersionsRequest.Builder>,
                         ListSecretBundleVersionsRequest>() {
@@ -125,12 +125,12 @@ public class SecretsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSecretBundleVersionsRequest, ListSecretBundleVersionsResponse>() {
                     @Override
                     public ListSecretBundleVersionsResponse apply(
@@ -138,7 +138,7 @@ public class SecretsPaginators {
                         return client.listSecretBundleVersions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSecretBundleVersionsResponse,
                         java.util.List<com.oracle.bmc.secrets.model.SecretBundleVersionSummary>>() {
                     @Override

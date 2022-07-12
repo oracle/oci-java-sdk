@@ -4,15 +4,15 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.MoreObjects;
-import com.google.common.collect.ImmutableList;
+import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.CompositeClientConfigurator;
 import com.oracle.bmc.http.DefaultConfigurator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -77,7 +77,8 @@ public class RestClientFactoryBuilder {
      */
     public RestClientFactoryBuilder additionalClientConfigurators(
             ClientConfigurator... clientConfigurators) {
-        additionalClientConfigurators = ImmutableList.copyOf(clientConfigurators);
+        additionalClientConfigurators =
+                Collections.unmodifiableList(new ArrayList<>(Arrays.asList(clientConfigurators)));
         return this;
     }
 
@@ -89,7 +90,8 @@ public class RestClientFactoryBuilder {
      */
     public RestClientFactoryBuilder additionalClientConfigurators(
             List<ClientConfigurator> clientConfigurators) {
-        additionalClientConfigurators = ImmutableList.copyOf(clientConfigurators);
+        additionalClientConfigurators =
+                Collections.unmodifiableList(new ArrayList<>(clientConfigurators));
         return this;
     }
 
@@ -101,18 +103,17 @@ public class RestClientFactoryBuilder {
      */
     public RestClientFactory build() {
         ClientConfigurator preferredClientConfigurator = getClientConfigurator();
+        List<ClientConfigurator> configurators = new ArrayList<>();
+        configurators.add(preferredClientConfigurator);
+        configurators.addAll(additionalClientConfigurators);
         return new RestClientFactory(
-                new CompositeClientConfigurator(
-                        ImmutableList.<ClientConfigurator>builder()
-                                .add(preferredClientConfigurator)
-                                .addAll(additionalClientConfigurators)
-                                .build()));
+                new CompositeClientConfigurator(Collections.unmodifiableList(configurators)));
     }
 
     @InternalSdk
     @VisibleForTesting
     protected ClientConfigurator getClientConfigurator() {
-        return MoreObjects.firstNonNull(this.clientConfigurator, defaultConfigurator);
+        return this.clientConfigurator != null ? this.clientConfigurator : defaultConfigurator;
     }
 
     @InternalSdk

@@ -6,7 +6,6 @@ package com.oracle.bmc.mysql;
 
 import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -102,17 +101,16 @@ public class ChannelsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetChannelRequest, GetChannelResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetChannelRequest, GetChannelResponse>() {
                             @Override
                             public GetChannelResponse apply(GetChannelRequest request) {
                                 return client.getChannel(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetChannelResponse>() {
+                        new java.util.function.Predicate<GetChannelResponse>() {
                             @Override
-                            public boolean apply(GetChannelResponse response) {
+                            public boolean test(GetChannelResponse response) {
                                 return targetStatesSet.contains(
                                         response.getChannel().getLifecycleState());
                             }

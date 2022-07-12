@@ -44,19 +44,19 @@ public class NosqlPaginators {
             final ListIndexesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListIndexesRequest.Builder, ListIndexesRequest, ListIndexesResponse>(
-                new com.google.common.base.Supplier<ListIndexesRequest.Builder>() {
+                new java.util.function.Supplier<ListIndexesRequest.Builder>() {
                     @Override
                     public ListIndexesRequest.Builder get() {
                         return ListIndexesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListIndexesResponse, String>() {
+                new java.util.function.Function<ListIndexesResponse, String>() {
                     @Override
                     public String apply(ListIndexesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIndexesRequest.Builder>,
                         ListIndexesRequest>() {
@@ -69,12 +69,12 @@ public class NosqlPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListIndexesRequest, ListIndexesResponse>() {
+                new java.util.function.Function<ListIndexesRequest, ListIndexesResponse>() {
                     @Override
                     public ListIndexesResponse apply(ListIndexesRequest request) {
                         return client.listIndexes(request);
@@ -96,19 +96,19 @@ public class NosqlPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListIndexesRequest.Builder, ListIndexesRequest, ListIndexesResponse,
                 com.oracle.bmc.nosql.model.IndexSummary>(
-                new com.google.common.base.Supplier<ListIndexesRequest.Builder>() {
+                new java.util.function.Supplier<ListIndexesRequest.Builder>() {
                     @Override
                     public ListIndexesRequest.Builder get() {
                         return ListIndexesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListIndexesResponse, String>() {
+                new java.util.function.Function<ListIndexesResponse, String>() {
                     @Override
                     public String apply(ListIndexesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIndexesRequest.Builder>,
                         ListIndexesRequest>() {
@@ -121,18 +121,18 @@ public class NosqlPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListIndexesRequest, ListIndexesResponse>() {
+                new java.util.function.Function<ListIndexesRequest, ListIndexesResponse>() {
                     @Override
                     public ListIndexesResponse apply(ListIndexesRequest request) {
                         return client.listIndexes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIndexesResponse,
                         java.util.List<com.oracle.bmc.nosql.model.IndexSummary>>() {
                     @Override
@@ -154,19 +154,19 @@ public class NosqlPaginators {
             final ListTableUsageRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListTableUsageRequest.Builder, ListTableUsageRequest, ListTableUsageResponse>(
-                new com.google.common.base.Supplier<ListTableUsageRequest.Builder>() {
+                new java.util.function.Supplier<ListTableUsageRequest.Builder>() {
                     @Override
                     public ListTableUsageRequest.Builder get() {
                         return ListTableUsageRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTableUsageResponse, String>() {
+                new java.util.function.Function<ListTableUsageResponse, String>() {
                     @Override
                     public String apply(ListTableUsageResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTableUsageRequest.Builder>,
                         ListTableUsageRequest>() {
@@ -179,13 +179,12 @@ public class NosqlPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListTableUsageRequest, ListTableUsageResponse>() {
+                new java.util.function.Function<ListTableUsageRequest, ListTableUsageResponse>() {
                     @Override
                     public ListTableUsageResponse apply(ListTableUsageRequest request) {
                         return client.listTableUsage(request);
@@ -207,19 +206,19 @@ public class NosqlPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListTableUsageRequest.Builder, ListTableUsageRequest, ListTableUsageResponse,
                 com.oracle.bmc.nosql.model.TableUsageSummary>(
-                new com.google.common.base.Supplier<ListTableUsageRequest.Builder>() {
+                new java.util.function.Supplier<ListTableUsageRequest.Builder>() {
                     @Override
                     public ListTableUsageRequest.Builder get() {
                         return ListTableUsageRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTableUsageResponse, String>() {
+                new java.util.function.Function<ListTableUsageResponse, String>() {
                     @Override
                     public String apply(ListTableUsageResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTableUsageRequest.Builder>,
                         ListTableUsageRequest>() {
@@ -232,19 +231,18 @@ public class NosqlPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListTableUsageRequest, ListTableUsageResponse>() {
+                new java.util.function.Function<ListTableUsageRequest, ListTableUsageResponse>() {
                     @Override
                     public ListTableUsageResponse apply(ListTableUsageRequest request) {
                         return client.listTableUsage(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTableUsageResponse,
                         java.util.List<com.oracle.bmc.nosql.model.TableUsageSummary>>() {
                     @Override
@@ -266,19 +264,19 @@ public class NosqlPaginators {
             final ListTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListTablesRequest.Builder, ListTablesRequest, ListTablesResponse>(
-                new com.google.common.base.Supplier<ListTablesRequest.Builder>() {
+                new java.util.function.Supplier<ListTablesRequest.Builder>() {
                     @Override
                     public ListTablesRequest.Builder get() {
                         return ListTablesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTablesResponse, String>() {
+                new java.util.function.Function<ListTablesResponse, String>() {
                     @Override
                     public String apply(ListTablesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTablesRequest.Builder>,
                         ListTablesRequest>() {
@@ -291,12 +289,12 @@ public class NosqlPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListTablesRequest, ListTablesResponse>() {
+                new java.util.function.Function<ListTablesRequest, ListTablesResponse>() {
                     @Override
                     public ListTablesResponse apply(ListTablesRequest request) {
                         return client.listTables(request);
@@ -318,19 +316,19 @@ public class NosqlPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListTablesRequest.Builder, ListTablesRequest, ListTablesResponse,
                 com.oracle.bmc.nosql.model.TableSummary>(
-                new com.google.common.base.Supplier<ListTablesRequest.Builder>() {
+                new java.util.function.Supplier<ListTablesRequest.Builder>() {
                     @Override
                     public ListTablesRequest.Builder get() {
                         return ListTablesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTablesResponse, String>() {
+                new java.util.function.Function<ListTablesResponse, String>() {
                     @Override
                     public String apply(ListTablesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTablesRequest.Builder>,
                         ListTablesRequest>() {
@@ -343,18 +341,18 @@ public class NosqlPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListTablesRequest, ListTablesResponse>() {
+                new java.util.function.Function<ListTablesRequest, ListTablesResponse>() {
                     @Override
                     public ListTablesResponse apply(ListTablesRequest request) {
                         return client.listTables(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTablesResponse,
                         java.util.List<com.oracle.bmc.nosql.model.TableSummary>>() {
                     @Override
@@ -377,19 +375,19 @@ public class NosqlPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -402,12 +400,12 @@ public class NosqlPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -431,19 +429,19 @@ public class NosqlPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse, com.oracle.bmc.nosql.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -456,12 +454,12 @@ public class NosqlPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -469,7 +467,7 @@ public class NosqlPaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<com.oracle.bmc.nosql.model.WorkRequestError>>() {
                     @Override
@@ -492,19 +490,19 @@ public class NosqlPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -517,12 +515,12 @@ public class NosqlPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -545,19 +543,19 @@ public class NosqlPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse, com.oracle.bmc.nosql.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -570,19 +568,19 @@ public class NosqlPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<com.oracle.bmc.nosql.model.WorkRequestLogEntry>>() {
                     @Override
@@ -604,19 +602,19 @@ public class NosqlPaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -629,12 +627,12 @@ public class NosqlPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -657,19 +655,19 @@ public class NosqlPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.nosql.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -682,19 +680,19 @@ public class NosqlPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<com.oracle.bmc.nosql.model.WorkRequestSummary>>() {
                     @Override

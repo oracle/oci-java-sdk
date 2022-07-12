@@ -15,7 +15,8 @@ import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.client.ClientResponseContext;
 import javax.ws.rs.client.ClientResponseFilter;
 import javax.ws.rs.core.MultivaluedMap;
-import com.google.common.annotations.VisibleForTesting;
+
+import com.oracle.bmc.util.VisibleForTesting;
 
 /**
  * Filter that logs all of the outbound and inbound headers at debug level.

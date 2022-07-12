@@ -9,7 +9,6 @@ import com.oracle.bmc.goldengate.requests.*;
 import com.oracle.bmc.goldengate.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class GoldenGateClient implements GoldenGate {
@@ -334,9 +333,9 @@ public class GoldenGateClient implements GoldenGate {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("GoldenGate-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("GoldenGate-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class GoldenGateClient implements GoldenGate {
          * @return the client
          */
         public GoldenGateClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class GoldenGateClient implements GoldenGate {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class GoldenGateClient implements GoldenGate {
                         "CancelDeploymentBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/CancelDeploymentBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelDeploymentBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelDeploymentBackupResponse>
                 transformer =
                         CancelDeploymentBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -532,7 +532,7 @@ public class GoldenGateClient implements GoldenGate {
                         "ChangeDatabaseRegistrationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/ChangeDatabaseRegistrationCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseRegistrationCompartmentResponse>
                 transformer =
                         ChangeDatabaseRegistrationCompartmentConverter.fromResponse(
@@ -577,7 +577,7 @@ public class GoldenGateClient implements GoldenGate {
                         "ChangeDeploymentBackupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/ChangeDeploymentBackupCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDeploymentBackupCompartmentResponse>
                 transformer =
                         ChangeDeploymentBackupCompartmentConverter.fromResponse(
@@ -622,8 +622,7 @@ public class GoldenGateClient implements GoldenGate {
                         "ChangeDeploymentCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ChangeDeploymentCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeDeploymentCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeDeploymentCompartmentResponse>
                 transformer =
                         ChangeDeploymentCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -667,8 +666,7 @@ public class GoldenGateClient implements GoldenGate {
                         "CreateDatabaseRegistration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/CreateDatabaseRegistration");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateDatabaseRegistrationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDatabaseRegistrationResponse>
                 transformer =
                         CreateDatabaseRegistrationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -711,7 +709,7 @@ public class GoldenGateClient implements GoldenGate {
                         "CreateDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/CreateDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
                 transformer =
                         CreateDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -754,7 +752,7 @@ public class GoldenGateClient implements GoldenGate {
                         "CreateDeploymentBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/CreateDeploymentBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeploymentBackupResponse>
                 transformer =
                         CreateDeploymentBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -796,8 +794,7 @@ public class GoldenGateClient implements GoldenGate {
                         "DeleteDatabaseRegistration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/DeleteDatabaseRegistration");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteDatabaseRegistrationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDatabaseRegistrationResponse>
                 transformer =
                         DeleteDatabaseRegistrationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -835,7 +832,7 @@ public class GoldenGateClient implements GoldenGate {
                         "DeleteDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/DeleteDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDeploymentResponse>
                 transformer =
                         DeleteDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -874,7 +871,7 @@ public class GoldenGateClient implements GoldenGate {
                         "DeleteDeploymentBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/DeleteDeploymentBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeploymentBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDeploymentBackupResponse>
                 transformer =
                         DeleteDeploymentBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -913,7 +910,7 @@ public class GoldenGateClient implements GoldenGate {
                         "GetDatabaseRegistration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/GetDatabaseRegistration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDatabaseRegistrationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseRegistrationResponse>
                 transformer =
                         GetDatabaseRegistrationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -950,9 +947,8 @@ public class GoldenGateClient implements GoldenGate {
                         "GetDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GetDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentResponse>
-                transformer =
-                        GetDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeploymentResponse> transformer =
+                GetDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -986,7 +982,7 @@ public class GoldenGateClient implements GoldenGate {
                         "GetDeploymentBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/GetDeploymentBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeploymentBackupResponse>
                 transformer =
                         GetDeploymentBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1023,7 +1019,7 @@ public class GoldenGateClient implements GoldenGate {
                         "GetDeploymentUpgrade",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/GetDeploymentUpgrade");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentUpgradeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeploymentUpgradeResponse>
                 transformer =
                         GetDeploymentUpgradeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1060,9 +1056,8 @@ public class GoldenGateClient implements GoldenGate {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1097,8 +1092,7 @@ public class GoldenGateClient implements GoldenGate {
                         "ListDatabaseRegistrations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/ListDatabaseRegistrations");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDatabaseRegistrationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseRegistrationsResponse>
                 transformer =
                         ListDatabaseRegistrationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1136,7 +1130,7 @@ public class GoldenGateClient implements GoldenGate {
                         "ListDeploymentBackups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/ListDeploymentBackups");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentBackupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeploymentBackupsResponse>
                 transformer =
                         ListDeploymentBackupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1174,7 +1168,7 @@ public class GoldenGateClient implements GoldenGate {
                         "ListDeploymentUpgrades",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/ListDeploymentUpgrades");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentUpgradesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeploymentUpgradesResponse>
                 transformer =
                         ListDeploymentUpgradesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1211,7 +1205,7 @@ public class GoldenGateClient implements GoldenGate {
                         "ListDeployments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ListDeployments");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
                 transformer =
                         ListDeploymentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1249,7 +1243,7 @@ public class GoldenGateClient implements GoldenGate {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1286,7 +1280,7 @@ public class GoldenGateClient implements GoldenGate {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1323,7 +1317,7 @@ public class GoldenGateClient implements GoldenGate {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1361,7 +1355,7 @@ public class GoldenGateClient implements GoldenGate {
                         "RestoreDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/RestoreDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RestoreDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RestoreDeploymentResponse>
                 transformer =
                         RestoreDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1403,7 +1397,7 @@ public class GoldenGateClient implements GoldenGate {
                         "StartDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/StartDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StartDeploymentResponse>
                 transformer =
                         StartDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1445,9 +1439,8 @@ public class GoldenGateClient implements GoldenGate {
                         "StopDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/StopDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopDeploymentResponse>
-                transformer =
-                        StopDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, StopDeploymentResponse> transformer =
+                StopDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1486,8 +1479,7 @@ public class GoldenGateClient implements GoldenGate {
                         "UpdateDatabaseRegistration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/UpdateDatabaseRegistration");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateDatabaseRegistrationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDatabaseRegistrationResponse>
                 transformer =
                         UpdateDatabaseRegistrationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1529,7 +1521,7 @@ public class GoldenGateClient implements GoldenGate {
                         "UpdateDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/UpdateDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
                 transformer =
                         UpdateDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1571,7 +1563,7 @@ public class GoldenGateClient implements GoldenGate {
                         "UpdateDeploymentBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/UpdateDeploymentBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeploymentBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeploymentBackupResponse>
                 transformer =
                         UpdateDeploymentBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1613,7 +1605,7 @@ public class GoldenGateClient implements GoldenGate {
                         "UpgradeDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/UpgradeDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpgradeDeploymentResponse>
                 transformer =
                         UpgradeDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

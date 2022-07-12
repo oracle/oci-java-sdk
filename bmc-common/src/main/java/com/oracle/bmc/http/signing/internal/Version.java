@@ -9,7 +9,7 @@ import java.util.Set;
 
 import javax.annotation.Nonnull;
 
-import com.google.common.base.Optional;
+import java.util.Optional;
 
 /**
  * The rules for a signed request version, i.e., supported algorithms, supported keyId formats.

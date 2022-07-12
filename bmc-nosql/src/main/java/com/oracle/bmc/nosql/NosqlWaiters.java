@@ -6,7 +6,6 @@ package com.oracle.bmc.nosql;
 
 import com.oracle.bmc.nosql.requests.*;
 import com.oracle.bmc.nosql.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -102,16 +101,16 @@ public class NosqlWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetIndexRequest, GetIndexResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetIndexRequest, GetIndexResponse>() {
                             @Override
                             public GetIndexResponse apply(GetIndexRequest request) {
                                 return client.getIndex(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetIndexResponse>() {
+                        new java.util.function.Predicate<GetIndexResponse>() {
                             @Override
-                            public boolean apply(GetIndexResponse response) {
+                            public boolean test(GetIndexResponse response) {
                                 return targetStatesSet.contains(
                                         response.getIndex().getLifecycleState());
                             }
@@ -199,16 +198,16 @@ public class NosqlWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetTableRequest, GetTableResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetTableRequest, GetTableResponse>() {
                             @Override
                             public GetTableResponse apply(GetTableRequest request) {
                                 return client.getTable(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTableResponse>() {
+                        new java.util.function.Predicate<GetTableResponse>() {
                             @Override
-                            public boolean apply(GetTableResponse response) {
+                            public boolean test(GetTableResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTable().getLifecycleState());
                             }
@@ -255,17 +254,17 @@ public class NosqlWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

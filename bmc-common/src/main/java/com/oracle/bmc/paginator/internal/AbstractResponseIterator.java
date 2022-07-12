@@ -4,8 +4,8 @@
  */
 package com.oracle.bmc.paginator.internal;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
+import java.util.Optional;
+import java.util.function.Function;
 
 /**
  * Contains common functionality for classes which will iterate over the results of paginated
@@ -101,7 +101,7 @@ public abstract class AbstractResponseIterator<REQUESTBUILDER, REQUEST, RESPONSE
             return null;
         }
 
-        return Optional.fromNullable(nextPageTokenRetrievalFunction.apply(currentResponse));
+        return Optional.ofNullable(nextPageTokenRetrievalFunction.apply(currentResponse));
     }
 
     /**

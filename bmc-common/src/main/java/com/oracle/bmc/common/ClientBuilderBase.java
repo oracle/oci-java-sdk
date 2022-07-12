@@ -5,12 +5,13 @@
 package com.oracle.bmc.common;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nonnull;
 
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.collect.ImmutableMap;
+import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.Service;
@@ -110,8 +111,9 @@ public abstract class ClientBuilderBase<B extends ClientBuilderBase, C> {
      */
     public B signingStrategyRequestSignerFactories(
             Map<SigningStrategy, RequestSignerFactory> signingStrategyRequestSignerFactories) {
-        this.signingStrategyRequestSignerFactories =
-                ImmutableMap.copyOf(signingStrategyRequestSignerFactories);
+        HashMap<SigningStrategy, RequestSignerFactory> copy =
+                new HashMap<>(signingStrategyRequestSignerFactories);
+        this.signingStrategyRequestSignerFactories = Collections.unmodifiableMap(copy);
         return (B) this;
     }
 

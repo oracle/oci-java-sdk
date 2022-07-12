@@ -4,8 +4,6 @@
  */
 package com.oracle.bmc.util.internal;
 
-import static com.google.common.net.UrlEscapers.urlPathSegmentEscaper;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -29,6 +27,17 @@ public enum HttpUtils {
     ; // prevent instantiation
 
     /**
+     * Escape a URL path segment string.
+     * @param pathSegment path segment to escape
+     * @return escaped path segment
+     */
+    public static String urlPathSegmentEscape(String pathSegment) {
+        return com.google.common /*Guava will be removed soon*/.net.UrlEscapers
+                .urlPathSegmentEscaper()
+                .escape(pathSegment);
+    }
+
+    /**
      * Encodes a path segment.
      *
      * @param pathSegment The path segment to encode.
@@ -44,7 +53,7 @@ public enum HttpUtils {
         if (pathSegment.isEmpty()) {
             throw new IllegalArgumentException("Cannot provide empty path segment");
         }
-        return urlPathSegmentEscaper().escape(pathSegment);
+        return urlPathSegmentEscape(pathSegment);
     }
 
     /**
@@ -109,7 +118,7 @@ public enum HttpUtils {
             // encoding, in which it skips things (%xx) that look like they're encoded
             // but encodes the rest.  So, if we encode with 'urlFormParameterEscaper' here,
             // then it will encode a ' ' to '+', and then Jersey will turn that '+' into "%2B"
-            return urlPathSegmentEscaper().escape((String) queryParam);
+            return urlPathSegmentEscape((String) queryParam);
         }
         return queryParam;
     }

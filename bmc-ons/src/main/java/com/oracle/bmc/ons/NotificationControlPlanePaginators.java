@@ -44,19 +44,19 @@ public class NotificationControlPlanePaginators {
             final ListTopicsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListTopicsRequest.Builder, ListTopicsRequest, ListTopicsResponse>(
-                new com.google.common.base.Supplier<ListTopicsRequest.Builder>() {
+                new java.util.function.Supplier<ListTopicsRequest.Builder>() {
                     @Override
                     public ListTopicsRequest.Builder get() {
                         return ListTopicsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTopicsResponse, String>() {
+                new java.util.function.Function<ListTopicsResponse, String>() {
                     @Override
                     public String apply(ListTopicsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTopicsRequest.Builder>,
                         ListTopicsRequest>() {
@@ -69,12 +69,12 @@ public class NotificationControlPlanePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListTopicsRequest, ListTopicsResponse>() {
+                new java.util.function.Function<ListTopicsRequest, ListTopicsResponse>() {
                     @Override
                     public ListTopicsResponse apply(ListTopicsRequest request) {
                         return client.listTopics(request);
@@ -96,19 +96,19 @@ public class NotificationControlPlanePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListTopicsRequest.Builder, ListTopicsRequest, ListTopicsResponse,
                 com.oracle.bmc.ons.model.NotificationTopicSummary>(
-                new com.google.common.base.Supplier<ListTopicsRequest.Builder>() {
+                new java.util.function.Supplier<ListTopicsRequest.Builder>() {
                     @Override
                     public ListTopicsRequest.Builder get() {
                         return ListTopicsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTopicsResponse, String>() {
+                new java.util.function.Function<ListTopicsResponse, String>() {
                     @Override
                     public String apply(ListTopicsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTopicsRequest.Builder>,
                         ListTopicsRequest>() {
@@ -121,18 +121,18 @@ public class NotificationControlPlanePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListTopicsRequest, ListTopicsResponse>() {
+                new java.util.function.Function<ListTopicsRequest, ListTopicsResponse>() {
                     @Override
                     public ListTopicsResponse apply(ListTopicsRequest request) {
                         return client.listTopics(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTopicsResponse,
                         java.util.List<com.oracle.bmc.ons.model.NotificationTopicSummary>>() {
                     @Override

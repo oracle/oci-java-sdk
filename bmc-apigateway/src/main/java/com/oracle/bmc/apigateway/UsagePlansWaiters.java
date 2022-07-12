@@ -6,7 +6,6 @@ package com.oracle.bmc.apigateway;
 
 import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -103,17 +102,17 @@ public class UsagePlansWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetUsagePlanRequest, GetUsagePlanResponse>() {
                             @Override
                             public GetUsagePlanResponse apply(GetUsagePlanRequest request) {
                                 return client.getUsagePlan(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetUsagePlanResponse>() {
+                        new java.util.function.Predicate<GetUsagePlanResponse>() {
                             @Override
-                            public boolean apply(GetUsagePlanResponse response) {
+                            public boolean test(GetUsagePlanResponse response) {
                                 return targetStatesSet.contains(
                                         response.getUsagePlan().getLifecycleState());
                             }

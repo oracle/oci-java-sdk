@@ -6,7 +6,6 @@ package com.oracle.bmc.usageapi;
 
 import com.oracle.bmc.usageapi.requests.*;
 import com.oracle.bmc.usageapi.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -102,17 +101,16 @@ public class UsageapiWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetScheduleRequest, GetScheduleResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetScheduleRequest, GetScheduleResponse>() {
                             @Override
                             public GetScheduleResponse apply(GetScheduleRequest request) {
                                 return client.getSchedule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetScheduleResponse>() {
+                        new java.util.function.Predicate<GetScheduleResponse>() {
                             @Override
-                            public boolean apply(GetScheduleResponse response) {
+                            public boolean test(GetScheduleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSchedule().getLifecycleState());
                             }
@@ -204,17 +202,17 @@ public class UsageapiWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetScheduledRunRequest, GetScheduledRunResponse>() {
                             @Override
                             public GetScheduledRunResponse apply(GetScheduledRunRequest request) {
                                 return client.getScheduledRun(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetScheduledRunResponse>() {
+                        new java.util.function.Predicate<GetScheduledRunResponse>() {
                             @Override
-                            public boolean apply(GetScheduledRunResponse response) {
+                            public boolean test(GetScheduledRunResponse response) {
                                 return targetStatesSet.contains(
                                         response.getScheduledRun().getLifecycleState());
                             }

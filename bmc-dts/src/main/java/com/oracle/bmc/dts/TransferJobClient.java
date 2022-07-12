@@ -9,7 +9,6 @@ import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 public class TransferJobClient implements TransferJob {
@@ -335,9 +334,9 @@ public class TransferJobClient implements TransferJob {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("TransferJob-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("TransferJob-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class TransferJobClient implements TransferJob {
          * @return the client
          */
         public TransferJobClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class TransferJobClient implements TransferJob {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,8 +489,7 @@ public class TransferJobClient implements TransferJob {
                         "ChangeTransferJobCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeTransferJobCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeTransferJobCompartmentResponse>
                 transformer =
                         ChangeTransferJobCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -530,7 +529,7 @@ public class TransferJobClient implements TransferJob {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferJob", "CreateTransferJob", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTransferJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTransferJobResponse>
                 transformer =
                         CreateTransferJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -568,7 +567,7 @@ public class TransferJobClient implements TransferJob {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferJob", "DeleteTransferJob", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTransferJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTransferJobResponse>
                 transformer =
                         DeleteTransferJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -603,9 +602,8 @@ public class TransferJobClient implements TransferJob {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferJob", "GetTransferJob", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTransferJobResponse>
-                transformer =
-                        GetTransferJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetTransferJobResponse> transformer =
+                GetTransferJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -636,7 +634,7 @@ public class TransferJobClient implements TransferJob {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferJob", "ListTransferJobs", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTransferJobsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTransferJobsResponse>
                 transformer =
                         ListTransferJobsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -670,7 +668,7 @@ public class TransferJobClient implements TransferJob {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferJob", "UpdateTransferJob", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTransferJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTransferJobResponse>
                 transformer =
                         UpdateTransferJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

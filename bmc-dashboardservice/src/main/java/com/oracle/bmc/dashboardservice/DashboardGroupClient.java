@@ -9,7 +9,6 @@ import com.oracle.bmc.dashboardservice.requests.*;
 import com.oracle.bmc.dashboardservice.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
 public class DashboardGroupClient implements DashboardGroup {
@@ -334,9 +333,9 @@ public class DashboardGroupClient implements DashboardGroup {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DashboardGroup-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DashboardGroup-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class DashboardGroupClient implements DashboardGroup {
          * @return the client
          */
         public DashboardGroupClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class DashboardGroupClient implements DashboardGroup {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,7 +487,7 @@ public class DashboardGroupClient implements DashboardGroup {
                         "CreateDashboardGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/CreateDashboardGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDashboardGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDashboardGroupResponse>
                 transformer =
                         CreateDashboardGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -528,7 +528,7 @@ public class DashboardGroupClient implements DashboardGroup {
                         "DeleteDashboardGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/DeleteDashboardGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDashboardGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDashboardGroupResponse>
                 transformer =
                         DeleteDashboardGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -566,7 +566,7 @@ public class DashboardGroupClient implements DashboardGroup {
                         "GetDashboardGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/GetDashboardGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDashboardGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDashboardGroupResponse>
                 transformer =
                         GetDashboardGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -603,7 +603,7 @@ public class DashboardGroupClient implements DashboardGroup {
                         "ListDashboardGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroupCollection/ListDashboardGroups");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDashboardGroupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDashboardGroupsResponse>
                 transformer =
                         ListDashboardGroupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -640,7 +640,7 @@ public class DashboardGroupClient implements DashboardGroup {
                         "UpdateDashboardGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/UpdateDashboardGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDashboardGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDashboardGroupResponse>
                 transformer =
                         UpdateDashboardGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

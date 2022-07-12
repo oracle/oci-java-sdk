@@ -28,7 +28,8 @@ public final class UpdateNodePoolNodeConfigDetails {
         "isPvEncryptionInTransitEnabled",
         "freeformTags",
         "definedTags",
-        "placementConfigs"
+        "placementConfigs",
+        "nodePoolPodNetworkOptionDetails"
     })
     public UpdateNodePoolNodeConfigDetails(
             Integer size,
@@ -37,7 +38,8 @@ public final class UpdateNodePoolNodeConfigDetails {
             Boolean isPvEncryptionInTransitEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.List<NodePoolPlacementConfigDetails> placementConfigs) {
+            java.util.List<NodePoolPlacementConfigDetails> placementConfigs,
+            NodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails) {
         super();
         this.size = size;
         this.nsgIds = nsgIds;
@@ -46,6 +48,7 @@ public final class UpdateNodePoolNodeConfigDetails {
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.placementConfigs = placementConfigs;
+        this.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -192,6 +195,25 @@ public final class UpdateNodePoolNodeConfigDetails {
             this.__explicitlySet__.add("placementConfigs");
             return this;
         }
+        /**
+         * The CNI related configuration of pods in the node pool.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nodePoolPodNetworkOptionDetails")
+        private NodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails;
+
+        /**
+         * The CNI related configuration of pods in the node pool.
+         *
+         * @param nodePoolPodNetworkOptionDetails the value to set
+         * @return this builder
+         **/
+        public Builder nodePoolPodNetworkOptionDetails(
+                NodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails) {
+            this.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
+            this.__explicitlySet__.add("nodePoolPodNetworkOptionDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -205,7 +227,8 @@ public final class UpdateNodePoolNodeConfigDetails {
                             isPvEncryptionInTransitEnabled,
                             freeformTags,
                             definedTags,
-                            placementConfigs);
+                            placementConfigs,
+                            nodePoolPodNetworkOptionDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -219,7 +242,9 @@ public final class UpdateNodePoolNodeConfigDetails {
                             .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .placementConfigs(o.getPlacementConfigs());
+                            .placementConfigs(o.getPlacementConfigs())
+                            .nodePoolPodNetworkOptionDetails(
+                                    o.getNodePoolPodNetworkOptionDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -363,6 +388,22 @@ public final class UpdateNodePoolNodeConfigDetails {
         return placementConfigs;
     }
 
+    /**
+     * The CNI related configuration of pods in the node pool.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodePoolPodNetworkOptionDetails")
+    private final NodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails;
+
+    /**
+     * The CNI related configuration of pods in the node pool.
+     *
+     * @return the value
+     **/
+    public NodePoolPodNetworkOptionDetails getNodePoolPodNetworkOptionDetails() {
+        return nodePoolPodNetworkOptionDetails;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
@@ -375,6 +416,8 @@ public final class UpdateNodePoolNodeConfigDetails {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", placementConfigs=").append(String.valueOf(this.placementConfigs));
+        sb.append(", nodePoolPodNetworkOptionDetails=")
+                .append(String.valueOf(this.nodePoolPodNetworkOptionDetails));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -398,6 +441,8 @@ public final class UpdateNodePoolNodeConfigDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.placementConfigs, other.placementConfigs)
+                && java.util.Objects.equals(
+                        this.nodePoolPodNetworkOptionDetails, other.nodePoolPodNetworkOptionDetails)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -418,6 +463,11 @@ public final class UpdateNodePoolNodeConfigDetails {
         result =
                 (result * PRIME)
                         + (this.placementConfigs == null ? 43 : this.placementConfigs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nodePoolPodNetworkOptionDetails == null
+                                ? 43
+                                : this.nodePoolPodNetworkOptionDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

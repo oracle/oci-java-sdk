@@ -4,8 +4,7 @@
  */
 package com.oracle.bmc.graalvm;
 
-import com.google.common.base.Preconditions;
-import com.google.common.base.Supplier;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
 import com.oracle.bmc.Region;
@@ -33,6 +32,7 @@ import java.lang.reflect.Modifier;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Supplier;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -253,7 +253,7 @@ public abstract class BaseTest {
     }
 
     protected static String getTenantId() {
-        return Preconditions.checkNotNull(ADMIN_TENANT_ID);
+        return Validate.notNull(ADMIN_TENANT_ID, "ADMIN_TENANT_ID must not be null");
     }
 
     public static Optional<Region> getTestRegion() {
@@ -314,10 +314,8 @@ public abstract class BaseTest {
 
     public static String getImageIdForOsAndShape(
             Compute client, String requestedOs, String requestedShape) {
-        Preconditions.checkArgument(
-                !StringUtils.isBlank(requestedOs), "requestedOs may not be blank");
-        Preconditions.checkArgument(
-                !StringUtils.isBlank(requestedShape), "requestedShape may not be blank");
+        Validate.isTrue(!StringUtils.isBlank(requestedOs), "requestedOs may not be blank");
+        Validate.isTrue(!StringUtils.isBlank(requestedShape), "requestedShape may not be blank");
 
         ListImagesResponse listImagesResponse =
                 client.listImages(

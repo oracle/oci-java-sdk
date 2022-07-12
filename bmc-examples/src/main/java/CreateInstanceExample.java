@@ -6,12 +6,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import com.google.common.base.Strings;
-import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -758,21 +758,19 @@ public class CreateInstanceExample {
             String sshPublicKey,
             String kmsKeyId) {
         String instanceName = "java-sdk-example-instance";
-        Map<String, String> metadata =
-                ImmutableMap.<String, String>builder()
-                        .put("ssh_authorized_keys", sshPublicKey)
-                        .put("java-sdk-example-metadata-key", "java-sdk-example-metadata-value")
-                        .build();
-        Map<String, Object> extendedMetadata =
-                ImmutableMap.<String, Object>builder()
-                        .put(
-                                "java-sdk-example-extended-metadata-key",
-                                "java-sdk-example-extended-metadata-value")
-                        .build();
+        Map<String, String> metadata = new HashMap<>();
+        metadata.put("ssh_authorized_keys", sshPublicKey);
+        metadata.put("java-sdk-example-metadata-key", "java-sdk-example-metadata-value");
+        metadata = Collections.unmodifiableMap(metadata);
+        Map<String, Object> extendedMetadata = new HashMap<>();
+        extendedMetadata.put(
+                "java-sdk-example-extended-metadata-key",
+                "java-sdk-example-extended-metadata-value");
+        extendedMetadata = Collections.unmodifiableMap(extendedMetadata);
         InstanceSourceViaImageDetails instanceSourceViaImageDetails =
                 InstanceSourceViaImageDetails.builder()
                         .imageId(image.getId())
-                        .kmsKeyId(Strings.isNullOrEmpty(kmsKeyId) ? null : kmsKeyId)
+                        .kmsKeyId((kmsKeyId == null || "".equals(kmsKeyId)) ? null : kmsKeyId)
                         .build();
         CreateVnicDetails createVnicDetails =
                 CreateVnicDetails.builder()

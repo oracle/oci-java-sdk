@@ -9,7 +9,6 @@ import com.oracle.bmc.ospgateway.requests.*;
 import com.oracle.bmc.ospgateway.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public class SubscriptionServiceClient implements SubscriptionService {
@@ -332,7 +331,7 @@ public class SubscriptionServiceClient implements SubscriptionService {
          * @return the client
          */
         public SubscriptionServiceClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -368,7 +367,8 @@ public class SubscriptionServiceClient implements SubscriptionService {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -415,8 +415,7 @@ public class SubscriptionServiceClient implements SubscriptionService {
                         "AuthorizeSubscriptionPayment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, AuthorizeSubscriptionPaymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AuthorizeSubscriptionPaymentResponse>
                 transformer =
                         AuthorizeSubscriptionPaymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -458,7 +457,7 @@ public class SubscriptionServiceClient implements SubscriptionService {
                         "GetSubscription",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
                 transformer =
                         GetSubscriptionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -495,7 +494,7 @@ public class SubscriptionServiceClient implements SubscriptionService {
                         "ListSubscriptions",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
                 transformer =
                         ListSubscriptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -533,7 +532,7 @@ public class SubscriptionServiceClient implements SubscriptionService {
                         "PaySubscription",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PaySubscriptionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PaySubscriptionResponse>
                 transformer =
                         PaySubscriptionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -574,7 +573,7 @@ public class SubscriptionServiceClient implements SubscriptionService {
                         "UpdateSubscription",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
                 transformer =
                         UpdateSubscriptionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

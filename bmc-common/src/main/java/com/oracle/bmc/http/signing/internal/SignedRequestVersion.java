@@ -5,21 +5,21 @@
 package com.oracle.bmc.http.signing.internal;
 
 import java.security.interfaces.RSAPublicKey;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 import javax.annotation.Nonnull;
 
-import com.google.common.base.Optional;
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableSet;
 import com.oracle.bmc.util.internal.Validate;
 
 /**
  * List of supported signed request versions with associated version rules.
  */
 public enum SignedRequestVersion implements Version {
-    ONE(1, ImmutableSet.of(Algorithm.RSAPSS256), ImmutableSet.of(KeyIdType.REF), 2048);
+    ONE(1, unmodifiableSetOf(Algorithm.RSAPSS256), unmodifiableSetOf(KeyIdType.REF), 2048);
 
-    private static final Optional<Error> ABSENT = Optional.absent();
+    private static final Optional<Error> ABSENT = Optional.empty();
     private final int number;
     private final Set<Algorithm> algorithms;
     private final Set<KeyIdType> keyIdTypes;
@@ -77,7 +77,7 @@ public enum SignedRequestVersion implements Version {
 
     @Override
     public Optional<Error> validateAlgorithm(@Nonnull Algorithm algorithm) {
-        Preconditions.checkNotNull(algorithm);
+        Validate.notNull(algorithm, "algorithm must not be null");
         boolean isAlgorithmValid = this.getSupportedAlgorithms().contains(algorithm);
         return isAlgorithmValid ? ABSENT : Optional.of(Error.UNSUPPORTED_ALGORITHM);
     }
@@ -103,7 +103,7 @@ public enum SignedRequestVersion implements Version {
      * trailing spaces in the specified number is ignored.
      */
     static Optional<SignedRequestVersion> getVersion(@Nonnull String versionNumber) {
-        Preconditions.checkNotNull(versionNumber);
+        Validate.notNull(versionNumber, "versionNumber must not be null");
 
         try {
             Integer number = Integer.valueOf(versionNumber.trim());
@@ -113,9 +113,15 @@ public enum SignedRequestVersion implements Version {
                     return Optional.of(version);
                 }
             }
-            return Optional.absent();
+            return Optional.empty();
         } catch (NumberFormatException e) {
-            return Optional.absent();
+            return Optional.empty();
         }
+    }
+
+    private static <T> Set<T> unmodifiableSetOf(T item) {
+        Set<T> set = new HashSet<>();
+        set.add(item);
+        return Collections.unmodifiableSet(set);
     }
 }

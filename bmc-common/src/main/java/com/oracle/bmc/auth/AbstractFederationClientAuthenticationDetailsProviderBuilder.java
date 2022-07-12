@@ -4,9 +4,6 @@
  */
 package com.oracle.bmc.auth;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
@@ -15,6 +12,7 @@ import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.internal.X509FederationClient;
 
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 import org.slf4j.Logger;
 
@@ -31,8 +29,13 @@ import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 /**
  * Abstract builder base class for authentication details provider extending
@@ -274,7 +277,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                 region = Region.register(regionStr, Realm.OC1);
             }
 
-            Optional<String> endpoint = region.getEndpoint(SERVICE);
+            Optional<String> endpoint = GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
 
             if (!endpoint.isPresent()) {
                 throw new IllegalArgumentException(
@@ -372,11 +375,19 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         }
     }
 
+    private static final Map<String, String> AUTHORIZATION_HEADER;
+
+    static {
+        Map<String, String> temp = new HashMap<>();
+        temp.put(HttpHeaders.AUTHORIZATION, AUTHORIZATION_HEADER_VALUE);
+        AUTHORIZATION_HEADER = Collections.unmodifiableMap(temp);
+    }
+
     private URLBasedX509CertificateSupplier.ResourceDetails getMetadataResourceDetails(
             final String path) throws MalformedURLException {
         return URLBasedX509CertificateSupplier.ResourceDetails.builder()
                 .url(new URL(getMetadataBaseUrl() + path))
-                .headers(ImmutableMap.of(HttpHeaders.AUTHORIZATION, AUTHORIZATION_HEADER_VALUE))
+                .headers(AUTHORIZATION_HEADER)
                 .build();
     }
 
@@ -461,6 +472,22 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         public void refreshKeys() {
             this.keyPair = GENERATOR.generateKeyPair();
         }
+    }
+
+    /**
+     * @deprecated use the function without Guava parameters instead
+     * @param retryOperation
+     * @param metadataServiceUrl
+     * @param endpoint
+     * @param <T>
+     * @return
+     */
+    public static <T> T simpleRetry(
+            com.google.common /*Guava will be removed soon*/.base.Function<WebTarget, T>
+                    retryOperation,
+            final String metadataServiceUrl,
+            final String endpoint) {
+        return simpleRetry(GuavaUtils.adaptFromGuava(retryOperation), metadataServiceUrl, endpoint);
     }
 
     public static <T> T simpleRetry(

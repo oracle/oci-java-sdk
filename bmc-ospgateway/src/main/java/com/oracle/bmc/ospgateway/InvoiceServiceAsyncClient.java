@@ -7,7 +7,6 @@ package com.oracle.bmc.ospgateway;
 import com.oracle.bmc.ospgateway.internal.http.*;
 import com.oracle.bmc.ospgateway.requests.*;
 import com.oracle.bmc.ospgateway.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for InvoiceService service. <br/>
@@ -320,7 +319,7 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
          * @return the client
          */
         public InvoiceServiceAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -411,7 +411,7 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "InvoiceService", "DownloadPdfContent", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DownloadPdfContentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DownloadPdfContentResponse>
                 transformer =
                         DownloadPdfContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -452,7 +452,7 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "InvoiceService", "GetInvoice", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetInvoiceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetInvoiceResponse>
                 transformer =
                         GetInvoiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetInvoiceRequest, GetInvoiceResponse> handlerToUse =
@@ -494,7 +494,7 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "InvoiceService", "ListInvoiceLines", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoiceLinesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListInvoiceLinesResponse>
                 transformer =
                         ListInvoiceLinesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -536,7 +536,7 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "InvoiceService", "ListInvoices", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoicesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListInvoicesResponse>
                 transformer =
                         ListInvoicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListInvoicesRequest, ListInvoicesResponse>
@@ -577,7 +577,7 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "InvoiceService", "PayInvoice", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PayInvoiceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, PayInvoiceResponse>
                 transformer =
                         PayInvoiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<PayInvoiceRequest, PayInvoiceResponse> handlerToUse =

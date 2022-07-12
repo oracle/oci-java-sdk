@@ -9,7 +9,6 @@ import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class SqlTuningClient implements SqlTuning {
@@ -331,7 +330,7 @@ public class SqlTuningClient implements SqlTuning {
          * @return the client
          */
         public SqlTuningClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class SqlTuningClient implements SqlTuning {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -413,7 +413,7 @@ public class SqlTuningClient implements SqlTuning {
                         "CloneSqlTuningTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/CloneSqlTuningTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CloneSqlTuningTaskResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CloneSqlTuningTaskResponse>
                 transformer =
                         CloneSqlTuningTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -455,7 +455,7 @@ public class SqlTuningClient implements SqlTuning {
                         "DropSqlTuningTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DropSqlTuningTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DropSqlTuningTaskResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DropSqlTuningTaskResponse>
                 transformer =
                         DropSqlTuningTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -497,7 +497,7 @@ public class SqlTuningClient implements SqlTuning {
                         "GetExecutionPlanStatsComparision",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetExecutionPlanStatsComparision");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetExecutionPlanStatsComparisionResponse>
                 transformer =
                         GetExecutionPlanStatsComparisionConverter.fromResponse(
@@ -535,7 +535,7 @@ public class SqlTuningClient implements SqlTuning {
                         "GetSqlExecutionPlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetSqlExecutionPlan");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSqlExecutionPlanResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSqlExecutionPlanResponse>
                 transformer =
                         GetSqlExecutionPlanConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -574,7 +574,7 @@ public class SqlTuningClient implements SqlTuning {
                         "GetSqlTuningAdvisorTaskSummaryReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetSqlTuningAdvisorTaskSummaryReport");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetSqlTuningAdvisorTaskSummaryReportResponse>
                 transformer =
                         GetSqlTuningAdvisorTaskSummaryReportConverter.fromResponse(
@@ -613,7 +613,7 @@ public class SqlTuningClient implements SqlTuning {
                         "ListSqlTuningAdvisorTaskFindings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningAdvisorTaskFindings");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListSqlTuningAdvisorTaskFindingsResponse>
                 transformer =
                         ListSqlTuningAdvisorTaskFindingsConverter.fromResponse(
@@ -653,7 +653,7 @@ public class SqlTuningClient implements SqlTuning {
                         "ListSqlTuningAdvisorTaskRecommendations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningAdvisorTaskRecommendations");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListSqlTuningAdvisorTaskRecommendationsResponse>
                 transformer =
                         ListSqlTuningAdvisorTaskRecommendationsConverter.fromResponse(
@@ -692,8 +692,7 @@ public class SqlTuningClient implements SqlTuning {
                         "ListSqlTuningAdvisorTasks",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningAdvisorTasks");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSqlTuningAdvisorTasksResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlTuningAdvisorTasksResponse>
                 transformer =
                         ListSqlTuningAdvisorTasksConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -730,7 +729,7 @@ public class SqlTuningClient implements SqlTuning {
                         "ListSqlTuningSets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningSets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSqlTuningSetsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlTuningSetsResponse>
                 transformer =
                         ListSqlTuningSetsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -768,7 +767,7 @@ public class SqlTuningClient implements SqlTuning {
                         "StartSqlTuningTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/StartSqlTuningTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartSqlTuningTaskResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StartSqlTuningTaskResponse>
                 transformer =
                         StartSqlTuningTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

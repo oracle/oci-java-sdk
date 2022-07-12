@@ -9,7 +9,6 @@ import com.oracle.bmc.computeinstanceagent.requests.*;
 import com.oracle.bmc.computeinstanceagent.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
@@ -334,9 +333,9 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("ComputeInstanceAgent-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("ComputeInstanceAgent-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
          * @return the client
          */
         public ComputeInstanceAgentClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,8 +488,7 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                         "CancelInstanceAgentCommand",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CancelInstanceAgentCommand");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CancelInstanceAgentCommandResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelInstanceAgentCommandResponse>
                 transformer =
                         CancelInstanceAgentCommandConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,8 +528,7 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                         "CreateInstanceAgentCommand",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CreateInstanceAgentCommand");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateInstanceAgentCommandResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateInstanceAgentCommandResponse>
                 transformer =
                         CreateInstanceAgentCommandConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -573,7 +571,7 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                         "GetInstanceAgentCommand",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/GetInstanceAgentCommand");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetInstanceAgentCommandResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetInstanceAgentCommandResponse>
                 transformer =
                         GetInstanceAgentCommandConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -611,7 +609,7 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                         "GetInstanceAgentCommandExecution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecution/GetInstanceAgentCommandExecution");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetInstanceAgentCommandExecutionResponse>
                 transformer =
                         GetInstanceAgentCommandExecutionConverter.fromResponse(
@@ -650,7 +648,7 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                         "ListInstanceAgentCommandExecutions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecutionSummary/ListInstanceAgentCommandExecutions");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListInstanceAgentCommandExecutionsResponse>
                 transformer =
                         ListInstanceAgentCommandExecutionsConverter.fromResponse(
@@ -689,8 +687,7 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                         "ListInstanceAgentCommands",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandSummary/ListInstanceAgentCommands");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListInstanceAgentCommandsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListInstanceAgentCommandsResponse>
                 transformer =
                         ListInstanceAgentCommandsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

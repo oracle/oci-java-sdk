@@ -9,7 +9,6 @@ import com.oracle.bmc.events.requests.*;
 import com.oracle.bmc.events.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class EventsClient implements Events {
@@ -334,9 +333,9 @@ public class EventsClient implements Events {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Events-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Events-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class EventsClient implements Events {
          * @return the client
          */
         public EventsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class EventsClient implements Events {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class EventsClient implements Events {
                         "ChangeRuleCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/ChangeRuleCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeRuleCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeRuleCompartmentResponse>
                 transformer =
                         ChangeRuleCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,7 +529,7 @@ public class EventsClient implements Events {
                         "CreateRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/CreateRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRuleResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRuleResponse> transformer =
                 CreateRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -567,7 +567,7 @@ public class EventsClient implements Events {
                         "DeleteRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/DeleteRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRuleResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRuleResponse> transformer =
                 DeleteRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -602,7 +602,7 @@ public class EventsClient implements Events {
                         "GetRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/GetRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRuleResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetRuleResponse> transformer =
                 GetRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -636,7 +636,7 @@ public class EventsClient implements Events {
                         "ListRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/events/20181201/RuleSummary/ListRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRulesResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListRulesResponse> transformer =
                 ListRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -670,7 +670,7 @@ public class EventsClient implements Events {
                         "UpdateRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/UpdateRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRuleResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRuleResponse> transformer =
                 UpdateRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

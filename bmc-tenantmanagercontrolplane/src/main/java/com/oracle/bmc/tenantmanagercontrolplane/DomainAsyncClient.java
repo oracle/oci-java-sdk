@@ -7,7 +7,6 @@ package com.oracle.bmc.tenantmanagercontrolplane;
 import com.oracle.bmc.tenantmanagercontrolplane.internal.http.*;
 import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Domain service. <br/>
@@ -320,7 +319,7 @@ public class DomainAsyncClient implements DomainAsync {
          * @return the client
          */
         public DomainAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class DomainAsyncClient implements DomainAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -401,7 +401,7 @@ public class DomainAsyncClient implements DomainAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Domain", "CreateDomain", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDomainResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDomainResponse>
                 transformer =
                         CreateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateDomainRequest, CreateDomainResponse>
@@ -450,7 +450,7 @@ public class DomainAsyncClient implements DomainAsync {
                         "DeleteDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/DeleteDomain");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDomainResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDomainResponse>
                 transformer =
                         DeleteDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteDomainRequest, DeleteDomainResponse>
@@ -493,7 +493,7 @@ public class DomainAsyncClient implements DomainAsync {
                         "GetDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/GetDomain");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDomainResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDomainResponse>
                 transformer =
                         GetDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDomainRequest, GetDomainResponse> handlerToUse =
@@ -536,7 +536,7 @@ public class DomainAsyncClient implements DomainAsync {
                         "ListDomains",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/ListDomains");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDomainsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDomainsResponse>
                 transformer =
                         ListDomainsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDomainsRequest, ListDomainsResponse>
@@ -580,7 +580,7 @@ public class DomainAsyncClient implements DomainAsync {
                         "UpdateDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/UpdateDomain");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDomainResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDomainResponse>
                 transformer =
                         UpdateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateDomainRequest, UpdateDomainResponse>

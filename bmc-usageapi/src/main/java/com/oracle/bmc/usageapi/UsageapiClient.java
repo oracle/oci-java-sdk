@@ -9,7 +9,6 @@ import com.oracle.bmc.usageapi.requests.*;
 import com.oracle.bmc.usageapi.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class UsageapiClient implements Usageapi {
@@ -334,9 +333,9 @@ public class UsageapiClient implements Usageapi {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Usageapi-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Usageapi-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class UsageapiClient implements Usageapi {
          * @return the client
          */
         public UsageapiClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class UsageapiClient implements Usageapi {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,7 +487,7 @@ public class UsageapiClient implements Usageapi {
                         "CreateCustomTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/CreateCustomTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCustomTableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCustomTableResponse>
                 transformer =
                         CreateCustomTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,9 +529,8 @@ public class UsageapiClient implements Usageapi {
                         "CreateQuery",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/CreateQuery");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateQueryResponse>
-                transformer =
-                        CreateQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateQueryResponse> transformer =
+                CreateQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -570,9 +569,8 @@ public class UsageapiClient implements Usageapi {
                         "CreateSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/CreateSchedule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateScheduleResponse>
-                transformer =
-                        CreateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateScheduleResponse> transformer =
+                CreateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -610,7 +608,7 @@ public class UsageapiClient implements Usageapi {
                         "DeleteCustomTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/DeleteCustomTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCustomTableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCustomTableResponse>
                 transformer =
                         DeleteCustomTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -648,9 +646,8 @@ public class UsageapiClient implements Usageapi {
                         "DeleteQuery",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/DeleteQuery");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteQueryResponse>
-                transformer =
-                        DeleteQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteQueryResponse> transformer =
+                DeleteQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -685,9 +682,8 @@ public class UsageapiClient implements Usageapi {
                         "DeleteSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/DeleteSchedule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteScheduleResponse>
-                transformer =
-                        DeleteScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteScheduleResponse> transformer =
+                DeleteScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -722,9 +718,8 @@ public class UsageapiClient implements Usageapi {
                         "GetCustomTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/GetCustomTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCustomTableResponse>
-                transformer =
-                        GetCustomTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetCustomTableResponse> transformer =
+                GetCustomTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -757,7 +752,7 @@ public class UsageapiClient implements Usageapi {
                         "GetQuery",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/GetQuery");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetQueryResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetQueryResponse> transformer =
                 GetQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -792,9 +787,8 @@ public class UsageapiClient implements Usageapi {
                         "GetSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/GetSchedule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduleResponse>
-                transformer =
-                        GetScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetScheduleResponse> transformer =
+                GetScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -828,7 +822,7 @@ public class UsageapiClient implements Usageapi {
                         "GetScheduledRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/ScheduledRun/GetScheduledRun");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduledRunResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetScheduledRunResponse>
                 transformer =
                         GetScheduledRunConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -865,7 +859,7 @@ public class UsageapiClient implements Usageapi {
                         "ListCustomTables",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/ListCustomTables");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCustomTablesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCustomTablesResponse>
                 transformer =
                         ListCustomTablesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -902,9 +896,8 @@ public class UsageapiClient implements Usageapi {
                         "ListQueries",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/ListQueries");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListQueriesResponse>
-                transformer =
-                        ListQueriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListQueriesResponse> transformer =
+                ListQueriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -938,7 +931,7 @@ public class UsageapiClient implements Usageapi {
                         "ListScheduledRuns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/ScheduledRun/ListScheduledRuns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListScheduledRunsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListScheduledRunsResponse>
                 transformer =
                         ListScheduledRunsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -975,9 +968,8 @@ public class UsageapiClient implements Usageapi {
                         "ListSchedules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/ListSchedules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSchedulesResponse>
-                transformer =
-                        ListSchedulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSchedulesResponse> transformer =
+                ListSchedulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1012,7 +1004,7 @@ public class UsageapiClient implements Usageapi {
                         "RequestSummarizedConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Configuration/RequestSummarizedConfigurations");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedConfigurationsResponse>
                 transformer =
                         RequestSummarizedConfigurationsConverter.fromResponse(
@@ -1051,7 +1043,7 @@ public class UsageapiClient implements Usageapi {
                         "RequestSummarizedUsages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageSummary/RequestSummarizedUsages");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RequestSummarizedUsagesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RequestSummarizedUsagesResponse>
                 transformer =
                         RequestSummarizedUsagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1092,7 +1084,7 @@ public class UsageapiClient implements Usageapi {
                         "UpdateCustomTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/UpdateCustomTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCustomTableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCustomTableResponse>
                 transformer =
                         UpdateCustomTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1133,9 +1125,8 @@ public class UsageapiClient implements Usageapi {
                         "UpdateQuery",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/UpdateQuery");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateQueryResponse>
-                transformer =
-                        UpdateQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateQueryResponse> transformer =
+                UpdateQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1173,9 +1164,8 @@ public class UsageapiClient implements Usageapi {
                         "UpdateSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/UpdateSchedule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateScheduleResponse>
-                transformer =
-                        UpdateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateScheduleResponse> transformer =
+                UpdateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

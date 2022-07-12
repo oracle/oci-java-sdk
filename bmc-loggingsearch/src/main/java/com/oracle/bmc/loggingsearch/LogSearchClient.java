@@ -9,7 +9,6 @@ import com.oracle.bmc.loggingsearch.requests.*;
 import com.oracle.bmc.loggingsearch.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
 public class LogSearchClient implements LogSearch {
@@ -328,7 +327,7 @@ public class LogSearchClient implements LogSearch {
          * @return the client
          */
         public LogSearchClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -364,7 +363,8 @@ public class LogSearchClient implements LogSearch {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -408,7 +408,7 @@ public class LogSearchClient implements LogSearch {
                         "SearchLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-search/20190909/SearchResult/SearchLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SearchLogsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, SearchLogsResponse> transformer =
                 SearchLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

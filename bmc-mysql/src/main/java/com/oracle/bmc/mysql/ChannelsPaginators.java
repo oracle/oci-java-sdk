@@ -44,19 +44,19 @@ public class ChannelsPaginators {
             final ListChannelsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListChannelsRequest.Builder, ListChannelsRequest, ListChannelsResponse>(
-                new com.google.common.base.Supplier<ListChannelsRequest.Builder>() {
+                new java.util.function.Supplier<ListChannelsRequest.Builder>() {
                     @Override
                     public ListChannelsRequest.Builder get() {
                         return ListChannelsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListChannelsResponse, String>() {
+                new java.util.function.Function<ListChannelsResponse, String>() {
                     @Override
                     public String apply(ListChannelsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListChannelsRequest.Builder>,
                         ListChannelsRequest>() {
@@ -69,12 +69,12 @@ public class ChannelsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListChannelsRequest, ListChannelsResponse>() {
+                new java.util.function.Function<ListChannelsRequest, ListChannelsResponse>() {
                     @Override
                     public ListChannelsResponse apply(ListChannelsRequest request) {
                         return client.listChannels(request);
@@ -96,19 +96,19 @@ public class ChannelsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListChannelsRequest.Builder, ListChannelsRequest, ListChannelsResponse,
                 com.oracle.bmc.mysql.model.ChannelSummary>(
-                new com.google.common.base.Supplier<ListChannelsRequest.Builder>() {
+                new java.util.function.Supplier<ListChannelsRequest.Builder>() {
                     @Override
                     public ListChannelsRequest.Builder get() {
                         return ListChannelsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListChannelsResponse, String>() {
+                new java.util.function.Function<ListChannelsResponse, String>() {
                     @Override
                     public String apply(ListChannelsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListChannelsRequest.Builder>,
                         ListChannelsRequest>() {
@@ -121,18 +121,18 @@ public class ChannelsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListChannelsRequest, ListChannelsResponse>() {
+                new java.util.function.Function<ListChannelsRequest, ListChannelsResponse>() {
                     @Override
                     public ListChannelsResponse apply(ListChannelsRequest request) {
                         return client.listChannels(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListChannelsResponse,
                         java.util.List<com.oracle.bmc.mysql.model.ChannelSummary>>() {
                     @Override

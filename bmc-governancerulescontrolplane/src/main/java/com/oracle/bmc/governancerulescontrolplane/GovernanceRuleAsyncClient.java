@@ -7,7 +7,6 @@ package com.oracle.bmc.governancerulescontrolplane;
 import com.oracle.bmc.governancerulescontrolplane.internal.http.*;
 import com.oracle.bmc.governancerulescontrolplane.requests.*;
 import com.oracle.bmc.governancerulescontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for GovernanceRule service. <br/>
@@ -321,7 +320,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
          * @return the client
          */
         public GovernanceRuleAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,8 +406,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                         "CreateGovernanceRule",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateGovernanceRuleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateGovernanceRuleResponse>
                 transformer =
                         CreateGovernanceRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -460,7 +459,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                         "CreateInclusionCriterion",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateInclusionCriterionResponse>
                 transformer =
                         CreateInclusionCriterionConverter.fromResponse(
@@ -513,8 +512,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                         "DeleteGovernanceRule",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteGovernanceRuleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteGovernanceRuleResponse>
                 transformer =
                         DeleteGovernanceRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -561,7 +559,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                         "DeleteInclusionCriterion",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteInclusionCriterionResponse>
                 transformer =
                         DeleteInclusionCriterionConverter.fromResponse(
@@ -609,7 +607,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                         "GetEnforcedGovernanceRule",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetEnforcedGovernanceRuleResponse>
                 transformer =
                         GetEnforcedGovernanceRuleConverter.fromResponse(
@@ -655,7 +653,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "GovernanceRule", "GetGovernanceRule", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetGovernanceRuleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetGovernanceRuleResponse>
                 transformer =
                         GetGovernanceRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -701,8 +699,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                         "GetInclusionCriterion",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetInclusionCriterionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetInclusionCriterionResponse>
                 transformer =
                         GetInclusionCriterionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -749,8 +746,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                         "GetTenancyAttachment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetTenancyAttachmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTenancyAttachmentResponse>
                 transformer =
                         GetTenancyAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -799,7 +795,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                         "ListEnforcedGovernanceRules",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListEnforcedGovernanceRulesResponse>
                 transformer =
                         ListEnforcedGovernanceRulesConverter.fromResponse(
@@ -845,8 +841,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "GovernanceRule", "ListGovernanceRules", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListGovernanceRulesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListGovernanceRulesResponse>
                 transformer =
                         ListGovernanceRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -893,8 +888,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                         "ListInclusionCriteria",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListInclusionCriteriaResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListInclusionCriteriaResponse>
                 transformer =
                         ListInclusionCriteriaConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -941,8 +935,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                         "ListTenancyAttachments",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTenancyAttachmentsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTenancyAttachmentsResponse>
                 transformer =
                         ListTenancyAttachmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -987,8 +980,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "GovernanceRule", "RetryGovernanceRule", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RetryGovernanceRuleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RetryGovernanceRuleResponse>
                 transformer =
                         RetryGovernanceRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1036,8 +1028,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                         "RetryTenancyAttachment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RetryTenancyAttachmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RetryTenancyAttachmentResponse>
                 transformer =
                         RetryTenancyAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1084,8 +1075,7 @@ public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
                         "UpdateGovernanceRule",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateGovernanceRuleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateGovernanceRuleResponse>
                 transformer =
                         UpdateGovernanceRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

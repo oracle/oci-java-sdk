@@ -9,7 +9,6 @@ import com.oracle.bmc.aispeech.requests.*;
 import com.oracle.bmc.aispeech.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 public class AIServiceSpeechClient implements AIServiceSpeech {
@@ -335,9 +334,9 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("AIServiceSpeech-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("AIServiceSpeech-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
          * @return the client
          */
         public AIServiceSpeechClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         "CancelTranscriptionJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CancelTranscriptionJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelTranscriptionJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelTranscriptionJobResponse>
                 transformer =
                         CancelTranscriptionJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,7 +529,7 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         "CancelTranscriptionTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/CancelTranscriptionTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelTranscriptionTaskResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelTranscriptionTaskResponse>
                 transformer =
                         CancelTranscriptionTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -569,7 +569,7 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         "ChangeTranscriptionJobCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ChangeTranscriptionJobCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeTranscriptionJobCompartmentResponse>
                 transformer =
                         ChangeTranscriptionJobCompartmentConverter.fromResponse(
@@ -614,7 +614,7 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         "CreateTranscriptionJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CreateTranscriptionJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTranscriptionJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTranscriptionJobResponse>
                 transformer =
                         CreateTranscriptionJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -655,7 +655,7 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         "GetTranscriptionJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/GetTranscriptionJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTranscriptionJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTranscriptionJobResponse>
                 transformer =
                         GetTranscriptionJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -692,7 +692,7 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         "GetTranscriptionTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/GetTranscriptionTask");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTranscriptionTaskResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTranscriptionTaskResponse>
                 transformer =
                         GetTranscriptionTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -730,7 +730,7 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         "ListTranscriptionJobs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ListTranscriptionJobs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTranscriptionJobsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTranscriptionJobsResponse>
                 transformer =
                         ListTranscriptionJobsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -768,7 +768,7 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         "ListTranscriptionTasks",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/ListTranscriptionTasks");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTranscriptionTasksResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTranscriptionTasksResponse>
                 transformer =
                         ListTranscriptionTasksConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -806,7 +806,7 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         "UpdateTranscriptionJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/UpdateTranscriptionJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTranscriptionJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTranscriptionJobResponse>
                 transformer =
                         UpdateTranscriptionJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -44,19 +44,19 @@ public class SubscribersPaginators {
             final ListSubscribersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSubscribersRequest.Builder, ListSubscribersRequest, ListSubscribersResponse>(
-                new com.google.common.base.Supplier<ListSubscribersRequest.Builder>() {
+                new java.util.function.Supplier<ListSubscribersRequest.Builder>() {
                     @Override
                     public ListSubscribersRequest.Builder get() {
                         return ListSubscribersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSubscribersResponse, String>() {
+                new java.util.function.Function<ListSubscribersResponse, String>() {
                     @Override
                     public String apply(ListSubscribersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSubscribersRequest.Builder>,
                         ListSubscribersRequest>() {
@@ -69,13 +69,12 @@ public class SubscribersPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListSubscribersRequest, ListSubscribersResponse>() {
+                new java.util.function.Function<ListSubscribersRequest, ListSubscribersResponse>() {
                     @Override
                     public ListSubscribersResponse apply(ListSubscribersRequest request) {
                         return client.listSubscribers(request);
@@ -97,19 +96,19 @@ public class SubscribersPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSubscribersRequest.Builder, ListSubscribersRequest, ListSubscribersResponse,
                 com.oracle.bmc.apigateway.model.SubscriberSummary>(
-                new com.google.common.base.Supplier<ListSubscribersRequest.Builder>() {
+                new java.util.function.Supplier<ListSubscribersRequest.Builder>() {
                     @Override
                     public ListSubscribersRequest.Builder get() {
                         return ListSubscribersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSubscribersResponse, String>() {
+                new java.util.function.Function<ListSubscribersResponse, String>() {
                     @Override
                     public String apply(ListSubscribersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSubscribersRequest.Builder>,
                         ListSubscribersRequest>() {
@@ -122,19 +121,18 @@ public class SubscribersPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListSubscribersRequest, ListSubscribersResponse>() {
+                new java.util.function.Function<ListSubscribersRequest, ListSubscribersResponse>() {
                     @Override
                     public ListSubscribersResponse apply(ListSubscribersRequest request) {
                         return client.listSubscribers(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSubscribersResponse,
                         java.util.List<com.oracle.bmc.apigateway.model.SubscriberSummary>>() {
                     @Override

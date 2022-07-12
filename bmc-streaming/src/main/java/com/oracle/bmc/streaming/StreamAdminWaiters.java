@@ -6,7 +6,6 @@ package com.oracle.bmc.streaming;
 
 import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -108,8 +107,8 @@ public class StreamAdminWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetConnectHarnessRequest, GetConnectHarnessResponse>() {
                             @Override
                             public GetConnectHarnessResponse apply(
@@ -117,9 +116,9 @@ public class StreamAdminWaiters {
                                 return client.getConnectHarness(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetConnectHarnessResponse>() {
+                        new java.util.function.Predicate<GetConnectHarnessResponse>() {
                             @Override
-                            public boolean apply(GetConnectHarnessResponse response) {
+                            public boolean test(GetConnectHarnessResponse response) {
                                 return targetStatesSet.contains(
                                         response.getConnectHarness().getLifecycleState());
                             }
@@ -208,16 +207,16 @@ public class StreamAdminWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetStreamRequest, GetStreamResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetStreamRequest, GetStreamResponse>() {
                             @Override
                             public GetStreamResponse apply(GetStreamRequest request) {
                                 return client.getStream(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetStreamResponse>() {
+                        new java.util.function.Predicate<GetStreamResponse>() {
                             @Override
-                            public boolean apply(GetStreamResponse response) {
+                            public boolean test(GetStreamResponse response) {
                                 return targetStatesSet.contains(
                                         response.getStream().getLifecycleState());
                             }
@@ -305,17 +304,17 @@ public class StreamAdminWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetStreamPoolRequest, GetStreamPoolResponse>() {
                             @Override
                             public GetStreamPoolResponse apply(GetStreamPoolRequest request) {
                                 return client.getStreamPool(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetStreamPoolResponse>() {
+                        new java.util.function.Predicate<GetStreamPoolResponse>() {
                             @Override
-                            public boolean apply(GetStreamPoolResponse response) {
+                            public boolean test(GetStreamPoolResponse response) {
                                 return targetStatesSet.contains(
                                         response.getStreamPool().getLifecycleState());
                             }

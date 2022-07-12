@@ -7,7 +7,6 @@ package com.oracle.bmc.osubsubscription;
 import com.oracle.bmc.osubsubscription.internal.http.*;
 import com.oracle.bmc.osubsubscription.requests.*;
 import com.oracle.bmc.osubsubscription.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Ratecard service. <br/>
@@ -319,7 +318,7 @@ public class RatecardAsyncClient implements RatecardAsync {
          * @return the client
          */
         public RatecardAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class RatecardAsyncClient implements RatecardAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -399,7 +399,7 @@ public class RatecardAsyncClient implements RatecardAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Ratecard", "ListRateCards", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRateCardsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRateCardsResponse>
                 transformer =
                         ListRateCardsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRateCardsRequest, ListRateCardsResponse>

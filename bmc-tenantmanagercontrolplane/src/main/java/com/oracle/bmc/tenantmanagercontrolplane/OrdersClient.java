@@ -9,7 +9,6 @@ import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class OrdersClient implements Orders {
@@ -329,7 +328,7 @@ public class OrdersClient implements Orders {
          * @return the client
          */
         public OrdersClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -365,7 +364,8 @@ public class OrdersClient implements Orders {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -411,9 +411,8 @@ public class OrdersClient implements Orders {
                         "ActivateOrder",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/ActivateOrder");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ActivateOrderResponse>
-                transformer =
-                        ActivateOrderConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ActivateOrderResponse> transformer =
+                ActivateOrderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -450,7 +449,7 @@ public class OrdersClient implements Orders {
                         "GetOrder",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/GetOrder");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOrderResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetOrderResponse> transformer =
                 GetOrderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

@@ -35,7 +35,8 @@ public final class ClusterSummary {
         "lifecycleDetails",
         "endpoints",
         "availableKubernetesUpgrades",
-        "imagePolicyConfig"
+        "imagePolicyConfig",
+        "clusterPodNetworkOptions"
     })
     public ClusterSummary(
             String id,
@@ -53,7 +54,8 @@ public final class ClusterSummary {
             String lifecycleDetails,
             ClusterEndpoints endpoints,
             java.util.List<String> availableKubernetesUpgrades,
-            ImagePolicyConfig imagePolicyConfig) {
+            ImagePolicyConfig imagePolicyConfig,
+            java.util.List<ClusterPodNetworkOptionDetails> clusterPodNetworkOptions) {
         super();
         this.id = id;
         this.name = name;
@@ -71,6 +73,7 @@ public final class ClusterSummary {
         this.endpoints = endpoints;
         this.availableKubernetesUpgrades = availableKubernetesUpgrades;
         this.imagePolicyConfig = imagePolicyConfig;
+        this.clusterPodNetworkOptions = clusterPodNetworkOptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -353,6 +356,23 @@ public final class ClusterSummary {
             this.__explicitlySet__.add("imagePolicyConfig");
             return this;
         }
+        /**
+         * Available CNIs and network options for existing and new node pools of the cluster
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPodNetworkOptions")
+        private java.util.List<ClusterPodNetworkOptionDetails> clusterPodNetworkOptions;
+
+        /**
+         * Available CNIs and network options for existing and new node pools of the cluster
+         * @param clusterPodNetworkOptions the value to set
+         * @return this builder
+         **/
+        public Builder clusterPodNetworkOptions(
+                java.util.List<ClusterPodNetworkOptionDetails> clusterPodNetworkOptions) {
+            this.clusterPodNetworkOptions = clusterPodNetworkOptions;
+            this.__explicitlySet__.add("clusterPodNetworkOptions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -375,7 +395,8 @@ public final class ClusterSummary {
                             lifecycleDetails,
                             endpoints,
                             availableKubernetesUpgrades,
-                            imagePolicyConfig);
+                            imagePolicyConfig,
+                            clusterPodNetworkOptions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -398,7 +419,8 @@ public final class ClusterSummary {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .endpoints(o.getEndpoints())
                             .availableKubernetesUpgrades(o.getAvailableKubernetesUpgrades())
-                            .imagePolicyConfig(o.getImagePolicyConfig());
+                            .imagePolicyConfig(o.getImagePolicyConfig())
+                            .clusterPodNetworkOptions(o.getClusterPodNetworkOptions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -660,6 +682,20 @@ public final class ClusterSummary {
         return imagePolicyConfig;
     }
 
+    /**
+     * Available CNIs and network options for existing and new node pools of the cluster
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPodNetworkOptions")
+    private final java.util.List<ClusterPodNetworkOptionDetails> clusterPodNetworkOptions;
+
+    /**
+     * Available CNIs and network options for existing and new node pools of the cluster
+     * @return the value
+     **/
+    public java.util.List<ClusterPodNetworkOptionDetails> getClusterPodNetworkOptions() {
+        return clusterPodNetworkOptions;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
@@ -681,6 +717,8 @@ public final class ClusterSummary {
         sb.append(", availableKubernetesUpgrades=")
                 .append(String.valueOf(this.availableKubernetesUpgrades));
         sb.append(", imagePolicyConfig=").append(String.valueOf(this.imagePolicyConfig));
+        sb.append(", clusterPodNetworkOptions=")
+                .append(String.valueOf(this.clusterPodNetworkOptions));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -713,6 +751,8 @@ public final class ClusterSummary {
                 && java.util.Objects.equals(
                         this.availableKubernetesUpgrades, other.availableKubernetesUpgrades)
                 && java.util.Objects.equals(this.imagePolicyConfig, other.imagePolicyConfig)
+                && java.util.Objects.equals(
+                        this.clusterPodNetworkOptions, other.clusterPodNetworkOptions)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -752,6 +792,11 @@ public final class ClusterSummary {
         result =
                 (result * PRIME)
                         + (this.imagePolicyConfig == null ? 43 : this.imagePolicyConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPodNetworkOptions == null
+                                ? 43
+                                : this.clusterPodNetworkOptions.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

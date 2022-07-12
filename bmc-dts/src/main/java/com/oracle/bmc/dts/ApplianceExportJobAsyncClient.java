@@ -7,7 +7,6 @@ package com.oracle.bmc.dts;
 import com.oracle.bmc.dts.internal.http.*;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ApplianceExportJob service. <br/>
@@ -321,7 +320,7 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
          * @return the client
          */
         public ApplianceExportJobAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -409,7 +409,7 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                         "ChangeApplianceExportJobCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeApplianceExportJobCompartmentResponse>
                 transformer =
                         ChangeApplianceExportJobCompartmentConverter.fromResponse(
@@ -466,7 +466,7 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                         "CreateApplianceExportJob",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateApplianceExportJobResponse>
                 transformer =
                         CreateApplianceExportJobConverter.fromResponse(
@@ -519,7 +519,7 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                         "DeleteApplianceExportJob",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteApplianceExportJobResponse>
                 transformer =
                         DeleteApplianceExportJobConverter.fromResponse(
@@ -567,8 +567,7 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                         "GetApplianceExportJob",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetApplianceExportJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetApplianceExportJobResponse>
                 transformer =
                         GetApplianceExportJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -615,7 +614,7 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                         "ListApplianceExportJobs",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListApplianceExportJobsResponse>
                 transformer =
                         ListApplianceExportJobsConverter.fromResponse(
@@ -663,7 +662,7 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                         "UpdateApplianceExportJob",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateApplianceExportJobResponse>
                 transformer =
                         UpdateApplianceExportJobConverter.fromResponse(

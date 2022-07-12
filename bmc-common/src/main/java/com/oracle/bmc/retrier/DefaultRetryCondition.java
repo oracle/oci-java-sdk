@@ -4,8 +4,13 @@
  */
 package com.oracle.bmc.retrier;
 
-import com.google.common.collect.ImmutableSetMultimap;
-import com.google.common.collect.Multimap;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.model.BmcException;
 import javax.annotation.Nonnull;
@@ -16,8 +21,13 @@ import javax.annotation.Nonnull;
  */
 public class DefaultRetryCondition implements RetryCondition {
     // List of retryable errors from https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm
-    private static final Multimap<Integer, String> RETRYABLE_SERVICE_ERRORS =
-            ImmutableSetMultimap.<Integer, String>builder().put(409, "IncorrectState").build();
+    private static final Map<Integer, Set<String>> RETRYABLE_SERVICE_ERRORS;
+
+    static {
+        Map<Integer, Set<String>> temp = new HashMap<>();
+        temp.put(409, Collections.unmodifiableSet(new HashSet<>(Arrays.asList("IncorrectState"))));
+        RETRYABLE_SERVICE_ERRORS = Collections.unmodifiableMap(temp);
+    }
 
     private static final String PROCESSING_EXCEPTION_MSG =
             "[.|\\s\\S]*processing(\\s)+exception[.|\\s\\S]*";
@@ -34,8 +44,10 @@ public class DefaultRetryCondition implements RetryCondition {
                 || exception.getStatusCode() == 502
                 || exception.getStatusCode() == 503
                 || exception.getStatusCode() == 504
-                || RETRYABLE_SERVICE_ERRORS.containsEntry(
-                        exception.getStatusCode(), exception.getServiceCode())
+                || (RETRYABLE_SERVICE_ERRORS.containsKey(exception.getStatusCode())
+                        && RETRYABLE_SERVICE_ERRORS
+                                .get(exception.getStatusCode())
+                                .contains(exception.getServiceCode()))
                 || isProcessingException(exception)
                 || exception.getCause() instanceof CallNotAllowedException;
     }

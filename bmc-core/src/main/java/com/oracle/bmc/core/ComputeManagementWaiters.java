@@ -6,7 +6,6 @@ package com.oracle.bmc.core;
 
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -16,20 +15,20 @@ import javax.annotation.Nonnull;
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ComputeManagementWaiters {
-    @Nonnull private final java.util.concurrent.ExecutorService executorService;
-    @Nonnull private final ComputeManagement client;
+    @javax.annotation.Nonnull private final java.util.concurrent.ExecutorService executorService;
+    @javax.annotation.Nonnull private final ComputeManagement client;
     private final com.oracle.bmc.workrequests.WorkRequest workRequestClient;
 
     @Deprecated
     public ComputeManagementWaiters(
-            @Nonnull java.util.concurrent.ExecutorService executorService,
-            @Nonnull ComputeManagement client) {
+            @javax.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
+            @javax.annotation.Nonnull ComputeManagement client) {
         this(executorService, client, null);
     }
 
     public ComputeManagementWaiters(
-            @Nonnull java.util.concurrent.ExecutorService executorService,
-            @Nonnull ComputeManagement client,
+            @javax.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
+            @javax.annotation.Nonnull ComputeManagement client,
             com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
         if (executorService == null) {
             throw new NullPointerException("executorService is marked non-null but is null");
@@ -299,8 +298,8 @@ public class ComputeManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetClusterNetworkRequest, GetClusterNetworkResponse>() {
                             @Override
                             public GetClusterNetworkResponse apply(
@@ -308,9 +307,9 @@ public class ComputeManagementWaiters {
                                 return client.getClusterNetwork(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetClusterNetworkResponse>() {
+                        new java.util.function.Predicate<GetClusterNetworkResponse>() {
                             @Override
-                            public boolean apply(GetClusterNetworkResponse response) {
+                            public boolean test(GetClusterNetworkResponse response) {
                                 return targetStatesSet.contains(
                                         response.getClusterNetwork().getLifecycleState());
                             }
@@ -403,17 +402,17 @@ public class ComputeManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetInstancePoolRequest, GetInstancePoolResponse>() {
                             @Override
                             public GetInstancePoolResponse apply(GetInstancePoolRequest request) {
                                 return client.getInstancePool(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetInstancePoolResponse>() {
+                        new java.util.function.Predicate<GetInstancePoolResponse>() {
                             @Override
-                            public boolean apply(GetInstancePoolResponse response) {
+                            public boolean test(GetInstancePoolResponse response) {
                                 return targetStatesSet.contains(
                                         response.getInstancePool().getLifecycleState());
                             }
@@ -510,8 +509,8 @@ public class ComputeManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetInstancePoolInstanceRequest, GetInstancePoolInstanceResponse>() {
                             @Override
                             public GetInstancePoolInstanceResponse apply(
@@ -519,9 +518,9 @@ public class ComputeManagementWaiters {
                                 return client.getInstancePoolInstance(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetInstancePoolInstanceResponse>() {
+                        new java.util.function.Predicate<GetInstancePoolInstanceResponse>() {
                             @Override
-                            public boolean apply(GetInstancePoolInstanceResponse response) {
+                            public boolean test(GetInstancePoolInstanceResponse response) {
                                 return targetStatesSet.contains(
                                         response.getInstancePoolInstance().getLifecycleState());
                             }
@@ -626,8 +625,8 @@ public class ComputeManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetInstancePoolLoadBalancerAttachmentRequest,
                                 GetInstancePoolLoadBalancerAttachmentResponse>() {
                             @Override
@@ -636,10 +635,10 @@ public class ComputeManagementWaiters {
                                 return client.getInstancePoolLoadBalancerAttachment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
+                        new java.util.function.Predicate<
                                 GetInstancePoolLoadBalancerAttachmentResponse>() {
                             @Override
-                            public boolean apply(
+                            public boolean test(
                                     GetInstancePoolLoadBalancerAttachmentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getInstancePoolLoadBalancerAttachment()

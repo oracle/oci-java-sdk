@@ -7,7 +7,6 @@ package com.oracle.bmc.threatintelligence;
 import com.oracle.bmc.threatintelligence.internal.http.*;
 import com.oracle.bmc.threatintelligence.requests.*;
 import com.oracle.bmc.threatintelligence.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Threatintel service. <br/>
@@ -320,7 +319,7 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
          * @return the client
          */
         public ThreatintelAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -403,7 +403,7 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                         "GetIndicator",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/Indicator/GetIndicator");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetIndicatorResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetIndicatorResponse>
                 transformer =
                         GetIndicatorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetIndicatorRequest, GetIndicatorResponse>
@@ -448,8 +448,7 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                         "ListIndicatorCounts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorCountCollection/ListIndicatorCounts");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListIndicatorCountsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListIndicatorCountsResponse>
                 transformer =
                         ListIndicatorCountsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -496,7 +495,7 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                         "ListIndicators",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorSummaryCollection/ListIndicators");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListIndicatorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListIndicatorsResponse>
                 transformer =
                         ListIndicatorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListIndicatorsRequest, ListIndicatorsResponse>
@@ -541,7 +540,7 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                         "ListThreatTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/ThreatTypesCollection/ListThreatTypes");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListThreatTypesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListThreatTypesResponse>
                 transformer =
                         ListThreatTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

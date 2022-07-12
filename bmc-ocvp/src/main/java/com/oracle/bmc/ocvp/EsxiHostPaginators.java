@@ -44,19 +44,19 @@ public class EsxiHostPaginators {
             final ListEsxiHostsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListEsxiHostsRequest.Builder, ListEsxiHostsRequest, ListEsxiHostsResponse>(
-                new com.google.common.base.Supplier<ListEsxiHostsRequest.Builder>() {
+                new java.util.function.Supplier<ListEsxiHostsRequest.Builder>() {
                     @Override
                     public ListEsxiHostsRequest.Builder get() {
                         return ListEsxiHostsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEsxiHostsResponse, String>() {
+                new java.util.function.Function<ListEsxiHostsResponse, String>() {
                     @Override
                     public String apply(ListEsxiHostsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEsxiHostsRequest.Builder>,
                         ListEsxiHostsRequest>() {
@@ -69,12 +69,12 @@ public class EsxiHostPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListEsxiHostsRequest, ListEsxiHostsResponse>() {
+                new java.util.function.Function<ListEsxiHostsRequest, ListEsxiHostsResponse>() {
                     @Override
                     public ListEsxiHostsResponse apply(ListEsxiHostsRequest request) {
                         return client.listEsxiHosts(request);
@@ -96,19 +96,19 @@ public class EsxiHostPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListEsxiHostsRequest.Builder, ListEsxiHostsRequest, ListEsxiHostsResponse,
                 com.oracle.bmc.ocvp.model.EsxiHostSummary>(
-                new com.google.common.base.Supplier<ListEsxiHostsRequest.Builder>() {
+                new java.util.function.Supplier<ListEsxiHostsRequest.Builder>() {
                     @Override
                     public ListEsxiHostsRequest.Builder get() {
                         return ListEsxiHostsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEsxiHostsResponse, String>() {
+                new java.util.function.Function<ListEsxiHostsResponse, String>() {
                     @Override
                     public String apply(ListEsxiHostsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEsxiHostsRequest.Builder>,
                         ListEsxiHostsRequest>() {
@@ -121,18 +121,18 @@ public class EsxiHostPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListEsxiHostsRequest, ListEsxiHostsResponse>() {
+                new java.util.function.Function<ListEsxiHostsRequest, ListEsxiHostsResponse>() {
                     @Override
                     public ListEsxiHostsResponse apply(ListEsxiHostsRequest request) {
                         return client.listEsxiHosts(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListEsxiHostsResponse,
                         java.util.List<com.oracle.bmc.ocvp.model.EsxiHostSummary>>() {
                     @Override

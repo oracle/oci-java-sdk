@@ -21,9 +21,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
-import com.google.common.base.Optional;
+import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.helper.EnvironmentVariablesHelper;
 import com.oracle.bmc.model.RegionSchema;
 import com.oracle.bmc.model.internal.JsonConverter;
@@ -169,7 +170,8 @@ public class RegionTest {
     public void regionalEndpoint_withTorontoRegionEnum_andRegionString() {
         final String expectedEndpoint = "https://foobar.ca-toronto-1.oraclecloud.com";
         final Region region = Region.CA_TORONTO_1;
-        final Optional<String> actualEndpoint = region.getEndpoint(TEST_SERVICE);
+        final Optional<String> actualEndpoint =
+                GuavaUtils.adaptFromGuava(region.getEndpoint(TEST_SERVICE));
         assertTrue(actualEndpoint.isPresent());
         assertEquals(expectedEndpoint, actualEndpoint.get());
         assertEquals(
@@ -220,7 +222,8 @@ public class RegionTest {
         } catch (IllegalArgumentException e) {
             assertTrue(e.getMessage().contains(regionId));
             final Region newRegion = Region.register(regionId, Realm.OC1);
-            final Optional<String> endpoint = newRegion.getEndpoint(TEST_SERVICE);
+            final Optional<String> endpoint =
+                    GuavaUtils.adaptFromGuava(newRegion.getEndpoint(TEST_SERVICE));
             assertTrue(endpoint.isPresent());
             assertEquals("https://foobar.baz.oraclecloud.com", endpoint.get());
         }

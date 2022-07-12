@@ -7,7 +7,6 @@ package com.oracle.bmc.aianomalydetection;
 import com.oracle.bmc.aianomalydetection.internal.http.*;
 import com.oracle.bmc.aianomalydetection.requests.*;
 import com.oracle.bmc.aianomalydetection.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for AnomalyDetection service. <br/>
@@ -321,7 +320,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
          * @return the client
          */
         public AnomalyDetectionAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -402,7 +402,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "CancelWorkRequest", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -451,7 +451,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         "ChangeAiPrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAiPrivateEndpointCompartmentResponse>
                 transformer =
                         ChangeAiPrivateEndpointCompartmentConverter.fromResponse(
@@ -510,7 +510,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         "ChangeDataAssetCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDataAssetCompartmentResponse>
                 transformer =
                         ChangeDataAssetCompartmentConverter.fromResponse(
@@ -565,8 +565,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         "ChangeModelCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
                 transformer =
                         ChangeModelCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -619,7 +618,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         "ChangeProjectCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
                 transformer =
                         ChangeProjectCompartmentConverter.fromResponse(
@@ -673,7 +672,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         "CreateAiPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateAiPrivateEndpointResponse>
                 transformer =
                         CreateAiPrivateEndpointConverter.fromResponse(
@@ -724,7 +723,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "CreateDataAsset", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
                 transformer =
                         CreateDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -772,7 +771,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "CreateModel", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateModelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateModelResponse>
                 transformer =
                         CreateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse>
@@ -819,7 +818,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "CreateProject", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateProjectResponse>
                 transformer =
                         CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
@@ -869,7 +868,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         "DeleteAiPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteAiPrivateEndpointResponse>
                 transformer =
                         DeleteAiPrivateEndpointConverter.fromResponse(
@@ -914,7 +913,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "DeleteDataAsset", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
                 transformer =
                         DeleteDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -956,7 +955,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "DeleteModel", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteModelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteModelResponse>
                 transformer =
                         DeleteModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse>
@@ -997,7 +996,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "DeleteProject", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
                 transformer =
                         DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
@@ -1040,7 +1039,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "DetectAnomalies", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DetectAnomaliesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DetectAnomaliesResponse>
                 transformer =
                         DetectAnomaliesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1091,8 +1090,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         "GetAiPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAiPrivateEndpointResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAiPrivateEndpointResponse>
                 transformer =
                         GetAiPrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1135,7 +1133,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "GetDataAsset", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDataAssetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDataAssetResponse>
                 transformer =
                         GetDataAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDataAssetRequest, GetDataAssetResponse>
@@ -1175,8 +1173,8 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "GetModel", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetModelResponse>
-                transformer = GetModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetModelResponse> transformer =
+                GetModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse> handlerToUse =
                 handler;
 
@@ -1213,7 +1211,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "GetProject", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetProjectResponse>
                 transformer =
                         GetProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handlerToUse =
@@ -1255,7 +1253,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "GetWorkRequest", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -1300,8 +1298,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         "ListAiPrivateEndpoints",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAiPrivateEndpointsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAiPrivateEndpointsResponse>
                 transformer =
                         ListAiPrivateEndpointsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1345,7 +1342,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "ListDataAssets", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataAssetsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDataAssetsResponse>
                 transformer =
                         ListDataAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDataAssetsRequest, ListDataAssetsResponse>
@@ -1385,7 +1382,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "ListModels", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListModelsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListModelsResponse>
                 transformer =
                         ListModelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse> handlerToUse =
@@ -1426,7 +1423,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "ListProjects", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListProjectsResponse>
                 transformer =
                         ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
@@ -1471,8 +1468,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1519,8 +1515,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1564,7 +1559,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "ListWorkRequests", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1610,7 +1605,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
                         "UpdateAiPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateAiPrivateEndpointResponse>
                 transformer =
                         UpdateAiPrivateEndpointConverter.fromResponse(
@@ -1660,7 +1655,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "UpdateDataAsset", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
                 transformer =
                         UpdateDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1707,7 +1702,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "UpdateModel", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateModelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateModelResponse>
                 transformer =
                         UpdateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse>
@@ -1753,7 +1748,7 @@ public class AnomalyDetectionAsyncClient implements AnomalyDetectionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "UpdateProject", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
                 transformer =
                         UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>

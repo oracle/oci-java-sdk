@@ -6,7 +6,6 @@ package com.oracle.bmc.monitoring;
 
 import com.oracle.bmc.monitoring.requests.*;
 import com.oracle.bmc.monitoring.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -103,16 +102,16 @@ public class MonitoringWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetAlarmRequest, GetAlarmResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetAlarmRequest, GetAlarmResponse>() {
                             @Override
                             public GetAlarmResponse apply(GetAlarmRequest request) {
                                 return client.getAlarm(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAlarmResponse>() {
+                        new java.util.function.Predicate<GetAlarmResponse>() {
                             @Override
-                            public boolean apply(GetAlarmResponse response) {
+                            public boolean test(GetAlarmResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAlarm().getLifecycleState());
                             }

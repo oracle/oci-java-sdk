@@ -6,7 +6,6 @@ package com.oracle.bmc.bastion;
 
 import com.oracle.bmc.bastion.requests.*;
 import com.oracle.bmc.bastion.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -102,17 +101,16 @@ public class BastionWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetBastionRequest, GetBastionResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetBastionRequest, GetBastionResponse>() {
                             @Override
                             public GetBastionResponse apply(GetBastionRequest request) {
                                 return client.getBastion(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBastionResponse>() {
+                        new java.util.function.Predicate<GetBastionResponse>() {
                             @Override
-                            public boolean apply(GetBastionResponse response) {
+                            public boolean test(GetBastionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBastion().getLifecycleState());
                             }
@@ -200,17 +198,16 @@ public class BastionWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetSessionRequest, GetSessionResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetSessionRequest, GetSessionResponse>() {
                             @Override
                             public GetSessionResponse apply(GetSessionRequest request) {
                                 return client.getSession(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSessionResponse>() {
+                        new java.util.function.Predicate<GetSessionResponse>() {
                             @Override
-                            public boolean apply(GetSessionResponse response) {
+                            public boolean test(GetSessionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSession().getLifecycleState());
                             }
@@ -257,17 +254,17 @@ public class BastionWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

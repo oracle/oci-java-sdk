@@ -6,7 +6,6 @@ package com.oracle.bmc.goldengate;
 
 import com.oracle.bmc.goldengate.requests.*;
 import com.oracle.bmc.goldengate.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -111,8 +110,8 @@ public class GoldenGateWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDatabaseRegistrationRequest, GetDatabaseRegistrationResponse>() {
                             @Override
                             public GetDatabaseRegistrationResponse apply(
@@ -120,9 +119,9 @@ public class GoldenGateWaiters {
                                 return client.getDatabaseRegistration(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDatabaseRegistrationResponse>() {
+                        new java.util.function.Predicate<GetDatabaseRegistrationResponse>() {
                             @Override
-                            public boolean apply(GetDatabaseRegistrationResponse response) {
+                            public boolean test(GetDatabaseRegistrationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDatabaseRegistration().getLifecycleState());
                             }
@@ -210,17 +209,17 @@ public class GoldenGateWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDeploymentRequest, GetDeploymentResponse>() {
                             @Override
                             public GetDeploymentResponse apply(GetDeploymentRequest request) {
                                 return client.getDeployment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDeploymentResponse>() {
+                        new java.util.function.Predicate<GetDeploymentResponse>() {
                             @Override
-                            public boolean apply(GetDeploymentResponse response) {
+                            public boolean test(GetDeploymentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDeployment().getLifecycleState());
                             }
@@ -312,8 +311,8 @@ public class GoldenGateWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDeploymentBackupRequest, GetDeploymentBackupResponse>() {
                             @Override
                             public GetDeploymentBackupResponse apply(
@@ -321,9 +320,9 @@ public class GoldenGateWaiters {
                                 return client.getDeploymentBackup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDeploymentBackupResponse>() {
+                        new java.util.function.Predicate<GetDeploymentBackupResponse>() {
                             @Override
-                            public boolean apply(GetDeploymentBackupResponse response) {
+                            public boolean test(GetDeploymentBackupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDeploymentBackup().getLifecycleState());
                             }
@@ -415,8 +414,8 @@ public class GoldenGateWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDeploymentUpgradeRequest, GetDeploymentUpgradeResponse>() {
                             @Override
                             public GetDeploymentUpgradeResponse apply(
@@ -424,9 +423,9 @@ public class GoldenGateWaiters {
                                 return client.getDeploymentUpgrade(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDeploymentUpgradeResponse>() {
+                        new java.util.function.Predicate<GetDeploymentUpgradeResponse>() {
                             @Override
-                            public boolean apply(GetDeploymentUpgradeResponse response) {
+                            public boolean test(GetDeploymentUpgradeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDeploymentUpgrade().getLifecycleState());
                             }
@@ -473,17 +472,17 @@ public class GoldenGateWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

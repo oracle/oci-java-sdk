@@ -7,7 +7,6 @@ package com.oracle.bmc.core;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Compute service. <br/>
@@ -319,7 +318,7 @@ public class ComputeAsyncClient implements ComputeAsync {
          * @return the client
          */
         public ComputeAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class ComputeAsyncClient implements ComputeAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "AcceptShieldedIntegrityPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/MeasuredBootReport/AcceptShieldedIntegrityPolicy");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, AcceptShieldedIntegrityPolicyResponse>
                 transformer =
                         AcceptShieldedIntegrityPolicyConverter.fromResponse(
@@ -457,7 +457,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "AddImageShapeCompatibilityEntry",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/AddImageShapeCompatibilityEntry");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, AddImageShapeCompatibilityEntryResponse>
                 transformer =
                         AddImageShapeCompatibilityEntryConverter.fromResponse(
@@ -514,7 +514,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "AttachBootVolume",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/AttachBootVolume");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AttachBootVolumeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AttachBootVolumeResponse>
                 transformer =
                         AttachBootVolumeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -564,7 +564,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "AttachVnic",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/AttachVnic");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AttachVnicResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AttachVnicResponse>
                 transformer =
                         AttachVnicConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AttachVnicRequest, AttachVnicResponse> handlerToUse =
@@ -614,7 +614,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "AttachVolume",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/AttachVolume");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AttachVolumeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AttachVolumeResponse>
                 transformer =
                         AttachVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AttachVolumeRequest, AttachVolumeResponse>
@@ -665,8 +665,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "CaptureConsoleHistory",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/CaptureConsoleHistory");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CaptureConsoleHistoryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CaptureConsoleHistoryResponse>
                 transformer =
                         CaptureConsoleHistoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -722,7 +721,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ChangeComputeCapacityReservationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/ChangeComputeCapacityReservationCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeComputeCapacityReservationCompartmentResponse>
                 transformer =
@@ -785,7 +784,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ChangeComputeImageCapabilitySchemaCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/ChangeComputeImageCapabilitySchemaCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeComputeImageCapabilitySchemaCompartmentResponse>
                 transformer =
@@ -847,7 +846,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ChangeDedicatedVmHostCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/ChangeDedicatedVmHostCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDedicatedVmHostCompartmentResponse>
                 transformer =
                         ChangeDedicatedVmHostCompartmentConverter.fromResponse(
@@ -904,8 +903,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ChangeImageCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ChangeImageCompartment");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeImageCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeImageCompartmentResponse>
                 transformer =
                         ChangeImageCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -958,7 +956,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ChangeInstanceCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ChangeInstanceCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeInstanceCompartmentResponse>
                 transformer =
                         ChangeInstanceCompartmentConverter.fromResponse(
@@ -1015,7 +1013,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "CreateAppCatalogSubscription",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogSubscription/CreateAppCatalogSubscription");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateAppCatalogSubscriptionResponse>
                 transformer =
                         CreateAppCatalogSubscriptionConverter.fromResponse(
@@ -1072,7 +1070,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "CreateComputeCapacityReservation",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateComputeCapacityReservationResponse>
                 transformer =
                         CreateComputeCapacityReservationConverter.fromResponse(
@@ -1131,7 +1129,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "CreateComputeImageCapabilitySchema",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/CreateComputeImageCapabilitySchema");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateComputeImageCapabilitySchemaResponse>
                 transformer =
                         CreateComputeImageCapabilitySchemaConverter.fromResponse(
@@ -1188,8 +1186,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "CreateDedicatedVmHost",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/CreateDedicatedVmHost");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateDedicatedVmHostResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDedicatedVmHostResponse>
                 transformer =
                         CreateDedicatedVmHostConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1241,7 +1238,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "CreateImage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/CreateImage");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateImageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateImageResponse>
                 transformer =
                         CreateImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateImageRequest, CreateImageResponse>
@@ -1294,7 +1291,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "CreateInstanceConsoleConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/CreateInstanceConsoleConnection");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateInstanceConsoleConnectionResponse>
                 transformer =
                         CreateInstanceConsoleConnectionConverter.fromResponse(
@@ -1352,7 +1349,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "DeleteAppCatalogSubscription",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteAppCatalogSubscriptionResponse>
                 transformer =
                         DeleteAppCatalogSubscriptionConverter.fromResponse(
@@ -1403,7 +1400,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "DeleteComputeCapacityReservation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/DeleteComputeCapacityReservation");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteComputeCapacityReservationResponse>
                 transformer =
                         DeleteComputeCapacityReservationConverter.fromResponse(
@@ -1456,7 +1453,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "DeleteComputeImageCapabilitySchema",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/DeleteComputeImageCapabilitySchema");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteComputeImageCapabilitySchemaResponse>
                 transformer =
                         DeleteComputeImageCapabilitySchemaConverter.fromResponse(
@@ -1507,8 +1504,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "DeleteConsoleHistory",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/DeleteConsoleHistory");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteConsoleHistoryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteConsoleHistoryResponse>
                 transformer =
                         DeleteConsoleHistoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1555,8 +1551,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "DeleteDedicatedVmHost",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/DeleteDedicatedVmHost");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteDedicatedVmHostResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDedicatedVmHostResponse>
                 transformer =
                         DeleteDedicatedVmHostConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1599,7 +1594,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Compute", "DeleteImage", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteImageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteImageResponse>
                 transformer =
                         DeleteImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteImageRequest, DeleteImageResponse>
@@ -1646,7 +1641,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "DeleteInstanceConsoleConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/DeleteInstanceConsoleConnection");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteInstanceConsoleConnectionResponse>
                 transformer =
                         DeleteInstanceConsoleConnectionConverter.fromResponse(
@@ -1694,7 +1689,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Compute", "DetachBootVolume", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DetachBootVolumeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DetachBootVolumeResponse>
                 transformer =
                         DetachBootVolumeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1738,7 +1733,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "DetachVnic",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/DetachVnic");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DetachVnicResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DetachVnicResponse>
                 transformer =
                         DetachVnicConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DetachVnicRequest, DetachVnicResponse> handlerToUse =
@@ -1782,7 +1777,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "DetachVolume",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/DetachVolume");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DetachVolumeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DetachVolumeResponse>
                 transformer =
                         DetachVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DetachVolumeRequest, DetachVolumeResponse>
@@ -1827,7 +1822,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ExportImage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ExportImage");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ExportImageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ExportImageResponse>
                 transformer =
                         ExportImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ExportImageRequest, ExportImageResponse>
@@ -1877,8 +1872,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetAppCatalogListing",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListing/GetAppCatalogListing");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAppCatalogListingResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAppCatalogListingResponse>
                 transformer =
                         GetAppCatalogListingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1927,7 +1921,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetAppCatalogListingAgreements",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetAppCatalogListingAgreementsResponse>
                 transformer =
                         GetAppCatalogListingAgreementsConverter.fromResponse(
@@ -1980,7 +1974,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetAppCatalogListingResourceVersion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetAppCatalogListingResourceVersionResponse>
                 transformer =
                         GetAppCatalogListingResourceVersionConverter.fromResponse(
@@ -2031,7 +2025,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetBootVolumeAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/GetBootVolumeAttachment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetBootVolumeAttachmentResponse>
                 transformer =
                         GetBootVolumeAttachmentConverter.fromResponse(
@@ -2081,7 +2075,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetComputeCapacityReservation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/GetComputeCapacityReservation");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetComputeCapacityReservationResponse>
                 transformer =
                         GetComputeCapacityReservationConverter.fromResponse(
@@ -2133,7 +2127,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetComputeGlobalImageCapabilitySchema",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchema/GetComputeGlobalImageCapabilitySchema");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetComputeGlobalImageCapabilitySchemaResponse>
                 transformer =
                         GetComputeGlobalImageCapabilitySchemaConverter.fromResponse(
@@ -2187,7 +2181,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetComputeGlobalImageCapabilitySchemaVersion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaVersion/GetComputeGlobalImageCapabilitySchemaVersion");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetComputeGlobalImageCapabilitySchemaVersionResponse>
                 transformer =
@@ -2242,7 +2236,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetComputeImageCapabilitySchema",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/GetComputeImageCapabilitySchema");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetComputeImageCapabilitySchemaResponse>
                 transformer =
                         GetComputeImageCapabilitySchemaConverter.fromResponse(
@@ -2293,7 +2287,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetConsoleHistory",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/GetConsoleHistory");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetConsoleHistoryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetConsoleHistoryResponse>
                 transformer =
                         GetConsoleHistoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2339,7 +2333,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetConsoleHistoryContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/GetConsoleHistoryContent");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetConsoleHistoryContentResponse>
                 transformer =
                         GetConsoleHistoryContentConverter.fromResponse(
@@ -2387,7 +2381,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetDedicatedVmHost",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/GetDedicatedVmHost");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDedicatedVmHostResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDedicatedVmHostResponse>
                 transformer =
                         GetDedicatedVmHostConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2431,8 +2425,8 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetImage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/GetImage");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetImageResponse>
-                transformer = GetImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetImageResponse> transformer =
+                GetImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetImageRequest, GetImageResponse> handlerToUse =
                 handler;
 
@@ -2476,7 +2470,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetImageShapeCompatibilityEntry",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/GetImageShapeCompatibilityEntry");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetImageShapeCompatibilityEntryResponse>
                 transformer =
                         GetImageShapeCompatibilityEntryConverter.fromResponse(
@@ -2526,7 +2520,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/GetInstance");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetInstanceResponse>
                 transformer =
                         GetInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetInstanceRequest, GetInstanceResponse>
@@ -2573,7 +2567,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetInstanceConsoleConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/GetInstanceConsoleConnection");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetInstanceConsoleConnectionResponse>
                 transformer =
                         GetInstanceConsoleConnectionConverter.fromResponse(
@@ -2622,8 +2616,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetMeasuredBootReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/MeasuredBootReport/GetMeasuredBootReport");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetMeasuredBootReportResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMeasuredBootReportResponse>
                 transformer =
                         GetMeasuredBootReportConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2670,7 +2663,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetVnicAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/GetVnicAttachment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetVnicAttachmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetVnicAttachmentResponse>
                 transformer =
                         GetVnicAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2716,8 +2709,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetVolumeAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/GetVolumeAttachment");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetVolumeAttachmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetVolumeAttachmentResponse>
                 transformer =
                         GetVolumeAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2767,7 +2759,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "GetWindowsInstanceInitialCredentials",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceCredentials/GetWindowsInstanceInitialCredentials");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetWindowsInstanceInitialCredentialsResponse>
                 transformer =
                         GetWindowsInstanceInitialCredentialsConverter.fromResponse(
@@ -2819,7 +2811,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "InstanceAction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/InstanceAction");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, InstanceActionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, InstanceActionResponse>
                 transformer =
                         InstanceActionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<InstanceActionRequest, InstanceActionResponse>
@@ -2870,7 +2862,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "LaunchInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstance");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, LaunchInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, LaunchInstanceResponse>
                 transformer =
                         LaunchInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<LaunchInstanceRequest, LaunchInstanceResponse>
@@ -2923,7 +2915,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListAppCatalogListingResourceVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersionSummary/ListAppCatalogListingResourceVersions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAppCatalogListingResourceVersionsResponse>
                 transformer =
                         ListAppCatalogListingResourceVersionsConverter.fromResponse(
@@ -2974,8 +2966,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListAppCatalogListings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingSummary/ListAppCatalogListings");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAppCatalogListingsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAppCatalogListingsResponse>
                 transformer =
                         ListAppCatalogListingsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3024,7 +3015,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListAppCatalogSubscriptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogSubscriptionSummary/ListAppCatalogSubscriptions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAppCatalogSubscriptionsResponse>
                 transformer =
                         ListAppCatalogSubscriptionsConverter.fromResponse(
@@ -3073,7 +3064,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListBootVolumeAttachments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/ListBootVolumeAttachments");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListBootVolumeAttachmentsResponse>
                 transformer =
                         ListBootVolumeAttachmentsConverter.fromResponse(
@@ -3125,7 +3116,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListComputeCapacityReservationInstanceShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservationInstanceShapeSummary/ListComputeCapacityReservationInstanceShapes");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListComputeCapacityReservationInstanceShapesResponse>
                 transformer =
@@ -3181,7 +3172,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListComputeCapacityReservationInstances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CapacityReservationInstanceSummary/ListComputeCapacityReservationInstances");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListComputeCapacityReservationInstancesResponse>
                 transformer =
                         ListComputeCapacityReservationInstancesConverter.fromResponse(
@@ -3235,7 +3226,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListComputeCapacityReservations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/ListComputeCapacityReservations");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListComputeCapacityReservationsResponse>
                 transformer =
                         ListComputeCapacityReservationsConverter.fromResponse(
@@ -3289,7 +3280,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListComputeGlobalImageCapabilitySchemaVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaVersionSummary/ListComputeGlobalImageCapabilitySchemaVersions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListComputeGlobalImageCapabilitySchemaVersionsResponse>
                 transformer =
@@ -3345,7 +3336,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListComputeGlobalImageCapabilitySchemas",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaSummary/ListComputeGlobalImageCapabilitySchemas");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListComputeGlobalImageCapabilitySchemasResponse>
                 transformer =
                         ListComputeGlobalImageCapabilitySchemasConverter.fromResponse(
@@ -3399,7 +3390,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListComputeImageCapabilitySchemas",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchemaSummary/ListComputeImageCapabilitySchemas");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListComputeImageCapabilitySchemasResponse>
                 transformer =
                         ListComputeImageCapabilitySchemasConverter.fromResponse(
@@ -3450,8 +3441,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListConsoleHistories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/ListConsoleHistories");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListConsoleHistoriesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListConsoleHistoriesResponse>
                 transformer =
                         ListConsoleHistoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3500,7 +3490,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListDedicatedVmHostInstanceShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostInstanceShapeSummary/ListDedicatedVmHostInstanceShapes");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDedicatedVmHostInstanceShapesResponse>
                 transformer =
                         ListDedicatedVmHostInstanceShapesConverter.fromResponse(
@@ -3553,7 +3543,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListDedicatedVmHostInstances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostInstanceSummary/ListDedicatedVmHostInstances");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDedicatedVmHostInstancesResponse>
                 transformer =
                         ListDedicatedVmHostInstancesConverter.fromResponse(
@@ -3602,7 +3592,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListDedicatedVmHostShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDedicatedVmHostShapesResponse>
                 transformer =
                         ListDedicatedVmHostShapesConverter.fromResponse(
@@ -3651,8 +3641,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListDedicatedVmHosts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostSummary/ListDedicatedVmHosts");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDedicatedVmHostsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDedicatedVmHostsResponse>
                 transformer =
                         ListDedicatedVmHostsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3701,7 +3690,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListImageShapeCompatibilityEntries",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/ListImageShapeCompatibilityEntries");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListImageShapeCompatibilityEntriesResponse>
                 transformer =
                         ListImageShapeCompatibilityEntriesConverter.fromResponse(
@@ -3750,7 +3739,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListImages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ListImages");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListImagesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListImagesResponse>
                 transformer =
                         ListImagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListImagesRequest, ListImagesResponse> handlerToUse =
@@ -3797,7 +3786,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListInstanceConsoleConnections",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/ListInstanceConsoleConnections");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListInstanceConsoleConnectionsResponse>
                 transformer =
                         ListInstanceConsoleConnectionsConverter.fromResponse(
@@ -3847,8 +3836,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListInstanceDevices",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Device/ListInstanceDevices");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListInstanceDevicesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListInstanceDevicesResponse>
                 transformer =
                         ListInstanceDevicesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3894,7 +3882,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListInstances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ListInstances");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListInstancesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListInstancesResponse>
                 transformer =
                         ListInstancesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListInstancesRequest, ListInstancesResponse>
@@ -3937,7 +3925,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Shape/ListShapes");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListShapesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListShapesResponse>
                 transformer =
                         ListShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListShapesRequest, ListShapesResponse> handlerToUse =
@@ -3982,8 +3970,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListVnicAttachments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/ListVnicAttachments");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListVnicAttachmentsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListVnicAttachmentsResponse>
                 transformer =
                         ListVnicAttachmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4030,8 +4017,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "ListVolumeAttachments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/ListVolumeAttachments");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListVolumeAttachmentsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListVolumeAttachmentsResponse>
                 transformer =
                         ListVolumeAttachmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4080,7 +4066,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "RemoveImageShapeCompatibilityEntry",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/RemoveImageShapeCompatibilityEntry");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveImageShapeCompatibilityEntryResponse>
                 transformer =
                         RemoveImageShapeCompatibilityEntryConverter.fromResponse(
@@ -4128,7 +4114,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Compute", "TerminateInstance", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, TerminateInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, TerminateInstanceResponse>
                 transformer =
                         TerminateInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4176,7 +4162,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "UpdateComputeCapacityReservation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/UpdateComputeCapacityReservation");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateComputeCapacityReservationResponse>
                 transformer =
                         UpdateComputeCapacityReservationConverter.fromResponse(
@@ -4234,7 +4220,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "UpdateComputeImageCapabilitySchema",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/UpdateComputeImageCapabilitySchema");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateComputeImageCapabilitySchemaResponse>
                 transformer =
                         UpdateComputeImageCapabilitySchemaConverter.fromResponse(
@@ -4290,8 +4276,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "UpdateConsoleHistory",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/UpdateConsoleHistory");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateConsoleHistoryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateConsoleHistoryResponse>
                 transformer =
                         UpdateConsoleHistoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4344,8 +4329,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "UpdateDedicatedVmHost",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/UpdateDedicatedVmHost");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateDedicatedVmHostResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDedicatedVmHostResponse>
                 transformer =
                         UpdateDedicatedVmHostConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4397,7 +4381,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "UpdateImage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/UpdateImage");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateImageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateImageResponse>
                 transformer =
                         UpdateImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateImageRequest, UpdateImageResponse>
@@ -4448,7 +4432,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "UpdateInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/UpdateInstance");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateInstanceResponse>
                 transformer =
                         UpdateInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateInstanceRequest, UpdateInstanceResponse>
@@ -4500,7 +4484,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "UpdateInstanceConsoleConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/UpdateInstanceConsoleConnection");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateInstanceConsoleConnectionResponse>
                 transformer =
                         UpdateInstanceConsoleConnectionConverter.fromResponse(
@@ -4556,8 +4540,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "UpdateVolumeAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/UpdateVolumeAttachment");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateVolumeAttachmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateVolumeAttachmentResponse>
                 transformer =
                         UpdateVolumeAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

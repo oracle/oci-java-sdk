@@ -44,19 +44,19 @@ public class EmDataLakePaginators {
             final ListEmWarehousesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListEmWarehousesRequest.Builder, ListEmWarehousesRequest, ListEmWarehousesResponse>(
-                new com.google.common.base.Supplier<ListEmWarehousesRequest.Builder>() {
+                new java.util.function.Supplier<ListEmWarehousesRequest.Builder>() {
                     @Override
                     public ListEmWarehousesRequest.Builder get() {
                         return ListEmWarehousesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEmWarehousesResponse, String>() {
+                new java.util.function.Function<ListEmWarehousesResponse, String>() {
                     @Override
                     public String apply(ListEmWarehousesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEmWarehousesRequest.Builder>,
                         ListEmWarehousesRequest>() {
@@ -69,12 +69,12 @@ public class EmDataLakePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListEmWarehousesRequest, ListEmWarehousesResponse>() {
                     @Override
                     public ListEmWarehousesResponse apply(ListEmWarehousesRequest request) {
@@ -97,19 +97,19 @@ public class EmDataLakePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListEmWarehousesRequest.Builder, ListEmWarehousesRequest, ListEmWarehousesResponse,
                 com.oracle.bmc.emwarehouse.model.EmWarehouseSummary>(
-                new com.google.common.base.Supplier<ListEmWarehousesRequest.Builder>() {
+                new java.util.function.Supplier<ListEmWarehousesRequest.Builder>() {
                     @Override
                     public ListEmWarehousesRequest.Builder get() {
                         return ListEmWarehousesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEmWarehousesResponse, String>() {
+                new java.util.function.Function<ListEmWarehousesResponse, String>() {
                     @Override
                     public String apply(ListEmWarehousesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEmWarehousesRequest.Builder>,
                         ListEmWarehousesRequest>() {
@@ -122,19 +122,19 @@ public class EmDataLakePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListEmWarehousesRequest, ListEmWarehousesResponse>() {
                     @Override
                     public ListEmWarehousesResponse apply(ListEmWarehousesRequest request) {
                         return client.listEmWarehouses(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListEmWarehousesResponse,
                         java.util.List<com.oracle.bmc.emwarehouse.model.EmWarehouseSummary>>() {
                     @Override
@@ -156,19 +156,19 @@ public class EmDataLakePaginators {
             final ListEtlRunsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListEtlRunsRequest.Builder, ListEtlRunsRequest, ListEtlRunsResponse>(
-                new com.google.common.base.Supplier<ListEtlRunsRequest.Builder>() {
+                new java.util.function.Supplier<ListEtlRunsRequest.Builder>() {
                     @Override
                     public ListEtlRunsRequest.Builder get() {
                         return ListEtlRunsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEtlRunsResponse, String>() {
+                new java.util.function.Function<ListEtlRunsResponse, String>() {
                     @Override
                     public String apply(ListEtlRunsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEtlRunsRequest.Builder>,
                         ListEtlRunsRequest>() {
@@ -181,12 +181,12 @@ public class EmDataLakePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListEtlRunsRequest, ListEtlRunsResponse>() {
+                new java.util.function.Function<ListEtlRunsRequest, ListEtlRunsResponse>() {
                     @Override
                     public ListEtlRunsResponse apply(ListEtlRunsRequest request) {
                         return client.listEtlRuns(request);
@@ -208,19 +208,19 @@ public class EmDataLakePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListEtlRunsRequest.Builder, ListEtlRunsRequest, ListEtlRunsResponse,
                 com.oracle.bmc.emwarehouse.model.EtlRunSummary>(
-                new com.google.common.base.Supplier<ListEtlRunsRequest.Builder>() {
+                new java.util.function.Supplier<ListEtlRunsRequest.Builder>() {
                     @Override
                     public ListEtlRunsRequest.Builder get() {
                         return ListEtlRunsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEtlRunsResponse, String>() {
+                new java.util.function.Function<ListEtlRunsResponse, String>() {
                     @Override
                     public String apply(ListEtlRunsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEtlRunsRequest.Builder>,
                         ListEtlRunsRequest>() {
@@ -233,18 +233,18 @@ public class EmDataLakePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListEtlRunsRequest, ListEtlRunsResponse>() {
+                new java.util.function.Function<ListEtlRunsRequest, ListEtlRunsResponse>() {
                     @Override
                     public ListEtlRunsResponse apply(ListEtlRunsRequest request) {
                         return client.listEtlRuns(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListEtlRunsResponse,
                         java.util.List<com.oracle.bmc.emwarehouse.model.EtlRunSummary>>() {
                     @Override
@@ -267,19 +267,19 @@ public class EmDataLakePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -292,12 +292,12 @@ public class EmDataLakePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -321,19 +321,19 @@ public class EmDataLakePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse, com.oracle.bmc.emwarehouse.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -346,12 +346,12 @@ public class EmDataLakePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -359,7 +359,7 @@ public class EmDataLakePaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<com.oracle.bmc.emwarehouse.model.WorkRequestError>>() {
                     @Override
@@ -382,19 +382,19 @@ public class EmDataLakePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -407,12 +407,12 @@ public class EmDataLakePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -435,19 +435,19 @@ public class EmDataLakePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse, com.oracle.bmc.emwarehouse.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -460,19 +460,19 @@ public class EmDataLakePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<com.oracle.bmc.emwarehouse.model.WorkRequestLogEntry>>() {
                     @Override
@@ -494,19 +494,19 @@ public class EmDataLakePaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -519,12 +519,12 @@ public class EmDataLakePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -547,19 +547,19 @@ public class EmDataLakePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.emwarehouse.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -572,19 +572,19 @@ public class EmDataLakePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<com.oracle.bmc.emwarehouse.model.WorkRequestSummary>>() {
                     @Override

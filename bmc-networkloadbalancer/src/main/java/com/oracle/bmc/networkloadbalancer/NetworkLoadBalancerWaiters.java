@@ -6,7 +6,6 @@ package com.oracle.bmc.networkloadbalancer;
 
 import com.oracle.bmc.networkloadbalancer.requests.*;
 import com.oracle.bmc.networkloadbalancer.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -111,8 +110,8 @@ public class NetworkLoadBalancerWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetNetworkLoadBalancerRequest, GetNetworkLoadBalancerResponse>() {
                             @Override
                             public GetNetworkLoadBalancerResponse apply(
@@ -120,9 +119,9 @@ public class NetworkLoadBalancerWaiters {
                                 return client.getNetworkLoadBalancer(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetNetworkLoadBalancerResponse>() {
+                        new java.util.function.Predicate<GetNetworkLoadBalancerResponse>() {
                             @Override
-                            public boolean apply(GetNetworkLoadBalancerResponse response) {
+                            public boolean test(GetNetworkLoadBalancerResponse response) {
                                 return targetStatesSet.contains(
                                         response.getNetworkLoadBalancer().getLifecycleState());
                             }
@@ -169,17 +168,17 @@ public class NetworkLoadBalancerWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

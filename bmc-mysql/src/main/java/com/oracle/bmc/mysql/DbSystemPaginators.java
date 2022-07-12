@@ -44,19 +44,19 @@ public class DbSystemPaginators {
             final ListDbSystemsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDbSystemsRequest.Builder, ListDbSystemsRequest, ListDbSystemsResponse>(
-                new com.google.common.base.Supplier<ListDbSystemsRequest.Builder>() {
+                new java.util.function.Supplier<ListDbSystemsRequest.Builder>() {
                     @Override
                     public ListDbSystemsRequest.Builder get() {
                         return ListDbSystemsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDbSystemsResponse, String>() {
+                new java.util.function.Function<ListDbSystemsResponse, String>() {
                     @Override
                     public String apply(ListDbSystemsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDbSystemsRequest.Builder>,
                         ListDbSystemsRequest>() {
@@ -69,12 +69,12 @@ public class DbSystemPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListDbSystemsRequest, ListDbSystemsResponse>() {
+                new java.util.function.Function<ListDbSystemsRequest, ListDbSystemsResponse>() {
                     @Override
                     public ListDbSystemsResponse apply(ListDbSystemsRequest request) {
                         return client.listDbSystems(request);
@@ -96,19 +96,19 @@ public class DbSystemPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDbSystemsRequest.Builder, ListDbSystemsRequest, ListDbSystemsResponse,
                 com.oracle.bmc.mysql.model.DbSystemSummary>(
-                new com.google.common.base.Supplier<ListDbSystemsRequest.Builder>() {
+                new java.util.function.Supplier<ListDbSystemsRequest.Builder>() {
                     @Override
                     public ListDbSystemsRequest.Builder get() {
                         return ListDbSystemsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDbSystemsResponse, String>() {
+                new java.util.function.Function<ListDbSystemsResponse, String>() {
                     @Override
                     public String apply(ListDbSystemsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDbSystemsRequest.Builder>,
                         ListDbSystemsRequest>() {
@@ -121,18 +121,18 @@ public class DbSystemPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListDbSystemsRequest, ListDbSystemsResponse>() {
+                new java.util.function.Function<ListDbSystemsRequest, ListDbSystemsResponse>() {
                     @Override
                     public ListDbSystemsResponse apply(ListDbSystemsRequest request) {
                         return client.listDbSystems(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDbSystemsResponse,
                         java.util.List<com.oracle.bmc.mysql.model.DbSystemSummary>>() {
                     @Override

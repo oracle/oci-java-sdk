@@ -6,7 +6,6 @@ package com.oracle.bmc.bds;
 
 import com.oracle.bmc.bds.requests.*;
 import com.oracle.bmc.bds.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -113,8 +112,8 @@ public class BdsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetAutoScalingConfigurationRequest,
                                 GetAutoScalingConfigurationResponse>() {
                             @Override
@@ -123,10 +122,9 @@ public class BdsWaiters {
                                 return client.getAutoScalingConfiguration(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetAutoScalingConfigurationResponse>() {
+                        new java.util.function.Predicate<GetAutoScalingConfigurationResponse>() {
                             @Override
-                            public boolean apply(GetAutoScalingConfigurationResponse response) {
+                            public boolean test(GetAutoScalingConfigurationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAutoScalingConfiguration().getLifecycleState());
                             }
@@ -215,17 +213,17 @@ public class BdsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetBdsApiKeyRequest, GetBdsApiKeyResponse>() {
                             @Override
                             public GetBdsApiKeyResponse apply(GetBdsApiKeyRequest request) {
                                 return client.getBdsApiKey(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBdsApiKeyResponse>() {
+                        new java.util.function.Predicate<GetBdsApiKeyResponse>() {
                             @Override
-                            public boolean apply(GetBdsApiKeyResponse response) {
+                            public boolean test(GetBdsApiKeyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBdsApiKey().getLifecycleState());
                             }
@@ -317,17 +315,17 @@ public class BdsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetBdsInstanceRequest, GetBdsInstanceResponse>() {
                             @Override
                             public GetBdsInstanceResponse apply(GetBdsInstanceRequest request) {
                                 return client.getBdsInstance(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBdsInstanceResponse>() {
+                        new java.util.function.Predicate<GetBdsInstanceResponse>() {
                             @Override
-                            public boolean apply(GetBdsInstanceResponse response) {
+                            public boolean test(GetBdsInstanceResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBdsInstance().getLifecycleState());
                             }
@@ -426,8 +424,8 @@ public class BdsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetBdsMetastoreConfigurationRequest,
                                 GetBdsMetastoreConfigurationResponse>() {
                             @Override
@@ -436,10 +434,9 @@ public class BdsWaiters {
                                 return client.getBdsMetastoreConfiguration(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetBdsMetastoreConfigurationResponse>() {
+                        new java.util.function.Predicate<GetBdsMetastoreConfigurationResponse>() {
                             @Override
-                            public boolean apply(GetBdsMetastoreConfigurationResponse response) {
+                            public boolean test(GetBdsMetastoreConfigurationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBdsMetastoreConfiguration()
                                                 .getLifecycleState());
@@ -488,17 +485,17 @@ public class BdsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

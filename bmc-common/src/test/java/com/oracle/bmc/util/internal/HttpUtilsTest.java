@@ -4,8 +4,6 @@
  */
 package com.oracle.bmc.util.internal;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.http.internal.WrappedWebTarget;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -13,6 +11,9 @@ import org.mockito.Mockito;
 
 import javax.ws.rs.client.WebTarget;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -91,7 +92,10 @@ public class HttpUtilsTest {
         String prefix = "definedTags Exists.";
         String keyName1 = "tagMustExist";
         String keyName2 = "tagMust NotExist";
-        Map<String, Boolean> definedTagsExists = ImmutableMap.of(keyName1, true, keyName2, false);
+        Map<String, Boolean> temp = new HashMap<>();
+        temp.put(keyName1, true);
+        temp.put(keyName2, false);
+        Map<String, Boolean> definedTagsExists = Collections.unmodifiableMap(temp);
 
         WebTarget target = mock(WebTarget.class);
 
@@ -119,10 +123,10 @@ public class HttpUtilsTest {
         String keyName2 = "tag 2";
         String option2a = "option2a";
         String option2b = "option2 b";
-        Map<String, List<String>> definedTags =
-                ImmutableMap.<String, List<String>>of(
-                        keyName1, ImmutableList.of(option1a, option1b),
-                        keyName2, ImmutableList.of(option2a, option2b));
+        Map<String, List<String>> temp = new HashMap<>();
+        temp.put(keyName1, Collections.unmodifiableList(Arrays.asList(option1a, option1b)));
+        temp.put(keyName2, Collections.unmodifiableList(Arrays.asList(option2a, option2b)));
+        Map<String, List<String>> definedTags = Collections.unmodifiableMap(temp);
 
         WebTarget target = mock(WebTarget.class);
 
@@ -160,7 +164,11 @@ public class HttpUtilsTest {
         String prefix = null;
         String keyName1 = "tagMustExist";
         String keyName2 = "tagMust NotExist";
-        Map<String, Boolean> definedTagsExists = ImmutableMap.of(keyName1, true, keyName2, false);
+
+        Map<String, Boolean> temp = new HashMap<>();
+        temp.put(keyName1, true);
+        temp.put(keyName2, false);
+        Map<String, Boolean> definedTagsExists = Collections.unmodifiableMap(temp);
 
         WebTarget target = mock(WebTarget.class);
 
@@ -357,5 +365,91 @@ public class HttpUtilsTest {
         public String getValue() {
             return value;
         }
-    };
+    }
+
+    /**
+     * These tests are adapted from the Guava UrlEscapersTest.
+     * @link https://github.com/google/guava/blob/0de7000ff521d14a1387196753118eedb3465d2d/guava-tests/test/com/google/common/net/UrlEscapersTest.java#L111
+     */
+    @Test
+    public void testUrlPathSegmentEscape() {
+        // from assertBasicUrlEscaperExceptPercent()
+        // All URL escapers should leave 0-9, A-Z, a-z unescaped
+        assertUnescaped('a');
+        assertUnescaped('z');
+        assertUnescaped('A');
+        assertUnescaped('Z');
+        assertUnescaped('0');
+        assertUnescaped('9');
+
+        // Unreserved characters used in java.net.URLEncoder
+        assertUnescaped('-');
+        assertUnescaped('_');
+        assertUnescaped('.');
+        assertUnescaped('*');
+
+        assertEscaping("%00", '\u0000'); // nul
+        assertEscaping("%7F", '\u007f'); // del
+        assertEscaping("%C2%80", '\u0080'); // xx-00010,x-000000
+        assertEscaping("%DF%BF", '\u07ff'); // xx-11111,x-111111
+        assertEscaping("%E0%A0%80", '\u0800'); // xxx-0000,x-100000,x-00,0000
+        assertEscaping("%EF%BF%BF", '\uffff'); // xxx-1111,x-111111,x-11,1111
+        assertUnicodeEscaping("%F0%90%80%80", '\uD800', '\uDC00');
+        assertUnicodeEscaping("%F4%8F%BF%BF", '\uDBFF', '\uDFFF');
+
+        assertEquals("", HttpUtils.urlPathSegmentEscape(""));
+        assertEquals("safestring", HttpUtils.urlPathSegmentEscape("safestring"));
+        assertEquals("embedded%00null", HttpUtils.urlPathSegmentEscape("embedded\0null"));
+        assertEquals("max%EF%BF%BFchar", HttpUtils.urlPathSegmentEscape("max\uffffchar"));
+
+        // from assertBasicUrlEscaper()
+        // The escape character must always be escaped
+        assertEscaping("%25", '%');
+
+        // from assertPathEscaper()
+        assertUnescaped('!');
+        assertUnescaped('\'');
+        assertUnescaped('(');
+        assertUnescaped(')');
+        assertUnescaped('~');
+        assertUnescaped(':');
+        assertUnescaped('@');
+
+        // Don't use plus for spaces
+        assertEscaping("%20", ' ');
+
+        assertEquals("safe%20with%20spaces", HttpUtils.urlPathSegmentEscape(("safe with spaces")));
+        assertEquals("foo@bar.com", HttpUtils.urlPathSegmentEscape(("foo@bar.com")));
+
+        // from testHttpUtilsEscaper()
+        assertUnescaped('+');
+    }
+
+    private void assertEscaping(String expected, char unescaped) {
+        assertEquals(expected, HttpUtils.urlPathSegmentEscape(String.valueOf(unescaped)));
+    }
+
+    private static void assertUnescaped(char ch) {
+        assertEquals(String.valueOf(ch), HttpUtils.urlPathSegmentEscape(String.valueOf(ch)));
+    }
+
+    private void assertUnicodeEscaping(String expected, char hi, char lo) {
+        int cp = Character.toCodePoint(hi, lo);
+        String escaped = HttpUtils.urlPathSegmentEscape(codepointToString(cp));
+        assertNotNull(escaped);
+        assertEquals(expected, escaped);
+    }
+
+    private static String codepointToString(int cp) {
+        StringBuilder sb = new StringBuilder();
+        if (Character.isBmpCodePoint(cp)) {
+            sb.append((char) cp);
+        } else if (Character.isValidCodePoint(cp)) {
+            sb.append(Character.highSurrogate(cp));
+            sb.append(Character.lowSurrogate(cp));
+        } else {
+            sb.append('?');
+        }
+        return sb.toString();
+    }
 }

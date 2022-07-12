@@ -9,7 +9,6 @@ import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class DomainGovernanceClient implements DomainGovernance {
@@ -335,9 +334,9 @@ public class DomainGovernanceClient implements DomainGovernance {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DomainGovernance-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DomainGovernance-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class DomainGovernanceClient implements DomainGovernance {
          * @return the client
          */
         public DomainGovernanceClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class DomainGovernanceClient implements DomainGovernance {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class DomainGovernanceClient implements DomainGovernance {
                         "CreateDomainGovernance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/CreateDomainGovernance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDomainGovernanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDomainGovernanceResponse>
                 transformer =
                         CreateDomainGovernanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -531,7 +531,7 @@ public class DomainGovernanceClient implements DomainGovernance {
                         "DeleteDomainGovernance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/DeleteDomainGovernance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDomainGovernanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDomainGovernanceResponse>
                 transformer =
                         DeleteDomainGovernanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -569,7 +569,7 @@ public class DomainGovernanceClient implements DomainGovernance {
                         "GetDomainGovernance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/GetDomainGovernance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDomainGovernanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDomainGovernanceResponse>
                 transformer =
                         GetDomainGovernanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -607,7 +607,7 @@ public class DomainGovernanceClient implements DomainGovernance {
                         "ListDomainGovernances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/ListDomainGovernances");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDomainGovernancesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDomainGovernancesResponse>
                 transformer =
                         ListDomainGovernancesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -645,7 +645,7 @@ public class DomainGovernanceClient implements DomainGovernance {
                         "UpdateDomainGovernance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/UpdateDomainGovernance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDomainGovernanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDomainGovernanceResponse>
                 transformer =
                         UpdateDomainGovernanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

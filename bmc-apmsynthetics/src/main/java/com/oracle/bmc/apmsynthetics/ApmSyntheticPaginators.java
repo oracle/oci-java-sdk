@@ -45,19 +45,19 @@ public class ApmSyntheticPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDedicatedVantagePointsRequest.Builder, ListDedicatedVantagePointsRequest,
                 ListDedicatedVantagePointsResponse>(
-                new com.google.common.base.Supplier<ListDedicatedVantagePointsRequest.Builder>() {
+                new java.util.function.Supplier<ListDedicatedVantagePointsRequest.Builder>() {
                     @Override
                     public ListDedicatedVantagePointsRequest.Builder get() {
                         return ListDedicatedVantagePointsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDedicatedVantagePointsResponse, String>() {
+                new java.util.function.Function<ListDedicatedVantagePointsResponse, String>() {
                     @Override
                     public String apply(ListDedicatedVantagePointsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDedicatedVantagePointsRequest.Builder>,
                         ListDedicatedVantagePointsRequest>() {
@@ -70,12 +70,12 @@ public class ApmSyntheticPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDedicatedVantagePointsRequest, ListDedicatedVantagePointsResponse>() {
                     @Override
                     public ListDedicatedVantagePointsResponse apply(
@@ -101,19 +101,19 @@ public class ApmSyntheticPaginators {
                 ListDedicatedVantagePointsRequest.Builder, ListDedicatedVantagePointsRequest,
                 ListDedicatedVantagePointsResponse,
                 com.oracle.bmc.apmsynthetics.model.DedicatedVantagePointSummary>(
-                new com.google.common.base.Supplier<ListDedicatedVantagePointsRequest.Builder>() {
+                new java.util.function.Supplier<ListDedicatedVantagePointsRequest.Builder>() {
                     @Override
                     public ListDedicatedVantagePointsRequest.Builder get() {
                         return ListDedicatedVantagePointsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDedicatedVantagePointsResponse, String>() {
+                new java.util.function.Function<ListDedicatedVantagePointsResponse, String>() {
                     @Override
                     public String apply(ListDedicatedVantagePointsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDedicatedVantagePointsRequest.Builder>,
                         ListDedicatedVantagePointsRequest>() {
@@ -126,12 +126,12 @@ public class ApmSyntheticPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDedicatedVantagePointsRequest, ListDedicatedVantagePointsResponse>() {
                     @Override
                     public ListDedicatedVantagePointsResponse apply(
@@ -139,7 +139,7 @@ public class ApmSyntheticPaginators {
                         return client.listDedicatedVantagePoints(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDedicatedVantagePointsResponse,
                         java.util.List<
                                 com.oracle.bmc.apmsynthetics.model
@@ -164,19 +164,19 @@ public class ApmSyntheticPaginators {
             final ListMonitorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListMonitorsRequest.Builder, ListMonitorsRequest, ListMonitorsResponse>(
-                new com.google.common.base.Supplier<ListMonitorsRequest.Builder>() {
+                new java.util.function.Supplier<ListMonitorsRequest.Builder>() {
                     @Override
                     public ListMonitorsRequest.Builder get() {
                         return ListMonitorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListMonitorsResponse, String>() {
+                new java.util.function.Function<ListMonitorsResponse, String>() {
                     @Override
                     public String apply(ListMonitorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListMonitorsRequest.Builder>,
                         ListMonitorsRequest>() {
@@ -189,12 +189,12 @@ public class ApmSyntheticPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListMonitorsRequest, ListMonitorsResponse>() {
+                new java.util.function.Function<ListMonitorsRequest, ListMonitorsResponse>() {
                     @Override
                     public ListMonitorsResponse apply(ListMonitorsRequest request) {
                         return client.listMonitors(request);
@@ -216,19 +216,19 @@ public class ApmSyntheticPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListMonitorsRequest.Builder, ListMonitorsRequest, ListMonitorsResponse,
                 com.oracle.bmc.apmsynthetics.model.MonitorSummary>(
-                new com.google.common.base.Supplier<ListMonitorsRequest.Builder>() {
+                new java.util.function.Supplier<ListMonitorsRequest.Builder>() {
                     @Override
                     public ListMonitorsRequest.Builder get() {
                         return ListMonitorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListMonitorsResponse, String>() {
+                new java.util.function.Function<ListMonitorsResponse, String>() {
                     @Override
                     public String apply(ListMonitorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListMonitorsRequest.Builder>,
                         ListMonitorsRequest>() {
@@ -241,18 +241,18 @@ public class ApmSyntheticPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListMonitorsRequest, ListMonitorsResponse>() {
+                new java.util.function.Function<ListMonitorsRequest, ListMonitorsResponse>() {
                     @Override
                     public ListMonitorsResponse apply(ListMonitorsRequest request) {
                         return client.listMonitors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListMonitorsResponse,
                         java.util.List<com.oracle.bmc.apmsynthetics.model.MonitorSummary>>() {
                     @Override
@@ -275,19 +275,19 @@ public class ApmSyntheticPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPublicVantagePointsRequest.Builder, ListPublicVantagePointsRequest,
                 ListPublicVantagePointsResponse>(
-                new com.google.common.base.Supplier<ListPublicVantagePointsRequest.Builder>() {
+                new java.util.function.Supplier<ListPublicVantagePointsRequest.Builder>() {
                     @Override
                     public ListPublicVantagePointsRequest.Builder get() {
                         return ListPublicVantagePointsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPublicVantagePointsResponse, String>() {
+                new java.util.function.Function<ListPublicVantagePointsResponse, String>() {
                     @Override
                     public String apply(ListPublicVantagePointsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPublicVantagePointsRequest.Builder>,
                         ListPublicVantagePointsRequest>() {
@@ -300,12 +300,12 @@ public class ApmSyntheticPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicVantagePointsRequest, ListPublicVantagePointsResponse>() {
                     @Override
                     public ListPublicVantagePointsResponse apply(
@@ -330,19 +330,19 @@ public class ApmSyntheticPaginators {
                 ListPublicVantagePointsRequest.Builder, ListPublicVantagePointsRequest,
                 ListPublicVantagePointsResponse,
                 com.oracle.bmc.apmsynthetics.model.PublicVantagePointSummary>(
-                new com.google.common.base.Supplier<ListPublicVantagePointsRequest.Builder>() {
+                new java.util.function.Supplier<ListPublicVantagePointsRequest.Builder>() {
                     @Override
                     public ListPublicVantagePointsRequest.Builder get() {
                         return ListPublicVantagePointsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPublicVantagePointsResponse, String>() {
+                new java.util.function.Function<ListPublicVantagePointsResponse, String>() {
                     @Override
                     public String apply(ListPublicVantagePointsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPublicVantagePointsRequest.Builder>,
                         ListPublicVantagePointsRequest>() {
@@ -355,12 +355,12 @@ public class ApmSyntheticPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicVantagePointsRequest, ListPublicVantagePointsResponse>() {
                     @Override
                     public ListPublicVantagePointsResponse apply(
@@ -368,7 +368,7 @@ public class ApmSyntheticPaginators {
                         return client.listPublicVantagePoints(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicVantagePointsResponse,
                         java.util.List<
                                 com.oracle.bmc.apmsynthetics.model.PublicVantagePointSummary>>() {
@@ -392,19 +392,19 @@ public class ApmSyntheticPaginators {
             final ListScriptsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListScriptsRequest.Builder, ListScriptsRequest, ListScriptsResponse>(
-                new com.google.common.base.Supplier<ListScriptsRequest.Builder>() {
+                new java.util.function.Supplier<ListScriptsRequest.Builder>() {
                     @Override
                     public ListScriptsRequest.Builder get() {
                         return ListScriptsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListScriptsResponse, String>() {
+                new java.util.function.Function<ListScriptsResponse, String>() {
                     @Override
                     public String apply(ListScriptsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListScriptsRequest.Builder>,
                         ListScriptsRequest>() {
@@ -417,12 +417,12 @@ public class ApmSyntheticPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListScriptsRequest, ListScriptsResponse>() {
+                new java.util.function.Function<ListScriptsRequest, ListScriptsResponse>() {
                     @Override
                     public ListScriptsResponse apply(ListScriptsRequest request) {
                         return client.listScripts(request);
@@ -444,19 +444,19 @@ public class ApmSyntheticPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListScriptsRequest.Builder, ListScriptsRequest, ListScriptsResponse,
                 com.oracle.bmc.apmsynthetics.model.ScriptSummary>(
-                new com.google.common.base.Supplier<ListScriptsRequest.Builder>() {
+                new java.util.function.Supplier<ListScriptsRequest.Builder>() {
                     @Override
                     public ListScriptsRequest.Builder get() {
                         return ListScriptsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListScriptsResponse, String>() {
+                new java.util.function.Function<ListScriptsResponse, String>() {
                     @Override
                     public String apply(ListScriptsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListScriptsRequest.Builder>,
                         ListScriptsRequest>() {
@@ -469,18 +469,18 @@ public class ApmSyntheticPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListScriptsRequest, ListScriptsResponse>() {
+                new java.util.function.Function<ListScriptsRequest, ListScriptsResponse>() {
                     @Override
                     public ListScriptsResponse apply(ListScriptsRequest request) {
                         return client.listScripts(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListScriptsResponse,
                         java.util.List<com.oracle.bmc.apmsynthetics.model.ScriptSummary>>() {
                     @Override

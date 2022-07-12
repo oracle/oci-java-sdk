@@ -6,7 +6,6 @@ package com.oracle.bmc.keymanagement;
 
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -102,16 +101,16 @@ public class KmsManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetKeyRequest, GetKeyResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetKeyRequest, GetKeyResponse>() {
                             @Override
                             public GetKeyResponse apply(GetKeyRequest request) {
                                 return client.getKey(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetKeyResponse>() {
+                        new java.util.function.Predicate<GetKeyResponse>() {
                             @Override
-                            public boolean apply(GetKeyResponse response) {
+                            public boolean test(GetKeyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getKey().getLifecycleState());
                             }
@@ -199,17 +198,17 @@ public class KmsManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetKeyVersionRequest, GetKeyVersionResponse>() {
                             @Override
                             public GetKeyVersionResponse apply(GetKeyVersionRequest request) {
                                 return client.getKeyVersion(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetKeyVersionResponse>() {
+                        new java.util.function.Predicate<GetKeyVersionResponse>() {
                             @Override
-                            public boolean apply(GetKeyVersionResponse response) {
+                            public boolean test(GetKeyVersionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getKeyVersion().getLifecycleState());
                             }
@@ -303,17 +302,17 @@ public class KmsManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWrappingKeyRequest, GetWrappingKeyResponse>() {
                             @Override
                             public GetWrappingKeyResponse apply(GetWrappingKeyRequest request) {
                                 return client.getWrappingKey(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWrappingKeyResponse>() {
+                        new java.util.function.Predicate<GetWrappingKeyResponse>() {
                             @Override
-                            public boolean apply(GetWrappingKeyResponse response) {
+                            public boolean test(GetWrappingKeyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getWrappingKey().getLifecycleState());
                             }

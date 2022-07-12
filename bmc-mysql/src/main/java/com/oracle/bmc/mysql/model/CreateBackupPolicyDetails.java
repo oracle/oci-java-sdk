@@ -27,20 +27,23 @@ public final class CreateBackupPolicyDetails {
         "windowStartTime",
         "retentionInDays",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "pitrPolicy"
     })
     public CreateBackupPolicyDetails(
             Boolean isEnabled,
             String windowStartTime,
             Integer retentionInDays,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            PitrPolicy pitrPolicy) {
         super();
         this.isEnabled = isEnabled;
         this.windowStartTime = windowStartTime;
         this.retentionInDays = retentionInDays;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.pitrPolicy = pitrPolicy;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -159,13 +162,27 @@ public final class CreateBackupPolicyDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pitrPolicy")
+        private PitrPolicy pitrPolicy;
+
+        public Builder pitrPolicy(PitrPolicy pitrPolicy) {
+            this.pitrPolicy = pitrPolicy;
+            this.__explicitlySet__.add("pitrPolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateBackupPolicyDetails build() {
             CreateBackupPolicyDetails __instance__ =
                     new CreateBackupPolicyDetails(
-                            isEnabled, windowStartTime, retentionInDays, freeformTags, definedTags);
+                            isEnabled,
+                            windowStartTime,
+                            retentionInDays,
+                            freeformTags,
+                            definedTags,
+                            pitrPolicy);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -177,7 +194,8 @@ public final class CreateBackupPolicyDetails {
                             .windowStartTime(o.getWindowStartTime())
                             .retentionInDays(o.getRetentionInDays())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .pitrPolicy(o.getPitrPolicy());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -297,6 +315,13 @@ public final class CreateBackupPolicyDetails {
         return definedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("pitrPolicy")
+    private final PitrPolicy pitrPolicy;
+
+    public PitrPolicy getPitrPolicy() {
+        return pitrPolicy;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
@@ -306,6 +331,7 @@ public final class CreateBackupPolicyDetails {
         sb.append(", retentionInDays=").append(String.valueOf(this.retentionInDays));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", pitrPolicy=").append(String.valueOf(this.pitrPolicy));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -326,6 +352,7 @@ public final class CreateBackupPolicyDetails {
                 && java.util.Objects.equals(this.retentionInDays, other.retentionInDays)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.pitrPolicy, other.pitrPolicy)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -342,6 +369,7 @@ public final class CreateBackupPolicyDetails {
                         + (this.retentionInDays == null ? 43 : this.retentionInDays.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.pitrPolicy == null ? 43 : this.pitrPolicy.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

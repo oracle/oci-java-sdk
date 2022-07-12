@@ -6,7 +6,6 @@ package com.oracle.bmc.ocvp;
 
 import com.oracle.bmc.ocvp.requests.*;
 import com.oracle.bmc.ocvp.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -100,16 +99,16 @@ public class SddcWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetSddcRequest, GetSddcResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetSddcRequest, GetSddcResponse>() {
                             @Override
                             public GetSddcResponse apply(GetSddcRequest request) {
                                 return client.getSddc(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSddcResponse>() {
+                        new java.util.function.Predicate<GetSddcResponse>() {
                             @Override
-                            public boolean apply(GetSddcResponse response) {
+                            public boolean test(GetSddcResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSddc().getLifecycleState());
                             }

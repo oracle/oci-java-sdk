@@ -7,7 +7,6 @@ package com.oracle.bmc.managementagent;
 import com.oracle.bmc.managementagent.internal.http.*;
 import com.oracle.bmc.managementagent.requests.*;
 import com.oracle.bmc.managementagent.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ManagementAgent service. <br/>
@@ -321,7 +320,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
          * @return the client
          */
         public ManagementAgentAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -408,7 +408,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "CreateManagementAgentInstallKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/CreateManagementAgentInstallKey");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateManagementAgentInstallKeyResponse>
                 transformer =
                         CreateManagementAgentInstallKeyConverter.fromResponse(
@@ -464,8 +464,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "DeleteManagementAgent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteManagementAgent");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteManagementAgentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteManagementAgentResponse>
                 transformer =
                         DeleteManagementAgentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -514,7 +513,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "DeleteManagementAgentInstallKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/DeleteManagementAgentInstallKey");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteManagementAgentInstallKeyResponse>
                 transformer =
                         DeleteManagementAgentInstallKeyConverter.fromResponse(
@@ -565,7 +564,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "DeleteWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/DeleteWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
                 transformer =
                         DeleteWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -611,7 +610,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "DeployPlugins",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeployPlugins");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeployPluginsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeployPluginsResponse>
                 transformer =
                         DeployPluginsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeployPluginsRequest, DeployPluginsResponse>
@@ -661,7 +660,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "GetAutoUpgradableConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetAutoUpgradableConfig");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetAutoUpgradableConfigResponse>
                 transformer =
                         GetAutoUpgradableConfigConverter.fromResponse(
@@ -709,7 +708,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "GetManagementAgent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetManagementAgent");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetManagementAgentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetManagementAgentResponse>
                 transformer =
                         GetManagementAgentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -757,7 +756,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "GetManagementAgentInstallKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/GetManagementAgentInstallKey");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetManagementAgentInstallKeyResponse>
                 transformer =
                         GetManagementAgentInstallKeyConverter.fromResponse(
@@ -819,7 +818,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "GetManagementAgentInstallKeyContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/GetManagementAgentInstallKeyContent");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetManagementAgentInstallKeyContentResponse>
                 transformer =
                         GetManagementAgentInstallKeyContentConverter.fromResponse(
@@ -870,7 +869,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -915,7 +914,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "ListAvailabilityHistories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListAvailabilityHistories");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAvailabilityHistoriesResponse>
                 transformer =
                         ListAvailabilityHistoriesConverter.fromResponse(
@@ -965,7 +964,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "ListManagementAgentImages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentImage/ListManagementAgentImages");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagementAgentImagesResponse>
                 transformer =
                         ListManagementAgentImagesConverter.fromResponse(
@@ -1016,7 +1015,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "ListManagementAgentInstallKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/ListManagementAgentInstallKeys");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagementAgentInstallKeysResponse>
                 transformer =
                         ListManagementAgentInstallKeysConverter.fromResponse(
@@ -1068,7 +1067,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "ListManagementAgentPlugins",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentPlugin/ListManagementAgentPlugins");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagementAgentPluginsResponse>
                 transformer =
                         ListManagementAgentPluginsConverter.fromResponse(
@@ -1117,8 +1116,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "ListManagementAgents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListManagementAgents");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListManagementAgentsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListManagementAgentsResponse>
                 transformer =
                         ListManagementAgentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1165,8 +1163,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1213,8 +1210,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequestLogEntry/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1261,7 +1257,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1308,7 +1304,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "SetAutoUpgradableConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SetAutoUpgradableConfig");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SetAutoUpgradableConfigResponse>
                 transformer =
                         SetAutoUpgradableConfigConverter.fromResponse(
@@ -1363,7 +1359,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "SummarizeManagementAgentCounts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SummarizeManagementAgentCounts");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeManagementAgentCountsResponse>
                 transformer =
                         SummarizeManagementAgentCountsConverter.fromResponse(
@@ -1416,7 +1412,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "SummarizeManagementAgentPluginCounts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SummarizeManagementAgentPluginCounts");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeManagementAgentPluginCountsResponse>
                 transformer =
                         SummarizeManagementAgentPluginCountsConverter.fromResponse(
@@ -1468,8 +1464,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "UpdateManagementAgent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateManagementAgent");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateManagementAgentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateManagementAgentResponse>
                 transformer =
                         UpdateManagementAgentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1524,7 +1519,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                         "UpdateManagementAgentInstallKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/UpdateManagementAgentInstallKey");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateManagementAgentInstallKeyResponse>
                 transformer =
                         UpdateManagementAgentInstallKeyConverter.fromResponse(

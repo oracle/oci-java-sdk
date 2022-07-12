@@ -44,19 +44,19 @@ public class ShapePaginators {
             final ListShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListShapesRequest.Builder, ListShapesRequest, ListShapesResponse>(
-                new com.google.common.base.Supplier<ListShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListShapesRequest.Builder>() {
                     @Override
                     public ListShapesRequest.Builder get() {
                         return ListShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListShapesResponse, String>() {
+                new java.util.function.Function<ListShapesResponse, String>() {
                     @Override
                     public String apply(ListShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListShapesRequest.Builder>,
                         ListShapesRequest>() {
@@ -69,12 +69,12 @@ public class ShapePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListShapesRequest, ListShapesResponse>() {
+                new java.util.function.Function<ListShapesRequest, ListShapesResponse>() {
                     @Override
                     public ListShapesResponse apply(ListShapesRequest request) {
                         return client.listShapes(request);
@@ -96,19 +96,19 @@ public class ShapePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListShapesRequest.Builder, ListShapesRequest, ListShapesResponse,
                 com.oracle.bmc.rover.model.ShapeSummary>(
-                new com.google.common.base.Supplier<ListShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListShapesRequest.Builder>() {
                     @Override
                     public ListShapesRequest.Builder get() {
                         return ListShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListShapesResponse, String>() {
+                new java.util.function.Function<ListShapesResponse, String>() {
                     @Override
                     public String apply(ListShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListShapesRequest.Builder>,
                         ListShapesRequest>() {
@@ -121,18 +121,18 @@ public class ShapePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListShapesRequest, ListShapesResponse>() {
+                new java.util.function.Function<ListShapesRequest, ListShapesResponse>() {
                     @Override
                     public ListShapesResponse apply(ListShapesRequest request) {
                         return client.listShapes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListShapesResponse,
                         java.util.List<com.oracle.bmc.rover.model.ShapeSummary>>() {
                     @Override

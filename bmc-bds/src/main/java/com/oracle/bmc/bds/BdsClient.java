@@ -9,7 +9,6 @@ import com.oracle.bmc.bds.requests.*;
 import com.oracle.bmc.bds.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class BdsClient implements Bds {
@@ -335,9 +334,9 @@ public class BdsClient implements Bds {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Bds-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Bds-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class BdsClient implements Bds {
          * @return the client
          */
         public BdsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class BdsClient implements Bds {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class BdsClient implements Bds {
                         "ActivateBdsMetastoreConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/ActivateBdsMetastoreConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ActivateBdsMetastoreConfigurationResponse>
                 transformer =
                         ActivateBdsMetastoreConfigurationConverter.fromResponse(
@@ -534,8 +534,7 @@ public class BdsClient implements Bds {
                         "AddAutoScalingConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddAutoScalingConfiguration");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, AddAutoScalingConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddAutoScalingConfigurationResponse>
                 transformer =
                         AddAutoScalingConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -578,7 +577,7 @@ public class BdsClient implements Bds {
                         "AddBlockStorage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddBlockStorage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddBlockStorageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddBlockStorageResponse>
                 transformer =
                         AddBlockStorageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -620,9 +619,8 @@ public class BdsClient implements Bds {
                         "AddCloudSql",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddCloudSql");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddCloudSqlResponse>
-                transformer =
-                        AddCloudSqlConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, AddCloudSqlResponse> transformer =
+                AddCloudSqlConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -661,9 +659,8 @@ public class BdsClient implements Bds {
                         "AddWorkerNodes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddWorkerNodes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddWorkerNodesResponse>
-                transformer =
-                        AddWorkerNodesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, AddWorkerNodesResponse> transformer =
+                AddWorkerNodesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -703,8 +700,7 @@ public class BdsClient implements Bds {
                         "ChangeBdsInstanceCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ChangeBdsInstanceCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeBdsInstanceCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeBdsInstanceCompartmentResponse>
                 transformer =
                         ChangeBdsInstanceCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -747,9 +743,8 @@ public class BdsClient implements Bds {
                         "ChangeShape",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ChangeShape");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeShapeResponse>
-                transformer =
-                        ChangeShapeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeShapeResponse> transformer =
+                ChangeShapeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -788,7 +783,7 @@ public class BdsClient implements Bds {
                         "CreateBdsApiKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/CreateBdsApiKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBdsApiKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBdsApiKeyResponse>
                 transformer =
                         CreateBdsApiKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -830,7 +825,7 @@ public class BdsClient implements Bds {
                         "CreateBdsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateBdsInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBdsInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBdsInstanceResponse>
                 transformer =
                         CreateBdsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -873,7 +868,7 @@ public class BdsClient implements Bds {
                         "CreateBdsMetastoreConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/CreateBdsMetastoreConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateBdsMetastoreConfigurationResponse>
                 transformer =
                         CreateBdsMetastoreConfigurationConverter.fromResponse(
@@ -916,7 +911,7 @@ public class BdsClient implements Bds {
                         "DeleteBdsApiKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/DeleteBdsApiKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBdsApiKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBdsApiKeyResponse>
                 transformer =
                         DeleteBdsApiKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -954,7 +949,7 @@ public class BdsClient implements Bds {
                         "DeleteBdsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/DeleteBdsInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBdsInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBdsInstanceResponse>
                 transformer =
                         DeleteBdsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -993,7 +988,7 @@ public class BdsClient implements Bds {
                         "DeleteBdsMetastoreConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/DeleteBdsMetastoreConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteBdsMetastoreConfigurationResponse>
                 transformer =
                         DeleteBdsMetastoreConfigurationConverter.fromResponse(
@@ -1033,8 +1028,7 @@ public class BdsClient implements Bds {
                         "GetAutoScalingConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetAutoScalingConfiguration");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutoScalingConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAutoScalingConfigurationResponse>
                 transformer =
                         GetAutoScalingConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1071,9 +1065,8 @@ public class BdsClient implements Bds {
                         "GetBdsApiKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/GetBdsApiKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBdsApiKeyResponse>
-                transformer =
-                        GetBdsApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetBdsApiKeyResponse> transformer =
+                GetBdsApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1107,9 +1100,8 @@ public class BdsClient implements Bds {
                         "GetBdsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetBdsInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBdsInstanceResponse>
-                transformer =
-                        GetBdsInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetBdsInstanceResponse> transformer =
+                GetBdsInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1144,8 +1136,7 @@ public class BdsClient implements Bds {
                         "GetBdsMetastoreConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/GetBdsMetastoreConfiguration");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetBdsMetastoreConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetBdsMetastoreConfigurationResponse>
                 transformer =
                         GetBdsMetastoreConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1182,9 +1173,8 @@ public class BdsClient implements Bds {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1219,9 +1209,8 @@ public class BdsClient implements Bds {
                         "InstallPatch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/InstallPatch");
-        com.google.common.base.Function<javax.ws.rs.core.Response, InstallPatchResponse>
-                transformer =
-                        InstallPatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, InstallPatchResponse> transformer =
+                InstallPatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1260,7 +1249,7 @@ public class BdsClient implements Bds {
                         "ListAutoScalingConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListAutoScalingConfigurations");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListAutoScalingConfigurationsResponse>
                 transformer =
                         ListAutoScalingConfigurationsConverter.fromResponse(
@@ -1298,9 +1287,8 @@ public class BdsClient implements Bds {
                         "ListBdsApiKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/ListBdsApiKeys");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBdsApiKeysResponse>
-                transformer =
-                        ListBdsApiKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListBdsApiKeysResponse> transformer =
+                ListBdsApiKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1334,7 +1322,7 @@ public class BdsClient implements Bds {
                         "ListBdsInstances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstanceSummary/ListBdsInstances");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBdsInstancesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListBdsInstancesResponse>
                 transformer =
                         ListBdsInstancesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1372,7 +1360,7 @@ public class BdsClient implements Bds {
                         "ListBdsMetastoreConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/ListBdsMetastoreConfigurations");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListBdsMetastoreConfigurationsResponse>
                 transformer =
                         ListBdsMetastoreConfigurationsConverter.fromResponse(
@@ -1410,7 +1398,7 @@ public class BdsClient implements Bds {
                         "ListPatchHistories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListPatchHistories");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPatchHistoriesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPatchHistoriesResponse>
                 transformer =
                         ListPatchHistoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1447,9 +1435,8 @@ public class BdsClient implements Bds {
                         "ListPatches",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListPatches");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPatchesResponse>
-                transformer =
-                        ListPatchesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListPatchesResponse> transformer =
+                ListPatchesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1484,7 +1471,7 @@ public class BdsClient implements Bds {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1521,7 +1508,7 @@ public class BdsClient implements Bds {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1558,7 +1545,7 @@ public class BdsClient implements Bds {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1597,7 +1584,7 @@ public class BdsClient implements Bds {
                         "RemoveAutoScalingConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveAutoScalingConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveAutoScalingConfigurationResponse>
                 transformer =
                         RemoveAutoScalingConfigurationConverter.fromResponse(
@@ -1641,9 +1628,8 @@ public class BdsClient implements Bds {
                         "RemoveCloudSql",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveCloudSql");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveCloudSqlResponse>
-                transformer =
-                        RemoveCloudSqlConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveCloudSqlResponse> transformer =
+                RemoveCloudSqlConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1680,7 +1666,7 @@ public class BdsClient implements Bds {
                         "RemoveNode",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveNode");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveNodeResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveNodeResponse> transformer =
                 RemoveNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1720,9 +1706,8 @@ public class BdsClient implements Bds {
                         "RestartNode",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RestartNode");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RestartNodeResponse>
-                transformer =
-                        RestartNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, RestartNodeResponse> transformer =
+                RestartNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1761,7 +1746,7 @@ public class BdsClient implements Bds {
                         "TestBdsMetastoreConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/TestBdsMetastoreConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, TestBdsMetastoreConfigurationResponse>
                 transformer =
                         TestBdsMetastoreConfigurationConverter.fromResponse(
@@ -1805,7 +1790,7 @@ public class BdsClient implements Bds {
                         "TestBdsObjectStorageConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/TestBdsObjectStorageConnection");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, TestBdsObjectStorageConnectionResponse>
                 transformer =
                         TestBdsObjectStorageConnectionConverter.fromResponse(
@@ -1850,7 +1835,7 @@ public class BdsClient implements Bds {
                         "UpdateAutoScalingConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateAutoScalingConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateAutoScalingConfigurationResponse>
                 transformer =
                         UpdateAutoScalingConfigurationConverter.fromResponse(
@@ -1893,7 +1878,7 @@ public class BdsClient implements Bds {
                         "UpdateBdsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateBdsInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBdsInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBdsInstanceResponse>
                 transformer =
                         UpdateBdsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1935,7 +1920,7 @@ public class BdsClient implements Bds {
                         "UpdateBdsMetastoreConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/UpdateBdsMetastoreConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateBdsMetastoreConfigurationResponse>
                 transformer =
                         UpdateBdsMetastoreConfigurationConverter.fromResponse(

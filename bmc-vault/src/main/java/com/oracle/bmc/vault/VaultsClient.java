@@ -9,7 +9,6 @@ import com.oracle.bmc.vault.requests.*;
 import com.oracle.bmc.vault.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 public class VaultsClient implements Vaults {
@@ -334,9 +333,9 @@ public class VaultsClient implements Vaults {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Vaults-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Vaults-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class VaultsClient implements Vaults {
          * @return the client
          */
         public VaultsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class VaultsClient implements Vaults {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -486,7 +486,7 @@ public class VaultsClient implements Vaults {
                         "CancelSecretDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretDeletion");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelSecretDeletionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelSecretDeletionResponse>
                 transformer =
                         CancelSecretDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -525,8 +525,7 @@ public class VaultsClient implements Vaults {
                         "CancelSecretVersionDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/CancelSecretVersionDeletion");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CancelSecretVersionDeletionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelSecretVersionDeletionResponse>
                 transformer =
                         CancelSecretVersionDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -566,7 +565,7 @@ public class VaultsClient implements Vaults {
                         "ChangeSecretCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ChangeSecretCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeSecretCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeSecretCompartmentResponse>
                 transformer =
                         ChangeSecretCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -608,9 +607,8 @@ public class VaultsClient implements Vaults {
                         "CreateSecret",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CreateSecret");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecretResponse>
-                transformer =
-                        CreateSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSecretResponse> transformer =
+                CreateSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -647,7 +645,7 @@ public class VaultsClient implements Vaults {
                         "GetSecret",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/GetSecret");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSecretResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetSecretResponse> transformer =
                 GetSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -682,7 +680,7 @@ public class VaultsClient implements Vaults {
                         "GetSecretVersion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/GetSecretVersion");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSecretVersionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSecretVersionResponse>
                 transformer =
                         GetSecretVersionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -719,7 +717,7 @@ public class VaultsClient implements Vaults {
                         "ListSecretVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersionSummary/ListSecretVersions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSecretVersionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSecretVersionsResponse>
                 transformer =
                         ListSecretVersionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -756,9 +754,8 @@ public class VaultsClient implements Vaults {
                         "ListSecrets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretSummary/ListSecrets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSecretsResponse>
-                transformer =
-                        ListSecretsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSecretsResponse> transformer =
+                ListSecretsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -793,7 +790,7 @@ public class VaultsClient implements Vaults {
                         "ScheduleSecretDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ScheduleSecretDeletion");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ScheduleSecretDeletionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ScheduleSecretDeletionResponse>
                 transformer =
                         ScheduleSecretDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -835,7 +832,7 @@ public class VaultsClient implements Vaults {
                         "ScheduleSecretVersionDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/ScheduleSecretVersionDeletion");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ScheduleSecretVersionDeletionResponse>
                 transformer =
                         ScheduleSecretVersionDeletionConverter.fromResponse(
@@ -878,9 +875,8 @@ public class VaultsClient implements Vaults {
                         "UpdateSecret",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/UpdateSecret");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecretResponse>
-                transformer =
-                        UpdateSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSecretResponse> transformer =
+                UpdateSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

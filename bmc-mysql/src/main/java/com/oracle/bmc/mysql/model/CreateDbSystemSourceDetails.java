@@ -34,6 +34,10 @@ package com.oracle.bmc.mysql.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateDbSystemSourceImportFromUrlDetails.class,
         name = "IMPORTURL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDbSystemSourceFromPitrDetails.class,
+        name = "PITR"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -79,6 +83,7 @@ public class CreateDbSystemSourceDetails {
     public enum SourceType {
         None("NONE"),
         Backup("BACKUP"),
+        Pitr("PITR"),
         Importurl("IMPORTURL"),
         ;
 

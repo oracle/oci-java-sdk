@@ -6,7 +6,6 @@ package com.oracle.bmc.databasemigration;
 
 import com.oracle.bmc.databasemigration.requests.*;
 import com.oracle.bmc.databasemigration.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -103,16 +102,16 @@ public class DatabaseMigrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetAgentRequest, GetAgentResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetAgentRequest, GetAgentResponse>() {
                             @Override
                             public GetAgentResponse apply(GetAgentRequest request) {
                                 return client.getAgent(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAgentResponse>() {
+                        new java.util.function.Predicate<GetAgentResponse>() {
                             @Override
-                            public boolean apply(GetAgentResponse response) {
+                            public boolean test(GetAgentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAgent().getLifecycleState());
                             }
@@ -200,17 +199,17 @@ public class DatabaseMigrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetConnectionRequest, GetConnectionResponse>() {
                             @Override
                             public GetConnectionResponse apply(GetConnectionRequest request) {
                                 return client.getConnection(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetConnectionResponse>() {
+                        new java.util.function.Predicate<GetConnectionResponse>() {
                             @Override
-                            public boolean apply(GetConnectionResponse response) {
+                            public boolean test(GetConnectionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getConnection().getLifecycleState());
                             }
@@ -297,16 +296,16 @@ public class DatabaseMigrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetJobRequest, GetJobResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetJobRequest, GetJobResponse>() {
                             @Override
                             public GetJobResponse apply(GetJobRequest request) {
                                 return client.getJob(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetJobResponse>() {
+                        new java.util.function.Predicate<GetJobResponse>() {
                             @Override
-                            public boolean apply(GetJobResponse response) {
+                            public boolean test(GetJobResponse response) {
                                 return targetStatesSet.contains(
                                         response.getJob().getLifecycleState());
                             }
@@ -395,17 +394,17 @@ public class DatabaseMigrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetMigrationRequest, GetMigrationResponse>() {
                             @Override
                             public GetMigrationResponse apply(GetMigrationRequest request) {
                                 return client.getMigration(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetMigrationResponse>() {
+                        new java.util.function.Predicate<GetMigrationResponse>() {
                             @Override
-                            public boolean apply(GetMigrationResponse response) {
+                            public boolean test(GetMigrationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getMigration().getLifecycleState());
                             }
@@ -453,17 +452,17 @@ public class DatabaseMigrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

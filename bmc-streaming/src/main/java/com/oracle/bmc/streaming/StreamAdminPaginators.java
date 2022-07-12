@@ -45,19 +45,19 @@ public class StreamAdminPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListConnectHarnessesRequest.Builder, ListConnectHarnessesRequest,
                 ListConnectHarnessesResponse>(
-                new com.google.common.base.Supplier<ListConnectHarnessesRequest.Builder>() {
+                new java.util.function.Supplier<ListConnectHarnessesRequest.Builder>() {
                     @Override
                     public ListConnectHarnessesRequest.Builder get() {
                         return ListConnectHarnessesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListConnectHarnessesResponse, String>() {
+                new java.util.function.Function<ListConnectHarnessesResponse, String>() {
                     @Override
                     public String apply(ListConnectHarnessesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListConnectHarnessesRequest.Builder>,
                         ListConnectHarnessesRequest>() {
@@ -70,12 +70,12 @@ public class StreamAdminPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListConnectHarnessesRequest, ListConnectHarnessesResponse>() {
                     @Override
                     public ListConnectHarnessesResponse apply(ListConnectHarnessesRequest request) {
@@ -98,19 +98,19 @@ public class StreamAdminPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListConnectHarnessesRequest.Builder, ListConnectHarnessesRequest,
                 ListConnectHarnessesResponse, com.oracle.bmc.streaming.model.ConnectHarnessSummary>(
-                new com.google.common.base.Supplier<ListConnectHarnessesRequest.Builder>() {
+                new java.util.function.Supplier<ListConnectHarnessesRequest.Builder>() {
                     @Override
                     public ListConnectHarnessesRequest.Builder get() {
                         return ListConnectHarnessesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListConnectHarnessesResponse, String>() {
+                new java.util.function.Function<ListConnectHarnessesResponse, String>() {
                     @Override
                     public String apply(ListConnectHarnessesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListConnectHarnessesRequest.Builder>,
                         ListConnectHarnessesRequest>() {
@@ -123,19 +123,19 @@ public class StreamAdminPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListConnectHarnessesRequest, ListConnectHarnessesResponse>() {
                     @Override
                     public ListConnectHarnessesResponse apply(ListConnectHarnessesRequest request) {
                         return client.listConnectHarnesses(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListConnectHarnessesResponse,
                         java.util.List<com.oracle.bmc.streaming.model.ConnectHarnessSummary>>() {
                     @Override
@@ -157,19 +157,19 @@ public class StreamAdminPaginators {
             final ListStreamPoolsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListStreamPoolsRequest.Builder, ListStreamPoolsRequest, ListStreamPoolsResponse>(
-                new com.google.common.base.Supplier<ListStreamPoolsRequest.Builder>() {
+                new java.util.function.Supplier<ListStreamPoolsRequest.Builder>() {
                     @Override
                     public ListStreamPoolsRequest.Builder get() {
                         return ListStreamPoolsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListStreamPoolsResponse, String>() {
+                new java.util.function.Function<ListStreamPoolsResponse, String>() {
                     @Override
                     public String apply(ListStreamPoolsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListStreamPoolsRequest.Builder>,
                         ListStreamPoolsRequest>() {
@@ -182,13 +182,12 @@ public class StreamAdminPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListStreamPoolsRequest, ListStreamPoolsResponse>() {
+                new java.util.function.Function<ListStreamPoolsRequest, ListStreamPoolsResponse>() {
                     @Override
                     public ListStreamPoolsResponse apply(ListStreamPoolsRequest request) {
                         return client.listStreamPools(request);
@@ -210,19 +209,19 @@ public class StreamAdminPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListStreamPoolsRequest.Builder, ListStreamPoolsRequest, ListStreamPoolsResponse,
                 com.oracle.bmc.streaming.model.StreamPoolSummary>(
-                new com.google.common.base.Supplier<ListStreamPoolsRequest.Builder>() {
+                new java.util.function.Supplier<ListStreamPoolsRequest.Builder>() {
                     @Override
                     public ListStreamPoolsRequest.Builder get() {
                         return ListStreamPoolsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListStreamPoolsResponse, String>() {
+                new java.util.function.Function<ListStreamPoolsResponse, String>() {
                     @Override
                     public String apply(ListStreamPoolsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListStreamPoolsRequest.Builder>,
                         ListStreamPoolsRequest>() {
@@ -235,19 +234,18 @@ public class StreamAdminPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListStreamPoolsRequest, ListStreamPoolsResponse>() {
+                new java.util.function.Function<ListStreamPoolsRequest, ListStreamPoolsResponse>() {
                     @Override
                     public ListStreamPoolsResponse apply(ListStreamPoolsRequest request) {
                         return client.listStreamPools(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListStreamPoolsResponse,
                         java.util.List<com.oracle.bmc.streaming.model.StreamPoolSummary>>() {
                     @Override
@@ -269,19 +267,19 @@ public class StreamAdminPaginators {
             final ListStreamsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListStreamsRequest.Builder, ListStreamsRequest, ListStreamsResponse>(
-                new com.google.common.base.Supplier<ListStreamsRequest.Builder>() {
+                new java.util.function.Supplier<ListStreamsRequest.Builder>() {
                     @Override
                     public ListStreamsRequest.Builder get() {
                         return ListStreamsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListStreamsResponse, String>() {
+                new java.util.function.Function<ListStreamsResponse, String>() {
                     @Override
                     public String apply(ListStreamsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListStreamsRequest.Builder>,
                         ListStreamsRequest>() {
@@ -294,12 +292,12 @@ public class StreamAdminPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListStreamsRequest, ListStreamsResponse>() {
+                new java.util.function.Function<ListStreamsRequest, ListStreamsResponse>() {
                     @Override
                     public ListStreamsResponse apply(ListStreamsRequest request) {
                         return client.listStreams(request);
@@ -321,19 +319,19 @@ public class StreamAdminPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListStreamsRequest.Builder, ListStreamsRequest, ListStreamsResponse,
                 com.oracle.bmc.streaming.model.StreamSummary>(
-                new com.google.common.base.Supplier<ListStreamsRequest.Builder>() {
+                new java.util.function.Supplier<ListStreamsRequest.Builder>() {
                     @Override
                     public ListStreamsRequest.Builder get() {
                         return ListStreamsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListStreamsResponse, String>() {
+                new java.util.function.Function<ListStreamsResponse, String>() {
                     @Override
                     public String apply(ListStreamsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListStreamsRequest.Builder>,
                         ListStreamsRequest>() {
@@ -346,18 +344,18 @@ public class StreamAdminPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListStreamsRequest, ListStreamsResponse>() {
+                new java.util.function.Function<ListStreamsRequest, ListStreamsResponse>() {
                     @Override
                     public ListStreamsResponse apply(ListStreamsRequest request) {
                         return client.listStreams(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListStreamsResponse,
                         java.util.List<com.oracle.bmc.streaming.model.StreamSummary>>() {
                     @Override

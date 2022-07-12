@@ -7,7 +7,6 @@ package com.oracle.bmc.ospgateway;
 import com.oracle.bmc.ospgateway.internal.http.*;
 import com.oracle.bmc.ospgateway.requests.*;
 import com.oracle.bmc.ospgateway.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for SubscriptionService service. <br/>
@@ -320,7 +319,7 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
          * @return the client
          */
         public SubscriptionServiceAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -407,7 +407,7 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                         "AuthorizeSubscriptionPayment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, AuthorizeSubscriptionPaymentResponse>
                 transformer =
                         AuthorizeSubscriptionPaymentConverter.fromResponse(
@@ -461,7 +461,7 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                         "GetSubscription",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
                 transformer =
                         GetSubscriptionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -507,7 +507,7 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                         "ListSubscriptions",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
                 transformer =
                         ListSubscriptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -554,7 +554,7 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                         "PaySubscription",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PaySubscriptionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, PaySubscriptionResponse>
                 transformer =
                         PaySubscriptionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -605,7 +605,7 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                         "UpdateSubscription",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
                 transformer =
                         UpdateSubscriptionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -45,19 +45,19 @@ public class RoverEntitlementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRoverEntitlementsRequest.Builder, ListRoverEntitlementsRequest,
                 ListRoverEntitlementsResponse>(
-                new com.google.common.base.Supplier<ListRoverEntitlementsRequest.Builder>() {
+                new java.util.function.Supplier<ListRoverEntitlementsRequest.Builder>() {
                     @Override
                     public ListRoverEntitlementsRequest.Builder get() {
                         return ListRoverEntitlementsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRoverEntitlementsResponse, String>() {
+                new java.util.function.Function<ListRoverEntitlementsResponse, String>() {
                     @Override
                     public String apply(ListRoverEntitlementsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRoverEntitlementsRequest.Builder>,
                         ListRoverEntitlementsRequest>() {
@@ -70,12 +70,12 @@ public class RoverEntitlementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRoverEntitlementsRequest, ListRoverEntitlementsResponse>() {
                     @Override
                     public ListRoverEntitlementsResponse apply(
@@ -99,19 +99,19 @@ public class RoverEntitlementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListRoverEntitlementsRequest.Builder, ListRoverEntitlementsRequest,
                 ListRoverEntitlementsResponse, com.oracle.bmc.rover.model.RoverEntitlementSummary>(
-                new com.google.common.base.Supplier<ListRoverEntitlementsRequest.Builder>() {
+                new java.util.function.Supplier<ListRoverEntitlementsRequest.Builder>() {
                     @Override
                     public ListRoverEntitlementsRequest.Builder get() {
                         return ListRoverEntitlementsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRoverEntitlementsResponse, String>() {
+                new java.util.function.Function<ListRoverEntitlementsResponse, String>() {
                     @Override
                     public String apply(ListRoverEntitlementsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRoverEntitlementsRequest.Builder>,
                         ListRoverEntitlementsRequest>() {
@@ -124,12 +124,12 @@ public class RoverEntitlementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRoverEntitlementsRequest, ListRoverEntitlementsResponse>() {
                     @Override
                     public ListRoverEntitlementsResponse apply(
@@ -137,7 +137,7 @@ public class RoverEntitlementPaginators {
                         return client.listRoverEntitlements(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRoverEntitlementsResponse,
                         java.util.List<com.oracle.bmc.rover.model.RoverEntitlementSummary>>() {
                     @Override

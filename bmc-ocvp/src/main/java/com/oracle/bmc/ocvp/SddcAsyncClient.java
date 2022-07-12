@@ -7,7 +7,6 @@ package com.oracle.bmc.ocvp;
 import com.oracle.bmc.ocvp.internal.http.*;
 import com.oracle.bmc.ocvp.requests.*;
 import com.oracle.bmc.ocvp.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Sddc service. <br/>
@@ -319,7 +318,7 @@ public class SddcAsyncClient implements SddcAsync {
          * @return the client
          */
         public SddcAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class SddcAsyncClient implements SddcAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,7 +404,7 @@ public class SddcAsyncClient implements SddcAsync {
                         "CancelDowngradeHcx",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CancelDowngradeHcx");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelDowngradeHcxResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelDowngradeHcxResponse>
                 transformer =
                         CancelDowngradeHcxConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -451,8 +451,7 @@ public class SddcAsyncClient implements SddcAsync {
                         "ChangeSddcCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/ChangeSddcCompartment");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeSddcCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeSddcCompartmentResponse>
                 transformer =
                         ChangeSddcCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -503,7 +502,7 @@ public class SddcAsyncClient implements SddcAsync {
                         "CreateSddc",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CreateSddc");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSddcResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSddcResponse>
                 transformer =
                         CreateSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateSddcRequest, CreateSddcResponse> handlerToUse =
@@ -551,7 +550,7 @@ public class SddcAsyncClient implements SddcAsync {
                         "DeleteSddc",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DeleteSddc");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSddcResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSddcResponse>
                 transformer =
                         DeleteSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteSddcRequest, DeleteSddcResponse> handlerToUse =
@@ -596,7 +595,7 @@ public class SddcAsyncClient implements SddcAsync {
                         "DowngradeHcx",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DowngradeHcx");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DowngradeHcxResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DowngradeHcxResponse>
                 transformer =
                         DowngradeHcxConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DowngradeHcxRequest, DowngradeHcxResponse>
@@ -643,8 +642,8 @@ public class SddcAsyncClient implements SddcAsync {
                         "GetSddc",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/GetSddc");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSddcResponse>
-                transformer = GetSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSddcResponse> transformer =
+                GetSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSddcRequest, GetSddcResponse> handlerToUse =
                 handler;
 
@@ -684,7 +683,7 @@ public class SddcAsyncClient implements SddcAsync {
                         "ListSddcs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SddcSummary/ListSddcs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSddcsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSddcsResponse>
                 transformer =
                         ListSddcsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSddcsRequest, ListSddcsResponse> handlerToUse =
@@ -728,7 +727,7 @@ public class SddcAsyncClient implements SddcAsync {
                         "ListSupportedHostShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapeSummary/ListSupportedHostShapes");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSupportedHostShapesResponse>
                 transformer =
                         ListSupportedHostShapesConverter.fromResponse(
@@ -776,7 +775,7 @@ public class SddcAsyncClient implements SddcAsync {
                         "ListSupportedSkus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSupportedSkusResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSupportedSkusResponse>
                 transformer =
                         ListSupportedSkusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -825,7 +824,7 @@ public class SddcAsyncClient implements SddcAsync {
                         "ListSupportedVmwareSoftwareVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSupportedVmwareSoftwareVersionsResponse>
                 transformer =
                         ListSupportedVmwareSoftwareVersionsConverter.fromResponse(
@@ -877,7 +876,7 @@ public class SddcAsyncClient implements SddcAsync {
                         "RefreshHcxLicenseStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/RefreshHcxLicenseStatus");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RefreshHcxLicenseStatusResponse>
                 transformer =
                         RefreshHcxLicenseStatusConverter.fromResponse(
@@ -923,7 +922,7 @@ public class SddcAsyncClient implements SddcAsync {
                         "UpdateSddc",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSddcResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSddcResponse>
                 transformer =
                         UpdateSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateSddcRequest, UpdateSddcResponse> handlerToUse =
@@ -972,7 +971,7 @@ public class SddcAsyncClient implements SddcAsync {
                         "UpgradeHcx",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpgradeHcx");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeHcxResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpgradeHcxResponse>
                 transformer =
                         UpgradeHcxConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpgradeHcxRequest, UpgradeHcxResponse> handlerToUse =

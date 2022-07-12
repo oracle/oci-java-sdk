@@ -7,7 +7,6 @@ package com.oracle.bmc.onesubscription;
 import com.oracle.bmc.onesubscription.internal.http.*;
 import com.oracle.bmc.onesubscription.requests.*;
 import com.oracle.bmc.onesubscription.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for InvoiceSummary service. <br/>
@@ -320,7 +319,7 @@ public class InvoiceSummaryAsyncClient implements InvoiceSummaryAsync {
          * @return the client
          */
         public InvoiceSummaryAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class InvoiceSummaryAsyncClient implements InvoiceSummaryAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class InvoiceSummaryAsyncClient implements InvoiceSummaryAsync {
                         "ListInvoicelineComputedUsages",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListInvoicelineComputedUsagesResponse>
                 transformer =
                         ListInvoicelineComputedUsagesConverter.fromResponse(
@@ -451,7 +451,7 @@ public class InvoiceSummaryAsyncClient implements InvoiceSummaryAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "InvoiceSummary", "ListInvoices", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoicesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListInvoicesResponse>
                 transformer =
                         ListInvoicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListInvoicesRequest, ListInvoicesResponse>

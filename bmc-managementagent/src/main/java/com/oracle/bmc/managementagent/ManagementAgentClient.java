@@ -9,7 +9,6 @@ import com.oracle.bmc.managementagent.requests.*;
 import com.oracle.bmc.managementagent.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public class ManagementAgentClient implements ManagementAgent {
@@ -335,9 +334,9 @@ public class ManagementAgentClient implements ManagementAgent {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("ManagementAgent-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("ManagementAgent-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class ManagementAgentClient implements ManagementAgent {
          * @return the client
          */
         public ManagementAgentClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class ManagementAgentClient implements ManagementAgent {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "CreateManagementAgentInstallKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/CreateManagementAgentInstallKey");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateManagementAgentInstallKeyResponse>
                 transformer =
                         CreateManagementAgentInstallKeyConverter.fromResponse(
@@ -533,7 +533,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "DeleteManagementAgent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteManagementAgent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteManagementAgentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteManagementAgentResponse>
                 transformer =
                         DeleteManagementAgentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -572,7 +572,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "DeleteManagementAgentInstallKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/DeleteManagementAgentInstallKey");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteManagementAgentInstallKeyResponse>
                 transformer =
                         DeleteManagementAgentInstallKeyConverter.fromResponse(
@@ -611,7 +611,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "DeleteWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/DeleteWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
                 transformer =
                         DeleteWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -650,9 +650,8 @@ public class ManagementAgentClient implements ManagementAgent {
                         "DeployPlugins",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeployPlugins");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeployPluginsResponse>
-                transformer =
-                        DeployPluginsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeployPluginsResponse> transformer =
+                DeployPluginsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -691,7 +690,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "GetAutoUpgradableConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetAutoUpgradableConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAutoUpgradableConfigResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAutoUpgradableConfigResponse>
                 transformer =
                         GetAutoUpgradableConfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -728,7 +727,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "GetManagementAgent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetManagementAgent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetManagementAgentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetManagementAgentResponse>
                 transformer =
                         GetManagementAgentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -766,8 +765,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "GetManagementAgentInstallKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/GetManagementAgentInstallKey");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetManagementAgentInstallKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetManagementAgentInstallKeyResponse>
                 transformer =
                         GetManagementAgentInstallKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -816,7 +814,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "GetManagementAgentInstallKeyContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/GetManagementAgentInstallKeyContent");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetManagementAgentInstallKeyContentResponse>
                 transformer =
                         GetManagementAgentInstallKeyContentConverter.fromResponse(
@@ -854,9 +852,8 @@ public class ManagementAgentClient implements ManagementAgent {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -891,8 +888,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "ListAvailabilityHistories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListAvailabilityHistories");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAvailabilityHistoriesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAvailabilityHistoriesResponse>
                 transformer =
                         ListAvailabilityHistoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -931,8 +927,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "ListManagementAgentImages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentImage/ListManagementAgentImages");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListManagementAgentImagesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListManagementAgentImagesResponse>
                 transformer =
                         ListManagementAgentImagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -970,7 +965,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "ListManagementAgentInstallKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/ListManagementAgentInstallKeys");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagementAgentInstallKeysResponse>
                 transformer =
                         ListManagementAgentInstallKeysConverter.fromResponse(
@@ -1009,8 +1004,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "ListManagementAgentPlugins",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentPlugin/ListManagementAgentPlugins");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListManagementAgentPluginsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListManagementAgentPluginsResponse>
                 transformer =
                         ListManagementAgentPluginsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1047,7 +1041,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "ListManagementAgents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListManagementAgents");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListManagementAgentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListManagementAgentsResponse>
                 transformer =
                         ListManagementAgentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1085,7 +1079,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1122,7 +1116,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1159,7 +1153,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1198,7 +1192,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "SetAutoUpgradableConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SetAutoUpgradableConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SetAutoUpgradableConfigResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SetAutoUpgradableConfigResponse>
                 transformer =
                         SetAutoUpgradableConfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1240,7 +1234,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "SummarizeManagementAgentCounts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SummarizeManagementAgentCounts");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeManagementAgentCountsResponse>
                 transformer =
                         SummarizeManagementAgentCountsConverter.fromResponse(
@@ -1280,7 +1274,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "SummarizeManagementAgentPluginCounts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SummarizeManagementAgentPluginCounts");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeManagementAgentPluginCountsResponse>
                 transformer =
                         SummarizeManagementAgentPluginCountsConverter.fromResponse(
@@ -1320,7 +1314,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "UpdateManagementAgent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateManagementAgent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateManagementAgentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateManagementAgentResponse>
                 transformer =
                         UpdateManagementAgentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1363,7 +1357,7 @@ public class ManagementAgentClient implements ManagementAgent {
                         "UpdateManagementAgentInstallKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/UpdateManagementAgentInstallKey");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateManagementAgentInstallKeyResponse>
                 transformer =
                         UpdateManagementAgentInstallKeyConverter.fromResponse(

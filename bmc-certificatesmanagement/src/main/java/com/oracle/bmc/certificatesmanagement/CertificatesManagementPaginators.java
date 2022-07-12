@@ -44,19 +44,19 @@ public class CertificatesManagementPaginators {
             final ListAssociationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAssociationsRequest.Builder, ListAssociationsRequest, ListAssociationsResponse>(
-                new com.google.common.base.Supplier<ListAssociationsRequest.Builder>() {
+                new java.util.function.Supplier<ListAssociationsRequest.Builder>() {
                     @Override
                     public ListAssociationsRequest.Builder get() {
                         return ListAssociationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAssociationsResponse, String>() {
+                new java.util.function.Function<ListAssociationsResponse, String>() {
                     @Override
                     public String apply(ListAssociationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAssociationsRequest.Builder>,
                         ListAssociationsRequest>() {
@@ -69,12 +69,12 @@ public class CertificatesManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAssociationsRequest, ListAssociationsResponse>() {
                     @Override
                     public ListAssociationsResponse apply(ListAssociationsRequest request) {
@@ -97,19 +97,19 @@ public class CertificatesManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListAssociationsRequest.Builder, ListAssociationsRequest, ListAssociationsResponse,
                 com.oracle.bmc.certificatesmanagement.model.AssociationSummary>(
-                new com.google.common.base.Supplier<ListAssociationsRequest.Builder>() {
+                new java.util.function.Supplier<ListAssociationsRequest.Builder>() {
                     @Override
                     public ListAssociationsRequest.Builder get() {
                         return ListAssociationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAssociationsResponse, String>() {
+                new java.util.function.Function<ListAssociationsResponse, String>() {
                     @Override
                     public String apply(ListAssociationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAssociationsRequest.Builder>,
                         ListAssociationsRequest>() {
@@ -122,19 +122,19 @@ public class CertificatesManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAssociationsRequest, ListAssociationsResponse>() {
                     @Override
                     public ListAssociationsResponse apply(ListAssociationsRequest request) {
                         return client.listAssociations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAssociationsResponse,
                         java.util.List<
                                 com.oracle.bmc.certificatesmanagement.model.AssociationSummary>>() {
@@ -158,19 +158,19 @@ public class CertificatesManagementPaginators {
             final ListCaBundlesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCaBundlesRequest.Builder, ListCaBundlesRequest, ListCaBundlesResponse>(
-                new com.google.common.base.Supplier<ListCaBundlesRequest.Builder>() {
+                new java.util.function.Supplier<ListCaBundlesRequest.Builder>() {
                     @Override
                     public ListCaBundlesRequest.Builder get() {
                         return ListCaBundlesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCaBundlesResponse, String>() {
+                new java.util.function.Function<ListCaBundlesResponse, String>() {
                     @Override
                     public String apply(ListCaBundlesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCaBundlesRequest.Builder>,
                         ListCaBundlesRequest>() {
@@ -183,12 +183,12 @@ public class CertificatesManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListCaBundlesRequest, ListCaBundlesResponse>() {
+                new java.util.function.Function<ListCaBundlesRequest, ListCaBundlesResponse>() {
                     @Override
                     public ListCaBundlesResponse apply(ListCaBundlesRequest request) {
                         return client.listCaBundles(request);
@@ -210,19 +210,19 @@ public class CertificatesManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCaBundlesRequest.Builder, ListCaBundlesRequest, ListCaBundlesResponse,
                 com.oracle.bmc.certificatesmanagement.model.CaBundleSummary>(
-                new com.google.common.base.Supplier<ListCaBundlesRequest.Builder>() {
+                new java.util.function.Supplier<ListCaBundlesRequest.Builder>() {
                     @Override
                     public ListCaBundlesRequest.Builder get() {
                         return ListCaBundlesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCaBundlesResponse, String>() {
+                new java.util.function.Function<ListCaBundlesResponse, String>() {
                     @Override
                     public String apply(ListCaBundlesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCaBundlesRequest.Builder>,
                         ListCaBundlesRequest>() {
@@ -235,18 +235,18 @@ public class CertificatesManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListCaBundlesRequest, ListCaBundlesResponse>() {
+                new java.util.function.Function<ListCaBundlesRequest, ListCaBundlesResponse>() {
                     @Override
                     public ListCaBundlesResponse apply(ListCaBundlesRequest request) {
                         return client.listCaBundles(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCaBundlesResponse,
                         java.util.List<
                                 com.oracle.bmc.certificatesmanagement.model.CaBundleSummary>>() {
@@ -271,19 +271,19 @@ public class CertificatesManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCertificateAuthoritiesRequest.Builder, ListCertificateAuthoritiesRequest,
                 ListCertificateAuthoritiesResponse>(
-                new com.google.common.base.Supplier<ListCertificateAuthoritiesRequest.Builder>() {
+                new java.util.function.Supplier<ListCertificateAuthoritiesRequest.Builder>() {
                     @Override
                     public ListCertificateAuthoritiesRequest.Builder get() {
                         return ListCertificateAuthoritiesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCertificateAuthoritiesResponse, String>() {
+                new java.util.function.Function<ListCertificateAuthoritiesResponse, String>() {
                     @Override
                     public String apply(ListCertificateAuthoritiesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCertificateAuthoritiesRequest.Builder>,
                         ListCertificateAuthoritiesRequest>() {
@@ -296,12 +296,12 @@ public class CertificatesManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>() {
                     @Override
                     public ListCertificateAuthoritiesResponse apply(
@@ -327,19 +327,19 @@ public class CertificatesManagementPaginators {
                 ListCertificateAuthoritiesRequest.Builder, ListCertificateAuthoritiesRequest,
                 ListCertificateAuthoritiesResponse,
                 com.oracle.bmc.certificatesmanagement.model.CertificateAuthoritySummary>(
-                new com.google.common.base.Supplier<ListCertificateAuthoritiesRequest.Builder>() {
+                new java.util.function.Supplier<ListCertificateAuthoritiesRequest.Builder>() {
                     @Override
                     public ListCertificateAuthoritiesRequest.Builder get() {
                         return ListCertificateAuthoritiesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCertificateAuthoritiesResponse, String>() {
+                new java.util.function.Function<ListCertificateAuthoritiesResponse, String>() {
                     @Override
                     public String apply(ListCertificateAuthoritiesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCertificateAuthoritiesRequest.Builder>,
                         ListCertificateAuthoritiesRequest>() {
@@ -352,12 +352,12 @@ public class CertificatesManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>() {
                     @Override
                     public ListCertificateAuthoritiesResponse apply(
@@ -365,7 +365,7 @@ public class CertificatesManagementPaginators {
                         return client.listCertificateAuthorities(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificateAuthoritiesResponse,
                         java.util.List<
                                 com.oracle.bmc.certificatesmanagement.model
@@ -393,21 +393,20 @@ public class CertificatesManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCertificateAuthorityVersionsRequest.Builder,
                 ListCertificateAuthorityVersionsRequest, ListCertificateAuthorityVersionsResponse>(
-                new com.google.common.base.Supplier<
-                        ListCertificateAuthorityVersionsRequest.Builder>() {
+                new java.util.function.Supplier<ListCertificateAuthorityVersionsRequest.Builder>() {
                     @Override
                     public ListCertificateAuthorityVersionsRequest.Builder get() {
                         return ListCertificateAuthorityVersionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificateAuthorityVersionsResponse, String>() {
                     @Override
                     public String apply(ListCertificateAuthorityVersionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCertificateAuthorityVersionsRequest.Builder>,
                         ListCertificateAuthorityVersionsRequest>() {
@@ -420,12 +419,12 @@ public class CertificatesManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificateAuthorityVersionsRequest,
                         ListCertificateAuthorityVersionsResponse>() {
                     @Override
@@ -452,21 +451,20 @@ public class CertificatesManagementPaginators {
                 ListCertificateAuthorityVersionsRequest.Builder,
                 ListCertificateAuthorityVersionsRequest, ListCertificateAuthorityVersionsResponse,
                 com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityVersionSummary>(
-                new com.google.common.base.Supplier<
-                        ListCertificateAuthorityVersionsRequest.Builder>() {
+                new java.util.function.Supplier<ListCertificateAuthorityVersionsRequest.Builder>() {
                     @Override
                     public ListCertificateAuthorityVersionsRequest.Builder get() {
                         return ListCertificateAuthorityVersionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificateAuthorityVersionsResponse, String>() {
                     @Override
                     public String apply(ListCertificateAuthorityVersionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCertificateAuthorityVersionsRequest.Builder>,
                         ListCertificateAuthorityVersionsRequest>() {
@@ -479,12 +477,12 @@ public class CertificatesManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificateAuthorityVersionsRequest,
                         ListCertificateAuthorityVersionsResponse>() {
                     @Override
@@ -493,7 +491,7 @@ public class CertificatesManagementPaginators {
                         return client.listCertificateAuthorityVersions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificateAuthorityVersionsResponse,
                         java.util.List<
                                 com.oracle.bmc.certificatesmanagement.model
@@ -520,19 +518,19 @@ public class CertificatesManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCertificateVersionsRequest.Builder, ListCertificateVersionsRequest,
                 ListCertificateVersionsResponse>(
-                new com.google.common.base.Supplier<ListCertificateVersionsRequest.Builder>() {
+                new java.util.function.Supplier<ListCertificateVersionsRequest.Builder>() {
                     @Override
                     public ListCertificateVersionsRequest.Builder get() {
                         return ListCertificateVersionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCertificateVersionsResponse, String>() {
+                new java.util.function.Function<ListCertificateVersionsResponse, String>() {
                     @Override
                     public String apply(ListCertificateVersionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCertificateVersionsRequest.Builder>,
                         ListCertificateVersionsRequest>() {
@@ -545,12 +543,12 @@ public class CertificatesManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificateVersionsRequest, ListCertificateVersionsResponse>() {
                     @Override
                     public ListCertificateVersionsResponse apply(
@@ -575,19 +573,19 @@ public class CertificatesManagementPaginators {
                 ListCertificateVersionsRequest.Builder, ListCertificateVersionsRequest,
                 ListCertificateVersionsResponse,
                 com.oracle.bmc.certificatesmanagement.model.CertificateVersionSummary>(
-                new com.google.common.base.Supplier<ListCertificateVersionsRequest.Builder>() {
+                new java.util.function.Supplier<ListCertificateVersionsRequest.Builder>() {
                     @Override
                     public ListCertificateVersionsRequest.Builder get() {
                         return ListCertificateVersionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCertificateVersionsResponse, String>() {
+                new java.util.function.Function<ListCertificateVersionsResponse, String>() {
                     @Override
                     public String apply(ListCertificateVersionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCertificateVersionsRequest.Builder>,
                         ListCertificateVersionsRequest>() {
@@ -600,12 +598,12 @@ public class CertificatesManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificateVersionsRequest, ListCertificateVersionsResponse>() {
                     @Override
                     public ListCertificateVersionsResponse apply(
@@ -613,7 +611,7 @@ public class CertificatesManagementPaginators {
                         return client.listCertificateVersions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificateVersionsResponse,
                         java.util.List<
                                 com.oracle.bmc.certificatesmanagement.model
@@ -639,19 +637,19 @@ public class CertificatesManagementPaginators {
             final ListCertificatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCertificatesRequest.Builder, ListCertificatesRequest, ListCertificatesResponse>(
-                new com.google.common.base.Supplier<ListCertificatesRequest.Builder>() {
+                new java.util.function.Supplier<ListCertificatesRequest.Builder>() {
                     @Override
                     public ListCertificatesRequest.Builder get() {
                         return ListCertificatesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCertificatesResponse, String>() {
+                new java.util.function.Function<ListCertificatesResponse, String>() {
                     @Override
                     public String apply(ListCertificatesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCertificatesRequest.Builder>,
                         ListCertificatesRequest>() {
@@ -664,12 +662,12 @@ public class CertificatesManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificatesRequest, ListCertificatesResponse>() {
                     @Override
                     public ListCertificatesResponse apply(ListCertificatesRequest request) {
@@ -692,19 +690,19 @@ public class CertificatesManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCertificatesRequest.Builder, ListCertificatesRequest, ListCertificatesResponse,
                 com.oracle.bmc.certificatesmanagement.model.CertificateSummary>(
-                new com.google.common.base.Supplier<ListCertificatesRequest.Builder>() {
+                new java.util.function.Supplier<ListCertificatesRequest.Builder>() {
                     @Override
                     public ListCertificatesRequest.Builder get() {
                         return ListCertificatesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCertificatesResponse, String>() {
+                new java.util.function.Function<ListCertificatesResponse, String>() {
                     @Override
                     public String apply(ListCertificatesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCertificatesRequest.Builder>,
                         ListCertificatesRequest>() {
@@ -717,19 +715,19 @@ public class CertificatesManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificatesRequest, ListCertificatesResponse>() {
                     @Override
                     public ListCertificatesResponse apply(ListCertificatesRequest request) {
                         return client.listCertificates(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificatesResponse,
                         java.util.List<
                                 com.oracle.bmc.certificatesmanagement.model.CertificateSummary>>() {

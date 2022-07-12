@@ -7,7 +7,6 @@ package com.oracle.bmc.onesubscription;
 import com.oracle.bmc.onesubscription.internal.http.*;
 import com.oracle.bmc.onesubscription.requests.*;
 import com.oracle.bmc.onesubscription.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ComputedUsage service. <br/>
@@ -319,7 +318,7 @@ public class ComputedUsageAsyncClient implements ComputedUsageAsync {
          * @return the client
          */
         public ComputedUsageAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class ComputedUsageAsyncClient implements ComputedUsageAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -400,7 +400,7 @@ public class ComputedUsageAsyncClient implements ComputedUsageAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "ComputedUsage", "GetComputedUsage", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetComputedUsageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetComputedUsageResponse>
                 transformer =
                         GetComputedUsageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -448,7 +448,7 @@ public class ComputedUsageAsyncClient implements ComputedUsageAsync {
                         "ListAggregatedComputedUsages",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAggregatedComputedUsagesResponse>
                 transformer =
                         ListAggregatedComputedUsagesConverter.fromResponse(
@@ -494,7 +494,7 @@ public class ComputedUsageAsyncClient implements ComputedUsageAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "ComputedUsage", "ListComputedUsages", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListComputedUsagesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListComputedUsagesResponse>
                 transformer =
                         ListComputedUsagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

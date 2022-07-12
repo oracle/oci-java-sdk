@@ -6,7 +6,6 @@ package com.oracle.bmc.oda;
 
 import com.oracle.bmc.oda.requests.*;
 import com.oracle.bmc.oda.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -111,8 +110,8 @@ public class ManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetAuthenticationProviderRequest,
                                 GetAuthenticationProviderResponse>() {
                             @Override
@@ -121,9 +120,9 @@ public class ManagementWaiters {
                                 return client.getAuthenticationProvider(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAuthenticationProviderResponse>() {
+                        new java.util.function.Predicate<GetAuthenticationProviderResponse>() {
                             @Override
-                            public boolean apply(GetAuthenticationProviderResponse response) {
+                            public boolean test(GetAuthenticationProviderResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAuthenticationProvider().getLifecycleState());
                             }
@@ -209,17 +208,16 @@ public class ManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetChannelRequest, GetChannelResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetChannelRequest, GetChannelResponse>() {
                             @Override
                             public GetChannelResponse apply(GetChannelRequest request) {
                                 return client.getChannel(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetChannelResponse>() {
+                        new java.util.function.Predicate<GetChannelResponse>() {
                             @Override
-                            public boolean apply(GetChannelResponse response) {
+                            public boolean test(GetChannelResponse response) {
                                 return targetStatesSet.contains(
                                         response.getChannel().getLifecycleState());
                             }
@@ -310,8 +308,8 @@ public class ManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDigitalAssistantRequest, GetDigitalAssistantResponse>() {
                             @Override
                             public GetDigitalAssistantResponse apply(
@@ -319,9 +317,9 @@ public class ManagementWaiters {
                                 return client.getDigitalAssistant(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDigitalAssistantResponse>() {
+                        new java.util.function.Predicate<GetDigitalAssistantResponse>() {
                             @Override
-                            public boolean apply(GetDigitalAssistantResponse response) {
+                            public boolean test(GetDigitalAssistantResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDigitalAssistant().getLifecycleState());
                             }
@@ -416,8 +414,8 @@ public class ManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDigitalAssistantParameterRequest,
                                 GetDigitalAssistantParameterResponse>() {
                             @Override
@@ -426,10 +424,9 @@ public class ManagementWaiters {
                                 return client.getDigitalAssistantParameter(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetDigitalAssistantParameterResponse>() {
+                        new java.util.function.Predicate<GetDigitalAssistantParameterResponse>() {
                             @Override
-                            public boolean apply(GetDigitalAssistantParameterResponse response) {
+                            public boolean test(GetDigitalAssistantParameterResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDigitalAssistantParameter()
                                                 .getLifecycleState());
@@ -516,16 +513,16 @@ public class ManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetSkillRequest, GetSkillResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetSkillRequest, GetSkillResponse>() {
                             @Override
                             public GetSkillResponse apply(GetSkillRequest request) {
                                 return client.getSkill(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSkillResponse>() {
+                        new java.util.function.Predicate<GetSkillResponse>() {
                             @Override
-                            public boolean apply(GetSkillResponse response) {
+                            public boolean test(GetSkillResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSkill().getLifecycleState());
                             }
@@ -616,8 +613,8 @@ public class ManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetSkillParameterRequest, GetSkillParameterResponse>() {
                             @Override
                             public GetSkillParameterResponse apply(
@@ -625,9 +622,9 @@ public class ManagementWaiters {
                                 return client.getSkillParameter(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSkillParameterResponse>() {
+                        new java.util.function.Predicate<GetSkillParameterResponse>() {
                             @Override
-                            public boolean apply(GetSkillParameterResponse response) {
+                            public boolean test(GetSkillParameterResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSkillParameter().getLifecycleState());
                             }
@@ -713,17 +710,17 @@ public class ManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetTranslatorRequest, GetTranslatorResponse>() {
                             @Override
                             public GetTranslatorResponse apply(GetTranslatorRequest request) {
                                 return client.getTranslator(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTranslatorResponse>() {
+                        new java.util.function.Predicate<GetTranslatorResponse>() {
                             @Override
-                            public boolean apply(GetTranslatorResponse response) {
+                            public boolean test(GetTranslatorResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTranslator().getLifecycleState());
                             }

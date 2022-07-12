@@ -9,7 +9,6 @@ import com.oracle.bmc.waf.requests.*;
 import com.oracle.bmc.waf.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 public class WafClient implements Waf {
@@ -334,9 +333,9 @@ public class WafClient implements Waf {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Waf-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Waf-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class WafClient implements Waf {
          * @return the client
          */
         public WafClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class WafClient implements Waf {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class WafClient implements Waf {
                         "ChangeNetworkAddressListCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/ChangeNetworkAddressListCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkAddressListCompartmentResponse>
                 transformer =
                         ChangeNetworkAddressListCompartmentConverter.fromResponse(
@@ -532,7 +532,7 @@ public class WafClient implements Waf {
                         "ChangeWebAppFirewallCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/ChangeWebAppFirewallCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeWebAppFirewallCompartmentResponse>
                 transformer =
                         ChangeWebAppFirewallCompartmentConverter.fromResponse(
@@ -577,7 +577,7 @@ public class WafClient implements Waf {
                         "ChangeWebAppFirewallPolicyCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/ChangeWebAppFirewallPolicyCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeWebAppFirewallPolicyCompartmentResponse>
                 transformer =
                         ChangeWebAppFirewallPolicyCompartmentConverter.fromResponse(
@@ -622,7 +622,7 @@ public class WafClient implements Waf {
                         "CreateNetworkAddressList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/CreateNetworkAddressList");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateNetworkAddressListResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkAddressListResponse>
                 transformer =
                         CreateNetworkAddressListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -664,7 +664,7 @@ public class WafClient implements Waf {
                         "CreateWebAppFirewall",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/CreateWebAppFirewall");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateWebAppFirewallResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateWebAppFirewallResponse>
                 transformer =
                         CreateWebAppFirewallConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -707,8 +707,7 @@ public class WafClient implements Waf {
                         "CreateWebAppFirewallPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/CreateWebAppFirewallPolicy");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateWebAppFirewallPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateWebAppFirewallPolicyResponse>
                 transformer =
                         CreateWebAppFirewallPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -751,7 +750,7 @@ public class WafClient implements Waf {
                         "DeleteNetworkAddressList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/DeleteNetworkAddressList");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNetworkAddressListResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkAddressListResponse>
                 transformer =
                         DeleteNetworkAddressListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -789,7 +788,7 @@ public class WafClient implements Waf {
                         "DeleteWebAppFirewall",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/DeleteWebAppFirewall");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWebAppFirewallResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteWebAppFirewallResponse>
                 transformer =
                         DeleteWebAppFirewallConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -828,8 +827,7 @@ public class WafClient implements Waf {
                         "DeleteWebAppFirewallPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/DeleteWebAppFirewallPolicy");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteWebAppFirewallPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteWebAppFirewallPolicyResponse>
                 transformer =
                         DeleteWebAppFirewallPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -868,7 +866,7 @@ public class WafClient implements Waf {
                         "GetNetworkAddressList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/GetNetworkAddressList");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkAddressListResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetNetworkAddressListResponse>
                 transformer =
                         GetNetworkAddressListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -905,7 +903,7 @@ public class WafClient implements Waf {
                         "GetWebAppFirewall",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/GetWebAppFirewall");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWebAppFirewallResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetWebAppFirewallResponse>
                 transformer =
                         GetWebAppFirewallConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -943,7 +941,7 @@ public class WafClient implements Waf {
                         "GetWebAppFirewallPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/GetWebAppFirewallPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWebAppFirewallPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetWebAppFirewallPolicyResponse>
                 transformer =
                         GetWebAppFirewallPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -980,9 +978,8 @@ public class WafClient implements Waf {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1017,7 +1014,7 @@ public class WafClient implements Waf {
                         "ListNetworkAddressLists",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/ListNetworkAddressLists");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListNetworkAddressListsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListNetworkAddressListsResponse>
                 transformer =
                         ListNetworkAddressListsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1055,8 +1052,7 @@ public class WafClient implements Waf {
                         "ListProtectionCapabilities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/ProtectionCapability/ListProtectionCapabilities");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListProtectionCapabilitiesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListProtectionCapabilitiesResponse>
                 transformer =
                         ListProtectionCapabilitiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1094,7 +1090,7 @@ public class WafClient implements Waf {
                         "ListProtectionCapabilityGroupTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/ProtectionCapability/ListProtectionCapabilityGroupTags");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListProtectionCapabilityGroupTagsResponse>
                 transformer =
                         ListProtectionCapabilityGroupTagsConverter.fromResponse(
@@ -1133,8 +1129,7 @@ public class WafClient implements Waf {
                         "ListWebAppFirewallPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/ListWebAppFirewallPolicies");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWebAppFirewallPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWebAppFirewallPoliciesResponse>
                 transformer =
                         ListWebAppFirewallPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1171,7 +1166,7 @@ public class WafClient implements Waf {
                         "ListWebAppFirewalls",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/ListWebAppFirewalls");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWebAppFirewallsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWebAppFirewallsResponse>
                 transformer =
                         ListWebAppFirewallsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1209,7 +1204,7 @@ public class WafClient implements Waf {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1246,7 +1241,7 @@ public class WafClient implements Waf {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1283,7 +1278,7 @@ public class WafClient implements Waf {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1321,7 +1316,7 @@ public class WafClient implements Waf {
                         "UpdateNetworkAddressList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/UpdateNetworkAddressList");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNetworkAddressListResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkAddressListResponse>
                 transformer =
                         UpdateNetworkAddressListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1362,7 +1357,7 @@ public class WafClient implements Waf {
                         "UpdateWebAppFirewall",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/UpdateWebAppFirewall");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateWebAppFirewallResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateWebAppFirewallResponse>
                 transformer =
                         UpdateWebAppFirewallConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1404,8 +1399,7 @@ public class WafClient implements Waf {
                         "UpdateWebAppFirewallPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/UpdateWebAppFirewallPolicy");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateWebAppFirewallPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateWebAppFirewallPolicyResponse>
                 transformer =
                         UpdateWebAppFirewallPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -7,7 +7,6 @@ package com.oracle.bmc.onesubscription;
 import com.oracle.bmc.onesubscription.internal.http.*;
 import com.oracle.bmc.onesubscription.requests.*;
 import com.oracle.bmc.onesubscription.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for OrganizationSubscription service. <br/>
@@ -320,7 +319,7 @@ public class OrganizationSubscriptionAsyncClient implements OrganizationSubscrip
          * @return the client
          */
         public OrganizationSubscriptionAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class OrganizationSubscriptionAsyncClient implements OrganizationSubscrip
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class OrganizationSubscriptionAsyncClient implements OrganizationSubscrip
                         "ListOrganizationSubscriptions",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOrganizationSubscriptionsResponse>
                 transformer =
                         ListOrganizationSubscriptionsConverter.fromResponse(

@@ -9,7 +9,6 @@ import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class DeploymentClient implements Deployment {
@@ -334,9 +333,9 @@ public class DeploymentClient implements Deployment {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Deployment-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Deployment-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class DeploymentClient implements Deployment {
          * @return the client
          */
         public DeploymentClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class DeploymentClient implements Deployment {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,8 +488,7 @@ public class DeploymentClient implements Deployment {
                         "ChangeDeploymentCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/ChangeDeploymentCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeDeploymentCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeDeploymentCompartmentResponse>
                 transformer =
                         ChangeDeploymentCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,7 +528,7 @@ public class DeploymentClient implements Deployment {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Deployment", "CreateDeployment", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
                 transformer =
                         CreateDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -570,7 +569,7 @@ public class DeploymentClient implements Deployment {
                         "DeleteDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/DeleteDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDeploymentResponse>
                 transformer =
                         DeleteDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -608,9 +607,8 @@ public class DeploymentClient implements Deployment {
                         "GetDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/GetDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentResponse>
-                transformer =
-                        GetDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeploymentResponse> transformer =
+                GetDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -644,7 +642,7 @@ public class DeploymentClient implements Deployment {
                         "ListDeployments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/DeploymentSummary/ListDeployments");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
                 transformer =
                         ListDeploymentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -681,7 +679,7 @@ public class DeploymentClient implements Deployment {
                         "UpdateDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/UpdateDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
                 transformer =
                         UpdateDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

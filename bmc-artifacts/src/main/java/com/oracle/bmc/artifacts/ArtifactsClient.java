@@ -9,7 +9,6 @@ import com.oracle.bmc.artifacts.requests.*;
 import com.oracle.bmc.artifacts.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ArtifactsClient implements Artifacts {
@@ -334,9 +333,9 @@ public class ArtifactsClient implements Artifacts {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Artifacts-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Artifacts-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class ArtifactsClient implements Artifacts {
          * @return the client
          */
         public ArtifactsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class ArtifactsClient implements Artifacts {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class ArtifactsClient implements Artifacts {
                         "ChangeContainerRepositoryCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ChangeContainerRepositoryCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeContainerRepositoryCompartmentResponse>
                 transformer =
                         ChangeContainerRepositoryCompartmentConverter.fromResponse(
@@ -534,8 +534,7 @@ public class ArtifactsClient implements Artifacts {
                         "ChangeRepositoryCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ChangeRepositoryCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeRepositoryCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeRepositoryCompartmentResponse>
                 transformer =
                         ChangeRepositoryCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -579,7 +578,7 @@ public class ArtifactsClient implements Artifacts {
                         "CreateContainerImageSignature",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/CreateContainerImageSignature");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateContainerImageSignatureResponse>
                 transformer =
                         CreateContainerImageSignatureConverter.fromResponse(
@@ -624,8 +623,7 @@ public class ArtifactsClient implements Artifacts {
                         "CreateContainerRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/CreateContainerRepository");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateContainerRepositoryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateContainerRepositoryResponse>
                 transformer =
                         CreateContainerRepositoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -668,7 +666,7 @@ public class ArtifactsClient implements Artifacts {
                         "CreateRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/CreateRepository");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRepositoryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRepositoryResponse>
                 transformer =
                         CreateRepositoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -709,7 +707,7 @@ public class ArtifactsClient implements Artifacts {
                         "DeleteContainerImage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/DeleteContainerImage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteContainerImageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteContainerImageResponse>
                 transformer =
                         DeleteContainerImageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -748,7 +746,7 @@ public class ArtifactsClient implements Artifacts {
                         "DeleteContainerImageSignature",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/DeleteContainerImageSignature");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteContainerImageSignatureResponse>
                 transformer =
                         DeleteContainerImageSignatureConverter.fromResponse(
@@ -788,8 +786,7 @@ public class ArtifactsClient implements Artifacts {
                         "DeleteContainerRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/DeleteContainerRepository");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteContainerRepositoryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteContainerRepositoryResponse>
                 transformer =
                         DeleteContainerRepositoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -828,7 +825,7 @@ public class ArtifactsClient implements Artifacts {
                         "DeleteGenericArtifact",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifact");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGenericArtifactResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteGenericArtifactResponse>
                 transformer =
                         DeleteGenericArtifactConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -867,8 +864,7 @@ public class ArtifactsClient implements Artifacts {
                         "DeleteGenericArtifactByPath",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifactByPath");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteGenericArtifactByPathResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteGenericArtifactByPathResponse>
                 transformer =
                         DeleteGenericArtifactByPathConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -906,7 +902,7 @@ public class ArtifactsClient implements Artifacts {
                         "DeleteRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/DeleteRepository");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRepositoryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRepositoryResponse>
                 transformer =
                         DeleteRepositoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -945,8 +941,7 @@ public class ArtifactsClient implements Artifacts {
                         "GetContainerConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/GetContainerConfiguration");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetContainerConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetContainerConfigurationResponse>
                 transformer =
                         GetContainerConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -983,7 +978,7 @@ public class ArtifactsClient implements Artifacts {
                         "GetContainerImage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/GetContainerImage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetContainerImageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetContainerImageResponse>
                 transformer =
                         GetContainerImageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1021,8 +1016,7 @@ public class ArtifactsClient implements Artifacts {
                         "GetContainerImageSignature",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/GetContainerImageSignature");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetContainerImageSignatureResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetContainerImageSignatureResponse>
                 transformer =
                         GetContainerImageSignatureConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1060,7 +1054,7 @@ public class ArtifactsClient implements Artifacts {
                         "GetContainerRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/GetContainerRepository");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetContainerRepositoryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetContainerRepositoryResponse>
                 transformer =
                         GetContainerRepositoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1097,7 +1091,7 @@ public class ArtifactsClient implements Artifacts {
                         "GetGenericArtifact",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifact");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetGenericArtifactResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetGenericArtifactResponse>
                 transformer =
                         GetGenericArtifactConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1135,7 +1129,7 @@ public class ArtifactsClient implements Artifacts {
                         "GetGenericArtifactByPath",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifactByPath");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetGenericArtifactByPathResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetGenericArtifactByPathResponse>
                 transformer =
                         GetGenericArtifactByPathConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1172,9 +1166,8 @@ public class ArtifactsClient implements Artifacts {
                         "GetRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/GetRepository");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRepositoryResponse>
-                transformer =
-                        GetRepositoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetRepositoryResponse> transformer =
+                GetRepositoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1209,8 +1202,7 @@ public class ArtifactsClient implements Artifacts {
                         "ListContainerImageSignatures",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignatureSummary/ListContainerImageSignatures");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListContainerImageSignaturesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListContainerImageSignaturesResponse>
                 transformer =
                         ListContainerImageSignaturesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1247,7 +1239,7 @@ public class ArtifactsClient implements Artifacts {
                         "ListContainerImages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSummary/ListContainerImages");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListContainerImagesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListContainerImagesResponse>
                 transformer =
                         ListContainerImagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1285,8 +1277,7 @@ public class ArtifactsClient implements Artifacts {
                         "ListContainerRepositories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ListContainerRepositories");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListContainerRepositoriesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListContainerRepositoriesResponse>
                 transformer =
                         ListContainerRepositoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1323,7 +1314,7 @@ public class ArtifactsClient implements Artifacts {
                         "ListGenericArtifacts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/ListGenericArtifacts");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListGenericArtifactsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListGenericArtifactsResponse>
                 transformer =
                         ListGenericArtifactsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1360,7 +1351,7 @@ public class ArtifactsClient implements Artifacts {
                         "ListRepositories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ListRepositories");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRepositoriesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRepositoriesResponse>
                 transformer =
                         ListRepositoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1399,7 +1390,7 @@ public class ArtifactsClient implements Artifacts {
                         "RemoveContainerVersion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RemoveContainerVersion");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveContainerVersionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveContainerVersionResponse>
                 transformer =
                         RemoveContainerVersionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1442,7 +1433,7 @@ public class ArtifactsClient implements Artifacts {
                         "RestoreContainerImage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RestoreContainerImage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RestoreContainerImageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RestoreContainerImageResponse>
                 transformer =
                         RestoreContainerImageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1484,8 +1475,7 @@ public class ArtifactsClient implements Artifacts {
                         "UpdateContainerConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/UpdateContainerConfiguration");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateContainerConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateContainerConfigurationResponse>
                 transformer =
                         UpdateContainerConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1528,8 +1518,7 @@ public class ArtifactsClient implements Artifacts {
                         "UpdateContainerRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/UpdateContainerRepository");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateContainerRepositoryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateContainerRepositoryResponse>
                 transformer =
                         UpdateContainerRepositoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1572,7 +1561,7 @@ public class ArtifactsClient implements Artifacts {
                         "UpdateGenericArtifact",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifact");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGenericArtifactResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateGenericArtifactResponse>
                 transformer =
                         UpdateGenericArtifactConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1614,8 +1603,7 @@ public class ArtifactsClient implements Artifacts {
                         "UpdateGenericArtifactByPath",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifactByPath");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateGenericArtifactByPathResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateGenericArtifactByPathResponse>
                 transformer =
                         UpdateGenericArtifactByPathConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1657,7 +1645,7 @@ public class ArtifactsClient implements Artifacts {
                         "UpdateRepository",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/UpdateRepository");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRepositoryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRepositoryResponse>
                 transformer =
                         UpdateRepositoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

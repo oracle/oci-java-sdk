@@ -44,19 +44,19 @@ public class QuotasPaginators {
             final ListQuotasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListQuotasRequest.Builder, ListQuotasRequest, ListQuotasResponse>(
-                new com.google.common.base.Supplier<ListQuotasRequest.Builder>() {
+                new java.util.function.Supplier<ListQuotasRequest.Builder>() {
                     @Override
                     public ListQuotasRequest.Builder get() {
                         return ListQuotasRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListQuotasResponse, String>() {
+                new java.util.function.Function<ListQuotasResponse, String>() {
                     @Override
                     public String apply(ListQuotasResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListQuotasRequest.Builder>,
                         ListQuotasRequest>() {
@@ -69,12 +69,12 @@ public class QuotasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListQuotasRequest, ListQuotasResponse>() {
+                new java.util.function.Function<ListQuotasRequest, ListQuotasResponse>() {
                     @Override
                     public ListQuotasResponse apply(ListQuotasRequest request) {
                         return client.listQuotas(request);
@@ -96,19 +96,19 @@ public class QuotasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListQuotasRequest.Builder, ListQuotasRequest, ListQuotasResponse,
                 com.oracle.bmc.limits.model.QuotaSummary>(
-                new com.google.common.base.Supplier<ListQuotasRequest.Builder>() {
+                new java.util.function.Supplier<ListQuotasRequest.Builder>() {
                     @Override
                     public ListQuotasRequest.Builder get() {
                         return ListQuotasRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListQuotasResponse, String>() {
+                new java.util.function.Function<ListQuotasResponse, String>() {
                     @Override
                     public String apply(ListQuotasResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListQuotasRequest.Builder>,
                         ListQuotasRequest>() {
@@ -121,18 +121,18 @@ public class QuotasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListQuotasRequest, ListQuotasResponse>() {
+                new java.util.function.Function<ListQuotasRequest, ListQuotasResponse>() {
                     @Override
                     public ListQuotasResponse apply(ListQuotasRequest request) {
                         return client.listQuotas(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListQuotasResponse,
                         java.util.List<com.oracle.bmc.limits.model.QuotaSummary>>() {
                     @Override

@@ -6,7 +6,6 @@ package com.oracle.bmc.loganalytics;
 
 import com.oracle.bmc.loganalytics.requests.*;
 import com.oracle.bmc.loganalytics.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -112,8 +111,8 @@ public class LogAnalyticsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetLogAnalyticsEmBridgeRequest, GetLogAnalyticsEmBridgeResponse>() {
                             @Override
                             public GetLogAnalyticsEmBridgeResponse apply(
@@ -121,9 +120,9 @@ public class LogAnalyticsWaiters {
                                 return client.getLogAnalyticsEmBridge(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetLogAnalyticsEmBridgeResponse>() {
+                        new java.util.function.Predicate<GetLogAnalyticsEmBridgeResponse>() {
                             @Override
-                            public boolean apply(GetLogAnalyticsEmBridgeResponse response) {
+                            public boolean test(GetLogAnalyticsEmBridgeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getLogAnalyticsEmBridge().getLifecycleState());
                             }
@@ -216,8 +215,8 @@ public class LogAnalyticsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetLogAnalyticsEntityRequest, GetLogAnalyticsEntityResponse>() {
                             @Override
                             public GetLogAnalyticsEntityResponse apply(
@@ -225,9 +224,9 @@ public class LogAnalyticsWaiters {
                                 return client.getLogAnalyticsEntity(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetLogAnalyticsEntityResponse>() {
+                        new java.util.function.Predicate<GetLogAnalyticsEntityResponse>() {
                             @Override
-                            public boolean apply(GetLogAnalyticsEntityResponse response) {
+                            public boolean test(GetLogAnalyticsEntityResponse response) {
                                 return targetStatesSet.contains(
                                         response.getLogAnalyticsEntity().getLifecycleState());
                             }
@@ -323,8 +322,8 @@ public class LogAnalyticsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetLogAnalyticsEntityTypeRequest,
                                 GetLogAnalyticsEntityTypeResponse>() {
                             @Override
@@ -333,9 +332,9 @@ public class LogAnalyticsWaiters {
                                 return client.getLogAnalyticsEntityType(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetLogAnalyticsEntityTypeResponse>() {
+                        new java.util.function.Predicate<GetLogAnalyticsEntityTypeResponse>() {
                             @Override
-                            public boolean apply(GetLogAnalyticsEntityTypeResponse response) {
+                            public boolean test(GetLogAnalyticsEntityTypeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getLogAnalyticsEntityType().getLifecycleState());
                             }
@@ -439,8 +438,8 @@ public class LogAnalyticsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetLogAnalyticsObjectCollectionRuleRequest,
                                 GetLogAnalyticsObjectCollectionRuleResponse>() {
                             @Override
@@ -449,10 +448,10 @@ public class LogAnalyticsWaiters {
                                 return client.getLogAnalyticsObjectCollectionRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
+                        new java.util.function.Predicate<
                                 GetLogAnalyticsObjectCollectionRuleResponse>() {
                             @Override
-                            public boolean apply(
+                            public boolean test(
                                     GetLogAnalyticsObjectCollectionRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getLogAnalyticsObjectCollectionRule()
@@ -502,8 +501,8 @@ public class LogAnalyticsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetQueryWorkRequestRequest, GetQueryWorkRequestResponse>() {
                             @Override
                             public GetQueryWorkRequestResponse apply(
@@ -511,9 +510,9 @@ public class LogAnalyticsWaiters {
                                 return client.getQueryWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetQueryWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetQueryWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetQueryWorkRequestResponse response) {
+                            public boolean test(GetQueryWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getQueryWorkRequest().getTimeFinished() != null;
                             }
@@ -607,17 +606,17 @@ public class LogAnalyticsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetScheduledTaskRequest, GetScheduledTaskResponse>() {
                             @Override
                             public GetScheduledTaskResponse apply(GetScheduledTaskRequest request) {
                                 return client.getScheduledTask(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetScheduledTaskResponse>() {
+                        new java.util.function.Predicate<GetScheduledTaskResponse>() {
                             @Override
-                            public boolean apply(GetScheduledTaskResponse response) {
+                            public boolean test(GetScheduledTaskResponse response) {
                                 return targetStatesSet.contains(
                                         response.getScheduledTask().getLifecycleState());
                             }
@@ -666,8 +665,8 @@ public class LogAnalyticsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetStorageWorkRequestRequest, GetStorageWorkRequestResponse>() {
                             @Override
                             public GetStorageWorkRequestResponse apply(
@@ -675,9 +674,9 @@ public class LogAnalyticsWaiters {
                                 return client.getStorageWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetStorageWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetStorageWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetStorageWorkRequestResponse response) {
+                            public boolean test(GetStorageWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getStorageWorkRequest().getTimeFinished() != null;
                             }
@@ -723,17 +722,17 @@ public class LogAnalyticsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

@@ -9,7 +9,6 @@ import com.oracle.bmc.managementdashboard.requests.*;
 import com.oracle.bmc.managementdashboard.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
 public class DashxApisClient implements DashxApis {
@@ -335,9 +334,9 @@ public class DashxApisClient implements DashxApis {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DashxApis-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DashxApis-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class DashxApisClient implements DashxApis {
          * @return the client
          */
         public DashxApisClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class DashxApisClient implements DashxApis {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -490,7 +490,7 @@ public class DashxApisClient implements DashxApis {
                         "ChangeManagementDashboardsCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/ChangeManagementDashboardsCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeManagementDashboardsCompartmentResponse>
                 transformer =
                         ChangeManagementDashboardsCompartmentConverter.fromResponse(
@@ -537,7 +537,7 @@ public class DashxApisClient implements DashxApis {
                         "ChangeManagementSavedSearchesCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/ChangeManagementSavedSearchesCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeManagementSavedSearchesCompartmentResponse>
                 transformer =
                         ChangeManagementSavedSearchesCompartmentConverter.fromResponse(
@@ -582,8 +582,7 @@ public class DashxApisClient implements DashxApis {
                         "CreateManagementDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/CreateManagementDashboard");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateManagementDashboardResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateManagementDashboardResponse>
                 transformer =
                         CreateManagementDashboardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -627,8 +626,7 @@ public class DashxApisClient implements DashxApis {
                         "CreateManagementSavedSearch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/CreateManagementSavedSearch");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateManagementSavedSearchResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateManagementSavedSearchResponse>
                 transformer =
                         CreateManagementSavedSearchConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -671,8 +669,7 @@ public class DashxApisClient implements DashxApis {
                         "DeleteManagementDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/DeleteManagementDashboard");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteManagementDashboardResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteManagementDashboardResponse>
                 transformer =
                         DeleteManagementDashboardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -711,8 +708,7 @@ public class DashxApisClient implements DashxApis {
                         "DeleteManagementSavedSearch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/DeleteManagementSavedSearch");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteManagementSavedSearchResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteManagementSavedSearchResponse>
                 transformer =
                         DeleteManagementSavedSearchConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -751,7 +747,7 @@ public class DashxApisClient implements DashxApis {
                         "ExportDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/ExportDashboard");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ExportDashboardResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ExportDashboardResponse>
                 transformer =
                         ExportDashboardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -790,7 +786,7 @@ public class DashxApisClient implements DashxApis {
                         "GetManagementDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/GetManagementDashboard");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetManagementDashboardResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetManagementDashboardResponse>
                 transformer =
                         GetManagementDashboardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -829,7 +825,7 @@ public class DashxApisClient implements DashxApis {
                         "GetManagementSavedSearch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/GetManagementSavedSearch");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetManagementSavedSearchResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetManagementSavedSearchResponse>
                 transformer =
                         GetManagementSavedSearchConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -867,7 +863,7 @@ public class DashxApisClient implements DashxApis {
                         "ImportDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/ImportDashboard");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ImportDashboardResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ImportDashboardResponse>
                 transformer =
                         ImportDashboardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -910,7 +906,7 @@ public class DashxApisClient implements DashxApis {
                         "ListManagementDashboards",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/ListManagementDashboards");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListManagementDashboardsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListManagementDashboardsResponse>
                 transformer =
                         ListManagementDashboardsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -948,8 +944,7 @@ public class DashxApisClient implements DashxApis {
                         "ListManagementSavedSearches",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/ListManagementSavedSearches");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListManagementSavedSearchesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListManagementSavedSearchesResponse>
                 transformer =
                         ListManagementSavedSearchesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -988,8 +983,7 @@ public class DashxApisClient implements DashxApis {
                         "UpdateManagementDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/UpdateManagementDashboard");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateManagementDashboardResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateManagementDashboardResponse>
                 transformer =
                         UpdateManagementDashboardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1033,8 +1027,7 @@ public class DashxApisClient implements DashxApis {
                         "UpdateManagementSavedSearch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/UpdateManagementSavedSearch");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateManagementSavedSearchResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateManagementSavedSearchResponse>
                 transformer =
                         UpdateManagementSavedSearchConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

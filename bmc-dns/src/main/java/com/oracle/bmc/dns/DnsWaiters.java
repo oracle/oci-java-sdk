@@ -6,7 +6,6 @@ package com.oracle.bmc.dns;
 
 import com.oracle.bmc.dns.requests.*;
 import com.oracle.bmc.dns.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -102,17 +101,16 @@ public class DnsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetResolverRequest, GetResolverResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetResolverRequest, GetResolverResponse>() {
                             @Override
                             public GetResolverResponse apply(GetResolverRequest request) {
                                 return client.getResolver(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetResolverResponse>() {
+                        new java.util.function.Predicate<GetResolverResponse>() {
                             @Override
-                            public boolean apply(GetResolverResponse response) {
+                            public boolean test(GetResolverResponse response) {
                                 return targetStatesSet.contains(
                                         response.getResolver().getLifecycleState());
                             }
@@ -205,8 +203,8 @@ public class DnsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetResolverEndpointRequest, GetResolverEndpointResponse>() {
                             @Override
                             public GetResolverEndpointResponse apply(
@@ -214,9 +212,9 @@ public class DnsWaiters {
                                 return client.getResolverEndpoint(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetResolverEndpointResponse>() {
+                        new java.util.function.Predicate<GetResolverEndpointResponse>() {
                             @Override
-                            public boolean apply(GetResolverEndpointResponse response) {
+                            public boolean test(GetResolverEndpointResponse response) {
                                 return targetStatesSet.contains(
                                         response.getResolverEndpoint().getLifecycleState());
                             }
@@ -308,8 +306,8 @@ public class DnsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetSteeringPolicyRequest, GetSteeringPolicyResponse>() {
                             @Override
                             public GetSteeringPolicyResponse apply(
@@ -317,9 +315,9 @@ public class DnsWaiters {
                                 return client.getSteeringPolicy(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSteeringPolicyResponse>() {
+                        new java.util.function.Predicate<GetSteeringPolicyResponse>() {
                             @Override
-                            public boolean apply(GetSteeringPolicyResponse response) {
+                            public boolean test(GetSteeringPolicyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSteeringPolicy().getLifecycleState());
                             }
@@ -418,8 +416,8 @@ public class DnsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetSteeringPolicyAttachmentRequest,
                                 GetSteeringPolicyAttachmentResponse>() {
                             @Override
@@ -428,10 +426,9 @@ public class DnsWaiters {
                                 return client.getSteeringPolicyAttachment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetSteeringPolicyAttachmentResponse>() {
+                        new java.util.function.Predicate<GetSteeringPolicyAttachmentResponse>() {
                             @Override
-                            public boolean apply(GetSteeringPolicyAttachmentResponse response) {
+                            public boolean test(GetSteeringPolicyAttachmentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSteeringPolicyAttachment().getLifecycleState());
                             }
@@ -518,17 +515,16 @@ public class DnsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetTsigKeyRequest, GetTsigKeyResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetTsigKeyRequest, GetTsigKeyResponse>() {
                             @Override
                             public GetTsigKeyResponse apply(GetTsigKeyRequest request) {
                                 return client.getTsigKey(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTsigKeyResponse>() {
+                        new java.util.function.Predicate<GetTsigKeyResponse>() {
                             @Override
-                            public boolean apply(GetTsigKeyResponse response) {
+                            public boolean test(GetTsigKeyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTsigKey().getLifecycleState());
                             }
@@ -614,16 +610,16 @@ public class DnsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetViewRequest, GetViewResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetViewRequest, GetViewResponse>() {
                             @Override
                             public GetViewResponse apply(GetViewRequest request) {
                                 return client.getView(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetViewResponse>() {
+                        new java.util.function.Predicate<GetViewResponse>() {
                             @Override
-                            public boolean apply(GetViewResponse response) {
+                            public boolean test(GetViewResponse response) {
                                 return targetStatesSet.contains(
                                         response.getView().getLifecycleState());
                             }
@@ -709,16 +705,16 @@ public class DnsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetZoneRequest, GetZoneResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetZoneRequest, GetZoneResponse>() {
                             @Override
                             public GetZoneResponse apply(GetZoneRequest request) {
                                 return client.getZone(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetZoneResponse>() {
+                        new java.util.function.Predicate<GetZoneResponse>() {
                             @Override
-                            public boolean apply(GetZoneResponse response) {
+                            public boolean test(GetZoneResponse response) {
                                 return targetStatesSet.contains(
                                         response.getZone().getLifecycleState());
                             }

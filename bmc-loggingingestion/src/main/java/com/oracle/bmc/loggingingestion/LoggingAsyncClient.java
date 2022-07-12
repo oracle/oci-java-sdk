@@ -7,7 +7,6 @@ package com.oracle.bmc.loggingingestion;
 import com.oracle.bmc.loggingingestion.internal.http.*;
 import com.oracle.bmc.loggingingestion.requests.*;
 import com.oracle.bmc.loggingingestion.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Logging service. <br/>
@@ -320,7 +319,7 @@ public class LoggingAsyncClient implements LoggingAsync {
          * @return the client
          */
         public LoggingAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class LoggingAsyncClient implements LoggingAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -401,8 +401,8 @@ public class LoggingAsyncClient implements LoggingAsync {
                         "PutLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-dataplane/20200831/LogEntry/PutLogs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PutLogsResponse>
-                transformer = PutLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, PutLogsResponse> transformer =
+                PutLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<PutLogsRequest, PutLogsResponse> handlerToUse =
                 handler;
 

@@ -9,7 +9,6 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class KmsManagementClient implements KmsManagement {
@@ -334,9 +333,9 @@ public class KmsManagementClient implements KmsManagement {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("KmsManagement-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("KmsManagement-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -395,7 +394,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "BackupKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, BackupKeyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, BackupKeyResponse> transformer =
                 BackupKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -432,7 +431,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "CancelKeyDeletion", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelKeyDeletionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelKeyDeletionResponse>
                 transformer =
                         CancelKeyDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -472,7 +471,7 @@ public class KmsManagementClient implements KmsManagement {
                         "CancelKeyVersionDeletion",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelKeyVersionDeletionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelKeyVersionDeletionResponse>
                 transformer =
                         CancelKeyVersionDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -508,7 +507,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "ChangeKeyCompartment", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeKeyCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeKeyCompartmentResponse>
                 transformer =
                         ChangeKeyCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -546,7 +545,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "CreateKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateKeyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateKeyResponse> transformer =
                 CreateKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -583,7 +582,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "CreateKeyVersion", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateKeyVersionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateKeyVersionResponse>
                 transformer =
                         CreateKeyVersionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -618,7 +617,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "DisableKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DisableKeyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DisableKeyResponse> transformer =
                 DisableKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -651,7 +650,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "EnableKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, EnableKeyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, EnableKeyResponse> transformer =
                 EnableKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -683,7 +682,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "GetKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetKeyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetKeyResponse> transformer =
                 GetKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -715,9 +714,8 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "GetKeyVersion", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetKeyVersionResponse>
-                transformer =
-                        GetKeyVersionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetKeyVersionResponse> transformer =
+                GetKeyVersionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -748,7 +746,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "GetReplicationStatus", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetReplicationStatusResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetReplicationStatusResponse>
                 transformer =
                         GetReplicationStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -782,9 +780,8 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "GetWrappingKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWrappingKeyResponse>
-                transformer =
-                        GetWrappingKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWrappingKeyResponse> transformer =
+                GetWrappingKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -815,7 +812,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "ImportKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ImportKeyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ImportKeyResponse> transformer =
                 ImportKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -852,7 +849,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "ImportKeyVersion", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ImportKeyVersionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ImportKeyVersionResponse>
                 transformer =
                         ImportKeyVersionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -890,7 +887,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "ListKeyVersions", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListKeyVersionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListKeyVersionsResponse>
                 transformer =
                         ListKeyVersionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -923,7 +920,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "ListKeys", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListKeysResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListKeysResponse> transformer =
                 ListKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -968,7 +965,7 @@ public class KmsManagementClient implements KmsManagement {
                             "RestoreKeyFromFile",
                             ib.getRequestUri().toString(),
                             "");
-            com.google.common.base.Function<javax.ws.rs.core.Response, RestoreKeyFromFileResponse>
+            java.util.function.Function<javax.ws.rs.core.Response, RestoreKeyFromFileResponse>
                     transformer =
                             RestoreKeyFromFileConverter.fromResponse(
                                     java.util.Optional.of(serviceDetails));
@@ -1035,8 +1032,7 @@ public class KmsManagementClient implements KmsManagement {
                         "RestoreKeyFromObjectStore",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RestoreKeyFromObjectStoreResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RestoreKeyFromObjectStoreResponse>
                 transformer =
                         RestoreKeyFromObjectStoreConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1076,7 +1072,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "ScheduleKeyDeletion", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ScheduleKeyDeletionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ScheduleKeyDeletionResponse>
                 transformer =
                         ScheduleKeyDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1119,8 +1115,7 @@ public class KmsManagementClient implements KmsManagement {
                         "ScheduleKeyVersionDeletion",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ScheduleKeyVersionDeletionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ScheduleKeyVersionDeletionResponse>
                 transformer =
                         ScheduleKeyVersionDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1158,7 +1153,7 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsManagement", "UpdateKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateKeyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateKeyResponse> transformer =
                 UpdateKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

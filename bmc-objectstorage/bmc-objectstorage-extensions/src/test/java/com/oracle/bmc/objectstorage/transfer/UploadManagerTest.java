@@ -4,8 +4,7 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
-import com.google.common.base.Function;
-import com.google.common.base.Strings;
+import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
@@ -94,7 +93,7 @@ import static org.mockito.Mockito.when;
 })
 public class UploadManagerTest {
     private static final String CONTENT =
-            Strings.repeat("a", (int) (20 * MultipartUtils.MiB)); // 20 MiB
+            StringUtils.repeat("a", (int) (20 * MultipartUtils.MiB)); // 20 MiB
     private static final long CONTENT_LENGTH = CONTENT.length();
     private static final int READ_BLOCK_SIZE = 8192; // 8KB
     private static final String CLIENT_REQ_ID = "clientReqId";
@@ -550,8 +549,8 @@ public class UploadManagerTest {
                         });
 
         // CreateMultipartUpload
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMultipartUploadResponse>
-                mockCreateResponseConverter = mock(Function.class);
+        java.util.function.Function<javax.ws.rs.core.Response, CreateMultipartUploadResponse>
+                mockCreateResponseConverter = mock(java.util.function.Function.class);
 
         PowerMockito.mockStatic(CreateMultipartUploadConverter.class);
         PowerMockito.when(
@@ -574,8 +573,8 @@ public class UploadManagerTest {
                 .thenReturn(createMultipartUploadResponse);
 
         // uploadPart
-        com.google.common.base.Function<javax.ws.rs.core.Response, UploadPartResponse>
-                mockUploadResponseConverter = mock(Function.class);
+        java.util.function.Function<javax.ws.rs.core.Response, UploadPartResponse>
+                mockUploadResponseConverter = mock(java.util.function.Function.class);
 
         PowerMockito.mockStatic(UploadPartConverter.class);
         PowerMockito.when(UploadPartConverter.fromResponse(any(java.util.Optional.class)))
@@ -596,8 +595,8 @@ public class UploadManagerTest {
         // commitMultipartUpload
 
         // uploadPart
-        com.google.common.base.Function<javax.ws.rs.core.Response, CommitMultipartUploadResponse>
-                mockCommitResponseConverter = mock(Function.class);
+        java.util.function.Function<javax.ws.rs.core.Response, CommitMultipartUploadResponse>
+                mockCommitResponseConverter = mock(java.util.function.Function.class);
 
         PowerMockito.mockStatic(CommitMultipartUploadConverter.class);
         PowerMockito.when(

@@ -9,7 +9,6 @@ import com.oracle.bmc.databasemigration.requests.*;
 import com.oracle.bmc.databasemigration.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public class DatabaseMigrationClient implements DatabaseMigration {
@@ -334,9 +333,9 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DatabaseMigration-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DatabaseMigration-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
          * @return the client
          */
         public DatabaseMigrationClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class DatabaseMigrationClient implements DatabaseMigration {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -486,7 +486,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "AbortJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/AbortJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AbortJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, AbortJobResponse> transformer =
                 AbortJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -522,7 +522,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "AddMigrationObjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/AddMigrationObjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddMigrationObjectsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddMigrationObjectsResponse>
                 transformer =
                         AddMigrationObjectsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -565,7 +565,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ChangeAgentCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/ChangeAgentCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeAgentCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeAgentCompartmentResponse>
                 transformer =
                         ChangeAgentCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -608,8 +608,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ChangeConnectionCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/ChangeConnectionCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeConnectionCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeConnectionCompartmentResponse>
                 transformer =
                         ChangeConnectionCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -653,8 +652,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ChangeMigrationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/ChangeMigrationCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeMigrationCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeMigrationCompartmentResponse>
                 transformer =
                         ChangeMigrationCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -697,9 +695,8 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "CloneMigration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/CloneMigration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CloneMigrationResponse>
-                transformer =
-                        CloneMigrationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CloneMigrationResponse> transformer =
+                CloneMigrationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -735,7 +732,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DatabaseMigration", "CreateConnection", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
                 transformer =
                         CreateConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -774,7 +771,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DatabaseMigration", "CreateMigration", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMigrationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateMigrationResponse>
                 transformer =
                         CreateMigrationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -815,9 +812,8 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "DeleteAgent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/DeleteAgent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAgentResponse>
-                transformer =
-                        DeleteAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAgentResponse> transformer =
+                DeleteAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -852,7 +848,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "DeleteConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/DeleteConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
                 transformer =
                         DeleteConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -889,7 +885,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "DeleteJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/DeleteJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteJobResponse> transformer =
                 DeleteJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -925,7 +921,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "DeleteMigration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/DeleteMigration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMigrationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteMigrationResponse>
                 transformer =
                         DeleteMigrationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -964,7 +960,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "EvaluateMigration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/EvaluateMigration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, EvaluateMigrationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, EvaluateMigrationResponse>
                 transformer =
                         EvaluateMigrationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1002,7 +998,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "GetAdvisorReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/GetAdvisorReport");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAdvisorReportResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAdvisorReportResponse>
                 transformer =
                         GetAdvisorReportConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1038,7 +1034,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "GetAgent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/GetAgent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAgentResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetAgentResponse> transformer =
                 GetAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1073,9 +1069,8 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "GetConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/GetConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConnectionResponse>
-                transformer =
-                        GetConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetConnectionResponse> transformer =
+                GetConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1108,7 +1103,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "GetJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/GetJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetJobResponse> transformer =
                 GetJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1153,7 +1148,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "GetJobOutputContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/GetJobOutputContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobOutputContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetJobOutputContentResponse>
                 transformer =
                         GetJobOutputContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1190,9 +1185,8 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "GetMigration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/GetMigration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetMigrationResponse>
-                transformer =
-                        GetMigrationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetMigrationResponse> transformer =
+                GetMigrationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1226,9 +1220,8 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1262,7 +1255,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ListAgentImages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/AgentImageSummary/ListAgentImages");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAgentImagesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAgentImagesResponse>
                 transformer =
                         ListAgentImagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1298,7 +1291,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ListAgents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/AgentSummary/ListAgents");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAgentsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListAgentsResponse> transformer =
                 ListAgentsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1333,7 +1326,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ListConnections",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/ConnectionSummary/ListConnections");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
                 transformer =
                         ListConnectionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1370,7 +1363,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ListExcludedObjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/ExcludedObjectSummary/ListExcludedObjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListExcludedObjectsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListExcludedObjectsResponse>
                 transformer =
                         ListExcludedObjectsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1407,9 +1400,8 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ListJobOutputs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/JobOutputSummary/ListJobOutputs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListJobOutputsResponse>
-                transformer =
-                        ListJobOutputsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListJobOutputsResponse> transformer =
+                ListJobOutputsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1442,7 +1434,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ListJobs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/JobSummary/ListJobs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListJobsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListJobsResponse> transformer =
                 ListJobsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1478,7 +1470,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ListMigrationObjectTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/MigrationObjectTypeSummary/ListMigrationObjectTypes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMigrationObjectTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMigrationObjectTypesResponse>
                 transformer =
                         ListMigrationObjectTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1515,7 +1507,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ListMigrationObjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/MigrationObjectCollection/ListMigrationObjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMigrationObjectsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMigrationObjectsResponse>
                 transformer =
                         ListMigrationObjectsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1552,9 +1544,8 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ListMigrations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/MigrationSummary/ListMigrations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMigrationsResponse>
-                transformer =
-                        ListMigrationsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListMigrationsResponse> transformer =
+                ListMigrationsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1589,7 +1580,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1626,7 +1617,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1663,7 +1654,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequestSummary/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1701,7 +1692,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "RemoveMigrationObjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/RemoveMigrationObjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveMigrationObjectsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveMigrationObjectsResponse>
                 transformer =
                         RemoveMigrationObjectsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1742,7 +1733,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "ResumeJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/ResumeJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ResumeJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ResumeJobResponse> transformer =
                 ResumeJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1782,7 +1773,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "RetrieveSupportedPhases",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/RetrieveSupportedPhases");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RetrieveSupportedPhasesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RetrieveSupportedPhasesResponse>
                 transformer =
                         RetrieveSupportedPhasesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1821,9 +1812,8 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "StartMigration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/StartMigration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartMigrationResponse>
-                transformer =
-                        StartMigrationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, StartMigrationResponse> transformer =
+                StartMigrationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1862,9 +1852,8 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "UpdateAgent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/UpdateAgent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAgentResponse>
-                transformer =
-                        UpdateAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAgentResponse> transformer =
+                UpdateAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1902,7 +1891,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "UpdateConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/UpdateConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
                 transformer =
                         UpdateConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1942,7 +1931,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "UpdateJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/UpdateJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateJobResponse> transformer =
                 UpdateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1981,7 +1970,7 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         "UpdateMigration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/UpdateMigration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMigrationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateMigrationResponse>
                 transformer =
                         UpdateMigrationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

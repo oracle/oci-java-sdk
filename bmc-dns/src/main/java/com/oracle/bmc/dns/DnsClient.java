@@ -9,7 +9,6 @@ import com.oracle.bmc.dns.requests.*;
 import com.oracle.bmc.dns.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class DnsClient implements Dns {
@@ -334,9 +333,9 @@ public class DnsClient implements Dns {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Dns-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Dns-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class DnsClient implements Dns {
          * @return the client
          */
         public DnsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class DnsClient implements Dns {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,8 +488,7 @@ public class DnsClient implements Dns {
                         "ChangeResolverCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/ChangeResolverCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeResolverCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeResolverCompartmentResponse>
                 transformer =
                         ChangeResolverCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -533,7 +532,7 @@ public class DnsClient implements Dns {
                         "ChangeSteeringPolicyCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/ChangeSteeringPolicyCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeSteeringPolicyCompartmentResponse>
                 transformer =
                         ChangeSteeringPolicyCompartmentConverter.fromResponse(
@@ -578,7 +577,7 @@ public class DnsClient implements Dns {
                         "ChangeTsigKeyCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/ChangeTsigKeyCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeTsigKeyCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeTsigKeyCompartmentResponse>
                 transformer =
                         ChangeTsigKeyCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -621,7 +620,7 @@ public class DnsClient implements Dns {
                         "ChangeViewCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/ChangeViewCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeViewCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeViewCompartmentResponse>
                 transformer =
                         ChangeViewCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -664,7 +663,7 @@ public class DnsClient implements Dns {
                         "ChangeZoneCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/ChangeZoneCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeZoneCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeZoneCompartmentResponse>
                 transformer =
                         ChangeZoneCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -704,7 +703,7 @@ public class DnsClient implements Dns {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Dns", "CreateResolverEndpoint", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateResolverEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateResolverEndpointResponse>
                 transformer =
                         CreateResolverEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -743,7 +742,7 @@ public class DnsClient implements Dns {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Dns", "CreateSteeringPolicy", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSteeringPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSteeringPolicyResponse>
                 transformer =
                         CreateSteeringPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -783,7 +782,7 @@ public class DnsClient implements Dns {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Dns", "CreateSteeringPolicyAttachment", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateSteeringPolicyAttachmentResponse>
                 transformer =
                         CreateSteeringPolicyAttachmentConverter.fromResponse(
@@ -823,9 +822,8 @@ public class DnsClient implements Dns {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Dns", "CreateTsigKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTsigKeyResponse>
-                transformer =
-                        CreateTsigKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTsigKeyResponse> transformer =
+                CreateTsigKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -860,7 +858,7 @@ public class DnsClient implements Dns {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Dns", "CreateView", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateViewResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateViewResponse> transformer =
                 CreateViewConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -895,7 +893,7 @@ public class DnsClient implements Dns {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Dns", "CreateZone", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateZoneResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateZoneResponse> transformer =
                 CreateZoneConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -934,7 +932,7 @@ public class DnsClient implements Dns {
                         "DeleteDomainRecords",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/DeleteDomainRecords");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDomainRecordsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDomainRecordsResponse>
                 transformer =
                         DeleteDomainRecordsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -969,9 +967,8 @@ public class DnsClient implements Dns {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Dns", "DeleteRRSet", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRRSetResponse>
-                transformer =
-                        DeleteRRSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRRSetResponse> transformer =
+                DeleteRRSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1007,7 +1004,7 @@ public class DnsClient implements Dns {
                         "DeleteResolverEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/DeleteResolverEndpoint");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteResolverEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteResolverEndpointResponse>
                 transformer =
                         DeleteResolverEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1042,7 +1039,7 @@ public class DnsClient implements Dns {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Dns", "DeleteSteeringPolicy", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSteeringPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSteeringPolicyResponse>
                 transformer =
                         DeleteSteeringPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1078,7 +1075,7 @@ public class DnsClient implements Dns {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Dns", "DeleteSteeringPolicyAttachment", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteSteeringPolicyAttachmentResponse>
                 transformer =
                         DeleteSteeringPolicyAttachmentConverter.fromResponse(
@@ -1114,9 +1111,8 @@ public class DnsClient implements Dns {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Dns", "DeleteTsigKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTsigKeyResponse>
-                transformer =
-                        DeleteTsigKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTsigKeyResponse> transformer =
+                DeleteTsigKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1150,7 +1146,7 @@ public class DnsClient implements Dns {
                         "DeleteView",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/DeleteView");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteViewResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteViewResponse> transformer =
                 DeleteViewConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1182,7 +1178,7 @@ public class DnsClient implements Dns {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Dns", "DeleteZone", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteZoneResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteZoneResponse> transformer =
                 DeleteZoneConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1218,7 +1214,7 @@ public class DnsClient implements Dns {
                         "GetDomainRecords",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/GetDomainRecords");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDomainRecordsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDomainRecordsResponse>
                 transformer =
                         GetDomainRecordsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1254,7 +1250,7 @@ public class DnsClient implements Dns {
                         "GetRRSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/RRSet/GetRRSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRRSetResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetRRSetResponse> transformer =
                 GetRRSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1289,9 +1285,8 @@ public class DnsClient implements Dns {
                         "GetResolver",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/GetResolver");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetResolverResponse>
-                transformer =
-                        GetResolverConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetResolverResponse> transformer =
+                GetResolverConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1325,7 +1320,7 @@ public class DnsClient implements Dns {
                         "GetResolverEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/GetResolverEndpoint");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetResolverEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetResolverEndpointResponse>
                 transformer =
                         GetResolverEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1362,7 +1357,7 @@ public class DnsClient implements Dns {
                         "GetSteeringPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/GetSteeringPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSteeringPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSteeringPolicyResponse>
                 transformer =
                         GetSteeringPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1400,8 +1395,7 @@ public class DnsClient implements Dns {
                         "GetSteeringPolicyAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicyAttachment/GetSteeringPolicyAttachment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetSteeringPolicyAttachmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSteeringPolicyAttachmentResponse>
                 transformer =
                         GetSteeringPolicyAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1437,7 +1431,7 @@ public class DnsClient implements Dns {
                         "GetTsigKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/GetTsigKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTsigKeyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetTsigKeyResponse> transformer =
                 GetTsigKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1471,7 +1465,7 @@ public class DnsClient implements Dns {
                         "GetView",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/GetView");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetViewResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetViewResponse> transformer =
                 GetViewConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1505,7 +1499,7 @@ public class DnsClient implements Dns {
                         "GetZone",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/GetZone");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetZoneResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetZoneResponse> transformer =
                 GetZoneConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1550,9 +1544,8 @@ public class DnsClient implements Dns {
                         "GetZoneContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/GetZoneContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetZoneContentResponse>
-                transformer =
-                        GetZoneContentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetZoneContentResponse> transformer =
+                GetZoneContentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1586,9 +1579,8 @@ public class DnsClient implements Dns {
                         "GetZoneRecords",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/GetZoneRecords");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetZoneRecordsResponse>
-                transformer =
-                        GetZoneRecordsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetZoneRecordsResponse> transformer =
+                GetZoneRecordsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1623,7 +1615,7 @@ public class DnsClient implements Dns {
                         "ListResolverEndpoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/ListResolverEndpoints");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListResolverEndpointsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListResolverEndpointsResponse>
                 transformer =
                         ListResolverEndpointsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1660,9 +1652,8 @@ public class DnsClient implements Dns {
                         "ListResolvers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/ListResolvers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListResolversResponse>
-                transformer =
-                        ListResolversConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListResolversResponse> transformer =
+                ListResolversConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1696,7 +1687,7 @@ public class DnsClient implements Dns {
                         "ListSteeringPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/ListSteeringPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSteeringPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSteeringPoliciesResponse>
                 transformer =
                         ListSteeringPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1734,7 +1725,7 @@ public class DnsClient implements Dns {
                         "ListSteeringPolicyAttachments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicyAttachment/ListSteeringPolicyAttachments");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListSteeringPolicyAttachmentsResponse>
                 transformer =
                         ListSteeringPolicyAttachmentsConverter.fromResponse(
@@ -1772,9 +1763,8 @@ public class DnsClient implements Dns {
                         "ListTsigKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/ListTsigKeys");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTsigKeysResponse>
-                transformer =
-                        ListTsigKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListTsigKeysResponse> transformer =
+                ListTsigKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1807,7 +1797,7 @@ public class DnsClient implements Dns {
                         "ListViews",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/ListViews");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListViewsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListViewsResponse> transformer =
                 ListViewsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1843,7 +1833,7 @@ public class DnsClient implements Dns {
                         "ListZoneTransferServers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ZoneTransferServer/ListZoneTransferServers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListZoneTransferServersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListZoneTransferServersResponse>
                 transformer =
                         ListZoneTransferServersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1879,7 +1869,7 @@ public class DnsClient implements Dns {
                         "ListZones",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/ListZones");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListZonesResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListZonesResponse> transformer =
                 ListZonesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1914,7 +1904,7 @@ public class DnsClient implements Dns {
                         "PatchDomainRecords",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/PatchDomainRecords");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PatchDomainRecordsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PatchDomainRecordsResponse>
                 transformer =
                         PatchDomainRecordsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1954,7 +1944,7 @@ public class DnsClient implements Dns {
                         "PatchRRSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/RRSet/PatchRRSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PatchRRSetResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, PatchRRSetResponse> transformer =
                 PatchRRSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1993,7 +1983,7 @@ public class DnsClient implements Dns {
                         "PatchZoneRecords",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/PatchZoneRecords");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PatchZoneRecordsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PatchZoneRecordsResponse>
                 transformer =
                         PatchZoneRecordsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2034,7 +2024,7 @@ public class DnsClient implements Dns {
                         "UpdateDomainRecords",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/UpdateDomainRecords");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDomainRecordsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDomainRecordsResponse>
                 transformer =
                         UpdateDomainRecordsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2075,9 +2065,8 @@ public class DnsClient implements Dns {
                         "UpdateRRSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/RRSet/UpdateRRSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRRSetResponse>
-                transformer =
-                        UpdateRRSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRRSetResponse> transformer =
+                UpdateRRSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2115,9 +2104,8 @@ public class DnsClient implements Dns {
                         "UpdateResolver",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/UpdateResolver");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateResolverResponse>
-                transformer =
-                        UpdateResolverConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateResolverResponse> transformer =
+                UpdateResolverConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2156,7 +2144,7 @@ public class DnsClient implements Dns {
                         "UpdateResolverEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/UpdateResolverEndpoint");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateResolverEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateResolverEndpointResponse>
                 transformer =
                         UpdateResolverEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2197,7 +2185,7 @@ public class DnsClient implements Dns {
                         "UpdateSteeringPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/UpdateSteeringPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSteeringPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSteeringPolicyResponse>
                 transformer =
                         UpdateSteeringPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2239,7 +2227,7 @@ public class DnsClient implements Dns {
                         "UpdateSteeringPolicyAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicyAttachment/UpdateSteeringPolicyAttachment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateSteeringPolicyAttachmentResponse>
                 transformer =
                         UpdateSteeringPolicyAttachmentConverter.fromResponse(
@@ -2282,9 +2270,8 @@ public class DnsClient implements Dns {
                         "UpdateTsigKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/UpdateTsigKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTsigKeyResponse>
-                transformer =
-                        UpdateTsigKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTsigKeyResponse> transformer =
+                UpdateTsigKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2321,7 +2308,7 @@ public class DnsClient implements Dns {
                         "UpdateView",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/UpdateView");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateViewResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateViewResponse> transformer =
                 UpdateViewConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2359,7 +2346,7 @@ public class DnsClient implements Dns {
                         "UpdateZone",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/UpdateZone");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateZoneResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateZoneResponse> transformer =
                 UpdateZoneConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2398,7 +2385,7 @@ public class DnsClient implements Dns {
                         "UpdateZoneRecords",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/UpdateZoneRecords");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateZoneRecordsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateZoneRecordsResponse>
                 transformer =
                         UpdateZoneRecordsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

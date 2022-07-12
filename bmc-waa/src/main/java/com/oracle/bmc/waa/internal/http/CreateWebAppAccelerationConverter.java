@@ -54,22 +54,22 @@ public class CreateWebAppAccelerationConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.waa.responses.CreateWebAppAccelerationResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.waa.responses.CreateWebAppAccelerationResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.waa.responses.CreateWebAppAccelerationResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.waa.responses.CreateWebAppAccelerationResponse>() {
                             @Override
@@ -77,7 +77,7 @@ public class CreateWebAppAccelerationConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.waa.responses.CreateWebAppAccelerationResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.waa.model
@@ -112,7 +112,7 @@ public class CreateWebAppAccelerationConverter {
 
                                 builder.webAppAcceleration(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
+                                java.util.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
                                                 headers, "etag");
                                 if (etagHeader.isPresent()) {
@@ -121,10 +121,9 @@ public class CreateWebAppAccelerationConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcWorkRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-work-request-id");
+                                java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-work-request-id");
                                 if (opcWorkRequestIdHeader.isPresent()) {
                                     builder.opcWorkRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -133,10 +132,9 @@ public class CreateWebAppAccelerationConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -145,10 +143,9 @@ public class CreateWebAppAccelerationConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        locationHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "location");
+                                java.util.Optional<java.util.List<String>> locationHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "location");
                                 if (locationHeader.isPresent()) {
                                     builder.location(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -157,10 +154,9 @@ public class CreateWebAppAccelerationConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        contentLocationHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "content-location");
+                                java.util.Optional<java.util.List<String>> contentLocationHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "content-location");
                                 if (contentLocationHeader.isPresent()) {
                                     builder.contentLocation(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(

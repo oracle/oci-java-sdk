@@ -45,19 +45,19 @@ public class RedirectPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListHttpRedirectsRequest.Builder, ListHttpRedirectsRequest,
                 ListHttpRedirectsResponse>(
-                new com.google.common.base.Supplier<ListHttpRedirectsRequest.Builder>() {
+                new java.util.function.Supplier<ListHttpRedirectsRequest.Builder>() {
                     @Override
                     public ListHttpRedirectsRequest.Builder get() {
                         return ListHttpRedirectsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListHttpRedirectsResponse, String>() {
+                new java.util.function.Function<ListHttpRedirectsResponse, String>() {
                     @Override
                     public String apply(ListHttpRedirectsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListHttpRedirectsRequest.Builder>,
                         ListHttpRedirectsRequest>() {
@@ -70,12 +70,12 @@ public class RedirectPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListHttpRedirectsRequest, ListHttpRedirectsResponse>() {
                     @Override
                     public ListHttpRedirectsResponse apply(ListHttpRedirectsRequest request) {
@@ -98,19 +98,19 @@ public class RedirectPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListHttpRedirectsRequest.Builder, ListHttpRedirectsRequest,
                 ListHttpRedirectsResponse, com.oracle.bmc.waas.model.HttpRedirectSummary>(
-                new com.google.common.base.Supplier<ListHttpRedirectsRequest.Builder>() {
+                new java.util.function.Supplier<ListHttpRedirectsRequest.Builder>() {
                     @Override
                     public ListHttpRedirectsRequest.Builder get() {
                         return ListHttpRedirectsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListHttpRedirectsResponse, String>() {
+                new java.util.function.Function<ListHttpRedirectsResponse, String>() {
                     @Override
                     public String apply(ListHttpRedirectsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListHttpRedirectsRequest.Builder>,
                         ListHttpRedirectsRequest>() {
@@ -123,19 +123,19 @@ public class RedirectPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListHttpRedirectsRequest, ListHttpRedirectsResponse>() {
                     @Override
                     public ListHttpRedirectsResponse apply(ListHttpRedirectsRequest request) {
                         return client.listHttpRedirects(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListHttpRedirectsResponse,
                         java.util.List<com.oracle.bmc.waas.model.HttpRedirectSummary>>() {
                     @Override

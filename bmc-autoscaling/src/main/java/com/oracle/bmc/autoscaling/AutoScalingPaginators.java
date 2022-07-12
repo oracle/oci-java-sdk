@@ -46,21 +46,19 @@ public class AutoScalingPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAutoScalingConfigurationsRequest.Builder, ListAutoScalingConfigurationsRequest,
                 ListAutoScalingConfigurationsResponse>(
-                new com.google.common.base.Supplier<
-                        ListAutoScalingConfigurationsRequest.Builder>() {
+                new java.util.function.Supplier<ListAutoScalingConfigurationsRequest.Builder>() {
                     @Override
                     public ListAutoScalingConfigurationsRequest.Builder get() {
                         return ListAutoScalingConfigurationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListAutoScalingConfigurationsResponse, String>() {
+                new java.util.function.Function<ListAutoScalingConfigurationsResponse, String>() {
                     @Override
                     public String apply(ListAutoScalingConfigurationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAutoScalingConfigurationsRequest.Builder>,
                         ListAutoScalingConfigurationsRequest>() {
@@ -73,12 +71,12 @@ public class AutoScalingPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAutoScalingConfigurationsRequest,
                         ListAutoScalingConfigurationsResponse>() {
                     @Override
@@ -105,21 +103,19 @@ public class AutoScalingPaginators {
                 ListAutoScalingConfigurationsRequest.Builder, ListAutoScalingConfigurationsRequest,
                 ListAutoScalingConfigurationsResponse,
                 com.oracle.bmc.autoscaling.model.AutoScalingConfigurationSummary>(
-                new com.google.common.base.Supplier<
-                        ListAutoScalingConfigurationsRequest.Builder>() {
+                new java.util.function.Supplier<ListAutoScalingConfigurationsRequest.Builder>() {
                     @Override
                     public ListAutoScalingConfigurationsRequest.Builder get() {
                         return ListAutoScalingConfigurationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListAutoScalingConfigurationsResponse, String>() {
+                new java.util.function.Function<ListAutoScalingConfigurationsResponse, String>() {
                     @Override
                     public String apply(ListAutoScalingConfigurationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAutoScalingConfigurationsRequest.Builder>,
                         ListAutoScalingConfigurationsRequest>() {
@@ -132,12 +128,12 @@ public class AutoScalingPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAutoScalingConfigurationsRequest,
                         ListAutoScalingConfigurationsResponse>() {
                     @Override
@@ -146,7 +142,7 @@ public class AutoScalingPaginators {
                         return client.listAutoScalingConfigurations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAutoScalingConfigurationsResponse,
                         java.util.List<
                                 com.oracle.bmc.autoscaling.model
@@ -173,19 +169,19 @@ public class AutoScalingPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAutoScalingPoliciesRequest.Builder, ListAutoScalingPoliciesRequest,
                 ListAutoScalingPoliciesResponse>(
-                new com.google.common.base.Supplier<ListAutoScalingPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListAutoScalingPoliciesRequest.Builder>() {
                     @Override
                     public ListAutoScalingPoliciesRequest.Builder get() {
                         return ListAutoScalingPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAutoScalingPoliciesResponse, String>() {
+                new java.util.function.Function<ListAutoScalingPoliciesResponse, String>() {
                     @Override
                     public String apply(ListAutoScalingPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAutoScalingPoliciesRequest.Builder>,
                         ListAutoScalingPoliciesRequest>() {
@@ -198,12 +194,12 @@ public class AutoScalingPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAutoScalingPoliciesRequest, ListAutoScalingPoliciesResponse>() {
                     @Override
                     public ListAutoScalingPoliciesResponse apply(
@@ -228,19 +224,19 @@ public class AutoScalingPaginators {
                 ListAutoScalingPoliciesRequest.Builder, ListAutoScalingPoliciesRequest,
                 ListAutoScalingPoliciesResponse,
                 com.oracle.bmc.autoscaling.model.AutoScalingPolicySummary>(
-                new com.google.common.base.Supplier<ListAutoScalingPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListAutoScalingPoliciesRequest.Builder>() {
                     @Override
                     public ListAutoScalingPoliciesRequest.Builder get() {
                         return ListAutoScalingPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAutoScalingPoliciesResponse, String>() {
+                new java.util.function.Function<ListAutoScalingPoliciesResponse, String>() {
                     @Override
                     public String apply(ListAutoScalingPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAutoScalingPoliciesRequest.Builder>,
                         ListAutoScalingPoliciesRequest>() {
@@ -253,12 +249,12 @@ public class AutoScalingPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAutoScalingPoliciesRequest, ListAutoScalingPoliciesResponse>() {
                     @Override
                     public ListAutoScalingPoliciesResponse apply(
@@ -266,7 +262,7 @@ public class AutoScalingPaginators {
                         return client.listAutoScalingPolicies(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAutoScalingPoliciesResponse,
                         java.util.List<
                                 com.oracle.bmc.autoscaling.model.AutoScalingPolicySummary>>() {

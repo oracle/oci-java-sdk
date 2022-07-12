@@ -4,9 +4,9 @@
  */
 package com.oracle.bmc.http.internal;
 
+import java.util.function.Function;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
-import com.google.common.base.Function;
 import com.oracle.bmc.ServiceDetails;
 
 /**

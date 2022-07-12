@@ -45,19 +45,19 @@ public class DomainGovernancePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDomainGovernancesRequest.Builder, ListDomainGovernancesRequest,
                 ListDomainGovernancesResponse>(
-                new com.google.common.base.Supplier<ListDomainGovernancesRequest.Builder>() {
+                new java.util.function.Supplier<ListDomainGovernancesRequest.Builder>() {
                     @Override
                     public ListDomainGovernancesRequest.Builder get() {
                         return ListDomainGovernancesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDomainGovernancesResponse, String>() {
+                new java.util.function.Function<ListDomainGovernancesResponse, String>() {
                     @Override
                     public String apply(ListDomainGovernancesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDomainGovernancesRequest.Builder>,
                         ListDomainGovernancesRequest>() {
@@ -70,12 +70,12 @@ public class DomainGovernancePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDomainGovernancesRequest, ListDomainGovernancesResponse>() {
                     @Override
                     public ListDomainGovernancesResponse apply(
@@ -100,19 +100,19 @@ public class DomainGovernancePaginators {
                 ListDomainGovernancesRequest.Builder, ListDomainGovernancesRequest,
                 ListDomainGovernancesResponse,
                 com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernanceSummary>(
-                new com.google.common.base.Supplier<ListDomainGovernancesRequest.Builder>() {
+                new java.util.function.Supplier<ListDomainGovernancesRequest.Builder>() {
                     @Override
                     public ListDomainGovernancesRequest.Builder get() {
                         return ListDomainGovernancesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDomainGovernancesResponse, String>() {
+                new java.util.function.Function<ListDomainGovernancesResponse, String>() {
                     @Override
                     public String apply(ListDomainGovernancesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDomainGovernancesRequest.Builder>,
                         ListDomainGovernancesRequest>() {
@@ -125,12 +125,12 @@ public class DomainGovernancePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDomainGovernancesRequest, ListDomainGovernancesResponse>() {
                     @Override
                     public ListDomainGovernancesResponse apply(
@@ -138,7 +138,7 @@ public class DomainGovernancePaginators {
                         return client.listDomainGovernances(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDomainGovernancesResponse,
                         java.util.List<
                                 com.oracle.bmc.tenantmanagercontrolplane.model

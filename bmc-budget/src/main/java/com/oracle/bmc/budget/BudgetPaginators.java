@@ -44,19 +44,19 @@ public class BudgetPaginators {
             final ListAlertRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAlertRulesRequest.Builder, ListAlertRulesRequest, ListAlertRulesResponse>(
-                new com.google.common.base.Supplier<ListAlertRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListAlertRulesRequest.Builder>() {
                     @Override
                     public ListAlertRulesRequest.Builder get() {
                         return ListAlertRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAlertRulesResponse, String>() {
+                new java.util.function.Function<ListAlertRulesResponse, String>() {
                     @Override
                     public String apply(ListAlertRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAlertRulesRequest.Builder>,
                         ListAlertRulesRequest>() {
@@ -69,13 +69,12 @@ public class BudgetPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListAlertRulesRequest, ListAlertRulesResponse>() {
+                new java.util.function.Function<ListAlertRulesRequest, ListAlertRulesResponse>() {
                     @Override
                     public ListAlertRulesResponse apply(ListAlertRulesRequest request) {
                         return client.listAlertRules(request);
@@ -97,19 +96,19 @@ public class BudgetPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListAlertRulesRequest.Builder, ListAlertRulesRequest, ListAlertRulesResponse,
                 com.oracle.bmc.budget.model.AlertRuleSummary>(
-                new com.google.common.base.Supplier<ListAlertRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListAlertRulesRequest.Builder>() {
                     @Override
                     public ListAlertRulesRequest.Builder get() {
                         return ListAlertRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAlertRulesResponse, String>() {
+                new java.util.function.Function<ListAlertRulesResponse, String>() {
                     @Override
                     public String apply(ListAlertRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAlertRulesRequest.Builder>,
                         ListAlertRulesRequest>() {
@@ -122,19 +121,18 @@ public class BudgetPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListAlertRulesRequest, ListAlertRulesResponse>() {
+                new java.util.function.Function<ListAlertRulesRequest, ListAlertRulesResponse>() {
                     @Override
                     public ListAlertRulesResponse apply(ListAlertRulesRequest request) {
                         return client.listAlertRules(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAlertRulesResponse,
                         java.util.List<com.oracle.bmc.budget.model.AlertRuleSummary>>() {
                     @Override
@@ -156,19 +154,19 @@ public class BudgetPaginators {
             final ListBudgetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBudgetsRequest.Builder, ListBudgetsRequest, ListBudgetsResponse>(
-                new com.google.common.base.Supplier<ListBudgetsRequest.Builder>() {
+                new java.util.function.Supplier<ListBudgetsRequest.Builder>() {
                     @Override
                     public ListBudgetsRequest.Builder get() {
                         return ListBudgetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBudgetsResponse, String>() {
+                new java.util.function.Function<ListBudgetsResponse, String>() {
                     @Override
                     public String apply(ListBudgetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBudgetsRequest.Builder>,
                         ListBudgetsRequest>() {
@@ -181,12 +179,12 @@ public class BudgetPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListBudgetsRequest, ListBudgetsResponse>() {
+                new java.util.function.Function<ListBudgetsRequest, ListBudgetsResponse>() {
                     @Override
                     public ListBudgetsResponse apply(ListBudgetsRequest request) {
                         return client.listBudgets(request);
@@ -208,19 +206,19 @@ public class BudgetPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListBudgetsRequest.Builder, ListBudgetsRequest, ListBudgetsResponse,
                 com.oracle.bmc.budget.model.BudgetSummary>(
-                new com.google.common.base.Supplier<ListBudgetsRequest.Builder>() {
+                new java.util.function.Supplier<ListBudgetsRequest.Builder>() {
                     @Override
                     public ListBudgetsRequest.Builder get() {
                         return ListBudgetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBudgetsResponse, String>() {
+                new java.util.function.Function<ListBudgetsResponse, String>() {
                     @Override
                     public String apply(ListBudgetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBudgetsRequest.Builder>,
                         ListBudgetsRequest>() {
@@ -233,18 +231,18 @@ public class BudgetPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListBudgetsRequest, ListBudgetsResponse>() {
+                new java.util.function.Function<ListBudgetsRequest, ListBudgetsResponse>() {
                     @Override
                     public ListBudgetsResponse apply(ListBudgetsRequest request) {
                         return client.listBudgets(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBudgetsResponse,
                         java.util.List<com.oracle.bmc.budget.model.BudgetSummary>>() {
                     @Override

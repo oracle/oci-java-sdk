@@ -55,22 +55,22 @@ public class CreateLibraryMaskingFormatConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.datasafe.responses.CreateLibraryMaskingFormatResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.datasafe.responses.CreateLibraryMaskingFormatResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.datasafe.responses.CreateLibraryMaskingFormatResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.datasafe.responses
                                         .CreateLibraryMaskingFormatResponse>() {
@@ -80,7 +80,7 @@ public class CreateLibraryMaskingFormatConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.datasafe.responses.CreateLibraryMaskingFormatResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.datasafe.model
@@ -118,7 +118,7 @@ public class CreateLibraryMaskingFormatConverter {
 
                                 builder.libraryMaskingFormat(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
+                                java.util.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
                                                 headers, "etag");
                                 if (etagHeader.isPresent()) {
@@ -127,10 +127,9 @@ public class CreateLibraryMaskingFormatConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcWorkRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-work-request-id");
+                                java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-work-request-id");
                                 if (opcWorkRequestIdHeader.isPresent()) {
                                     builder.opcWorkRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -139,10 +138,9 @@ public class CreateLibraryMaskingFormatConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -151,10 +149,9 @@ public class CreateLibraryMaskingFormatConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        locationHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "location");
+                                java.util.Optional<java.util.List<String>> locationHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "location");
                                 if (locationHeader.isPresent()) {
                                     builder.location(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(

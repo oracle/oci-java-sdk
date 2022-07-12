@@ -44,19 +44,19 @@ public class DnsPaginators {
             final GetDomainRecordsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 GetDomainRecordsRequest.Builder, GetDomainRecordsRequest, GetDomainRecordsResponse>(
-                new com.google.common.base.Supplier<GetDomainRecordsRequest.Builder>() {
+                new java.util.function.Supplier<GetDomainRecordsRequest.Builder>() {
                     @Override
                     public GetDomainRecordsRequest.Builder get() {
                         return GetDomainRecordsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<GetDomainRecordsResponse, String>() {
+                new java.util.function.Function<GetDomainRecordsResponse, String>() {
                     @Override
                     public String apply(GetDomainRecordsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 GetDomainRecordsRequest.Builder>,
                         GetDomainRecordsRequest>() {
@@ -69,12 +69,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetDomainRecordsRequest, GetDomainRecordsResponse>() {
                     @Override
                     public GetDomainRecordsResponse apply(GetDomainRecordsRequest request) {
@@ -97,19 +97,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 GetDomainRecordsRequest.Builder, GetDomainRecordsRequest, GetDomainRecordsResponse,
                 com.oracle.bmc.dns.model.Record>(
-                new com.google.common.base.Supplier<GetDomainRecordsRequest.Builder>() {
+                new java.util.function.Supplier<GetDomainRecordsRequest.Builder>() {
                     @Override
                     public GetDomainRecordsRequest.Builder get() {
                         return GetDomainRecordsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<GetDomainRecordsResponse, String>() {
+                new java.util.function.Function<GetDomainRecordsResponse, String>() {
                     @Override
                     public String apply(GetDomainRecordsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 GetDomainRecordsRequest.Builder>,
                         GetDomainRecordsRequest>() {
@@ -122,19 +122,19 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetDomainRecordsRequest, GetDomainRecordsResponse>() {
                     @Override
                     public GetDomainRecordsResponse apply(GetDomainRecordsRequest request) {
                         return client.getDomainRecords(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetDomainRecordsResponse,
                         java.util.List<com.oracle.bmc.dns.model.Record>>() {
                     @Override
@@ -155,19 +155,19 @@ public class DnsPaginators {
     public Iterable<GetRRSetResponse> getRRSetResponseIterator(final GetRRSetRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 GetRRSetRequest.Builder, GetRRSetRequest, GetRRSetResponse>(
-                new com.google.common.base.Supplier<GetRRSetRequest.Builder>() {
+                new java.util.function.Supplier<GetRRSetRequest.Builder>() {
                     @Override
                     public GetRRSetRequest.Builder get() {
                         return GetRRSetRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<GetRRSetResponse, String>() {
+                new java.util.function.Function<GetRRSetResponse, String>() {
                     @Override
                     public String apply(GetRRSetResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 GetRRSetRequest.Builder>,
                         GetRRSetRequest>() {
@@ -180,12 +180,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<GetRRSetRequest, GetRRSetResponse>() {
+                new java.util.function.Function<GetRRSetRequest, GetRRSetResponse>() {
                     @Override
                     public GetRRSetResponse apply(GetRRSetRequest request) {
                         return client.getRRSet(request);
@@ -207,19 +207,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 GetRRSetRequest.Builder, GetRRSetRequest, GetRRSetResponse,
                 com.oracle.bmc.dns.model.Record>(
-                new com.google.common.base.Supplier<GetRRSetRequest.Builder>() {
+                new java.util.function.Supplier<GetRRSetRequest.Builder>() {
                     @Override
                     public GetRRSetRequest.Builder get() {
                         return GetRRSetRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<GetRRSetResponse, String>() {
+                new java.util.function.Function<GetRRSetResponse, String>() {
                     @Override
                     public String apply(GetRRSetResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 GetRRSetRequest.Builder>,
                         GetRRSetRequest>() {
@@ -232,18 +232,18 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<GetRRSetRequest, GetRRSetResponse>() {
+                new java.util.function.Function<GetRRSetRequest, GetRRSetResponse>() {
                     @Override
                     public GetRRSetResponse apply(GetRRSetRequest request) {
                         return client.getRRSet(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetRRSetResponse, java.util.List<com.oracle.bmc.dns.model.Record>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.dns.model.Record> apply(
@@ -264,19 +264,19 @@ public class DnsPaginators {
             final GetZoneRecordsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 GetZoneRecordsRequest.Builder, GetZoneRecordsRequest, GetZoneRecordsResponse>(
-                new com.google.common.base.Supplier<GetZoneRecordsRequest.Builder>() {
+                new java.util.function.Supplier<GetZoneRecordsRequest.Builder>() {
                     @Override
                     public GetZoneRecordsRequest.Builder get() {
                         return GetZoneRecordsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<GetZoneRecordsResponse, String>() {
+                new java.util.function.Function<GetZoneRecordsResponse, String>() {
                     @Override
                     public String apply(GetZoneRecordsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 GetZoneRecordsRequest.Builder>,
                         GetZoneRecordsRequest>() {
@@ -289,13 +289,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        GetZoneRecordsRequest, GetZoneRecordsResponse>() {
+                new java.util.function.Function<GetZoneRecordsRequest, GetZoneRecordsResponse>() {
                     @Override
                     public GetZoneRecordsResponse apply(GetZoneRecordsRequest request) {
                         return client.getZoneRecords(request);
@@ -317,19 +316,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 GetZoneRecordsRequest.Builder, GetZoneRecordsRequest, GetZoneRecordsResponse,
                 com.oracle.bmc.dns.model.Record>(
-                new com.google.common.base.Supplier<GetZoneRecordsRequest.Builder>() {
+                new java.util.function.Supplier<GetZoneRecordsRequest.Builder>() {
                     @Override
                     public GetZoneRecordsRequest.Builder get() {
                         return GetZoneRecordsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<GetZoneRecordsResponse, String>() {
+                new java.util.function.Function<GetZoneRecordsResponse, String>() {
                     @Override
                     public String apply(GetZoneRecordsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 GetZoneRecordsRequest.Builder>,
                         GetZoneRecordsRequest>() {
@@ -342,19 +341,18 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        GetZoneRecordsRequest, GetZoneRecordsResponse>() {
+                new java.util.function.Function<GetZoneRecordsRequest, GetZoneRecordsResponse>() {
                     @Override
                     public GetZoneRecordsResponse apply(GetZoneRecordsRequest request) {
                         return client.getZoneRecords(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetZoneRecordsResponse, java.util.List<com.oracle.bmc.dns.model.Record>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.dns.model.Record> apply(
@@ -376,19 +374,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListResolverEndpointsRequest.Builder, ListResolverEndpointsRequest,
                 ListResolverEndpointsResponse>(
-                new com.google.common.base.Supplier<ListResolverEndpointsRequest.Builder>() {
+                new java.util.function.Supplier<ListResolverEndpointsRequest.Builder>() {
                     @Override
                     public ListResolverEndpointsRequest.Builder get() {
                         return ListResolverEndpointsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListResolverEndpointsResponse, String>() {
+                new java.util.function.Function<ListResolverEndpointsResponse, String>() {
                     @Override
                     public String apply(ListResolverEndpointsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListResolverEndpointsRequest.Builder>,
                         ListResolverEndpointsRequest>() {
@@ -401,12 +399,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListResolverEndpointsRequest, ListResolverEndpointsResponse>() {
                     @Override
                     public ListResolverEndpointsResponse apply(
@@ -430,19 +428,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListResolverEndpointsRequest.Builder, ListResolverEndpointsRequest,
                 ListResolverEndpointsResponse, com.oracle.bmc.dns.model.ResolverEndpointSummary>(
-                new com.google.common.base.Supplier<ListResolverEndpointsRequest.Builder>() {
+                new java.util.function.Supplier<ListResolverEndpointsRequest.Builder>() {
                     @Override
                     public ListResolverEndpointsRequest.Builder get() {
                         return ListResolverEndpointsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListResolverEndpointsResponse, String>() {
+                new java.util.function.Function<ListResolverEndpointsResponse, String>() {
                     @Override
                     public String apply(ListResolverEndpointsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListResolverEndpointsRequest.Builder>,
                         ListResolverEndpointsRequest>() {
@@ -455,12 +453,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListResolverEndpointsRequest, ListResolverEndpointsResponse>() {
                     @Override
                     public ListResolverEndpointsResponse apply(
@@ -468,7 +466,7 @@ public class DnsPaginators {
                         return client.listResolverEndpoints(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListResolverEndpointsResponse,
                         java.util.List<com.oracle.bmc.dns.model.ResolverEndpointSummary>>() {
                     @Override
@@ -490,19 +488,19 @@ public class DnsPaginators {
             final ListResolversRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListResolversRequest.Builder, ListResolversRequest, ListResolversResponse>(
-                new com.google.common.base.Supplier<ListResolversRequest.Builder>() {
+                new java.util.function.Supplier<ListResolversRequest.Builder>() {
                     @Override
                     public ListResolversRequest.Builder get() {
                         return ListResolversRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListResolversResponse, String>() {
+                new java.util.function.Function<ListResolversResponse, String>() {
                     @Override
                     public String apply(ListResolversResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListResolversRequest.Builder>,
                         ListResolversRequest>() {
@@ -515,12 +513,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListResolversRequest, ListResolversResponse>() {
+                new java.util.function.Function<ListResolversRequest, ListResolversResponse>() {
                     @Override
                     public ListResolversResponse apply(ListResolversRequest request) {
                         return client.listResolvers(request);
@@ -542,19 +540,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListResolversRequest.Builder, ListResolversRequest, ListResolversResponse,
                 com.oracle.bmc.dns.model.ResolverSummary>(
-                new com.google.common.base.Supplier<ListResolversRequest.Builder>() {
+                new java.util.function.Supplier<ListResolversRequest.Builder>() {
                     @Override
                     public ListResolversRequest.Builder get() {
                         return ListResolversRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListResolversResponse, String>() {
+                new java.util.function.Function<ListResolversResponse, String>() {
                     @Override
                     public String apply(ListResolversResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListResolversRequest.Builder>,
                         ListResolversRequest>() {
@@ -567,18 +565,18 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListResolversRequest, ListResolversResponse>() {
+                new java.util.function.Function<ListResolversRequest, ListResolversResponse>() {
                     @Override
                     public ListResolversResponse apply(ListResolversRequest request) {
                         return client.listResolvers(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListResolversResponse,
                         java.util.List<com.oracle.bmc.dns.model.ResolverSummary>>() {
                     @Override
@@ -601,19 +599,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSteeringPoliciesRequest.Builder, ListSteeringPoliciesRequest,
                 ListSteeringPoliciesResponse>(
-                new com.google.common.base.Supplier<ListSteeringPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListSteeringPoliciesRequest.Builder>() {
                     @Override
                     public ListSteeringPoliciesRequest.Builder get() {
                         return ListSteeringPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSteeringPoliciesResponse, String>() {
+                new java.util.function.Function<ListSteeringPoliciesResponse, String>() {
                     @Override
                     public String apply(ListSteeringPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSteeringPoliciesRequest.Builder>,
                         ListSteeringPoliciesRequest>() {
@@ -626,12 +624,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSteeringPoliciesRequest, ListSteeringPoliciesResponse>() {
                     @Override
                     public ListSteeringPoliciesResponse apply(ListSteeringPoliciesRequest request) {
@@ -654,19 +652,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSteeringPoliciesRequest.Builder, ListSteeringPoliciesRequest,
                 ListSteeringPoliciesResponse, com.oracle.bmc.dns.model.SteeringPolicySummary>(
-                new com.google.common.base.Supplier<ListSteeringPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListSteeringPoliciesRequest.Builder>() {
                     @Override
                     public ListSteeringPoliciesRequest.Builder get() {
                         return ListSteeringPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSteeringPoliciesResponse, String>() {
+                new java.util.function.Function<ListSteeringPoliciesResponse, String>() {
                     @Override
                     public String apply(ListSteeringPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSteeringPoliciesRequest.Builder>,
                         ListSteeringPoliciesRequest>() {
@@ -679,19 +677,19 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSteeringPoliciesRequest, ListSteeringPoliciesResponse>() {
                     @Override
                     public ListSteeringPoliciesResponse apply(ListSteeringPoliciesRequest request) {
                         return client.listSteeringPolicies(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSteeringPoliciesResponse,
                         java.util.List<com.oracle.bmc.dns.model.SteeringPolicySummary>>() {
                     @Override
@@ -715,21 +713,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSteeringPolicyAttachmentsRequest.Builder, ListSteeringPolicyAttachmentsRequest,
                 ListSteeringPolicyAttachmentsResponse>(
-                new com.google.common.base.Supplier<
-                        ListSteeringPolicyAttachmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListSteeringPolicyAttachmentsRequest.Builder>() {
                     @Override
                     public ListSteeringPolicyAttachmentsRequest.Builder get() {
                         return ListSteeringPolicyAttachmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListSteeringPolicyAttachmentsResponse, String>() {
+                new java.util.function.Function<ListSteeringPolicyAttachmentsResponse, String>() {
                     @Override
                     public String apply(ListSteeringPolicyAttachmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSteeringPolicyAttachmentsRequest.Builder>,
                         ListSteeringPolicyAttachmentsRequest>() {
@@ -742,12 +738,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSteeringPolicyAttachmentsRequest,
                         ListSteeringPolicyAttachmentsResponse>() {
                     @Override
@@ -774,21 +770,19 @@ public class DnsPaginators {
                 ListSteeringPolicyAttachmentsRequest.Builder, ListSteeringPolicyAttachmentsRequest,
                 ListSteeringPolicyAttachmentsResponse,
                 com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary>(
-                new com.google.common.base.Supplier<
-                        ListSteeringPolicyAttachmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListSteeringPolicyAttachmentsRequest.Builder>() {
                     @Override
                     public ListSteeringPolicyAttachmentsRequest.Builder get() {
                         return ListSteeringPolicyAttachmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListSteeringPolicyAttachmentsResponse, String>() {
+                new java.util.function.Function<ListSteeringPolicyAttachmentsResponse, String>() {
                     @Override
                     public String apply(ListSteeringPolicyAttachmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSteeringPolicyAttachmentsRequest.Builder>,
                         ListSteeringPolicyAttachmentsRequest>() {
@@ -801,12 +795,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSteeringPolicyAttachmentsRequest,
                         ListSteeringPolicyAttachmentsResponse>() {
                     @Override
@@ -815,7 +809,7 @@ public class DnsPaginators {
                         return client.listSteeringPolicyAttachments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSteeringPolicyAttachmentsResponse,
                         java.util.List<
                                 com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary>>() {
@@ -838,19 +832,19 @@ public class DnsPaginators {
             final ListTsigKeysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListTsigKeysRequest.Builder, ListTsigKeysRequest, ListTsigKeysResponse>(
-                new com.google.common.base.Supplier<ListTsigKeysRequest.Builder>() {
+                new java.util.function.Supplier<ListTsigKeysRequest.Builder>() {
                     @Override
                     public ListTsigKeysRequest.Builder get() {
                         return ListTsigKeysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTsigKeysResponse, String>() {
+                new java.util.function.Function<ListTsigKeysResponse, String>() {
                     @Override
                     public String apply(ListTsigKeysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTsigKeysRequest.Builder>,
                         ListTsigKeysRequest>() {
@@ -863,12 +857,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListTsigKeysRequest, ListTsigKeysResponse>() {
+                new java.util.function.Function<ListTsigKeysRequest, ListTsigKeysResponse>() {
                     @Override
                     public ListTsigKeysResponse apply(ListTsigKeysRequest request) {
                         return client.listTsigKeys(request);
@@ -890,19 +884,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListTsigKeysRequest.Builder, ListTsigKeysRequest, ListTsigKeysResponse,
                 com.oracle.bmc.dns.model.TsigKeySummary>(
-                new com.google.common.base.Supplier<ListTsigKeysRequest.Builder>() {
+                new java.util.function.Supplier<ListTsigKeysRequest.Builder>() {
                     @Override
                     public ListTsigKeysRequest.Builder get() {
                         return ListTsigKeysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTsigKeysResponse, String>() {
+                new java.util.function.Function<ListTsigKeysResponse, String>() {
                     @Override
                     public String apply(ListTsigKeysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTsigKeysRequest.Builder>,
                         ListTsigKeysRequest>() {
@@ -915,18 +909,18 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListTsigKeysRequest, ListTsigKeysResponse>() {
+                new java.util.function.Function<ListTsigKeysRequest, ListTsigKeysResponse>() {
                     @Override
                     public ListTsigKeysResponse apply(ListTsigKeysRequest request) {
                         return client.listTsigKeys(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTsigKeysResponse,
                         java.util.List<com.oracle.bmc.dns.model.TsigKeySummary>>() {
                     @Override
@@ -947,19 +941,19 @@ public class DnsPaginators {
     public Iterable<ListViewsResponse> listViewsResponseIterator(final ListViewsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListViewsRequest.Builder, ListViewsRequest, ListViewsResponse>(
-                new com.google.common.base.Supplier<ListViewsRequest.Builder>() {
+                new java.util.function.Supplier<ListViewsRequest.Builder>() {
                     @Override
                     public ListViewsRequest.Builder get() {
                         return ListViewsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListViewsResponse, String>() {
+                new java.util.function.Function<ListViewsResponse, String>() {
                     @Override
                     public String apply(ListViewsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListViewsRequest.Builder>,
                         ListViewsRequest>() {
@@ -972,12 +966,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListViewsRequest, ListViewsResponse>() {
+                new java.util.function.Function<ListViewsRequest, ListViewsResponse>() {
                     @Override
                     public ListViewsResponse apply(ListViewsRequest request) {
                         return client.listViews(request);
@@ -999,19 +993,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListViewsRequest.Builder, ListViewsRequest, ListViewsResponse,
                 com.oracle.bmc.dns.model.ViewSummary>(
-                new com.google.common.base.Supplier<ListViewsRequest.Builder>() {
+                new java.util.function.Supplier<ListViewsRequest.Builder>() {
                     @Override
                     public ListViewsRequest.Builder get() {
                         return ListViewsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListViewsResponse, String>() {
+                new java.util.function.Function<ListViewsResponse, String>() {
                     @Override
                     public String apply(ListViewsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListViewsRequest.Builder>,
                         ListViewsRequest>() {
@@ -1024,18 +1018,18 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListViewsRequest, ListViewsResponse>() {
+                new java.util.function.Function<ListViewsRequest, ListViewsResponse>() {
                     @Override
                     public ListViewsResponse apply(ListViewsRequest request) {
                         return client.listViews(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListViewsResponse, java.util.List<com.oracle.bmc.dns.model.ViewSummary>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.dns.model.ViewSummary> apply(
@@ -1057,19 +1051,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListZoneTransferServersRequest.Builder, ListZoneTransferServersRequest,
                 ListZoneTransferServersResponse>(
-                new com.google.common.base.Supplier<ListZoneTransferServersRequest.Builder>() {
+                new java.util.function.Supplier<ListZoneTransferServersRequest.Builder>() {
                     @Override
                     public ListZoneTransferServersRequest.Builder get() {
                         return ListZoneTransferServersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListZoneTransferServersResponse, String>() {
+                new java.util.function.Function<ListZoneTransferServersResponse, String>() {
                     @Override
                     public String apply(ListZoneTransferServersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListZoneTransferServersRequest.Builder>,
                         ListZoneTransferServersRequest>() {
@@ -1082,12 +1076,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListZoneTransferServersRequest, ListZoneTransferServersResponse>() {
                     @Override
                     public ListZoneTransferServersResponse apply(
@@ -1111,19 +1105,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListZoneTransferServersRequest.Builder, ListZoneTransferServersRequest,
                 ListZoneTransferServersResponse, com.oracle.bmc.dns.model.ZoneTransferServer>(
-                new com.google.common.base.Supplier<ListZoneTransferServersRequest.Builder>() {
+                new java.util.function.Supplier<ListZoneTransferServersRequest.Builder>() {
                     @Override
                     public ListZoneTransferServersRequest.Builder get() {
                         return ListZoneTransferServersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListZoneTransferServersResponse, String>() {
+                new java.util.function.Function<ListZoneTransferServersResponse, String>() {
                     @Override
                     public String apply(ListZoneTransferServersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListZoneTransferServersRequest.Builder>,
                         ListZoneTransferServersRequest>() {
@@ -1136,12 +1130,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListZoneTransferServersRequest, ListZoneTransferServersResponse>() {
                     @Override
                     public ListZoneTransferServersResponse apply(
@@ -1149,7 +1143,7 @@ public class DnsPaginators {
                         return client.listZoneTransferServers(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListZoneTransferServersResponse,
                         java.util.List<com.oracle.bmc.dns.model.ZoneTransferServer>>() {
                     @Override
@@ -1170,19 +1164,19 @@ public class DnsPaginators {
     public Iterable<ListZonesResponse> listZonesResponseIterator(final ListZonesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListZonesRequest.Builder, ListZonesRequest, ListZonesResponse>(
-                new com.google.common.base.Supplier<ListZonesRequest.Builder>() {
+                new java.util.function.Supplier<ListZonesRequest.Builder>() {
                     @Override
                     public ListZonesRequest.Builder get() {
                         return ListZonesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListZonesResponse, String>() {
+                new java.util.function.Function<ListZonesResponse, String>() {
                     @Override
                     public String apply(ListZonesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListZonesRequest.Builder>,
                         ListZonesRequest>() {
@@ -1195,12 +1189,12 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListZonesRequest, ListZonesResponse>() {
+                new java.util.function.Function<ListZonesRequest, ListZonesResponse>() {
                     @Override
                     public ListZonesResponse apply(ListZonesRequest request) {
                         return client.listZones(request);
@@ -1222,19 +1216,19 @@ public class DnsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListZonesRequest.Builder, ListZonesRequest, ListZonesResponse,
                 com.oracle.bmc.dns.model.ZoneSummary>(
-                new com.google.common.base.Supplier<ListZonesRequest.Builder>() {
+                new java.util.function.Supplier<ListZonesRequest.Builder>() {
                     @Override
                     public ListZonesRequest.Builder get() {
                         return ListZonesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListZonesResponse, String>() {
+                new java.util.function.Function<ListZonesResponse, String>() {
                     @Override
                     public String apply(ListZonesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListZonesRequest.Builder>,
                         ListZonesRequest>() {
@@ -1247,18 +1241,18 @@ public class DnsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListZonesRequest, ListZonesResponse>() {
+                new java.util.function.Function<ListZonesRequest, ListZonesResponse>() {
                     @Override
                     public ListZonesResponse apply(ListZonesRequest request) {
                         return client.listZones(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListZonesResponse, java.util.List<com.oracle.bmc.dns.model.ZoneSummary>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.dns.model.ZoneSummary> apply(

@@ -6,7 +6,6 @@ package com.oracle.bmc.stackmonitoring;
 
 import com.oracle.bmc.stackmonitoring.requests.*;
 import com.oracle.bmc.stackmonitoring.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -107,17 +106,17 @@ public class StackMonitoringWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDiscoveryJobRequest, GetDiscoveryJobResponse>() {
                             @Override
                             public GetDiscoveryJobResponse apply(GetDiscoveryJobRequest request) {
                                 return client.getDiscoveryJob(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDiscoveryJobResponse>() {
+                        new java.util.function.Predicate<GetDiscoveryJobResponse>() {
                             @Override
-                            public boolean apply(GetDiscoveryJobResponse response) {
+                            public boolean test(GetDiscoveryJobResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDiscoveryJob().getLifecycleState());
                             }
@@ -210,8 +209,8 @@ public class StackMonitoringWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetMonitoredResourceRequest, GetMonitoredResourceResponse>() {
                             @Override
                             public GetMonitoredResourceResponse apply(
@@ -219,9 +218,9 @@ public class StackMonitoringWaiters {
                                 return client.getMonitoredResource(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetMonitoredResourceResponse>() {
+                        new java.util.function.Predicate<GetMonitoredResourceResponse>() {
                             @Override
-                            public boolean apply(GetMonitoredResourceResponse response) {
+                            public boolean test(GetMonitoredResourceResponse response) {
                                 return targetStatesSet.contains(
                                         response.getMonitoredResource().getLifecycleState());
                             }
@@ -269,17 +268,17 @@ public class StackMonitoringWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

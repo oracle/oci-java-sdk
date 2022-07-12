@@ -6,7 +6,6 @@ package com.oracle.bmc.apigateway;
 
 import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -102,16 +101,16 @@ public class ApiGatewayWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetApiRequest, GetApiResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetApiRequest, GetApiResponse>() {
                             @Override
                             public GetApiResponse apply(GetApiRequest request) {
                                 return client.getApi(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetApiResponse>() {
+                        new java.util.function.Predicate<GetApiResponse>() {
                             @Override
-                            public boolean apply(GetApiResponse response) {
+                            public boolean test(GetApiResponse response) {
                                 return targetStatesSet.contains(
                                         response.getApi().getLifecycleState());
                             }
@@ -204,17 +203,17 @@ public class ApiGatewayWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetCertificateRequest, GetCertificateResponse>() {
                             @Override
                             public GetCertificateResponse apply(GetCertificateRequest request) {
                                 return client.getCertificate(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCertificateResponse>() {
+                        new java.util.function.Predicate<GetCertificateResponse>() {
                             @Override
-                            public boolean apply(GetCertificateResponse response) {
+                            public boolean test(GetCertificateResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCertificate().getLifecycleState());
                             }
@@ -302,16 +301,16 @@ public class ApiGatewayWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetSdkRequest, GetSdkResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetSdkRequest, GetSdkResponse>() {
                             @Override
                             public GetSdkResponse apply(GetSdkRequest request) {
                                 return client.getSdk(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSdkResponse>() {
+                        new java.util.function.Predicate<GetSdkResponse>() {
                             @Override
-                            public boolean apply(GetSdkResponse response) {
+                            public boolean test(GetSdkResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSdk().getLifecycleState());
                             }

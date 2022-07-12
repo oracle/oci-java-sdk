@@ -46,20 +46,19 @@ public class ComputedUsagePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAggregatedComputedUsagesRequest.Builder, ListAggregatedComputedUsagesRequest,
                 ListAggregatedComputedUsagesResponse>(
-                new com.google.common.base.Supplier<ListAggregatedComputedUsagesRequest.Builder>() {
+                new java.util.function.Supplier<ListAggregatedComputedUsagesRequest.Builder>() {
                     @Override
                     public ListAggregatedComputedUsagesRequest.Builder get() {
                         return ListAggregatedComputedUsagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListAggregatedComputedUsagesResponse, String>() {
+                new java.util.function.Function<ListAggregatedComputedUsagesResponse, String>() {
                     @Override
                     public String apply(ListAggregatedComputedUsagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAggregatedComputedUsagesRequest.Builder>,
                         ListAggregatedComputedUsagesRequest>() {
@@ -72,12 +71,12 @@ public class ComputedUsagePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAggregatedComputedUsagesRequest,
                         ListAggregatedComputedUsagesResponse>() {
                     @Override
@@ -104,20 +103,19 @@ public class ComputedUsagePaginators {
                 ListAggregatedComputedUsagesRequest.Builder, ListAggregatedComputedUsagesRequest,
                 ListAggregatedComputedUsagesResponse,
                 com.oracle.bmc.onesubscription.model.AggregatedComputedUsageSummary>(
-                new com.google.common.base.Supplier<ListAggregatedComputedUsagesRequest.Builder>() {
+                new java.util.function.Supplier<ListAggregatedComputedUsagesRequest.Builder>() {
                     @Override
                     public ListAggregatedComputedUsagesRequest.Builder get() {
                         return ListAggregatedComputedUsagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListAggregatedComputedUsagesResponse, String>() {
+                new java.util.function.Function<ListAggregatedComputedUsagesResponse, String>() {
                     @Override
                     public String apply(ListAggregatedComputedUsagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAggregatedComputedUsagesRequest.Builder>,
                         ListAggregatedComputedUsagesRequest>() {
@@ -130,12 +128,12 @@ public class ComputedUsagePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAggregatedComputedUsagesRequest,
                         ListAggregatedComputedUsagesResponse>() {
                     @Override
@@ -144,7 +142,7 @@ public class ComputedUsagePaginators {
                         return client.listAggregatedComputedUsages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAggregatedComputedUsagesResponse,
                         java.util.List<
                                 com.oracle.bmc.onesubscription.model
@@ -171,19 +169,19 @@ public class ComputedUsagePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListComputedUsagesRequest.Builder, ListComputedUsagesRequest,
                 ListComputedUsagesResponse>(
-                new com.google.common.base.Supplier<ListComputedUsagesRequest.Builder>() {
+                new java.util.function.Supplier<ListComputedUsagesRequest.Builder>() {
                     @Override
                     public ListComputedUsagesRequest.Builder get() {
                         return ListComputedUsagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListComputedUsagesResponse, String>() {
+                new java.util.function.Function<ListComputedUsagesResponse, String>() {
                     @Override
                     public String apply(ListComputedUsagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListComputedUsagesRequest.Builder>,
                         ListComputedUsagesRequest>() {
@@ -196,12 +194,12 @@ public class ComputedUsagePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListComputedUsagesRequest, ListComputedUsagesResponse>() {
                     @Override
                     public ListComputedUsagesResponse apply(ListComputedUsagesRequest request) {
@@ -225,19 +223,19 @@ public class ComputedUsagePaginators {
                 ListComputedUsagesRequest.Builder, ListComputedUsagesRequest,
                 ListComputedUsagesResponse,
                 com.oracle.bmc.onesubscription.model.ComputedUsageSummary>(
-                new com.google.common.base.Supplier<ListComputedUsagesRequest.Builder>() {
+                new java.util.function.Supplier<ListComputedUsagesRequest.Builder>() {
                     @Override
                     public ListComputedUsagesRequest.Builder get() {
                         return ListComputedUsagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListComputedUsagesResponse, String>() {
+                new java.util.function.Function<ListComputedUsagesResponse, String>() {
                     @Override
                     public String apply(ListComputedUsagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListComputedUsagesRequest.Builder>,
                         ListComputedUsagesRequest>() {
@@ -250,19 +248,19 @@ public class ComputedUsagePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListComputedUsagesRequest, ListComputedUsagesResponse>() {
                     @Override
                     public ListComputedUsagesResponse apply(ListComputedUsagesRequest request) {
                         return client.listComputedUsages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListComputedUsagesResponse,
                         java.util.List<
                                 com.oracle.bmc.onesubscription.model.ComputedUsageSummary>>() {

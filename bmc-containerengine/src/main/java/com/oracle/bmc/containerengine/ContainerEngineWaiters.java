@@ -6,7 +6,6 @@ package com.oracle.bmc.containerengine;
 
 import com.oracle.bmc.containerengine.requests.*;
 import com.oracle.bmc.containerengine.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -103,17 +102,16 @@ public class ContainerEngineWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetClusterRequest, GetClusterResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetClusterRequest, GetClusterResponse>() {
                             @Override
                             public GetClusterResponse apply(GetClusterRequest request) {
                                 return client.getCluster(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetClusterResponse>() {
+                        new java.util.function.Predicate<GetClusterResponse>() {
                             @Override
-                            public boolean apply(GetClusterResponse response) {
+                            public boolean test(GetClusterResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCluster().getLifecycleState());
                             }
@@ -202,17 +200,16 @@ public class ContainerEngineWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetNodePoolRequest, GetNodePoolResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetNodePoolRequest, GetNodePoolResponse>() {
                             @Override
                             public GetNodePoolResponse apply(GetNodePoolRequest request) {
                                 return client.getNodePool(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetNodePoolResponse>() {
+                        new java.util.function.Predicate<GetNodePoolResponse>() {
                             @Override
-                            public boolean apply(GetNodePoolResponse response) {
+                            public boolean test(GetNodePoolResponse response) {
                                 return targetStatesSet.contains(
                                         response.getNodePool().getLifecycleState());
                             }
@@ -260,17 +257,17 @@ public class ContainerEngineWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

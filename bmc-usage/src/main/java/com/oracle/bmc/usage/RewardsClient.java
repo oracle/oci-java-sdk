@@ -9,7 +9,6 @@ import com.oracle.bmc.usage.requests.*;
 import com.oracle.bmc.usage.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class RewardsClient implements Rewards {
@@ -331,7 +330,7 @@ public class RewardsClient implements Rewards {
          * @return the client
          */
         public RewardsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class RewardsClient implements Rewards {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -413,7 +413,7 @@ public class RewardsClient implements Rewards {
                         "CreateRedeemableUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUser/CreateRedeemableUser");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRedeemableUserResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRedeemableUserResponse>
                 transformer =
                         CreateRedeemableUserConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -454,7 +454,7 @@ public class RewardsClient implements Rewards {
                         "DeleteRedeemableUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUser/DeleteRedeemableUser");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRedeemableUserResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRedeemableUserResponse>
                 transformer =
                         DeleteRedeemableUserConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -492,9 +492,8 @@ public class RewardsClient implements Rewards {
                         "ListProducts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/ProductSummary/ListProducts");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListProductsResponse>
-                transformer =
-                        ListProductsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListProductsResponse> transformer =
+                ListProductsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -528,7 +527,7 @@ public class RewardsClient implements Rewards {
                         "ListRedeemableUsers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUserSummary/ListRedeemableUsers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRedeemableUsersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRedeemableUsersResponse>
                 transformer =
                         ListRedeemableUsersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -565,9 +564,8 @@ public class RewardsClient implements Rewards {
                         "ListRewards",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/MonthlyRewardSummary/ListRewards");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRewardsResponse>
-                transformer =
-                        ListRewardsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListRewardsResponse> transformer =
+                ListRewardsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

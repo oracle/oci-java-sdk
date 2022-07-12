@@ -9,7 +9,6 @@ import com.oracle.bmc.operatoraccesscontrol.requests.*;
 import com.oracle.bmc.operatoraccesscontrol.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class OperatorControlAssignmentClient implements OperatorControlAssignment {
@@ -335,9 +334,9 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("OperatorControlAssignment-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("OperatorControlAssignment-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -406,7 +405,7 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
          * @return the client
          */
         public OperatorControlAssignmentClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -443,7 +442,8 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -492,7 +492,7 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                         "ChangeOperatorControlAssignmentCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ChangeOperatorControlAssignmentCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeOperatorControlAssignmentCompartmentResponse>
                 transformer =
@@ -538,7 +538,7 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                         "CreateOperatorControlAssignment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/CreateOperatorControlAssignment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateOperatorControlAssignmentResponse>
                 transformer =
                         CreateOperatorControlAssignmentConverter.fromResponse(
@@ -582,7 +582,7 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                         "DeleteOperatorControlAssignment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/DeleteOperatorControlAssignment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOperatorControlAssignmentResponse>
                 transformer =
                         DeleteOperatorControlAssignmentConverter.fromResponse(
@@ -622,8 +622,7 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                         "GetOperatorControlAssignment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetOperatorControlAssignment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetOperatorControlAssignmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetOperatorControlAssignmentResponse>
                 transformer =
                         GetOperatorControlAssignmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -661,7 +660,7 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                         "ListOperatorControlAssignments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ListOperatorControlAssignments");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListOperatorControlAssignmentsResponse>
                 transformer =
                         ListOperatorControlAssignmentsConverter.fromResponse(
@@ -700,7 +699,7 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                         "UpdateOperatorControlAssignment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/UpdateOperatorControlAssignment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateOperatorControlAssignmentResponse>
                 transformer =
                         UpdateOperatorControlAssignmentConverter.fromResponse(

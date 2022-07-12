@@ -7,7 +7,6 @@ package com.oracle.bmc.identitydataplane;
 import com.oracle.bmc.identitydataplane.internal.http.*;
 import com.oracle.bmc.identitydataplane.requests.*;
 import com.oracle.bmc.identitydataplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Dataplane service. <br/>
@@ -319,7 +318,7 @@ public class DataplaneAsyncClient implements DataplaneAsync {
          * @return the client
          */
         public DataplaneAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class DataplaneAsyncClient implements DataplaneAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -403,7 +403,7 @@ public class DataplaneAsyncClient implements DataplaneAsync {
                         "GenerateScopedAccessToken",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateScopedAccessTokenResponse>
                 transformer =
                         GenerateScopedAccessTokenConverter.fromResponse(

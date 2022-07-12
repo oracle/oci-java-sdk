@@ -45,19 +45,19 @@ public class AIServiceSpeechPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListTranscriptionJobsRequest.Builder, ListTranscriptionJobsRequest,
                 ListTranscriptionJobsResponse>(
-                new com.google.common.base.Supplier<ListTranscriptionJobsRequest.Builder>() {
+                new java.util.function.Supplier<ListTranscriptionJobsRequest.Builder>() {
                     @Override
                     public ListTranscriptionJobsRequest.Builder get() {
                         return ListTranscriptionJobsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTranscriptionJobsResponse, String>() {
+                new java.util.function.Function<ListTranscriptionJobsResponse, String>() {
                     @Override
                     public String apply(ListTranscriptionJobsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTranscriptionJobsRequest.Builder>,
                         ListTranscriptionJobsRequest>() {
@@ -70,12 +70,12 @@ public class AIServiceSpeechPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTranscriptionJobsRequest, ListTranscriptionJobsResponse>() {
                     @Override
                     public ListTranscriptionJobsResponse apply(
@@ -100,19 +100,19 @@ public class AIServiceSpeechPaginators {
                 ListTranscriptionJobsRequest.Builder, ListTranscriptionJobsRequest,
                 ListTranscriptionJobsResponse,
                 com.oracle.bmc.aispeech.model.TranscriptionJobSummary>(
-                new com.google.common.base.Supplier<ListTranscriptionJobsRequest.Builder>() {
+                new java.util.function.Supplier<ListTranscriptionJobsRequest.Builder>() {
                     @Override
                     public ListTranscriptionJobsRequest.Builder get() {
                         return ListTranscriptionJobsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTranscriptionJobsResponse, String>() {
+                new java.util.function.Function<ListTranscriptionJobsResponse, String>() {
                     @Override
                     public String apply(ListTranscriptionJobsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTranscriptionJobsRequest.Builder>,
                         ListTranscriptionJobsRequest>() {
@@ -125,12 +125,12 @@ public class AIServiceSpeechPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTranscriptionJobsRequest, ListTranscriptionJobsResponse>() {
                     @Override
                     public ListTranscriptionJobsResponse apply(
@@ -138,7 +138,7 @@ public class AIServiceSpeechPaginators {
                         return client.listTranscriptionJobs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTranscriptionJobsResponse,
                         java.util.List<com.oracle.bmc.aispeech.model.TranscriptionJobSummary>>() {
                     @Override
@@ -161,19 +161,19 @@ public class AIServiceSpeechPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListTranscriptionTasksRequest.Builder, ListTranscriptionTasksRequest,
                 ListTranscriptionTasksResponse>(
-                new com.google.common.base.Supplier<ListTranscriptionTasksRequest.Builder>() {
+                new java.util.function.Supplier<ListTranscriptionTasksRequest.Builder>() {
                     @Override
                     public ListTranscriptionTasksRequest.Builder get() {
                         return ListTranscriptionTasksRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTranscriptionTasksResponse, String>() {
+                new java.util.function.Function<ListTranscriptionTasksResponse, String>() {
                     @Override
                     public String apply(ListTranscriptionTasksResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTranscriptionTasksRequest.Builder>,
                         ListTranscriptionTasksRequest>() {
@@ -186,12 +186,12 @@ public class AIServiceSpeechPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTranscriptionTasksRequest, ListTranscriptionTasksResponse>() {
                     @Override
                     public ListTranscriptionTasksResponse apply(
@@ -216,19 +216,19 @@ public class AIServiceSpeechPaginators {
                 ListTranscriptionTasksRequest.Builder, ListTranscriptionTasksRequest,
                 ListTranscriptionTasksResponse,
                 com.oracle.bmc.aispeech.model.TranscriptionTaskSummary>(
-                new com.google.common.base.Supplier<ListTranscriptionTasksRequest.Builder>() {
+                new java.util.function.Supplier<ListTranscriptionTasksRequest.Builder>() {
                     @Override
                     public ListTranscriptionTasksRequest.Builder get() {
                         return ListTranscriptionTasksRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTranscriptionTasksResponse, String>() {
+                new java.util.function.Function<ListTranscriptionTasksResponse, String>() {
                     @Override
                     public String apply(ListTranscriptionTasksResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTranscriptionTasksRequest.Builder>,
                         ListTranscriptionTasksRequest>() {
@@ -241,12 +241,12 @@ public class AIServiceSpeechPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTranscriptionTasksRequest, ListTranscriptionTasksResponse>() {
                     @Override
                     public ListTranscriptionTasksResponse apply(
@@ -254,7 +254,7 @@ public class AIServiceSpeechPaginators {
                         return client.listTranscriptionTasks(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTranscriptionTasksResponse,
                         java.util.List<com.oracle.bmc.aispeech.model.TranscriptionTaskSummary>>() {
                     @Override

@@ -9,7 +9,6 @@ import com.oracle.bmc.servicemesh.requests.*;
 import com.oracle.bmc.servicemesh.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 public class ServiceMeshClient implements ServiceMesh {
@@ -334,9 +333,9 @@ public class ServiceMeshClient implements ServiceMesh {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("ServiceMesh-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("ServiceMesh-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class ServiceMeshClient implements ServiceMesh {
          * @return the client
          */
         public ServiceMeshClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class ServiceMeshClient implements ServiceMesh {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ChangeAccessPolicyCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ChangeAccessPolicyCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAccessPolicyCompartmentResponse>
                 transformer =
                         ChangeAccessPolicyCompartmentConverter.fromResponse(
@@ -533,7 +533,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ChangeIngressGatewayCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ChangeIngressGatewayCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeIngressGatewayCompartmentResponse>
                 transformer =
                         ChangeIngressGatewayCompartmentConverter.fromResponse(
@@ -580,7 +580,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ChangeIngressGatewayRouteTableCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ChangeIngressGatewayRouteTableCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeIngressGatewayRouteTableCompartmentResponse>
                 transformer =
@@ -626,7 +626,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ChangeMeshCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ChangeMeshCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeMeshCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeMeshCompartmentResponse>
                 transformer =
                         ChangeMeshCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -669,7 +669,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ChangeVirtualDeploymentCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ChangeVirtualDeploymentCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeVirtualDeploymentCompartmentResponse>
                 transformer =
                         ChangeVirtualDeploymentCompartmentConverter.fromResponse(
@@ -714,7 +714,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ChangeVirtualServiceCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ChangeVirtualServiceCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeVirtualServiceCompartmentResponse>
                 transformer =
                         ChangeVirtualServiceCompartmentConverter.fromResponse(
@@ -761,7 +761,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ChangeVirtualServiceRouteTableCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ChangeVirtualServiceRouteTableCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeVirtualServiceRouteTableCompartmentResponse>
                 transformer =
@@ -806,7 +806,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "CreateAccessPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/CreateAccessPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAccessPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAccessPolicyResponse>
                 transformer =
                         CreateAccessPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -848,7 +848,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "CreateIngressGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/CreateIngressGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateIngressGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateIngressGatewayResponse>
                 transformer =
                         CreateIngressGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -891,7 +891,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "CreateIngressGatewayRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/CreateIngressGatewayRouteTable");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateIngressGatewayRouteTableResponse>
                 transformer =
                         CreateIngressGatewayRouteTableConverter.fromResponse(
@@ -934,7 +934,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "CreateMesh",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/CreateMesh");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMeshResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateMeshResponse> transformer =
                 CreateMeshConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -975,7 +975,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "CreateVirtualDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/CreateVirtualDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVirtualDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVirtualDeploymentResponse>
                 transformer =
                         CreateVirtualDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1017,7 +1017,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "CreateVirtualService",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/CreateVirtualService");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVirtualServiceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVirtualServiceResponse>
                 transformer =
                         CreateVirtualServiceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1060,7 +1060,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "CreateVirtualServiceRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/CreateVirtualServiceRouteTable");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateVirtualServiceRouteTableResponse>
                 transformer =
                         CreateVirtualServiceRouteTableConverter.fromResponse(
@@ -1103,7 +1103,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "DeleteAccessPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/DeleteAccessPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAccessPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAccessPolicyResponse>
                 transformer =
                         DeleteAccessPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1141,7 +1141,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "DeleteIngressGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/DeleteIngressGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIngressGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteIngressGatewayResponse>
                 transformer =
                         DeleteIngressGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1180,7 +1180,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "DeleteIngressGatewayRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/DeleteIngressGatewayRouteTable");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteIngressGatewayRouteTableResponse>
                 transformer =
                         DeleteIngressGatewayRouteTableConverter.fromResponse(
@@ -1218,7 +1218,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "DeleteMesh",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/DeleteMesh");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMeshResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteMeshResponse> transformer =
                 DeleteMeshConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1255,7 +1255,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "DeleteVirtualDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/DeleteVirtualDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVirtualDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVirtualDeploymentResponse>
                 transformer =
                         DeleteVirtualDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1293,7 +1293,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "DeleteVirtualService",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/DeleteVirtualService");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVirtualServiceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVirtualServiceResponse>
                 transformer =
                         DeleteVirtualServiceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1332,7 +1332,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "DeleteVirtualServiceRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/DeleteVirtualServiceRouteTable");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteVirtualServiceRouteTableResponse>
                 transformer =
                         DeleteVirtualServiceRouteTableConverter.fromResponse(
@@ -1371,7 +1371,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "GetAccessPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/GetAccessPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAccessPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAccessPolicyResponse>
                 transformer =
                         GetAccessPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1408,7 +1408,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "GetIngressGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/GetIngressGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetIngressGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetIngressGatewayResponse>
                 transformer =
                         GetIngressGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1446,8 +1446,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "GetIngressGatewayRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/GetIngressGatewayRouteTable");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetIngressGatewayRouteTableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetIngressGatewayRouteTableResponse>
                 transformer =
                         GetIngressGatewayRouteTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1483,7 +1482,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "GetMesh",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/GetMesh");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetMeshResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetMeshResponse> transformer =
                 GetMeshConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1518,7 +1517,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "GetProxyDetails",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/ProxyDetails/GetProxyDetails");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetProxyDetailsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetProxyDetailsResponse>
                 transformer =
                         GetProxyDetailsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1555,7 +1554,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "GetVirtualDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/GetVirtualDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVirtualDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetVirtualDeploymentResponse>
                 transformer =
                         GetVirtualDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1592,7 +1591,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "GetVirtualService",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/GetVirtualService");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVirtualServiceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetVirtualServiceResponse>
                 transformer =
                         GetVirtualServiceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1630,8 +1629,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "GetVirtualServiceRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/GetVirtualServiceRouteTable");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetVirtualServiceRouteTableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetVirtualServiceRouteTableResponse>
                 transformer =
                         GetVirtualServiceRouteTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1668,9 +1666,8 @@ public class ServiceMeshClient implements ServiceMesh {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1704,7 +1701,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ListAccessPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ListAccessPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAccessPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAccessPoliciesResponse>
                 transformer =
                         ListAccessPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1742,7 +1739,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ListIngressGatewayRouteTables",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ListIngressGatewayRouteTables");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListIngressGatewayRouteTablesResponse>
                 transformer =
                         ListIngressGatewayRouteTablesConverter.fromResponse(
@@ -1780,7 +1777,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ListIngressGateways",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ListIngressGateways");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIngressGatewaysResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListIngressGatewaysResponse>
                 transformer =
                         ListIngressGatewaysConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1816,7 +1813,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ListMeshes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ListMeshes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMeshesResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListMeshesResponse> transformer =
                 ListMeshesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1852,7 +1849,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ListVirtualDeployments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ListVirtualDeployments");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVirtualDeploymentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListVirtualDeploymentsResponse>
                 transformer =
                         ListVirtualDeploymentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1890,7 +1887,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ListVirtualServiceRouteTables",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ListVirtualServiceRouteTables");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListVirtualServiceRouteTablesResponse>
                 transformer =
                         ListVirtualServiceRouteTablesConverter.fromResponse(
@@ -1928,7 +1925,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ListVirtualServices",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ListVirtualServices");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVirtualServicesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListVirtualServicesResponse>
                 transformer =
                         ListVirtualServicesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1966,7 +1963,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2003,7 +2000,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2040,7 +2037,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2078,7 +2075,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "UpdateAccessPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/UpdateAccessPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAccessPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAccessPolicyResponse>
                 transformer =
                         UpdateAccessPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2120,7 +2117,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "UpdateIngressGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/UpdateIngressGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIngressGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateIngressGatewayResponse>
                 transformer =
                         UpdateIngressGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2163,7 +2160,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "UpdateIngressGatewayRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/UpdateIngressGatewayRouteTable");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateIngressGatewayRouteTableResponse>
                 transformer =
                         UpdateIngressGatewayRouteTableConverter.fromResponse(
@@ -2206,7 +2203,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "UpdateMesh",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/UpdateMesh");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMeshResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateMeshResponse> transformer =
                 UpdateMeshConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2247,7 +2244,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "UpdateVirtualDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/UpdateVirtualDeployment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVirtualDeploymentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVirtualDeploymentResponse>
                 transformer =
                         UpdateVirtualDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2289,7 +2286,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "UpdateVirtualService",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/UpdateVirtualService");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVirtualServiceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVirtualServiceResponse>
                 transformer =
                         UpdateVirtualServiceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2332,7 +2329,7 @@ public class ServiceMeshClient implements ServiceMesh {
                         "UpdateVirtualServiceRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/UpdateVirtualServiceRouteTable");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateVirtualServiceRouteTableResponse>
                 transformer =
                         UpdateVirtualServiceRouteTableConverter.fromResponse(

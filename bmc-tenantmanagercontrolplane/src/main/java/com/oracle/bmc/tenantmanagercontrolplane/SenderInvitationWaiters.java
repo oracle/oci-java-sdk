@@ -6,7 +6,6 @@ package com.oracle.bmc.tenantmanagercontrolplane;
 
 import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -108,8 +107,8 @@ public class SenderInvitationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetSenderInvitationRequest, GetSenderInvitationResponse>() {
                             @Override
                             public GetSenderInvitationResponse apply(
@@ -117,9 +116,9 @@ public class SenderInvitationWaiters {
                                 return client.getSenderInvitation(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSenderInvitationResponse>() {
+                        new java.util.function.Predicate<GetSenderInvitationResponse>() {
                             @Override
-                            public boolean apply(GetSenderInvitationResponse response) {
+                            public boolean test(GetSenderInvitationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSenderInvitation().getLifecycleState());
                             }

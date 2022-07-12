@@ -7,7 +7,6 @@ package com.oracle.bmc.osmanagement;
 import com.oracle.bmc.osmanagement.internal.http.*;
 import com.oracle.bmc.osmanagement.requests.*;
 import com.oracle.bmc.osmanagement.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Event service. <br/>
@@ -319,7 +318,7 @@ public class EventAsyncClient implements EventAsync {
          * @return the client
          */
         public EventAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class EventAsyncClient implements EventAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,7 +404,7 @@ public class EventAsyncClient implements EventAsync {
                         "DeleteEventContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/DeleteEventContent");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEventContentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteEventContentResponse>
                 transformer =
                         DeleteEventContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -448,8 +448,8 @@ public class EventAsyncClient implements EventAsync {
                         "GetEvent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/GetEvent");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetEventResponse>
-                transformer = GetEventConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEventResponse> transformer =
+                GetEventConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetEventRequest, GetEventResponse> handlerToUse =
                 handler;
 
@@ -498,7 +498,7 @@ public class EventAsyncClient implements EventAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Event", "GetEventContent", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetEventContentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEventContentResponse>
                 transformer =
                         GetEventContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -544,7 +544,7 @@ public class EventAsyncClient implements EventAsync {
                         "GetEventReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventReport/GetEventReport");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetEventReportResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEventReportResponse>
                 transformer =
                         GetEventReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetEventReportRequest, GetEventReportResponse>
@@ -587,7 +587,7 @@ public class EventAsyncClient implements EventAsync {
                         "ListEvents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventCollection/ListEvents");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEventsResponse>
                 transformer =
                         ListEventsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListEventsRequest, ListEventsResponse> handlerToUse =
@@ -632,7 +632,7 @@ public class EventAsyncClient implements EventAsync {
                         "ListRelatedEvents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/RelatedEventCollection/ListRelatedEvents");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRelatedEventsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRelatedEventsResponse>
                 transformer =
                         ListRelatedEventsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -677,7 +677,7 @@ public class EventAsyncClient implements EventAsync {
                         "UpdateEvent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/UpdateEvent");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEventResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateEventResponse>
                 transformer =
                         UpdateEventConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateEventRequest, UpdateEventResponse>
@@ -728,7 +728,7 @@ public class EventAsyncClient implements EventAsync {
                         "UploadEventContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/UploadEventContent");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UploadEventContentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UploadEventContentResponse>
                 transformer =
                         UploadEventContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

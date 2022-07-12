@@ -7,7 +7,6 @@ package com.oracle.bmc.streaming;
 import com.oracle.bmc.streaming.internal.http.*;
 import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Stream service. <br/>
@@ -328,7 +327,7 @@ public class StreamAsyncClient implements StreamAsync {
                         "ConsumerCommit",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/ConsumerCommit");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ConsumerCommitResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ConsumerCommitResponse>
                 transformer =
                         ConsumerCommitConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ConsumerCommitRequest, ConsumerCommitResponse>
@@ -373,7 +372,7 @@ public class StreamAsyncClient implements StreamAsync {
                         "ConsumerHeartbeat",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/ConsumerHeartbeat");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ConsumerHeartbeatResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ConsumerHeartbeatResponse>
                 transformer =
                         ConsumerHeartbeatConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -418,7 +417,7 @@ public class StreamAsyncClient implements StreamAsync {
                         "CreateCursor",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Cursor/CreateCursor");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCursorResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCursorResponse>
                 transformer =
                         CreateCursorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateCursorRequest, CreateCursorResponse>
@@ -468,7 +467,7 @@ public class StreamAsyncClient implements StreamAsync {
                         "CreateGroupCursor",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Cursor/CreateGroupCursor");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupCursorResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateGroupCursorResponse>
                 transformer =
                         CreateGroupCursorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -517,8 +516,8 @@ public class StreamAsyncClient implements StreamAsync {
                         "GetGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/GetGroup");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse>
-                transformer = GetGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetGroupResponse> transformer =
+                GetGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetGroupRequest, GetGroupResponse> handlerToUse =
                 handler;
 
@@ -559,7 +558,7 @@ public class StreamAsyncClient implements StreamAsync {
                         "GetMessages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Message/GetMessages");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetMessagesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMessagesResponse>
                 transformer =
                         GetMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetMessagesRequest, GetMessagesResponse>
@@ -607,7 +606,7 @@ public class StreamAsyncClient implements StreamAsync {
                         "PutMessages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Message/PutMessages");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PutMessagesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, PutMessagesResponse>
                 transformer =
                         PutMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<PutMessagesRequest, PutMessagesResponse>
@@ -656,7 +655,7 @@ public class StreamAsyncClient implements StreamAsync {
                         "UpdateGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/UpdateGroup");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
                 transformer =
                         UpdateGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateGroupRequest, UpdateGroupResponse>

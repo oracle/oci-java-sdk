@@ -45,19 +45,19 @@ public class SubscriptionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAssignedSubscriptionsRequest.Builder, ListAssignedSubscriptionsRequest,
                 ListAssignedSubscriptionsResponse>(
-                new com.google.common.base.Supplier<ListAssignedSubscriptionsRequest.Builder>() {
+                new java.util.function.Supplier<ListAssignedSubscriptionsRequest.Builder>() {
                     @Override
                     public ListAssignedSubscriptionsRequest.Builder get() {
                         return ListAssignedSubscriptionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAssignedSubscriptionsResponse, String>() {
+                new java.util.function.Function<ListAssignedSubscriptionsResponse, String>() {
                     @Override
                     public String apply(ListAssignedSubscriptionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAssignedSubscriptionsRequest.Builder>,
                         ListAssignedSubscriptionsRequest>() {
@@ -70,12 +70,12 @@ public class SubscriptionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAssignedSubscriptionsRequest, ListAssignedSubscriptionsResponse>() {
                     @Override
                     public ListAssignedSubscriptionsResponse apply(
@@ -101,19 +101,19 @@ public class SubscriptionPaginators {
                 ListAssignedSubscriptionsRequest.Builder, ListAssignedSubscriptionsRequest,
                 ListAssignedSubscriptionsResponse,
                 com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscriptionSummary>(
-                new com.google.common.base.Supplier<ListAssignedSubscriptionsRequest.Builder>() {
+                new java.util.function.Supplier<ListAssignedSubscriptionsRequest.Builder>() {
                     @Override
                     public ListAssignedSubscriptionsRequest.Builder get() {
                         return ListAssignedSubscriptionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAssignedSubscriptionsResponse, String>() {
+                new java.util.function.Function<ListAssignedSubscriptionsResponse, String>() {
                     @Override
                     public String apply(ListAssignedSubscriptionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAssignedSubscriptionsRequest.Builder>,
                         ListAssignedSubscriptionsRequest>() {
@@ -126,12 +126,12 @@ public class SubscriptionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAssignedSubscriptionsRequest, ListAssignedSubscriptionsResponse>() {
                     @Override
                     public ListAssignedSubscriptionsResponse apply(
@@ -139,7 +139,7 @@ public class SubscriptionPaginators {
                         return client.listAssignedSubscriptions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAssignedSubscriptionsResponse,
                         java.util.List<
                                 com.oracle.bmc.tenantmanagercontrolplane.model
@@ -166,19 +166,19 @@ public class SubscriptionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAvailableRegionsRequest.Builder, ListAvailableRegionsRequest,
                 ListAvailableRegionsResponse>(
-                new com.google.common.base.Supplier<ListAvailableRegionsRequest.Builder>() {
+                new java.util.function.Supplier<ListAvailableRegionsRequest.Builder>() {
                     @Override
                     public ListAvailableRegionsRequest.Builder get() {
                         return ListAvailableRegionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAvailableRegionsResponse, String>() {
+                new java.util.function.Function<ListAvailableRegionsResponse, String>() {
                     @Override
                     public String apply(ListAvailableRegionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAvailableRegionsRequest.Builder>,
                         ListAvailableRegionsRequest>() {
@@ -191,12 +191,12 @@ public class SubscriptionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableRegionsRequest, ListAvailableRegionsResponse>() {
                     @Override
                     public ListAvailableRegionsResponse apply(ListAvailableRegionsRequest request) {
@@ -220,19 +220,19 @@ public class SubscriptionPaginators {
                 ListAvailableRegionsRequest.Builder, ListAvailableRegionsRequest,
                 ListAvailableRegionsResponse,
                 com.oracle.bmc.tenantmanagercontrolplane.model.AvailableRegionSummary>(
-                new com.google.common.base.Supplier<ListAvailableRegionsRequest.Builder>() {
+                new java.util.function.Supplier<ListAvailableRegionsRequest.Builder>() {
                     @Override
                     public ListAvailableRegionsRequest.Builder get() {
                         return ListAvailableRegionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAvailableRegionsResponse, String>() {
+                new java.util.function.Function<ListAvailableRegionsResponse, String>() {
                     @Override
                     public String apply(ListAvailableRegionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAvailableRegionsRequest.Builder>,
                         ListAvailableRegionsRequest>() {
@@ -245,19 +245,19 @@ public class SubscriptionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableRegionsRequest, ListAvailableRegionsResponse>() {
                     @Override
                     public ListAvailableRegionsResponse apply(ListAvailableRegionsRequest request) {
                         return client.listAvailableRegions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableRegionsResponse,
                         java.util.List<
                                 com.oracle.bmc.tenantmanagercontrolplane.model
@@ -284,19 +284,19 @@ public class SubscriptionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSubscriptionMappingsRequest.Builder, ListSubscriptionMappingsRequest,
                 ListSubscriptionMappingsResponse>(
-                new com.google.common.base.Supplier<ListSubscriptionMappingsRequest.Builder>() {
+                new java.util.function.Supplier<ListSubscriptionMappingsRequest.Builder>() {
                     @Override
                     public ListSubscriptionMappingsRequest.Builder get() {
                         return ListSubscriptionMappingsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSubscriptionMappingsResponse, String>() {
+                new java.util.function.Function<ListSubscriptionMappingsResponse, String>() {
                     @Override
                     public String apply(ListSubscriptionMappingsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSubscriptionMappingsRequest.Builder>,
                         ListSubscriptionMappingsRequest>() {
@@ -309,12 +309,12 @@ public class SubscriptionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSubscriptionMappingsRequest, ListSubscriptionMappingsResponse>() {
                     @Override
                     public ListSubscriptionMappingsResponse apply(
@@ -339,19 +339,19 @@ public class SubscriptionPaginators {
                 ListSubscriptionMappingsRequest.Builder, ListSubscriptionMappingsRequest,
                 ListSubscriptionMappingsResponse,
                 com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMappingSummary>(
-                new com.google.common.base.Supplier<ListSubscriptionMappingsRequest.Builder>() {
+                new java.util.function.Supplier<ListSubscriptionMappingsRequest.Builder>() {
                     @Override
                     public ListSubscriptionMappingsRequest.Builder get() {
                         return ListSubscriptionMappingsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSubscriptionMappingsResponse, String>() {
+                new java.util.function.Function<ListSubscriptionMappingsResponse, String>() {
                     @Override
                     public String apply(ListSubscriptionMappingsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSubscriptionMappingsRequest.Builder>,
                         ListSubscriptionMappingsRequest>() {
@@ -364,12 +364,12 @@ public class SubscriptionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSubscriptionMappingsRequest, ListSubscriptionMappingsResponse>() {
                     @Override
                     public ListSubscriptionMappingsResponse apply(
@@ -377,7 +377,7 @@ public class SubscriptionPaginators {
                         return client.listSubscriptionMappings(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSubscriptionMappingsResponse,
                         java.util.List<
                                 com.oracle.bmc.tenantmanagercontrolplane.model
@@ -404,19 +404,19 @@ public class SubscriptionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSubscriptionsRequest.Builder, ListSubscriptionsRequest,
                 ListSubscriptionsResponse>(
-                new com.google.common.base.Supplier<ListSubscriptionsRequest.Builder>() {
+                new java.util.function.Supplier<ListSubscriptionsRequest.Builder>() {
                     @Override
                     public ListSubscriptionsRequest.Builder get() {
                         return ListSubscriptionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSubscriptionsResponse, String>() {
+                new java.util.function.Function<ListSubscriptionsResponse, String>() {
                     @Override
                     public String apply(ListSubscriptionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSubscriptionsRequest.Builder>,
                         ListSubscriptionsRequest>() {
@@ -429,12 +429,12 @@ public class SubscriptionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSubscriptionsRequest, ListSubscriptionsResponse>() {
                     @Override
                     public ListSubscriptionsResponse apply(ListSubscriptionsRequest request) {
@@ -458,19 +458,19 @@ public class SubscriptionPaginators {
                 ListSubscriptionsRequest.Builder, ListSubscriptionsRequest,
                 ListSubscriptionsResponse,
                 com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionSummary>(
-                new com.google.common.base.Supplier<ListSubscriptionsRequest.Builder>() {
+                new java.util.function.Supplier<ListSubscriptionsRequest.Builder>() {
                     @Override
                     public ListSubscriptionsRequest.Builder get() {
                         return ListSubscriptionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSubscriptionsResponse, String>() {
+                new java.util.function.Function<ListSubscriptionsResponse, String>() {
                     @Override
                     public String apply(ListSubscriptionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSubscriptionsRequest.Builder>,
                         ListSubscriptionsRequest>() {
@@ -483,19 +483,19 @@ public class SubscriptionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSubscriptionsRequest, ListSubscriptionsResponse>() {
                     @Override
                     public ListSubscriptionsResponse apply(ListSubscriptionsRequest request) {
                         return client.listSubscriptions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSubscriptionsResponse,
                         java.util.List<
                                 com.oracle.bmc.tenantmanagercontrolplane.model

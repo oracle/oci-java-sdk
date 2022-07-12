@@ -9,7 +9,6 @@ import com.oracle.bmc.waas.requests.*;
 import com.oracle.bmc.waas.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class WaasClient implements Waas {
@@ -334,9 +333,9 @@ public class WaasClient implements Waas {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Waas-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Waas-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class WaasClient implements Waas {
          * @return the client
          */
         public WaasClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class WaasClient implements Waas {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,7 +487,7 @@ public class WaasClient implements Waas {
                         "AcceptRecommendations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Recommendation/AcceptRecommendations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AcceptRecommendationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AcceptRecommendationsResponse>
                 transformer =
                         AcceptRecommendationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,7 +529,7 @@ public class WaasClient implements Waas {
                         "CancelWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequest/CancelWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -569,8 +569,7 @@ public class WaasClient implements Waas {
                         "ChangeAddressListCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/ChangeAddressListCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeAddressListCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeAddressListCompartmentResponse>
                 transformer =
                         ChangeAddressListCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -614,8 +613,7 @@ public class WaasClient implements Waas {
                         "ChangeCertificateCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/ChangeCertificateCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
                 transformer =
                         ChangeCertificateCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -660,7 +658,7 @@ public class WaasClient implements Waas {
                         "ChangeCustomProtectionRuleCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ChangeCustomProtectionRuleCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeCustomProtectionRuleCompartmentResponse>
                 transformer =
                         ChangeCustomProtectionRuleCompartmentConverter.fromResponse(
@@ -705,8 +703,7 @@ public class WaasClient implements Waas {
                         "ChangeWaasPolicyCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/ChangeWaasPolicyCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeWaasPolicyCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeWaasPolicyCompartmentResponse>
                 transformer =
                         ChangeWaasPolicyCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -749,7 +746,7 @@ public class WaasClient implements Waas {
                         "CreateAddressList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/CreateAddressList");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAddressListResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAddressListResponse>
                 transformer =
                         CreateAddressListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -791,7 +788,7 @@ public class WaasClient implements Waas {
                         "CreateCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/CreateCertificate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
                 transformer =
                         CreateCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -834,8 +831,7 @@ public class WaasClient implements Waas {
                         "CreateCustomProtectionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/CreateCustomProtectionRule");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateCustomProtectionRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCustomProtectionRuleResponse>
                 transformer =
                         CreateCustomProtectionRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -878,7 +874,7 @@ public class WaasClient implements Waas {
                         "CreateWaasPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/CreateWaasPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateWaasPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateWaasPolicyResponse>
                 transformer =
                         CreateWaasPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -920,7 +916,7 @@ public class WaasClient implements Waas {
                         "DeleteAddressList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/DeleteAddressList");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAddressListResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAddressListResponse>
                 transformer =
                         DeleteAddressListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -959,7 +955,7 @@ public class WaasClient implements Waas {
                         "DeleteCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/DeleteCertificate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
                 transformer =
                         DeleteCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -999,8 +995,7 @@ public class WaasClient implements Waas {
                         "DeleteCustomProtectionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/DeleteCustomProtectionRule");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteCustomProtectionRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCustomProtectionRuleResponse>
                 transformer =
                         DeleteCustomProtectionRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1039,7 +1034,7 @@ public class WaasClient implements Waas {
                         "DeleteWaasPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/DeleteWaasPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWaasPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteWaasPolicyResponse>
                 transformer =
                         DeleteWaasPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1077,9 +1072,8 @@ public class WaasClient implements Waas {
                         "GetAddressList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/GetAddressList");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAddressListResponse>
-                transformer =
-                        GetAddressListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetAddressListResponse> transformer =
+                GetAddressListConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1113,9 +1107,8 @@ public class WaasClient implements Waas {
                         "GetCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/GetCertificate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCertificateResponse>
-                transformer =
-                        GetCertificateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetCertificateResponse> transformer =
+                GetCertificateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1150,7 +1143,7 @@ public class WaasClient implements Waas {
                         "GetCustomProtectionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/GetCustomProtectionRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCustomProtectionRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetCustomProtectionRuleResponse>
                 transformer =
                         GetCustomProtectionRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1188,7 +1181,7 @@ public class WaasClient implements Waas {
                         "GetDeviceFingerprintChallenge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/DeviceFingerprintChallenge/GetDeviceFingerprintChallenge");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetDeviceFingerprintChallengeResponse>
                 transformer =
                         GetDeviceFingerprintChallengeConverter.fromResponse(
@@ -1227,8 +1220,7 @@ public class WaasClient implements Waas {
                         "GetHumanInteractionChallenge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HumanInteractionChallenge/GetHumanInteractionChallenge");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetHumanInteractionChallengeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetHumanInteractionChallengeResponse>
                 transformer =
                         GetHumanInteractionChallengeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1265,9 +1257,8 @@ public class WaasClient implements Waas {
                         "GetJsChallenge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/JsChallenge/GetJsChallenge");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJsChallengeResponse>
-                transformer =
-                        GetJsChallengeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetJsChallengeResponse> transformer =
+                GetJsChallengeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1301,7 +1292,7 @@ public class WaasClient implements Waas {
                         "GetPolicyConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PolicyConfig/GetPolicyConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyConfigResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetPolicyConfigResponse>
                 transformer =
                         GetPolicyConfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1338,7 +1329,7 @@ public class WaasClient implements Waas {
                         "GetProtectionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/GetProtectionRule");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetProtectionRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetProtectionRuleResponse>
                 transformer =
                         GetProtectionRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1376,7 +1367,7 @@ public class WaasClient implements Waas {
                         "GetProtectionSettings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionSettings/GetProtectionSettings");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetProtectionSettingsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetProtectionSettingsResponse>
                 transformer =
                         GetProtectionSettingsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1413,9 +1404,8 @@ public class WaasClient implements Waas {
                         "GetWaasPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/GetWaasPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWaasPolicyResponse>
-                transformer =
-                        GetWaasPolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWaasPolicyResponse> transformer =
+                GetWaasPolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1450,8 +1440,7 @@ public class WaasClient implements Waas {
                         "GetWafAddressRateLimiting",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressRateLimiting/GetWafAddressRateLimiting");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetWafAddressRateLimitingResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetWafAddressRateLimitingResponse>
                 transformer =
                         GetWafAddressRateLimitingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1488,9 +1477,8 @@ public class WaasClient implements Waas {
                         "GetWafConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafConfig/GetWafConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWafConfigResponse>
-                transformer =
-                        GetWafConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWafConfigResponse> transformer =
+                GetWafConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1524,9 +1512,8 @@ public class WaasClient implements Waas {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1560,7 +1547,7 @@ public class WaasClient implements Waas {
                         "ListAccessRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AccessRule/ListAccessRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAccessRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAccessRulesResponse>
                 transformer =
                         ListAccessRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1597,7 +1584,7 @@ public class WaasClient implements Waas {
                         "ListAddressLists",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/ListAddressLists");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAddressListsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAddressListsResponse>
                 transformer =
                         ListAddressListsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1634,7 +1621,7 @@ public class WaasClient implements Waas {
                         "ListCachingRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CachingRuleSummary/ListCachingRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCachingRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCachingRulesResponse>
                 transformer =
                         ListCachingRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1671,9 +1658,8 @@ public class WaasClient implements Waas {
                         "ListCaptchas",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Captcha/ListCaptchas");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCaptchasResponse>
-                transformer =
-                        ListCaptchasConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListCaptchasResponse> transformer =
+                ListCaptchasConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1707,7 +1693,7 @@ public class WaasClient implements Waas {
                         "ListCertificates",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CertificateSummary/ListCertificates");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer =
                         ListCertificatesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1745,8 +1731,7 @@ public class WaasClient implements Waas {
                         "ListCustomProtectionRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ListCustomProtectionRules");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCustomProtectionRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCustomProtectionRulesResponse>
                 transformer =
                         ListCustomProtectionRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1783,7 +1768,7 @@ public class WaasClient implements Waas {
                         "ListEdgeSubnets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/EdgeSubnet/ListEdgeSubnets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListEdgeSubnetsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListEdgeSubnetsResponse>
                 transformer =
                         ListEdgeSubnetsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1820,9 +1805,8 @@ public class WaasClient implements Waas {
                         "ListGoodBots",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/GoodBot/ListGoodBots");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListGoodBotsResponse>
-                transformer =
-                        ListGoodBotsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListGoodBotsResponse> transformer =
+                ListGoodBotsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1856,7 +1840,7 @@ public class WaasClient implements Waas {
                         "ListProtectionRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/ListProtectionRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListProtectionRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListProtectionRulesResponse>
                 transformer =
                         ListProtectionRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1893,7 +1877,7 @@ public class WaasClient implements Waas {
                         "ListRecommendations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Recommendation/ListRecommendations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRecommendationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRecommendationsResponse>
                 transformer =
                         ListRecommendationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1930,7 +1914,7 @@ public class WaasClient implements Waas {
                         "ListThreatFeeds",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ThreatFeed/ListThreatFeeds");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListThreatFeedsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListThreatFeedsResponse>
                 transformer =
                         ListThreatFeedsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1967,7 +1951,7 @@ public class WaasClient implements Waas {
                         "ListWaasPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/ListWaasPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWaasPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWaasPoliciesResponse>
                 transformer =
                         ListWaasPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2006,7 +1990,7 @@ public class WaasClient implements Waas {
                         "ListWaasPolicyCustomProtectionRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ListWaasPolicyCustomProtectionRules");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListWaasPolicyCustomProtectionRulesResponse>
                 transformer =
                         ListWaasPolicyCustomProtectionRulesConverter.fromResponse(
@@ -2045,7 +2029,7 @@ public class WaasClient implements Waas {
                         "ListWafBlockedRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafBlockedRequest/ListWafBlockedRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWafBlockedRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWafBlockedRequestsResponse>
                 transformer =
                         ListWafBlockedRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2082,9 +2066,8 @@ public class WaasClient implements Waas {
                         "ListWafLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafLog/ListWafLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWafLogsResponse>
-                transformer =
-                        ListWafLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListWafLogsResponse> transformer =
+                ListWafLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2118,7 +2101,7 @@ public class WaasClient implements Waas {
                         "ListWafRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafRequest/ListWafRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWafRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWafRequestsResponse>
                 transformer =
                         ListWafRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2155,9 +2138,8 @@ public class WaasClient implements Waas {
                         "ListWafTraffic",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafTrafficDatum/ListWafTraffic");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWafTrafficResponse>
-                transformer =
-                        ListWafTrafficConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListWafTrafficResponse> transformer =
+                ListWafTrafficConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2191,9 +2173,8 @@ public class WaasClient implements Waas {
                         "ListWhitelists",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Whitelist/ListWhitelists");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWhitelistsResponse>
-                transformer =
-                        ListWhitelistsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListWhitelistsResponse> transformer =
+                ListWhitelistsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2227,7 +2208,7 @@ public class WaasClient implements Waas {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequestSummary/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2263,7 +2244,7 @@ public class WaasClient implements Waas {
                         "PurgeCache",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PurgeCache/PurgeCache");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PurgeCacheResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, PurgeCacheResponse> transformer =
                 PurgeCacheConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2301,7 +2282,7 @@ public class WaasClient implements Waas {
                         "UpdateAccessRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AccessRule/UpdateAccessRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAccessRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAccessRulesResponse>
                 transformer =
                         UpdateAccessRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2342,7 +2323,7 @@ public class WaasClient implements Waas {
                         "UpdateAddressList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/UpdateAddressList");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAddressListResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAddressListResponse>
                 transformer =
                         UpdateAddressListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2384,7 +2365,7 @@ public class WaasClient implements Waas {
                         "UpdateCachingRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CachingRule/UpdateCachingRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCachingRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCachingRulesResponse>
                 transformer =
                         UpdateCachingRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2426,9 +2407,8 @@ public class WaasClient implements Waas {
                         "UpdateCaptchas",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Captcha/UpdateCaptchas");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCaptchasResponse>
-                transformer =
-                        UpdateCaptchasConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCaptchasResponse> transformer =
+                UpdateCaptchasConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2464,7 +2444,7 @@ public class WaasClient implements Waas {
                         "UpdateCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/UpdateCertificate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
                 transformer =
                         UpdateCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2507,8 +2487,7 @@ public class WaasClient implements Waas {
                         "UpdateCustomProtectionRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/UpdateCustomProtectionRule");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateCustomProtectionRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCustomProtectionRuleResponse>
                 transformer =
                         UpdateCustomProtectionRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2552,7 +2531,7 @@ public class WaasClient implements Waas {
                         "UpdateDeviceFingerprintChallenge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/DeviceFingerprintChallenge/UpdateDeviceFingerprintChallenge");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDeviceFingerprintChallengeResponse>
                 transformer =
                         UpdateDeviceFingerprintChallengeConverter.fromResponse(
@@ -2596,9 +2575,8 @@ public class WaasClient implements Waas {
                         "UpdateGoodBots",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/GoodBot/UpdateGoodBots");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGoodBotsResponse>
-                transformer =
-                        UpdateGoodBotsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateGoodBotsResponse> transformer =
+                UpdateGoodBotsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2636,7 +2614,7 @@ public class WaasClient implements Waas {
                         "UpdateHumanInteractionChallenge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HumanInteractionChallenge/UpdateHumanInteractionChallenge");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateHumanInteractionChallengeResponse>
                 transformer =
                         UpdateHumanInteractionChallengeConverter.fromResponse(
@@ -2680,7 +2658,7 @@ public class WaasClient implements Waas {
                         "UpdateJsChallenge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/JsChallenge/UpdateJsChallenge");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJsChallengeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateJsChallengeResponse>
                 transformer =
                         UpdateJsChallengeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2722,7 +2700,7 @@ public class WaasClient implements Waas {
                         "UpdatePolicyConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PolicyConfig/UpdatePolicyConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePolicyConfigResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePolicyConfigResponse>
                 transformer =
                         UpdatePolicyConfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2764,7 +2742,7 @@ public class WaasClient implements Waas {
                         "UpdateProtectionRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/UpdateProtectionRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProtectionRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateProtectionRulesResponse>
                 transformer =
                         UpdateProtectionRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2807,7 +2785,7 @@ public class WaasClient implements Waas {
                         "UpdateProtectionSettings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionSettings/UpdateProtectionSettings");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProtectionSettingsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateProtectionSettingsResponse>
                 transformer =
                         UpdateProtectionSettingsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2848,7 +2826,7 @@ public class WaasClient implements Waas {
                         "UpdateThreatFeeds",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ThreatFeed/UpdateThreatFeeds");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateThreatFeedsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateThreatFeedsResponse>
                 transformer =
                         UpdateThreatFeedsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2890,7 +2868,7 @@ public class WaasClient implements Waas {
                         "UpdateWaasPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/UpdateWaasPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateWaasPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateWaasPolicyResponse>
                 transformer =
                         UpdateWaasPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2934,7 +2912,7 @@ public class WaasClient implements Waas {
                         "UpdateWaasPolicyCustomProtectionRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/UpdateWaasPolicyCustomProtectionRules");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateWaasPolicyCustomProtectionRulesResponse>
                 transformer =
                         UpdateWaasPolicyCustomProtectionRulesConverter.fromResponse(
@@ -2979,8 +2957,7 @@ public class WaasClient implements Waas {
                         "UpdateWafAddressRateLimiting",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressRateLimiting/UpdateWafAddressRateLimiting");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateWafAddressRateLimitingResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateWafAddressRateLimitingResponse>
                 transformer =
                         UpdateWafAddressRateLimitingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3023,7 +3000,7 @@ public class WaasClient implements Waas {
                         "UpdateWafConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafConfig/UpdateWafConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateWafConfigResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateWafConfigResponse>
                 transformer =
                         UpdateWafConfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3065,7 +3042,7 @@ public class WaasClient implements Waas {
                         "UpdateWhitelists",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Whitelist/UpdateWhitelists");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateWhitelistsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateWhitelistsResponse>
                 transformer =
                         UpdateWhitelistsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

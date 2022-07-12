@@ -6,7 +6,6 @@ package com.oracle.bmc.marketplace;
 
 import com.oracle.bmc.marketplace.requests.*;
 import com.oracle.bmc.marketplace.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -108,17 +107,17 @@ public class MarketplaceWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetPublicationRequest, GetPublicationResponse>() {
                             @Override
                             public GetPublicationResponse apply(GetPublicationRequest request) {
                                 return client.getPublication(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetPublicationResponse>() {
+                        new java.util.function.Predicate<GetPublicationResponse>() {
                             @Override
-                            public boolean apply(GetPublicationResponse response) {
+                            public boolean test(GetPublicationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getPublication().getLifecycleState());
                             }

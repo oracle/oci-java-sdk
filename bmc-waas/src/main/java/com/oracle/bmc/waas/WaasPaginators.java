@@ -44,19 +44,19 @@ public class WaasPaginators {
             final ListAccessRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAccessRulesRequest.Builder, ListAccessRulesRequest, ListAccessRulesResponse>(
-                new com.google.common.base.Supplier<ListAccessRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListAccessRulesRequest.Builder>() {
                     @Override
                     public ListAccessRulesRequest.Builder get() {
                         return ListAccessRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAccessRulesResponse, String>() {
+                new java.util.function.Function<ListAccessRulesResponse, String>() {
                     @Override
                     public String apply(ListAccessRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAccessRulesRequest.Builder>,
                         ListAccessRulesRequest>() {
@@ -69,13 +69,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListAccessRulesRequest, ListAccessRulesResponse>() {
+                new java.util.function.Function<ListAccessRulesRequest, ListAccessRulesResponse>() {
                     @Override
                     public ListAccessRulesResponse apply(ListAccessRulesRequest request) {
                         return client.listAccessRules(request);
@@ -97,19 +96,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListAccessRulesRequest.Builder, ListAccessRulesRequest, ListAccessRulesResponse,
                 com.oracle.bmc.waas.model.AccessRule>(
-                new com.google.common.base.Supplier<ListAccessRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListAccessRulesRequest.Builder>() {
                     @Override
                     public ListAccessRulesRequest.Builder get() {
                         return ListAccessRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAccessRulesResponse, String>() {
+                new java.util.function.Function<ListAccessRulesResponse, String>() {
                     @Override
                     public String apply(ListAccessRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAccessRulesRequest.Builder>,
                         ListAccessRulesRequest>() {
@@ -122,19 +121,18 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListAccessRulesRequest, ListAccessRulesResponse>() {
+                new java.util.function.Function<ListAccessRulesRequest, ListAccessRulesResponse>() {
                     @Override
                     public ListAccessRulesResponse apply(ListAccessRulesRequest request) {
                         return client.listAccessRules(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAccessRulesResponse,
                         java.util.List<com.oracle.bmc.waas.model.AccessRule>>() {
                     @Override
@@ -156,19 +154,19 @@ public class WaasPaginators {
             final ListAddressListsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAddressListsRequest.Builder, ListAddressListsRequest, ListAddressListsResponse>(
-                new com.google.common.base.Supplier<ListAddressListsRequest.Builder>() {
+                new java.util.function.Supplier<ListAddressListsRequest.Builder>() {
                     @Override
                     public ListAddressListsRequest.Builder get() {
                         return ListAddressListsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAddressListsResponse, String>() {
+                new java.util.function.Function<ListAddressListsResponse, String>() {
                     @Override
                     public String apply(ListAddressListsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAddressListsRequest.Builder>,
                         ListAddressListsRequest>() {
@@ -181,12 +179,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAddressListsRequest, ListAddressListsResponse>() {
                     @Override
                     public ListAddressListsResponse apply(ListAddressListsRequest request) {
@@ -209,19 +207,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListAddressListsRequest.Builder, ListAddressListsRequest, ListAddressListsResponse,
                 com.oracle.bmc.waas.model.AddressListSummary>(
-                new com.google.common.base.Supplier<ListAddressListsRequest.Builder>() {
+                new java.util.function.Supplier<ListAddressListsRequest.Builder>() {
                     @Override
                     public ListAddressListsRequest.Builder get() {
                         return ListAddressListsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAddressListsResponse, String>() {
+                new java.util.function.Function<ListAddressListsResponse, String>() {
                     @Override
                     public String apply(ListAddressListsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAddressListsRequest.Builder>,
                         ListAddressListsRequest>() {
@@ -234,19 +232,19 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAddressListsRequest, ListAddressListsResponse>() {
                     @Override
                     public ListAddressListsResponse apply(ListAddressListsRequest request) {
                         return client.listAddressLists(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAddressListsResponse,
                         java.util.List<com.oracle.bmc.waas.model.AddressListSummary>>() {
                     @Override
@@ -268,19 +266,19 @@ public class WaasPaginators {
             final ListCachingRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCachingRulesRequest.Builder, ListCachingRulesRequest, ListCachingRulesResponse>(
-                new com.google.common.base.Supplier<ListCachingRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListCachingRulesRequest.Builder>() {
                     @Override
                     public ListCachingRulesRequest.Builder get() {
                         return ListCachingRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCachingRulesResponse, String>() {
+                new java.util.function.Function<ListCachingRulesResponse, String>() {
                     @Override
                     public String apply(ListCachingRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCachingRulesRequest.Builder>,
                         ListCachingRulesRequest>() {
@@ -293,12 +291,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCachingRulesRequest, ListCachingRulesResponse>() {
                     @Override
                     public ListCachingRulesResponse apply(ListCachingRulesRequest request) {
@@ -321,19 +319,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCachingRulesRequest.Builder, ListCachingRulesRequest, ListCachingRulesResponse,
                 com.oracle.bmc.waas.model.CachingRuleSummary>(
-                new com.google.common.base.Supplier<ListCachingRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListCachingRulesRequest.Builder>() {
                     @Override
                     public ListCachingRulesRequest.Builder get() {
                         return ListCachingRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCachingRulesResponse, String>() {
+                new java.util.function.Function<ListCachingRulesResponse, String>() {
                     @Override
                     public String apply(ListCachingRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCachingRulesRequest.Builder>,
                         ListCachingRulesRequest>() {
@@ -346,19 +344,19 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCachingRulesRequest, ListCachingRulesResponse>() {
                     @Override
                     public ListCachingRulesResponse apply(ListCachingRulesRequest request) {
                         return client.listCachingRules(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCachingRulesResponse,
                         java.util.List<com.oracle.bmc.waas.model.CachingRuleSummary>>() {
                     @Override
@@ -380,19 +378,19 @@ public class WaasPaginators {
             final ListCaptchasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCaptchasRequest.Builder, ListCaptchasRequest, ListCaptchasResponse>(
-                new com.google.common.base.Supplier<ListCaptchasRequest.Builder>() {
+                new java.util.function.Supplier<ListCaptchasRequest.Builder>() {
                     @Override
                     public ListCaptchasRequest.Builder get() {
                         return ListCaptchasRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCaptchasResponse, String>() {
+                new java.util.function.Function<ListCaptchasResponse, String>() {
                     @Override
                     public String apply(ListCaptchasResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCaptchasRequest.Builder>,
                         ListCaptchasRequest>() {
@@ -405,12 +403,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListCaptchasRequest, ListCaptchasResponse>() {
+                new java.util.function.Function<ListCaptchasRequest, ListCaptchasResponse>() {
                     @Override
                     public ListCaptchasResponse apply(ListCaptchasRequest request) {
                         return client.listCaptchas(request);
@@ -432,19 +430,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCaptchasRequest.Builder, ListCaptchasRequest, ListCaptchasResponse,
                 com.oracle.bmc.waas.model.Captcha>(
-                new com.google.common.base.Supplier<ListCaptchasRequest.Builder>() {
+                new java.util.function.Supplier<ListCaptchasRequest.Builder>() {
                     @Override
                     public ListCaptchasRequest.Builder get() {
                         return ListCaptchasRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCaptchasResponse, String>() {
+                new java.util.function.Function<ListCaptchasResponse, String>() {
                     @Override
                     public String apply(ListCaptchasResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCaptchasRequest.Builder>,
                         ListCaptchasRequest>() {
@@ -457,18 +455,18 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListCaptchasRequest, ListCaptchasResponse>() {
+                new java.util.function.Function<ListCaptchasRequest, ListCaptchasResponse>() {
                     @Override
                     public ListCaptchasResponse apply(ListCaptchasRequest request) {
                         return client.listCaptchas(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCaptchasResponse, java.util.List<com.oracle.bmc.waas.model.Captcha>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.waas.model.Captcha> apply(
@@ -489,19 +487,19 @@ public class WaasPaginators {
             final ListCertificatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCertificatesRequest.Builder, ListCertificatesRequest, ListCertificatesResponse>(
-                new com.google.common.base.Supplier<ListCertificatesRequest.Builder>() {
+                new java.util.function.Supplier<ListCertificatesRequest.Builder>() {
                     @Override
                     public ListCertificatesRequest.Builder get() {
                         return ListCertificatesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCertificatesResponse, String>() {
+                new java.util.function.Function<ListCertificatesResponse, String>() {
                     @Override
                     public String apply(ListCertificatesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCertificatesRequest.Builder>,
                         ListCertificatesRequest>() {
@@ -514,12 +512,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificatesRequest, ListCertificatesResponse>() {
                     @Override
                     public ListCertificatesResponse apply(ListCertificatesRequest request) {
@@ -542,19 +540,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCertificatesRequest.Builder, ListCertificatesRequest, ListCertificatesResponse,
                 com.oracle.bmc.waas.model.CertificateSummary>(
-                new com.google.common.base.Supplier<ListCertificatesRequest.Builder>() {
+                new java.util.function.Supplier<ListCertificatesRequest.Builder>() {
                     @Override
                     public ListCertificatesRequest.Builder get() {
                         return ListCertificatesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCertificatesResponse, String>() {
+                new java.util.function.Function<ListCertificatesResponse, String>() {
                     @Override
                     public String apply(ListCertificatesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCertificatesRequest.Builder>,
                         ListCertificatesRequest>() {
@@ -567,19 +565,19 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificatesRequest, ListCertificatesResponse>() {
                     @Override
                     public ListCertificatesResponse apply(ListCertificatesRequest request) {
                         return client.listCertificates(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificatesResponse,
                         java.util.List<com.oracle.bmc.waas.model.CertificateSummary>>() {
                     @Override
@@ -602,19 +600,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCustomProtectionRulesRequest.Builder, ListCustomProtectionRulesRequest,
                 ListCustomProtectionRulesResponse>(
-                new com.google.common.base.Supplier<ListCustomProtectionRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListCustomProtectionRulesRequest.Builder>() {
                     @Override
                     public ListCustomProtectionRulesRequest.Builder get() {
                         return ListCustomProtectionRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCustomProtectionRulesResponse, String>() {
+                new java.util.function.Function<ListCustomProtectionRulesResponse, String>() {
                     @Override
                     public String apply(ListCustomProtectionRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCustomProtectionRulesRequest.Builder>,
                         ListCustomProtectionRulesRequest>() {
@@ -627,12 +625,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCustomProtectionRulesRequest, ListCustomProtectionRulesResponse>() {
                     @Override
                     public ListCustomProtectionRulesResponse apply(
@@ -658,19 +656,19 @@ public class WaasPaginators {
                 ListCustomProtectionRulesRequest.Builder, ListCustomProtectionRulesRequest,
                 ListCustomProtectionRulesResponse,
                 com.oracle.bmc.waas.model.CustomProtectionRuleSummary>(
-                new com.google.common.base.Supplier<ListCustomProtectionRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListCustomProtectionRulesRequest.Builder>() {
                     @Override
                     public ListCustomProtectionRulesRequest.Builder get() {
                         return ListCustomProtectionRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCustomProtectionRulesResponse, String>() {
+                new java.util.function.Function<ListCustomProtectionRulesResponse, String>() {
                     @Override
                     public String apply(ListCustomProtectionRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCustomProtectionRulesRequest.Builder>,
                         ListCustomProtectionRulesRequest>() {
@@ -683,12 +681,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCustomProtectionRulesRequest, ListCustomProtectionRulesResponse>() {
                     @Override
                     public ListCustomProtectionRulesResponse apply(
@@ -696,7 +694,7 @@ public class WaasPaginators {
                         return client.listCustomProtectionRules(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCustomProtectionRulesResponse,
                         java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSummary>>() {
                     @Override
@@ -718,19 +716,19 @@ public class WaasPaginators {
             final ListEdgeSubnetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListEdgeSubnetsRequest.Builder, ListEdgeSubnetsRequest, ListEdgeSubnetsResponse>(
-                new com.google.common.base.Supplier<ListEdgeSubnetsRequest.Builder>() {
+                new java.util.function.Supplier<ListEdgeSubnetsRequest.Builder>() {
                     @Override
                     public ListEdgeSubnetsRequest.Builder get() {
                         return ListEdgeSubnetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEdgeSubnetsResponse, String>() {
+                new java.util.function.Function<ListEdgeSubnetsResponse, String>() {
                     @Override
                     public String apply(ListEdgeSubnetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEdgeSubnetsRequest.Builder>,
                         ListEdgeSubnetsRequest>() {
@@ -743,13 +741,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListEdgeSubnetsRequest, ListEdgeSubnetsResponse>() {
+                new java.util.function.Function<ListEdgeSubnetsRequest, ListEdgeSubnetsResponse>() {
                     @Override
                     public ListEdgeSubnetsResponse apply(ListEdgeSubnetsRequest request) {
                         return client.listEdgeSubnets(request);
@@ -771,19 +768,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListEdgeSubnetsRequest.Builder, ListEdgeSubnetsRequest, ListEdgeSubnetsResponse,
                 com.oracle.bmc.waas.model.EdgeSubnet>(
-                new com.google.common.base.Supplier<ListEdgeSubnetsRequest.Builder>() {
+                new java.util.function.Supplier<ListEdgeSubnetsRequest.Builder>() {
                     @Override
                     public ListEdgeSubnetsRequest.Builder get() {
                         return ListEdgeSubnetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEdgeSubnetsResponse, String>() {
+                new java.util.function.Function<ListEdgeSubnetsResponse, String>() {
                     @Override
                     public String apply(ListEdgeSubnetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEdgeSubnetsRequest.Builder>,
                         ListEdgeSubnetsRequest>() {
@@ -796,19 +793,18 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListEdgeSubnetsRequest, ListEdgeSubnetsResponse>() {
+                new java.util.function.Function<ListEdgeSubnetsRequest, ListEdgeSubnetsResponse>() {
                     @Override
                     public ListEdgeSubnetsResponse apply(ListEdgeSubnetsRequest request) {
                         return client.listEdgeSubnets(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListEdgeSubnetsResponse,
                         java.util.List<com.oracle.bmc.waas.model.EdgeSubnet>>() {
                     @Override
@@ -830,19 +826,19 @@ public class WaasPaginators {
             final ListGoodBotsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListGoodBotsRequest.Builder, ListGoodBotsRequest, ListGoodBotsResponse>(
-                new com.google.common.base.Supplier<ListGoodBotsRequest.Builder>() {
+                new java.util.function.Supplier<ListGoodBotsRequest.Builder>() {
                     @Override
                     public ListGoodBotsRequest.Builder get() {
                         return ListGoodBotsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListGoodBotsResponse, String>() {
+                new java.util.function.Function<ListGoodBotsResponse, String>() {
                     @Override
                     public String apply(ListGoodBotsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListGoodBotsRequest.Builder>,
                         ListGoodBotsRequest>() {
@@ -855,12 +851,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListGoodBotsRequest, ListGoodBotsResponse>() {
+                new java.util.function.Function<ListGoodBotsRequest, ListGoodBotsResponse>() {
                     @Override
                     public ListGoodBotsResponse apply(ListGoodBotsRequest request) {
                         return client.listGoodBots(request);
@@ -882,19 +878,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListGoodBotsRequest.Builder, ListGoodBotsRequest, ListGoodBotsResponse,
                 com.oracle.bmc.waas.model.GoodBot>(
-                new com.google.common.base.Supplier<ListGoodBotsRequest.Builder>() {
+                new java.util.function.Supplier<ListGoodBotsRequest.Builder>() {
                     @Override
                     public ListGoodBotsRequest.Builder get() {
                         return ListGoodBotsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListGoodBotsResponse, String>() {
+                new java.util.function.Function<ListGoodBotsResponse, String>() {
                     @Override
                     public String apply(ListGoodBotsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListGoodBotsRequest.Builder>,
                         ListGoodBotsRequest>() {
@@ -907,18 +903,18 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListGoodBotsRequest, ListGoodBotsResponse>() {
+                new java.util.function.Function<ListGoodBotsRequest, ListGoodBotsResponse>() {
                     @Override
                     public ListGoodBotsResponse apply(ListGoodBotsRequest request) {
                         return client.listGoodBots(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListGoodBotsResponse, java.util.List<com.oracle.bmc.waas.model.GoodBot>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.waas.model.GoodBot> apply(
@@ -940,19 +936,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListProtectionRulesRequest.Builder, ListProtectionRulesRequest,
                 ListProtectionRulesResponse>(
-                new com.google.common.base.Supplier<ListProtectionRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListProtectionRulesRequest.Builder>() {
                     @Override
                     public ListProtectionRulesRequest.Builder get() {
                         return ListProtectionRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProtectionRulesResponse, String>() {
+                new java.util.function.Function<ListProtectionRulesResponse, String>() {
                     @Override
                     public String apply(ListProtectionRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProtectionRulesRequest.Builder>,
                         ListProtectionRulesRequest>() {
@@ -965,12 +961,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProtectionRulesRequest, ListProtectionRulesResponse>() {
                     @Override
                     public ListProtectionRulesResponse apply(ListProtectionRulesRequest request) {
@@ -993,19 +989,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListProtectionRulesRequest.Builder, ListProtectionRulesRequest,
                 ListProtectionRulesResponse, com.oracle.bmc.waas.model.ProtectionRule>(
-                new com.google.common.base.Supplier<ListProtectionRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListProtectionRulesRequest.Builder>() {
                     @Override
                     public ListProtectionRulesRequest.Builder get() {
                         return ListProtectionRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProtectionRulesResponse, String>() {
+                new java.util.function.Function<ListProtectionRulesResponse, String>() {
                     @Override
                     public String apply(ListProtectionRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProtectionRulesRequest.Builder>,
                         ListProtectionRulesRequest>() {
@@ -1018,19 +1014,19 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProtectionRulesRequest, ListProtectionRulesResponse>() {
                     @Override
                     public ListProtectionRulesResponse apply(ListProtectionRulesRequest request) {
                         return client.listProtectionRules(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProtectionRulesResponse,
                         java.util.List<com.oracle.bmc.waas.model.ProtectionRule>>() {
                     @Override
@@ -1053,19 +1049,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRecommendationsRequest.Builder, ListRecommendationsRequest,
                 ListRecommendationsResponse>(
-                new com.google.common.base.Supplier<ListRecommendationsRequest.Builder>() {
+                new java.util.function.Supplier<ListRecommendationsRequest.Builder>() {
                     @Override
                     public ListRecommendationsRequest.Builder get() {
                         return ListRecommendationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRecommendationsResponse, String>() {
+                new java.util.function.Function<ListRecommendationsResponse, String>() {
                     @Override
                     public String apply(ListRecommendationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRecommendationsRequest.Builder>,
                         ListRecommendationsRequest>() {
@@ -1078,12 +1074,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRecommendationsRequest, ListRecommendationsResponse>() {
                     @Override
                     public ListRecommendationsResponse apply(ListRecommendationsRequest request) {
@@ -1106,19 +1102,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListRecommendationsRequest.Builder, ListRecommendationsRequest,
                 ListRecommendationsResponse, com.oracle.bmc.waas.model.Recommendation>(
-                new com.google.common.base.Supplier<ListRecommendationsRequest.Builder>() {
+                new java.util.function.Supplier<ListRecommendationsRequest.Builder>() {
                     @Override
                     public ListRecommendationsRequest.Builder get() {
                         return ListRecommendationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRecommendationsResponse, String>() {
+                new java.util.function.Function<ListRecommendationsResponse, String>() {
                     @Override
                     public String apply(ListRecommendationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRecommendationsRequest.Builder>,
                         ListRecommendationsRequest>() {
@@ -1131,19 +1127,19 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRecommendationsRequest, ListRecommendationsResponse>() {
                     @Override
                     public ListRecommendationsResponse apply(ListRecommendationsRequest request) {
                         return client.listRecommendations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRecommendationsResponse,
                         java.util.List<com.oracle.bmc.waas.model.Recommendation>>() {
                     @Override
@@ -1165,19 +1161,19 @@ public class WaasPaginators {
             final ListThreatFeedsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListThreatFeedsRequest.Builder, ListThreatFeedsRequest, ListThreatFeedsResponse>(
-                new com.google.common.base.Supplier<ListThreatFeedsRequest.Builder>() {
+                new java.util.function.Supplier<ListThreatFeedsRequest.Builder>() {
                     @Override
                     public ListThreatFeedsRequest.Builder get() {
                         return ListThreatFeedsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListThreatFeedsResponse, String>() {
+                new java.util.function.Function<ListThreatFeedsResponse, String>() {
                     @Override
                     public String apply(ListThreatFeedsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListThreatFeedsRequest.Builder>,
                         ListThreatFeedsRequest>() {
@@ -1190,13 +1186,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListThreatFeedsRequest, ListThreatFeedsResponse>() {
+                new java.util.function.Function<ListThreatFeedsRequest, ListThreatFeedsResponse>() {
                     @Override
                     public ListThreatFeedsResponse apply(ListThreatFeedsRequest request) {
                         return client.listThreatFeeds(request);
@@ -1218,19 +1213,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListThreatFeedsRequest.Builder, ListThreatFeedsRequest, ListThreatFeedsResponse,
                 com.oracle.bmc.waas.model.ThreatFeed>(
-                new com.google.common.base.Supplier<ListThreatFeedsRequest.Builder>() {
+                new java.util.function.Supplier<ListThreatFeedsRequest.Builder>() {
                     @Override
                     public ListThreatFeedsRequest.Builder get() {
                         return ListThreatFeedsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListThreatFeedsResponse, String>() {
+                new java.util.function.Function<ListThreatFeedsResponse, String>() {
                     @Override
                     public String apply(ListThreatFeedsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListThreatFeedsRequest.Builder>,
                         ListThreatFeedsRequest>() {
@@ -1243,19 +1238,18 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListThreatFeedsRequest, ListThreatFeedsResponse>() {
+                new java.util.function.Function<ListThreatFeedsRequest, ListThreatFeedsResponse>() {
                     @Override
                     public ListThreatFeedsResponse apply(ListThreatFeedsRequest request) {
                         return client.listThreatFeeds(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListThreatFeedsResponse,
                         java.util.List<com.oracle.bmc.waas.model.ThreatFeed>>() {
                     @Override
@@ -1277,19 +1271,19 @@ public class WaasPaginators {
             final ListWaasPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWaasPoliciesRequest.Builder, ListWaasPoliciesRequest, ListWaasPoliciesResponse>(
-                new com.google.common.base.Supplier<ListWaasPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListWaasPoliciesRequest.Builder>() {
                     @Override
                     public ListWaasPoliciesRequest.Builder get() {
                         return ListWaasPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWaasPoliciesResponse, String>() {
+                new java.util.function.Function<ListWaasPoliciesResponse, String>() {
                     @Override
                     public String apply(ListWaasPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWaasPoliciesRequest.Builder>,
                         ListWaasPoliciesRequest>() {
@@ -1302,12 +1296,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWaasPoliciesRequest, ListWaasPoliciesResponse>() {
                     @Override
                     public ListWaasPoliciesResponse apply(ListWaasPoliciesRequest request) {
@@ -1330,19 +1324,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWaasPoliciesRequest.Builder, ListWaasPoliciesRequest, ListWaasPoliciesResponse,
                 com.oracle.bmc.waas.model.WaasPolicySummary>(
-                new com.google.common.base.Supplier<ListWaasPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListWaasPoliciesRequest.Builder>() {
                     @Override
                     public ListWaasPoliciesRequest.Builder get() {
                         return ListWaasPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWaasPoliciesResponse, String>() {
+                new java.util.function.Function<ListWaasPoliciesResponse, String>() {
                     @Override
                     public String apply(ListWaasPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWaasPoliciesRequest.Builder>,
                         ListWaasPoliciesRequest>() {
@@ -1355,19 +1349,19 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWaasPoliciesRequest, ListWaasPoliciesResponse>() {
                     @Override
                     public ListWaasPoliciesResponse apply(ListWaasPoliciesRequest request) {
                         return client.listWaasPolicies(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWaasPoliciesResponse,
                         java.util.List<com.oracle.bmc.waas.model.WaasPolicySummary>>() {
                     @Override
@@ -1392,21 +1386,21 @@ public class WaasPaginators {
                 ListWaasPolicyCustomProtectionRulesRequest.Builder,
                 ListWaasPolicyCustomProtectionRulesRequest,
                 ListWaasPolicyCustomProtectionRulesResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListWaasPolicyCustomProtectionRulesRequest.Builder>() {
                     @Override
                     public ListWaasPolicyCustomProtectionRulesRequest.Builder get() {
                         return ListWaasPolicyCustomProtectionRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWaasPolicyCustomProtectionRulesResponse, String>() {
                     @Override
                     public String apply(ListWaasPolicyCustomProtectionRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWaasPolicyCustomProtectionRulesRequest.Builder>,
                         ListWaasPolicyCustomProtectionRulesRequest>() {
@@ -1419,12 +1413,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWaasPolicyCustomProtectionRulesRequest,
                         ListWaasPolicyCustomProtectionRulesResponse>() {
                     @Override
@@ -1452,21 +1446,21 @@ public class WaasPaginators {
                 ListWaasPolicyCustomProtectionRulesRequest,
                 ListWaasPolicyCustomProtectionRulesResponse,
                 com.oracle.bmc.waas.model.WaasPolicyCustomProtectionRuleSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListWaasPolicyCustomProtectionRulesRequest.Builder>() {
                     @Override
                     public ListWaasPolicyCustomProtectionRulesRequest.Builder get() {
                         return ListWaasPolicyCustomProtectionRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWaasPolicyCustomProtectionRulesResponse, String>() {
                     @Override
                     public String apply(ListWaasPolicyCustomProtectionRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWaasPolicyCustomProtectionRulesRequest.Builder>,
                         ListWaasPolicyCustomProtectionRulesRequest>() {
@@ -1479,12 +1473,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWaasPolicyCustomProtectionRulesRequest,
                         ListWaasPolicyCustomProtectionRulesResponse>() {
                     @Override
@@ -1493,7 +1487,7 @@ public class WaasPaginators {
                         return client.listWaasPolicyCustomProtectionRules(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWaasPolicyCustomProtectionRulesResponse,
                         java.util.List<
                                 com.oracle.bmc.waas.model
@@ -1519,19 +1513,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWafBlockedRequestsRequest.Builder, ListWafBlockedRequestsRequest,
                 ListWafBlockedRequestsResponse>(
-                new com.google.common.base.Supplier<ListWafBlockedRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWafBlockedRequestsRequest.Builder>() {
                     @Override
                     public ListWafBlockedRequestsRequest.Builder get() {
                         return ListWafBlockedRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWafBlockedRequestsResponse, String>() {
+                new java.util.function.Function<ListWafBlockedRequestsResponse, String>() {
                     @Override
                     public String apply(ListWafBlockedRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWafBlockedRequestsRequest.Builder>,
                         ListWafBlockedRequestsRequest>() {
@@ -1544,12 +1538,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWafBlockedRequestsRequest, ListWafBlockedRequestsResponse>() {
                     @Override
                     public ListWafBlockedRequestsResponse apply(
@@ -1573,19 +1567,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWafBlockedRequestsRequest.Builder, ListWafBlockedRequestsRequest,
                 ListWafBlockedRequestsResponse, com.oracle.bmc.waas.model.WafBlockedRequest>(
-                new com.google.common.base.Supplier<ListWafBlockedRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWafBlockedRequestsRequest.Builder>() {
                     @Override
                     public ListWafBlockedRequestsRequest.Builder get() {
                         return ListWafBlockedRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWafBlockedRequestsResponse, String>() {
+                new java.util.function.Function<ListWafBlockedRequestsResponse, String>() {
                     @Override
                     public String apply(ListWafBlockedRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWafBlockedRequestsRequest.Builder>,
                         ListWafBlockedRequestsRequest>() {
@@ -1598,12 +1592,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWafBlockedRequestsRequest, ListWafBlockedRequestsResponse>() {
                     @Override
                     public ListWafBlockedRequestsResponse apply(
@@ -1611,7 +1605,7 @@ public class WaasPaginators {
                         return client.listWafBlockedRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWafBlockedRequestsResponse,
                         java.util.List<com.oracle.bmc.waas.model.WafBlockedRequest>>() {
                     @Override
@@ -1633,19 +1627,19 @@ public class WaasPaginators {
             final ListWafLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWafLogsRequest.Builder, ListWafLogsRequest, ListWafLogsResponse>(
-                new com.google.common.base.Supplier<ListWafLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWafLogsRequest.Builder>() {
                     @Override
                     public ListWafLogsRequest.Builder get() {
                         return ListWafLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWafLogsResponse, String>() {
+                new java.util.function.Function<ListWafLogsResponse, String>() {
                     @Override
                     public String apply(ListWafLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWafLogsRequest.Builder>,
                         ListWafLogsRequest>() {
@@ -1658,12 +1652,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListWafLogsRequest, ListWafLogsResponse>() {
+                new java.util.function.Function<ListWafLogsRequest, ListWafLogsResponse>() {
                     @Override
                     public ListWafLogsResponse apply(ListWafLogsRequest request) {
                         return client.listWafLogs(request);
@@ -1685,19 +1679,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWafLogsRequest.Builder, ListWafLogsRequest, ListWafLogsResponse,
                 com.oracle.bmc.waas.model.WafLog>(
-                new com.google.common.base.Supplier<ListWafLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWafLogsRequest.Builder>() {
                     @Override
                     public ListWafLogsRequest.Builder get() {
                         return ListWafLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWafLogsResponse, String>() {
+                new java.util.function.Function<ListWafLogsResponse, String>() {
                     @Override
                     public String apply(ListWafLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWafLogsRequest.Builder>,
                         ListWafLogsRequest>() {
@@ -1710,18 +1704,18 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListWafLogsRequest, ListWafLogsResponse>() {
+                new java.util.function.Function<ListWafLogsRequest, ListWafLogsResponse>() {
                     @Override
                     public ListWafLogsResponse apply(ListWafLogsRequest request) {
                         return client.listWafLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWafLogsResponse, java.util.List<com.oracle.bmc.waas.model.WafLog>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.waas.model.WafLog> apply(
@@ -1742,19 +1736,19 @@ public class WaasPaginators {
             final ListWafRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWafRequestsRequest.Builder, ListWafRequestsRequest, ListWafRequestsResponse>(
-                new com.google.common.base.Supplier<ListWafRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWafRequestsRequest.Builder>() {
                     @Override
                     public ListWafRequestsRequest.Builder get() {
                         return ListWafRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWafRequestsResponse, String>() {
+                new java.util.function.Function<ListWafRequestsResponse, String>() {
                     @Override
                     public String apply(ListWafRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWafRequestsRequest.Builder>,
                         ListWafRequestsRequest>() {
@@ -1767,13 +1761,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListWafRequestsRequest, ListWafRequestsResponse>() {
+                new java.util.function.Function<ListWafRequestsRequest, ListWafRequestsResponse>() {
                     @Override
                     public ListWafRequestsResponse apply(ListWafRequestsRequest request) {
                         return client.listWafRequests(request);
@@ -1795,19 +1788,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWafRequestsRequest.Builder, ListWafRequestsRequest, ListWafRequestsResponse,
                 com.oracle.bmc.waas.model.WafRequest>(
-                new com.google.common.base.Supplier<ListWafRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWafRequestsRequest.Builder>() {
                     @Override
                     public ListWafRequestsRequest.Builder get() {
                         return ListWafRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWafRequestsResponse, String>() {
+                new java.util.function.Function<ListWafRequestsResponse, String>() {
                     @Override
                     public String apply(ListWafRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWafRequestsRequest.Builder>,
                         ListWafRequestsRequest>() {
@@ -1820,19 +1813,18 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListWafRequestsRequest, ListWafRequestsResponse>() {
+                new java.util.function.Function<ListWafRequestsRequest, ListWafRequestsResponse>() {
                     @Override
                     public ListWafRequestsResponse apply(ListWafRequestsRequest request) {
                         return client.listWafRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWafRequestsResponse,
                         java.util.List<com.oracle.bmc.waas.model.WafRequest>>() {
                     @Override
@@ -1854,19 +1846,19 @@ public class WaasPaginators {
             final ListWafTrafficRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWafTrafficRequest.Builder, ListWafTrafficRequest, ListWafTrafficResponse>(
-                new com.google.common.base.Supplier<ListWafTrafficRequest.Builder>() {
+                new java.util.function.Supplier<ListWafTrafficRequest.Builder>() {
                     @Override
                     public ListWafTrafficRequest.Builder get() {
                         return ListWafTrafficRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWafTrafficResponse, String>() {
+                new java.util.function.Function<ListWafTrafficResponse, String>() {
                     @Override
                     public String apply(ListWafTrafficResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWafTrafficRequest.Builder>,
                         ListWafTrafficRequest>() {
@@ -1879,13 +1871,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListWafTrafficRequest, ListWafTrafficResponse>() {
+                new java.util.function.Function<ListWafTrafficRequest, ListWafTrafficResponse>() {
                     @Override
                     public ListWafTrafficResponse apply(ListWafTrafficRequest request) {
                         return client.listWafTraffic(request);
@@ -1907,19 +1898,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWafTrafficRequest.Builder, ListWafTrafficRequest, ListWafTrafficResponse,
                 com.oracle.bmc.waas.model.WafTrafficDatum>(
-                new com.google.common.base.Supplier<ListWafTrafficRequest.Builder>() {
+                new java.util.function.Supplier<ListWafTrafficRequest.Builder>() {
                     @Override
                     public ListWafTrafficRequest.Builder get() {
                         return ListWafTrafficRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWafTrafficResponse, String>() {
+                new java.util.function.Function<ListWafTrafficResponse, String>() {
                     @Override
                     public String apply(ListWafTrafficResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWafTrafficRequest.Builder>,
                         ListWafTrafficRequest>() {
@@ -1932,19 +1923,18 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListWafTrafficRequest, ListWafTrafficResponse>() {
+                new java.util.function.Function<ListWafTrafficRequest, ListWafTrafficResponse>() {
                     @Override
                     public ListWafTrafficResponse apply(ListWafTrafficRequest request) {
                         return client.listWafTraffic(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWafTrafficResponse,
                         java.util.List<com.oracle.bmc.waas.model.WafTrafficDatum>>() {
                     @Override
@@ -1966,19 +1956,19 @@ public class WaasPaginators {
             final ListWhitelistsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWhitelistsRequest.Builder, ListWhitelistsRequest, ListWhitelistsResponse>(
-                new com.google.common.base.Supplier<ListWhitelistsRequest.Builder>() {
+                new java.util.function.Supplier<ListWhitelistsRequest.Builder>() {
                     @Override
                     public ListWhitelistsRequest.Builder get() {
                         return ListWhitelistsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWhitelistsResponse, String>() {
+                new java.util.function.Function<ListWhitelistsResponse, String>() {
                     @Override
                     public String apply(ListWhitelistsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWhitelistsRequest.Builder>,
                         ListWhitelistsRequest>() {
@@ -1991,13 +1981,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListWhitelistsRequest, ListWhitelistsResponse>() {
+                new java.util.function.Function<ListWhitelistsRequest, ListWhitelistsResponse>() {
                     @Override
                     public ListWhitelistsResponse apply(ListWhitelistsRequest request) {
                         return client.listWhitelists(request);
@@ -2019,19 +2008,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWhitelistsRequest.Builder, ListWhitelistsRequest, ListWhitelistsResponse,
                 com.oracle.bmc.waas.model.Whitelist>(
-                new com.google.common.base.Supplier<ListWhitelistsRequest.Builder>() {
+                new java.util.function.Supplier<ListWhitelistsRequest.Builder>() {
                     @Override
                     public ListWhitelistsRequest.Builder get() {
                         return ListWhitelistsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWhitelistsResponse, String>() {
+                new java.util.function.Function<ListWhitelistsResponse, String>() {
                     @Override
                     public String apply(ListWhitelistsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWhitelistsRequest.Builder>,
                         ListWhitelistsRequest>() {
@@ -2044,19 +2033,18 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListWhitelistsRequest, ListWhitelistsResponse>() {
+                new java.util.function.Function<ListWhitelistsRequest, ListWhitelistsResponse>() {
                     @Override
                     public ListWhitelistsResponse apply(ListWhitelistsRequest request) {
                         return client.listWhitelists(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWhitelistsResponse,
                         java.util.List<com.oracle.bmc.waas.model.Whitelist>>() {
                     @Override
@@ -2078,19 +2066,19 @@ public class WaasPaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -2103,12 +2091,12 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -2131,19 +2119,19 @@ public class WaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.waas.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -2156,19 +2144,19 @@ public class WaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<com.oracle.bmc.waas.model.WorkRequestSummary>>() {
                     @Override

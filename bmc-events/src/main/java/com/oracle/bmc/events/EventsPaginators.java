@@ -43,19 +43,19 @@ public class EventsPaginators {
     public Iterable<ListRulesResponse> listRulesResponseIterator(final ListRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRulesRequest.Builder, ListRulesRequest, ListRulesResponse>(
-                new com.google.common.base.Supplier<ListRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListRulesRequest.Builder>() {
                     @Override
                     public ListRulesRequest.Builder get() {
                         return ListRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRulesResponse, String>() {
+                new java.util.function.Function<ListRulesResponse, String>() {
                     @Override
                     public String apply(ListRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRulesRequest.Builder>,
                         ListRulesRequest>() {
@@ -68,12 +68,12 @@ public class EventsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListRulesRequest, ListRulesResponse>() {
+                new java.util.function.Function<ListRulesRequest, ListRulesResponse>() {
                     @Override
                     public ListRulesResponse apply(ListRulesRequest request) {
                         return client.listRules(request);
@@ -95,19 +95,19 @@ public class EventsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListRulesRequest.Builder, ListRulesRequest, ListRulesResponse,
                 com.oracle.bmc.events.model.RuleSummary>(
-                new com.google.common.base.Supplier<ListRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListRulesRequest.Builder>() {
                     @Override
                     public ListRulesRequest.Builder get() {
                         return ListRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRulesResponse, String>() {
+                new java.util.function.Function<ListRulesResponse, String>() {
                     @Override
                     public String apply(ListRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRulesRequest.Builder>,
                         ListRulesRequest>() {
@@ -120,18 +120,18 @@ public class EventsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListRulesRequest, ListRulesResponse>() {
+                new java.util.function.Function<ListRulesRequest, ListRulesResponse>() {
                     @Override
                     public ListRulesResponse apply(ListRulesRequest request) {
                         return client.listRules(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRulesResponse,
                         java.util.List<com.oracle.bmc.events.model.RuleSummary>>() {
                     @Override

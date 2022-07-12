@@ -9,7 +9,6 @@ import com.oracle.bmc.aivision.requests.*;
 import com.oracle.bmc.aivision.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class AIServiceVisionClient implements AIServiceVision {
@@ -335,9 +334,9 @@ public class AIServiceVisionClient implements AIServiceVision {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("AIServiceVision-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("AIServiceVision-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class AIServiceVisionClient implements AIServiceVision {
          * @return the client
          */
         public AIServiceVisionClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class AIServiceVisionClient implements AIServiceVision {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,7 +487,7 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "AnalyzeDocument",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/AnalyzeDocumentResult/AnalyzeDocument");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AnalyzeDocumentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AnalyzeDocumentResponse>
                 transformer =
                         AnalyzeDocumentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -528,9 +528,8 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "AnalyzeImage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/AnalyzeImageResult/AnalyzeImage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AnalyzeImageResponse>
-                transformer =
-                        AnalyzeImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, AnalyzeImageResponse> transformer =
+                AnalyzeImageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -568,7 +567,7 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "CancelDocumentJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/DocumentJob/CancelDocumentJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelDocumentJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelDocumentJobResponse>
                 transformer =
                         CancelDocumentJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -606,9 +605,8 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "CancelImageJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ImageJob/CancelImageJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelImageJobResponse>
-                transformer =
-                        CancelImageJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CancelImageJobResponse> transformer =
+                CancelImageJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -643,7 +641,7 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "CancelWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequest/CancelWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -682,7 +680,7 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "ChangeModelCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Model/ChangeModelCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
                 transformer =
                         ChangeModelCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -724,7 +722,7 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "ChangeProjectCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Project/ChangeProjectCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
                 transformer =
                         ChangeProjectCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -766,7 +764,7 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "CreateDocumentJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/DocumentJob/CreateDocumentJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDocumentJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDocumentJobResponse>
                 transformer =
                         CreateDocumentJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -808,9 +806,8 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "CreateImageJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ImageJob/CreateImageJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateImageJobResponse>
-                transformer =
-                        CreateImageJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateImageJobResponse> transformer =
+                CreateImageJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -846,9 +843,8 @@ public class AIServiceVisionClient implements AIServiceVision {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AIServiceVision", "CreateModel", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateModelResponse>
-                transformer =
-                        CreateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateModelResponse> transformer =
+                CreateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -884,9 +880,8 @@ public class AIServiceVisionClient implements AIServiceVision {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AIServiceVision", "CreateProject", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
-                transformer =
-                        CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateProjectResponse> transformer =
+                CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -924,9 +919,8 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "DeleteModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Model/DeleteModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteModelResponse>
-                transformer =
-                        DeleteModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteModelResponse> transformer =
+                DeleteModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -961,9 +955,8 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "DeleteProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Project/DeleteProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
-                transformer =
-                        DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteProjectResponse> transformer =
+                DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -998,9 +991,8 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "GetDocumentJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/DocumentJob/GetDocumentJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDocumentJobResponse>
-                transformer =
-                        GetDocumentJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDocumentJobResponse> transformer =
+                GetDocumentJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1034,9 +1026,8 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "GetImageJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ImageJob/GetImageJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetImageJobResponse>
-                transformer =
-                        GetImageJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetImageJobResponse> transformer =
+                GetImageJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1069,7 +1060,7 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "GetModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Model/GetModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetModelResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetModelResponse> transformer =
                 GetModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1103,7 +1094,7 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "GetProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Project/GetProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetProjectResponse> transformer =
                 GetProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1138,9 +1129,8 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1173,7 +1163,7 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "ListModels",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ModelCollection/ListModels");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListModelsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListModelsResponse> transformer =
                 ListModelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1208,9 +1198,8 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "ListProjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ProjectCollection/ListProjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
-                transformer =
-                        ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListProjectsResponse> transformer =
+                ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1245,7 +1234,7 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1282,7 +1271,7 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1319,7 +1308,7 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1356,9 +1345,8 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "UpdateModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Model/UpdateModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateModelResponse>
-                transformer =
-                        UpdateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateModelResponse> transformer =
+                UpdateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1396,9 +1384,8 @@ public class AIServiceVisionClient implements AIServiceVision {
                         "UpdateProject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Project/UpdateProject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
-                transformer =
-                        UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateProjectResponse> transformer =
+                UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

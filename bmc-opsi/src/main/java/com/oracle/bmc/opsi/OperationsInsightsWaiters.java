@@ -6,7 +6,6 @@ package com.oracle.bmc.opsi;
 
 import com.oracle.bmc.opsi.requests.*;
 import com.oracle.bmc.opsi.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -103,16 +102,16 @@ public class OperationsInsightsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetAwrHubRequest, GetAwrHubResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetAwrHubRequest, GetAwrHubResponse>() {
                             @Override
                             public GetAwrHubResponse apply(GetAwrHubRequest request) {
                                 return client.getAwrHub(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAwrHubResponse>() {
+                        new java.util.function.Predicate<GetAwrHubResponse>() {
                             @Override
-                            public boolean apply(GetAwrHubResponse response) {
+                            public boolean test(GetAwrHubResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAwrHub().getLifecycleState());
                             }
@@ -204,8 +203,8 @@ public class OperationsInsightsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDatabaseInsightRequest, GetDatabaseInsightResponse>() {
                             @Override
                             public GetDatabaseInsightResponse apply(
@@ -213,9 +212,9 @@ public class OperationsInsightsWaiters {
                                 return client.getDatabaseInsight(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDatabaseInsightResponse>() {
+                        new java.util.function.Predicate<GetDatabaseInsightResponse>() {
                             @Override
-                            public boolean apply(GetDatabaseInsightResponse response) {
+                            public boolean test(GetDatabaseInsightResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDatabaseInsight().getLifecycleState());
                             }
@@ -310,8 +309,8 @@ public class OperationsInsightsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetEnterpriseManagerBridgeRequest,
                                 GetEnterpriseManagerBridgeResponse>() {
                             @Override
@@ -320,9 +319,9 @@ public class OperationsInsightsWaiters {
                                 return client.getEnterpriseManagerBridge(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetEnterpriseManagerBridgeResponse>() {
+                        new java.util.function.Predicate<GetEnterpriseManagerBridgeResponse>() {
                             @Override
-                            public boolean apply(GetEnterpriseManagerBridgeResponse response) {
+                            public boolean test(GetEnterpriseManagerBridgeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getEnterpriseManagerBridge().getLifecycleState());
                             }
@@ -413,8 +412,8 @@ public class OperationsInsightsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetExadataInsightRequest, GetExadataInsightResponse>() {
                             @Override
                             public GetExadataInsightResponse apply(
@@ -422,9 +421,9 @@ public class OperationsInsightsWaiters {
                                 return client.getExadataInsight(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetExadataInsightResponse>() {
+                        new java.util.function.Predicate<GetExadataInsightResponse>() {
                             @Override
-                            public boolean apply(GetExadataInsightResponse response) {
+                            public boolean test(GetExadataInsightResponse response) {
                                 return targetStatesSet.contains(
                                         response.getExadataInsight().getLifecycleState());
                             }
@@ -516,17 +515,17 @@ public class OperationsInsightsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetHostInsightRequest, GetHostInsightResponse>() {
                             @Override
                             public GetHostInsightResponse apply(GetHostInsightRequest request) {
                                 return client.getHostInsight(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetHostInsightResponse>() {
+                        new java.util.function.Predicate<GetHostInsightResponse>() {
                             @Override
-                            public boolean apply(GetHostInsightResponse response) {
+                            public boolean test(GetHostInsightResponse response) {
                                 return targetStatesSet.contains(
                                         response.getHostInsight().getLifecycleState());
                             }
@@ -631,8 +630,8 @@ public class OperationsInsightsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetOperationsInsightsPrivateEndpointRequest,
                                 GetOperationsInsightsPrivateEndpointResponse>() {
                             @Override
@@ -641,10 +640,10 @@ public class OperationsInsightsWaiters {
                                 return client.getOperationsInsightsPrivateEndpoint(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
+                        new java.util.function.Predicate<
                                 GetOperationsInsightsPrivateEndpointResponse>() {
                             @Override
-                            public boolean apply(
+                            public boolean test(
                                     GetOperationsInsightsPrivateEndpointResponse response) {
                                 return targetStatesSet.contains(
                                         response.getOperationsInsightsPrivateEndpoint()
@@ -746,8 +745,8 @@ public class OperationsInsightsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetOperationsInsightsWarehouseRequest,
                                 GetOperationsInsightsWarehouseResponse>() {
                             @Override
@@ -756,10 +755,9 @@ public class OperationsInsightsWaiters {
                                 return client.getOperationsInsightsWarehouse(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetOperationsInsightsWarehouseResponse>() {
+                        new java.util.function.Predicate<GetOperationsInsightsWarehouseResponse>() {
                             @Override
-                            public boolean apply(GetOperationsInsightsWarehouseResponse response) {
+                            public boolean test(GetOperationsInsightsWarehouseResponse response) {
                                 return targetStatesSet.contains(
                                         response.getOperationsInsightsWarehouse()
                                                 .getLifecycleState());
@@ -865,8 +863,8 @@ public class OperationsInsightsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetOperationsInsightsWarehouseUserRequest,
                                 GetOperationsInsightsWarehouseUserResponse>() {
                             @Override
@@ -875,10 +873,10 @@ public class OperationsInsightsWaiters {
                                 return client.getOperationsInsightsWarehouseUser(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
+                        new java.util.function.Predicate<
                                 GetOperationsInsightsWarehouseUserResponse>() {
                             @Override
-                            public boolean apply(
+                            public boolean test(
                                     GetOperationsInsightsWarehouseUserResponse response) {
                                 return targetStatesSet.contains(
                                         response.getOperationsInsightsWarehouseUser()
@@ -928,17 +926,17 @@ public class OperationsInsightsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

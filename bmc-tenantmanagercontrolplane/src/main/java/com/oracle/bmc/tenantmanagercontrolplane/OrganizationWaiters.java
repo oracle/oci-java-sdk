@@ -6,7 +6,6 @@ package com.oracle.bmc.tenantmanagercontrolplane;
 
 import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -113,17 +112,17 @@ public class OrganizationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetOrganizationRequest, GetOrganizationResponse>() {
                             @Override
                             public GetOrganizationResponse apply(GetOrganizationRequest request) {
                                 return client.getOrganization(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetOrganizationResponse>() {
+                        new java.util.function.Predicate<GetOrganizationResponse>() {
                             @Override
-                            public boolean apply(GetOrganizationResponse response) {
+                            public boolean test(GetOrganizationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getOrganization().getLifecycleState());
                             }
@@ -229,8 +228,8 @@ public class OrganizationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetOrganizationTenancyRequest, GetOrganizationTenancyResponse>() {
                             @Override
                             public GetOrganizationTenancyResponse apply(
@@ -238,9 +237,9 @@ public class OrganizationWaiters {
                                 return client.getOrganizationTenancy(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetOrganizationTenancyResponse>() {
+                        new java.util.function.Predicate<GetOrganizationTenancyResponse>() {
                             @Override
-                            public boolean apply(GetOrganizationTenancyResponse response) {
+                            public boolean test(GetOrganizationTenancyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getOrganizationTenancy().getLifecycleState());
                             }

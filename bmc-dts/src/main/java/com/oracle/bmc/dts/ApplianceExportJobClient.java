@@ -9,7 +9,6 @@ import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 public class ApplianceExportJobClient implements ApplianceExportJob {
@@ -335,9 +334,9 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("ApplianceExportJob-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("ApplianceExportJob-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
          * @return the client
          */
         public ApplianceExportJobClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -490,7 +490,7 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
                         "ChangeApplianceExportJobCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeApplianceExportJobCompartmentResponse>
                 transformer =
                         ChangeApplianceExportJobCompartmentConverter.fromResponse(
@@ -535,7 +535,7 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
                         "CreateApplianceExportJob",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplianceExportJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateApplianceExportJobResponse>
                 transformer =
                         CreateApplianceExportJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -577,7 +577,7 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
                         "DeleteApplianceExportJob",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApplianceExportJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteApplianceExportJobResponse>
                 transformer =
                         DeleteApplianceExportJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -616,7 +616,7 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
                         "GetApplianceExportJob",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetApplianceExportJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetApplianceExportJobResponse>
                 transformer =
                         GetApplianceExportJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -654,7 +654,7 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
                         "ListApplianceExportJobs",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListApplianceExportJobsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListApplianceExportJobsResponse>
                 transformer =
                         ListApplianceExportJobsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -692,7 +692,7 @@ public class ApplianceExportJobClient implements ApplianceExportJob {
                         "UpdateApplianceExportJob",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApplianceExportJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateApplianceExportJobResponse>
                 transformer =
                         UpdateApplianceExportJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

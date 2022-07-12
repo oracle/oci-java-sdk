@@ -7,6 +7,7 @@ package com.oracle.bmc.http.signing.internal;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.security.interfaces.RSAPrivateKey;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -19,9 +20,9 @@ import org.bouncycastle.openssl.PEMKeyPair;
 import org.bouncycastle.openssl.PEMParser;
 import org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter;
 import org.bouncycastle.openssl.jcajce.JcePEMDecryptorProviderBuilder;
-import com.google.common.base.Charsets;
-import com.google.common.base.Optional;
-import com.google.common.base.Preconditions;
+
+import java.util.Optional;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.util.StreamUtils;
 
 /**
@@ -59,13 +60,13 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
             LOG.debug("Initializing private key");
 
             try (PEMParser keyReader =
-                    new PEMParser(new InputStreamReader(inputStream, Charsets.UTF_8))) {
+                    new PEMParser(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
                 Object object = keyReader.readObject();
 
                 final PrivateKeyInfo keyInfo;
 
                 if (object instanceof PEMEncryptedKeyPair) {
-                    Preconditions.checkNotNull(
+                    Validate.notNull(
                             passphraseCharacters, "The provided private key requires a passphrase");
 
                     JcePEMDecryptorProviderBuilder decryptorProviderBuilder =

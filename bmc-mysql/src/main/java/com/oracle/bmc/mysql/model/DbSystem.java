@@ -54,7 +54,8 @@ public final class DbSystem {
         "timeUpdated",
         "freeformTags",
         "definedTags",
-        "crashRecovery"
+        "crashRecovery",
+        "pointInTimeRecoveryDetails"
     })
     public DbSystem(
             String id,
@@ -90,7 +91,8 @@ public final class DbSystem {
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            CrashRecoveryStatus crashRecovery) {
+            CrashRecoveryStatus crashRecovery,
+            PointInTimeRecoveryDetails pointInTimeRecoveryDetails) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -126,6 +128,7 @@ public final class DbSystem {
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.crashRecovery = crashRecovery;
+        this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -709,6 +712,16 @@ public final class DbSystem {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pointInTimeRecoveryDetails")
+        private PointInTimeRecoveryDetails pointInTimeRecoveryDetails;
+
+        public Builder pointInTimeRecoveryDetails(
+                PointInTimeRecoveryDetails pointInTimeRecoveryDetails) {
+            this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
+            this.__explicitlySet__.add("pointInTimeRecoveryDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -748,7 +761,8 @@ public final class DbSystem {
                             timeUpdated,
                             freeformTags,
                             definedTags,
-                            crashRecovery);
+                            crashRecovery,
+                            pointInTimeRecoveryDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -789,7 +803,8 @@ public final class DbSystem {
                             .timeUpdated(o.getTimeUpdated())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .crashRecovery(o.getCrashRecovery());
+                            .crashRecovery(o.getCrashRecovery())
+                            .pointInTimeRecoveryDetails(o.getPointInTimeRecoveryDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -1369,6 +1384,13 @@ public final class DbSystem {
         return crashRecovery;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("pointInTimeRecoveryDetails")
+    private final PointInTimeRecoveryDetails pointInTimeRecoveryDetails;
+
+    public PointInTimeRecoveryDetails getPointInTimeRecoveryDetails() {
+        return pointInTimeRecoveryDetails;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
@@ -1409,6 +1431,8 @@ public final class DbSystem {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
+        sb.append(", pointInTimeRecoveryDetails=")
+                .append(String.valueOf(this.pointInTimeRecoveryDetails));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -1460,6 +1484,8 @@ public final class DbSystem {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
+                && java.util.Objects.equals(
+                        this.pointInTimeRecoveryDetails, other.pointInTimeRecoveryDetails)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -1539,6 +1565,11 @@ public final class DbSystem {
         result =
                 (result * PRIME)
                         + (this.crashRecovery == null ? 43 : this.crashRecovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pointInTimeRecoveryDetails == null
+                                ? 43
+                                : this.pointInTimeRecoveryDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

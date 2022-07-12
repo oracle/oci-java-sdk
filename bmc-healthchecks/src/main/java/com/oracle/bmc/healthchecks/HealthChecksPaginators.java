@@ -46,21 +46,19 @@ public class HealthChecksPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListHealthChecksVantagePointsRequest.Builder, ListHealthChecksVantagePointsRequest,
                 ListHealthChecksVantagePointsResponse>(
-                new com.google.common.base.Supplier<
-                        ListHealthChecksVantagePointsRequest.Builder>() {
+                new java.util.function.Supplier<ListHealthChecksVantagePointsRequest.Builder>() {
                     @Override
                     public ListHealthChecksVantagePointsRequest.Builder get() {
                         return ListHealthChecksVantagePointsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListHealthChecksVantagePointsResponse, String>() {
+                new java.util.function.Function<ListHealthChecksVantagePointsResponse, String>() {
                     @Override
                     public String apply(ListHealthChecksVantagePointsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListHealthChecksVantagePointsRequest.Builder>,
                         ListHealthChecksVantagePointsRequest>() {
@@ -73,12 +71,12 @@ public class HealthChecksPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListHealthChecksVantagePointsRequest,
                         ListHealthChecksVantagePointsResponse>() {
                     @Override
@@ -105,21 +103,19 @@ public class HealthChecksPaginators {
                 ListHealthChecksVantagePointsRequest.Builder, ListHealthChecksVantagePointsRequest,
                 ListHealthChecksVantagePointsResponse,
                 com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary>(
-                new com.google.common.base.Supplier<
-                        ListHealthChecksVantagePointsRequest.Builder>() {
+                new java.util.function.Supplier<ListHealthChecksVantagePointsRequest.Builder>() {
                     @Override
                     public ListHealthChecksVantagePointsRequest.Builder get() {
                         return ListHealthChecksVantagePointsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListHealthChecksVantagePointsResponse, String>() {
+                new java.util.function.Function<ListHealthChecksVantagePointsResponse, String>() {
                     @Override
                     public String apply(ListHealthChecksVantagePointsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListHealthChecksVantagePointsRequest.Builder>,
                         ListHealthChecksVantagePointsRequest>() {
@@ -132,12 +128,12 @@ public class HealthChecksPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListHealthChecksVantagePointsRequest,
                         ListHealthChecksVantagePointsResponse>() {
                     @Override
@@ -146,7 +142,7 @@ public class HealthChecksPaginators {
                         return client.listHealthChecksVantagePoints(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListHealthChecksVantagePointsResponse,
                         java.util.List<
                                 com.oracle.bmc.healthchecks.model
@@ -172,19 +168,19 @@ public class HealthChecksPaginators {
             final ListHttpMonitorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListHttpMonitorsRequest.Builder, ListHttpMonitorsRequest, ListHttpMonitorsResponse>(
-                new com.google.common.base.Supplier<ListHttpMonitorsRequest.Builder>() {
+                new java.util.function.Supplier<ListHttpMonitorsRequest.Builder>() {
                     @Override
                     public ListHttpMonitorsRequest.Builder get() {
                         return ListHttpMonitorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListHttpMonitorsResponse, String>() {
+                new java.util.function.Function<ListHttpMonitorsResponse, String>() {
                     @Override
                     public String apply(ListHttpMonitorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListHttpMonitorsRequest.Builder>,
                         ListHttpMonitorsRequest>() {
@@ -197,12 +193,12 @@ public class HealthChecksPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListHttpMonitorsRequest, ListHttpMonitorsResponse>() {
                     @Override
                     public ListHttpMonitorsResponse apply(ListHttpMonitorsRequest request) {
@@ -225,19 +221,19 @@ public class HealthChecksPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListHttpMonitorsRequest.Builder, ListHttpMonitorsRequest, ListHttpMonitorsResponse,
                 com.oracle.bmc.healthchecks.model.HttpMonitorSummary>(
-                new com.google.common.base.Supplier<ListHttpMonitorsRequest.Builder>() {
+                new java.util.function.Supplier<ListHttpMonitorsRequest.Builder>() {
                     @Override
                     public ListHttpMonitorsRequest.Builder get() {
                         return ListHttpMonitorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListHttpMonitorsResponse, String>() {
+                new java.util.function.Function<ListHttpMonitorsResponse, String>() {
                     @Override
                     public String apply(ListHttpMonitorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListHttpMonitorsRequest.Builder>,
                         ListHttpMonitorsRequest>() {
@@ -250,19 +246,19 @@ public class HealthChecksPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListHttpMonitorsRequest, ListHttpMonitorsResponse>() {
                     @Override
                     public ListHttpMonitorsResponse apply(ListHttpMonitorsRequest request) {
                         return client.listHttpMonitors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListHttpMonitorsResponse,
                         java.util.List<com.oracle.bmc.healthchecks.model.HttpMonitorSummary>>() {
                     @Override
@@ -285,19 +281,19 @@ public class HealthChecksPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListHttpProbeResultsRequest.Builder, ListHttpProbeResultsRequest,
                 ListHttpProbeResultsResponse>(
-                new com.google.common.base.Supplier<ListHttpProbeResultsRequest.Builder>() {
+                new java.util.function.Supplier<ListHttpProbeResultsRequest.Builder>() {
                     @Override
                     public ListHttpProbeResultsRequest.Builder get() {
                         return ListHttpProbeResultsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListHttpProbeResultsResponse, String>() {
+                new java.util.function.Function<ListHttpProbeResultsResponse, String>() {
                     @Override
                     public String apply(ListHttpProbeResultsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListHttpProbeResultsRequest.Builder>,
                         ListHttpProbeResultsRequest>() {
@@ -310,12 +306,12 @@ public class HealthChecksPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListHttpProbeResultsRequest, ListHttpProbeResultsResponse>() {
                     @Override
                     public ListHttpProbeResultsResponse apply(ListHttpProbeResultsRequest request) {
@@ -339,19 +335,19 @@ public class HealthChecksPaginators {
                 ListHttpProbeResultsRequest.Builder, ListHttpProbeResultsRequest,
                 ListHttpProbeResultsResponse,
                 com.oracle.bmc.healthchecks.model.HttpProbeResultSummary>(
-                new com.google.common.base.Supplier<ListHttpProbeResultsRequest.Builder>() {
+                new java.util.function.Supplier<ListHttpProbeResultsRequest.Builder>() {
                     @Override
                     public ListHttpProbeResultsRequest.Builder get() {
                         return ListHttpProbeResultsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListHttpProbeResultsResponse, String>() {
+                new java.util.function.Function<ListHttpProbeResultsResponse, String>() {
                     @Override
                     public String apply(ListHttpProbeResultsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListHttpProbeResultsRequest.Builder>,
                         ListHttpProbeResultsRequest>() {
@@ -364,19 +360,19 @@ public class HealthChecksPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListHttpProbeResultsRequest, ListHttpProbeResultsResponse>() {
                     @Override
                     public ListHttpProbeResultsResponse apply(ListHttpProbeResultsRequest request) {
                         return client.listHttpProbeResults(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListHttpProbeResultsResponse,
                         java.util.List<
                                 com.oracle.bmc.healthchecks.model.HttpProbeResultSummary>>() {
@@ -399,19 +395,19 @@ public class HealthChecksPaginators {
             final ListPingMonitorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPingMonitorsRequest.Builder, ListPingMonitorsRequest, ListPingMonitorsResponse>(
-                new com.google.common.base.Supplier<ListPingMonitorsRequest.Builder>() {
+                new java.util.function.Supplier<ListPingMonitorsRequest.Builder>() {
                     @Override
                     public ListPingMonitorsRequest.Builder get() {
                         return ListPingMonitorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPingMonitorsResponse, String>() {
+                new java.util.function.Function<ListPingMonitorsResponse, String>() {
                     @Override
                     public String apply(ListPingMonitorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPingMonitorsRequest.Builder>,
                         ListPingMonitorsRequest>() {
@@ -424,12 +420,12 @@ public class HealthChecksPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPingMonitorsRequest, ListPingMonitorsResponse>() {
                     @Override
                     public ListPingMonitorsResponse apply(ListPingMonitorsRequest request) {
@@ -452,19 +448,19 @@ public class HealthChecksPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListPingMonitorsRequest.Builder, ListPingMonitorsRequest, ListPingMonitorsResponse,
                 com.oracle.bmc.healthchecks.model.PingMonitorSummary>(
-                new com.google.common.base.Supplier<ListPingMonitorsRequest.Builder>() {
+                new java.util.function.Supplier<ListPingMonitorsRequest.Builder>() {
                     @Override
                     public ListPingMonitorsRequest.Builder get() {
                         return ListPingMonitorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPingMonitorsResponse, String>() {
+                new java.util.function.Function<ListPingMonitorsResponse, String>() {
                     @Override
                     public String apply(ListPingMonitorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPingMonitorsRequest.Builder>,
                         ListPingMonitorsRequest>() {
@@ -477,19 +473,19 @@ public class HealthChecksPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPingMonitorsRequest, ListPingMonitorsResponse>() {
                     @Override
                     public ListPingMonitorsResponse apply(ListPingMonitorsRequest request) {
                         return client.listPingMonitors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPingMonitorsResponse,
                         java.util.List<com.oracle.bmc.healthchecks.model.PingMonitorSummary>>() {
                     @Override
@@ -512,19 +508,19 @@ public class HealthChecksPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPingProbeResultsRequest.Builder, ListPingProbeResultsRequest,
                 ListPingProbeResultsResponse>(
-                new com.google.common.base.Supplier<ListPingProbeResultsRequest.Builder>() {
+                new java.util.function.Supplier<ListPingProbeResultsRequest.Builder>() {
                     @Override
                     public ListPingProbeResultsRequest.Builder get() {
                         return ListPingProbeResultsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPingProbeResultsResponse, String>() {
+                new java.util.function.Function<ListPingProbeResultsResponse, String>() {
                     @Override
                     public String apply(ListPingProbeResultsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPingProbeResultsRequest.Builder>,
                         ListPingProbeResultsRequest>() {
@@ -537,12 +533,12 @@ public class HealthChecksPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPingProbeResultsRequest, ListPingProbeResultsResponse>() {
                     @Override
                     public ListPingProbeResultsResponse apply(ListPingProbeResultsRequest request) {
@@ -566,19 +562,19 @@ public class HealthChecksPaginators {
                 ListPingProbeResultsRequest.Builder, ListPingProbeResultsRequest,
                 ListPingProbeResultsResponse,
                 com.oracle.bmc.healthchecks.model.PingProbeResultSummary>(
-                new com.google.common.base.Supplier<ListPingProbeResultsRequest.Builder>() {
+                new java.util.function.Supplier<ListPingProbeResultsRequest.Builder>() {
                     @Override
                     public ListPingProbeResultsRequest.Builder get() {
                         return ListPingProbeResultsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPingProbeResultsResponse, String>() {
+                new java.util.function.Function<ListPingProbeResultsResponse, String>() {
                     @Override
                     public String apply(ListPingProbeResultsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPingProbeResultsRequest.Builder>,
                         ListPingProbeResultsRequest>() {
@@ -591,19 +587,19 @@ public class HealthChecksPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPingProbeResultsRequest, ListPingProbeResultsResponse>() {
                     @Override
                     public ListPingProbeResultsResponse apply(ListPingProbeResultsRequest request) {
                         return client.listPingProbeResults(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPingProbeResultsResponse,
                         java.util.List<
                                 com.oracle.bmc.healthchecks.model.PingProbeResultSummary>>() {

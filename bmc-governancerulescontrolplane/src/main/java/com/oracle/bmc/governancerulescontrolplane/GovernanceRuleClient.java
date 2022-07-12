@@ -9,7 +9,6 @@ import com.oracle.bmc.governancerulescontrolplane.requests.*;
 import com.oracle.bmc.governancerulescontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 public class GovernanceRuleClient implements GovernanceRule {
@@ -335,9 +334,9 @@ public class GovernanceRuleClient implements GovernanceRule {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("GovernanceRule-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("GovernanceRule-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class GovernanceRuleClient implements GovernanceRule {
          * @return the client
          */
         public GovernanceRuleClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class GovernanceRuleClient implements GovernanceRule {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class GovernanceRuleClient implements GovernanceRule {
                         "CreateGovernanceRule",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateGovernanceRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateGovernanceRuleResponse>
                 transformer =
                         CreateGovernanceRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -531,7 +531,7 @@ public class GovernanceRuleClient implements GovernanceRule {
                         "CreateInclusionCriterion",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateInclusionCriterionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateInclusionCriterionResponse>
                 transformer =
                         CreateInclusionCriterionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -572,7 +572,7 @@ public class GovernanceRuleClient implements GovernanceRule {
                         "DeleteGovernanceRule",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGovernanceRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteGovernanceRuleResponse>
                 transformer =
                         DeleteGovernanceRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -611,7 +611,7 @@ public class GovernanceRuleClient implements GovernanceRule {
                         "DeleteInclusionCriterion",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteInclusionCriterionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteInclusionCriterionResponse>
                 transformer =
                         DeleteInclusionCriterionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -650,8 +650,7 @@ public class GovernanceRuleClient implements GovernanceRule {
                         "GetEnforcedGovernanceRule",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetEnforcedGovernanceRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetEnforcedGovernanceRuleResponse>
                 transformer =
                         GetEnforcedGovernanceRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -685,7 +684,7 @@ public class GovernanceRuleClient implements GovernanceRule {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "GovernanceRule", "GetGovernanceRule", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetGovernanceRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetGovernanceRuleResponse>
                 transformer =
                         GetGovernanceRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -723,7 +722,7 @@ public class GovernanceRuleClient implements GovernanceRule {
                         "GetInclusionCriterion",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetInclusionCriterionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetInclusionCriterionResponse>
                 transformer =
                         GetInclusionCriterionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -760,7 +759,7 @@ public class GovernanceRuleClient implements GovernanceRule {
                         "GetTenancyAttachment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTenancyAttachmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTenancyAttachmentResponse>
                 transformer =
                         GetTenancyAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -798,8 +797,7 @@ public class GovernanceRuleClient implements GovernanceRule {
                         "ListEnforcedGovernanceRules",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListEnforcedGovernanceRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListEnforcedGovernanceRulesResponse>
                 transformer =
                         ListEnforcedGovernanceRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -833,7 +831,7 @@ public class GovernanceRuleClient implements GovernanceRule {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "GovernanceRule", "ListGovernanceRules", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListGovernanceRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListGovernanceRulesResponse>
                 transformer =
                         ListGovernanceRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -871,7 +869,7 @@ public class GovernanceRuleClient implements GovernanceRule {
                         "ListInclusionCriteria",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListInclusionCriteriaResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListInclusionCriteriaResponse>
                 transformer =
                         ListInclusionCriteriaConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -909,7 +907,7 @@ public class GovernanceRuleClient implements GovernanceRule {
                         "ListTenancyAttachments",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTenancyAttachmentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTenancyAttachmentsResponse>
                 transformer =
                         ListTenancyAttachmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -944,7 +942,7 @@ public class GovernanceRuleClient implements GovernanceRule {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "GovernanceRule", "RetryGovernanceRule", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RetryGovernanceRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RetryGovernanceRuleResponse>
                 transformer =
                         RetryGovernanceRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -984,7 +982,7 @@ public class GovernanceRuleClient implements GovernanceRule {
                         "RetryTenancyAttachment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RetryTenancyAttachmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RetryTenancyAttachmentResponse>
                 transformer =
                         RetryTenancyAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1022,7 +1020,7 @@ public class GovernanceRuleClient implements GovernanceRule {
                         "UpdateGovernanceRule",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGovernanceRuleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateGovernanceRuleResponse>
                 transformer =
                         UpdateGovernanceRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -4,8 +4,9 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import com.google.common.base.Optional;
-import com.google.common.base.Supplier;
+import java.util.Optional;
+import java.util.function.Supplier;
+
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.auth.X509CertificateSupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
