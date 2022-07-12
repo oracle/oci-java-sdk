@@ -9,7 +9,6 @@ import com.oracle.bmc.announcementsservice.requests.*;
 import com.oracle.bmc.announcementsservice.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class AnnouncementClient implements Announcement {
@@ -332,7 +331,7 @@ public class AnnouncementClient implements Announcement {
          * @return the client
          */
         public AnnouncementClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -368,7 +367,8 @@ public class AnnouncementClient implements Announcement {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -413,7 +413,7 @@ public class AnnouncementClient implements Announcement {
                         "GetAnnouncement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/Announcement/GetAnnouncement");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAnnouncementResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAnnouncementResponse>
                 transformer =
                         GetAnnouncementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -451,8 +451,7 @@ public class AnnouncementClient implements Announcement {
                         "GetAnnouncementUserStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementUserStatusDetails/GetAnnouncementUserStatus");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAnnouncementUserStatusResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAnnouncementUserStatusResponse>
                 transformer =
                         GetAnnouncementUserStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -489,7 +488,7 @@ public class AnnouncementClient implements Announcement {
                         "ListAnnouncements",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsCollection/ListAnnouncements");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAnnouncementsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAnnouncementsResponse>
                 transformer =
                         ListAnnouncementsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -527,8 +526,7 @@ public class AnnouncementClient implements Announcement {
                         "UpdateAnnouncementUserStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementUserStatusDetails/UpdateAnnouncementUserStatus");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAnnouncementUserStatusResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAnnouncementUserStatusResponse>
                 transformer =
                         UpdateAnnouncementUserStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

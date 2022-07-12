@@ -45,19 +45,19 @@ public class DataLabelingManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAnnotationFormatsRequest.Builder, ListAnnotationFormatsRequest,
                 ListAnnotationFormatsResponse>(
-                new com.google.common.base.Supplier<ListAnnotationFormatsRequest.Builder>() {
+                new java.util.function.Supplier<ListAnnotationFormatsRequest.Builder>() {
                     @Override
                     public ListAnnotationFormatsRequest.Builder get() {
                         return ListAnnotationFormatsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAnnotationFormatsResponse, String>() {
+                new java.util.function.Function<ListAnnotationFormatsResponse, String>() {
                     @Override
                     public String apply(ListAnnotationFormatsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAnnotationFormatsRequest.Builder>,
                         ListAnnotationFormatsRequest>() {
@@ -70,12 +70,12 @@ public class DataLabelingManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAnnotationFormatsRequest, ListAnnotationFormatsResponse>() {
                     @Override
                     public ListAnnotationFormatsResponse apply(
@@ -100,19 +100,19 @@ public class DataLabelingManagementPaginators {
                 ListAnnotationFormatsRequest.Builder, ListAnnotationFormatsRequest,
                 ListAnnotationFormatsResponse,
                 com.oracle.bmc.datalabelingservice.model.AnnotationFormatSummary>(
-                new com.google.common.base.Supplier<ListAnnotationFormatsRequest.Builder>() {
+                new java.util.function.Supplier<ListAnnotationFormatsRequest.Builder>() {
                     @Override
                     public ListAnnotationFormatsRequest.Builder get() {
                         return ListAnnotationFormatsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAnnotationFormatsResponse, String>() {
+                new java.util.function.Function<ListAnnotationFormatsResponse, String>() {
                     @Override
                     public String apply(ListAnnotationFormatsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAnnotationFormatsRequest.Builder>,
                         ListAnnotationFormatsRequest>() {
@@ -125,12 +125,12 @@ public class DataLabelingManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAnnotationFormatsRequest, ListAnnotationFormatsResponse>() {
                     @Override
                     public ListAnnotationFormatsResponse apply(
@@ -138,7 +138,7 @@ public class DataLabelingManagementPaginators {
                         return client.listAnnotationFormats(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAnnotationFormatsResponse,
                         java.util.List<
                                 com.oracle.bmc.datalabelingservice.model
@@ -164,19 +164,19 @@ public class DataLabelingManagementPaginators {
             final ListDatasetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDatasetsRequest.Builder, ListDatasetsRequest, ListDatasetsResponse>(
-                new com.google.common.base.Supplier<ListDatasetsRequest.Builder>() {
+                new java.util.function.Supplier<ListDatasetsRequest.Builder>() {
                     @Override
                     public ListDatasetsRequest.Builder get() {
                         return ListDatasetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDatasetsResponse, String>() {
+                new java.util.function.Function<ListDatasetsResponse, String>() {
                     @Override
                     public String apply(ListDatasetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDatasetsRequest.Builder>,
                         ListDatasetsRequest>() {
@@ -189,12 +189,12 @@ public class DataLabelingManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListDatasetsRequest, ListDatasetsResponse>() {
+                new java.util.function.Function<ListDatasetsRequest, ListDatasetsResponse>() {
                     @Override
                     public ListDatasetsResponse apply(ListDatasetsRequest request) {
                         return client.listDatasets(request);
@@ -216,19 +216,19 @@ public class DataLabelingManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDatasetsRequest.Builder, ListDatasetsRequest, ListDatasetsResponse,
                 com.oracle.bmc.datalabelingservice.model.DatasetSummary>(
-                new com.google.common.base.Supplier<ListDatasetsRequest.Builder>() {
+                new java.util.function.Supplier<ListDatasetsRequest.Builder>() {
                     @Override
                     public ListDatasetsRequest.Builder get() {
                         return ListDatasetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDatasetsResponse, String>() {
+                new java.util.function.Function<ListDatasetsResponse, String>() {
                     @Override
                     public String apply(ListDatasetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDatasetsRequest.Builder>,
                         ListDatasetsRequest>() {
@@ -241,18 +241,18 @@ public class DataLabelingManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListDatasetsRequest, ListDatasetsResponse>() {
+                new java.util.function.Function<ListDatasetsRequest, ListDatasetsResponse>() {
                     @Override
                     public ListDatasetsResponse apply(ListDatasetsRequest request) {
                         return client.listDatasets(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDatasetsResponse,
                         java.util.List<com.oracle.bmc.datalabelingservice.model.DatasetSummary>>() {
                     @Override
@@ -275,19 +275,19 @@ public class DataLabelingManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -300,12 +300,12 @@ public class DataLabelingManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -330,19 +330,19 @@ public class DataLabelingManagementPaginators {
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse,
                 com.oracle.bmc.datalabelingservice.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -355,12 +355,12 @@ public class DataLabelingManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -368,7 +368,7 @@ public class DataLabelingManagementPaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<
                                 com.oracle.bmc.datalabelingservice.model.WorkRequestError>>() {
@@ -392,19 +392,19 @@ public class DataLabelingManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -417,12 +417,12 @@ public class DataLabelingManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -446,19 +446,19 @@ public class DataLabelingManagementPaginators {
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse,
                 com.oracle.bmc.datalabelingservice.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -471,19 +471,19 @@ public class DataLabelingManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<
                                 com.oracle.bmc.datalabelingservice.model.WorkRequestLogEntry>>() {
@@ -507,19 +507,19 @@ public class DataLabelingManagementPaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -532,12 +532,12 @@ public class DataLabelingManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -560,19 +560,19 @@ public class DataLabelingManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.datalabelingservice.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -585,19 +585,19 @@ public class DataLabelingManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<
                                 com.oracle.bmc.datalabelingservice.model.WorkRequestSummary>>() {

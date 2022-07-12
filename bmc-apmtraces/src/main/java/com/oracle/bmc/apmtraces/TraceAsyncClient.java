@@ -7,7 +7,6 @@ package com.oracle.bmc.apmtraces;
 import com.oracle.bmc.apmtraces.internal.http.*;
 import com.oracle.bmc.apmtraces.requests.*;
 import com.oracle.bmc.apmtraces.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Trace service. <br/>
@@ -319,7 +318,7 @@ public class TraceAsyncClient implements TraceAsync {
          * @return the client
          */
         public TraceAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class TraceAsyncClient implements TraceAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -403,8 +403,7 @@ public class TraceAsyncClient implements TraceAsync {
                         "GetAggregatedSnapshot",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/AggregatedSnapshot/GetAggregatedSnapshot");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAggregatedSnapshotResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAggregatedSnapshotResponse>
                 transformer =
                         GetAggregatedSnapshotConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -448,8 +447,8 @@ public class TraceAsyncClient implements TraceAsync {
                         "GetSpan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Span/GetSpan");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSpanResponse>
-                transformer = GetSpanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSpanResponse> transformer =
+                GetSpanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSpanRequest, GetSpanResponse> handlerToUse =
                 handler;
 
@@ -489,8 +488,8 @@ public class TraceAsyncClient implements TraceAsync {
                         "GetTrace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Trace/GetTrace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTraceResponse>
-                transformer = GetTraceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTraceResponse> transformer =
+                GetTraceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTraceRequest, GetTraceResponse> handlerToUse =
                 handler;
 
@@ -532,7 +531,7 @@ public class TraceAsyncClient implements TraceAsync {
                         "GetTraceSnapshot",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/TraceSnapshot/GetTraceSnapshot");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTraceSnapshotResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTraceSnapshotResponse>
                 transformer =
                         GetTraceSnapshotConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

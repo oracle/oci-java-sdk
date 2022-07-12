@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.circuitbreaker.internal;
 
-import com.google.common.annotations.VisibleForTesting;
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerState;
@@ -159,17 +158,16 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
         }
     }
 
-    @VisibleForTesting
     CircuitBreaker getInternalCircuitBreaker() {
         return circuitBreaker;
     }
 
-    @VisibleForTesting
+    // @VisibleForTesting
     CircuitBreakerConfig getInternalCircuitBreakerConfig() {
         return circuitBreaker.getCircuitBreakerConfig();
     }
 
-    @VisibleForTesting
+    // @VisibleForTesting
     Set<Integer> getRecordHttpStatuses() {
         return recordHttpStatuses;
     }

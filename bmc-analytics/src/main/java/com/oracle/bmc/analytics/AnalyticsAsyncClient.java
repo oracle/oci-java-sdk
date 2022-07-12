@@ -7,7 +7,6 @@ package com.oracle.bmc.analytics;
 import com.oracle.bmc.analytics.internal.http.*;
 import com.oracle.bmc.analytics.requests.*;
 import com.oracle.bmc.analytics.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Analytics service. <br/>
@@ -319,7 +318,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
          * @return the client
          */
         public AnalyticsAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "ChangeAnalyticsInstanceCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ChangeAnalyticsInstanceCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAnalyticsInstanceCompartmentResponse>
                 transformer =
                         ChangeAnalyticsInstanceCompartmentConverter.fromResponse(
@@ -466,7 +466,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "ChangeAnalyticsInstanceNetworkEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ChangeAnalyticsInstanceNetworkEndpoint");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAnalyticsInstanceNetworkEndpointResponse>
                 transformer =
                         ChangeAnalyticsInstanceNetworkEndpointConverter.fromResponse(
@@ -521,7 +521,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Analytics", "CreateAnalyticsInstance", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateAnalyticsInstanceResponse>
                 transformer =
                         CreateAnalyticsInstanceConverter.fromResponse(
@@ -577,7 +577,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "CreatePrivateAccessChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/CreatePrivateAccessChannel");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreatePrivateAccessChannelResponse>
                 transformer =
                         CreatePrivateAccessChannelConverter.fromResponse(
@@ -632,7 +632,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "CreateVanityUrl",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/CreateVanityUrl");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVanityUrlResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateVanityUrlResponse>
                 transformer =
                         CreateVanityUrlConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -684,7 +684,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "DeleteAnalyticsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeleteAnalyticsInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteAnalyticsInstanceResponse>
                 transformer =
                         DeleteAnalyticsInstanceConverter.fromResponse(
@@ -735,7 +735,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "DeletePrivateAccessChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeletePrivateAccessChannel");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeletePrivateAccessChannelResponse>
                 transformer =
                         DeletePrivateAccessChannelConverter.fromResponse(
@@ -785,7 +785,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "DeleteVanityUrl",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeleteVanityUrl");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVanityUrlResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteVanityUrlResponse>
                 transformer =
                         DeleteVanityUrlConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -831,7 +831,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "DeleteWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequest/DeleteWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
                 transformer =
                         DeleteWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -877,8 +877,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "GetAnalyticsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/GetAnalyticsInstance");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAnalyticsInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAnalyticsInstanceResponse>
                 transformer =
                         GetAnalyticsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -925,7 +924,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "GetPrivateAccessChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/GetPrivateAccessChannel");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetPrivateAccessChannelResponse>
                 transformer =
                         GetPrivateAccessChannelConverter.fromResponse(
@@ -973,7 +972,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -1018,8 +1017,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "ListAnalyticsInstances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstanceSummary/ListAnalyticsInstances");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAnalyticsInstancesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAnalyticsInstancesResponse>
                 transformer =
                         ListAnalyticsInstancesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1066,8 +1064,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1114,8 +1111,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestLog/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1162,7 +1158,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestSummary/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1209,8 +1205,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "ScaleAnalyticsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ScaleAnalyticsInstance");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ScaleAnalyticsInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ScaleAnalyticsInstanceResponse>
                 transformer =
                         ScaleAnalyticsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1261,7 +1256,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "SetKmsKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/SetKmsKey");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, SetKmsKeyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, SetKmsKeyResponse>
                 transformer =
                         SetKmsKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<SetKmsKeyRequest, SetKmsKeyResponse> handlerToUse =
@@ -1311,8 +1306,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "StartAnalyticsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/StartAnalyticsInstance");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, StartAnalyticsInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, StartAnalyticsInstanceResponse>
                 transformer =
                         StartAnalyticsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1360,8 +1354,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "StopAnalyticsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/StopAnalyticsInstance");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, StopAnalyticsInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, StopAnalyticsInstanceResponse>
                 transformer =
                         StopAnalyticsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1408,7 +1401,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "UpdateAnalyticsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdateAnalyticsInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateAnalyticsInstanceResponse>
                 transformer =
                         UpdateAnalyticsInstanceConverter.fromResponse(
@@ -1464,7 +1457,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "UpdatePrivateAccessChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdatePrivateAccessChannel");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdatePrivateAccessChannelResponse>
                 transformer =
                         UpdatePrivateAccessChannelConverter.fromResponse(
@@ -1519,7 +1512,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                         "UpdateVanityUrl",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdateVanityUrl");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVanityUrlResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateVanityUrlResponse>
                 transformer =
                         UpdateVanityUrlConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

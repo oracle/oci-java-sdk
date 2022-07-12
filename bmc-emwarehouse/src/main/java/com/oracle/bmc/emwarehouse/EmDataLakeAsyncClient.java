@@ -7,7 +7,6 @@ package com.oracle.bmc.emwarehouse;
 import com.oracle.bmc.emwarehouse.internal.http.*;
 import com.oracle.bmc.emwarehouse.requests.*;
 import com.oracle.bmc.emwarehouse.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for EmDataLake service. <br/>
@@ -320,7 +319,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
          * @return the client
          */
         public EmDataLakeAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -401,7 +401,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "CancelWorkRequest", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -450,7 +450,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                         "ChangeEmWarehouseCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeEmWarehouseCompartmentResponse>
                 transformer =
                         ChangeEmWarehouseCompartmentConverter.fromResponse(
@@ -502,7 +502,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "CreateEmWarehouse", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEmWarehouseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateEmWarehouseResponse>
                 transformer =
                         CreateEmWarehouseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -550,7 +550,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "DeleteEmWarehouse", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEmWarehouseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteEmWarehouseResponse>
                 transformer =
                         DeleteEmWarehouseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -593,7 +593,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "GetEmWarehouse", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetEmWarehouseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEmWarehouseResponse>
                 transformer =
                         GetEmWarehouseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetEmWarehouseRequest, GetEmWarehouseResponse>
@@ -640,7 +640,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                         "GetEmWarehouseResourceUsage",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetEmWarehouseResourceUsageResponse>
                 transformer =
                         GetEmWarehouseResourceUsageConverter.fromResponse(
@@ -686,7 +686,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "GetWorkRequest", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -728,7 +728,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "ListEmWarehouses", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListEmWarehousesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEmWarehousesResponse>
                 transformer =
                         ListEmWarehousesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -770,7 +770,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "ListEtlRuns", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListEtlRunsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEtlRunsResponse>
                 transformer =
                         ListEtlRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListEtlRunsRequest, ListEtlRunsResponse>
@@ -812,8 +812,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -857,8 +856,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -902,7 +900,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "ListWorkRequests", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -945,7 +943,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "UpdateEmWarehouse", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEmWarehouseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateEmWarehouseResponse>
                 transformer =
                         UpdateEmWarehouseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

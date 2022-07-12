@@ -7,7 +7,6 @@ package com.oracle.bmc.dts;
 import com.oracle.bmc.dts.internal.http.*;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for TransferAppliance service. <br/>
@@ -321,7 +320,7 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
          * @return the client
          */
         public TransferApplianceAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                         "CreateTransferAppliance",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateTransferApplianceResponse>
                 transformer =
                         CreateTransferApplianceConverter.fromResponse(
@@ -462,7 +462,7 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                         "CreateTransferApplianceAdminCredentials",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateTransferApplianceAdminCredentialsResponse>
                 transformer =
                         CreateTransferApplianceAdminCredentialsConverter.fromResponse(
@@ -519,7 +519,7 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                         "DeleteTransferAppliance",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteTransferApplianceResponse>
                 transformer =
                         DeleteTransferApplianceConverter.fromResponse(
@@ -567,8 +567,7 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                         "GetTransferAppliance",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetTransferApplianceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTransferApplianceResponse>
                 transformer =
                         GetTransferApplianceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -619,7 +618,7 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                         "GetTransferApplianceCertificateAuthorityCertificate",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetTransferApplianceCertificateAuthorityCertificateResponse>
                 transformer =
@@ -675,7 +674,7 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                         "GetTransferApplianceEncryptionPassphrase",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetTransferApplianceEncryptionPassphraseResponse>
                 transformer =
                         GetTransferApplianceEncryptionPassphraseConverter.fromResponse(
@@ -727,8 +726,7 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                         "ListTransferAppliances",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTransferAppliancesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTransferAppliancesResponse>
                 transformer =
                         ListTransferAppliancesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -775,7 +773,7 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                         "UpdateTransferAppliance",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateTransferApplianceResponse>
                 transformer =
                         UpdateTransferApplianceConverter.fromResponse(

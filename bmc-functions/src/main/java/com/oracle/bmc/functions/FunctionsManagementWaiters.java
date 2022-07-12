@@ -6,7 +6,6 @@ package com.oracle.bmc.functions;
 
 import com.oracle.bmc.functions.requests.*;
 import com.oracle.bmc.functions.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -108,17 +107,17 @@ public class FunctionsManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetApplicationRequest, GetApplicationResponse>() {
                             @Override
                             public GetApplicationResponse apply(GetApplicationRequest request) {
                                 return client.getApplication(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetApplicationResponse>() {
+                        new java.util.function.Predicate<GetApplicationResponse>() {
                             @Override
-                            public boolean apply(GetApplicationResponse response) {
+                            public boolean test(GetApplicationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getApplication().getLifecycleState());
                             }
@@ -206,17 +205,16 @@ public class FunctionsManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetFunctionRequest, GetFunctionResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetFunctionRequest, GetFunctionResponse>() {
                             @Override
                             public GetFunctionResponse apply(GetFunctionRequest request) {
                                 return client.getFunction(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetFunctionResponse>() {
+                        new java.util.function.Predicate<GetFunctionResponse>() {
                             @Override
-                            public boolean apply(GetFunctionResponse response) {
+                            public boolean test(GetFunctionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getFunction().getLifecycleState());
                             }

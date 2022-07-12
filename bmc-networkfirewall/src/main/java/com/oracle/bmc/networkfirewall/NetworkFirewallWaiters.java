@@ -6,7 +6,6 @@ package com.oracle.bmc.networkfirewall;
 
 import com.oracle.bmc.networkfirewall.requests.*;
 import com.oracle.bmc.networkfirewall.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -107,8 +106,8 @@ public class NetworkFirewallWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetNetworkFirewallRequest, GetNetworkFirewallResponse>() {
                             @Override
                             public GetNetworkFirewallResponse apply(
@@ -116,9 +115,9 @@ public class NetworkFirewallWaiters {
                                 return client.getNetworkFirewall(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetNetworkFirewallResponse>() {
+                        new java.util.function.Predicate<GetNetworkFirewallResponse>() {
                             @Override
-                            public boolean apply(GetNetworkFirewallResponse response) {
+                            public boolean test(GetNetworkFirewallResponse response) {
                                 return targetStatesSet.contains(
                                         response.getNetworkFirewall().getLifecycleState());
                             }
@@ -214,8 +213,8 @@ public class NetworkFirewallWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetNetworkFirewallPolicyRequest,
                                 GetNetworkFirewallPolicyResponse>() {
                             @Override
@@ -224,9 +223,9 @@ public class NetworkFirewallWaiters {
                                 return client.getNetworkFirewallPolicy(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetNetworkFirewallPolicyResponse>() {
+                        new java.util.function.Predicate<GetNetworkFirewallPolicyResponse>() {
                             @Override
-                            public boolean apply(GetNetworkFirewallPolicyResponse response) {
+                            public boolean test(GetNetworkFirewallPolicyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getNetworkFirewallPolicy().getLifecycleState());
                             }
@@ -273,17 +272,17 @@ public class NetworkFirewallWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

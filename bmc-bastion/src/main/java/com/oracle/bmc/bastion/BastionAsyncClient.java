@@ -7,7 +7,6 @@ package com.oracle.bmc.bastion;
 import com.oracle.bmc.bastion.internal.http.*;
 import com.oracle.bmc.bastion.requests.*;
 import com.oracle.bmc.bastion.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Bastion service. <br/>
@@ -319,7 +318,7 @@ public class BastionAsyncClient implements BastionAsync {
          * @return the client
          */
         public BastionAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class BastionAsyncClient implements BastionAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -403,7 +403,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "ChangeBastionCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/ChangeBastionCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeBastionCompartmentResponse>
                 transformer =
                         ChangeBastionCompartmentConverter.fromResponse(
@@ -456,7 +456,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "CreateBastion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/CreateBastion");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBastionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateBastionResponse>
                 transformer =
                         CreateBastionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateBastionRequest, CreateBastionResponse>
@@ -506,7 +506,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "CreateSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/CreateSession");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSessionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSessionResponse>
                 transformer =
                         CreateSessionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateSessionRequest, CreateSessionResponse>
@@ -555,7 +555,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "DeleteBastion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/DeleteBastion");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBastionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteBastionResponse>
                 transformer =
                         DeleteBastionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteBastionRequest, DeleteBastionResponse>
@@ -599,7 +599,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "DeleteSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/DeleteSession");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSessionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSessionResponse>
                 transformer =
                         DeleteSessionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteSessionRequest, DeleteSessionResponse>
@@ -642,7 +642,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "GetBastion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/GetBastion");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetBastionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetBastionResponse>
                 transformer =
                         GetBastionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetBastionRequest, GetBastionResponse> handlerToUse =
@@ -685,7 +685,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "GetSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/GetSession");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSessionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSessionResponse>
                 transformer =
                         GetSessionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSessionRequest, GetSessionResponse> handlerToUse =
@@ -730,7 +730,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -774,7 +774,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "ListBastions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/ListBastions");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListBastionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListBastionsResponse>
                 transformer =
                         ListBastionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListBastionsRequest, ListBastionsResponse>
@@ -818,7 +818,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "ListSessions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/ListSessions");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSessionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSessionsResponse>
                 transformer =
                         ListSessionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSessionsRequest, ListSessionsResponse>
@@ -863,8 +863,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -911,8 +910,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequestLogEntry/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -959,7 +957,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequest/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1004,7 +1002,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "UpdateBastion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/UpdateBastion");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBastionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateBastionResponse>
                 transformer =
                         UpdateBastionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateBastionRequest, UpdateBastionResponse>
@@ -1053,7 +1051,7 @@ public class BastionAsyncClient implements BastionAsync {
                         "UpdateSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/UpdateSession");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSessionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSessionResponse>
                 transformer =
                         UpdateSessionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateSessionRequest, UpdateSessionResponse>

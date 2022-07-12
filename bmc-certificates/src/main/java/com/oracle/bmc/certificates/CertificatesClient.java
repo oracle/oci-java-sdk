@@ -9,7 +9,6 @@ import com.oracle.bmc.certificates.requests.*;
 import com.oracle.bmc.certificates.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class CertificatesClient implements Certificates {
@@ -329,7 +328,7 @@ public class CertificatesClient implements Certificates {
          * @return the client
          */
         public CertificatesClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -365,7 +364,8 @@ public class CertificatesClient implements Certificates {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -410,9 +410,8 @@ public class CertificatesClient implements Certificates {
                         "GetCaBundle",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CaBundle/GetCaBundle");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCaBundleResponse>
-                transformer =
-                        GetCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetCaBundleResponse> transformer =
+                GetCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -447,7 +446,7 @@ public class CertificatesClient implements Certificates {
                         "GetCertificateAuthorityBundle",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CertificateAuthorityBundle/GetCertificateAuthorityBundle");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetCertificateAuthorityBundleResponse>
                 transformer =
                         GetCertificateAuthorityBundleConverter.fromResponse(
@@ -485,7 +484,7 @@ public class CertificatesClient implements Certificates {
                         "GetCertificateBundle",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CertificateBundle/GetCertificateBundle");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCertificateBundleResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetCertificateBundleResponse>
                 transformer =
                         GetCertificateBundleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -524,7 +523,7 @@ public class CertificatesClient implements Certificates {
                         "ListCertificateAuthorityBundleVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CertificateAuthorityBundleVersionSummary/ListCertificateAuthorityBundleVersions");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListCertificateAuthorityBundleVersionsResponse>
                 transformer =
                         ListCertificateAuthorityBundleVersionsConverter.fromResponse(
@@ -563,7 +562,7 @@ public class CertificatesClient implements Certificates {
                         "ListCertificateBundleVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CertificateBundleVersionSummary/ListCertificateBundleVersions");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListCertificateBundleVersionsResponse>
                 transformer =
                         ListCertificateBundleVersionsConverter.fromResponse(

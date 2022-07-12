@@ -7,7 +7,6 @@ package com.oracle.bmc.jms;
 import com.oracle.bmc.jms.internal.http.*;
 import com.oracle.bmc.jms.requests.*;
 import com.oracle.bmc.jms.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for JavaManagementService service. <br/>
@@ -321,7 +320,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
          * @return the client
          */
         public JavaManagementServiceAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -405,7 +405,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "CancelWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/CancelWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -452,8 +452,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "ChangeFleetCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ChangeFleetCompartment");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeFleetCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeFleetCompartmentResponse>
                 transformer =
                         ChangeFleetCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -506,7 +505,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "CreateBlocklist",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/CreateBlocklist");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBlocklistResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateBlocklistResponse>
                 transformer =
                         CreateBlocklistConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -557,7 +556,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "CreateFleet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateFleet");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFleetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateFleetResponse>
                 transformer =
                         CreateFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateFleetRequest, CreateFleetResponse>
@@ -607,7 +606,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "DeleteBlocklist",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/DeleteBlocklist");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBlocklistResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteBlocklistResponse>
                 transformer =
                         DeleteBlocklistConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -652,7 +651,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "DeleteFleet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DeleteFleet");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFleetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetResponse>
                 transformer =
                         DeleteFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteFleetRequest, DeleteFleetResponse>
@@ -695,8 +694,8 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "GetFleet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GetFleet");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetFleetResponse>
-                transformer = GetFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetFleetResponse> transformer =
+                GetFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetFleetRequest, GetFleetResponse> handlerToUse =
                 handler;
 
@@ -740,7 +739,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "GetFleetAgentConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/GetFleetAgentConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetFleetAgentConfigurationResponse>
                 transformer =
                         GetFleetAgentConfigurationConverter.fromResponse(
@@ -789,7 +788,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -834,7 +833,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "ListBlocklists",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/ListBlocklists");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListBlocklistsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListBlocklistsResponse>
                 transformer =
                         ListBlocklistsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListBlocklistsRequest, ListBlocklistsResponse>
@@ -877,7 +876,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "ListFleets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ListFleets");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListFleetsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListFleetsResponse>
                 transformer =
                         ListFleetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListFleetsRequest, ListFleetsResponse> handlerToUse =
@@ -922,8 +921,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "ListInstallationSites",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/ListInstallationSites");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListInstallationSitesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListInstallationSitesResponse>
                 transformer =
                         ListInstallationSitesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -969,7 +967,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "ListJreUsage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/ListJreUsage");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListJreUsageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJreUsageResponse>
                 transformer =
                         ListJreUsageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListJreUsageRequest, ListJreUsageResponse>
@@ -1013,7 +1011,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "ListWorkItems",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkItemSummary/ListWorkItems");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkItemsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkItemsResponse>
                 transformer =
                         ListWorkItemsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListWorkItemsRequest, ListWorkItemsResponse>
@@ -1058,8 +1056,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1106,8 +1103,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestLogEntry/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1154,7 +1150,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1203,7 +1199,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "RemoveFleetInstallationSites",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/RemoveFleetInstallationSites");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveFleetInstallationSitesResponse>
                 transformer =
                         RemoveFleetInstallationSitesConverter.fromResponse(
@@ -1257,7 +1253,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "SummarizeApplicationUsage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationUsage/SummarizeApplicationUsage");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeApplicationUsageResponse>
                 transformer =
                         SummarizeApplicationUsageConverter.fromResponse(
@@ -1308,7 +1304,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "SummarizeInstallationUsage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationUsage/SummarizeInstallationUsage");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeInstallationUsageResponse>
                 transformer =
                         SummarizeInstallationUsageConverter.fromResponse(
@@ -1357,7 +1353,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "SummarizeJreUsage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/SummarizeJreUsage");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeJreUsageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, SummarizeJreUsageResponse>
                 transformer =
                         SummarizeJreUsageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1405,7 +1401,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "SummarizeManagedInstanceUsage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ManagedInstanceUsage/SummarizeManagedInstanceUsage");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeManagedInstanceUsageResponse>
                 transformer =
                         SummarizeManagedInstanceUsageConverter.fromResponse(
@@ -1456,7 +1452,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "SummarizeResourceInventory",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/SummarizeResourceInventory");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeResourceInventoryResponse>
                 transformer =
                         SummarizeResourceInventoryConverter.fromResponse(
@@ -1504,7 +1500,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "UpdateFleet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateFleet");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFleetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetResponse>
                 transformer =
                         UpdateFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateFleetRequest, UpdateFleetResponse>
@@ -1556,7 +1552,7 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         "UpdateFleetAgentConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/UpdateFleetAgentConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateFleetAgentConfigurationResponse>
                 transformer =
                         UpdateFleetAgentConfigurationConverter.fromResponse(

@@ -9,7 +9,6 @@ import com.oracle.bmc.ocvp.requests.*;
 import com.oracle.bmc.ocvp.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class EsxiHostClient implements EsxiHost {
@@ -334,9 +333,9 @@ public class EsxiHostClient implements EsxiHost {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("EsxiHost-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("EsxiHost-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class EsxiHostClient implements EsxiHost {
          * @return the client
          */
         public EsxiHostClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class EsxiHostClient implements EsxiHost {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,9 +487,8 @@ public class EsxiHostClient implements EsxiHost {
                         "CreateEsxiHost",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateEsxiHostResponse>
-                transformer =
-                        CreateEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateEsxiHostResponse> transformer =
+                CreateEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -527,9 +526,8 @@ public class EsxiHostClient implements EsxiHost {
                         "DeleteEsxiHost",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/DeleteEsxiHost");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEsxiHostResponse>
-                transformer =
-                        DeleteEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteEsxiHostResponse> transformer =
+                DeleteEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -564,9 +562,8 @@ public class EsxiHostClient implements EsxiHost {
                         "GetEsxiHost",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/GetEsxiHost");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetEsxiHostResponse>
-                transformer =
-                        GetEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetEsxiHostResponse> transformer =
+                GetEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -600,9 +597,8 @@ public class EsxiHostClient implements EsxiHost {
                         "ListEsxiHosts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHostSummary/ListEsxiHosts");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListEsxiHostsResponse>
-                transformer =
-                        ListEsxiHostsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListEsxiHostsResponse> transformer =
+                ListEsxiHostsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -636,9 +632,8 @@ public class EsxiHostClient implements EsxiHost {
                         "UpdateEsxiHost",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/UpdateEsxiHost");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEsxiHostResponse>
-                transformer =
-                        UpdateEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateEsxiHostResponse> transformer =
+                UpdateEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

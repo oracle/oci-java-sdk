@@ -44,19 +44,19 @@ public class MonitoringPaginators {
             final ListAlarmsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAlarmsRequest.Builder, ListAlarmsRequest, ListAlarmsResponse>(
-                new com.google.common.base.Supplier<ListAlarmsRequest.Builder>() {
+                new java.util.function.Supplier<ListAlarmsRequest.Builder>() {
                     @Override
                     public ListAlarmsRequest.Builder get() {
                         return ListAlarmsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAlarmsResponse, String>() {
+                new java.util.function.Function<ListAlarmsResponse, String>() {
                     @Override
                     public String apply(ListAlarmsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAlarmsRequest.Builder>,
                         ListAlarmsRequest>() {
@@ -69,12 +69,12 @@ public class MonitoringPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListAlarmsRequest, ListAlarmsResponse>() {
+                new java.util.function.Function<ListAlarmsRequest, ListAlarmsResponse>() {
                     @Override
                     public ListAlarmsResponse apply(ListAlarmsRequest request) {
                         return client.listAlarms(request);
@@ -96,19 +96,19 @@ public class MonitoringPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListAlarmsRequest.Builder, ListAlarmsRequest, ListAlarmsResponse,
                 com.oracle.bmc.monitoring.model.AlarmSummary>(
-                new com.google.common.base.Supplier<ListAlarmsRequest.Builder>() {
+                new java.util.function.Supplier<ListAlarmsRequest.Builder>() {
                     @Override
                     public ListAlarmsRequest.Builder get() {
                         return ListAlarmsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAlarmsResponse, String>() {
+                new java.util.function.Function<ListAlarmsResponse, String>() {
                     @Override
                     public String apply(ListAlarmsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAlarmsRequest.Builder>,
                         ListAlarmsRequest>() {
@@ -121,18 +121,18 @@ public class MonitoringPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListAlarmsRequest, ListAlarmsResponse>() {
+                new java.util.function.Function<ListAlarmsRequest, ListAlarmsResponse>() {
                     @Override
                     public ListAlarmsResponse apply(ListAlarmsRequest request) {
                         return client.listAlarms(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAlarmsResponse,
                         java.util.List<com.oracle.bmc.monitoring.model.AlarmSummary>>() {
                     @Override
@@ -154,19 +154,19 @@ public class MonitoringPaginators {
             final ListAlarmsStatusRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAlarmsStatusRequest.Builder, ListAlarmsStatusRequest, ListAlarmsStatusResponse>(
-                new com.google.common.base.Supplier<ListAlarmsStatusRequest.Builder>() {
+                new java.util.function.Supplier<ListAlarmsStatusRequest.Builder>() {
                     @Override
                     public ListAlarmsStatusRequest.Builder get() {
                         return ListAlarmsStatusRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAlarmsStatusResponse, String>() {
+                new java.util.function.Function<ListAlarmsStatusResponse, String>() {
                     @Override
                     public String apply(ListAlarmsStatusResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAlarmsStatusRequest.Builder>,
                         ListAlarmsStatusRequest>() {
@@ -179,12 +179,12 @@ public class MonitoringPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAlarmsStatusRequest, ListAlarmsStatusResponse>() {
                     @Override
                     public ListAlarmsStatusResponse apply(ListAlarmsStatusRequest request) {
@@ -207,19 +207,19 @@ public class MonitoringPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListAlarmsStatusRequest.Builder, ListAlarmsStatusRequest, ListAlarmsStatusResponse,
                 com.oracle.bmc.monitoring.model.AlarmStatusSummary>(
-                new com.google.common.base.Supplier<ListAlarmsStatusRequest.Builder>() {
+                new java.util.function.Supplier<ListAlarmsStatusRequest.Builder>() {
                     @Override
                     public ListAlarmsStatusRequest.Builder get() {
                         return ListAlarmsStatusRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAlarmsStatusResponse, String>() {
+                new java.util.function.Function<ListAlarmsStatusResponse, String>() {
                     @Override
                     public String apply(ListAlarmsStatusResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAlarmsStatusRequest.Builder>,
                         ListAlarmsStatusRequest>() {
@@ -232,19 +232,19 @@ public class MonitoringPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAlarmsStatusRequest, ListAlarmsStatusResponse>() {
                     @Override
                     public ListAlarmsStatusResponse apply(ListAlarmsStatusRequest request) {
                         return client.listAlarmsStatus(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAlarmsStatusResponse,
                         java.util.List<com.oracle.bmc.monitoring.model.AlarmStatusSummary>>() {
                     @Override
@@ -266,19 +266,19 @@ public class MonitoringPaginators {
             final ListMetricsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListMetricsRequest.Builder, ListMetricsRequest, ListMetricsResponse>(
-                new com.google.common.base.Supplier<ListMetricsRequest.Builder>() {
+                new java.util.function.Supplier<ListMetricsRequest.Builder>() {
                     @Override
                     public ListMetricsRequest.Builder get() {
                         return ListMetricsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListMetricsResponse, String>() {
+                new java.util.function.Function<ListMetricsResponse, String>() {
                     @Override
                     public String apply(ListMetricsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListMetricsRequest.Builder>,
                         ListMetricsRequest>() {
@@ -291,12 +291,12 @@ public class MonitoringPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListMetricsRequest, ListMetricsResponse>() {
+                new java.util.function.Function<ListMetricsRequest, ListMetricsResponse>() {
                     @Override
                     public ListMetricsResponse apply(ListMetricsRequest request) {
                         return client.listMetrics(request);
@@ -318,19 +318,19 @@ public class MonitoringPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListMetricsRequest.Builder, ListMetricsRequest, ListMetricsResponse,
                 com.oracle.bmc.monitoring.model.Metric>(
-                new com.google.common.base.Supplier<ListMetricsRequest.Builder>() {
+                new java.util.function.Supplier<ListMetricsRequest.Builder>() {
                     @Override
                     public ListMetricsRequest.Builder get() {
                         return ListMetricsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListMetricsResponse, String>() {
+                new java.util.function.Function<ListMetricsResponse, String>() {
                     @Override
                     public String apply(ListMetricsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListMetricsRequest.Builder>,
                         ListMetricsRequest>() {
@@ -343,18 +343,18 @@ public class MonitoringPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListMetricsRequest, ListMetricsResponse>() {
+                new java.util.function.Function<ListMetricsRequest, ListMetricsResponse>() {
                     @Override
                     public ListMetricsResponse apply(ListMetricsRequest request) {
                         return client.listMetrics(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListMetricsResponse,
                         java.util.List<com.oracle.bmc.monitoring.model.Metric>>() {
                     @Override

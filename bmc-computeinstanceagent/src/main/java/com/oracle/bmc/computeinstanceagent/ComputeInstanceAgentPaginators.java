@@ -47,21 +47,21 @@ public class ComputeInstanceAgentPaginators {
                 ListInstanceAgentCommandExecutionsRequest.Builder,
                 ListInstanceAgentCommandExecutionsRequest,
                 ListInstanceAgentCommandExecutionsResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListInstanceAgentCommandExecutionsRequest.Builder>() {
                     @Override
                     public ListInstanceAgentCommandExecutionsRequest.Builder get() {
                         return ListInstanceAgentCommandExecutionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceAgentCommandExecutionsResponse, String>() {
                     @Override
                     public String apply(ListInstanceAgentCommandExecutionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstanceAgentCommandExecutionsRequest.Builder>,
                         ListInstanceAgentCommandExecutionsRequest>() {
@@ -74,12 +74,12 @@ public class ComputeInstanceAgentPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceAgentCommandExecutionsRequest,
                         ListInstanceAgentCommandExecutionsResponse>() {
                     @Override
@@ -107,21 +107,21 @@ public class ComputeInstanceAgentPaginators {
                 ListInstanceAgentCommandExecutionsRequest,
                 ListInstanceAgentCommandExecutionsResponse,
                 com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecutionSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListInstanceAgentCommandExecutionsRequest.Builder>() {
                     @Override
                     public ListInstanceAgentCommandExecutionsRequest.Builder get() {
                         return ListInstanceAgentCommandExecutionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceAgentCommandExecutionsResponse, String>() {
                     @Override
                     public String apply(ListInstanceAgentCommandExecutionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstanceAgentCommandExecutionsRequest.Builder>,
                         ListInstanceAgentCommandExecutionsRequest>() {
@@ -134,12 +134,12 @@ public class ComputeInstanceAgentPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceAgentCommandExecutionsRequest,
                         ListInstanceAgentCommandExecutionsResponse>() {
                     @Override
@@ -148,7 +148,7 @@ public class ComputeInstanceAgentPaginators {
                         return client.listInstanceAgentCommandExecutions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceAgentCommandExecutionsResponse,
                         java.util.List<
                                 com.oracle.bmc.computeinstanceagent.model
@@ -175,19 +175,19 @@ public class ComputeInstanceAgentPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListInstanceAgentCommandsRequest.Builder, ListInstanceAgentCommandsRequest,
                 ListInstanceAgentCommandsResponse>(
-                new com.google.common.base.Supplier<ListInstanceAgentCommandsRequest.Builder>() {
+                new java.util.function.Supplier<ListInstanceAgentCommandsRequest.Builder>() {
                     @Override
                     public ListInstanceAgentCommandsRequest.Builder get() {
                         return ListInstanceAgentCommandsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInstanceAgentCommandsResponse, String>() {
+                new java.util.function.Function<ListInstanceAgentCommandsResponse, String>() {
                     @Override
                     public String apply(ListInstanceAgentCommandsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstanceAgentCommandsRequest.Builder>,
                         ListInstanceAgentCommandsRequest>() {
@@ -200,12 +200,12 @@ public class ComputeInstanceAgentPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceAgentCommandsRequest, ListInstanceAgentCommandsResponse>() {
                     @Override
                     public ListInstanceAgentCommandsResponse apply(
@@ -231,19 +231,19 @@ public class ComputeInstanceAgentPaginators {
                 ListInstanceAgentCommandsRequest.Builder, ListInstanceAgentCommandsRequest,
                 ListInstanceAgentCommandsResponse,
                 com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary>(
-                new com.google.common.base.Supplier<ListInstanceAgentCommandsRequest.Builder>() {
+                new java.util.function.Supplier<ListInstanceAgentCommandsRequest.Builder>() {
                     @Override
                     public ListInstanceAgentCommandsRequest.Builder get() {
                         return ListInstanceAgentCommandsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInstanceAgentCommandsResponse, String>() {
+                new java.util.function.Function<ListInstanceAgentCommandsResponse, String>() {
                     @Override
                     public String apply(ListInstanceAgentCommandsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstanceAgentCommandsRequest.Builder>,
                         ListInstanceAgentCommandsRequest>() {
@@ -256,12 +256,12 @@ public class ComputeInstanceAgentPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceAgentCommandsRequest, ListInstanceAgentCommandsResponse>() {
                     @Override
                     public ListInstanceAgentCommandsResponse apply(
@@ -269,7 +269,7 @@ public class ComputeInstanceAgentPaginators {
                         return client.listInstanceAgentCommands(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceAgentCommandsResponse,
                         java.util.List<
                                 com.oracle.bmc.computeinstanceagent.model

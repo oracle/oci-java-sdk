@@ -7,7 +7,6 @@ package com.oracle.bmc.dashboardservice;
 import com.oracle.bmc.dashboardservice.internal.http.*;
 import com.oracle.bmc.dashboardservice.requests.*;
 import com.oracle.bmc.dashboardservice.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Dashboard service. <br/>
@@ -319,7 +318,7 @@ public class DashboardAsyncClient implements DashboardAsync {
          * @return the client
          */
         public DashboardAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class DashboardAsyncClient implements DashboardAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,7 +404,7 @@ public class DashboardAsyncClient implements DashboardAsync {
                         "CreateDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/CreateDashboard");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDashboardResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDashboardResponse>
                 transformer =
                         CreateDashboardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -455,7 +455,7 @@ public class DashboardAsyncClient implements DashboardAsync {
                         "DeleteDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/DeleteDashboard");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDashboardResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDashboardResponse>
                 transformer =
                         DeleteDashboardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -500,7 +500,7 @@ public class DashboardAsyncClient implements DashboardAsync {
                         "GetDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/GetDashboard");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDashboardResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDashboardResponse>
                 transformer =
                         GetDashboardConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDashboardRequest, GetDashboardResponse>
@@ -545,7 +545,7 @@ public class DashboardAsyncClient implements DashboardAsync {
                         "ListDashboards",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardCollection/ListDashboards");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDashboardsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDashboardsResponse>
                 transformer =
                         ListDashboardsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDashboardsRequest, ListDashboardsResponse>
@@ -590,7 +590,7 @@ public class DashboardAsyncClient implements DashboardAsync {
                         "UpdateDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/UpdateDashboard");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDashboardResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDashboardResponse>
                 transformer =
                         UpdateDashboardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

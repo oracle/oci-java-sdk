@@ -9,7 +9,6 @@ import com.oracle.bmc.cims.requests.*;
 import com.oracle.bmc.cims.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class IncidentClient implements Incident {
@@ -332,7 +331,7 @@ public class IncidentClient implements Incident {
          * @return the client
          */
         public IncidentClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -368,7 +367,8 @@ public class IncidentClient implements Incident {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -413,9 +413,8 @@ public class IncidentClient implements Incident {
                         "CreateIncident",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/CreateIncident");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateIncidentResponse>
-                transformer =
-                        CreateIncidentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateIncidentResponse> transformer =
+                CreateIncidentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -453,9 +452,8 @@ public class IncidentClient implements Incident {
                         "GetIncident",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/GetIncident");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetIncidentResponse>
-                transformer =
-                        GetIncidentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetIncidentResponse> transformer =
+                GetIncidentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -488,7 +486,7 @@ public class IncidentClient implements Incident {
                         "GetStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Status/GetStatus");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetStatusResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetStatusResponse> transformer =
                 GetStatusConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -524,8 +522,7 @@ public class IncidentClient implements Incident {
                         "ListIncidentResourceTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/IncidentResourceType/ListIncidentResourceTypes");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListIncidentResourceTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListIncidentResourceTypesResponse>
                 transformer =
                         ListIncidentResourceTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -562,9 +559,8 @@ public class IncidentClient implements Incident {
                         "ListIncidents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/IncidentSummary/ListIncidents");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIncidentsResponse>
-                transformer =
-                        ListIncidentsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListIncidentsResponse> transformer =
+                ListIncidentsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -598,9 +594,8 @@ public class IncidentClient implements Incident {
                         "UpdateIncident",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/UpdateIncident/UpdateIncident");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIncidentResponse>
-                transformer =
-                        UpdateIncidentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateIncidentResponse> transformer =
+                UpdateIncidentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -638,9 +633,8 @@ public class IncidentClient implements Incident {
                         "ValidateUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/ValidationResponse/ValidateUser");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ValidateUserResponse>
-                transformer =
-                        ValidateUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateUserResponse> transformer =
+                ValidateUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

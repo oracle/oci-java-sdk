@@ -9,7 +9,6 @@ import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class UsagePlansClient implements UsagePlans {
@@ -334,9 +333,9 @@ public class UsagePlansClient implements UsagePlans {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("UsagePlans-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("UsagePlans-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class UsagePlansClient implements UsagePlans {
          * @return the client
          */
         public UsagePlansClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class UsagePlansClient implements UsagePlans {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,8 +488,7 @@ public class UsagePlansClient implements UsagePlans {
                         "ChangeUsagePlanCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/ChangeUsagePlanCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeUsagePlanCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeUsagePlanCompartmentResponse>
                 transformer =
                         ChangeUsagePlanCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,7 +528,7 @@ public class UsagePlansClient implements UsagePlans {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "UsagePlans", "CreateUsagePlan", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateUsagePlanResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateUsagePlanResponse>
                 transformer =
                         CreateUsagePlanConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -570,7 +569,7 @@ public class UsagePlansClient implements UsagePlans {
                         "DeleteUsagePlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/DeleteUsagePlan");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUsagePlanResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteUsagePlanResponse>
                 transformer =
                         DeleteUsagePlanConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -608,9 +607,8 @@ public class UsagePlansClient implements UsagePlans {
                         "GetUsagePlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/GetUsagePlan");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetUsagePlanResponse>
-                transformer =
-                        GetUsagePlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetUsagePlanResponse> transformer =
+                GetUsagePlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -644,9 +642,8 @@ public class UsagePlansClient implements UsagePlans {
                         "ListUsagePlans",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/ListUsagePlans");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListUsagePlansResponse>
-                transformer =
-                        ListUsagePlansConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListUsagePlansResponse> transformer =
+                ListUsagePlansConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -680,7 +677,7 @@ public class UsagePlansClient implements UsagePlans {
                         "UpdateUsagePlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/UpdateUsagePlan");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUsagePlanResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateUsagePlanResponse>
                 transformer =
                         UpdateUsagePlanConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

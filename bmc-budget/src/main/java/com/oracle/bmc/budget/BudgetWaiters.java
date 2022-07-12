@@ -6,7 +6,6 @@ package com.oracle.bmc.budget;
 
 import com.oracle.bmc.budget.requests.*;
 import com.oracle.bmc.budget.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -102,17 +101,17 @@ public class BudgetWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetAlertRuleRequest, GetAlertRuleResponse>() {
                             @Override
                             public GetAlertRuleResponse apply(GetAlertRuleRequest request) {
                                 return client.getAlertRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAlertRuleResponse>() {
+                        new java.util.function.Predicate<GetAlertRuleResponse>() {
                             @Override
-                            public boolean apply(GetAlertRuleResponse response) {
+                            public boolean test(GetAlertRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAlertRule().getLifecycleState());
                             }
@@ -198,16 +197,16 @@ public class BudgetWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetBudgetRequest, GetBudgetResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetBudgetRequest, GetBudgetResponse>() {
                             @Override
                             public GetBudgetResponse apply(GetBudgetRequest request) {
                                 return client.getBudget(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBudgetResponse>() {
+                        new java.util.function.Predicate<GetBudgetResponse>() {
                             @Override
-                            public boolean apply(GetBudgetResponse response) {
+                            public boolean test(GetBudgetResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBudget().getLifecycleState());
                             }

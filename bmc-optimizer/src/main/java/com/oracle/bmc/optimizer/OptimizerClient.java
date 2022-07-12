@@ -9,7 +9,6 @@ import com.oracle.bmc.optimizer.requests.*;
 import com.oracle.bmc.optimizer.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public class OptimizerClient implements Optimizer {
@@ -334,9 +333,9 @@ public class OptimizerClient implements Optimizer {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Optimizer-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Optimizer-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class OptimizerClient implements Optimizer {
          * @return the client
          */
         public OptimizerClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class OptimizerClient implements Optimizer {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class OptimizerClient implements Optimizer {
                         "BulkApplyRecommendations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Recommendation/BulkApplyRecommendations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, BulkApplyRecommendationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, BulkApplyRecommendationsResponse>
                 transformer =
                         BulkApplyRecommendationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -530,9 +530,8 @@ public class OptimizerClient implements Optimizer {
                         "CreateProfile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/CreateProfile");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateProfileResponse>
-                transformer =
-                        CreateProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateProfileResponse> transformer =
+                CreateProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -570,9 +569,8 @@ public class OptimizerClient implements Optimizer {
                         "DeleteProfile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/DeleteProfile");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProfileResponse>
-                transformer =
-                        DeleteProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteProfileResponse> transformer =
+                DeleteProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -608,7 +606,7 @@ public class OptimizerClient implements Optimizer {
                         "FilterResourceActions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceActionSummary/FilterResourceActions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, FilterResourceActionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, FilterResourceActionsResponse>
                 transformer =
                         FilterResourceActionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -649,9 +647,8 @@ public class OptimizerClient implements Optimizer {
                         "GetCategory",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Category/GetCategory");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCategoryResponse>
-                transformer =
-                        GetCategoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetCategoryResponse> transformer =
+                GetCategoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -685,7 +682,7 @@ public class OptimizerClient implements Optimizer {
                         "GetEnrollmentStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/EnrollmentStatus/GetEnrollmentStatus");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetEnrollmentStatusResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetEnrollmentStatusResponse>
                 transformer =
                         GetEnrollmentStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -721,7 +718,7 @@ public class OptimizerClient implements Optimizer {
                         "GetProfile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/GetProfile");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetProfileResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetProfileResponse> transformer =
                 GetProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -756,7 +753,7 @@ public class OptimizerClient implements Optimizer {
                         "GetRecommendation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Recommendation/GetRecommendation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRecommendationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRecommendationResponse>
                 transformer =
                         GetRecommendationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -793,7 +790,7 @@ public class OptimizerClient implements Optimizer {
                         "GetResourceAction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceAction/GetResourceAction");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetResourceActionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetResourceActionResponse>
                 transformer =
                         GetResourceActionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -830,9 +827,8 @@ public class OptimizerClient implements Optimizer {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -866,9 +862,8 @@ public class OptimizerClient implements Optimizer {
                         "ListCategories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/CategorySummary/ListCategories");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCategoriesResponse>
-                transformer =
-                        ListCategoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListCategoriesResponse> transformer =
+                ListCategoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -903,7 +898,7 @@ public class OptimizerClient implements Optimizer {
                         "ListEnrollmentStatuses",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/EnrollmentStatusSummary/ListEnrollmentStatuses");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListEnrollmentStatusesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListEnrollmentStatusesResponse>
                 transformer =
                         ListEnrollmentStatusesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -940,9 +935,8 @@ public class OptimizerClient implements Optimizer {
                         "ListHistories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/HistorySummary/ListHistories");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListHistoriesResponse>
-                transformer =
-                        ListHistoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListHistoriesResponse> transformer =
+                ListHistoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -976,7 +970,7 @@ public class OptimizerClient implements Optimizer {
                         "ListProfileLevels",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ProfileLevelSummary/ListProfileLevels");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListProfileLevelsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListProfileLevelsResponse>
                 transformer =
                         ListProfileLevelsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1013,9 +1007,8 @@ public class OptimizerClient implements Optimizer {
                         "ListProfiles",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ProfileSummary/ListProfiles");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListProfilesResponse>
-                transformer =
-                        ListProfilesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListProfilesResponse> transformer =
+                ListProfilesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1050,8 +1043,7 @@ public class OptimizerClient implements Optimizer {
                         "ListRecommendationStrategies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/RecommendationStrategySummary/ListRecommendationStrategies");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListRecommendationStrategiesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRecommendationStrategiesResponse>
                 transformer =
                         ListRecommendationStrategiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1088,7 +1080,7 @@ public class OptimizerClient implements Optimizer {
                         "ListRecommendations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/RecommendationSummary/ListRecommendations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRecommendationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRecommendationsResponse>
                 transformer =
                         ListRecommendationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1126,7 +1118,7 @@ public class OptimizerClient implements Optimizer {
                         "ListResourceActionQueryableFields",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/QueryableFieldSummary/ListResourceActionQueryableFields");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListResourceActionQueryableFieldsResponse>
                 transformer =
                         ListResourceActionQueryableFieldsConverter.fromResponse(
@@ -1164,7 +1156,7 @@ public class OptimizerClient implements Optimizer {
                         "ListResourceActions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceActionSummary/ListResourceActions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListResourceActionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListResourceActionsResponse>
                 transformer =
                         ListResourceActionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1202,7 +1194,7 @@ public class OptimizerClient implements Optimizer {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1239,7 +1231,7 @@ public class OptimizerClient implements Optimizer {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1276,7 +1268,7 @@ public class OptimizerClient implements Optimizer {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1314,7 +1306,7 @@ public class OptimizerClient implements Optimizer {
                         "UpdateEnrollmentStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/EnrollmentStatus/UpdateEnrollmentStatus");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEnrollmentStatusResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateEnrollmentStatusResponse>
                 transformer =
                         UpdateEnrollmentStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1355,9 +1347,8 @@ public class OptimizerClient implements Optimizer {
                         "UpdateProfile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/UpdateProfile");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProfileResponse>
-                transformer =
-                        UpdateProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateProfileResponse> transformer =
+                UpdateProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1395,7 +1386,7 @@ public class OptimizerClient implements Optimizer {
                         "UpdateRecommendation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Recommendation/UpdateRecommendation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRecommendationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRecommendationResponse>
                 transformer =
                         UpdateRecommendationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1436,7 +1427,7 @@ public class OptimizerClient implements Optimizer {
                         "UpdateResourceAction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceAction/UpdateResourceAction");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateResourceActionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateResourceActionResponse>
                 transformer =
                         UpdateResourceActionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

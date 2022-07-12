@@ -47,21 +47,21 @@ public class BlockstoragePaginators {
                 GetVolumeBackupPolicyAssetAssignmentRequest.Builder,
                 GetVolumeBackupPolicyAssetAssignmentRequest,
                 GetVolumeBackupPolicyAssetAssignmentResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         GetVolumeBackupPolicyAssetAssignmentRequest.Builder>() {
                     @Override
                     public GetVolumeBackupPolicyAssetAssignmentRequest.Builder get() {
                         return GetVolumeBackupPolicyAssetAssignmentRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetVolumeBackupPolicyAssetAssignmentResponse, String>() {
                     @Override
                     public String apply(GetVolumeBackupPolicyAssetAssignmentResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 GetVolumeBackupPolicyAssetAssignmentRequest.Builder>,
                         GetVolumeBackupPolicyAssetAssignmentRequest>() {
@@ -74,12 +74,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetVolumeBackupPolicyAssetAssignmentRequest,
                         GetVolumeBackupPolicyAssetAssignmentResponse>() {
                     @Override
@@ -107,21 +107,21 @@ public class BlockstoragePaginators {
                 GetVolumeBackupPolicyAssetAssignmentRequest,
                 GetVolumeBackupPolicyAssetAssignmentResponse,
                 com.oracle.bmc.core.model.VolumeBackupPolicyAssignment>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         GetVolumeBackupPolicyAssetAssignmentRequest.Builder>() {
                     @Override
                     public GetVolumeBackupPolicyAssetAssignmentRequest.Builder get() {
                         return GetVolumeBackupPolicyAssetAssignmentRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetVolumeBackupPolicyAssetAssignmentResponse, String>() {
                     @Override
                     public String apply(GetVolumeBackupPolicyAssetAssignmentResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 GetVolumeBackupPolicyAssetAssignmentRequest.Builder>,
                         GetVolumeBackupPolicyAssetAssignmentRequest>() {
@@ -134,12 +134,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetVolumeBackupPolicyAssetAssignmentRequest,
                         GetVolumeBackupPolicyAssetAssignmentResponse>() {
                     @Override
@@ -148,7 +148,7 @@ public class BlockstoragePaginators {
                         return client.getVolumeBackupPolicyAssetAssignment(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         GetVolumeBackupPolicyAssetAssignmentResponse,
                         java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicyAssignment>>() {
                     @Override
@@ -171,19 +171,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBlockVolumeReplicasRequest.Builder, ListBlockVolumeReplicasRequest,
                 ListBlockVolumeReplicasResponse>(
-                new com.google.common.base.Supplier<ListBlockVolumeReplicasRequest.Builder>() {
+                new java.util.function.Supplier<ListBlockVolumeReplicasRequest.Builder>() {
                     @Override
                     public ListBlockVolumeReplicasRequest.Builder get() {
                         return ListBlockVolumeReplicasRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBlockVolumeReplicasResponse, String>() {
+                new java.util.function.Function<ListBlockVolumeReplicasResponse, String>() {
                     @Override
                     public String apply(ListBlockVolumeReplicasResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBlockVolumeReplicasRequest.Builder>,
                         ListBlockVolumeReplicasRequest>() {
@@ -196,12 +196,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBlockVolumeReplicasRequest, ListBlockVolumeReplicasResponse>() {
                     @Override
                     public ListBlockVolumeReplicasResponse apply(
@@ -225,19 +225,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListBlockVolumeReplicasRequest.Builder, ListBlockVolumeReplicasRequest,
                 ListBlockVolumeReplicasResponse, com.oracle.bmc.core.model.BlockVolumeReplica>(
-                new com.google.common.base.Supplier<ListBlockVolumeReplicasRequest.Builder>() {
+                new java.util.function.Supplier<ListBlockVolumeReplicasRequest.Builder>() {
                     @Override
                     public ListBlockVolumeReplicasRequest.Builder get() {
                         return ListBlockVolumeReplicasRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBlockVolumeReplicasResponse, String>() {
+                new java.util.function.Function<ListBlockVolumeReplicasResponse, String>() {
                     @Override
                     public String apply(ListBlockVolumeReplicasResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBlockVolumeReplicasRequest.Builder>,
                         ListBlockVolumeReplicasRequest>() {
@@ -250,12 +250,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBlockVolumeReplicasRequest, ListBlockVolumeReplicasResponse>() {
                     @Override
                     public ListBlockVolumeReplicasResponse apply(
@@ -263,7 +263,7 @@ public class BlockstoragePaginators {
                         return client.listBlockVolumeReplicas(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBlockVolumeReplicasResponse,
                         java.util.List<com.oracle.bmc.core.model.BlockVolumeReplica>>() {
                     @Override
@@ -286,19 +286,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBootVolumeBackupsRequest.Builder, ListBootVolumeBackupsRequest,
                 ListBootVolumeBackupsResponse>(
-                new com.google.common.base.Supplier<ListBootVolumeBackupsRequest.Builder>() {
+                new java.util.function.Supplier<ListBootVolumeBackupsRequest.Builder>() {
                     @Override
                     public ListBootVolumeBackupsRequest.Builder get() {
                         return ListBootVolumeBackupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBootVolumeBackupsResponse, String>() {
+                new java.util.function.Function<ListBootVolumeBackupsResponse, String>() {
                     @Override
                     public String apply(ListBootVolumeBackupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBootVolumeBackupsRequest.Builder>,
                         ListBootVolumeBackupsRequest>() {
@@ -311,12 +311,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBootVolumeBackupsRequest, ListBootVolumeBackupsResponse>() {
                     @Override
                     public ListBootVolumeBackupsResponse apply(
@@ -340,19 +340,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListBootVolumeBackupsRequest.Builder, ListBootVolumeBackupsRequest,
                 ListBootVolumeBackupsResponse, com.oracle.bmc.core.model.BootVolumeBackup>(
-                new com.google.common.base.Supplier<ListBootVolumeBackupsRequest.Builder>() {
+                new java.util.function.Supplier<ListBootVolumeBackupsRequest.Builder>() {
                     @Override
                     public ListBootVolumeBackupsRequest.Builder get() {
                         return ListBootVolumeBackupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBootVolumeBackupsResponse, String>() {
+                new java.util.function.Function<ListBootVolumeBackupsResponse, String>() {
                     @Override
                     public String apply(ListBootVolumeBackupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBootVolumeBackupsRequest.Builder>,
                         ListBootVolumeBackupsRequest>() {
@@ -365,12 +365,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBootVolumeBackupsRequest, ListBootVolumeBackupsResponse>() {
                     @Override
                     public ListBootVolumeBackupsResponse apply(
@@ -378,7 +378,7 @@ public class BlockstoragePaginators {
                         return client.listBootVolumeBackups(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBootVolumeBackupsResponse,
                         java.util.List<com.oracle.bmc.core.model.BootVolumeBackup>>() {
                     @Override
@@ -401,19 +401,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBootVolumeReplicasRequest.Builder, ListBootVolumeReplicasRequest,
                 ListBootVolumeReplicasResponse>(
-                new com.google.common.base.Supplier<ListBootVolumeReplicasRequest.Builder>() {
+                new java.util.function.Supplier<ListBootVolumeReplicasRequest.Builder>() {
                     @Override
                     public ListBootVolumeReplicasRequest.Builder get() {
                         return ListBootVolumeReplicasRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBootVolumeReplicasResponse, String>() {
+                new java.util.function.Function<ListBootVolumeReplicasResponse, String>() {
                     @Override
                     public String apply(ListBootVolumeReplicasResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBootVolumeReplicasRequest.Builder>,
                         ListBootVolumeReplicasRequest>() {
@@ -426,12 +426,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBootVolumeReplicasRequest, ListBootVolumeReplicasResponse>() {
                     @Override
                     public ListBootVolumeReplicasResponse apply(
@@ -455,19 +455,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListBootVolumeReplicasRequest.Builder, ListBootVolumeReplicasRequest,
                 ListBootVolumeReplicasResponse, com.oracle.bmc.core.model.BootVolumeReplica>(
-                new com.google.common.base.Supplier<ListBootVolumeReplicasRequest.Builder>() {
+                new java.util.function.Supplier<ListBootVolumeReplicasRequest.Builder>() {
                     @Override
                     public ListBootVolumeReplicasRequest.Builder get() {
                         return ListBootVolumeReplicasRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBootVolumeReplicasResponse, String>() {
+                new java.util.function.Function<ListBootVolumeReplicasResponse, String>() {
                     @Override
                     public String apply(ListBootVolumeReplicasResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBootVolumeReplicasRequest.Builder>,
                         ListBootVolumeReplicasRequest>() {
@@ -480,12 +480,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBootVolumeReplicasRequest, ListBootVolumeReplicasResponse>() {
                     @Override
                     public ListBootVolumeReplicasResponse apply(
@@ -493,7 +493,7 @@ public class BlockstoragePaginators {
                         return client.listBootVolumeReplicas(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBootVolumeReplicasResponse,
                         java.util.List<com.oracle.bmc.core.model.BootVolumeReplica>>() {
                     @Override
@@ -515,19 +515,19 @@ public class BlockstoragePaginators {
             final ListBootVolumesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBootVolumesRequest.Builder, ListBootVolumesRequest, ListBootVolumesResponse>(
-                new com.google.common.base.Supplier<ListBootVolumesRequest.Builder>() {
+                new java.util.function.Supplier<ListBootVolumesRequest.Builder>() {
                     @Override
                     public ListBootVolumesRequest.Builder get() {
                         return ListBootVolumesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBootVolumesResponse, String>() {
+                new java.util.function.Function<ListBootVolumesResponse, String>() {
                     @Override
                     public String apply(ListBootVolumesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBootVolumesRequest.Builder>,
                         ListBootVolumesRequest>() {
@@ -540,13 +540,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListBootVolumesRequest, ListBootVolumesResponse>() {
+                new java.util.function.Function<ListBootVolumesRequest, ListBootVolumesResponse>() {
                     @Override
                     public ListBootVolumesResponse apply(ListBootVolumesRequest request) {
                         return client.listBootVolumes(request);
@@ -568,19 +567,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListBootVolumesRequest.Builder, ListBootVolumesRequest, ListBootVolumesResponse,
                 com.oracle.bmc.core.model.BootVolume>(
-                new com.google.common.base.Supplier<ListBootVolumesRequest.Builder>() {
+                new java.util.function.Supplier<ListBootVolumesRequest.Builder>() {
                     @Override
                     public ListBootVolumesRequest.Builder get() {
                         return ListBootVolumesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBootVolumesResponse, String>() {
+                new java.util.function.Function<ListBootVolumesResponse, String>() {
                     @Override
                     public String apply(ListBootVolumesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBootVolumesRequest.Builder>,
                         ListBootVolumesRequest>() {
@@ -593,19 +592,18 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListBootVolumesRequest, ListBootVolumesResponse>() {
+                new java.util.function.Function<ListBootVolumesRequest, ListBootVolumesResponse>() {
                     @Override
                     public ListBootVolumesResponse apply(ListBootVolumesRequest request) {
                         return client.listBootVolumes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBootVolumesResponse,
                         java.util.List<com.oracle.bmc.core.model.BootVolume>>() {
                     @Override
@@ -628,19 +626,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVolumeBackupPoliciesRequest.Builder, ListVolumeBackupPoliciesRequest,
                 ListVolumeBackupPoliciesResponse>(
-                new com.google.common.base.Supplier<ListVolumeBackupPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListVolumeBackupPoliciesRequest.Builder>() {
                     @Override
                     public ListVolumeBackupPoliciesRequest.Builder get() {
                         return ListVolumeBackupPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVolumeBackupPoliciesResponse, String>() {
+                new java.util.function.Function<ListVolumeBackupPoliciesResponse, String>() {
                     @Override
                     public String apply(ListVolumeBackupPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVolumeBackupPoliciesRequest.Builder>,
                         ListVolumeBackupPoliciesRequest>() {
@@ -653,12 +651,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeBackupPoliciesRequest, ListVolumeBackupPoliciesResponse>() {
                     @Override
                     public ListVolumeBackupPoliciesResponse apply(
@@ -682,19 +680,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVolumeBackupPoliciesRequest.Builder, ListVolumeBackupPoliciesRequest,
                 ListVolumeBackupPoliciesResponse, com.oracle.bmc.core.model.VolumeBackupPolicy>(
-                new com.google.common.base.Supplier<ListVolumeBackupPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListVolumeBackupPoliciesRequest.Builder>() {
                     @Override
                     public ListVolumeBackupPoliciesRequest.Builder get() {
                         return ListVolumeBackupPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVolumeBackupPoliciesResponse, String>() {
+                new java.util.function.Function<ListVolumeBackupPoliciesResponse, String>() {
                     @Override
                     public String apply(ListVolumeBackupPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVolumeBackupPoliciesRequest.Builder>,
                         ListVolumeBackupPoliciesRequest>() {
@@ -707,12 +705,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeBackupPoliciesRequest, ListVolumeBackupPoliciesResponse>() {
                     @Override
                     public ListVolumeBackupPoliciesResponse apply(
@@ -720,7 +718,7 @@ public class BlockstoragePaginators {
                         return client.listVolumeBackupPolicies(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeBackupPoliciesResponse,
                         java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicy>>() {
                     @Override
@@ -743,19 +741,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVolumeBackupsRequest.Builder, ListVolumeBackupsRequest,
                 ListVolumeBackupsResponse>(
-                new com.google.common.base.Supplier<ListVolumeBackupsRequest.Builder>() {
+                new java.util.function.Supplier<ListVolumeBackupsRequest.Builder>() {
                     @Override
                     public ListVolumeBackupsRequest.Builder get() {
                         return ListVolumeBackupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVolumeBackupsResponse, String>() {
+                new java.util.function.Function<ListVolumeBackupsResponse, String>() {
                     @Override
                     public String apply(ListVolumeBackupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVolumeBackupsRequest.Builder>,
                         ListVolumeBackupsRequest>() {
@@ -768,12 +766,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeBackupsRequest, ListVolumeBackupsResponse>() {
                     @Override
                     public ListVolumeBackupsResponse apply(ListVolumeBackupsRequest request) {
@@ -796,19 +794,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVolumeBackupsRequest.Builder, ListVolumeBackupsRequest,
                 ListVolumeBackupsResponse, com.oracle.bmc.core.model.VolumeBackup>(
-                new com.google.common.base.Supplier<ListVolumeBackupsRequest.Builder>() {
+                new java.util.function.Supplier<ListVolumeBackupsRequest.Builder>() {
                     @Override
                     public ListVolumeBackupsRequest.Builder get() {
                         return ListVolumeBackupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVolumeBackupsResponse, String>() {
+                new java.util.function.Function<ListVolumeBackupsResponse, String>() {
                     @Override
                     public String apply(ListVolumeBackupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVolumeBackupsRequest.Builder>,
                         ListVolumeBackupsRequest>() {
@@ -821,19 +819,19 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeBackupsRequest, ListVolumeBackupsResponse>() {
                     @Override
                     public ListVolumeBackupsResponse apply(ListVolumeBackupsRequest request) {
                         return client.listVolumeBackups(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeBackupsResponse,
                         java.util.List<com.oracle.bmc.core.model.VolumeBackup>>() {
                     @Override
@@ -856,19 +854,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVolumeGroupBackupsRequest.Builder, ListVolumeGroupBackupsRequest,
                 ListVolumeGroupBackupsResponse>(
-                new com.google.common.base.Supplier<ListVolumeGroupBackupsRequest.Builder>() {
+                new java.util.function.Supplier<ListVolumeGroupBackupsRequest.Builder>() {
                     @Override
                     public ListVolumeGroupBackupsRequest.Builder get() {
                         return ListVolumeGroupBackupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVolumeGroupBackupsResponse, String>() {
+                new java.util.function.Function<ListVolumeGroupBackupsResponse, String>() {
                     @Override
                     public String apply(ListVolumeGroupBackupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVolumeGroupBackupsRequest.Builder>,
                         ListVolumeGroupBackupsRequest>() {
@@ -881,12 +879,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeGroupBackupsRequest, ListVolumeGroupBackupsResponse>() {
                     @Override
                     public ListVolumeGroupBackupsResponse apply(
@@ -910,19 +908,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVolumeGroupBackupsRequest.Builder, ListVolumeGroupBackupsRequest,
                 ListVolumeGroupBackupsResponse, com.oracle.bmc.core.model.VolumeGroupBackup>(
-                new com.google.common.base.Supplier<ListVolumeGroupBackupsRequest.Builder>() {
+                new java.util.function.Supplier<ListVolumeGroupBackupsRequest.Builder>() {
                     @Override
                     public ListVolumeGroupBackupsRequest.Builder get() {
                         return ListVolumeGroupBackupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVolumeGroupBackupsResponse, String>() {
+                new java.util.function.Function<ListVolumeGroupBackupsResponse, String>() {
                     @Override
                     public String apply(ListVolumeGroupBackupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVolumeGroupBackupsRequest.Builder>,
                         ListVolumeGroupBackupsRequest>() {
@@ -935,12 +933,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeGroupBackupsRequest, ListVolumeGroupBackupsResponse>() {
                     @Override
                     public ListVolumeGroupBackupsResponse apply(
@@ -948,7 +946,7 @@ public class BlockstoragePaginators {
                         return client.listVolumeGroupBackups(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeGroupBackupsResponse,
                         java.util.List<com.oracle.bmc.core.model.VolumeGroupBackup>>() {
                     @Override
@@ -971,19 +969,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVolumeGroupReplicasRequest.Builder, ListVolumeGroupReplicasRequest,
                 ListVolumeGroupReplicasResponse>(
-                new com.google.common.base.Supplier<ListVolumeGroupReplicasRequest.Builder>() {
+                new java.util.function.Supplier<ListVolumeGroupReplicasRequest.Builder>() {
                     @Override
                     public ListVolumeGroupReplicasRequest.Builder get() {
                         return ListVolumeGroupReplicasRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVolumeGroupReplicasResponse, String>() {
+                new java.util.function.Function<ListVolumeGroupReplicasResponse, String>() {
                     @Override
                     public String apply(ListVolumeGroupReplicasResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVolumeGroupReplicasRequest.Builder>,
                         ListVolumeGroupReplicasRequest>() {
@@ -996,12 +994,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeGroupReplicasRequest, ListVolumeGroupReplicasResponse>() {
                     @Override
                     public ListVolumeGroupReplicasResponse apply(
@@ -1025,19 +1023,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVolumeGroupReplicasRequest.Builder, ListVolumeGroupReplicasRequest,
                 ListVolumeGroupReplicasResponse, com.oracle.bmc.core.model.VolumeGroupReplica>(
-                new com.google.common.base.Supplier<ListVolumeGroupReplicasRequest.Builder>() {
+                new java.util.function.Supplier<ListVolumeGroupReplicasRequest.Builder>() {
                     @Override
                     public ListVolumeGroupReplicasRequest.Builder get() {
                         return ListVolumeGroupReplicasRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVolumeGroupReplicasResponse, String>() {
+                new java.util.function.Function<ListVolumeGroupReplicasResponse, String>() {
                     @Override
                     public String apply(ListVolumeGroupReplicasResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVolumeGroupReplicasRequest.Builder>,
                         ListVolumeGroupReplicasRequest>() {
@@ -1050,12 +1048,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeGroupReplicasRequest, ListVolumeGroupReplicasResponse>() {
                     @Override
                     public ListVolumeGroupReplicasResponse apply(
@@ -1063,7 +1061,7 @@ public class BlockstoragePaginators {
                         return client.listVolumeGroupReplicas(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeGroupReplicasResponse,
                         java.util.List<com.oracle.bmc.core.model.VolumeGroupReplica>>() {
                     @Override
@@ -1085,19 +1083,19 @@ public class BlockstoragePaginators {
             final ListVolumeGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVolumeGroupsRequest.Builder, ListVolumeGroupsRequest, ListVolumeGroupsResponse>(
-                new com.google.common.base.Supplier<ListVolumeGroupsRequest.Builder>() {
+                new java.util.function.Supplier<ListVolumeGroupsRequest.Builder>() {
                     @Override
                     public ListVolumeGroupsRequest.Builder get() {
                         return ListVolumeGroupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVolumeGroupsResponse, String>() {
+                new java.util.function.Function<ListVolumeGroupsResponse, String>() {
                     @Override
                     public String apply(ListVolumeGroupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVolumeGroupsRequest.Builder>,
                         ListVolumeGroupsRequest>() {
@@ -1110,12 +1108,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeGroupsRequest, ListVolumeGroupsResponse>() {
                     @Override
                     public ListVolumeGroupsResponse apply(ListVolumeGroupsRequest request) {
@@ -1138,19 +1136,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVolumeGroupsRequest.Builder, ListVolumeGroupsRequest, ListVolumeGroupsResponse,
                 com.oracle.bmc.core.model.VolumeGroup>(
-                new com.google.common.base.Supplier<ListVolumeGroupsRequest.Builder>() {
+                new java.util.function.Supplier<ListVolumeGroupsRequest.Builder>() {
                     @Override
                     public ListVolumeGroupsRequest.Builder get() {
                         return ListVolumeGroupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVolumeGroupsResponse, String>() {
+                new java.util.function.Function<ListVolumeGroupsResponse, String>() {
                     @Override
                     public String apply(ListVolumeGroupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVolumeGroupsRequest.Builder>,
                         ListVolumeGroupsRequest>() {
@@ -1163,19 +1161,19 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeGroupsRequest, ListVolumeGroupsResponse>() {
                     @Override
                     public ListVolumeGroupsResponse apply(ListVolumeGroupsRequest request) {
                         return client.listVolumeGroups(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumeGroupsResponse,
                         java.util.List<com.oracle.bmc.core.model.VolumeGroup>>() {
                     @Override
@@ -1197,19 +1195,19 @@ public class BlockstoragePaginators {
             final ListVolumesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVolumesRequest.Builder, ListVolumesRequest, ListVolumesResponse>(
-                new com.google.common.base.Supplier<ListVolumesRequest.Builder>() {
+                new java.util.function.Supplier<ListVolumesRequest.Builder>() {
                     @Override
                     public ListVolumesRequest.Builder get() {
                         return ListVolumesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVolumesResponse, String>() {
+                new java.util.function.Function<ListVolumesResponse, String>() {
                     @Override
                     public String apply(ListVolumesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVolumesRequest.Builder>,
                         ListVolumesRequest>() {
@@ -1222,12 +1220,12 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListVolumesRequest, ListVolumesResponse>() {
+                new java.util.function.Function<ListVolumesRequest, ListVolumesResponse>() {
                     @Override
                     public ListVolumesResponse apply(ListVolumesRequest request) {
                         return client.listVolumes(request);
@@ -1249,19 +1247,19 @@ public class BlockstoragePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVolumesRequest.Builder, ListVolumesRequest, ListVolumesResponse,
                 com.oracle.bmc.core.model.Volume>(
-                new com.google.common.base.Supplier<ListVolumesRequest.Builder>() {
+                new java.util.function.Supplier<ListVolumesRequest.Builder>() {
                     @Override
                     public ListVolumesRequest.Builder get() {
                         return ListVolumesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVolumesResponse, String>() {
+                new java.util.function.Function<ListVolumesResponse, String>() {
                     @Override
                     public String apply(ListVolumesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVolumesRequest.Builder>,
                         ListVolumesRequest>() {
@@ -1274,18 +1272,18 @@ public class BlockstoragePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListVolumesRequest, ListVolumesResponse>() {
+                new java.util.function.Function<ListVolumesRequest, ListVolumesResponse>() {
                     @Override
                     public ListVolumesResponse apply(ListVolumesRequest request) {
                         return client.listVolumes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVolumesResponse, java.util.List<com.oracle.bmc.core.model.Volume>>() {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.Volume> apply(

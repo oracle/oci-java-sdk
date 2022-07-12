@@ -9,7 +9,6 @@ import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class SenderInvitationClient implements SenderInvitation {
@@ -335,9 +334,9 @@ public class SenderInvitationClient implements SenderInvitation {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("SenderInvitation-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("SenderInvitation-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class SenderInvitationClient implements SenderInvitation {
          * @return the client
          */
         public SenderInvitationClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class SenderInvitationClient implements SenderInvitation {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class SenderInvitationClient implements SenderInvitation {
                         "CancelSenderInvitation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/CancelSenderInvitation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelSenderInvitationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelSenderInvitationResponse>
                 transformer =
                         CancelSenderInvitationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,7 +529,7 @@ public class SenderInvitationClient implements SenderInvitation {
                         "CreateSenderInvitation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/CreateSenderInvitation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSenderInvitationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSenderInvitationResponse>
                 transformer =
                         CreateSenderInvitationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -570,7 +570,7 @@ public class SenderInvitationClient implements SenderInvitation {
                         "GetSenderInvitation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/GetSenderInvitation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSenderInvitationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSenderInvitationResponse>
                 transformer =
                         GetSenderInvitationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -608,7 +608,7 @@ public class SenderInvitationClient implements SenderInvitation {
                         "ListSenderInvitations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/ListSenderInvitations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSenderInvitationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSenderInvitationsResponse>
                 transformer =
                         ListSenderInvitationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -646,7 +646,7 @@ public class SenderInvitationClient implements SenderInvitation {
                         "UpdateSenderInvitation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/UpdateSenderInvitation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSenderInvitationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSenderInvitationResponse>
                 transformer =
                         UpdateSenderInvitationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

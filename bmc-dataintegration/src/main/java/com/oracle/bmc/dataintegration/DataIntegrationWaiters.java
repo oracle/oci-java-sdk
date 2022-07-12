@@ -6,7 +6,6 @@ package com.oracle.bmc.dataintegration;
 
 import com.oracle.bmc.dataintegration.requests.*;
 import com.oracle.bmc.dataintegration.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -110,17 +109,17 @@ public class DataIntegrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetApplicationRequest, GetApplicationResponse>() {
                             @Override
                             public GetApplicationResponse apply(GetApplicationRequest request) {
                                 return client.getApplication(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetApplicationResponse>() {
+                        new java.util.function.Predicate<GetApplicationResponse>() {
                             @Override
-                            public boolean apply(GetApplicationResponse response) {
+                            public boolean test(GetApplicationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getApplication().getLifecycleState());
                             }
@@ -216,8 +215,8 @@ public class DataIntegrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDependentObjectRequest, GetDependentObjectResponse>() {
                             @Override
                             public GetDependentObjectResponse apply(
@@ -225,9 +224,9 @@ public class DataIntegrationWaiters {
                                 return client.getDependentObject(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDependentObjectResponse>() {
+                        new java.util.function.Predicate<GetDependentObjectResponse>() {
                             @Override
-                            public boolean apply(GetDependentObjectResponse response) {
+                            public boolean test(GetDependentObjectResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDependentObject().getLifecycleState());
                             }
@@ -323,8 +322,8 @@ public class DataIntegrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDisApplicationRequest, GetDisApplicationResponse>() {
                             @Override
                             public GetDisApplicationResponse apply(
@@ -332,9 +331,9 @@ public class DataIntegrationWaiters {
                                 return client.getDisApplication(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDisApplicationResponse>() {
+                        new java.util.function.Predicate<GetDisApplicationResponse>() {
                             @Override
-                            public boolean apply(GetDisApplicationResponse response) {
+                            public boolean test(GetDisApplicationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDisApplication().getLifecycleState());
                             }
@@ -382,17 +381,17 @@ public class DataIntegrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }
@@ -479,17 +478,17 @@ public class DataIntegrationWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkspaceRequest, GetWorkspaceResponse>() {
                             @Override
                             public GetWorkspaceResponse apply(GetWorkspaceRequest request) {
                                 return client.getWorkspace(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkspaceResponse>() {
+                        new java.util.function.Predicate<GetWorkspaceResponse>() {
                             @Override
-                            public boolean apply(GetWorkspaceResponse response) {
+                            public boolean test(GetWorkspaceResponse response) {
                                 return targetStatesSet.contains(
                                         response.getWorkspace().getLifecycleState());
                             }

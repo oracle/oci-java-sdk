@@ -54,21 +54,6 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
     public Boolean getPreserveBootVolume() {
         return preserveBootVolume;
     }
-    /**
-     * Specifies whether to delete or preserve the data volumes when terminating an instance.
-     * When set to {@code true}, the boot volume is preserved. The default value is {@code false}.
-     *
-     */
-    private Boolean preserveDataVolumes;
-
-    /**
-     * Specifies whether to delete or preserve the data volumes when terminating an instance.
-     * When set to {@code true}, the boot volume is preserved. The default value is {@code false}.
-     *
-     */
-    public Boolean getPreserveDataVolumes() {
-        return preserveDataVolumes;
-    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -133,25 +118,6 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Specifies whether to delete or preserve the data volumes when terminating an instance.
-         * When set to {@code true}, the boot volume is preserved. The default value is {@code false}.
-         *
-         */
-        private Boolean preserveDataVolumes = null;
-
-        /**
-         * Specifies whether to delete or preserve the data volumes when terminating an instance.
-         * When set to {@code true}, the boot volume is preserved. The default value is {@code false}.
-         *
-         * @param preserveDataVolumes the value to set
-         * @return this builder instance
-         */
-        public Builder preserveDataVolumes(Boolean preserveDataVolumes) {
-            this.preserveDataVolumes = preserveDataVolumes;
-            return this;
-        }
-
-        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -182,7 +148,6 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
             instanceId(o.getInstanceId());
             ifMatch(o.getIfMatch());
             preserveBootVolume(o.getPreserveBootVolume());
-            preserveDataVolumes(o.getPreserveDataVolumes());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -218,9 +183,8 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
             request.instanceId = instanceId;
             request.ifMatch = ifMatch;
             request.preserveBootVolume = preserveBootVolume;
-            request.preserveDataVolumes = preserveDataVolumes;
             return request;
-            // new TerminateInstanceRequest(instanceId, ifMatch, preserveBootVolume, preserveDataVolumes);
+            // new TerminateInstanceRequest(instanceId, ifMatch, preserveBootVolume);
         }
     }
 
@@ -232,8 +196,7 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
         return new Builder()
                 .instanceId(instanceId)
                 .ifMatch(ifMatch)
-                .preserveBootVolume(preserveBootVolume)
-                .preserveDataVolumes(preserveDataVolumes);
+                .preserveBootVolume(preserveBootVolume);
     }
 
     /**
@@ -252,7 +215,6 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",instanceId=").append(String.valueOf(this.instanceId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",preserveBootVolume=").append(String.valueOf(this.preserveBootVolume));
-        sb.append(",preserveDataVolumes=").append(String.valueOf(this.preserveDataVolumes));
         sb.append(")");
         return sb.toString();
     }
@@ -270,8 +232,7 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.instanceId, other.instanceId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.preserveBootVolume, other.preserveBootVolume)
-                && java.util.Objects.equals(this.preserveDataVolumes, other.preserveDataVolumes);
+                && java.util.Objects.equals(this.preserveBootVolume, other.preserveBootVolume);
     }
 
     @Override
@@ -285,11 +246,6 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
                         + (this.preserveBootVolume == null
                                 ? 43
                                 : this.preserveBootVolume.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.preserveDataVolumes == null
-                                ? 43
-                                : this.preserveDataVolumes.hashCode());
         return result;
     }
 }

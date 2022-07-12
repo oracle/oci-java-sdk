@@ -7,7 +7,6 @@ package com.oracle.bmc.licensemanager;
 import com.oracle.bmc.licensemanager.internal.http.*;
 import com.oracle.bmc.licensemanager.requests.*;
 import com.oracle.bmc.licensemanager.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for LicenseManager service. <br/>
@@ -321,7 +320,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
          * @return the client
          */
         public LicenseManagerAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -405,7 +405,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "BulkUploadLicenseRecords",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, BulkUploadLicenseRecordsResponse>
                 transformer =
                         BulkUploadLicenseRecordsConverter.fromResponse(
@@ -456,8 +456,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LicenseManager", "CreateLicenseRecord", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateLicenseRecordResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateLicenseRecordResponse>
                 transformer =
                         CreateLicenseRecordConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -510,8 +509,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "CreateProductLicense",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateProductLicenseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateProductLicenseResponse>
                 transformer =
                         CreateProductLicenseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -560,8 +558,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LicenseManager", "DeleteLicenseRecord", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteLicenseRecordResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteLicenseRecordResponse>
                 transformer =
                         DeleteLicenseRecordConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -608,8 +605,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "DeleteProductLicense",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteProductLicenseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteProductLicenseResponse>
                 transformer =
                         DeleteProductLicenseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -656,8 +652,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "GetBulkUploadTemplate",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetBulkUploadTemplateResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetBulkUploadTemplateResponse>
                 transformer =
                         GetBulkUploadTemplateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -701,7 +696,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LicenseManager", "GetConfiguration", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer =
                         GetConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -744,7 +739,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LicenseManager", "GetLicenseMetric", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetLicenseMetricResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetLicenseMetricResponse>
                 transformer =
                         GetLicenseMetricConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -787,7 +782,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LicenseManager", "GetLicenseRecord", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetLicenseRecordResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetLicenseRecordResponse>
                 transformer =
                         GetLicenseRecordConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -830,7 +825,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LicenseManager", "GetProductLicense", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetProductLicenseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetProductLicenseResponse>
                 transformer =
                         GetProductLicenseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -873,7 +868,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LicenseManager", "ListLicenseRecords", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListLicenseRecordsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListLicenseRecordsResponse>
                 transformer =
                         ListLicenseRecordsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -921,7 +916,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "ListProductLicenseConsumers",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListProductLicenseConsumersResponse>
                 transformer =
                         ListProductLicenseConsumersConverter.fromResponse(
@@ -967,8 +962,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LicenseManager", "ListProductLicenses", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListProductLicensesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListProductLicensesResponse>
                 transformer =
                         ListProductLicensesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1017,7 +1011,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "ListTopUtilizedProductLicenses",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListTopUtilizedProductLicensesResponse>
                 transformer =
                         ListTopUtilizedProductLicensesConverter.fromResponse(
@@ -1067,7 +1061,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "ListTopUtilizedResources",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListTopUtilizedResourcesResponse>
                 transformer =
                         ListTopUtilizedResourcesConverter.fromResponse(
@@ -1112,8 +1106,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LicenseManager", "UpdateConfiguration", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateConfigurationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
                 transformer =
                         UpdateConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1162,8 +1155,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LicenseManager", "UpdateLicenseRecord", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateLicenseRecordResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateLicenseRecordResponse>
                 transformer =
                         UpdateLicenseRecordConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1215,8 +1207,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "UpdateProductLicense",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateProductLicenseResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateProductLicenseResponse>
                 transformer =
                         UpdateProductLicenseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

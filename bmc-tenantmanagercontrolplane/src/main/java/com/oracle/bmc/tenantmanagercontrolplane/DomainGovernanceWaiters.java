@@ -6,7 +6,6 @@ package com.oracle.bmc.tenantmanagercontrolplane;
 
 import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -116,8 +115,8 @@ public class DomainGovernanceWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDomainGovernanceRequest, GetDomainGovernanceResponse>() {
                             @Override
                             public GetDomainGovernanceResponse apply(
@@ -125,9 +124,9 @@ public class DomainGovernanceWaiters {
                                 return client.getDomainGovernance(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDomainGovernanceResponse>() {
+                        new java.util.function.Predicate<GetDomainGovernanceResponse>() {
                             @Override
-                            public boolean apply(GetDomainGovernanceResponse response) {
+                            public boolean test(GetDomainGovernanceResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDomainGovernance().getLifecycleState());
                             }

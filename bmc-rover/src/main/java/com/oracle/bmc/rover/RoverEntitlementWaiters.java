@@ -6,7 +6,6 @@ package com.oracle.bmc.rover;
 
 import com.oracle.bmc.rover.requests.*;
 import com.oracle.bmc.rover.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -108,8 +107,8 @@ public class RoverEntitlementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetRoverEntitlementRequest, GetRoverEntitlementResponse>() {
                             @Override
                             public GetRoverEntitlementResponse apply(
@@ -117,9 +116,9 @@ public class RoverEntitlementWaiters {
                                 return client.getRoverEntitlement(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetRoverEntitlementResponse>() {
+                        new java.util.function.Predicate<GetRoverEntitlementResponse>() {
                             @Override
-                            public boolean apply(GetRoverEntitlementResponse response) {
+                            public boolean test(GetRoverEntitlementResponse response) {
                                 return targetStatesSet.contains(
                                         response.getRoverEntitlement().getLifecycleState());
                             }

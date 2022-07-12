@@ -46,20 +46,19 @@ public class ArtifactsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListContainerImageSignaturesRequest.Builder, ListContainerImageSignaturesRequest,
                 ListContainerImageSignaturesResponse>(
-                new com.google.common.base.Supplier<ListContainerImageSignaturesRequest.Builder>() {
+                new java.util.function.Supplier<ListContainerImageSignaturesRequest.Builder>() {
                     @Override
                     public ListContainerImageSignaturesRequest.Builder get() {
                         return ListContainerImageSignaturesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListContainerImageSignaturesResponse, String>() {
+                new java.util.function.Function<ListContainerImageSignaturesResponse, String>() {
                     @Override
                     public String apply(ListContainerImageSignaturesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListContainerImageSignaturesRequest.Builder>,
                         ListContainerImageSignaturesRequest>() {
@@ -72,12 +71,12 @@ public class ArtifactsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListContainerImageSignaturesRequest,
                         ListContainerImageSignaturesResponse>() {
                     @Override
@@ -104,20 +103,19 @@ public class ArtifactsPaginators {
                 ListContainerImageSignaturesRequest.Builder, ListContainerImageSignaturesRequest,
                 ListContainerImageSignaturesResponse,
                 com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary>(
-                new com.google.common.base.Supplier<ListContainerImageSignaturesRequest.Builder>() {
+                new java.util.function.Supplier<ListContainerImageSignaturesRequest.Builder>() {
                     @Override
                     public ListContainerImageSignaturesRequest.Builder get() {
                         return ListContainerImageSignaturesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListContainerImageSignaturesResponse, String>() {
+                new java.util.function.Function<ListContainerImageSignaturesResponse, String>() {
                     @Override
                     public String apply(ListContainerImageSignaturesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListContainerImageSignaturesRequest.Builder>,
                         ListContainerImageSignaturesRequest>() {
@@ -130,12 +128,12 @@ public class ArtifactsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListContainerImageSignaturesRequest,
                         ListContainerImageSignaturesResponse>() {
                     @Override
@@ -144,7 +142,7 @@ public class ArtifactsPaginators {
                         return client.listContainerImageSignatures(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListContainerImageSignaturesResponse,
                         java.util.List<
                                 com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary>>() {
@@ -169,19 +167,19 @@ public class ArtifactsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListContainerImagesRequest.Builder, ListContainerImagesRequest,
                 ListContainerImagesResponse>(
-                new com.google.common.base.Supplier<ListContainerImagesRequest.Builder>() {
+                new java.util.function.Supplier<ListContainerImagesRequest.Builder>() {
                     @Override
                     public ListContainerImagesRequest.Builder get() {
                         return ListContainerImagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListContainerImagesResponse, String>() {
+                new java.util.function.Function<ListContainerImagesResponse, String>() {
                     @Override
                     public String apply(ListContainerImagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListContainerImagesRequest.Builder>,
                         ListContainerImagesRequest>() {
@@ -194,12 +192,12 @@ public class ArtifactsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListContainerImagesRequest, ListContainerImagesResponse>() {
                     @Override
                     public ListContainerImagesResponse apply(ListContainerImagesRequest request) {
@@ -222,19 +220,19 @@ public class ArtifactsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListContainerImagesRequest.Builder, ListContainerImagesRequest,
                 ListContainerImagesResponse, com.oracle.bmc.artifacts.model.ContainerImageSummary>(
-                new com.google.common.base.Supplier<ListContainerImagesRequest.Builder>() {
+                new java.util.function.Supplier<ListContainerImagesRequest.Builder>() {
                     @Override
                     public ListContainerImagesRequest.Builder get() {
                         return ListContainerImagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListContainerImagesResponse, String>() {
+                new java.util.function.Function<ListContainerImagesResponse, String>() {
                     @Override
                     public String apply(ListContainerImagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListContainerImagesRequest.Builder>,
                         ListContainerImagesRequest>() {
@@ -247,19 +245,19 @@ public class ArtifactsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListContainerImagesRequest, ListContainerImagesResponse>() {
                     @Override
                     public ListContainerImagesResponse apply(ListContainerImagesRequest request) {
                         return client.listContainerImages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListContainerImagesResponse,
                         java.util.List<com.oracle.bmc.artifacts.model.ContainerImageSummary>>() {
                     @Override
@@ -282,19 +280,19 @@ public class ArtifactsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListContainerRepositoriesRequest.Builder, ListContainerRepositoriesRequest,
                 ListContainerRepositoriesResponse>(
-                new com.google.common.base.Supplier<ListContainerRepositoriesRequest.Builder>() {
+                new java.util.function.Supplier<ListContainerRepositoriesRequest.Builder>() {
                     @Override
                     public ListContainerRepositoriesRequest.Builder get() {
                         return ListContainerRepositoriesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListContainerRepositoriesResponse, String>() {
+                new java.util.function.Function<ListContainerRepositoriesResponse, String>() {
                     @Override
                     public String apply(ListContainerRepositoriesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListContainerRepositoriesRequest.Builder>,
                         ListContainerRepositoriesRequest>() {
@@ -307,12 +305,12 @@ public class ArtifactsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListContainerRepositoriesRequest, ListContainerRepositoriesResponse>() {
                     @Override
                     public ListContainerRepositoriesResponse apply(
@@ -338,19 +336,19 @@ public class ArtifactsPaginators {
                 ListContainerRepositoriesRequest.Builder, ListContainerRepositoriesRequest,
                 ListContainerRepositoriesResponse,
                 com.oracle.bmc.artifacts.model.ContainerRepositorySummary>(
-                new com.google.common.base.Supplier<ListContainerRepositoriesRequest.Builder>() {
+                new java.util.function.Supplier<ListContainerRepositoriesRequest.Builder>() {
                     @Override
                     public ListContainerRepositoriesRequest.Builder get() {
                         return ListContainerRepositoriesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListContainerRepositoriesResponse, String>() {
+                new java.util.function.Function<ListContainerRepositoriesResponse, String>() {
                     @Override
                     public String apply(ListContainerRepositoriesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListContainerRepositoriesRequest.Builder>,
                         ListContainerRepositoriesRequest>() {
@@ -363,12 +361,12 @@ public class ArtifactsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListContainerRepositoriesRequest, ListContainerRepositoriesResponse>() {
                     @Override
                     public ListContainerRepositoriesResponse apply(
@@ -376,7 +374,7 @@ public class ArtifactsPaginators {
                         return client.listContainerRepositories(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListContainerRepositoriesResponse,
                         java.util.List<
                                 com.oracle.bmc.artifacts.model.ContainerRepositorySummary>>() {
@@ -400,19 +398,19 @@ public class ArtifactsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListGenericArtifactsRequest.Builder, ListGenericArtifactsRequest,
                 ListGenericArtifactsResponse>(
-                new com.google.common.base.Supplier<ListGenericArtifactsRequest.Builder>() {
+                new java.util.function.Supplier<ListGenericArtifactsRequest.Builder>() {
                     @Override
                     public ListGenericArtifactsRequest.Builder get() {
                         return ListGenericArtifactsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListGenericArtifactsResponse, String>() {
+                new java.util.function.Function<ListGenericArtifactsResponse, String>() {
                     @Override
                     public String apply(ListGenericArtifactsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListGenericArtifactsRequest.Builder>,
                         ListGenericArtifactsRequest>() {
@@ -425,12 +423,12 @@ public class ArtifactsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListGenericArtifactsRequest, ListGenericArtifactsResponse>() {
                     @Override
                     public ListGenericArtifactsResponse apply(ListGenericArtifactsRequest request) {
@@ -454,19 +452,19 @@ public class ArtifactsPaginators {
                 ListGenericArtifactsRequest.Builder, ListGenericArtifactsRequest,
                 ListGenericArtifactsResponse,
                 com.oracle.bmc.artifacts.model.GenericArtifactSummary>(
-                new com.google.common.base.Supplier<ListGenericArtifactsRequest.Builder>() {
+                new java.util.function.Supplier<ListGenericArtifactsRequest.Builder>() {
                     @Override
                     public ListGenericArtifactsRequest.Builder get() {
                         return ListGenericArtifactsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListGenericArtifactsResponse, String>() {
+                new java.util.function.Function<ListGenericArtifactsResponse, String>() {
                     @Override
                     public String apply(ListGenericArtifactsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListGenericArtifactsRequest.Builder>,
                         ListGenericArtifactsRequest>() {
@@ -479,19 +477,19 @@ public class ArtifactsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListGenericArtifactsRequest, ListGenericArtifactsResponse>() {
                     @Override
                     public ListGenericArtifactsResponse apply(ListGenericArtifactsRequest request) {
                         return client.listGenericArtifacts(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListGenericArtifactsResponse,
                         java.util.List<com.oracle.bmc.artifacts.model.GenericArtifactSummary>>() {
                     @Override
@@ -513,19 +511,19 @@ public class ArtifactsPaginators {
             final ListRepositoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRepositoriesRequest.Builder, ListRepositoriesRequest, ListRepositoriesResponse>(
-                new com.google.common.base.Supplier<ListRepositoriesRequest.Builder>() {
+                new java.util.function.Supplier<ListRepositoriesRequest.Builder>() {
                     @Override
                     public ListRepositoriesRequest.Builder get() {
                         return ListRepositoriesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRepositoriesResponse, String>() {
+                new java.util.function.Function<ListRepositoriesResponse, String>() {
                     @Override
                     public String apply(ListRepositoriesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRepositoriesRequest.Builder>,
                         ListRepositoriesRequest>() {
@@ -538,12 +536,12 @@ public class ArtifactsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRepositoriesRequest, ListRepositoriesResponse>() {
                     @Override
                     public ListRepositoriesResponse apply(ListRepositoriesRequest request) {
@@ -566,19 +564,19 @@ public class ArtifactsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListRepositoriesRequest.Builder, ListRepositoriesRequest, ListRepositoriesResponse,
                 com.oracle.bmc.artifacts.model.RepositorySummary>(
-                new com.google.common.base.Supplier<ListRepositoriesRequest.Builder>() {
+                new java.util.function.Supplier<ListRepositoriesRequest.Builder>() {
                     @Override
                     public ListRepositoriesRequest.Builder get() {
                         return ListRepositoriesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRepositoriesResponse, String>() {
+                new java.util.function.Function<ListRepositoriesResponse, String>() {
                     @Override
                     public String apply(ListRepositoriesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRepositoriesRequest.Builder>,
                         ListRepositoriesRequest>() {
@@ -591,19 +589,19 @@ public class ArtifactsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRepositoriesRequest, ListRepositoriesResponse>() {
                     @Override
                     public ListRepositoriesResponse apply(ListRepositoriesRequest request) {
                         return client.listRepositories(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRepositoriesResponse,
                         java.util.List<com.oracle.bmc.artifacts.model.RepositorySummary>>() {
                     @Override

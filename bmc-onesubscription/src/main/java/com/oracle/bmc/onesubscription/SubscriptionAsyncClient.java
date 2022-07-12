@@ -7,7 +7,6 @@ package com.oracle.bmc.onesubscription;
 import com.oracle.bmc.onesubscription.internal.http.*;
 import com.oracle.bmc.onesubscription.requests.*;
 import com.oracle.bmc.onesubscription.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Subscription service. <br/>
@@ -319,7 +318,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
          * @return the client
          */
         public SubscriptionAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -400,7 +400,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Subscription", "ListSubscriptions", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
                 transformer =
                         ListSubscriptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

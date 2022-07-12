@@ -6,7 +6,6 @@ package com.oracle.bmc.databasetools;
 
 import com.oracle.bmc.databasetools.requests.*;
 import com.oracle.bmc.databasetools.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -111,8 +110,8 @@ public class DatabaseToolsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDatabaseToolsConnectionRequest,
                                 GetDatabaseToolsConnectionResponse>() {
                             @Override
@@ -121,9 +120,9 @@ public class DatabaseToolsWaiters {
                                 return client.getDatabaseToolsConnection(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDatabaseToolsConnectionResponse>() {
+                        new java.util.function.Predicate<GetDatabaseToolsConnectionResponse>() {
                             @Override
-                            public boolean apply(GetDatabaseToolsConnectionResponse response) {
+                            public boolean test(GetDatabaseToolsConnectionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDatabaseToolsConnection().getLifecycleState());
                             }
@@ -219,8 +218,8 @@ public class DatabaseToolsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDatabaseToolsEndpointServiceRequest,
                                 GetDatabaseToolsEndpointServiceResponse>() {
                             @Override
@@ -229,10 +228,10 @@ public class DatabaseToolsWaiters {
                                 return client.getDatabaseToolsEndpointService(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
+                        new java.util.function.Predicate<
                                 GetDatabaseToolsEndpointServiceResponse>() {
                             @Override
-                            public boolean apply(GetDatabaseToolsEndpointServiceResponse response) {
+                            public boolean test(GetDatabaseToolsEndpointServiceResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDatabaseToolsEndpointService()
                                                 .getLifecycleState());
@@ -329,8 +328,8 @@ public class DatabaseToolsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDatabaseToolsPrivateEndpointRequest,
                                 GetDatabaseToolsPrivateEndpointResponse>() {
                             @Override
@@ -339,10 +338,10 @@ public class DatabaseToolsWaiters {
                                 return client.getDatabaseToolsPrivateEndpoint(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
+                        new java.util.function.Predicate<
                                 GetDatabaseToolsPrivateEndpointResponse>() {
                             @Override
-                            public boolean apply(GetDatabaseToolsPrivateEndpointResponse response) {
+                            public boolean test(GetDatabaseToolsPrivateEndpointResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDatabaseToolsPrivateEndpoint()
                                                 .getLifecycleState());
@@ -390,17 +389,17 @@ public class DatabaseToolsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

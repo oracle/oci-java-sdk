@@ -44,19 +44,19 @@ public class CommitmentPaginators {
             final ListCommitmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCommitmentsRequest.Builder, ListCommitmentsRequest, ListCommitmentsResponse>(
-                new com.google.common.base.Supplier<ListCommitmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListCommitmentsRequest.Builder>() {
                     @Override
                     public ListCommitmentsRequest.Builder get() {
                         return ListCommitmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCommitmentsResponse, String>() {
+                new java.util.function.Function<ListCommitmentsResponse, String>() {
                     @Override
                     public String apply(ListCommitmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCommitmentsRequest.Builder>,
                         ListCommitmentsRequest>() {
@@ -69,13 +69,12 @@ public class CommitmentPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListCommitmentsRequest, ListCommitmentsResponse>() {
+                new java.util.function.Function<ListCommitmentsRequest, ListCommitmentsResponse>() {
                     @Override
                     public ListCommitmentsResponse apply(ListCommitmentsRequest request) {
                         return client.listCommitments(request);
@@ -97,19 +96,19 @@ public class CommitmentPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCommitmentsRequest.Builder, ListCommitmentsRequest, ListCommitmentsResponse,
                 com.oracle.bmc.onesubscription.model.CommitmentSummary>(
-                new com.google.common.base.Supplier<ListCommitmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListCommitmentsRequest.Builder>() {
                     @Override
                     public ListCommitmentsRequest.Builder get() {
                         return ListCommitmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCommitmentsResponse, String>() {
+                new java.util.function.Function<ListCommitmentsResponse, String>() {
                     @Override
                     public String apply(ListCommitmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCommitmentsRequest.Builder>,
                         ListCommitmentsRequest>() {
@@ -122,19 +121,18 @@ public class CommitmentPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListCommitmentsRequest, ListCommitmentsResponse>() {
+                new java.util.function.Function<ListCommitmentsRequest, ListCommitmentsResponse>() {
                     @Override
                     public ListCommitmentsResponse apply(ListCommitmentsRequest request) {
                         return client.listCommitments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCommitmentsResponse,
                         java.util.List<com.oracle.bmc.onesubscription.model.CommitmentSummary>>() {
                     @Override

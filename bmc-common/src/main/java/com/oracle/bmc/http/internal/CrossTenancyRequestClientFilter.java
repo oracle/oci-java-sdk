@@ -4,12 +4,15 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.google.common.base.Joiner;
 import javax.annotation.Nonnull;
+
 import javax.annotation.Priority;
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 import static com.oracle.bmc.http.signing.internal.Constants.CROSS_TENANCY_REQUEST_HEADER_NAME;
 
 /**
@@ -30,7 +33,8 @@ public class CrossTenancyRequestClientFilter implements ClientRequestFilter {
                 throw new IllegalArgumentException("Authorized tenancyId was not valid");
             }
         }
-        this.authorizedTenancyIdsValue = Joiner.on(",").join(authorizedTenancyIds);
+        this.authorizedTenancyIdsValue =
+                Arrays.asList(authorizedTenancyIds).stream().collect(Collectors.joining(","));
     }
 
     @Override

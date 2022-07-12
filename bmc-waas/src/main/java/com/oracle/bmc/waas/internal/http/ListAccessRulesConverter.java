@@ -71,22 +71,22 @@ public class ListAccessRulesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.waas.responses.ListAccessRulesResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.waas.responses.ListAccessRulesResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.waas.responses.ListAccessRulesResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.waas.responses.ListAccessRulesResponse>() {
                             @Override
@@ -94,7 +94,7 @@ public class ListAccessRulesConverter {
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.waas.responses.ListAccessRulesResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
@@ -134,7 +134,7 @@ public class ListAccessRulesConverter {
 
                                 builder.items(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
+                                java.util.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
                                                 headers, "etag");
                                 if (etagHeader.isPresent()) {
@@ -143,10 +143,9 @@ public class ListAccessRulesConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcNextPageHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-next-page");
+                                java.util.Optional<java.util.List<String>> opcNextPageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-next-page");
                                 if (opcNextPageHeader.isPresent()) {
                                     builder.opcNextPage(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -155,10 +154,9 @@ public class ListAccessRulesConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(

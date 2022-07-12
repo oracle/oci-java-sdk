@@ -6,7 +6,6 @@ package com.oracle.bmc.managementagent;
 
 import com.oracle.bmc.managementagent.requests.*;
 import com.oracle.bmc.managementagent.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -107,8 +106,8 @@ public class ManagementAgentWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetManagementAgentRequest, GetManagementAgentResponse>() {
                             @Override
                             public GetManagementAgentResponse apply(
@@ -116,9 +115,9 @@ public class ManagementAgentWaiters {
                                 return client.getManagementAgent(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetManagementAgentResponse>() {
+                        new java.util.function.Predicate<GetManagementAgentResponse>() {
                             @Override
-                            public boolean apply(GetManagementAgentResponse response) {
+                            public boolean test(GetManagementAgentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getManagementAgent().getLifecycleState());
                             }
@@ -214,8 +213,8 @@ public class ManagementAgentWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetManagementAgentInstallKeyRequest,
                                 GetManagementAgentInstallKeyResponse>() {
                             @Override
@@ -224,10 +223,9 @@ public class ManagementAgentWaiters {
                                 return client.getManagementAgentInstallKey(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetManagementAgentInstallKeyResponse>() {
+                        new java.util.function.Predicate<GetManagementAgentInstallKeyResponse>() {
                             @Override
-                            public boolean apply(GetManagementAgentInstallKeyResponse response) {
+                            public boolean test(GetManagementAgentInstallKeyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getManagementAgentInstallKey()
                                                 .getLifecycleState());
@@ -275,17 +273,17 @@ public class ManagementAgentWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

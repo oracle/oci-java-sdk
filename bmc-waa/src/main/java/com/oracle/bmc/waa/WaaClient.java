@@ -9,7 +9,6 @@ import com.oracle.bmc.waa.requests.*;
 import com.oracle.bmc.waa.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
 public class WaaClient implements Waa {
@@ -334,9 +333,9 @@ public class WaaClient implements Waa {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Waa-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Waa-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class WaaClient implements Waa {
          * @return the client
          */
         public WaaClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class WaaClient implements Waa {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class WaaClient implements Waa {
                         "ChangeWebAppAccelerationCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeWebAppAccelerationCompartmentResponse>
                 transformer =
                         ChangeWebAppAccelerationCompartmentConverter.fromResponse(
@@ -534,7 +534,7 @@ public class WaaClient implements Waa {
                         "ChangeWebAppAccelerationPolicyCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeWebAppAccelerationPolicyCompartmentResponse>
                 transformer =
@@ -577,7 +577,7 @@ public class WaaClient implements Waa {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "CreateWebAppAcceleration", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateWebAppAccelerationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateWebAppAccelerationResponse>
                 transformer =
                         CreateWebAppAccelerationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -617,7 +617,7 @@ public class WaaClient implements Waa {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "CreateWebAppAccelerationPolicy", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateWebAppAccelerationPolicyResponse>
                 transformer =
                         CreateWebAppAccelerationPolicyConverter.fromResponse(
@@ -658,7 +658,7 @@ public class WaaClient implements Waa {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "DeleteWebAppAcceleration", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWebAppAccelerationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteWebAppAccelerationResponse>
                 transformer =
                         DeleteWebAppAccelerationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -694,7 +694,7 @@ public class WaaClient implements Waa {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "DeleteWebAppAccelerationPolicy", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteWebAppAccelerationPolicyResponse>
                 transformer =
                         DeleteWebAppAccelerationPolicyConverter.fromResponse(
@@ -731,7 +731,7 @@ public class WaaClient implements Waa {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "GetWebAppAcceleration", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWebAppAccelerationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetWebAppAccelerationResponse>
                 transformer =
                         GetWebAppAccelerationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -766,8 +766,7 @@ public class WaaClient implements Waa {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "GetWebAppAccelerationPolicy", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetWebAppAccelerationPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetWebAppAccelerationPolicyResponse>
                 transformer =
                         GetWebAppAccelerationPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -802,7 +801,7 @@ public class WaaClient implements Waa {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "ListWebAppAccelerationPolicies", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListWebAppAccelerationPoliciesResponse>
                 transformer =
                         ListWebAppAccelerationPoliciesConverter.fromResponse(
@@ -838,7 +837,7 @@ public class WaaClient implements Waa {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "ListWebAppAccelerations", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWebAppAccelerationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWebAppAccelerationsResponse>
                 transformer =
                         ListWebAppAccelerationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -873,8 +872,7 @@ public class WaaClient implements Waa {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "PurgeWebAppAccelerationCache", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, PurgeWebAppAccelerationCacheResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PurgeWebAppAccelerationCacheResponse>
                 transformer =
                         PurgeWebAppAccelerationCacheConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -914,7 +912,7 @@ public class WaaClient implements Waa {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "UpdateWebAppAcceleration", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateWebAppAccelerationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateWebAppAccelerationResponse>
                 transformer =
                         UpdateWebAppAccelerationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -953,7 +951,7 @@ public class WaaClient implements Waa {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "UpdateWebAppAccelerationPolicy", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateWebAppAccelerationPolicyResponse>
                 transformer =
                         UpdateWebAppAccelerationPolicyConverter.fromResponse(

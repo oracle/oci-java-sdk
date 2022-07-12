@@ -45,19 +45,19 @@ public class KmsVaultPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVaultReplicasRequest.Builder, ListVaultReplicasRequest,
                 ListVaultReplicasResponse>(
-                new com.google.common.base.Supplier<ListVaultReplicasRequest.Builder>() {
+                new java.util.function.Supplier<ListVaultReplicasRequest.Builder>() {
                     @Override
                     public ListVaultReplicasRequest.Builder get() {
                         return ListVaultReplicasRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVaultReplicasResponse, String>() {
+                new java.util.function.Function<ListVaultReplicasResponse, String>() {
                     @Override
                     public String apply(ListVaultReplicasResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVaultReplicasRequest.Builder>,
                         ListVaultReplicasRequest>() {
@@ -70,12 +70,12 @@ public class KmsVaultPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVaultReplicasRequest, ListVaultReplicasResponse>() {
                     @Override
                     public ListVaultReplicasResponse apply(ListVaultReplicasRequest request) {
@@ -98,19 +98,19 @@ public class KmsVaultPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVaultReplicasRequest.Builder, ListVaultReplicasRequest,
                 ListVaultReplicasResponse, com.oracle.bmc.keymanagement.model.VaultReplicaSummary>(
-                new com.google.common.base.Supplier<ListVaultReplicasRequest.Builder>() {
+                new java.util.function.Supplier<ListVaultReplicasRequest.Builder>() {
                     @Override
                     public ListVaultReplicasRequest.Builder get() {
                         return ListVaultReplicasRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVaultReplicasResponse, String>() {
+                new java.util.function.Function<ListVaultReplicasResponse, String>() {
                     @Override
                     public String apply(ListVaultReplicasResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVaultReplicasRequest.Builder>,
                         ListVaultReplicasRequest>() {
@@ -123,19 +123,19 @@ public class KmsVaultPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVaultReplicasRequest, ListVaultReplicasResponse>() {
                     @Override
                     public ListVaultReplicasResponse apply(ListVaultReplicasRequest request) {
                         return client.listVaultReplicas(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVaultReplicasResponse,
                         java.util.List<com.oracle.bmc.keymanagement.model.VaultReplicaSummary>>() {
                     @Override
@@ -157,19 +157,19 @@ public class KmsVaultPaginators {
             final ListVaultsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVaultsRequest.Builder, ListVaultsRequest, ListVaultsResponse>(
-                new com.google.common.base.Supplier<ListVaultsRequest.Builder>() {
+                new java.util.function.Supplier<ListVaultsRequest.Builder>() {
                     @Override
                     public ListVaultsRequest.Builder get() {
                         return ListVaultsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVaultsResponse, String>() {
+                new java.util.function.Function<ListVaultsResponse, String>() {
                     @Override
                     public String apply(ListVaultsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVaultsRequest.Builder>,
                         ListVaultsRequest>() {
@@ -182,12 +182,12 @@ public class KmsVaultPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListVaultsRequest, ListVaultsResponse>() {
+                new java.util.function.Function<ListVaultsRequest, ListVaultsResponse>() {
                     @Override
                     public ListVaultsResponse apply(ListVaultsRequest request) {
                         return client.listVaults(request);
@@ -209,19 +209,19 @@ public class KmsVaultPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVaultsRequest.Builder, ListVaultsRequest, ListVaultsResponse,
                 com.oracle.bmc.keymanagement.model.VaultSummary>(
-                new com.google.common.base.Supplier<ListVaultsRequest.Builder>() {
+                new java.util.function.Supplier<ListVaultsRequest.Builder>() {
                     @Override
                     public ListVaultsRequest.Builder get() {
                         return ListVaultsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVaultsResponse, String>() {
+                new java.util.function.Function<ListVaultsResponse, String>() {
                     @Override
                     public String apply(ListVaultsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVaultsRequest.Builder>,
                         ListVaultsRequest>() {
@@ -234,18 +234,18 @@ public class KmsVaultPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListVaultsRequest, ListVaultsResponse>() {
+                new java.util.function.Function<ListVaultsRequest, ListVaultsResponse>() {
                     @Override
                     public ListVaultsResponse apply(ListVaultsRequest request) {
                         return client.listVaults(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVaultsResponse,
                         java.util.List<com.oracle.bmc.keymanagement.model.VaultSummary>>() {
                     @Override

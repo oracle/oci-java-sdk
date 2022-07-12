@@ -4,8 +4,6 @@
  */
 package com.oracle.bmc.retrier;
 
-import com.google.common.base.Optional;
-import com.google.common.base.Suppliers;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.waiter.GenericWaiter;
 import javax.annotation.Nonnull;
@@ -13,6 +11,9 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.Optional;
 
 /**
  * A generic retrier that can be used to implement custom retry behavior for specific
@@ -61,32 +62,33 @@ public class BmcGenericRetrier {
                 RetryConfiguration.DEFAULT_MAX_WAIT_TIME);
         final Optional<RESPONSE> response =
                 waiter.execute(
-                        Suppliers.ofInstance(requestToUse),
-                        (request) -> {
-                            if (lastKnownException.get() != null) {
-                                // we know there was a previous exception, so this must be a retry
-                                LOG.debug(
-                                        "Http Status Code: {}, Error Code: {}, Retrying: {}",
-                                        lastKnownException.get().getStatusCode(),
-                                        lastKnownException.get().getServiceCode(),
-                                        lastKnownException.get().getMessage());
-                            }
-                            try {
-                                return doFunctionCall(request, functionCall);
-                            } catch (BmcException e) {
-                                if (!retryCondition.shouldBeRetried(e)) {
-                                    LOG.debug(
-                                            "Http Status Code: {}, Error Code: {}, Not retrying, not retriable: {}",
-                                            e.getStatusCode(),
-                                            e.getServiceCode(),
-                                            e.getMessage());
-                                    throw e;
-                                }
-                                lastKnownException.set(e);
-                            }
-                            return null;
-                        },
-                        Objects::nonNull);
+                        (Supplier<REQUEST>) (() -> requestToUse),
+                        (Function<REQUEST, RESPONSE>)
+                                ((request) -> {
+                                    if (lastKnownException.get() != null) {
+                                        // we know there was a previous exception, so this must be a retry
+                                        LOG.debug(
+                                                "Http Status Code: {}, Error Code: {}, Retrying: {}",
+                                                lastKnownException.get().getStatusCode(),
+                                                lastKnownException.get().getServiceCode(),
+                                                lastKnownException.get().getMessage());
+                                    }
+                                    try {
+                                        return doFunctionCall(request, functionCall);
+                                    } catch (BmcException e) {
+                                        if (!retryCondition.shouldBeRetried(e)) {
+                                            LOG.debug(
+                                                    "Http Status Code: {}, Error Code: {}, Not retrying, not retriable: {}",
+                                                    e.getStatusCode(),
+                                                    e.getServiceCode(),
+                                                    e.getMessage());
+                                            throw e;
+                                        }
+                                        lastKnownException.set(e);
+                                    }
+                                    return null;
+                                }),
+                        (Predicate<RESPONSE>) (Objects::nonNull));
 
         if (response.isPresent()) {
             return response.get();

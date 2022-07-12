@@ -7,7 +7,6 @@ package com.oracle.bmc.containerengine;
 import com.oracle.bmc.containerengine.internal.http.*;
 import com.oracle.bmc.containerengine.requests.*;
 import com.oracle.bmc.containerengine.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ContainerEngine service. <br/>
@@ -321,7 +320,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
          * @return the client
          */
         public ContainerEngineAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -405,7 +405,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "ClusterMigrateToNativeVcn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ClusterMigrateToNativeVcn");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ClusterMigrateToNativeVcnResponse>
                 transformer =
                         ClusterMigrateToNativeVcnConverter.fromResponse(
@@ -459,7 +459,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "CreateCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateCluster");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateClusterResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateClusterResponse>
                 transformer =
                         CreateClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateClusterRequest, CreateClusterResponse>
@@ -519,7 +519,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "CreateKubeconfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateKubeconfig");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateKubeconfigResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateKubeconfigResponse>
                 transformer =
                         CreateKubeconfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -571,7 +571,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "CreateNodePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/CreateNodePool");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateNodePoolResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateNodePoolResponse>
                 transformer =
                         CreateNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateNodePoolRequest, CreateNodePoolResponse>
@@ -620,7 +620,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "DeleteCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/DeleteCluster");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteClusterResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteClusterResponse>
                 transformer =
                         DeleteClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteClusterRequest, DeleteClusterResponse>
@@ -663,7 +663,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "DeleteNode",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNode");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNodeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteNodeResponse>
                 transformer =
                         DeleteNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteNodeRequest, DeleteNodeResponse> handlerToUse =
@@ -708,7 +708,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "DeleteNodePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNodePool");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNodePoolResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteNodePoolResponse>
                 transformer =
                         DeleteNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteNodePoolRequest, DeleteNodePoolResponse>
@@ -753,7 +753,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "DeleteWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/DeleteWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
                 transformer =
                         DeleteWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -797,7 +797,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "GetCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetCluster");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetClusterResponse>
                 transformer =
                         GetClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetClusterRequest, GetClusterResponse> handlerToUse =
@@ -844,7 +844,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "GetClusterMigrateToNativeVcnStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterMigrateToNativeVcnStatus/GetClusterMigrateToNativeVcnStatus");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetClusterMigrateToNativeVcnStatusResponse>
                 transformer =
                         GetClusterMigrateToNativeVcnStatusConverter.fromResponse(
@@ -895,7 +895,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "GetClusterOptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterOptions/GetClusterOptions");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterOptionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetClusterOptionsResponse>
                 transformer =
                         GetClusterOptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -940,7 +940,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "GetNodePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/GetNodePool");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetNodePoolResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetNodePoolResponse>
                 transformer =
                         GetNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetNodePoolRequest, GetNodePoolResponse>
@@ -985,7 +985,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "GetNodePoolOptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolOptions/GetNodePoolOptions");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetNodePoolOptionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetNodePoolOptionsResponse>
                 transformer =
                         GetNodePoolOptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1031,7 +1031,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -1075,7 +1075,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "ListClusters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterSummary/ListClusters");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListClustersResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListClustersResponse>
                 transformer =
                         ListClustersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListClustersRequest, ListClustersResponse>
@@ -1119,7 +1119,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "ListNodePools",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolSummary/ListNodePools");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListNodePoolsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListNodePoolsResponse>
                 transformer =
                         ListNodePoolsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListNodePoolsRequest, ListNodePoolsResponse>
@@ -1164,8 +1164,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1212,8 +1211,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestLogEntry/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1260,7 +1258,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestSummary/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1305,7 +1303,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "UpdateCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateCluster");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateClusterResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateClusterResponse>
                 transformer =
                         UpdateClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateClusterRequest, UpdateClusterResponse>
@@ -1357,7 +1355,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "UpdateClusterEndpointConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateClusterEndpointConfig");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateClusterEndpointConfigResponse>
                 transformer =
                         UpdateClusterEndpointConfigConverter.fromResponse(
@@ -1411,7 +1409,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                         "UpdateNodePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/UpdateNodePool");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNodePoolResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateNodePoolResponse>
                 transformer =
                         UpdateNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateNodePoolRequest, UpdateNodePoolResponse>

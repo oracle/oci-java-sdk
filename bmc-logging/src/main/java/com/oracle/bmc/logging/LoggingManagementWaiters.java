@@ -6,7 +6,6 @@ package com.oracle.bmc.logging;
 
 import com.oracle.bmc.logging.requests.*;
 import com.oracle.bmc.logging.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -101,16 +100,16 @@ public class LoggingManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetLogRequest, GetLogResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetLogRequest, GetLogResponse>() {
                             @Override
                             public GetLogResponse apply(GetLogRequest request) {
                                 return client.getLog(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetLogResponse>() {
+                        new java.util.function.Predicate<GetLogResponse>() {
                             @Override
-                            public boolean apply(GetLogResponse response) {
+                            public boolean test(GetLogResponse response) {
                                 return targetStatesSet.contains(
                                         response.getLog().getLifecycleState());
                             }
@@ -197,17 +196,16 @@ public class LoggingManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetLogGroupRequest, GetLogGroupResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetLogGroupRequest, GetLogGroupResponse>() {
                             @Override
                             public GetLogGroupResponse apply(GetLogGroupRequest request) {
                                 return client.getLogGroup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetLogGroupResponse>() {
+                        new java.util.function.Predicate<GetLogGroupResponse>() {
                             @Override
-                            public boolean apply(GetLogGroupResponse response) {
+                            public boolean test(GetLogGroupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getLogGroup().getLifecycleState());
                             }
@@ -299,8 +297,8 @@ public class LoggingManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetLogSavedSearchRequest, GetLogSavedSearchResponse>() {
                             @Override
                             public GetLogSavedSearchResponse apply(
@@ -308,9 +306,9 @@ public class LoggingManagementWaiters {
                                 return client.getLogSavedSearch(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetLogSavedSearchResponse>() {
+                        new java.util.function.Predicate<GetLogSavedSearchResponse>() {
                             @Override
-                            public boolean apply(GetLogSavedSearchResponse response) {
+                            public boolean test(GetLogSavedSearchResponse response) {
                                 return targetStatesSet.contains(
                                         response.getLogSavedSearch().getLifecycleState());
                             }
@@ -405,8 +403,8 @@ public class LoggingManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetUnifiedAgentConfigurationRequest,
                                 GetUnifiedAgentConfigurationResponse>() {
                             @Override
@@ -415,10 +413,9 @@ public class LoggingManagementWaiters {
                                 return client.getUnifiedAgentConfiguration(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetUnifiedAgentConfigurationResponse>() {
+                        new java.util.function.Predicate<GetUnifiedAgentConfigurationResponse>() {
                             @Override
-                            public boolean apply(GetUnifiedAgentConfigurationResponse response) {
+                            public boolean test(GetUnifiedAgentConfigurationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getUnifiedAgentConfiguration()
                                                 .getLifecycleState());
@@ -465,17 +462,17 @@ public class LoggingManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

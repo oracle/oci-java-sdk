@@ -9,7 +9,6 @@ import com.oracle.bmc.genericartifactscontent.requests.*;
 import com.oracle.bmc.genericartifactscontent.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GenericArtifactsContentClient implements GenericArtifactsContent {
@@ -330,7 +329,7 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
          * @return the client
          */
         public GenericArtifactsContentClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -366,7 +365,8 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -422,8 +422,7 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
                         "GetGenericArtifactContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContent");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetGenericArtifactContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetGenericArtifactContentResponse>
                 transformer =
                         GetGenericArtifactContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -471,7 +470,7 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
                         "GetGenericArtifactContentByPath",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContentByPath");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetGenericArtifactContentByPathResponse>
                 transformer =
                         GetGenericArtifactContentByPathConverter.fromResponse(
@@ -524,7 +523,7 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
                             "PutGenericArtifactContentByPath",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/PutGenericArtifactContentByPath");
-            com.google.common.base.Function<
+            java.util.function.Function<
                             javax.ws.rs.core.Response, PutGenericArtifactContentByPathResponse>
                     transformer =
                             PutGenericArtifactContentByPathConverter.fromResponse(

@@ -9,7 +9,6 @@ import com.oracle.bmc.monitoring.requests.*;
 import com.oracle.bmc.monitoring.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public class MonitoringClient implements Monitoring {
@@ -334,9 +333,9 @@ public class MonitoringClient implements Monitoring {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Monitoring-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Monitoring-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class MonitoringClient implements Monitoring {
          * @return the client
          */
         public MonitoringClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class MonitoringClient implements Monitoring {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class MonitoringClient implements Monitoring {
                         "ChangeAlarmCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/ChangeAlarmCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeAlarmCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeAlarmCompartmentResponse>
                 transformer =
                         ChangeAlarmCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -530,9 +530,8 @@ public class MonitoringClient implements Monitoring {
                         "CreateAlarm",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/CreateAlarm");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAlarmResponse>
-                transformer =
-                        CreateAlarmConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAlarmResponse> transformer =
+                CreateAlarmConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -570,9 +569,8 @@ public class MonitoringClient implements Monitoring {
                         "DeleteAlarm",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/DeleteAlarm");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAlarmResponse>
-                transformer =
-                        DeleteAlarmConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAlarmResponse> transformer =
+                DeleteAlarmConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -606,7 +604,7 @@ public class MonitoringClient implements Monitoring {
                         "GetAlarm",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/GetAlarm");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAlarmResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetAlarmResponse> transformer =
                 GetAlarmConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -641,7 +639,7 @@ public class MonitoringClient implements Monitoring {
                         "GetAlarmHistory",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmHistoryCollection/GetAlarmHistory");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAlarmHistoryResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAlarmHistoryResponse>
                 transformer =
                         GetAlarmHistoryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -677,7 +675,7 @@ public class MonitoringClient implements Monitoring {
                         "ListAlarms",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSummary/ListAlarms");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAlarmsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListAlarmsResponse> transformer =
                 ListAlarmsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -712,7 +710,7 @@ public class MonitoringClient implements Monitoring {
                         "ListAlarmsStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmStatusSummary/ListAlarmsStatus");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAlarmsStatusResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAlarmsStatusResponse>
                 transformer =
                         ListAlarmsStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -749,9 +747,8 @@ public class MonitoringClient implements Monitoring {
                         "ListMetrics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Metric/ListMetrics");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMetricsResponse>
-                transformer =
-                        ListMetricsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListMetricsResponse> transformer =
+                ListMetricsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -789,9 +786,8 @@ public class MonitoringClient implements Monitoring {
                         "PostMetricData",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData/PostMetricData");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PostMetricDataResponse>
-                transformer =
-                        PostMetricDataConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, PostMetricDataResponse> transformer =
+                PostMetricDataConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -830,7 +826,7 @@ public class MonitoringClient implements Monitoring {
                         "RemoveAlarmSuppression",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Suppression/RemoveAlarmSuppression");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveAlarmSuppressionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveAlarmSuppressionResponse>
                 transformer =
                         RemoveAlarmSuppressionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -868,7 +864,7 @@ public class MonitoringClient implements Monitoring {
                         "SummarizeMetricsData",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData/SummarizeMetricsData");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeMetricsDataResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeMetricsDataResponse>
                 transformer =
                         SummarizeMetricsDataConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -909,9 +905,8 @@ public class MonitoringClient implements Monitoring {
                         "UpdateAlarm",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/UpdateAlarm");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAlarmResponse>
-                transformer =
-                        UpdateAlarmConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAlarmResponse> transformer =
+                UpdateAlarmConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

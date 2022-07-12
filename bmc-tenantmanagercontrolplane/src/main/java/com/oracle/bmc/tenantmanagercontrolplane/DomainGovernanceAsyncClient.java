@@ -7,7 +7,6 @@ package com.oracle.bmc.tenantmanagercontrolplane;
 import com.oracle.bmc.tenantmanagercontrolplane.internal.http.*;
 import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for DomainGovernance service. <br/>
@@ -321,7 +320,7 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
          * @return the client
          */
         public DomainGovernanceAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,8 +406,7 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                         "CreateDomainGovernance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/CreateDomainGovernance");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateDomainGovernanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDomainGovernanceResponse>
                 transformer =
                         CreateDomainGovernanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -459,8 +458,7 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                         "DeleteDomainGovernance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/DeleteDomainGovernance");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteDomainGovernanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDomainGovernanceResponse>
                 transformer =
                         DeleteDomainGovernanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -507,8 +505,7 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                         "GetDomainGovernance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/GetDomainGovernance");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDomainGovernanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDomainGovernanceResponse>
                 transformer =
                         GetDomainGovernanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -555,8 +552,7 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                         "ListDomainGovernances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/ListDomainGovernances");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDomainGovernancesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDomainGovernancesResponse>
                 transformer =
                         ListDomainGovernancesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -603,8 +599,7 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                         "UpdateDomainGovernance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/UpdateDomainGovernance");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateDomainGovernanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDomainGovernanceResponse>
                 transformer =
                         UpdateDomainGovernanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

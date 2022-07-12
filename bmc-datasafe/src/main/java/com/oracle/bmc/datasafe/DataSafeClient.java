@@ -9,7 +9,6 @@ import com.oracle.bmc.datasafe.requests.*;
 import com.oracle.bmc.datasafe.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class DataSafeClient implements DataSafe {
@@ -334,9 +333,9 @@ public class DataSafeClient implements DataSafe {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DataSafe-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DataSafe-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class DataSafeClient implements DataSafe {
          * @return the client
          */
         public DataSafeClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class DataSafeClient implements DataSafe {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class DataSafeClient implements DataSafe {
                         "ActivateTargetDatabase",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ActivateTargetDatabase");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ActivateTargetDatabaseResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ActivateTargetDatabaseResponse>
                 transformer =
                         ActivateTargetDatabaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -530,7 +530,7 @@ public class DataSafeClient implements DataSafe {
                         "AddMaskingColumnsFromSdm",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/AddMaskingColumnsFromSdm");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddMaskingColumnsFromSdmResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddMaskingColumnsFromSdmResponse>
                 transformer =
                         AddMaskingColumnsFromSdmConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -569,7 +569,7 @@ public class DataSafeClient implements DataSafe {
                         "ApplyDiscoveryJobResults",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ApplyDiscoveryJobResults");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ApplyDiscoveryJobResultsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ApplyDiscoveryJobResultsResponse>
                 transformer =
                         ApplyDiscoveryJobResultsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -612,7 +612,7 @@ public class DataSafeClient implements DataSafe {
                         "CalculateAuditVolumeAvailable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/CalculateAuditVolumeAvailable");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CalculateAuditVolumeAvailableResponse>
                 transformer =
                         CalculateAuditVolumeAvailableConverter.fromResponse(
@@ -657,7 +657,7 @@ public class DataSafeClient implements DataSafe {
                         "CalculateAuditVolumeCollected",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/CalculateAuditVolumeCollected");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CalculateAuditVolumeCollectedResponse>
                 transformer =
                         CalculateAuditVolumeCollectedConverter.fromResponse(
@@ -701,7 +701,7 @@ public class DataSafeClient implements DataSafe {
                         "CancelWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequest/CancelWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -741,7 +741,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeAlertCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/ChangeAlertCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeAlertCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeAlertCompartmentResponse>
                 transformer =
                         ChangeAlertCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -785,7 +785,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeAuditArchiveRetrievalCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/ChangeAuditArchiveRetrievalCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAuditArchiveRetrievalCompartmentResponse>
                 transformer =
                         ChangeAuditArchiveRetrievalCompartmentConverter.fromResponse(
@@ -830,8 +830,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeAuditPolicyCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/ChangeAuditPolicyCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeAuditPolicyCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeAuditPolicyCompartmentResponse>
                 transformer =
                         ChangeAuditPolicyCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -875,7 +874,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeAuditProfileCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ChangeAuditProfileCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAuditProfileCompartmentResponse>
                 transformer =
                         ChangeAuditProfileCompartmentConverter.fromResponse(
@@ -921,7 +920,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeDataSafePrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/ChangeDataSafePrivateEndpointCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDataSafePrivateEndpointCompartmentResponse>
                 transformer =
                         ChangeDataSafePrivateEndpointCompartmentConverter.fromResponse(
@@ -966,7 +965,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeDiscoveryJobCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/ChangeDiscoveryJobCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDiscoveryJobCompartmentResponse>
                 transformer =
                         ChangeDiscoveryJobCompartmentConverter.fromResponse(
@@ -1012,7 +1011,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeLibraryMaskingFormatCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/ChangeLibraryMaskingFormatCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeLibraryMaskingFormatCompartmentResponse>
                 transformer =
                         ChangeLibraryMaskingFormatCompartmentConverter.fromResponse(
@@ -1057,7 +1056,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeMaskingPolicyCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ChangeMaskingPolicyCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeMaskingPolicyCompartmentResponse>
                 transformer =
                         ChangeMaskingPolicyCompartmentConverter.fromResponse(
@@ -1102,7 +1101,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeOnPremConnectorCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/ChangeOnPremConnectorCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeOnPremConnectorCompartmentResponse>
                 transformer =
                         ChangeOnPremConnectorCompartmentConverter.fromResponse(
@@ -1147,7 +1146,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeReportCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Report/ChangeReportCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeReportCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeReportCompartmentResponse>
                 transformer =
                         ChangeReportCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1190,7 +1189,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeReportDefinitionCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/ChangeReportDefinitionCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeReportDefinitionCompartmentResponse>
                 transformer =
                         ChangeReportDefinitionCompartmentConverter.fromResponse(
@@ -1234,7 +1233,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeRetention",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ChangeRetention");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeRetentionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeRetentionResponse>
                 transformer =
                         ChangeRetentionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1278,7 +1277,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeSecurityAssessmentCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ChangeSecurityAssessmentCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeSecurityAssessmentCompartmentResponse>
                 transformer =
                         ChangeSecurityAssessmentCompartmentConverter.fromResponse(
@@ -1324,7 +1323,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeSensitiveDataModelCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ChangeSensitiveDataModelCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeSensitiveDataModelCompartmentResponse>
                 transformer =
                         ChangeSensitiveDataModelCompartmentConverter.fromResponse(
@@ -1369,7 +1368,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeSensitiveTypeCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/ChangeSensitiveTypeCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeSensitiveTypeCompartmentResponse>
                 transformer =
                         ChangeSensitiveTypeCompartmentConverter.fromResponse(
@@ -1416,7 +1415,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeTargetAlertPolicyAssociationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/ChangeTargetAlertPolicyAssociationCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeTargetAlertPolicyAssociationCompartmentResponse>
                 transformer =
@@ -1462,7 +1461,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeTargetDatabaseCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ChangeTargetDatabaseCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeTargetDatabaseCompartmentResponse>
                 transformer =
                         ChangeTargetDatabaseCompartmentConverter.fromResponse(
@@ -1507,7 +1506,7 @@ public class DataSafeClient implements DataSafe {
                         "ChangeUserAssessmentCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ChangeUserAssessmentCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeUserAssessmentCompartmentResponse>
                 transformer =
                         ChangeUserAssessmentCompartmentConverter.fromResponse(
@@ -1552,8 +1551,7 @@ public class DataSafeClient implements DataSafe {
                         "CompareSecurityAssessment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/CompareSecurityAssessment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CompareSecurityAssessmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CompareSecurityAssessmentResponse>
                 transformer =
                         CompareSecurityAssessmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1597,7 +1595,7 @@ public class DataSafeClient implements DataSafe {
                         "CompareUserAssessment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/CompareUserAssessment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CompareUserAssessmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CompareUserAssessmentResponse>
                 transformer =
                         CompareUserAssessmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1640,8 +1638,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateAuditArchiveRetrieval",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAuditArchiveRetrievalResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAuditArchiveRetrievalResponse>
                 transformer =
                         CreateAuditArchiveRetrievalConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1685,7 +1682,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateDataSafePrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/CreateDataSafePrivateEndpoint");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateDataSafePrivateEndpointResponse>
                 transformer =
                         CreateDataSafePrivateEndpointConverter.fromResponse(
@@ -1726,7 +1723,7 @@ public class DataSafeClient implements DataSafe {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DataSafe", "CreateDiscoveryJob", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDiscoveryJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDiscoveryJobResponse>
                 transformer =
                         CreateDiscoveryJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1769,8 +1766,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateLibraryMaskingFormat",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/CreateLibraryMaskingFormat");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateLibraryMaskingFormatResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLibraryMaskingFormatResponse>
                 transformer =
                         CreateLibraryMaskingFormatConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1813,7 +1809,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateMaskingColumn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/CreateMaskingColumn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMaskingColumnResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateMaskingColumnResponse>
                 transformer =
                         CreateMaskingColumnConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1855,7 +1851,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateMaskingPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/CreateMaskingPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMaskingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateMaskingPolicyResponse>
                 transformer =
                         CreateMaskingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1898,7 +1894,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateOnPremConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/CreateOnPremConnector");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateOnPremConnectorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOnPremConnectorResponse>
                 transformer =
                         CreateOnPremConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1941,7 +1937,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateReportDefinition",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/CreateReportDefinition");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateReportDefinitionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateReportDefinitionResponse>
                 transformer =
                         CreateReportDefinitionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1984,7 +1980,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateSecurityAssessment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/CreateSecurityAssessment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecurityAssessmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSecurityAssessmentResponse>
                 transformer =
                         CreateSecurityAssessmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2027,7 +2023,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateSensitiveColumn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/CreateSensitiveColumn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSensitiveColumnResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSensitiveColumnResponse>
                 transformer =
                         CreateSensitiveColumnConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2070,7 +2066,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateSensitiveDataModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/CreateSensitiveDataModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSensitiveDataModelResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSensitiveDataModelResponse>
                 transformer =
                         CreateSensitiveDataModelConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2109,7 +2105,7 @@ public class DataSafeClient implements DataSafe {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DataSafe", "CreateSensitiveType", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSensitiveTypeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSensitiveTypeResponse>
                 transformer =
                         CreateSensitiveTypeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2152,7 +2148,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateTargetAlertPolicyAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/CreateTargetAlertPolicyAssociation");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateTargetAlertPolicyAssociationResponse>
                 transformer =
                         CreateTargetAlertPolicyAssociationConverter.fromResponse(
@@ -2196,7 +2192,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateTargetDatabase",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/CreateTargetDatabase");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTargetDatabaseResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTargetDatabaseResponse>
                 transformer =
                         CreateTargetDatabaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2238,7 +2234,7 @@ public class DataSafeClient implements DataSafe {
                         "CreateUserAssessment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/CreateUserAssessment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserAssessmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateUserAssessmentResponse>
                 transformer =
                         CreateUserAssessmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2281,7 +2277,7 @@ public class DataSafeClient implements DataSafe {
                         "DeactivateTargetDatabase",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/DeactivateTargetDatabase");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeactivateTargetDatabaseResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeactivateTargetDatabaseResponse>
                 transformer =
                         DeactivateTargetDatabaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2320,8 +2316,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteAuditArchiveRetrieval",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/DeleteAuditArchiveRetrieval");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteAuditArchiveRetrievalResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAuditArchiveRetrievalResponse>
                 transformer =
                         DeleteAuditArchiveRetrievalConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2359,7 +2354,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteAuditTrail",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/DeleteAuditTrail");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAuditTrailResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAuditTrailResponse>
                 transformer =
                         DeleteAuditTrailConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2398,7 +2393,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteDataSafePrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/DeleteDataSafePrivateEndpoint");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDataSafePrivateEndpointResponse>
                 transformer =
                         DeleteDataSafePrivateEndpointConverter.fromResponse(
@@ -2437,7 +2432,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteDiscoveryJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/DeleteDiscoveryJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDiscoveryJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDiscoveryJobResponse>
                 transformer =
                         DeleteDiscoveryJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2476,7 +2471,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteDiscoveryJobResult",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJobResult/DeleteDiscoveryJobResult");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDiscoveryJobResultResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDiscoveryJobResultResponse>
                 transformer =
                         DeleteDiscoveryJobResultConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2515,8 +2510,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteLibraryMaskingFormat",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/DeleteLibraryMaskingFormat");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteLibraryMaskingFormatResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLibraryMaskingFormatResponse>
                 transformer =
                         DeleteLibraryMaskingFormatConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2554,7 +2548,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteMaskingColumn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/DeleteMaskingColumn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMaskingColumnResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteMaskingColumnResponse>
                 transformer =
                         DeleteMaskingColumnConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2592,7 +2586,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteMaskingPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/DeleteMaskingPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMaskingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteMaskingPolicyResponse>
                 transformer =
                         DeleteMaskingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2631,7 +2625,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteOnPremConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/DeleteOnPremConnector");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteOnPremConnectorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOnPremConnectorResponse>
                 transformer =
                         DeleteOnPremConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2670,7 +2664,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteReportDefinition",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/DeleteReportDefinition");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteReportDefinitionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteReportDefinitionResponse>
                 transformer =
                         DeleteReportDefinitionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2709,7 +2703,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteSecurityAssessment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/DeleteSecurityAssessment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSecurityAssessmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSecurityAssessmentResponse>
                 transformer =
                         DeleteSecurityAssessmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2748,7 +2742,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteSensitiveColumn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/DeleteSensitiveColumn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSensitiveColumnResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSensitiveColumnResponse>
                 transformer =
                         DeleteSensitiveColumnConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2787,7 +2781,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteSensitiveDataModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/DeleteSensitiveDataModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSensitiveDataModelResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSensitiveDataModelResponse>
                 transformer =
                         DeleteSensitiveDataModelConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2825,7 +2819,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteSensitiveType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/DeleteSensitiveType");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSensitiveTypeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSensitiveTypeResponse>
                 transformer =
                         DeleteSensitiveTypeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2864,7 +2858,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteTargetAlertPolicyAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/DeleteTargetAlertPolicyAssociation");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteTargetAlertPolicyAssociationResponse>
                 transformer =
                         DeleteTargetAlertPolicyAssociationConverter.fromResponse(
@@ -2903,7 +2897,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteTargetDatabase",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/DeleteTargetDatabase");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTargetDatabaseResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTargetDatabaseResponse>
                 transformer =
                         DeleteTargetDatabaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2941,7 +2935,7 @@ public class DataSafeClient implements DataSafe {
                         "DeleteUserAssessment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/DeleteUserAssessment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUserAssessmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteUserAssessmentResponse>
                 transformer =
                         DeleteUserAssessmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2980,7 +2974,7 @@ public class DataSafeClient implements DataSafe {
                         "DiscoverAuditTrails",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/DiscoverAuditTrails");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DiscoverAuditTrailsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DiscoverAuditTrailsResponse>
                 transformer =
                         DiscoverAuditTrailsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3029,7 +3023,7 @@ public class DataSafeClient implements DataSafe {
                         "DownloadDiscoveryReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/DownloadDiscoveryReport");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DownloadDiscoveryReportResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DownloadDiscoveryReportResponse>
                 transformer =
                         DownloadDiscoveryReportConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3080,7 +3074,7 @@ public class DataSafeClient implements DataSafe {
                         "DownloadMaskingLog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/DownloadMaskingLog");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DownloadMaskingLogResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DownloadMaskingLogResponse>
                 transformer =
                         DownloadMaskingLogConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3132,7 +3126,7 @@ public class DataSafeClient implements DataSafe {
                         "DownloadMaskingPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/DownloadMaskingPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DownloadMaskingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DownloadMaskingPolicyResponse>
                 transformer =
                         DownloadMaskingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3184,7 +3178,7 @@ public class DataSafeClient implements DataSafe {
                         "DownloadMaskingReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/DownloadMaskingReport");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DownloadMaskingReportResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DownloadMaskingReportResponse>
                 transformer =
                         DownloadMaskingReportConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3237,7 +3231,7 @@ public class DataSafeClient implements DataSafe {
                         "DownloadPrivilegeScript",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/DownloadPrivilegeScript");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DownloadPrivilegeScriptResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DownloadPrivilegeScriptResponse>
                 transformer =
                         DownloadPrivilegeScriptConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3287,7 +3281,7 @@ public class DataSafeClient implements DataSafe {
                         "DownloadSecurityAssessmentReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/DownloadSecurityAssessmentReport");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DownloadSecurityAssessmentReportResponse>
                 transformer =
                         DownloadSecurityAssessmentReportConverter.fromResponse(
@@ -3341,8 +3335,7 @@ public class DataSafeClient implements DataSafe {
                         "DownloadSensitiveDataModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/DownloadSensitiveDataModel");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DownloadSensitiveDataModelResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DownloadSensitiveDataModelResponse>
                 transformer =
                         DownloadSensitiveDataModelConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3396,8 +3389,7 @@ public class DataSafeClient implements DataSafe {
                         "DownloadUserAssessmentReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/DownloadUserAssessmentReport");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DownloadUserAssessmentReportResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DownloadUserAssessmentReportResponse>
                 transformer =
                         DownloadUserAssessmentReportConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3440,8 +3432,7 @@ public class DataSafeClient implements DataSafe {
                         "EnableDataSafeConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafeConfiguration/EnableDataSafeConfiguration");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, EnableDataSafeConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, EnableDataSafeConfigurationResponse>
                 transformer =
                         EnableDataSafeConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3484,7 +3475,7 @@ public class DataSafeClient implements DataSafe {
                         "GenerateDiscoveryReportForDownload",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/GenerateDiscoveryReportForDownload");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateDiscoveryReportForDownloadResponse>
                 transformer =
                         GenerateDiscoveryReportForDownloadConverter.fromResponse(
@@ -3528,7 +3519,7 @@ public class DataSafeClient implements DataSafe {
                         "GenerateMaskingPolicyForDownload",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/GenerateMaskingPolicyForDownload");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateMaskingPolicyForDownloadResponse>
                 transformer =
                         GenerateMaskingPolicyForDownloadConverter.fromResponse(
@@ -3572,7 +3563,7 @@ public class DataSafeClient implements DataSafe {
                         "GenerateMaskingReportForDownload",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/GenerateMaskingReportForDownload");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateMaskingReportForDownloadResponse>
                 transformer =
                         GenerateMaskingReportForDownloadConverter.fromResponse(
@@ -3628,7 +3619,7 @@ public class DataSafeClient implements DataSafe {
                         "GenerateOnPremConnectorConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/GenerateOnPremConnectorConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateOnPremConnectorConfigurationResponse>
                 transformer =
                         GenerateOnPremConnectorConfigurationConverter.fromResponse(
@@ -3672,9 +3663,8 @@ public class DataSafeClient implements DataSafe {
                         "GenerateReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/GenerateReport");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GenerateReportResponse>
-                transformer =
-                        GenerateReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GenerateReportResponse> transformer =
+                GenerateReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3714,7 +3704,7 @@ public class DataSafeClient implements DataSafe {
                         "GenerateSecurityAssessmentReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/GenerateSecurityAssessmentReport");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateSecurityAssessmentReportResponse>
                 transformer =
                         GenerateSecurityAssessmentReportConverter.fromResponse(
@@ -3759,7 +3749,7 @@ public class DataSafeClient implements DataSafe {
                         "GenerateSensitiveDataModelForDownload",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/GenerateSensitiveDataModelForDownload");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateSensitiveDataModelForDownloadResponse>
                 transformer =
                         GenerateSensitiveDataModelForDownloadConverter.fromResponse(
@@ -3804,8 +3794,7 @@ public class DataSafeClient implements DataSafe {
                         "GenerateUserAssessmentReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/GenerateUserAssessmentReport");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GenerateUserAssessmentReportResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GenerateUserAssessmentReportResponse>
                 transformer =
                         GenerateUserAssessmentReportConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3846,7 +3835,7 @@ public class DataSafeClient implements DataSafe {
                         "GetAlert",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/GetAlert");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAlertResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetAlertResponse> transformer =
                 GetAlertConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3881,9 +3870,8 @@ public class DataSafeClient implements DataSafe {
                         "GetAlertPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/GetAlertPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAlertPolicyResponse>
-                transformer =
-                        GetAlertPolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetAlertPolicyResponse> transformer =
+                GetAlertPolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3918,7 +3906,7 @@ public class DataSafeClient implements DataSafe {
                         "GetAuditArchiveRetrieval",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/GetAuditArchiveRetrieval");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAuditArchiveRetrievalResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAuditArchiveRetrievalResponse>
                 transformer =
                         GetAuditArchiveRetrievalConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3955,9 +3943,8 @@ public class DataSafeClient implements DataSafe {
                         "GetAuditPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/GetAuditPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAuditPolicyResponse>
-                transformer =
-                        GetAuditPolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetAuditPolicyResponse> transformer =
+                GetAuditPolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3991,7 +3978,7 @@ public class DataSafeClient implements DataSafe {
                         "GetAuditProfile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/GetAuditProfile");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAuditProfileResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAuditProfileResponse>
                 transformer =
                         GetAuditProfileConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4028,9 +4015,8 @@ public class DataSafeClient implements DataSafe {
                         "GetAuditTrail",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/GetAuditTrail");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAuditTrailResponse>
-                transformer =
-                        GetAuditTrailConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetAuditTrailResponse> transformer =
+                GetAuditTrailConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4065,7 +4051,7 @@ public class DataSafeClient implements DataSafe {
                         "GetCompatibleFormatsForDataTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/GetCompatibleFormatsForDataTypes");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetCompatibleFormatsForDataTypesResponse>
                 transformer =
                         GetCompatibleFormatsForDataTypesConverter.fromResponse(
@@ -4105,7 +4091,7 @@ public class DataSafeClient implements DataSafe {
                         "GetCompatibleFormatsForSensitiveTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/GetCompatibleFormatsForSensitiveTypes");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetCompatibleFormatsForSensitiveTypesResponse>
                 transformer =
                         GetCompatibleFormatsForSensitiveTypesConverter.fromResponse(
@@ -4144,7 +4130,7 @@ public class DataSafeClient implements DataSafe {
                         "GetDataSafeConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafeConfiguration/GetDataSafeConfiguration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDataSafeConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDataSafeConfigurationResponse>
                 transformer =
                         GetDataSafeConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4182,8 +4168,7 @@ public class DataSafeClient implements DataSafe {
                         "GetDataSafePrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/GetDataSafePrivateEndpoint");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDataSafePrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDataSafePrivateEndpointResponse>
                 transformer =
                         GetDataSafePrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4220,7 +4205,7 @@ public class DataSafeClient implements DataSafe {
                         "GetDiscoveryJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/GetDiscoveryJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDiscoveryJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDiscoveryJobResponse>
                 transformer =
                         GetDiscoveryJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4258,7 +4243,7 @@ public class DataSafeClient implements DataSafe {
                         "GetDiscoveryJobResult",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJobResult/GetDiscoveryJobResult");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDiscoveryJobResultResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDiscoveryJobResultResponse>
                 transformer =
                         GetDiscoveryJobResultConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4296,7 +4281,7 @@ public class DataSafeClient implements DataSafe {
                         "GetLibraryMaskingFormat",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/GetLibraryMaskingFormat");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLibraryMaskingFormatResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLibraryMaskingFormatResponse>
                 transformer =
                         GetLibraryMaskingFormatConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4333,7 +4318,7 @@ public class DataSafeClient implements DataSafe {
                         "GetMaskingColumn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/GetMaskingColumn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetMaskingColumnResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetMaskingColumnResponse>
                 transformer =
                         GetMaskingColumnConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4370,7 +4355,7 @@ public class DataSafeClient implements DataSafe {
                         "GetMaskingPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/GetMaskingPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetMaskingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetMaskingPolicyResponse>
                 transformer =
                         GetMaskingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4407,7 +4392,7 @@ public class DataSafeClient implements DataSafe {
                         "GetMaskingReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingReport/GetMaskingReport");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetMaskingReportResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetMaskingReportResponse>
                 transformer =
                         GetMaskingReportConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4444,7 +4429,7 @@ public class DataSafeClient implements DataSafe {
                         "GetOnPremConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/GetOnPremConnector");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOnPremConnectorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetOnPremConnectorResponse>
                 transformer =
                         GetOnPremConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4480,7 +4465,7 @@ public class DataSafeClient implements DataSafe {
                         "GetReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Report/GetReport");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetReportResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetReportResponse> transformer =
                 GetReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4525,7 +4510,7 @@ public class DataSafeClient implements DataSafe {
                         "GetReportContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Report/GetReportContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetReportContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetReportContentResponse>
                 transformer =
                         GetReportContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4562,7 +4547,7 @@ public class DataSafeClient implements DataSafe {
                         "GetReportDefinition",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/GetReportDefinition");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetReportDefinitionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetReportDefinitionResponse>
                 transformer =
                         GetReportDefinitionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4600,7 +4585,7 @@ public class DataSafeClient implements DataSafe {
                         "GetSecurityAssessment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/GetSecurityAssessment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityAssessmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSecurityAssessmentResponse>
                 transformer =
                         GetSecurityAssessmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4638,7 +4623,7 @@ public class DataSafeClient implements DataSafe {
                         "GetSecurityAssessmentComparison",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/GetSecurityAssessmentComparison");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetSecurityAssessmentComparisonResponse>
                 transformer =
                         GetSecurityAssessmentComparisonConverter.fromResponse(
@@ -4676,7 +4661,7 @@ public class DataSafeClient implements DataSafe {
                         "GetSensitiveColumn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/GetSensitiveColumn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSensitiveColumnResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSensitiveColumnResponse>
                 transformer =
                         GetSensitiveColumnConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4714,7 +4699,7 @@ public class DataSafeClient implements DataSafe {
                         "GetSensitiveDataModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/GetSensitiveDataModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSensitiveDataModelResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSensitiveDataModelResponse>
                 transformer =
                         GetSensitiveDataModelConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4751,7 +4736,7 @@ public class DataSafeClient implements DataSafe {
                         "GetSensitiveType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/GetSensitiveType");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSensitiveTypeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSensitiveTypeResponse>
                 transformer =
                         GetSensitiveTypeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4789,7 +4774,7 @@ public class DataSafeClient implements DataSafe {
                         "GetTargetAlertPolicyAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/GetTargetAlertPolicyAssociation");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetTargetAlertPolicyAssociationResponse>
                 transformer =
                         GetTargetAlertPolicyAssociationConverter.fromResponse(
@@ -4827,7 +4812,7 @@ public class DataSafeClient implements DataSafe {
                         "GetTargetDatabase",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/GetTargetDatabase");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTargetDatabaseResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTargetDatabaseResponse>
                 transformer =
                         GetTargetDatabaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4864,7 +4849,7 @@ public class DataSafeClient implements DataSafe {
                         "GetUserAssessment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/GetUserAssessment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetUserAssessmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetUserAssessmentResponse>
                 transformer =
                         GetUserAssessmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4902,8 +4887,7 @@ public class DataSafeClient implements DataSafe {
                         "GetUserAssessmentComparison",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/GetUserAssessmentComparison");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetUserAssessmentComparisonResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetUserAssessmentComparisonResponse>
                 transformer =
                         GetUserAssessmentComparisonConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4940,9 +4924,8 @@ public class DataSafeClient implements DataSafe {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4977,7 +4960,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAlertAnalytics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertSummary/ListAlertAnalytics");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertAnalyticsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAlertAnalyticsResponse>
                 transformer =
                         ListAlertAnalyticsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5014,7 +4997,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAlertPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/ListAlertPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAlertPoliciesResponse>
                 transformer =
                         ListAlertPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5051,7 +5034,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAlertPolicyRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/ListAlertPolicyRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertPolicyRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAlertPolicyRulesResponse>
                 transformer =
                         ListAlertPolicyRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5087,7 +5070,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAlerts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertSummary/ListAlerts");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListAlertsResponse> transformer =
                 ListAlertsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5123,8 +5106,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAuditArchiveRetrievals",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/ListAuditArchiveRetrievals");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAuditArchiveRetrievalsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAuditArchiveRetrievalsResponse>
                 transformer =
                         ListAuditArchiveRetrievalsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5163,7 +5145,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAuditEventAnalytics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditEventSummary/ListAuditEventAnalytics");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAuditEventAnalyticsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAuditEventAnalyticsResponse>
                 transformer =
                         ListAuditEventAnalyticsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5200,7 +5182,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAuditEvents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditEventSummary/ListAuditEvents");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAuditEventsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAuditEventsResponse>
                 transformer =
                         ListAuditEventsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5237,7 +5219,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAuditPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicyCollection/ListAuditPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAuditPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAuditPoliciesResponse>
                 transformer =
                         ListAuditPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5275,8 +5257,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAuditProfileAnalytics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfileAnalyticCollection/ListAuditProfileAnalytics");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAuditProfileAnalyticsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAuditProfileAnalyticsResponse>
                 transformer =
                         ListAuditProfileAnalyticsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5313,7 +5294,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAuditProfiles",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ListAuditProfiles");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAuditProfilesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAuditProfilesResponse>
                 transformer =
                         ListAuditProfilesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5351,7 +5332,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAuditTrailAnalytics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrailAnalyticCollection/ListAuditTrailAnalytics");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAuditTrailAnalyticsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAuditTrailAnalyticsResponse>
                 transformer =
                         ListAuditTrailAnalyticsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5388,7 +5369,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAuditTrails",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/ListAuditTrails");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAuditTrailsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAuditTrailsResponse>
                 transformer =
                         ListAuditTrailsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5426,8 +5407,7 @@ public class DataSafeClient implements DataSafe {
                         "ListAvailableAuditVolumes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ListAvailableAuditVolumes");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAvailableAuditVolumesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAvailableAuditVolumesResponse>
                 transformer =
                         ListAvailableAuditVolumesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5465,8 +5445,7 @@ public class DataSafeClient implements DataSafe {
                         "ListCollectedAuditVolumes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ListCollectedAuditVolumes");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCollectedAuditVolumesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCollectedAuditVolumesResponse>
                 transformer =
                         ListCollectedAuditVolumesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5503,9 +5482,8 @@ public class DataSafeClient implements DataSafe {
                         "ListColumns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListColumns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListColumnsResponse>
-                transformer =
-                        ListColumnsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListColumnsResponse> transformer =
+                ListColumnsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5540,8 +5518,7 @@ public class DataSafeClient implements DataSafe {
                         "ListDataSafePrivateEndpoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpointSummary/ListDataSafePrivateEndpoints");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDataSafePrivateEndpointsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDataSafePrivateEndpointsResponse>
                 transformer =
                         ListDataSafePrivateEndpointsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5579,7 +5556,7 @@ public class DataSafeClient implements DataSafe {
                         "ListDiscoveryAnalytics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ListDiscoveryAnalytics");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDiscoveryAnalyticsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDiscoveryAnalyticsResponse>
                 transformer =
                         ListDiscoveryAnalyticsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5617,7 +5594,7 @@ public class DataSafeClient implements DataSafe {
                         "ListDiscoveryJobResults",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/ListDiscoveryJobResults");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDiscoveryJobResultsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDiscoveryJobResultsResponse>
                 transformer =
                         ListDiscoveryJobResultsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5654,7 +5631,7 @@ public class DataSafeClient implements DataSafe {
                         "ListDiscoveryJobs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/ListDiscoveryJobs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDiscoveryJobsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDiscoveryJobsResponse>
                 transformer =
                         ListDiscoveryJobsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5691,9 +5668,8 @@ public class DataSafeClient implements DataSafe {
                         "ListFindings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListFindings");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListFindingsResponse>
-                transformer =
-                        ListFindingsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListFindingsResponse> transformer =
+                ListFindingsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5726,7 +5702,7 @@ public class DataSafeClient implements DataSafe {
                         "ListGrants",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListGrants");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListGrantsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListGrantsResponse> transformer =
                 ListGrantsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5762,8 +5738,7 @@ public class DataSafeClient implements DataSafe {
                         "ListLibraryMaskingFormats",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormatSummary/ListLibraryMaskingFormats");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListLibraryMaskingFormatsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLibraryMaskingFormatsResponse>
                 transformer =
                         ListLibraryMaskingFormatsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5800,7 +5775,7 @@ public class DataSafeClient implements DataSafe {
                         "ListMaskedColumns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskedColumnSummary/ListMaskedColumns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMaskedColumnsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMaskedColumnsResponse>
                 transformer =
                         ListMaskedColumnsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5837,7 +5812,7 @@ public class DataSafeClient implements DataSafe {
                         "ListMaskingAnalytics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ListMaskingAnalytics");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMaskingAnalyticsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMaskingAnalyticsResponse>
                 transformer =
                         ListMaskingAnalyticsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5874,7 +5849,7 @@ public class DataSafeClient implements DataSafe {
                         "ListMaskingColumns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/ListMaskingColumns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMaskingColumnsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMaskingColumnsResponse>
                 transformer =
                         ListMaskingColumnsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5911,7 +5886,7 @@ public class DataSafeClient implements DataSafe {
                         "ListMaskingPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ListMaskingPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMaskingPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMaskingPoliciesResponse>
                 transformer =
                         ListMaskingPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5948,7 +5923,7 @@ public class DataSafeClient implements DataSafe {
                         "ListMaskingReports",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ListMaskingReports");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMaskingReportsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMaskingReportsResponse>
                 transformer =
                         ListMaskingReportsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5985,7 +5960,7 @@ public class DataSafeClient implements DataSafe {
                         "ListOnPremConnectors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnectorSummary/ListOnPremConnectors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListOnPremConnectorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListOnPremConnectorsResponse>
                 transformer =
                         ListOnPremConnectorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6023,7 +5998,7 @@ public class DataSafeClient implements DataSafe {
                         "ListReportDefinitions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/ListReportDefinitions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListReportDefinitionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListReportDefinitionsResponse>
                 transformer =
                         ListReportDefinitionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6060,9 +6035,8 @@ public class DataSafeClient implements DataSafe {
                         "ListReports",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportSummary/ListReports");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListReportsResponse>
-                transformer =
-                        ListReportsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListReportsResponse> transformer =
+                ListReportsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6095,7 +6069,7 @@ public class DataSafeClient implements DataSafe {
                         "ListRoles",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListRoles");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRolesResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListRolesResponse> transformer =
                 ListRolesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6130,9 +6104,8 @@ public class DataSafeClient implements DataSafe {
                         "ListSchemas",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListSchemas");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSchemasResponse>
-                transformer =
-                        ListSchemasConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSchemasResponse> transformer =
+                ListSchemasConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6167,7 +6140,7 @@ public class DataSafeClient implements DataSafe {
                         "ListSecurityAssessments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessmentSummary/ListSecurityAssessments");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSecurityAssessmentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSecurityAssessmentsResponse>
                 transformer =
                         ListSecurityAssessmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6204,7 +6177,7 @@ public class DataSafeClient implements DataSafe {
                         "ListSensitiveColumns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/ListSensitiveColumns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSensitiveColumnsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSensitiveColumnsResponse>
                 transformer =
                         ListSensitiveColumnsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6242,7 +6215,7 @@ public class DataSafeClient implements DataSafe {
                         "ListSensitiveDataModels",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ListSensitiveDataModels");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSensitiveDataModelsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSensitiveDataModelsResponse>
                 transformer =
                         ListSensitiveDataModelsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6279,7 +6252,7 @@ public class DataSafeClient implements DataSafe {
                         "ListSensitiveTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/ListSensitiveTypes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSensitiveTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSensitiveTypesResponse>
                 transformer =
                         ListSensitiveTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6315,7 +6288,7 @@ public class DataSafeClient implements DataSafe {
                         "ListTables",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListTables");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTablesResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListTablesResponse> transformer =
                 ListTablesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6351,7 +6324,7 @@ public class DataSafeClient implements DataSafe {
                         "ListTargetAlertPolicyAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociationSummary/ListTargetAlertPolicyAssociations");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListTargetAlertPolicyAssociationsResponse>
                 transformer =
                         ListTargetAlertPolicyAssociationsConverter.fromResponse(
@@ -6389,7 +6362,7 @@ public class DataSafeClient implements DataSafe {
                         "ListTargetDatabases",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabaseSummary/ListTargetDatabases");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTargetDatabasesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTargetDatabasesResponse>
                 transformer =
                         ListTargetDatabasesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6426,7 +6399,7 @@ public class DataSafeClient implements DataSafe {
                         "ListUserAnalytics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListUserAnalytics");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListUserAnalyticsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListUserAnalyticsResponse>
                 transformer =
                         ListUserAnalyticsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6463,7 +6436,7 @@ public class DataSafeClient implements DataSafe {
                         "ListUserAssessments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessmentSummary/ListUserAssessments");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListUserAssessmentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListUserAssessmentsResponse>
                 transformer =
                         ListUserAssessmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6499,7 +6472,7 @@ public class DataSafeClient implements DataSafe {
                         "ListUsers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListUsers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListUsersResponse> transformer =
                 ListUsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6535,7 +6508,7 @@ public class DataSafeClient implements DataSafe {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6572,7 +6545,7 @@ public class DataSafeClient implements DataSafe {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6609,7 +6582,7 @@ public class DataSafeClient implements DataSafe {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequestSummary/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6645,7 +6618,7 @@ public class DataSafeClient implements DataSafe {
                         "MaskData",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/MaskData");
-        com.google.common.base.Function<javax.ws.rs.core.Response, MaskDataResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, MaskDataResponse> transformer =
                 MaskDataConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6685,7 +6658,7 @@ public class DataSafeClient implements DataSafe {
                         "ModifyGlobalSettings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafeConfiguration/ModifyGlobalSettings");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ModifyGlobalSettingsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ModifyGlobalSettingsResponse>
                 transformer =
                         ModifyGlobalSettingsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6726,9 +6699,8 @@ public class DataSafeClient implements DataSafe {
                         "PatchAlerts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/PatchAlerts");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PatchAlertsResponse>
-                transformer =
-                        PatchAlertsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, PatchAlertsResponse> transformer =
+                PatchAlertsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6767,7 +6739,7 @@ public class DataSafeClient implements DataSafe {
                         "PatchDiscoveryJobResults",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/PatchDiscoveryJobResults");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PatchDiscoveryJobResultsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PatchDiscoveryJobResultsResponse>
                 transformer =
                         PatchDiscoveryJobResultsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6808,7 +6780,7 @@ public class DataSafeClient implements DataSafe {
                         "PatchMaskingColumns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/PatchMaskingColumns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PatchMaskingColumnsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PatchMaskingColumnsResponse>
                 transformer =
                         PatchMaskingColumnsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6850,7 +6822,7 @@ public class DataSafeClient implements DataSafe {
                         "PatchSensitiveColumns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/PatchSensitiveColumns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PatchSensitiveColumnsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PatchSensitiveColumnsResponse>
                 transformer =
                         PatchSensitiveColumnsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6892,7 +6864,7 @@ public class DataSafeClient implements DataSafe {
                         "ProvisionAuditPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/ProvisionAuditPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ProvisionAuditPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ProvisionAuditPolicyResponse>
                 transformer =
                         ProvisionAuditPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6935,8 +6907,7 @@ public class DataSafeClient implements DataSafe {
                         "RefreshSecurityAssessment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/RefreshSecurityAssessment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RefreshSecurityAssessmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RefreshSecurityAssessmentResponse>
                 transformer =
                         RefreshSecurityAssessmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6979,7 +6950,7 @@ public class DataSafeClient implements DataSafe {
                         "RefreshUserAssessment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/RefreshUserAssessment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RefreshUserAssessmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RefreshUserAssessmentResponse>
                 transformer =
                         RefreshUserAssessmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7020,7 +6991,7 @@ public class DataSafeClient implements DataSafe {
                         "ResumeAuditTrail",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/ResumeAuditTrail");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ResumeAuditTrailResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ResumeAuditTrailResponse>
                 transformer =
                         ResumeAuditTrailConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7059,7 +7030,7 @@ public class DataSafeClient implements DataSafe {
                         "ResumeWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequest/ResumeWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ResumeWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ResumeWorkRequestResponse>
                 transformer =
                         ResumeWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7099,7 +7070,7 @@ public class DataSafeClient implements DataSafe {
                         "RetrieveAuditPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/RetrieveAuditPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RetrieveAuditPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RetrieveAuditPoliciesResponse>
                 transformer =
                         RetrieveAuditPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7139,7 +7110,7 @@ public class DataSafeClient implements DataSafe {
                         "SetSecurityAssessmentBaseline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/SetSecurityAssessmentBaseline");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SetSecurityAssessmentBaselineResponse>
                 transformer =
                         SetSecurityAssessmentBaselineConverter.fromResponse(
@@ -7183,8 +7154,7 @@ public class DataSafeClient implements DataSafe {
                         "SetUserAssessmentBaseline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/SetUserAssessmentBaseline");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SetUserAssessmentBaselineResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SetUserAssessmentBaselineResponse>
                 transformer =
                         SetUserAssessmentBaselineConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7226,7 +7196,7 @@ public class DataSafeClient implements DataSafe {
                         "StartAuditTrail",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/StartAuditTrail");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartAuditTrailResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StartAuditTrailResponse>
                 transformer =
                         StartAuditTrailConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7267,9 +7237,8 @@ public class DataSafeClient implements DataSafe {
                         "StopAuditTrail",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/StopAuditTrail");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopAuditTrailResponse>
-                transformer =
-                        StopAuditTrailConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, StopAuditTrailResponse> transformer =
+                StopAuditTrailConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7305,7 +7274,7 @@ public class DataSafeClient implements DataSafe {
                         "SuspendWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequest/SuspendWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SuspendWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SuspendWorkRequestResponse>
                 transformer =
                         SuspendWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7345,7 +7314,7 @@ public class DataSafeClient implements DataSafe {
                         "UnsetSecurityAssessmentBaseline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/UnsetSecurityAssessmentBaseline");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UnsetSecurityAssessmentBaselineResponse>
                 transformer =
                         UnsetSecurityAssessmentBaselineConverter.fromResponse(
@@ -7386,8 +7355,7 @@ public class DataSafeClient implements DataSafe {
                         "UnsetUserAssessmentBaseline",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/UnsetUserAssessmentBaseline");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UnsetUserAssessmentBaselineResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UnsetUserAssessmentBaselineResponse>
                 transformer =
                         UnsetUserAssessmentBaselineConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7425,9 +7393,8 @@ public class DataSafeClient implements DataSafe {
                         "UpdateAlert",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/UpdateAlert");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAlertResponse>
-                transformer =
-                        UpdateAlertConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAlertResponse> transformer =
+                UpdateAlertConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7466,8 +7433,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateAuditArchiveRetrieval",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/UpdateAuditArchiveRetrieval");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAuditArchiveRetrievalResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAuditArchiveRetrievalResponse>
                 transformer =
                         UpdateAuditArchiveRetrievalConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7509,7 +7475,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateAuditPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/UpdateAuditPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAuditPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAuditPolicyResponse>
                 transformer =
                         UpdateAuditPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7550,7 +7516,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateAuditProfile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/UpdateAuditProfile");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAuditProfileResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAuditProfileResponse>
                 transformer =
                         UpdateAuditProfileConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7591,7 +7557,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateAuditTrail",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/UpdateAuditTrail");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAuditTrailResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAuditTrailResponse>
                 transformer =
                         UpdateAuditTrailConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7633,7 +7599,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateDataSafePrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/UpdateDataSafePrivateEndpoint");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDataSafePrivateEndpointResponse>
                 transformer =
                         UpdateDataSafePrivateEndpointConverter.fromResponse(
@@ -7677,8 +7643,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateLibraryMaskingFormat",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/UpdateLibraryMaskingFormat");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateLibraryMaskingFormatResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLibraryMaskingFormatResponse>
                 transformer =
                         UpdateLibraryMaskingFormatConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7720,7 +7685,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateMaskingColumn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/UpdateMaskingColumn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMaskingColumnResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateMaskingColumnResponse>
                 transformer =
                         UpdateMaskingColumnConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7761,7 +7726,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateMaskingPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/UpdateMaskingPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMaskingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateMaskingPolicyResponse>
                 transformer =
                         UpdateMaskingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7803,7 +7768,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateOnPremConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/UpdateOnPremConnector");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOnPremConnectorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOnPremConnectorResponse>
                 transformer =
                         UpdateOnPremConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7846,8 +7811,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateOnPremConnectorWallet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/UpdateOnPremConnectorWallet");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateOnPremConnectorWalletResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOnPremConnectorWalletResponse>
                 transformer =
                         UpdateOnPremConnectorWalletConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7891,7 +7855,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateReportDefinition",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/UpdateReportDefinition");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateReportDefinitionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateReportDefinitionResponse>
                 transformer =
                         UpdateReportDefinitionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7933,7 +7897,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateSecurityAssessment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/UpdateSecurityAssessment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecurityAssessmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSecurityAssessmentResponse>
                 transformer =
                         UpdateSecurityAssessmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7975,7 +7939,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateSensitiveColumn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/UpdateSensitiveColumn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSensitiveColumnResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSensitiveColumnResponse>
                 transformer =
                         UpdateSensitiveColumnConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8017,7 +7981,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateSensitiveDataModel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/UpdateSensitiveDataModel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSensitiveDataModelResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSensitiveDataModelResponse>
                 transformer =
                         UpdateSensitiveDataModelConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8058,7 +8022,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateSensitiveType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/UpdateSensitiveType");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSensitiveTypeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSensitiveTypeResponse>
                 transformer =
                         UpdateSensitiveTypeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8100,7 +8064,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateTargetAlertPolicyAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/UpdateTargetAlertPolicyAssociation");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateTargetAlertPolicyAssociationResponse>
                 transformer =
                         UpdateTargetAlertPolicyAssociationConverter.fromResponse(
@@ -8144,7 +8108,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateTargetDatabase",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/UpdateTargetDatabase");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTargetDatabaseResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTargetDatabaseResponse>
                 transformer =
                         UpdateTargetDatabaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8185,7 +8149,7 @@ public class DataSafeClient implements DataSafe {
                         "UpdateUserAssessment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/UpdateUserAssessment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserAssessmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateUserAssessmentResponse>
                 transformer =
                         UpdateUserAssessmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8235,7 +8199,7 @@ public class DataSafeClient implements DataSafe {
                             "UploadMaskingPolicy",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/UploadMaskingPolicy");
-            com.google.common.base.Function<javax.ws.rs.core.Response, UploadMaskingPolicyResponse>
+            java.util.function.Function<javax.ws.rs.core.Response, UploadMaskingPolicyResponse>
                     transformer =
                             UploadMaskingPolicyConverter.fromResponse(
                                     java.util.Optional.of(serviceDetails));
@@ -8310,8 +8274,7 @@ public class DataSafeClient implements DataSafe {
                             "UploadSensitiveDataModel",
                             ib.getRequestUri().toString(),
                             "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/UploadSensitiveDataModel");
-            com.google.common.base.Function<
-                            javax.ws.rs.core.Response, UploadSensitiveDataModelResponse>
+            java.util.function.Function<javax.ws.rs.core.Response, UploadSensitiveDataModelResponse>
                     transformer =
                             UploadSensitiveDataModelConverter.fromResponse(
                                     java.util.Optional.of(serviceDetails));

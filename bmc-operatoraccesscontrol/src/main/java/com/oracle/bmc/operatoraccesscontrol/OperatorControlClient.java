@@ -9,7 +9,6 @@ import com.oracle.bmc.operatoraccesscontrol.requests.*;
 import com.oracle.bmc.operatoraccesscontrol.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class OperatorControlClient implements OperatorControl {
@@ -335,9 +334,9 @@ public class OperatorControlClient implements OperatorControl {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("OperatorControl-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("OperatorControl-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class OperatorControlClient implements OperatorControl {
          * @return the client
          */
         public OperatorControlClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class OperatorControlClient implements OperatorControl {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class OperatorControlClient implements OperatorControl {
                         "ChangeOperatorControlCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ChangeOperatorControlCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeOperatorControlCompartmentResponse>
                 transformer =
                         ChangeOperatorControlCompartmentConverter.fromResponse(
@@ -534,7 +534,7 @@ public class OperatorControlClient implements OperatorControl {
                         "CreateOperatorControl",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/CreateOperatorControl");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateOperatorControlResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOperatorControlResponse>
                 transformer =
                         CreateOperatorControlConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -576,7 +576,7 @@ public class OperatorControlClient implements OperatorControl {
                         "DeleteOperatorControl",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/DeleteOperatorControl");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteOperatorControlResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOperatorControlResponse>
                 transformer =
                         DeleteOperatorControlConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -614,7 +614,7 @@ public class OperatorControlClient implements OperatorControl {
                         "GetOperatorControl",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/GetOperatorControl");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOperatorControlResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetOperatorControlResponse>
                 transformer =
                         GetOperatorControlConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -651,7 +651,7 @@ public class OperatorControlClient implements OperatorControl {
                         "ListOperatorControls",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ListOperatorControls");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListOperatorControlsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListOperatorControlsResponse>
                 transformer =
                         ListOperatorControlsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -689,7 +689,7 @@ public class OperatorControlClient implements OperatorControl {
                         "UpdateOperatorControl",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/UpdateOperatorControl");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOperatorControlResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOperatorControlResponse>
                 transformer =
                         UpdateOperatorControlConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -9,7 +9,6 @@ import com.oracle.bmc.onesubscription.requests.*;
 import com.oracle.bmc.onesubscription.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class SubscribedServiceClient implements SubscribedService {
@@ -331,7 +330,7 @@ public class SubscribedServiceClient implements SubscribedService {
          * @return the client
          */
         public SubscribedServiceClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class SubscribedServiceClient implements SubscribedService {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -412,7 +412,7 @@ public class SubscribedServiceClient implements SubscribedService {
                         "GetSubscribedService",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscribedServiceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSubscribedServiceResponse>
                 transformer =
                         GetSubscribedServiceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -450,7 +450,7 @@ public class SubscribedServiceClient implements SubscribedService {
                         "ListSubscribedServices",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscribedServicesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSubscribedServicesResponse>
                 transformer =
                         ListSubscribedServicesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

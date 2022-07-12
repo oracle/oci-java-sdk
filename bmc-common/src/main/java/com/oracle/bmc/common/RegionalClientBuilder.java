@@ -5,9 +5,11 @@
 package com.oracle.bmc.common;
 
 import com.oracle.bmc.Service;
+import com.oracle.bmc.internal.GuavaUtils;
 import org.slf4j.Logger;
 
 import java.util.Locale;
+import java.util.Optional;
 
 /**
  * A builder for clients that can be configured to target a certain region
@@ -29,7 +31,7 @@ public abstract class RegionalClientBuilder<B extends RegionalClientBuilder, C>
      * @return this builder
      */
     public B region(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(service);
+        Optional<String> endpoint = GuavaUtils.adaptFromGuava(region.getEndpoint(service));
         if (endpoint.isPresent()) {
             endpoint(endpoint.get());
         } else {

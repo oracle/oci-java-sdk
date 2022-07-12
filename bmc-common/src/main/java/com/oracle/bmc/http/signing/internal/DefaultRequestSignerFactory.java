@@ -5,10 +5,12 @@
 package com.oracle.bmc.http.signing.internal;
 
 import java.security.interfaces.RSAPrivateKey;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
-import com.google.common.base.Optional;
-import com.google.common.base.Supplier;
-import com.google.common.collect.ImmutableMap;
+import java.util.Optional;
+import java.util.function.Supplier;
+
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.AuthCachingPolicy;
@@ -117,12 +119,11 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
      * @return default request signer factories
      */
     public static Map<SigningStrategy, RequestSignerFactory> createDefaultRequestSignerFactories() {
-        ImmutableMap.Builder<SigningStrategy, RequestSignerFactory> builder =
-                ImmutableMap.builder();
+        Map<SigningStrategy, RequestSignerFactory> map = new HashMap<>();
         for (SigningStrategy s : SigningStrategy.values()) {
-            builder.put(s, new DefaultRequestSignerFactory(s));
+            map.put(s, new DefaultRequestSignerFactory(s));
         }
-        return builder.build();
+        return Collections.unmodifiableMap(map);
     }
 
     @java.beans.ConstructorProperties({"signingStrategy"})

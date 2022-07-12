@@ -8,31 +8,36 @@ import static org.junit.Assert.*;
 
 import java.io.File;
 import java.util.Arrays;
+import java.util.Collections;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.List;
 import java.util.Set;
 
-import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.model.RegionSchema;
 import com.oracle.bmc.model.internal.JsonConverter;
 import com.oracle.bmc.util.internal.NameUtils;
 import org.junit.Test;
 
 public class RealmTest {
-    private static final Map<String, String> EXPECTED_REALMS =
-            new ImmutableMap.Builder<String, String>()
-                    .put("OC1", "oc1")
-                    .put("OC2", "oc2")
-                    .put("OC3", "oc3")
-                    .build();
+    private static final Map<String, String> EXPECTED_REALMS;
+
+    static {
+        Map<String, String> temp = new HashMap<>();
+        temp.put("OC1", "oc1");
+        temp.put("OC2", "oc2");
+        temp.put("OC3", "oc3");
+        EXPECTED_REALMS = Collections.unmodifiableMap(temp);
+    }
+
     private static final String NEW_SECOND_LEVEL_DOMAIN = "oracle-foo-cloud.com";
 
     @Test

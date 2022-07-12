@@ -45,19 +45,19 @@ public class AnomalyDetectionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAiPrivateEndpointsRequest.Builder, ListAiPrivateEndpointsRequest,
                 ListAiPrivateEndpointsResponse>(
-                new com.google.common.base.Supplier<ListAiPrivateEndpointsRequest.Builder>() {
+                new java.util.function.Supplier<ListAiPrivateEndpointsRequest.Builder>() {
                     @Override
                     public ListAiPrivateEndpointsRequest.Builder get() {
                         return ListAiPrivateEndpointsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAiPrivateEndpointsResponse, String>() {
+                new java.util.function.Function<ListAiPrivateEndpointsResponse, String>() {
                     @Override
                     public String apply(ListAiPrivateEndpointsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAiPrivateEndpointsRequest.Builder>,
                         ListAiPrivateEndpointsRequest>() {
@@ -70,12 +70,12 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAiPrivateEndpointsRequest, ListAiPrivateEndpointsResponse>() {
                     @Override
                     public ListAiPrivateEndpointsResponse apply(
@@ -100,19 +100,19 @@ public class AnomalyDetectionPaginators {
                 ListAiPrivateEndpointsRequest.Builder, ListAiPrivateEndpointsRequest,
                 ListAiPrivateEndpointsResponse,
                 com.oracle.bmc.aianomalydetection.model.AiPrivateEndpointSummary>(
-                new com.google.common.base.Supplier<ListAiPrivateEndpointsRequest.Builder>() {
+                new java.util.function.Supplier<ListAiPrivateEndpointsRequest.Builder>() {
                     @Override
                     public ListAiPrivateEndpointsRequest.Builder get() {
                         return ListAiPrivateEndpointsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAiPrivateEndpointsResponse, String>() {
+                new java.util.function.Function<ListAiPrivateEndpointsResponse, String>() {
                     @Override
                     public String apply(ListAiPrivateEndpointsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAiPrivateEndpointsRequest.Builder>,
                         ListAiPrivateEndpointsRequest>() {
@@ -125,12 +125,12 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAiPrivateEndpointsRequest, ListAiPrivateEndpointsResponse>() {
                     @Override
                     public ListAiPrivateEndpointsResponse apply(
@@ -138,7 +138,7 @@ public class AnomalyDetectionPaginators {
                         return client.listAiPrivateEndpoints(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAiPrivateEndpointsResponse,
                         java.util.List<
                                 com.oracle.bmc.aianomalydetection.model
@@ -164,19 +164,19 @@ public class AnomalyDetectionPaginators {
             final ListDataAssetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDataAssetsRequest.Builder, ListDataAssetsRequest, ListDataAssetsResponse>(
-                new com.google.common.base.Supplier<ListDataAssetsRequest.Builder>() {
+                new java.util.function.Supplier<ListDataAssetsRequest.Builder>() {
                     @Override
                     public ListDataAssetsRequest.Builder get() {
                         return ListDataAssetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDataAssetsResponse, String>() {
+                new java.util.function.Function<ListDataAssetsResponse, String>() {
                     @Override
                     public String apply(ListDataAssetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDataAssetsRequest.Builder>,
                         ListDataAssetsRequest>() {
@@ -189,13 +189,12 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListDataAssetsRequest, ListDataAssetsResponse>() {
+                new java.util.function.Function<ListDataAssetsRequest, ListDataAssetsResponse>() {
                     @Override
                     public ListDataAssetsResponse apply(ListDataAssetsRequest request) {
                         return client.listDataAssets(request);
@@ -217,19 +216,19 @@ public class AnomalyDetectionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDataAssetsRequest.Builder, ListDataAssetsRequest, ListDataAssetsResponse,
                 com.oracle.bmc.aianomalydetection.model.DataAssetSummary>(
-                new com.google.common.base.Supplier<ListDataAssetsRequest.Builder>() {
+                new java.util.function.Supplier<ListDataAssetsRequest.Builder>() {
                     @Override
                     public ListDataAssetsRequest.Builder get() {
                         return ListDataAssetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDataAssetsResponse, String>() {
+                new java.util.function.Function<ListDataAssetsResponse, String>() {
                     @Override
                     public String apply(ListDataAssetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDataAssetsRequest.Builder>,
                         ListDataAssetsRequest>() {
@@ -242,19 +241,18 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListDataAssetsRequest, ListDataAssetsResponse>() {
+                new java.util.function.Function<ListDataAssetsRequest, ListDataAssetsResponse>() {
                     @Override
                     public ListDataAssetsResponse apply(ListDataAssetsRequest request) {
                         return client.listDataAssets(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDataAssetsResponse,
                         java.util.List<
                                 com.oracle.bmc.aianomalydetection.model.DataAssetSummary>>() {
@@ -277,19 +275,19 @@ public class AnomalyDetectionPaginators {
             final ListModelsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListModelsRequest.Builder, ListModelsRequest, ListModelsResponse>(
-                new com.google.common.base.Supplier<ListModelsRequest.Builder>() {
+                new java.util.function.Supplier<ListModelsRequest.Builder>() {
                     @Override
                     public ListModelsRequest.Builder get() {
                         return ListModelsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModelsResponse, String>() {
+                new java.util.function.Function<ListModelsResponse, String>() {
                     @Override
                     public String apply(ListModelsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModelsRequest.Builder>,
                         ListModelsRequest>() {
@@ -302,12 +300,12 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListModelsRequest, ListModelsResponse>() {
+                new java.util.function.Function<ListModelsRequest, ListModelsResponse>() {
                     @Override
                     public ListModelsResponse apply(ListModelsRequest request) {
                         return client.listModels(request);
@@ -329,19 +327,19 @@ public class AnomalyDetectionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListModelsRequest.Builder, ListModelsRequest, ListModelsResponse,
                 com.oracle.bmc.aianomalydetection.model.ModelSummary>(
-                new com.google.common.base.Supplier<ListModelsRequest.Builder>() {
+                new java.util.function.Supplier<ListModelsRequest.Builder>() {
                     @Override
                     public ListModelsRequest.Builder get() {
                         return ListModelsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModelsResponse, String>() {
+                new java.util.function.Function<ListModelsResponse, String>() {
                     @Override
                     public String apply(ListModelsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModelsRequest.Builder>,
                         ListModelsRequest>() {
@@ -354,18 +352,18 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListModelsRequest, ListModelsResponse>() {
+                new java.util.function.Function<ListModelsRequest, ListModelsResponse>() {
                     @Override
                     public ListModelsResponse apply(ListModelsRequest request) {
                         return client.listModels(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModelsResponse,
                         java.util.List<com.oracle.bmc.aianomalydetection.model.ModelSummary>>() {
                     @Override
@@ -387,19 +385,19 @@ public class AnomalyDetectionPaginators {
             final ListProjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListProjectsRequest.Builder, ListProjectsRequest, ListProjectsResponse>(
-                new com.google.common.base.Supplier<ListProjectsRequest.Builder>() {
+                new java.util.function.Supplier<ListProjectsRequest.Builder>() {
                     @Override
                     public ListProjectsRequest.Builder get() {
                         return ListProjectsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProjectsResponse, String>() {
+                new java.util.function.Function<ListProjectsResponse, String>() {
                     @Override
                     public String apply(ListProjectsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProjectsRequest.Builder>,
                         ListProjectsRequest>() {
@@ -412,12 +410,12 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListProjectsRequest, ListProjectsResponse>() {
+                new java.util.function.Function<ListProjectsRequest, ListProjectsResponse>() {
                     @Override
                     public ListProjectsResponse apply(ListProjectsRequest request) {
                         return client.listProjects(request);
@@ -439,19 +437,19 @@ public class AnomalyDetectionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListProjectsRequest.Builder, ListProjectsRequest, ListProjectsResponse,
                 com.oracle.bmc.aianomalydetection.model.ProjectSummary>(
-                new com.google.common.base.Supplier<ListProjectsRequest.Builder>() {
+                new java.util.function.Supplier<ListProjectsRequest.Builder>() {
                     @Override
                     public ListProjectsRequest.Builder get() {
                         return ListProjectsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProjectsResponse, String>() {
+                new java.util.function.Function<ListProjectsResponse, String>() {
                     @Override
                     public String apply(ListProjectsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProjectsRequest.Builder>,
                         ListProjectsRequest>() {
@@ -464,18 +462,18 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListProjectsRequest, ListProjectsResponse>() {
+                new java.util.function.Function<ListProjectsRequest, ListProjectsResponse>() {
                     @Override
                     public ListProjectsResponse apply(ListProjectsRequest request) {
                         return client.listProjects(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProjectsResponse,
                         java.util.List<com.oracle.bmc.aianomalydetection.model.ProjectSummary>>() {
                     @Override
@@ -498,19 +496,19 @@ public class AnomalyDetectionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -523,12 +521,12 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -553,19 +551,19 @@ public class AnomalyDetectionPaginators {
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse,
                 com.oracle.bmc.aianomalydetection.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -578,12 +576,12 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -591,7 +589,7 @@ public class AnomalyDetectionPaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<
                                 com.oracle.bmc.aianomalydetection.model.WorkRequestError>>() {
@@ -615,19 +613,19 @@ public class AnomalyDetectionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -640,12 +638,12 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -669,19 +667,19 @@ public class AnomalyDetectionPaginators {
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse,
                 com.oracle.bmc.aianomalydetection.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -694,19 +692,19 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<
                                 com.oracle.bmc.aianomalydetection.model.WorkRequestLogEntry>>() {
@@ -730,19 +728,19 @@ public class AnomalyDetectionPaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -755,12 +753,12 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -783,19 +781,19 @@ public class AnomalyDetectionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.aianomalydetection.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -808,19 +806,19 @@ public class AnomalyDetectionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<
                                 com.oracle.bmc.aianomalydetection.model.WorkRequestSummary>>() {

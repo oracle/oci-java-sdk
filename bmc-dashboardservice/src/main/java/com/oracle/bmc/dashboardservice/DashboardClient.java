@@ -9,7 +9,6 @@ import com.oracle.bmc.dashboardservice.requests.*;
 import com.oracle.bmc.dashboardservice.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
 public class DashboardClient implements Dashboard {
@@ -334,9 +333,9 @@ public class DashboardClient implements Dashboard {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Dashboard-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Dashboard-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class DashboardClient implements Dashboard {
          * @return the client
          */
         public DashboardClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class DashboardClient implements Dashboard {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,7 +487,7 @@ public class DashboardClient implements Dashboard {
                         "CreateDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/CreateDashboard");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDashboardResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDashboardResponse>
                 transformer =
                         CreateDashboardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -528,7 +528,7 @@ public class DashboardClient implements Dashboard {
                         "DeleteDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/DeleteDashboard");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDashboardResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDashboardResponse>
                 transformer =
                         DeleteDashboardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -566,9 +566,8 @@ public class DashboardClient implements Dashboard {
                         "GetDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/GetDashboard");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDashboardResponse>
-                transformer =
-                        GetDashboardConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDashboardResponse> transformer =
+                GetDashboardConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -602,9 +601,8 @@ public class DashboardClient implements Dashboard {
                         "ListDashboards",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardCollection/ListDashboards");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDashboardsResponse>
-                transformer =
-                        ListDashboardsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListDashboardsResponse> transformer =
+                ListDashboardsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -638,7 +636,7 @@ public class DashboardClient implements Dashboard {
                         "UpdateDashboard",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/UpdateDashboard");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDashboardResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDashboardResponse>
                 transformer =
                         UpdateDashboardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

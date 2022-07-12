@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +24,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
-import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -1221,14 +1221,13 @@ public class LoadBalancedWebServer {
             NetworkSecurityGroup networkSecurityGroup,
             String sshPublicKey) {
         String instanceName = "java-sdk-example-instance-" + availabilityDomain.getName();
-        Map<String, String> metadata =
-                ImmutableMap.<String, String>builder()
-                        .put("ssh_authorized_keys", sshPublicKey)
-                        .build();
-        Map<String, Object> extendedMetadata =
-                ImmutableMap.<String, Object>builder()
-                        .put("user_data", Base64.getEncoder().encodeToString(CLOUD_INIT.getBytes()))
-                        .build();
+        Map<String, String> metadata = new HashMap<>();
+        metadata.put("ssh_authorized_keys", sshPublicKey);
+        metadata = Collections.unmodifiableMap(metadata);
+        Map<String, Object> extendedMetadata = new HashMap<>();
+        extendedMetadata.put(
+                "user_data", Base64.getEncoder().encodeToString(CLOUD_INIT.getBytes()));
+        extendedMetadata = Collections.unmodifiableMap(extendedMetadata);
         InstanceSourceViaImageDetails instanceSourceViaImageDetails =
                 InstanceSourceViaImageDetails.builder().imageId(imageId).build();
         CreateVnicDetails createVnicDetails =

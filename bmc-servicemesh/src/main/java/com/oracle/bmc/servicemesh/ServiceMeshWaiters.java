@@ -6,7 +6,6 @@ package com.oracle.bmc.servicemesh;
 
 import com.oracle.bmc.servicemesh.requests.*;
 import com.oracle.bmc.servicemesh.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -108,17 +107,17 @@ public class ServiceMeshWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetAccessPolicyRequest, GetAccessPolicyResponse>() {
                             @Override
                             public GetAccessPolicyResponse apply(GetAccessPolicyRequest request) {
                                 return client.getAccessPolicy(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAccessPolicyResponse>() {
+                        new java.util.function.Predicate<GetAccessPolicyResponse>() {
                             @Override
-                            public boolean apply(GetAccessPolicyResponse response) {
+                            public boolean test(GetAccessPolicyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAccessPolicy().getLifecycleState());
                             }
@@ -214,8 +213,8 @@ public class ServiceMeshWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetIngressGatewayRequest, GetIngressGatewayResponse>() {
                             @Override
                             public GetIngressGatewayResponse apply(
@@ -223,9 +222,9 @@ public class ServiceMeshWaiters {
                                 return client.getIngressGateway(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetIngressGatewayResponse>() {
+                        new java.util.function.Predicate<GetIngressGatewayResponse>() {
                             @Override
-                            public boolean apply(GetIngressGatewayResponse response) {
+                            public boolean test(GetIngressGatewayResponse response) {
                                 return targetStatesSet.contains(
                                         response.getIngressGateway().getLifecycleState());
                             }
@@ -328,8 +327,8 @@ public class ServiceMeshWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetIngressGatewayRouteTableRequest,
                                 GetIngressGatewayRouteTableResponse>() {
                             @Override
@@ -338,10 +337,9 @@ public class ServiceMeshWaiters {
                                 return client.getIngressGatewayRouteTable(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetIngressGatewayRouteTableResponse>() {
+                        new java.util.function.Predicate<GetIngressGatewayRouteTableResponse>() {
                             @Override
-                            public boolean apply(GetIngressGatewayRouteTableResponse response) {
+                            public boolean test(GetIngressGatewayRouteTableResponse response) {
                                 return targetStatesSet.contains(
                                         response.getIngressGatewayRouteTable().getLifecycleState());
                             }
@@ -429,16 +427,16 @@ public class ServiceMeshWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetMeshRequest, GetMeshResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetMeshRequest, GetMeshResponse>() {
                             @Override
                             public GetMeshResponse apply(GetMeshRequest request) {
                                 return client.getMesh(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetMeshResponse>() {
+                        new java.util.function.Predicate<GetMeshResponse>() {
                             @Override
-                            public boolean apply(GetMeshResponse response) {
+                            public boolean test(GetMeshResponse response) {
                                 return targetStatesSet.contains(
                                         response.getMesh().getLifecycleState());
                             }
@@ -533,8 +531,8 @@ public class ServiceMeshWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetVirtualDeploymentRequest, GetVirtualDeploymentResponse>() {
                             @Override
                             public GetVirtualDeploymentResponse apply(
@@ -542,9 +540,9 @@ public class ServiceMeshWaiters {
                                 return client.getVirtualDeployment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVirtualDeploymentResponse>() {
+                        new java.util.function.Predicate<GetVirtualDeploymentResponse>() {
                             @Override
-                            public boolean apply(GetVirtualDeploymentResponse response) {
+                            public boolean test(GetVirtualDeploymentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVirtualDeployment().getLifecycleState());
                             }
@@ -640,8 +638,8 @@ public class ServiceMeshWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetVirtualServiceRequest, GetVirtualServiceResponse>() {
                             @Override
                             public GetVirtualServiceResponse apply(
@@ -649,9 +647,9 @@ public class ServiceMeshWaiters {
                                 return client.getVirtualService(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVirtualServiceResponse>() {
+                        new java.util.function.Predicate<GetVirtualServiceResponse>() {
                             @Override
-                            public boolean apply(GetVirtualServiceResponse response) {
+                            public boolean test(GetVirtualServiceResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVirtualService().getLifecycleState());
                             }
@@ -754,8 +752,8 @@ public class ServiceMeshWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetVirtualServiceRouteTableRequest,
                                 GetVirtualServiceRouteTableResponse>() {
                             @Override
@@ -764,10 +762,9 @@ public class ServiceMeshWaiters {
                                 return client.getVirtualServiceRouteTable(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetVirtualServiceRouteTableResponse>() {
+                        new java.util.function.Predicate<GetVirtualServiceRouteTableResponse>() {
                             @Override
-                            public boolean apply(GetVirtualServiceRouteTableResponse response) {
+                            public boolean test(GetVirtualServiceRouteTableResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVirtualServiceRouteTable().getLifecycleState());
                             }
@@ -815,17 +812,17 @@ public class ServiceMeshWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

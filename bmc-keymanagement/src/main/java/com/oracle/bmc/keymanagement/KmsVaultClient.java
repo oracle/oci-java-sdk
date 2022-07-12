@@ -9,7 +9,6 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class KmsVaultClient implements KmsVault {
@@ -334,9 +333,9 @@ public class KmsVaultClient implements KmsVault {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("KmsVault-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("KmsVault-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class KmsVaultClient implements KmsVault {
          * @return the client
          */
         public KmsVaultClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class KmsVaultClient implements KmsVault {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -484,9 +484,8 @@ public class KmsVaultClient implements KmsVault {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "BackupVault", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, BackupVaultResponse>
-                transformer =
-                        BackupVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, BackupVaultResponse> transformer =
+                BackupVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -522,7 +521,7 @@ public class KmsVaultClient implements KmsVault {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "CancelVaultDeletion", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelVaultDeletionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelVaultDeletionResponse>
                 transformer =
                         CancelVaultDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -559,7 +558,7 @@ public class KmsVaultClient implements KmsVault {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "ChangeVaultCompartment", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeVaultCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeVaultCompartmentResponse>
                 transformer =
                         ChangeVaultCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -598,9 +597,8 @@ public class KmsVaultClient implements KmsVault {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "CreateVault", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVaultResponse>
-                transformer =
-                        CreateVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVaultResponse> transformer =
+                CreateVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -636,7 +634,7 @@ public class KmsVaultClient implements KmsVault {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "CreateVaultReplica", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVaultReplicaResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVaultReplicaResponse>
                 transformer =
                         CreateVaultReplicaConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -675,7 +673,7 @@ public class KmsVaultClient implements KmsVault {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "DeleteVaultReplica", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVaultReplicaResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVaultReplicaResponse>
                 transformer =
                         DeleteVaultReplicaConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -712,7 +710,7 @@ public class KmsVaultClient implements KmsVault {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "GetVault", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVaultResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetVaultResponse> transformer =
                 GetVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -744,9 +742,8 @@ public class KmsVaultClient implements KmsVault {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "GetVaultUsage", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVaultUsageResponse>
-                transformer =
-                        GetVaultUsageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetVaultUsageResponse> transformer =
+                GetVaultUsageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -778,7 +775,7 @@ public class KmsVaultClient implements KmsVault {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "ListVaultReplicas", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVaultReplicasResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListVaultReplicasResponse>
                 transformer =
                         ListVaultReplicasConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -811,7 +808,7 @@ public class KmsVaultClient implements KmsVault {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "ListVaults", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVaultsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListVaultsResponse> transformer =
                 ListVaultsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -853,7 +850,7 @@ public class KmsVaultClient implements KmsVault {
             com.oracle.bmc.ServiceDetails serviceDetails =
                     new com.oracle.bmc.ServiceDetails(
                             "KmsVault", "RestoreVaultFromFile", ib.getRequestUri().toString(), "");
-            com.google.common.base.Function<javax.ws.rs.core.Response, RestoreVaultFromFileResponse>
+            java.util.function.Function<javax.ws.rs.core.Response, RestoreVaultFromFileResponse>
                     transformer =
                             RestoreVaultFromFileConverter.fromResponse(
                                     java.util.Optional.of(serviceDetails));
@@ -920,8 +917,7 @@ public class KmsVaultClient implements KmsVault {
                         "RestoreVaultFromObjectStore",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RestoreVaultFromObjectStoreResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RestoreVaultFromObjectStoreResponse>
                 transformer =
                         RestoreVaultFromObjectStoreConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -962,7 +958,7 @@ public class KmsVaultClient implements KmsVault {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "ScheduleVaultDeletion", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ScheduleVaultDeletionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ScheduleVaultDeletionResponse>
                 transformer =
                         ScheduleVaultDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1000,9 +996,8 @@ public class KmsVaultClient implements KmsVault {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "UpdateVault", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVaultResponse>
-                transformer =
-                        UpdateVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVaultResponse> transformer =
+                UpdateVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

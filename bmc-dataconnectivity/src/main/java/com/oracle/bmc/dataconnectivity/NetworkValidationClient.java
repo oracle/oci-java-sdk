@@ -9,7 +9,6 @@ import com.oracle.bmc.dataconnectivity.requests.*;
 import com.oracle.bmc.dataconnectivity.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class NetworkValidationClient implements NetworkValidation {
@@ -329,7 +328,7 @@ public class NetworkValidationClient implements NetworkValidation {
          * @return the client
          */
         public NetworkValidationClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -365,7 +364,8 @@ public class NetworkValidationClient implements NetworkValidation {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -413,7 +413,7 @@ public class NetworkValidationClient implements NetworkValidation {
                         "GetNetworkConnectivityStatusCollection",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetNetworkConnectivityStatusCollectionResponse>
                 transformer =
                         GetNetworkConnectivityStatusCollectionConverter.fromResponse(

@@ -6,7 +6,6 @@ package com.oracle.bmc.computeinstanceagent;
 
 import com.oracle.bmc.computeinstanceagent.requests.*;
 import com.oracle.bmc.computeinstanceagent.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -125,8 +124,8 @@ public class ComputeInstanceAgentWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetInstanceAgentCommandExecutionRequest,
                                 GetInstanceAgentCommandExecutionResponse>() {
                             @Override
@@ -135,11 +134,10 @@ public class ComputeInstanceAgentWaiters {
                                 return client.getInstanceAgentCommandExecution(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
+                        new java.util.function.Predicate<
                                 GetInstanceAgentCommandExecutionResponse>() {
                             @Override
-                            public boolean apply(
-                                    GetInstanceAgentCommandExecutionResponse response) {
+                            public boolean test(GetInstanceAgentCommandExecutionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getInstanceAgentCommandExecution()
                                                 .getLifecycleState());

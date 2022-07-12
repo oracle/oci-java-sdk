@@ -4,7 +4,9 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.google.common.collect.ImmutableList;
+import java.util.Arrays;
+import java.util.Collections;
+
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.CompositeClientConfigurator;
 import org.junit.Test;
@@ -26,7 +28,8 @@ public class RestClientFactoryBuilderTest {
         CompositeClientConfigurator compositeClientConfigurator =
                 (CompositeClientConfigurator) fromFactory;
         assertEquals(
-                ImmutableList.of(RestClientFactoryBuilder.DEFAULT_CONFIGURATOR),
+                Collections.unmodifiableList(
+                        Arrays.asList(RestClientFactoryBuilder.DEFAULT_CONFIGURATOR)),
                 compositeClientConfigurator.getConfigurators());
     }
 
@@ -37,7 +40,8 @@ public class RestClientFactoryBuilderTest {
         RestClientFactory factory =
                 RestClientFactoryBuilder.builder()
                         .additionalClientConfigurators(
-                                ImmutableList.of(clientConfigurator1, clientConfigurator2))
+                                Collections.unmodifiableList(
+                                        Arrays.asList(clientConfigurator1, clientConfigurator2)))
                         .build();
         ClientConfigurator fromFactory = factory.getClientConfigurator();
         assertTrue(fromFactory instanceof CompositeClientConfigurator);
@@ -45,10 +49,11 @@ public class RestClientFactoryBuilderTest {
         CompositeClientConfigurator compositeClientConfigurator =
                 (CompositeClientConfigurator) fromFactory;
         assertEquals(
-                ImmutableList.of(
-                        RestClientFactoryBuilder.DEFAULT_CONFIGURATOR,
-                        clientConfigurator1,
-                        clientConfigurator2),
+                Collections.unmodifiableList(
+                        Arrays.asList(
+                                RestClientFactoryBuilder.DEFAULT_CONFIGURATOR,
+                                clientConfigurator1,
+                                clientConfigurator2)),
                 compositeClientConfigurator.getConfigurators());
     }
 
@@ -63,7 +68,7 @@ public class RestClientFactoryBuilderTest {
         CompositeClientConfigurator compositeClientConfigurator =
                 (CompositeClientConfigurator) fromFactory;
         assertEquals(
-                ImmutableList.of(defaultConfigurator),
+                Collections.unmodifiableList(Arrays.asList(defaultConfigurator)),
                 compositeClientConfigurator.getConfigurators());
     }
 
@@ -76,7 +81,8 @@ public class RestClientFactoryBuilderTest {
                 RestClientFactoryBuilder.builder()
                         .defaultConfigurator(defaultConfigurator)
                         .additionalClientConfigurators(
-                                ImmutableList.of(clientConfigurator1, clientConfigurator2))
+                                Collections.unmodifiableList(
+                                        Arrays.asList(clientConfigurator1, clientConfigurator2)))
                         .build();
         ClientConfigurator fromFactory = factory.getClientConfigurator();
         assertTrue(fromFactory instanceof CompositeClientConfigurator);
@@ -84,7 +90,9 @@ public class RestClientFactoryBuilderTest {
         CompositeClientConfigurator compositeClientConfigurator =
                 (CompositeClientConfigurator) fromFactory;
         assertEquals(
-                ImmutableList.of(defaultConfigurator, clientConfigurator1, clientConfigurator2),
+                Collections.unmodifiableList(
+                        Arrays.asList(
+                                defaultConfigurator, clientConfigurator1, clientConfigurator2)),
                 compositeClientConfigurator.getConfigurators());
     }
 
@@ -97,7 +105,8 @@ public class RestClientFactoryBuilderTest {
                 RestClientFactoryBuilder.builder()
                         .defaultConfigurator(defaultConfigurator) // order doesn't matter
                         .additionalClientConfigurators(
-                                ImmutableList.of(clientConfigurator1, clientConfigurator2))
+                                Collections.unmodifiableList(
+                                        Arrays.asList(clientConfigurator1, clientConfigurator2)))
                         .build();
         ClientConfigurator fromFactory = factory.getClientConfigurator();
         assertTrue(fromFactory instanceof CompositeClientConfigurator);
@@ -105,7 +114,9 @@ public class RestClientFactoryBuilderTest {
         CompositeClientConfigurator compositeClientConfigurator =
                 (CompositeClientConfigurator) fromFactory;
         assertEquals(
-                ImmutableList.of(defaultConfigurator, clientConfigurator1, clientConfigurator2),
+                Collections.unmodifiableList(
+                        Arrays.asList(
+                                defaultConfigurator, clientConfigurator1, clientConfigurator2)),
                 compositeClientConfigurator.getConfigurators());
     }
 
@@ -124,7 +135,7 @@ public class RestClientFactoryBuilderTest {
         CompositeClientConfigurator compositeClientConfigurator =
                 (CompositeClientConfigurator) fromFactory;
         assertEquals(
-                ImmutableList.of(clientConfigurator),
+                Collections.unmodifiableList(Arrays.asList(clientConfigurator)),
                 compositeClientConfigurator.getConfigurators());
     }
 
@@ -146,7 +157,9 @@ public class RestClientFactoryBuilderTest {
         CompositeClientConfigurator compositeClientConfigurator =
                 (CompositeClientConfigurator) fromFactory;
         assertEquals(
-                ImmutableList.of(clientConfigurator, clientConfigurator1, clientConfigurator2),
+                Collections.unmodifiableList(
+                        Arrays.asList(
+                                clientConfigurator, clientConfigurator1, clientConfigurator2)),
                 compositeClientConfigurator.getConfigurators());
     }
 
@@ -168,7 +181,9 @@ public class RestClientFactoryBuilderTest {
         CompositeClientConfigurator compositeClientConfigurator =
                 (CompositeClientConfigurator) fromFactory;
         assertEquals(
-                ImmutableList.of(clientConfigurator, clientConfigurator1, clientConfigurator2),
+                Collections.unmodifiableList(
+                        Arrays.asList(
+                                clientConfigurator, clientConfigurator1, clientConfigurator2)),
                 compositeClientConfigurator.getConfigurators());
     }
 }

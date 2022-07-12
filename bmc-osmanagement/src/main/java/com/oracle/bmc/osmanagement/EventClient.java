@@ -9,7 +9,6 @@ import com.oracle.bmc.osmanagement.requests.*;
 import com.oracle.bmc.osmanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class EventClient implements Event {
@@ -331,7 +330,7 @@ public class EventClient implements Event {
          * @return the client
          */
         public EventClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class EventClient implements Event {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -413,7 +413,7 @@ public class EventClient implements Event {
                         "DeleteEventContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/DeleteEventContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEventContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteEventContentResponse>
                 transformer =
                         DeleteEventContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -450,7 +450,7 @@ public class EventClient implements Event {
                         "GetEvent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/GetEvent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetEventResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetEventResponse> transformer =
                 GetEventConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -492,7 +492,7 @@ public class EventClient implements Event {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Event", "GetEventContent", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetEventContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetEventContentResponse>
                 transformer =
                         GetEventContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,9 +529,8 @@ public class EventClient implements Event {
                         "GetEventReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventReport/GetEventReport");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetEventReportResponse>
-                transformer =
-                        GetEventReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetEventReportResponse> transformer =
+                GetEventReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -564,7 +563,7 @@ public class EventClient implements Event {
                         "ListEvents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventCollection/ListEvents");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListEventsResponse> transformer =
                 ListEventsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -599,7 +598,7 @@ public class EventClient implements Event {
                         "ListRelatedEvents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/RelatedEventCollection/ListRelatedEvents");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRelatedEventsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRelatedEventsResponse>
                 transformer =
                         ListRelatedEventsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -636,9 +635,8 @@ public class EventClient implements Event {
                         "UpdateEvent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/UpdateEvent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEventResponse>
-                transformer =
-                        UpdateEventConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateEventResponse> transformer =
+                UpdateEventConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -677,7 +675,7 @@ public class EventClient implements Event {
                         "UploadEventContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/UploadEventContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UploadEventContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UploadEventContentResponse>
                 transformer =
                         UploadEventContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

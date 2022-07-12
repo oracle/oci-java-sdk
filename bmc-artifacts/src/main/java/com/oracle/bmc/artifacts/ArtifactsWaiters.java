@@ -6,7 +6,6 @@ package com.oracle.bmc.artifacts;
 
 import com.oracle.bmc.artifacts.requests.*;
 import com.oracle.bmc.artifacts.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -108,8 +107,8 @@ public class ArtifactsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetContainerImageRequest, GetContainerImageResponse>() {
                             @Override
                             public GetContainerImageResponse apply(
@@ -117,9 +116,9 @@ public class ArtifactsWaiters {
                                 return client.getContainerImage(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetContainerImageResponse>() {
+                        new java.util.function.Predicate<GetContainerImageResponse>() {
                             @Override
-                            public boolean apply(GetContainerImageResponse response) {
+                            public boolean test(GetContainerImageResponse response) {
                                 return targetStatesSet.contains(
                                         response.getContainerImage().getLifecycleState());
                             }
@@ -219,8 +218,8 @@ public class ArtifactsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetContainerRepositoryRequest, GetContainerRepositoryResponse>() {
                             @Override
                             public GetContainerRepositoryResponse apply(
@@ -228,9 +227,9 @@ public class ArtifactsWaiters {
                                 return client.getContainerRepository(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetContainerRepositoryResponse>() {
+                        new java.util.function.Predicate<GetContainerRepositoryResponse>() {
                             @Override
-                            public boolean apply(GetContainerRepositoryResponse response) {
+                            public boolean test(GetContainerRepositoryResponse response) {
                                 return targetStatesSet.contains(
                                         response.getContainerRepository().getLifecycleState());
                             }
@@ -324,8 +323,8 @@ public class ArtifactsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetGenericArtifactRequest, GetGenericArtifactResponse>() {
                             @Override
                             public GetGenericArtifactResponse apply(
@@ -333,9 +332,9 @@ public class ArtifactsWaiters {
                                 return client.getGenericArtifact(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetGenericArtifactResponse>() {
+                        new java.util.function.Predicate<GetGenericArtifactResponse>() {
                             @Override
-                            public boolean apply(GetGenericArtifactResponse response) {
+                            public boolean test(GetGenericArtifactResponse response) {
                                 return targetStatesSet.contains(
                                         response.getGenericArtifact().getLifecycleState());
                             }
@@ -424,17 +423,17 @@ public class ArtifactsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetRepositoryRequest, GetRepositoryResponse>() {
                             @Override
                             public GetRepositoryResponse apply(GetRepositoryRequest request) {
                                 return client.getRepository(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetRepositoryResponse>() {
+                        new java.util.function.Predicate<GetRepositoryResponse>() {
                             @Override
-                            public boolean apply(GetRepositoryResponse response) {
+                            public boolean test(GetRepositoryResponse response) {
                                 return targetStatesSet.contains(
                                         response.getRepository().getLifecycleState());
                             }

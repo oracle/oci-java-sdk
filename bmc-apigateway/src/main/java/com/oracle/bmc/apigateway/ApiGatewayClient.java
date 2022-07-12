@@ -9,7 +9,6 @@ import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class ApiGatewayClient implements ApiGateway {
@@ -334,9 +333,9 @@ public class ApiGatewayClient implements ApiGateway {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("ApiGateway-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("ApiGateway-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class ApiGatewayClient implements ApiGateway {
          * @return the client
          */
         public ApiGatewayClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class ApiGatewayClient implements ApiGateway {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,7 +487,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "ChangeApiCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/ChangeApiCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeApiCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeApiCompartmentResponse>
                 transformer =
                         ChangeApiCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -530,8 +530,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "ChangeCertificateCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/ChangeCertificateCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
                 transformer =
                         ChangeCertificateCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -570,7 +569,7 @@ public class ApiGatewayClient implements ApiGateway {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "ApiGateway", "CreateApi", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateApiResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateApiResponse> transformer =
                 CreateApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -607,7 +606,7 @@ public class ApiGatewayClient implements ApiGateway {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "ApiGateway", "CreateCertificate", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
                 transformer =
                         CreateCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -648,7 +647,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "CreateSdk",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/CreateSdk");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSdkResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSdkResponse> transformer =
                 CreateSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -686,7 +685,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "DeleteApi",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/DeleteApi");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteApiResponse> transformer =
                 DeleteApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -722,7 +721,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "DeleteCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/DeleteCertificate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
                 transformer =
                         DeleteCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -759,7 +758,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "DeleteSdk",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/DeleteSdk");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSdkResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSdkResponse> transformer =
                 DeleteSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -794,7 +793,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "GetApi",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/GetApi");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetApiResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetApiResponse> transformer =
                 GetApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -839,9 +838,8 @@ public class ApiGatewayClient implements ApiGateway {
                         "GetApiContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/GetApiContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetApiContentResponse>
-                transformer =
-                        GetApiContentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetApiContentResponse> transformer =
+                GetApiContentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -876,7 +874,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "GetApiDeploymentSpecification",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/ApiSpecification/GetApiDeploymentSpecification");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetApiDeploymentSpecificationResponse>
                 transformer =
                         GetApiDeploymentSpecificationConverter.fromResponse(
@@ -914,7 +912,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "GetApiValidations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/ApiValidations/GetApiValidations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetApiValidationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetApiValidationsResponse>
                 transformer =
                         GetApiValidationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -951,9 +949,8 @@ public class ApiGatewayClient implements ApiGateway {
                         "GetCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/GetCertificate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCertificateResponse>
-                transformer =
-                        GetCertificateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetCertificateResponse> transformer =
+                GetCertificateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -986,7 +983,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "GetSdk",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/GetSdk");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSdkResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetSdkResponse> transformer =
                 GetSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1020,7 +1017,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "ListApis",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/ListApis");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListApisResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListApisResponse> transformer =
                 ListApisConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1055,7 +1052,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "ListCertificates",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/ListCertificates");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer =
                         ListCertificatesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1092,7 +1089,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "ListSdkLanguageTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/SdkLanguageTypeSummary/ListSdkLanguageTypes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSdkLanguageTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSdkLanguageTypesResponse>
                 transformer =
                         ListSdkLanguageTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1128,7 +1125,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "ListSdks",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/ListSdks");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSdksResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListSdksResponse> transformer =
                 ListSdksConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1162,7 +1159,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "UpdateApi",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/UpdateApi");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApiResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateApiResponse> transformer =
                 UpdateApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1201,7 +1198,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "UpdateCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/UpdateCertificate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
                 transformer =
                         UpdateCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1241,7 +1238,7 @@ public class ApiGatewayClient implements ApiGateway {
                         "UpdateSdk",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/UpdateSdk");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSdkResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSdkResponse> transformer =
                 UpdateSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

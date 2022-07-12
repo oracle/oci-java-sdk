@@ -6,9 +6,12 @@ package com.oracle.bmc.http.signing.internal;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ByteArrayInputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
 import java.security.interfaces.RSAPrivateKey;
+import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Base64;
@@ -18,19 +21,18 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Optional;
 import java.util.TimeZone;
+import java.util.function.Supplier;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Optional;
-import com.google.common.base.Preconditions;
-import com.google.common.base.Supplier;
-import com.google.common.collect.ImmutableList;
-import com.google.common.hash.Hashing;
-import com.google.common.io.ByteStreams;
+import com.oracle.bmc.util.StreamUtils;
+import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerException;
@@ -90,9 +92,10 @@ public class RequestSignerImpl implements RequestSigner {
             @Nonnull final KeySupplier<RSAPrivateKey> keySupplier,
             @Nonnull final SigningConfiguration signingConfiguration,
             @Nonnull final Supplier<String> keyIdSupplier) {
-        this.keySupplier = Preconditions.checkNotNull(keySupplier);
-        this.signingConfiguration = Preconditions.checkNotNull(signingConfiguration);
-        this.keyIdSupplier = Preconditions.checkNotNull(keyIdSupplier);
+        this.keySupplier = Validate.notNull(keySupplier, "keySupplier must not be null");
+        this.signingConfiguration =
+                Validate.notNull(signingConfiguration, "signingConfiguration must not be null");
+        this.keyIdSupplier = Validate.notNull(keyIdSupplier, "keyIdSupplier must not be null");
     }
 
     private static SigningConfiguration toSigningConfiguration(SigningStrategy signingStrategy) {
@@ -147,10 +150,10 @@ public class RequestSignerImpl implements RequestSigner {
             final String keyId,
             final KeySupplier<RSAPrivateKey> keySupplier,
             final SigningConfiguration signingConfiguration) {
-        Preconditions.checkArgument(null != algorithm, "algorithm must not be null");
-        Preconditions.checkArgument(null != uri, "uri must not be null");
+        Validate.notNull(algorithm, "algorithm must not be null");
+        Validate.notNull(uri, "uri must not be null");
         Validate.notBlank(httpMethod, "httpMethod must not be null or empty");
-        Preconditions.checkArgument(null != headers, "headers must not be null");
+        Validate.notNull(headers, "headers must not be null");
         Validate.notBlank(versionName, "versionName must not be null or empty");
 
         try {
@@ -188,7 +191,8 @@ public class RequestSignerImpl implements RequestSigner {
             allHeaders.putAll(existingHeaders);
             for (Map.Entry<String, String> e : missingHeaders.entrySet()) {
                 LOG.trace("Adding missing header '{}' = '{}'", e.getKey(), e.getValue());
-                allHeaders.put(e.getKey(), ImmutableList.of(e.getValue()));
+                allHeaders.put(
+                        e.getKey(), Collections.unmodifiableList(Arrays.asList(e.getValue())));
             }
 
             // 5) calculate the signature
@@ -372,8 +376,13 @@ public class RequestSignerImpl implements RequestSigner {
     }
 
     private static String calculateBodySHA256(final byte[] body) {
-        byte[] hash = Hashing.sha256().hashBytes(body).asBytes();
-        return base64Encode(hash);
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(body);
+            return base64Encode(hash);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @VisibleForTesting
@@ -488,9 +497,9 @@ public class RequestSignerImpl implements RequestSigner {
             return ((String) body).getBytes(StandardCharsets.UTF_8);
         } else if (body instanceof DuplicatableInputStream) {
             final InputStream duplicatedBody = ((DuplicatableInputStream) body).duplicate();
-            return ByteStreams.toByteArray(duplicatedBody);
+            return StreamUtils.toByteArray(duplicatedBody);
         } else if (body instanceof KeepOpenInputStream) {
-            byte[] byteArr = ByteStreams.toByteArray((KeepOpenInputStream) body);
+            byte[] byteArr = StreamUtils.toByteArray((KeepOpenInputStream) body);
             Retriers.tryResetStreamForRetry((InputStream) body, true);
             return byteArr;
         } else if (body instanceof InputStream) {

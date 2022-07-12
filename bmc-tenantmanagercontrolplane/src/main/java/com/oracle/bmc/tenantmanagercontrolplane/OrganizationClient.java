@@ -9,7 +9,6 @@ import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class OrganizationClient implements Organization {
@@ -335,9 +334,9 @@ public class OrganizationClient implements Organization {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Organization-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Organization-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class OrganizationClient implements Organization {
          * @return the client
          */
         public OrganizationClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class OrganizationClient implements Organization {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -490,7 +490,7 @@ public class OrganizationClient implements Organization {
                         "ApproveOrganizationTenancyForTransfer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/ApproveOrganizationTenancyForTransfer");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ApproveOrganizationTenancyForTransferResponse>
                 transformer =
                         ApproveOrganizationTenancyForTransferConverter.fromResponse(
@@ -527,7 +527,7 @@ public class OrganizationClient implements Organization {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Organization", "CreateChildTenancy", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateChildTenancyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateChildTenancyResponse>
                 transformer =
                         CreateChildTenancyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -570,8 +570,7 @@ public class OrganizationClient implements Organization {
                         "DeleteOrganizationTenancy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/DeleteOrganizationTenancy");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteOrganizationTenancyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOrganizationTenancyResponse>
                 transformer =
                         DeleteOrganizationTenancyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -609,7 +608,7 @@ public class OrganizationClient implements Organization {
                         "GetOrganization",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/GetOrganization");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOrganizationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetOrganizationResponse>
                 transformer =
                         GetOrganizationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -647,7 +646,7 @@ public class OrganizationClient implements Organization {
                         "GetOrganizationTenancy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/GetOrganizationTenancy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOrganizationTenancyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetOrganizationTenancyResponse>
                 transformer =
                         GetOrganizationTenancyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -685,8 +684,7 @@ public class OrganizationClient implements Organization {
                         "ListOrganizationTenancies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizationTenancies");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListOrganizationTenanciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListOrganizationTenanciesResponse>
                 transformer =
                         ListOrganizationTenanciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -723,7 +721,7 @@ public class OrganizationClient implements Organization {
                         "ListOrganizations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListOrganizationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListOrganizationsResponse>
                 transformer =
                         ListOrganizationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -761,8 +759,7 @@ public class OrganizationClient implements Organization {
                         "RestoreOrganizationTenancy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/RestoreOrganizationTenancy");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RestoreOrganizationTenancyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RestoreOrganizationTenancyResponse>
                 transformer =
                         RestoreOrganizationTenancyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -803,7 +800,7 @@ public class OrganizationClient implements Organization {
                         "UnapproveOrganizationTenancyForTransfer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/UnapproveOrganizationTenancyForTransfer");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UnapproveOrganizationTenancyForTransferResponse>
                 transformer =
                         UnapproveOrganizationTenancyForTransferConverter.fromResponse(
@@ -843,7 +840,7 @@ public class OrganizationClient implements Organization {
                         "UpdateOrganization",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/UpdateOrganization");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOrganizationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOrganizationResponse>
                 transformer =
                         UpdateOrganizationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -53,22 +53,22 @@ public class GetJobConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.databasemigration.responses.GetJobResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.databasemigration.responses.GetJobResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.databasemigration.responses.GetJobResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.databasemigration.responses.GetJobResponse>() {
                             @Override
@@ -76,7 +76,7 @@ public class GetJobConverter {
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.databasemigration.responses.GetJobResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.databasemigration.model.Job>>
@@ -109,10 +109,9 @@ public class GetJobConverter {
 
                                 builder.job(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -121,7 +120,7 @@ public class GetJobConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
+                                java.util.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
                                                 headers, "etag");
                                 if (etagHeader.isPresent()) {

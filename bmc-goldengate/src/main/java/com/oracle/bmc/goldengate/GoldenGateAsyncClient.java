@@ -7,7 +7,6 @@ package com.oracle.bmc.goldengate;
 import com.oracle.bmc.goldengate.internal.http.*;
 import com.oracle.bmc.goldengate.requests.*;
 import com.oracle.bmc.goldengate.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for GoldenGate service. <br/>
@@ -319,7 +318,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
          * @return the client
          */
         public GoldenGateAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,8 +404,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "CancelDeploymentBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/CancelDeploymentBackup");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CancelDeploymentBackupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelDeploymentBackupResponse>
                 transformer =
                         CancelDeploymentBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -461,7 +460,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "ChangeDatabaseRegistrationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/ChangeDatabaseRegistrationCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseRegistrationCompartmentResponse>
                 transformer =
                         ChangeDatabaseRegistrationCompartmentConverter.fromResponse(
@@ -521,7 +520,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "ChangeDeploymentBackupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/ChangeDeploymentBackupCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDeploymentBackupCompartmentResponse>
                 transformer =
                         ChangeDeploymentBackupCompartmentConverter.fromResponse(
@@ -580,7 +579,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "ChangeDeploymentCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ChangeDeploymentCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDeploymentCompartmentResponse>
                 transformer =
                         ChangeDeploymentCompartmentConverter.fromResponse(
@@ -637,7 +636,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "CreateDatabaseRegistration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/CreateDatabaseRegistration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateDatabaseRegistrationResponse>
                 transformer =
                         CreateDatabaseRegistrationConverter.fromResponse(
@@ -692,7 +691,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "CreateDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/CreateDeployment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
                 transformer =
                         CreateDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -744,8 +743,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "CreateDeploymentBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/CreateDeploymentBackup");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateDeploymentBackupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDeploymentBackupResponse>
                 transformer =
                         CreateDeploymentBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -799,7 +797,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "DeleteDatabaseRegistration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/DeleteDatabaseRegistration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseRegistrationResponse>
                 transformer =
                         DeleteDatabaseRegistrationConverter.fromResponse(
@@ -848,7 +846,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "DeleteDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/DeleteDeployment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeploymentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDeploymentResponse>
                 transformer =
                         DeleteDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -894,8 +892,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "DeleteDeploymentBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/DeleteDeploymentBackup");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteDeploymentBackupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDeploymentBackupResponse>
                 transformer =
                         DeleteDeploymentBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -942,7 +939,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "GetDatabaseRegistration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/GetDatabaseRegistration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseRegistrationResponse>
                 transformer =
                         GetDatabaseRegistrationConverter.fromResponse(
@@ -989,7 +986,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "GetDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GetDeployment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDeploymentResponse>
                 transformer =
                         GetDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDeploymentRequest, GetDeploymentResponse>
@@ -1034,8 +1031,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "GetDeploymentBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/GetDeploymentBackup");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDeploymentBackupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDeploymentBackupResponse>
                 transformer =
                         GetDeploymentBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1082,8 +1078,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "GetDeploymentUpgrade",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/GetDeploymentUpgrade");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDeploymentUpgradeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDeploymentUpgradeResponse>
                 transformer =
                         GetDeploymentUpgradeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1130,7 +1125,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -1175,7 +1170,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "ListDatabaseRegistrations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/ListDatabaseRegistrations");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseRegistrationsResponse>
                 transformer =
                         ListDatabaseRegistrationsConverter.fromResponse(
@@ -1224,8 +1219,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "ListDeploymentBackups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/ListDeploymentBackups");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDeploymentBackupsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDeploymentBackupsResponse>
                 transformer =
                         ListDeploymentBackupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1272,8 +1266,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "ListDeploymentUpgrades",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/ListDeploymentUpgrades");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDeploymentUpgradesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDeploymentUpgradesResponse>
                 transformer =
                         ListDeploymentUpgradesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1320,7 +1313,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "ListDeployments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ListDeployments");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
                 transformer =
                         ListDeploymentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1366,8 +1359,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1414,8 +1406,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequestLogEntry/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1462,7 +1453,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequest/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1509,7 +1500,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "RestoreDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/RestoreDeployment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RestoreDeploymentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RestoreDeploymentResponse>
                 transformer =
                         RestoreDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1561,7 +1552,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "StartDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/StartDeployment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StartDeploymentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, StartDeploymentResponse>
                 transformer =
                         StartDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1613,7 +1604,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "StopDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/StopDeployment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StopDeploymentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, StopDeploymentResponse>
                 transformer =
                         StopDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<StopDeploymentRequest, StopDeploymentResponse>
@@ -1665,7 +1656,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "UpdateDatabaseRegistration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/UpdateDatabaseRegistration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseRegistrationResponse>
                 transformer =
                         UpdateDatabaseRegistrationConverter.fromResponse(
@@ -1719,7 +1710,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "UpdateDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/UpdateDeployment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
                 transformer =
                         UpdateDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1770,8 +1761,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "UpdateDeploymentBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/UpdateDeploymentBackup");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateDeploymentBackupResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDeploymentBackupResponse>
                 transformer =
                         UpdateDeploymentBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1824,7 +1814,7 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                         "UpgradeDeployment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/UpgradeDeployment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDeploymentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpgradeDeploymentResponse>
                 transformer =
                         UpgradeDeploymentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -44,19 +44,19 @@ public class AIServiceVisionPaginators {
             final ListModelsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListModelsRequest.Builder, ListModelsRequest, ListModelsResponse>(
-                new com.google.common.base.Supplier<ListModelsRequest.Builder>() {
+                new java.util.function.Supplier<ListModelsRequest.Builder>() {
                     @Override
                     public ListModelsRequest.Builder get() {
                         return ListModelsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModelsResponse, String>() {
+                new java.util.function.Function<ListModelsResponse, String>() {
                     @Override
                     public String apply(ListModelsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModelsRequest.Builder>,
                         ListModelsRequest>() {
@@ -69,12 +69,12 @@ public class AIServiceVisionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListModelsRequest, ListModelsResponse>() {
+                new java.util.function.Function<ListModelsRequest, ListModelsResponse>() {
                     @Override
                     public ListModelsResponse apply(ListModelsRequest request) {
                         return client.listModels(request);
@@ -96,19 +96,19 @@ public class AIServiceVisionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListModelsRequest.Builder, ListModelsRequest, ListModelsResponse,
                 com.oracle.bmc.aivision.model.ModelSummary>(
-                new com.google.common.base.Supplier<ListModelsRequest.Builder>() {
+                new java.util.function.Supplier<ListModelsRequest.Builder>() {
                     @Override
                     public ListModelsRequest.Builder get() {
                         return ListModelsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModelsResponse, String>() {
+                new java.util.function.Function<ListModelsResponse, String>() {
                     @Override
                     public String apply(ListModelsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModelsRequest.Builder>,
                         ListModelsRequest>() {
@@ -121,18 +121,18 @@ public class AIServiceVisionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListModelsRequest, ListModelsResponse>() {
+                new java.util.function.Function<ListModelsRequest, ListModelsResponse>() {
                     @Override
                     public ListModelsResponse apply(ListModelsRequest request) {
                         return client.listModels(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModelsResponse,
                         java.util.List<com.oracle.bmc.aivision.model.ModelSummary>>() {
                     @Override
@@ -154,19 +154,19 @@ public class AIServiceVisionPaginators {
             final ListProjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListProjectsRequest.Builder, ListProjectsRequest, ListProjectsResponse>(
-                new com.google.common.base.Supplier<ListProjectsRequest.Builder>() {
+                new java.util.function.Supplier<ListProjectsRequest.Builder>() {
                     @Override
                     public ListProjectsRequest.Builder get() {
                         return ListProjectsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProjectsResponse, String>() {
+                new java.util.function.Function<ListProjectsResponse, String>() {
                     @Override
                     public String apply(ListProjectsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProjectsRequest.Builder>,
                         ListProjectsRequest>() {
@@ -179,12 +179,12 @@ public class AIServiceVisionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListProjectsRequest, ListProjectsResponse>() {
+                new java.util.function.Function<ListProjectsRequest, ListProjectsResponse>() {
                     @Override
                     public ListProjectsResponse apply(ListProjectsRequest request) {
                         return client.listProjects(request);
@@ -206,19 +206,19 @@ public class AIServiceVisionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListProjectsRequest.Builder, ListProjectsRequest, ListProjectsResponse,
                 com.oracle.bmc.aivision.model.ProjectSummary>(
-                new com.google.common.base.Supplier<ListProjectsRequest.Builder>() {
+                new java.util.function.Supplier<ListProjectsRequest.Builder>() {
                     @Override
                     public ListProjectsRequest.Builder get() {
                         return ListProjectsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProjectsResponse, String>() {
+                new java.util.function.Function<ListProjectsResponse, String>() {
                     @Override
                     public String apply(ListProjectsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProjectsRequest.Builder>,
                         ListProjectsRequest>() {
@@ -231,18 +231,18 @@ public class AIServiceVisionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListProjectsRequest, ListProjectsResponse>() {
+                new java.util.function.Function<ListProjectsRequest, ListProjectsResponse>() {
                     @Override
                     public ListProjectsResponse apply(ListProjectsRequest request) {
                         return client.listProjects(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProjectsResponse,
                         java.util.List<com.oracle.bmc.aivision.model.ProjectSummary>>() {
                     @Override
@@ -265,19 +265,19 @@ public class AIServiceVisionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -290,12 +290,12 @@ public class AIServiceVisionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -319,19 +319,19 @@ public class AIServiceVisionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse, com.oracle.bmc.aivision.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -344,12 +344,12 @@ public class AIServiceVisionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -357,7 +357,7 @@ public class AIServiceVisionPaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<com.oracle.bmc.aivision.model.WorkRequestError>>() {
                     @Override
@@ -380,19 +380,19 @@ public class AIServiceVisionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -405,12 +405,12 @@ public class AIServiceVisionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -433,19 +433,19 @@ public class AIServiceVisionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse, com.oracle.bmc.aivision.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -458,19 +458,19 @@ public class AIServiceVisionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<com.oracle.bmc.aivision.model.WorkRequestLogEntry>>() {
                     @Override
@@ -492,19 +492,19 @@ public class AIServiceVisionPaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -517,12 +517,12 @@ public class AIServiceVisionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -545,19 +545,19 @@ public class AIServiceVisionPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.aivision.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -570,19 +570,19 @@ public class AIServiceVisionPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<com.oracle.bmc.aivision.model.WorkRequestSummary>>() {
                     @Override

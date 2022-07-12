@@ -47,7 +47,7 @@ public class OsManagementPaginators {
                 ListAvailablePackagesForManagedInstanceRequest.Builder,
                 ListAvailablePackagesForManagedInstanceRequest,
                 ListAvailablePackagesForManagedInstanceResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListAvailablePackagesForManagedInstanceRequest.Builder>() {
                     @Override
                     public ListAvailablePackagesForManagedInstanceRequest.Builder get() {
@@ -55,14 +55,14 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailablePackagesForManagedInstanceResponse, String>() {
                     @Override
                     public String apply(ListAvailablePackagesForManagedInstanceResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAvailablePackagesForManagedInstanceRequest.Builder>,
                         ListAvailablePackagesForManagedInstanceRequest>() {
@@ -75,12 +75,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailablePackagesForManagedInstanceRequest,
                         ListAvailablePackagesForManagedInstanceResponse>() {
                     @Override
@@ -108,7 +108,7 @@ public class OsManagementPaginators {
                 ListAvailablePackagesForManagedInstanceRequest,
                 ListAvailablePackagesForManagedInstanceResponse,
                 com.oracle.bmc.osmanagement.model.InstallablePackageSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListAvailablePackagesForManagedInstanceRequest.Builder>() {
                     @Override
                     public ListAvailablePackagesForManagedInstanceRequest.Builder get() {
@@ -116,14 +116,14 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailablePackagesForManagedInstanceResponse, String>() {
                     @Override
                     public String apply(ListAvailablePackagesForManagedInstanceResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAvailablePackagesForManagedInstanceRequest.Builder>,
                         ListAvailablePackagesForManagedInstanceRequest>() {
@@ -136,12 +136,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailablePackagesForManagedInstanceRequest,
                         ListAvailablePackagesForManagedInstanceResponse>() {
                     @Override
@@ -150,7 +150,7 @@ public class OsManagementPaginators {
                         return client.listAvailablePackagesForManagedInstance(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailablePackagesForManagedInstanceResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model.InstallablePackageSummary>>() {
@@ -177,7 +177,7 @@ public class OsManagementPaginators {
                 ListAvailableSoftwareSourcesForManagedInstanceRequest.Builder,
                 ListAvailableSoftwareSourcesForManagedInstanceRequest,
                 ListAvailableSoftwareSourcesForManagedInstanceResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListAvailableSoftwareSourcesForManagedInstanceRequest.Builder>() {
                     @Override
                     public ListAvailableSoftwareSourcesForManagedInstanceRequest.Builder get() {
@@ -185,7 +185,7 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableSoftwareSourcesForManagedInstanceResponse, String>() {
                     @Override
                     public String apply(
@@ -193,7 +193,7 @@ public class OsManagementPaginators {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAvailableSoftwareSourcesForManagedInstanceRequest.Builder>,
                         ListAvailableSoftwareSourcesForManagedInstanceRequest>() {
@@ -207,12 +207,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableSoftwareSourcesForManagedInstanceRequest,
                         ListAvailableSoftwareSourcesForManagedInstanceResponse>() {
                     @Override
@@ -240,7 +240,7 @@ public class OsManagementPaginators {
                 ListAvailableSoftwareSourcesForManagedInstanceRequest,
                 ListAvailableSoftwareSourcesForManagedInstanceResponse,
                 com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListAvailableSoftwareSourcesForManagedInstanceRequest.Builder>() {
                     @Override
                     public ListAvailableSoftwareSourcesForManagedInstanceRequest.Builder get() {
@@ -248,7 +248,7 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableSoftwareSourcesForManagedInstanceResponse, String>() {
                     @Override
                     public String apply(
@@ -256,7 +256,7 @@ public class OsManagementPaginators {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAvailableSoftwareSourcesForManagedInstanceRequest.Builder>,
                         ListAvailableSoftwareSourcesForManagedInstanceRequest>() {
@@ -270,12 +270,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableSoftwareSourcesForManagedInstanceRequest,
                         ListAvailableSoftwareSourcesForManagedInstanceResponse>() {
                     @Override
@@ -284,7 +284,7 @@ public class OsManagementPaginators {
                         return client.listAvailableSoftwareSourcesForManagedInstance(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableSoftwareSourcesForManagedInstanceResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model
@@ -313,7 +313,7 @@ public class OsManagementPaginators {
                 ListAvailableUpdatesForManagedInstanceRequest.Builder,
                 ListAvailableUpdatesForManagedInstanceRequest,
                 ListAvailableUpdatesForManagedInstanceResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListAvailableUpdatesForManagedInstanceRequest.Builder>() {
                     @Override
                     public ListAvailableUpdatesForManagedInstanceRequest.Builder get() {
@@ -321,14 +321,14 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableUpdatesForManagedInstanceResponse, String>() {
                     @Override
                     public String apply(ListAvailableUpdatesForManagedInstanceResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAvailableUpdatesForManagedInstanceRequest.Builder>,
                         ListAvailableUpdatesForManagedInstanceRequest>() {
@@ -341,12 +341,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableUpdatesForManagedInstanceRequest,
                         ListAvailableUpdatesForManagedInstanceResponse>() {
                     @Override
@@ -374,7 +374,7 @@ public class OsManagementPaginators {
                 ListAvailableUpdatesForManagedInstanceRequest,
                 ListAvailableUpdatesForManagedInstanceResponse,
                 com.oracle.bmc.osmanagement.model.AvailableUpdateSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListAvailableUpdatesForManagedInstanceRequest.Builder>() {
                     @Override
                     public ListAvailableUpdatesForManagedInstanceRequest.Builder get() {
@@ -382,14 +382,14 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableUpdatesForManagedInstanceResponse, String>() {
                     @Override
                     public String apply(ListAvailableUpdatesForManagedInstanceResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAvailableUpdatesForManagedInstanceRequest.Builder>,
                         ListAvailableUpdatesForManagedInstanceRequest>() {
@@ -402,12 +402,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableUpdatesForManagedInstanceRequest,
                         ListAvailableUpdatesForManagedInstanceResponse>() {
                     @Override
@@ -416,7 +416,7 @@ public class OsManagementPaginators {
                         return client.listAvailableUpdatesForManagedInstance(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableUpdatesForManagedInstanceResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model.AvailableUpdateSummary>>() {
@@ -442,7 +442,7 @@ public class OsManagementPaginators {
                 ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder,
                 ListAvailableWindowsUpdatesForManagedInstanceRequest,
                 ListAvailableWindowsUpdatesForManagedInstanceResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder>() {
                     @Override
                     public ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder get() {
@@ -450,7 +450,7 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableWindowsUpdatesForManagedInstanceResponse, String>() {
                     @Override
                     public String apply(
@@ -458,7 +458,7 @@ public class OsManagementPaginators {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder>,
                         ListAvailableWindowsUpdatesForManagedInstanceRequest>() {
@@ -472,12 +472,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableWindowsUpdatesForManagedInstanceRequest,
                         ListAvailableWindowsUpdatesForManagedInstanceResponse>() {
                     @Override
@@ -505,7 +505,7 @@ public class OsManagementPaginators {
                 ListAvailableWindowsUpdatesForManagedInstanceRequest,
                 ListAvailableWindowsUpdatesForManagedInstanceResponse,
                 com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder>() {
                     @Override
                     public ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder get() {
@@ -513,7 +513,7 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableWindowsUpdatesForManagedInstanceResponse, String>() {
                     @Override
                     public String apply(
@@ -521,7 +521,7 @@ public class OsManagementPaginators {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder>,
                         ListAvailableWindowsUpdatesForManagedInstanceRequest>() {
@@ -535,12 +535,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableWindowsUpdatesForManagedInstanceRequest,
                         ListAvailableWindowsUpdatesForManagedInstanceResponse>() {
                     @Override
@@ -549,7 +549,7 @@ public class OsManagementPaginators {
                         return client.listAvailableWindowsUpdatesForManagedInstance(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAvailableWindowsUpdatesForManagedInstanceResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model
@@ -574,19 +574,19 @@ public class OsManagementPaginators {
             final ListErrataRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListErrataRequest.Builder, ListErrataRequest, ListErrataResponse>(
-                new com.google.common.base.Supplier<ListErrataRequest.Builder>() {
+                new java.util.function.Supplier<ListErrataRequest.Builder>() {
                     @Override
                     public ListErrataRequest.Builder get() {
                         return ListErrataRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListErrataResponse, String>() {
+                new java.util.function.Function<ListErrataResponse, String>() {
                     @Override
                     public String apply(ListErrataResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListErrataRequest.Builder>,
                         ListErrataRequest>() {
@@ -599,12 +599,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListErrataRequest, ListErrataResponse>() {
+                new java.util.function.Function<ListErrataRequest, ListErrataResponse>() {
                     @Override
                     public ListErrataResponse apply(ListErrataRequest request) {
                         return client.listErrata(request);
@@ -626,19 +626,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListErrataRequest.Builder, ListErrataRequest, ListErrataResponse,
                 com.oracle.bmc.osmanagement.model.ErratumSummary>(
-                new com.google.common.base.Supplier<ListErrataRequest.Builder>() {
+                new java.util.function.Supplier<ListErrataRequest.Builder>() {
                     @Override
                     public ListErrataRequest.Builder get() {
                         return ListErrataRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListErrataResponse, String>() {
+                new java.util.function.Function<ListErrataResponse, String>() {
                     @Override
                     public String apply(ListErrataResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListErrataRequest.Builder>,
                         ListErrataRequest>() {
@@ -651,18 +651,18 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListErrataRequest, ListErrataResponse>() {
+                new java.util.function.Function<ListErrataRequest, ListErrataResponse>() {
                     @Override
                     public ListErrataResponse apply(ListErrataRequest request) {
                         return client.listErrata(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListErrataResponse,
                         java.util.List<com.oracle.bmc.osmanagement.model.ErratumSummary>>() {
                     @Override
@@ -685,19 +685,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListManagedInstanceErrataRequest.Builder, ListManagedInstanceErrataRequest,
                 ListManagedInstanceErrataResponse>(
-                new com.google.common.base.Supplier<ListManagedInstanceErrataRequest.Builder>() {
+                new java.util.function.Supplier<ListManagedInstanceErrataRequest.Builder>() {
                     @Override
                     public ListManagedInstanceErrataRequest.Builder get() {
                         return ListManagedInstanceErrataRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListManagedInstanceErrataResponse, String>() {
+                new java.util.function.Function<ListManagedInstanceErrataResponse, String>() {
                     @Override
                     public String apply(ListManagedInstanceErrataResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListManagedInstanceErrataRequest.Builder>,
                         ListManagedInstanceErrataRequest>() {
@@ -710,12 +710,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagedInstanceErrataRequest, ListManagedInstanceErrataResponse>() {
                     @Override
                     public ListManagedInstanceErrataResponse apply(
@@ -741,19 +741,19 @@ public class OsManagementPaginators {
                 ListManagedInstanceErrataRequest.Builder, ListManagedInstanceErrataRequest,
                 ListManagedInstanceErrataResponse,
                 com.oracle.bmc.osmanagement.model.ErratumSummary>(
-                new com.google.common.base.Supplier<ListManagedInstanceErrataRequest.Builder>() {
+                new java.util.function.Supplier<ListManagedInstanceErrataRequest.Builder>() {
                     @Override
                     public ListManagedInstanceErrataRequest.Builder get() {
                         return ListManagedInstanceErrataRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListManagedInstanceErrataResponse, String>() {
+                new java.util.function.Function<ListManagedInstanceErrataResponse, String>() {
                     @Override
                     public String apply(ListManagedInstanceErrataResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListManagedInstanceErrataRequest.Builder>,
                         ListManagedInstanceErrataRequest>() {
@@ -766,12 +766,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagedInstanceErrataRequest, ListManagedInstanceErrataResponse>() {
                     @Override
                     public ListManagedInstanceErrataResponse apply(
@@ -779,7 +779,7 @@ public class OsManagementPaginators {
                         return client.listManagedInstanceErrata(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagedInstanceErrataResponse,
                         java.util.List<com.oracle.bmc.osmanagement.model.ErratumSummary>>() {
                     @Override
@@ -802,19 +802,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListManagedInstanceGroupsRequest.Builder, ListManagedInstanceGroupsRequest,
                 ListManagedInstanceGroupsResponse>(
-                new com.google.common.base.Supplier<ListManagedInstanceGroupsRequest.Builder>() {
+                new java.util.function.Supplier<ListManagedInstanceGroupsRequest.Builder>() {
                     @Override
                     public ListManagedInstanceGroupsRequest.Builder get() {
                         return ListManagedInstanceGroupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListManagedInstanceGroupsResponse, String>() {
+                new java.util.function.Function<ListManagedInstanceGroupsResponse, String>() {
                     @Override
                     public String apply(ListManagedInstanceGroupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListManagedInstanceGroupsRequest.Builder>,
                         ListManagedInstanceGroupsRequest>() {
@@ -827,12 +827,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagedInstanceGroupsRequest, ListManagedInstanceGroupsResponse>() {
                     @Override
                     public ListManagedInstanceGroupsResponse apply(
@@ -858,19 +858,19 @@ public class OsManagementPaginators {
                 ListManagedInstanceGroupsRequest.Builder, ListManagedInstanceGroupsRequest,
                 ListManagedInstanceGroupsResponse,
                 com.oracle.bmc.osmanagement.model.ManagedInstanceGroupSummary>(
-                new com.google.common.base.Supplier<ListManagedInstanceGroupsRequest.Builder>() {
+                new java.util.function.Supplier<ListManagedInstanceGroupsRequest.Builder>() {
                     @Override
                     public ListManagedInstanceGroupsRequest.Builder get() {
                         return ListManagedInstanceGroupsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListManagedInstanceGroupsResponse, String>() {
+                new java.util.function.Function<ListManagedInstanceGroupsResponse, String>() {
                     @Override
                     public String apply(ListManagedInstanceGroupsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListManagedInstanceGroupsRequest.Builder>,
                         ListManagedInstanceGroupsRequest>() {
@@ -883,12 +883,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagedInstanceGroupsRequest, ListManagedInstanceGroupsResponse>() {
                     @Override
                     public ListManagedInstanceGroupsResponse apply(
@@ -896,7 +896,7 @@ public class OsManagementPaginators {
                         return client.listManagedInstanceGroups(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagedInstanceGroupsResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model.ManagedInstanceGroupSummary>>() {
@@ -921,19 +921,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListManagedInstancesRequest.Builder, ListManagedInstancesRequest,
                 ListManagedInstancesResponse>(
-                new com.google.common.base.Supplier<ListManagedInstancesRequest.Builder>() {
+                new java.util.function.Supplier<ListManagedInstancesRequest.Builder>() {
                     @Override
                     public ListManagedInstancesRequest.Builder get() {
                         return ListManagedInstancesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListManagedInstancesResponse, String>() {
+                new java.util.function.Function<ListManagedInstancesResponse, String>() {
                     @Override
                     public String apply(ListManagedInstancesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListManagedInstancesRequest.Builder>,
                         ListManagedInstancesRequest>() {
@@ -946,12 +946,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagedInstancesRequest, ListManagedInstancesResponse>() {
                     @Override
                     public ListManagedInstancesResponse apply(ListManagedInstancesRequest request) {
@@ -975,19 +975,19 @@ public class OsManagementPaginators {
                 ListManagedInstancesRequest.Builder, ListManagedInstancesRequest,
                 ListManagedInstancesResponse,
                 com.oracle.bmc.osmanagement.model.ManagedInstanceSummary>(
-                new com.google.common.base.Supplier<ListManagedInstancesRequest.Builder>() {
+                new java.util.function.Supplier<ListManagedInstancesRequest.Builder>() {
                     @Override
                     public ListManagedInstancesRequest.Builder get() {
                         return ListManagedInstancesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListManagedInstancesResponse, String>() {
+                new java.util.function.Function<ListManagedInstancesResponse, String>() {
                     @Override
                     public String apply(ListManagedInstancesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListManagedInstancesRequest.Builder>,
                         ListManagedInstancesRequest>() {
@@ -1000,19 +1000,19 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagedInstancesRequest, ListManagedInstancesResponse>() {
                     @Override
                     public ListManagedInstancesResponse apply(ListManagedInstancesRequest request) {
                         return client.listManagedInstances(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagedInstancesResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model.ManagedInstanceSummary>>() {
@@ -1036,19 +1036,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListModuleStreamProfilesRequest.Builder, ListModuleStreamProfilesRequest,
                 ListModuleStreamProfilesResponse>(
-                new com.google.common.base.Supplier<ListModuleStreamProfilesRequest.Builder>() {
+                new java.util.function.Supplier<ListModuleStreamProfilesRequest.Builder>() {
                     @Override
                     public ListModuleStreamProfilesRequest.Builder get() {
                         return ListModuleStreamProfilesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModuleStreamProfilesResponse, String>() {
+                new java.util.function.Function<ListModuleStreamProfilesResponse, String>() {
                     @Override
                     public String apply(ListModuleStreamProfilesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModuleStreamProfilesRequest.Builder>,
                         ListModuleStreamProfilesRequest>() {
@@ -1061,12 +1061,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamProfilesRequest, ListModuleStreamProfilesResponse>() {
                     @Override
                     public ListModuleStreamProfilesResponse apply(
@@ -1091,19 +1091,19 @@ public class OsManagementPaginators {
                 ListModuleStreamProfilesRequest.Builder, ListModuleStreamProfilesRequest,
                 ListModuleStreamProfilesResponse,
                 com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary>(
-                new com.google.common.base.Supplier<ListModuleStreamProfilesRequest.Builder>() {
+                new java.util.function.Supplier<ListModuleStreamProfilesRequest.Builder>() {
                     @Override
                     public ListModuleStreamProfilesRequest.Builder get() {
                         return ListModuleStreamProfilesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModuleStreamProfilesResponse, String>() {
+                new java.util.function.Function<ListModuleStreamProfilesResponse, String>() {
                     @Override
                     public String apply(ListModuleStreamProfilesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModuleStreamProfilesRequest.Builder>,
                         ListModuleStreamProfilesRequest>() {
@@ -1116,12 +1116,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamProfilesRequest, ListModuleStreamProfilesResponse>() {
                     @Override
                     public ListModuleStreamProfilesResponse apply(
@@ -1129,7 +1129,7 @@ public class OsManagementPaginators {
                         return client.listModuleStreamProfiles(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamProfilesResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary>>() {
@@ -1156,7 +1156,7 @@ public class OsManagementPaginators {
                 ListModuleStreamProfilesOnManagedInstanceRequest.Builder,
                 ListModuleStreamProfilesOnManagedInstanceRequest,
                 ListModuleStreamProfilesOnManagedInstanceResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListModuleStreamProfilesOnManagedInstanceRequest.Builder>() {
                     @Override
                     public ListModuleStreamProfilesOnManagedInstanceRequest.Builder get() {
@@ -1164,7 +1164,7 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamProfilesOnManagedInstanceResponse, String>() {
                     @Override
                     public String apply(
@@ -1172,7 +1172,7 @@ public class OsManagementPaginators {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModuleStreamProfilesOnManagedInstanceRequest.Builder>,
                         ListModuleStreamProfilesOnManagedInstanceRequest>() {
@@ -1186,12 +1186,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamProfilesOnManagedInstanceRequest,
                         ListModuleStreamProfilesOnManagedInstanceResponse>() {
                     @Override
@@ -1219,7 +1219,7 @@ public class OsManagementPaginators {
                 ListModuleStreamProfilesOnManagedInstanceRequest,
                 ListModuleStreamProfilesOnManagedInstanceResponse,
                 com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListModuleStreamProfilesOnManagedInstanceRequest.Builder>() {
                     @Override
                     public ListModuleStreamProfilesOnManagedInstanceRequest.Builder get() {
@@ -1227,7 +1227,7 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamProfilesOnManagedInstanceResponse, String>() {
                     @Override
                     public String apply(
@@ -1235,7 +1235,7 @@ public class OsManagementPaginators {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModuleStreamProfilesOnManagedInstanceRequest.Builder>,
                         ListModuleStreamProfilesOnManagedInstanceRequest>() {
@@ -1249,12 +1249,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamProfilesOnManagedInstanceRequest,
                         ListModuleStreamProfilesOnManagedInstanceResponse>() {
                     @Override
@@ -1263,7 +1263,7 @@ public class OsManagementPaginators {
                         return client.listModuleStreamProfilesOnManagedInstance(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamProfilesOnManagedInstanceResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model
@@ -1290,19 +1290,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListModuleStreamsRequest.Builder, ListModuleStreamsRequest,
                 ListModuleStreamsResponse>(
-                new com.google.common.base.Supplier<ListModuleStreamsRequest.Builder>() {
+                new java.util.function.Supplier<ListModuleStreamsRequest.Builder>() {
                     @Override
                     public ListModuleStreamsRequest.Builder get() {
                         return ListModuleStreamsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModuleStreamsResponse, String>() {
+                new java.util.function.Function<ListModuleStreamsResponse, String>() {
                     @Override
                     public String apply(ListModuleStreamsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModuleStreamsRequest.Builder>,
                         ListModuleStreamsRequest>() {
@@ -1315,12 +1315,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamsRequest, ListModuleStreamsResponse>() {
                     @Override
                     public ListModuleStreamsResponse apply(ListModuleStreamsRequest request) {
@@ -1343,19 +1343,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListModuleStreamsRequest.Builder, ListModuleStreamsRequest,
                 ListModuleStreamsResponse, com.oracle.bmc.osmanagement.model.ModuleStreamSummary>(
-                new com.google.common.base.Supplier<ListModuleStreamsRequest.Builder>() {
+                new java.util.function.Supplier<ListModuleStreamsRequest.Builder>() {
                     @Override
                     public ListModuleStreamsRequest.Builder get() {
                         return ListModuleStreamsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModuleStreamsResponse, String>() {
+                new java.util.function.Function<ListModuleStreamsResponse, String>() {
                     @Override
                     public String apply(ListModuleStreamsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModuleStreamsRequest.Builder>,
                         ListModuleStreamsRequest>() {
@@ -1368,19 +1368,19 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamsRequest, ListModuleStreamsResponse>() {
                     @Override
                     public ListModuleStreamsResponse apply(ListModuleStreamsRequest request) {
                         return client.listModuleStreams(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamsResponse,
                         java.util.List<com.oracle.bmc.osmanagement.model.ModuleStreamSummary>>() {
                     @Override
@@ -1405,21 +1405,21 @@ public class OsManagementPaginators {
                 ListModuleStreamsOnManagedInstanceRequest.Builder,
                 ListModuleStreamsOnManagedInstanceRequest,
                 ListModuleStreamsOnManagedInstanceResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListModuleStreamsOnManagedInstanceRequest.Builder>() {
                     @Override
                     public ListModuleStreamsOnManagedInstanceRequest.Builder get() {
                         return ListModuleStreamsOnManagedInstanceRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamsOnManagedInstanceResponse, String>() {
                     @Override
                     public String apply(ListModuleStreamsOnManagedInstanceResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModuleStreamsOnManagedInstanceRequest.Builder>,
                         ListModuleStreamsOnManagedInstanceRequest>() {
@@ -1432,12 +1432,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamsOnManagedInstanceRequest,
                         ListModuleStreamsOnManagedInstanceResponse>() {
                     @Override
@@ -1465,21 +1465,21 @@ public class OsManagementPaginators {
                 ListModuleStreamsOnManagedInstanceRequest,
                 ListModuleStreamsOnManagedInstanceResponse,
                 com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListModuleStreamsOnManagedInstanceRequest.Builder>() {
                     @Override
                     public ListModuleStreamsOnManagedInstanceRequest.Builder get() {
                         return ListModuleStreamsOnManagedInstanceRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamsOnManagedInstanceResponse, String>() {
                     @Override
                     public String apply(ListModuleStreamsOnManagedInstanceResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModuleStreamsOnManagedInstanceRequest.Builder>,
                         ListModuleStreamsOnManagedInstanceRequest>() {
@@ -1492,12 +1492,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamsOnManagedInstanceRequest,
                         ListModuleStreamsOnManagedInstanceResponse>() {
                     @Override
@@ -1506,7 +1506,7 @@ public class OsManagementPaginators {
                         return client.listModuleStreamsOnManagedInstance(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModuleStreamsOnManagedInstanceResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model
@@ -1535,7 +1535,7 @@ public class OsManagementPaginators {
                 ListPackagesInstalledOnManagedInstanceRequest.Builder,
                 ListPackagesInstalledOnManagedInstanceRequest,
                 ListPackagesInstalledOnManagedInstanceResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListPackagesInstalledOnManagedInstanceRequest.Builder>() {
                     @Override
                     public ListPackagesInstalledOnManagedInstanceRequest.Builder get() {
@@ -1543,14 +1543,14 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPackagesInstalledOnManagedInstanceResponse, String>() {
                     @Override
                     public String apply(ListPackagesInstalledOnManagedInstanceResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPackagesInstalledOnManagedInstanceRequest.Builder>,
                         ListPackagesInstalledOnManagedInstanceRequest>() {
@@ -1563,12 +1563,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPackagesInstalledOnManagedInstanceRequest,
                         ListPackagesInstalledOnManagedInstanceResponse>() {
                     @Override
@@ -1596,7 +1596,7 @@ public class OsManagementPaginators {
                 ListPackagesInstalledOnManagedInstanceRequest,
                 ListPackagesInstalledOnManagedInstanceResponse,
                 com.oracle.bmc.osmanagement.model.InstalledPackageSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListPackagesInstalledOnManagedInstanceRequest.Builder>() {
                     @Override
                     public ListPackagesInstalledOnManagedInstanceRequest.Builder get() {
@@ -1604,14 +1604,14 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPackagesInstalledOnManagedInstanceResponse, String>() {
                     @Override
                     public String apply(ListPackagesInstalledOnManagedInstanceResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPackagesInstalledOnManagedInstanceRequest.Builder>,
                         ListPackagesInstalledOnManagedInstanceRequest>() {
@@ -1624,12 +1624,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPackagesInstalledOnManagedInstanceRequest,
                         ListPackagesInstalledOnManagedInstanceResponse>() {
                     @Override
@@ -1638,7 +1638,7 @@ public class OsManagementPaginators {
                         return client.listPackagesInstalledOnManagedInstance(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPackagesInstalledOnManagedInstanceResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model.InstalledPackageSummary>>() {
@@ -1662,19 +1662,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListScheduledJobsRequest.Builder, ListScheduledJobsRequest,
                 ListScheduledJobsResponse>(
-                new com.google.common.base.Supplier<ListScheduledJobsRequest.Builder>() {
+                new java.util.function.Supplier<ListScheduledJobsRequest.Builder>() {
                     @Override
                     public ListScheduledJobsRequest.Builder get() {
                         return ListScheduledJobsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListScheduledJobsResponse, String>() {
+                new java.util.function.Function<ListScheduledJobsResponse, String>() {
                     @Override
                     public String apply(ListScheduledJobsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListScheduledJobsRequest.Builder>,
                         ListScheduledJobsRequest>() {
@@ -1687,12 +1687,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListScheduledJobsRequest, ListScheduledJobsResponse>() {
                     @Override
                     public ListScheduledJobsResponse apply(ListScheduledJobsRequest request) {
@@ -1715,19 +1715,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListScheduledJobsRequest.Builder, ListScheduledJobsRequest,
                 ListScheduledJobsResponse, com.oracle.bmc.osmanagement.model.ScheduledJobSummary>(
-                new com.google.common.base.Supplier<ListScheduledJobsRequest.Builder>() {
+                new java.util.function.Supplier<ListScheduledJobsRequest.Builder>() {
                     @Override
                     public ListScheduledJobsRequest.Builder get() {
                         return ListScheduledJobsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListScheduledJobsResponse, String>() {
+                new java.util.function.Function<ListScheduledJobsResponse, String>() {
                     @Override
                     public String apply(ListScheduledJobsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListScheduledJobsRequest.Builder>,
                         ListScheduledJobsRequest>() {
@@ -1740,19 +1740,19 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListScheduledJobsRequest, ListScheduledJobsResponse>() {
                     @Override
                     public ListScheduledJobsResponse apply(ListScheduledJobsRequest request) {
                         return client.listScheduledJobs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListScheduledJobsResponse,
                         java.util.List<com.oracle.bmc.osmanagement.model.ScheduledJobSummary>>() {
                     @Override
@@ -1775,19 +1775,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSoftwareSourcePackagesRequest.Builder, ListSoftwareSourcePackagesRequest,
                 ListSoftwareSourcePackagesResponse>(
-                new com.google.common.base.Supplier<ListSoftwareSourcePackagesRequest.Builder>() {
+                new java.util.function.Supplier<ListSoftwareSourcePackagesRequest.Builder>() {
                     @Override
                     public ListSoftwareSourcePackagesRequest.Builder get() {
                         return ListSoftwareSourcePackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSoftwareSourcePackagesResponse, String>() {
+                new java.util.function.Function<ListSoftwareSourcePackagesResponse, String>() {
                     @Override
                     public String apply(ListSoftwareSourcePackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSoftwareSourcePackagesRequest.Builder>,
                         ListSoftwareSourcePackagesRequest>() {
@@ -1800,12 +1800,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSoftwareSourcePackagesRequest, ListSoftwareSourcePackagesResponse>() {
                     @Override
                     public ListSoftwareSourcePackagesResponse apply(
@@ -1831,19 +1831,19 @@ public class OsManagementPaginators {
                 ListSoftwareSourcePackagesRequest.Builder, ListSoftwareSourcePackagesRequest,
                 ListSoftwareSourcePackagesResponse,
                 com.oracle.bmc.osmanagement.model.SoftwarePackageSummary>(
-                new com.google.common.base.Supplier<ListSoftwareSourcePackagesRequest.Builder>() {
+                new java.util.function.Supplier<ListSoftwareSourcePackagesRequest.Builder>() {
                     @Override
                     public ListSoftwareSourcePackagesRequest.Builder get() {
                         return ListSoftwareSourcePackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSoftwareSourcePackagesResponse, String>() {
+                new java.util.function.Function<ListSoftwareSourcePackagesResponse, String>() {
                     @Override
                     public String apply(ListSoftwareSourcePackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSoftwareSourcePackagesRequest.Builder>,
                         ListSoftwareSourcePackagesRequest>() {
@@ -1856,12 +1856,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSoftwareSourcePackagesRequest, ListSoftwareSourcePackagesResponse>() {
                     @Override
                     public ListSoftwareSourcePackagesResponse apply(
@@ -1869,7 +1869,7 @@ public class OsManagementPaginators {
                         return client.listSoftwareSourcePackages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSoftwareSourcePackagesResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model.SoftwarePackageSummary>>() {
@@ -1893,19 +1893,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSoftwareSourcesRequest.Builder, ListSoftwareSourcesRequest,
                 ListSoftwareSourcesResponse>(
-                new com.google.common.base.Supplier<ListSoftwareSourcesRequest.Builder>() {
+                new java.util.function.Supplier<ListSoftwareSourcesRequest.Builder>() {
                     @Override
                     public ListSoftwareSourcesRequest.Builder get() {
                         return ListSoftwareSourcesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSoftwareSourcesResponse, String>() {
+                new java.util.function.Function<ListSoftwareSourcesResponse, String>() {
                     @Override
                     public String apply(ListSoftwareSourcesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSoftwareSourcesRequest.Builder>,
                         ListSoftwareSourcesRequest>() {
@@ -1918,12 +1918,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSoftwareSourcesRequest, ListSoftwareSourcesResponse>() {
                     @Override
                     public ListSoftwareSourcesResponse apply(ListSoftwareSourcesRequest request) {
@@ -1947,19 +1947,19 @@ public class OsManagementPaginators {
                 ListSoftwareSourcesRequest.Builder, ListSoftwareSourcesRequest,
                 ListSoftwareSourcesResponse,
                 com.oracle.bmc.osmanagement.model.SoftwareSourceSummary>(
-                new com.google.common.base.Supplier<ListSoftwareSourcesRequest.Builder>() {
+                new java.util.function.Supplier<ListSoftwareSourcesRequest.Builder>() {
                     @Override
                     public ListSoftwareSourcesRequest.Builder get() {
                         return ListSoftwareSourcesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSoftwareSourcesResponse, String>() {
+                new java.util.function.Function<ListSoftwareSourcesResponse, String>() {
                     @Override
                     public String apply(ListSoftwareSourcesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSoftwareSourcesRequest.Builder>,
                         ListSoftwareSourcesRequest>() {
@@ -1972,19 +1972,19 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSoftwareSourcesRequest, ListSoftwareSourcesResponse>() {
                     @Override
                     public ListSoftwareSourcesResponse apply(ListSoftwareSourcesRequest request) {
                         return client.listSoftwareSources(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSoftwareSourcesResponse,
                         java.util.List<com.oracle.bmc.osmanagement.model.SoftwareSourceSummary>>() {
                     @Override
@@ -2007,19 +2007,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListUpcomingScheduledJobsRequest.Builder, ListUpcomingScheduledJobsRequest,
                 ListUpcomingScheduledJobsResponse>(
-                new com.google.common.base.Supplier<ListUpcomingScheduledJobsRequest.Builder>() {
+                new java.util.function.Supplier<ListUpcomingScheduledJobsRequest.Builder>() {
                     @Override
                     public ListUpcomingScheduledJobsRequest.Builder get() {
                         return ListUpcomingScheduledJobsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListUpcomingScheduledJobsResponse, String>() {
+                new java.util.function.Function<ListUpcomingScheduledJobsResponse, String>() {
                     @Override
                     public String apply(ListUpcomingScheduledJobsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListUpcomingScheduledJobsRequest.Builder>,
                         ListUpcomingScheduledJobsRequest>() {
@@ -2032,12 +2032,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListUpcomingScheduledJobsRequest, ListUpcomingScheduledJobsResponse>() {
                     @Override
                     public ListUpcomingScheduledJobsResponse apply(
@@ -2063,19 +2063,19 @@ public class OsManagementPaginators {
                 ListUpcomingScheduledJobsRequest.Builder, ListUpcomingScheduledJobsRequest,
                 ListUpcomingScheduledJobsResponse,
                 com.oracle.bmc.osmanagement.model.ScheduledJobSummary>(
-                new com.google.common.base.Supplier<ListUpcomingScheduledJobsRequest.Builder>() {
+                new java.util.function.Supplier<ListUpcomingScheduledJobsRequest.Builder>() {
                     @Override
                     public ListUpcomingScheduledJobsRequest.Builder get() {
                         return ListUpcomingScheduledJobsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListUpcomingScheduledJobsResponse, String>() {
+                new java.util.function.Function<ListUpcomingScheduledJobsResponse, String>() {
                     @Override
                     public String apply(ListUpcomingScheduledJobsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListUpcomingScheduledJobsRequest.Builder>,
                         ListUpcomingScheduledJobsRequest>() {
@@ -2088,12 +2088,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListUpcomingScheduledJobsRequest, ListUpcomingScheduledJobsResponse>() {
                     @Override
                     public ListUpcomingScheduledJobsResponse apply(
@@ -2101,7 +2101,7 @@ public class OsManagementPaginators {
                         return client.listUpcomingScheduledJobs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListUpcomingScheduledJobsResponse,
                         java.util.List<com.oracle.bmc.osmanagement.model.ScheduledJobSummary>>() {
                     @Override
@@ -2124,19 +2124,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWindowsUpdatesRequest.Builder, ListWindowsUpdatesRequest,
                 ListWindowsUpdatesResponse>(
-                new com.google.common.base.Supplier<ListWindowsUpdatesRequest.Builder>() {
+                new java.util.function.Supplier<ListWindowsUpdatesRequest.Builder>() {
                     @Override
                     public ListWindowsUpdatesRequest.Builder get() {
                         return ListWindowsUpdatesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWindowsUpdatesResponse, String>() {
+                new java.util.function.Function<ListWindowsUpdatesResponse, String>() {
                     @Override
                     public String apply(ListWindowsUpdatesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWindowsUpdatesRequest.Builder>,
                         ListWindowsUpdatesRequest>() {
@@ -2149,12 +2149,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWindowsUpdatesRequest, ListWindowsUpdatesResponse>() {
                     @Override
                     public ListWindowsUpdatesResponse apply(ListWindowsUpdatesRequest request) {
@@ -2177,19 +2177,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWindowsUpdatesRequest.Builder, ListWindowsUpdatesRequest,
                 ListWindowsUpdatesResponse, com.oracle.bmc.osmanagement.model.WindowsUpdateSummary>(
-                new com.google.common.base.Supplier<ListWindowsUpdatesRequest.Builder>() {
+                new java.util.function.Supplier<ListWindowsUpdatesRequest.Builder>() {
                     @Override
                     public ListWindowsUpdatesRequest.Builder get() {
                         return ListWindowsUpdatesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWindowsUpdatesResponse, String>() {
+                new java.util.function.Function<ListWindowsUpdatesResponse, String>() {
                     @Override
                     public String apply(ListWindowsUpdatesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWindowsUpdatesRequest.Builder>,
                         ListWindowsUpdatesRequest>() {
@@ -2202,19 +2202,19 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWindowsUpdatesRequest, ListWindowsUpdatesResponse>() {
                     @Override
                     public ListWindowsUpdatesResponse apply(ListWindowsUpdatesRequest request) {
                         return client.listWindowsUpdates(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWindowsUpdatesResponse,
                         java.util.List<com.oracle.bmc.osmanagement.model.WindowsUpdateSummary>>() {
                     @Override
@@ -2239,7 +2239,7 @@ public class OsManagementPaginators {
                 ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder,
                 ListWindowsUpdatesInstalledOnManagedInstanceRequest,
                 ListWindowsUpdatesInstalledOnManagedInstanceResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder>() {
                     @Override
                     public ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder get() {
@@ -2247,7 +2247,7 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWindowsUpdatesInstalledOnManagedInstanceResponse, String>() {
                     @Override
                     public String apply(
@@ -2255,7 +2255,7 @@ public class OsManagementPaginators {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder>,
                         ListWindowsUpdatesInstalledOnManagedInstanceRequest>() {
@@ -2269,12 +2269,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWindowsUpdatesInstalledOnManagedInstanceRequest,
                         ListWindowsUpdatesInstalledOnManagedInstanceResponse>() {
                     @Override
@@ -2302,7 +2302,7 @@ public class OsManagementPaginators {
                 ListWindowsUpdatesInstalledOnManagedInstanceRequest,
                 ListWindowsUpdatesInstalledOnManagedInstanceResponse,
                 com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder>() {
                     @Override
                     public ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder get() {
@@ -2310,7 +2310,7 @@ public class OsManagementPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWindowsUpdatesInstalledOnManagedInstanceResponse, String>() {
                     @Override
                     public String apply(
@@ -2318,7 +2318,7 @@ public class OsManagementPaginators {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder>,
                         ListWindowsUpdatesInstalledOnManagedInstanceRequest>() {
@@ -2332,12 +2332,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWindowsUpdatesInstalledOnManagedInstanceRequest,
                         ListWindowsUpdatesInstalledOnManagedInstanceResponse>() {
                     @Override
@@ -2346,7 +2346,7 @@ public class OsManagementPaginators {
                         return client.listWindowsUpdatesInstalledOnManagedInstance(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWindowsUpdatesInstalledOnManagedInstanceResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model
@@ -2372,19 +2372,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -2397,12 +2397,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -2426,19 +2426,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse, com.oracle.bmc.osmanagement.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -2451,12 +2451,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -2464,7 +2464,7 @@ public class OsManagementPaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<com.oracle.bmc.osmanagement.model.WorkRequestError>>() {
                     @Override
@@ -2487,19 +2487,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -2512,12 +2512,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -2540,19 +2540,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse, com.oracle.bmc.osmanagement.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -2565,19 +2565,19 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<com.oracle.bmc.osmanagement.model.WorkRequestLogEntry>>() {
                     @Override
@@ -2599,19 +2599,19 @@ public class OsManagementPaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -2624,12 +2624,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -2652,19 +2652,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.osmanagement.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -2677,19 +2677,19 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<com.oracle.bmc.osmanagement.model.WorkRequestSummary>>() {
                     @Override
@@ -2712,19 +2712,19 @@ public class OsManagementPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 SearchSoftwarePackagesRequest.Builder, SearchSoftwarePackagesRequest,
                 SearchSoftwarePackagesResponse>(
-                new com.google.common.base.Supplier<SearchSoftwarePackagesRequest.Builder>() {
+                new java.util.function.Supplier<SearchSoftwarePackagesRequest.Builder>() {
                     @Override
                     public SearchSoftwarePackagesRequest.Builder get() {
                         return SearchSoftwarePackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<SearchSoftwarePackagesResponse, String>() {
+                new java.util.function.Function<SearchSoftwarePackagesResponse, String>() {
                     @Override
                     public String apply(SearchSoftwarePackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 SearchSoftwarePackagesRequest.Builder>,
                         SearchSoftwarePackagesRequest>() {
@@ -2737,12 +2737,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         SearchSoftwarePackagesRequest, SearchSoftwarePackagesResponse>() {
                     @Override
                     public SearchSoftwarePackagesResponse apply(
@@ -2767,19 +2767,19 @@ public class OsManagementPaginators {
                 SearchSoftwarePackagesRequest.Builder, SearchSoftwarePackagesRequest,
                 SearchSoftwarePackagesResponse,
                 com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary>(
-                new com.google.common.base.Supplier<SearchSoftwarePackagesRequest.Builder>() {
+                new java.util.function.Supplier<SearchSoftwarePackagesRequest.Builder>() {
                     @Override
                     public SearchSoftwarePackagesRequest.Builder get() {
                         return SearchSoftwarePackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<SearchSoftwarePackagesResponse, String>() {
+                new java.util.function.Function<SearchSoftwarePackagesResponse, String>() {
                     @Override
                     public String apply(SearchSoftwarePackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 SearchSoftwarePackagesRequest.Builder>,
                         SearchSoftwarePackagesRequest>() {
@@ -2792,12 +2792,12 @@ public class OsManagementPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         SearchSoftwarePackagesRequest, SearchSoftwarePackagesResponse>() {
                     @Override
                     public SearchSoftwarePackagesResponse apply(
@@ -2805,7 +2805,7 @@ public class OsManagementPaginators {
                         return client.searchSoftwarePackages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         SearchSoftwarePackagesResponse,
                         java.util.List<
                                 com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary>>() {

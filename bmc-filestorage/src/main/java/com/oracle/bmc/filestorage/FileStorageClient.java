@@ -9,7 +9,6 @@ import com.oracle.bmc.filestorage.requests.*;
 import com.oracle.bmc.filestorage.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class FileStorageClient implements FileStorage {
@@ -334,9 +333,9 @@ public class FileStorageClient implements FileStorage {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("FileStorage-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("FileStorage-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class FileStorageClient implements FileStorage {
          * @return the client
          */
         public FileStorageClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class FileStorageClient implements FileStorage {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,8 +487,7 @@ public class FileStorageClient implements FileStorage {
                         "ChangeFileSystemCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ChangeFileSystemCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeFileSystemCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeFileSystemCompartmentResponse>
                 transformer =
                         ChangeFileSystemCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -531,8 +530,7 @@ public class FileStorageClient implements FileStorage {
                         "ChangeMountTargetCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ChangeMountTargetCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeMountTargetCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeMountTargetCompartmentResponse>
                 transformer =
                         ChangeMountTargetCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -575,9 +573,8 @@ public class FileStorageClient implements FileStorage {
                         "CreateExport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/CreateExport");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateExportResponse>
-                transformer =
-                        CreateExportConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateExportResponse> transformer =
+                CreateExportConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -616,7 +613,7 @@ public class FileStorageClient implements FileStorage {
                         "CreateFileSystem",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/CreateFileSystem");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateFileSystemResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateFileSystemResponse>
                 transformer =
                         CreateFileSystemConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -658,7 +655,7 @@ public class FileStorageClient implements FileStorage {
                         "CreateMountTarget",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/CreateMountTarget");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMountTargetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateMountTargetResponse>
                 transformer =
                         CreateMountTargetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -700,9 +697,8 @@ public class FileStorageClient implements FileStorage {
                         "CreateSnapshot",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/CreateSnapshot");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSnapshotResponse>
-                transformer =
-                        CreateSnapshotConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSnapshotResponse> transformer =
+                CreateSnapshotConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -740,9 +736,8 @@ public class FileStorageClient implements FileStorage {
                         "DeleteExport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/DeleteExport");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteExportResponse>
-                transformer =
-                        DeleteExportConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteExportResponse> transformer =
+                DeleteExportConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -777,7 +772,7 @@ public class FileStorageClient implements FileStorage {
                         "DeleteFileSystem",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DeleteFileSystem");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFileSystemResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteFileSystemResponse>
                 transformer =
                         DeleteFileSystemConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -815,7 +810,7 @@ public class FileStorageClient implements FileStorage {
                         "DeleteMountTarget",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/DeleteMountTarget");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMountTargetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteMountTargetResponse>
                 transformer =
                         DeleteMountTargetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -853,9 +848,8 @@ public class FileStorageClient implements FileStorage {
                         "DeleteSnapshot",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/DeleteSnapshot");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSnapshotResponse>
-                transformer =
-                        DeleteSnapshotConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSnapshotResponse> transformer =
+                DeleteSnapshotConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -889,7 +883,7 @@ public class FileStorageClient implements FileStorage {
                         "GetExport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/GetExport");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetExportResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetExportResponse> transformer =
                 GetExportConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -924,9 +918,8 @@ public class FileStorageClient implements FileStorage {
                         "GetExportSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/GetExportSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetExportSetResponse>
-                transformer =
-                        GetExportSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetExportSetResponse> transformer =
+                GetExportSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -960,9 +953,8 @@ public class FileStorageClient implements FileStorage {
                         "GetFileSystem",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/GetFileSystem");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetFileSystemResponse>
-                transformer =
-                        GetFileSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetFileSystemResponse> transformer =
+                GetFileSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -996,9 +988,8 @@ public class FileStorageClient implements FileStorage {
                         "GetMountTarget",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/GetMountTarget");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetMountTargetResponse>
-                transformer =
-                        GetMountTargetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetMountTargetResponse> transformer =
+                GetMountTargetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1032,9 +1023,8 @@ public class FileStorageClient implements FileStorage {
                         "GetSnapshot",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/GetSnapshot");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSnapshotResponse>
-                transformer =
-                        GetSnapshotConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetSnapshotResponse> transformer =
+                GetSnapshotConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1068,9 +1058,8 @@ public class FileStorageClient implements FileStorage {
                         "ListExportSets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSetSummary/ListExportSets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListExportSetsResponse>
-                transformer =
-                        ListExportSetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListExportSetsResponse> transformer =
+                ListExportSetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1104,9 +1093,8 @@ public class FileStorageClient implements FileStorage {
                         "ListExports",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSummary/ListExports");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListExportsResponse>
-                transformer =
-                        ListExportsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListExportsResponse> transformer =
+                ListExportsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1140,7 +1128,7 @@ public class FileStorageClient implements FileStorage {
                         "ListFileSystems",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystemSummary/ListFileSystems");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListFileSystemsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListFileSystemsResponse>
                 transformer =
                         ListFileSystemsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1177,7 +1165,7 @@ public class FileStorageClient implements FileStorage {
                         "ListMountTargets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTargetSummary/ListMountTargets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListMountTargetsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListMountTargetsResponse>
                 transformer =
                         ListMountTargetsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1214,9 +1202,8 @@ public class FileStorageClient implements FileStorage {
                         "ListSnapshots",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/SnapshotSummary/ListSnapshots");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSnapshotsResponse>
-                transformer =
-                        ListSnapshotsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSnapshotsResponse> transformer =
+                ListSnapshotsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1250,9 +1237,8 @@ public class FileStorageClient implements FileStorage {
                         "UpdateExport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/UpdateExport");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateExportResponse>
-                transformer =
-                        UpdateExportConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateExportResponse> transformer =
+                UpdateExportConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1290,7 +1276,7 @@ public class FileStorageClient implements FileStorage {
                         "UpdateExportSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/UpdateExportSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateExportSetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateExportSetResponse>
                 transformer =
                         UpdateExportSetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1331,7 +1317,7 @@ public class FileStorageClient implements FileStorage {
                         "UpdateFileSystem",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/UpdateFileSystem");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFileSystemResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateFileSystemResponse>
                 transformer =
                         UpdateFileSystemConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1372,7 +1358,7 @@ public class FileStorageClient implements FileStorage {
                         "UpdateMountTarget",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/UpdateMountTarget");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMountTargetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateMountTargetResponse>
                 transformer =
                         UpdateMountTargetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1413,9 +1399,8 @@ public class FileStorageClient implements FileStorage {
                         "UpdateSnapshot",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/UpdateSnapshot");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSnapshotResponse>
-                transformer =
-                        UpdateSnapshotConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSnapshotResponse> transformer =
+                UpdateSnapshotConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

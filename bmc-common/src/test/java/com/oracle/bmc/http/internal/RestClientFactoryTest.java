@@ -4,9 +4,9 @@
  */
 package com.oracle.bmc.http.internal;
 
-import static org.junit.Assert.assertEquals;
+import java.util.Arrays;
+import java.util.Collections;
 
-import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.internal.JaxRsCircuitBreakerImpl;
@@ -16,6 +16,8 @@ import org.glassfish.jersey.client.JerseyClient;
 import org.glassfish.jersey.internal.InternalProperties;
 import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class RestClientFactoryTest {
     @Test
@@ -30,7 +32,8 @@ public class RestClientFactoryTest {
                                         .circuitBreakerConfiguration(
                                                 CircuitBreakerConfiguration.builder().build())
                                         .build(),
-                                new CompositeClientConfigurator(ImmutableList.of()));
+                                new CompositeClientConfigurator(
+                                        Collections.unmodifiableList(Arrays.asList())));
 
         assertEquals(
                 "JacksonFeature",

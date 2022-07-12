@@ -128,22 +128,22 @@ public class ListFoldersConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.dataintegration.responses.ListFoldersResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.dataintegration.responses.ListFoldersResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.dataintegration.responses.ListFoldersResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.dataintegration.responses.ListFoldersResponse>() {
                             @Override
@@ -151,7 +151,7 @@ public class ListFoldersConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.dataintegration.responses.ListFoldersResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.dataintegration.model
@@ -188,10 +188,9 @@ public class ListFoldersConverter {
 
                                 builder.folderSummaryCollection(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -200,10 +199,9 @@ public class ListFoldersConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcNextPageHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-next-page");
+                                java.util.Optional<java.util.List<String>> opcNextPageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-next-page");
                                 if (opcNextPageHeader.isPresent()) {
                                     builder.opcNextPage(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -212,10 +210,9 @@ public class ListFoldersConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcPrevPageHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-prev-page");
+                                java.util.Optional<java.util.List<String>> opcPrevPageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-prev-page");
                                 if (opcPrevPageHeader.isPresent()) {
                                     builder.opcPrevPage(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -224,10 +221,9 @@ public class ListFoldersConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcTotalItemsHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-total-items");
+                                java.util.Optional<java.util.List<String>> opcTotalItemsHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-total-items");
                                 if (opcTotalItemsHeader.isPresent()) {
                                     builder.opcTotalItems(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(

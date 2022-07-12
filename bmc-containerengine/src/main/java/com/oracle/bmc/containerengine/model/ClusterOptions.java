@@ -19,10 +19,13 @@ package com.oracle.bmc.containerengine.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ClusterOptions {
     @Deprecated
-    @java.beans.ConstructorProperties({"kubernetesVersions"})
-    public ClusterOptions(java.util.List<String> kubernetesVersions) {
+    @java.beans.ConstructorProperties({"kubernetesVersions", "clusterPodNetworkOptions"})
+    public ClusterOptions(
+            java.util.List<String> kubernetesVersions,
+            java.util.List<ClusterPodNetworkOptionDetails> clusterPodNetworkOptions) {
         super();
         this.kubernetesVersions = kubernetesVersions;
+        this.clusterPodNetworkOptions = clusterPodNetworkOptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -43,19 +46,39 @@ public final class ClusterOptions {
             this.__explicitlySet__.add("kubernetesVersions");
             return this;
         }
+        /**
+         * Available CNIs and network options for existing and new node pools of the cluster
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPodNetworkOptions")
+        private java.util.List<ClusterPodNetworkOptionDetails> clusterPodNetworkOptions;
+
+        /**
+         * Available CNIs and network options for existing and new node pools of the cluster
+         * @param clusterPodNetworkOptions the value to set
+         * @return this builder
+         **/
+        public Builder clusterPodNetworkOptions(
+                java.util.List<ClusterPodNetworkOptionDetails> clusterPodNetworkOptions) {
+            this.clusterPodNetworkOptions = clusterPodNetworkOptions;
+            this.__explicitlySet__.add("clusterPodNetworkOptions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClusterOptions build() {
-            ClusterOptions __instance__ = new ClusterOptions(kubernetesVersions);
+            ClusterOptions __instance__ =
+                    new ClusterOptions(kubernetesVersions, clusterPodNetworkOptions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ClusterOptions o) {
-            Builder copiedBuilder = kubernetesVersions(o.getKubernetesVersions());
+            Builder copiedBuilder =
+                    kubernetesVersions(o.getKubernetesVersions())
+                            .clusterPodNetworkOptions(o.getClusterPodNetworkOptions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -87,11 +110,27 @@ public final class ClusterOptions {
         return kubernetesVersions;
     }
 
+    /**
+     * Available CNIs and network options for existing and new node pools of the cluster
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPodNetworkOptions")
+    private final java.util.List<ClusterPodNetworkOptionDetails> clusterPodNetworkOptions;
+
+    /**
+     * Available CNIs and network options for existing and new node pools of the cluster
+     * @return the value
+     **/
+    public java.util.List<ClusterPodNetworkOptionDetails> getClusterPodNetworkOptions() {
+        return clusterPodNetworkOptions;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClusterOptions(");
         sb.append("kubernetesVersions=").append(String.valueOf(this.kubernetesVersions));
+        sb.append(", clusterPodNetworkOptions=")
+                .append(String.valueOf(this.clusterPodNetworkOptions));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -108,6 +147,8 @@ public final class ClusterOptions {
 
         ClusterOptions other = (ClusterOptions) o;
         return java.util.Objects.equals(this.kubernetesVersions, other.kubernetesVersions)
+                && java.util.Objects.equals(
+                        this.clusterPodNetworkOptions, other.clusterPodNetworkOptions)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -120,6 +161,11 @@ public final class ClusterOptions {
                         + (this.kubernetesVersions == null
                                 ? 43
                                 : this.kubernetesVersions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPodNetworkOptions == null
+                                ? 43
+                                : this.clusterPodNetworkOptions.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

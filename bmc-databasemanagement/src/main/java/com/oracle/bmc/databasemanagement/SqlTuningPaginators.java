@@ -46,21 +46,20 @@ public class SqlTuningPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSqlTuningAdvisorTaskFindingsRequest.Builder,
                 ListSqlTuningAdvisorTaskFindingsRequest, ListSqlTuningAdvisorTaskFindingsResponse>(
-                new com.google.common.base.Supplier<
-                        ListSqlTuningAdvisorTaskFindingsRequest.Builder>() {
+                new java.util.function.Supplier<ListSqlTuningAdvisorTaskFindingsRequest.Builder>() {
                     @Override
                     public ListSqlTuningAdvisorTaskFindingsRequest.Builder get() {
                         return ListSqlTuningAdvisorTaskFindingsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTaskFindingsResponse, String>() {
                     @Override
                     public String apply(ListSqlTuningAdvisorTaskFindingsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSqlTuningAdvisorTaskFindingsRequest.Builder>,
                         ListSqlTuningAdvisorTaskFindingsRequest>() {
@@ -73,12 +72,12 @@ public class SqlTuningPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTaskFindingsRequest,
                         ListSqlTuningAdvisorTaskFindingsResponse>() {
                     @Override
@@ -105,21 +104,20 @@ public class SqlTuningPaginators {
                 ListSqlTuningAdvisorTaskFindingsRequest.Builder,
                 ListSqlTuningAdvisorTaskFindingsRequest, ListSqlTuningAdvisorTaskFindingsResponse,
                 com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskFindingSummary>(
-                new com.google.common.base.Supplier<
-                        ListSqlTuningAdvisorTaskFindingsRequest.Builder>() {
+                new java.util.function.Supplier<ListSqlTuningAdvisorTaskFindingsRequest.Builder>() {
                     @Override
                     public ListSqlTuningAdvisorTaskFindingsRequest.Builder get() {
                         return ListSqlTuningAdvisorTaskFindingsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTaskFindingsResponse, String>() {
                     @Override
                     public String apply(ListSqlTuningAdvisorTaskFindingsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSqlTuningAdvisorTaskFindingsRequest.Builder>,
                         ListSqlTuningAdvisorTaskFindingsRequest>() {
@@ -132,12 +130,12 @@ public class SqlTuningPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTaskFindingsRequest,
                         ListSqlTuningAdvisorTaskFindingsResponse>() {
                     @Override
@@ -146,7 +144,7 @@ public class SqlTuningPaginators {
                         return client.listSqlTuningAdvisorTaskFindings(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTaskFindingsResponse,
                         java.util.List<
                                 com.oracle.bmc.databasemanagement.model
@@ -175,7 +173,7 @@ public class SqlTuningPaginators {
                 ListSqlTuningAdvisorTaskRecommendationsRequest.Builder,
                 ListSqlTuningAdvisorTaskRecommendationsRequest,
                 ListSqlTuningAdvisorTaskRecommendationsResponse>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListSqlTuningAdvisorTaskRecommendationsRequest.Builder>() {
                     @Override
                     public ListSqlTuningAdvisorTaskRecommendationsRequest.Builder get() {
@@ -183,14 +181,14 @@ public class SqlTuningPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTaskRecommendationsResponse, String>() {
                     @Override
                     public String apply(ListSqlTuningAdvisorTaskRecommendationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSqlTuningAdvisorTaskRecommendationsRequest.Builder>,
                         ListSqlTuningAdvisorTaskRecommendationsRequest>() {
@@ -203,12 +201,12 @@ public class SqlTuningPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTaskRecommendationsRequest,
                         ListSqlTuningAdvisorTaskRecommendationsResponse>() {
                     @Override
@@ -238,7 +236,7 @@ public class SqlTuningPaginators {
                 ListSqlTuningAdvisorTaskRecommendationsRequest,
                 ListSqlTuningAdvisorTaskRecommendationsResponse,
                 com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskRecommendationSummary>(
-                new com.google.common.base.Supplier<
+                new java.util.function.Supplier<
                         ListSqlTuningAdvisorTaskRecommendationsRequest.Builder>() {
                     @Override
                     public ListSqlTuningAdvisorTaskRecommendationsRequest.Builder get() {
@@ -246,14 +244,14 @@ public class SqlTuningPaginators {
                                 .copy(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTaskRecommendationsResponse, String>() {
                     @Override
                     public String apply(ListSqlTuningAdvisorTaskRecommendationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSqlTuningAdvisorTaskRecommendationsRequest.Builder>,
                         ListSqlTuningAdvisorTaskRecommendationsRequest>() {
@@ -266,12 +264,12 @@ public class SqlTuningPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTaskRecommendationsRequest,
                         ListSqlTuningAdvisorTaskRecommendationsResponse>() {
                     @Override
@@ -280,7 +278,7 @@ public class SqlTuningPaginators {
                         return client.listSqlTuningAdvisorTaskRecommendations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTaskRecommendationsResponse,
                         java.util.List<
                                 com.oracle.bmc.databasemanagement.model
@@ -308,19 +306,19 @@ public class SqlTuningPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSqlTuningAdvisorTasksRequest.Builder, ListSqlTuningAdvisorTasksRequest,
                 ListSqlTuningAdvisorTasksResponse>(
-                new com.google.common.base.Supplier<ListSqlTuningAdvisorTasksRequest.Builder>() {
+                new java.util.function.Supplier<ListSqlTuningAdvisorTasksRequest.Builder>() {
                     @Override
                     public ListSqlTuningAdvisorTasksRequest.Builder get() {
                         return ListSqlTuningAdvisorTasksRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSqlTuningAdvisorTasksResponse, String>() {
+                new java.util.function.Function<ListSqlTuningAdvisorTasksResponse, String>() {
                     @Override
                     public String apply(ListSqlTuningAdvisorTasksResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSqlTuningAdvisorTasksRequest.Builder>,
                         ListSqlTuningAdvisorTasksRequest>() {
@@ -333,12 +331,12 @@ public class SqlTuningPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTasksRequest, ListSqlTuningAdvisorTasksResponse>() {
                     @Override
                     public ListSqlTuningAdvisorTasksResponse apply(
@@ -364,19 +362,19 @@ public class SqlTuningPaginators {
                 ListSqlTuningAdvisorTasksRequest.Builder, ListSqlTuningAdvisorTasksRequest,
                 ListSqlTuningAdvisorTasksResponse,
                 com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSummary>(
-                new com.google.common.base.Supplier<ListSqlTuningAdvisorTasksRequest.Builder>() {
+                new java.util.function.Supplier<ListSqlTuningAdvisorTasksRequest.Builder>() {
                     @Override
                     public ListSqlTuningAdvisorTasksRequest.Builder get() {
                         return ListSqlTuningAdvisorTasksRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSqlTuningAdvisorTasksResponse, String>() {
+                new java.util.function.Function<ListSqlTuningAdvisorTasksResponse, String>() {
                     @Override
                     public String apply(ListSqlTuningAdvisorTasksResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSqlTuningAdvisorTasksRequest.Builder>,
                         ListSqlTuningAdvisorTasksRequest>() {
@@ -389,12 +387,12 @@ public class SqlTuningPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTasksRequest, ListSqlTuningAdvisorTasksResponse>() {
                     @Override
                     public ListSqlTuningAdvisorTasksResponse apply(
@@ -402,7 +400,7 @@ public class SqlTuningPaginators {
                         return client.listSqlTuningAdvisorTasks(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningAdvisorTasksResponse,
                         java.util.List<
                                 com.oracle.bmc.databasemanagement.model
@@ -429,19 +427,19 @@ public class SqlTuningPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSqlTuningSetsRequest.Builder, ListSqlTuningSetsRequest,
                 ListSqlTuningSetsResponse>(
-                new com.google.common.base.Supplier<ListSqlTuningSetsRequest.Builder>() {
+                new java.util.function.Supplier<ListSqlTuningSetsRequest.Builder>() {
                     @Override
                     public ListSqlTuningSetsRequest.Builder get() {
                         return ListSqlTuningSetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSqlTuningSetsResponse, String>() {
+                new java.util.function.Function<ListSqlTuningSetsResponse, String>() {
                     @Override
                     public String apply(ListSqlTuningSetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSqlTuningSetsRequest.Builder>,
                         ListSqlTuningSetsRequest>() {
@@ -454,12 +452,12 @@ public class SqlTuningPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>() {
                     @Override
                     public ListSqlTuningSetsResponse apply(ListSqlTuningSetsRequest request) {
@@ -483,19 +481,19 @@ public class SqlTuningPaginators {
                 ListSqlTuningSetsRequest.Builder, ListSqlTuningSetsRequest,
                 ListSqlTuningSetsResponse,
                 com.oracle.bmc.databasemanagement.model.SqlTuningSetSummary>(
-                new com.google.common.base.Supplier<ListSqlTuningSetsRequest.Builder>() {
+                new java.util.function.Supplier<ListSqlTuningSetsRequest.Builder>() {
                     @Override
                     public ListSqlTuningSetsRequest.Builder get() {
                         return ListSqlTuningSetsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSqlTuningSetsResponse, String>() {
+                new java.util.function.Function<ListSqlTuningSetsResponse, String>() {
                     @Override
                     public String apply(ListSqlTuningSetsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSqlTuningSetsRequest.Builder>,
                         ListSqlTuningSetsRequest>() {
@@ -508,19 +506,19 @@ public class SqlTuningPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>() {
                     @Override
                     public ListSqlTuningSetsResponse apply(ListSqlTuningSetsRequest request) {
                         return client.listSqlTuningSets(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSqlTuningSetsResponse,
                         java.util.List<
                                 com.oracle.bmc.databasemanagement.model.SqlTuningSetSummary>>() {

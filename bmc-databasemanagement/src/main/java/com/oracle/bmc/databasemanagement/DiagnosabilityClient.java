@@ -9,7 +9,6 @@ import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class DiagnosabilityClient implements Diagnosability {
@@ -331,7 +330,7 @@ public class DiagnosabilityClient implements Diagnosability {
          * @return the client
          */
         public DiagnosabilityClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class DiagnosabilityClient implements Diagnosability {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -412,9 +412,8 @@ public class DiagnosabilityClient implements Diagnosability {
                         "ListAlertLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAlertLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertLogsResponse>
-                transformer =
-                        ListAlertLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListAlertLogsResponse> transformer =
+                ListAlertLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -448,7 +447,7 @@ public class DiagnosabilityClient implements Diagnosability {
                         "ListAttentionLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAttentionLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAttentionLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAttentionLogsResponse>
                 transformer =
                         ListAttentionLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -486,7 +485,7 @@ public class DiagnosabilityClient implements Diagnosability {
                         "SummarizeAlertLogCounts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAlertLogCounts");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeAlertLogCountsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeAlertLogCountsResponse>
                 transformer =
                         SummarizeAlertLogCountsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -524,8 +523,7 @@ public class DiagnosabilityClient implements Diagnosability {
                         "SummarizeAttentionLogCounts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAttentionLogCounts");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SummarizeAttentionLogCountsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeAttentionLogCountsResponse>
                 transformer =
                         SummarizeAttentionLogCountsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

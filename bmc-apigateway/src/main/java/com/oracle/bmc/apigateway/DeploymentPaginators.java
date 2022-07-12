@@ -44,19 +44,19 @@ public class DeploymentPaginators {
             final ListDeploymentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDeploymentsRequest.Builder, ListDeploymentsRequest, ListDeploymentsResponse>(
-                new com.google.common.base.Supplier<ListDeploymentsRequest.Builder>() {
+                new java.util.function.Supplier<ListDeploymentsRequest.Builder>() {
                     @Override
                     public ListDeploymentsRequest.Builder get() {
                         return ListDeploymentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeploymentsResponse, String>() {
+                new java.util.function.Function<ListDeploymentsResponse, String>() {
                     @Override
                     public String apply(ListDeploymentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeploymentsRequest.Builder>,
                         ListDeploymentsRequest>() {
@@ -69,13 +69,12 @@ public class DeploymentPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListDeploymentsRequest, ListDeploymentsResponse>() {
+                new java.util.function.Function<ListDeploymentsRequest, ListDeploymentsResponse>() {
                     @Override
                     public ListDeploymentsResponse apply(ListDeploymentsRequest request) {
                         return client.listDeployments(request);
@@ -97,19 +96,19 @@ public class DeploymentPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDeploymentsRequest.Builder, ListDeploymentsRequest, ListDeploymentsResponse,
                 com.oracle.bmc.apigateway.model.DeploymentSummary>(
-                new com.google.common.base.Supplier<ListDeploymentsRequest.Builder>() {
+                new java.util.function.Supplier<ListDeploymentsRequest.Builder>() {
                     @Override
                     public ListDeploymentsRequest.Builder get() {
                         return ListDeploymentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDeploymentsResponse, String>() {
+                new java.util.function.Function<ListDeploymentsResponse, String>() {
                     @Override
                     public String apply(ListDeploymentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDeploymentsRequest.Builder>,
                         ListDeploymentsRequest>() {
@@ -122,19 +121,18 @@ public class DeploymentPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListDeploymentsRequest, ListDeploymentsResponse>() {
+                new java.util.function.Function<ListDeploymentsRequest, ListDeploymentsResponse>() {
                     @Override
                     public ListDeploymentsResponse apply(ListDeploymentsRequest request) {
                         return client.listDeployments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDeploymentsResponse,
                         java.util.List<com.oracle.bmc.apigateway.model.DeploymentSummary>>() {
                     @Override

@@ -7,7 +7,6 @@ package com.oracle.bmc.operatoraccesscontrol;
 import com.oracle.bmc.operatoraccesscontrol.internal.http.*;
 import com.oracle.bmc.operatoraccesscontrol.requests.*;
 import com.oracle.bmc.operatoraccesscontrol.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for AccessRequests service. <br/>
@@ -321,7 +320,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
          * @return the client
          */
         public AccessRequestsAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,8 +406,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         "ApproveAccessRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ApproveAccessRequest");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ApproveAccessRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ApproveAccessRequestResponse>
                 transformer =
                         ApproveAccessRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -459,7 +458,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         "GetAccessRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/GetAccessRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetAccessRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAccessRequestResponse>
                 transformer =
                         GetAccessRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -506,7 +505,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         "InteractionRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/InteractionRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, InteractionRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, InteractionRequestResponse>
                 transformer =
                         InteractionRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -559,7 +558,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         "ListAccessRequestHistories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequestHistories");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAccessRequestHistoriesResponse>
                 transformer =
                         ListAccessRequestHistoriesConverter.fromResponse(
@@ -608,7 +607,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         "ListAccessRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAccessRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAccessRequestsResponse>
                 transformer =
                         ListAccessRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -654,7 +653,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         "ListInteractions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListInteractions");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListInteractionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListInteractionsResponse>
                 transformer =
                         ListInteractionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -701,8 +700,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         "RejectAccessRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RejectAccessRequest");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RejectAccessRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RejectAccessRequestResponse>
                 transformer =
                         RejectAccessRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -755,8 +753,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         "ReviewAccessRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ReviewAccessRequest");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ReviewAccessRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ReviewAccessRequestResponse>
                 transformer =
                         ReviewAccessRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -809,8 +806,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         "RevokeAccessRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RevokeAccessRequest");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RevokeAccessRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RevokeAccessRequestResponse>
                 transformer =
                         RevokeAccessRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

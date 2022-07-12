@@ -9,7 +9,6 @@ import com.oracle.bmc.oda.requests.*;
 import com.oracle.bmc.oda.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class ManagementClient implements Management {
@@ -335,9 +334,9 @@ public class ManagementClient implements Management {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Management-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Management-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class ManagementClient implements Management {
          * @return the client
          */
         public ManagementClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class ManagementClient implements Management {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -490,7 +490,7 @@ public class ManagementClient implements Management {
                         "ConfigureDigitalAssistantParameters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/ConfigureDigitalAssistantParameters");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ConfigureDigitalAssistantParametersResponse>
                 transformer =
                         ConfigureDigitalAssistantParametersConverter.fromResponse(
@@ -535,8 +535,7 @@ public class ManagementClient implements Management {
                         "CreateAuthenticationProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/CreateAuthenticationProvider");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAuthenticationProviderResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAuthenticationProviderResponse>
                 transformer =
                         CreateAuthenticationProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -579,9 +578,8 @@ public class ManagementClient implements Management {
                         "CreateChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/CreateChannel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateChannelResponse>
-                transformer =
-                        CreateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateChannelResponse> transformer =
+                CreateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -621,7 +619,7 @@ public class ManagementClient implements Management {
                         "CreateDigitalAssistant",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/CreateDigitalAssistant");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDigitalAssistantResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDigitalAssistantResponse>
                 transformer =
                         CreateDigitalAssistantConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -663,9 +661,8 @@ public class ManagementClient implements Management {
                         "CreateSkill",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/CreateSkill");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSkillResponse>
-                transformer =
-                        CreateSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSkillResponse> transformer =
+                CreateSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -704,7 +701,7 @@ public class ManagementClient implements Management {
                         "CreateSkillParameter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/CreateSkillParameter");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSkillParameterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSkillParameterResponse>
                 transformer =
                         CreateSkillParameterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -746,7 +743,7 @@ public class ManagementClient implements Management {
                         "CreateTranslator",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/CreateTranslator");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTranslatorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTranslatorResponse>
                 transformer =
                         CreateTranslatorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -788,8 +785,7 @@ public class ManagementClient implements Management {
                         "DeleteAuthenticationProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/DeleteAuthenticationProvider");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteAuthenticationProviderResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAuthenticationProviderResponse>
                 transformer =
                         DeleteAuthenticationProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -827,9 +823,8 @@ public class ManagementClient implements Management {
                         "DeleteChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/DeleteChannel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteChannelResponse>
-                transformer =
-                        DeleteChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteChannelResponse> transformer =
+                DeleteChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -865,7 +860,7 @@ public class ManagementClient implements Management {
                         "DeleteDigitalAssistant",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/DeleteDigitalAssistant");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDigitalAssistantResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDigitalAssistantResponse>
                 transformer =
                         DeleteDigitalAssistantConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -903,9 +898,8 @@ public class ManagementClient implements Management {
                         "DeleteSkill",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/DeleteSkill");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSkillResponse>
-                transformer =
-                        DeleteSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSkillResponse> transformer =
+                DeleteSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -940,7 +934,7 @@ public class ManagementClient implements Management {
                         "DeleteSkillParameter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/DeleteSkillParameter");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSkillParameterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSkillParameterResponse>
                 transformer =
                         DeleteSkillParameterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -978,7 +972,7 @@ public class ManagementClient implements Management {
                         "DeleteTranslator",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/DeleteTranslator");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTranslatorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTranslatorResponse>
                 transformer =
                         DeleteTranslatorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1017,7 +1011,7 @@ public class ManagementClient implements Management {
                         "ExportDigitalAssistant",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/ExportDigitalAssistant");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ExportDigitalAssistantResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ExportDigitalAssistantResponse>
                 transformer =
                         ExportDigitalAssistantConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1058,9 +1052,8 @@ public class ManagementClient implements Management {
                         "ExportSkill",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/ExportSkill");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ExportSkillResponse>
-                transformer =
-                        ExportSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ExportSkillResponse> transformer =
+                ExportSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1099,8 +1092,7 @@ public class ManagementClient implements Management {
                         "GetAuthenticationProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/GetAuthenticationProvider");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAuthenticationProviderResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAuthenticationProviderResponse>
                 transformer =
                         GetAuthenticationProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1136,7 +1128,7 @@ public class ManagementClient implements Management {
                         "GetChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/GetChannel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetChannelResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetChannelResponse> transformer =
                 GetChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1171,7 +1163,7 @@ public class ManagementClient implements Management {
                         "GetDigitalAssistant",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/GetDigitalAssistant");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDigitalAssistantResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDigitalAssistantResponse>
                 transformer =
                         GetDigitalAssistantConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1209,8 +1201,7 @@ public class ManagementClient implements Management {
                         "GetDigitalAssistantParameter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/GetDigitalAssistantParameter");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDigitalAssistantParameterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDigitalAssistantParameterResponse>
                 transformer =
                         GetDigitalAssistantParameterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1246,7 +1237,7 @@ public class ManagementClient implements Management {
                         "GetSkill",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/GetSkill");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSkillResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetSkillResponse> transformer =
                 GetSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1281,7 +1272,7 @@ public class ManagementClient implements Management {
                         "GetSkillParameter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/GetSkillParameter");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSkillParameterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSkillParameterResponse>
                 transformer =
                         GetSkillParameterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1318,9 +1309,8 @@ public class ManagementClient implements Management {
                         "GetTranslator",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/GetTranslator");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTranslatorResponse>
-                transformer =
-                        GetTranslatorConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetTranslatorResponse> transformer =
+                GetTranslatorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1354,7 +1344,7 @@ public class ManagementClient implements Management {
                         "ImportBot",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Bot/ImportBot");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ImportBotResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ImportBotResponse> transformer =
                 ImportBotConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1394,8 +1384,7 @@ public class ManagementClient implements Management {
                         "ListAuthenticationProviders",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/ListAuthenticationProviders");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAuthenticationProvidersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAuthenticationProvidersResponse>
                 transformer =
                         ListAuthenticationProvidersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1432,9 +1421,8 @@ public class ManagementClient implements Management {
                         "ListChannels",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/ListChannels");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListChannelsResponse>
-                transformer =
-                        ListChannelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListChannelsResponse> transformer =
+                ListChannelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1469,7 +1457,7 @@ public class ManagementClient implements Management {
                         "ListDigitalAssistantParameters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/ListDigitalAssistantParameters");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListDigitalAssistantParametersResponse>
                 transformer =
                         ListDigitalAssistantParametersConverter.fromResponse(
@@ -1508,7 +1496,7 @@ public class ManagementClient implements Management {
                         "ListDigitalAssistants",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/ListDigitalAssistants");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDigitalAssistantsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDigitalAssistantsResponse>
                 transformer =
                         ListDigitalAssistantsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1545,7 +1533,7 @@ public class ManagementClient implements Management {
                         "ListSkillParameters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/ListSkillParameters");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSkillParametersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSkillParametersResponse>
                 transformer =
                         ListSkillParametersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1581,7 +1569,7 @@ public class ManagementClient implements Management {
                         "ListSkills",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/ListSkills");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSkillsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListSkillsResponse> transformer =
                 ListSkillsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1616,7 +1604,7 @@ public class ManagementClient implements Management {
                         "ListTranslators",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/ListTranslators");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTranslatorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTranslatorsResponse>
                 transformer =
                         ListTranslatorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1654,7 +1642,7 @@ public class ManagementClient implements Management {
                         "PublishDigitalAssistant",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/PublishDigitalAssistant");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PublishDigitalAssistantResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, PublishDigitalAssistantResponse>
                 transformer =
                         PublishDigitalAssistantConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1692,9 +1680,8 @@ public class ManagementClient implements Management {
                         "PublishSkill",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/PublishSkill");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PublishSkillResponse>
-                transformer =
-                        PublishSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, PublishSkillResponse> transformer =
+                PublishSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1730,7 +1717,7 @@ public class ManagementClient implements Management {
                         "RotateChannelKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/RotateChannelKeys");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RotateChannelKeysResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RotateChannelKeysResponse>
                 transformer =
                         RotateChannelKeysConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1769,9 +1756,8 @@ public class ManagementClient implements Management {
                         "StartChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/StartChannel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartChannelResponse>
-                transformer =
-                        StartChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, StartChannelResponse> transformer =
+                StartChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1807,9 +1793,8 @@ public class ManagementClient implements Management {
                         "StopChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/StopChannel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopChannelResponse>
-                transformer =
-                        StopChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, StopChannelResponse> transformer =
+                StopChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1845,8 +1830,7 @@ public class ManagementClient implements Management {
                         "UpdateAuthenticationProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/UpdateAuthenticationProvider");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAuthenticationProviderResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAuthenticationProviderResponse>
                 transformer =
                         UpdateAuthenticationProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1888,9 +1872,8 @@ public class ManagementClient implements Management {
                         "UpdateChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/UpdateChannel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateChannelResponse>
-                transformer =
-                        UpdateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateChannelResponse> transformer =
+                UpdateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1929,7 +1912,7 @@ public class ManagementClient implements Management {
                         "UpdateDigitalAssistant",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/UpdateDigitalAssistant");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDigitalAssistantResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDigitalAssistantResponse>
                 transformer =
                         UpdateDigitalAssistantConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1971,7 +1954,7 @@ public class ManagementClient implements Management {
                         "UpdateDigitalAssistantParameter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/UpdateDigitalAssistantParameter");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDigitalAssistantParameterResponse>
                 transformer =
                         UpdateDigitalAssistantParameterConverter.fromResponse(
@@ -2014,9 +1997,8 @@ public class ManagementClient implements Management {
                         "UpdateSkill",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/UpdateSkill");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSkillResponse>
-                transformer =
-                        UpdateSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSkillResponse> transformer =
+                UpdateSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2054,7 +2036,7 @@ public class ManagementClient implements Management {
                         "UpdateSkillParameter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/UpdateSkillParameter");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSkillParameterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSkillParameterResponse>
                 transformer =
                         UpdateSkillParameterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2095,7 +2077,7 @@ public class ManagementClient implements Management {
                         "UpdateTranslator",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/UpdateTranslator");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTranslatorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTranslatorResponse>
                 transformer =
                         UpdateTranslatorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

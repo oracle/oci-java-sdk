@@ -45,19 +45,19 @@ public class DataSciencePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListFastLaunchJobConfigsRequest.Builder, ListFastLaunchJobConfigsRequest,
                 ListFastLaunchJobConfigsResponse>(
-                new com.google.common.base.Supplier<ListFastLaunchJobConfigsRequest.Builder>() {
+                new java.util.function.Supplier<ListFastLaunchJobConfigsRequest.Builder>() {
                     @Override
                     public ListFastLaunchJobConfigsRequest.Builder get() {
                         return ListFastLaunchJobConfigsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListFastLaunchJobConfigsResponse, String>() {
+                new java.util.function.Function<ListFastLaunchJobConfigsResponse, String>() {
                     @Override
                     public String apply(ListFastLaunchJobConfigsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListFastLaunchJobConfigsRequest.Builder>,
                         ListFastLaunchJobConfigsRequest>() {
@@ -70,12 +70,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>() {
                     @Override
                     public ListFastLaunchJobConfigsResponse apply(
@@ -100,19 +100,19 @@ public class DataSciencePaginators {
                 ListFastLaunchJobConfigsRequest.Builder, ListFastLaunchJobConfigsRequest,
                 ListFastLaunchJobConfigsResponse,
                 com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary>(
-                new com.google.common.base.Supplier<ListFastLaunchJobConfigsRequest.Builder>() {
+                new java.util.function.Supplier<ListFastLaunchJobConfigsRequest.Builder>() {
                     @Override
                     public ListFastLaunchJobConfigsRequest.Builder get() {
                         return ListFastLaunchJobConfigsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListFastLaunchJobConfigsResponse, String>() {
+                new java.util.function.Function<ListFastLaunchJobConfigsResponse, String>() {
                     @Override
                     public String apply(ListFastLaunchJobConfigsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListFastLaunchJobConfigsRequest.Builder>,
                         ListFastLaunchJobConfigsRequest>() {
@@ -125,12 +125,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>() {
                     @Override
                     public ListFastLaunchJobConfigsResponse apply(
@@ -138,7 +138,7 @@ public class DataSciencePaginators {
                         return client.listFastLaunchJobConfigs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListFastLaunchJobConfigsResponse,
                         java.util.List<
                                 com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary>>() {
@@ -162,19 +162,19 @@ public class DataSciencePaginators {
             final ListJobRunsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListJobRunsRequest.Builder, ListJobRunsRequest, ListJobRunsResponse>(
-                new com.google.common.base.Supplier<ListJobRunsRequest.Builder>() {
+                new java.util.function.Supplier<ListJobRunsRequest.Builder>() {
                     @Override
                     public ListJobRunsRequest.Builder get() {
                         return ListJobRunsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListJobRunsResponse, String>() {
+                new java.util.function.Function<ListJobRunsResponse, String>() {
                     @Override
                     public String apply(ListJobRunsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListJobRunsRequest.Builder>,
                         ListJobRunsRequest>() {
@@ -187,12 +187,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListJobRunsRequest, ListJobRunsResponse>() {
+                new java.util.function.Function<ListJobRunsRequest, ListJobRunsResponse>() {
                     @Override
                     public ListJobRunsResponse apply(ListJobRunsRequest request) {
                         return client.listJobRuns(request);
@@ -214,19 +214,19 @@ public class DataSciencePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListJobRunsRequest.Builder, ListJobRunsRequest, ListJobRunsResponse,
                 com.oracle.bmc.datascience.model.JobRunSummary>(
-                new com.google.common.base.Supplier<ListJobRunsRequest.Builder>() {
+                new java.util.function.Supplier<ListJobRunsRequest.Builder>() {
                     @Override
                     public ListJobRunsRequest.Builder get() {
                         return ListJobRunsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListJobRunsResponse, String>() {
+                new java.util.function.Function<ListJobRunsResponse, String>() {
                     @Override
                     public String apply(ListJobRunsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListJobRunsRequest.Builder>,
                         ListJobRunsRequest>() {
@@ -239,18 +239,18 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListJobRunsRequest, ListJobRunsResponse>() {
+                new java.util.function.Function<ListJobRunsRequest, ListJobRunsResponse>() {
                     @Override
                     public ListJobRunsResponse apply(ListJobRunsRequest request) {
                         return client.listJobRuns(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListJobRunsResponse,
                         java.util.List<com.oracle.bmc.datascience.model.JobRunSummary>>() {
                     @Override
@@ -272,19 +272,19 @@ public class DataSciencePaginators {
             final ListJobShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListJobShapesRequest.Builder, ListJobShapesRequest, ListJobShapesResponse>(
-                new com.google.common.base.Supplier<ListJobShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListJobShapesRequest.Builder>() {
                     @Override
                     public ListJobShapesRequest.Builder get() {
                         return ListJobShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListJobShapesResponse, String>() {
+                new java.util.function.Function<ListJobShapesResponse, String>() {
                     @Override
                     public String apply(ListJobShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListJobShapesRequest.Builder>,
                         ListJobShapesRequest>() {
@@ -297,12 +297,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListJobShapesRequest, ListJobShapesResponse>() {
+                new java.util.function.Function<ListJobShapesRequest, ListJobShapesResponse>() {
                     @Override
                     public ListJobShapesResponse apply(ListJobShapesRequest request) {
                         return client.listJobShapes(request);
@@ -324,19 +324,19 @@ public class DataSciencePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListJobShapesRequest.Builder, ListJobShapesRequest, ListJobShapesResponse,
                 com.oracle.bmc.datascience.model.JobShapeSummary>(
-                new com.google.common.base.Supplier<ListJobShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListJobShapesRequest.Builder>() {
                     @Override
                     public ListJobShapesRequest.Builder get() {
                         return ListJobShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListJobShapesResponse, String>() {
+                new java.util.function.Function<ListJobShapesResponse, String>() {
                     @Override
                     public String apply(ListJobShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListJobShapesRequest.Builder>,
                         ListJobShapesRequest>() {
@@ -349,18 +349,18 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListJobShapesRequest, ListJobShapesResponse>() {
+                new java.util.function.Function<ListJobShapesRequest, ListJobShapesResponse>() {
                     @Override
                     public ListJobShapesResponse apply(ListJobShapesRequest request) {
                         return client.listJobShapes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListJobShapesResponse,
                         java.util.List<com.oracle.bmc.datascience.model.JobShapeSummary>>() {
                     @Override
@@ -381,19 +381,19 @@ public class DataSciencePaginators {
     public Iterable<ListJobsResponse> listJobsResponseIterator(final ListJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListJobsRequest.Builder, ListJobsRequest, ListJobsResponse>(
-                new com.google.common.base.Supplier<ListJobsRequest.Builder>() {
+                new java.util.function.Supplier<ListJobsRequest.Builder>() {
                     @Override
                     public ListJobsRequest.Builder get() {
                         return ListJobsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListJobsResponse, String>() {
+                new java.util.function.Function<ListJobsResponse, String>() {
                     @Override
                     public String apply(ListJobsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListJobsRequest.Builder>,
                         ListJobsRequest>() {
@@ -406,12 +406,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListJobsRequest, ListJobsResponse>() {
+                new java.util.function.Function<ListJobsRequest, ListJobsResponse>() {
                     @Override
                     public ListJobsResponse apply(ListJobsRequest request) {
                         return client.listJobs(request);
@@ -433,19 +433,19 @@ public class DataSciencePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListJobsRequest.Builder, ListJobsRequest, ListJobsResponse,
                 com.oracle.bmc.datascience.model.JobSummary>(
-                new com.google.common.base.Supplier<ListJobsRequest.Builder>() {
+                new java.util.function.Supplier<ListJobsRequest.Builder>() {
                     @Override
                     public ListJobsRequest.Builder get() {
                         return ListJobsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListJobsResponse, String>() {
+                new java.util.function.Function<ListJobsResponse, String>() {
                     @Override
                     public String apply(ListJobsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListJobsRequest.Builder>,
                         ListJobsRequest>() {
@@ -458,18 +458,18 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListJobsRequest, ListJobsResponse>() {
+                new java.util.function.Function<ListJobsRequest, ListJobsResponse>() {
                     @Override
                     public ListJobsResponse apply(ListJobsRequest request) {
                         return client.listJobs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListJobsResponse,
                         java.util.List<com.oracle.bmc.datascience.model.JobSummary>>() {
                     @Override
@@ -492,19 +492,19 @@ public class DataSciencePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListModelDeploymentShapesRequest.Builder, ListModelDeploymentShapesRequest,
                 ListModelDeploymentShapesResponse>(
-                new com.google.common.base.Supplier<ListModelDeploymentShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListModelDeploymentShapesRequest.Builder>() {
                     @Override
                     public ListModelDeploymentShapesRequest.Builder get() {
                         return ListModelDeploymentShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModelDeploymentShapesResponse, String>() {
+                new java.util.function.Function<ListModelDeploymentShapesResponse, String>() {
                     @Override
                     public String apply(ListModelDeploymentShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModelDeploymentShapesRequest.Builder>,
                         ListModelDeploymentShapesRequest>() {
@@ -517,12 +517,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModelDeploymentShapesRequest, ListModelDeploymentShapesResponse>() {
                     @Override
                     public ListModelDeploymentShapesResponse apply(
@@ -548,19 +548,19 @@ public class DataSciencePaginators {
                 ListModelDeploymentShapesRequest.Builder, ListModelDeploymentShapesRequest,
                 ListModelDeploymentShapesResponse,
                 com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary>(
-                new com.google.common.base.Supplier<ListModelDeploymentShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListModelDeploymentShapesRequest.Builder>() {
                     @Override
                     public ListModelDeploymentShapesRequest.Builder get() {
                         return ListModelDeploymentShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModelDeploymentShapesResponse, String>() {
+                new java.util.function.Function<ListModelDeploymentShapesResponse, String>() {
                     @Override
                     public String apply(ListModelDeploymentShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModelDeploymentShapesRequest.Builder>,
                         ListModelDeploymentShapesRequest>() {
@@ -573,12 +573,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModelDeploymentShapesRequest, ListModelDeploymentShapesResponse>() {
                     @Override
                     public ListModelDeploymentShapesResponse apply(
@@ -586,7 +586,7 @@ public class DataSciencePaginators {
                         return client.listModelDeploymentShapes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModelDeploymentShapesResponse,
                         java.util.List<
                                 com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary>>() {
@@ -611,19 +611,19 @@ public class DataSciencePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListModelDeploymentsRequest.Builder, ListModelDeploymentsRequest,
                 ListModelDeploymentsResponse>(
-                new com.google.common.base.Supplier<ListModelDeploymentsRequest.Builder>() {
+                new java.util.function.Supplier<ListModelDeploymentsRequest.Builder>() {
                     @Override
                     public ListModelDeploymentsRequest.Builder get() {
                         return ListModelDeploymentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModelDeploymentsResponse, String>() {
+                new java.util.function.Function<ListModelDeploymentsResponse, String>() {
                     @Override
                     public String apply(ListModelDeploymentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModelDeploymentsRequest.Builder>,
                         ListModelDeploymentsRequest>() {
@@ -636,12 +636,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModelDeploymentsRequest, ListModelDeploymentsResponse>() {
                     @Override
                     public ListModelDeploymentsResponse apply(ListModelDeploymentsRequest request) {
@@ -665,19 +665,19 @@ public class DataSciencePaginators {
                 ListModelDeploymentsRequest.Builder, ListModelDeploymentsRequest,
                 ListModelDeploymentsResponse,
                 com.oracle.bmc.datascience.model.ModelDeploymentSummary>(
-                new com.google.common.base.Supplier<ListModelDeploymentsRequest.Builder>() {
+                new java.util.function.Supplier<ListModelDeploymentsRequest.Builder>() {
                     @Override
                     public ListModelDeploymentsRequest.Builder get() {
                         return ListModelDeploymentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModelDeploymentsResponse, String>() {
+                new java.util.function.Function<ListModelDeploymentsResponse, String>() {
                     @Override
                     public String apply(ListModelDeploymentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModelDeploymentsRequest.Builder>,
                         ListModelDeploymentsRequest>() {
@@ -690,19 +690,19 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModelDeploymentsRequest, ListModelDeploymentsResponse>() {
                     @Override
                     public ListModelDeploymentsResponse apply(ListModelDeploymentsRequest request) {
                         return client.listModelDeployments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModelDeploymentsResponse,
                         java.util.List<com.oracle.bmc.datascience.model.ModelDeploymentSummary>>() {
                     @Override
@@ -724,19 +724,19 @@ public class DataSciencePaginators {
             final ListModelsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListModelsRequest.Builder, ListModelsRequest, ListModelsResponse>(
-                new com.google.common.base.Supplier<ListModelsRequest.Builder>() {
+                new java.util.function.Supplier<ListModelsRequest.Builder>() {
                     @Override
                     public ListModelsRequest.Builder get() {
                         return ListModelsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModelsResponse, String>() {
+                new java.util.function.Function<ListModelsResponse, String>() {
                     @Override
                     public String apply(ListModelsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModelsRequest.Builder>,
                         ListModelsRequest>() {
@@ -749,12 +749,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListModelsRequest, ListModelsResponse>() {
+                new java.util.function.Function<ListModelsRequest, ListModelsResponse>() {
                     @Override
                     public ListModelsResponse apply(ListModelsRequest request) {
                         return client.listModels(request);
@@ -776,19 +776,19 @@ public class DataSciencePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListModelsRequest.Builder, ListModelsRequest, ListModelsResponse,
                 com.oracle.bmc.datascience.model.ModelSummary>(
-                new com.google.common.base.Supplier<ListModelsRequest.Builder>() {
+                new java.util.function.Supplier<ListModelsRequest.Builder>() {
                     @Override
                     public ListModelsRequest.Builder get() {
                         return ListModelsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListModelsResponse, String>() {
+                new java.util.function.Function<ListModelsResponse, String>() {
                     @Override
                     public String apply(ListModelsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListModelsRequest.Builder>,
                         ListModelsRequest>() {
@@ -801,18 +801,18 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListModelsRequest, ListModelsResponse>() {
+                new java.util.function.Function<ListModelsRequest, ListModelsResponse>() {
                     @Override
                     public ListModelsResponse apply(ListModelsRequest request) {
                         return client.listModels(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListModelsResponse,
                         java.util.List<com.oracle.bmc.datascience.model.ModelSummary>>() {
                     @Override
@@ -835,19 +835,19 @@ public class DataSciencePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListNotebookSessionShapesRequest.Builder, ListNotebookSessionShapesRequest,
                 ListNotebookSessionShapesResponse>(
-                new com.google.common.base.Supplier<ListNotebookSessionShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListNotebookSessionShapesRequest.Builder>() {
                     @Override
                     public ListNotebookSessionShapesRequest.Builder get() {
                         return ListNotebookSessionShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNotebookSessionShapesResponse, String>() {
+                new java.util.function.Function<ListNotebookSessionShapesResponse, String>() {
                     @Override
                     public String apply(ListNotebookSessionShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNotebookSessionShapesRequest.Builder>,
                         ListNotebookSessionShapesRequest>() {
@@ -860,12 +860,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNotebookSessionShapesRequest, ListNotebookSessionShapesResponse>() {
                     @Override
                     public ListNotebookSessionShapesResponse apply(
@@ -891,19 +891,19 @@ public class DataSciencePaginators {
                 ListNotebookSessionShapesRequest.Builder, ListNotebookSessionShapesRequest,
                 ListNotebookSessionShapesResponse,
                 com.oracle.bmc.datascience.model.NotebookSessionShapeSummary>(
-                new com.google.common.base.Supplier<ListNotebookSessionShapesRequest.Builder>() {
+                new java.util.function.Supplier<ListNotebookSessionShapesRequest.Builder>() {
                     @Override
                     public ListNotebookSessionShapesRequest.Builder get() {
                         return ListNotebookSessionShapesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNotebookSessionShapesResponse, String>() {
+                new java.util.function.Function<ListNotebookSessionShapesResponse, String>() {
                     @Override
                     public String apply(ListNotebookSessionShapesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNotebookSessionShapesRequest.Builder>,
                         ListNotebookSessionShapesRequest>() {
@@ -916,12 +916,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNotebookSessionShapesRequest, ListNotebookSessionShapesResponse>() {
                     @Override
                     public ListNotebookSessionShapesResponse apply(
@@ -929,7 +929,7 @@ public class DataSciencePaginators {
                         return client.listNotebookSessionShapes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNotebookSessionShapesResponse,
                         java.util.List<
                                 com.oracle.bmc.datascience.model.NotebookSessionShapeSummary>>() {
@@ -954,19 +954,19 @@ public class DataSciencePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListNotebookSessionsRequest.Builder, ListNotebookSessionsRequest,
                 ListNotebookSessionsResponse>(
-                new com.google.common.base.Supplier<ListNotebookSessionsRequest.Builder>() {
+                new java.util.function.Supplier<ListNotebookSessionsRequest.Builder>() {
                     @Override
                     public ListNotebookSessionsRequest.Builder get() {
                         return ListNotebookSessionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNotebookSessionsResponse, String>() {
+                new java.util.function.Function<ListNotebookSessionsResponse, String>() {
                     @Override
                     public String apply(ListNotebookSessionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNotebookSessionsRequest.Builder>,
                         ListNotebookSessionsRequest>() {
@@ -979,12 +979,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNotebookSessionsRequest, ListNotebookSessionsResponse>() {
                     @Override
                     public ListNotebookSessionsResponse apply(ListNotebookSessionsRequest request) {
@@ -1008,19 +1008,19 @@ public class DataSciencePaginators {
                 ListNotebookSessionsRequest.Builder, ListNotebookSessionsRequest,
                 ListNotebookSessionsResponse,
                 com.oracle.bmc.datascience.model.NotebookSessionSummary>(
-                new com.google.common.base.Supplier<ListNotebookSessionsRequest.Builder>() {
+                new java.util.function.Supplier<ListNotebookSessionsRequest.Builder>() {
                     @Override
                     public ListNotebookSessionsRequest.Builder get() {
                         return ListNotebookSessionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListNotebookSessionsResponse, String>() {
+                new java.util.function.Function<ListNotebookSessionsResponse, String>() {
                     @Override
                     public String apply(ListNotebookSessionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListNotebookSessionsRequest.Builder>,
                         ListNotebookSessionsRequest>() {
@@ -1033,19 +1033,19 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNotebookSessionsRequest, ListNotebookSessionsResponse>() {
                     @Override
                     public ListNotebookSessionsResponse apply(ListNotebookSessionsRequest request) {
                         return client.listNotebookSessions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListNotebookSessionsResponse,
                         java.util.List<com.oracle.bmc.datascience.model.NotebookSessionSummary>>() {
                     @Override
@@ -1067,19 +1067,19 @@ public class DataSciencePaginators {
             final ListProjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListProjectsRequest.Builder, ListProjectsRequest, ListProjectsResponse>(
-                new com.google.common.base.Supplier<ListProjectsRequest.Builder>() {
+                new java.util.function.Supplier<ListProjectsRequest.Builder>() {
                     @Override
                     public ListProjectsRequest.Builder get() {
                         return ListProjectsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProjectsResponse, String>() {
+                new java.util.function.Function<ListProjectsResponse, String>() {
                     @Override
                     public String apply(ListProjectsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProjectsRequest.Builder>,
                         ListProjectsRequest>() {
@@ -1092,12 +1092,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListProjectsRequest, ListProjectsResponse>() {
+                new java.util.function.Function<ListProjectsRequest, ListProjectsResponse>() {
                     @Override
                     public ListProjectsResponse apply(ListProjectsRequest request) {
                         return client.listProjects(request);
@@ -1119,19 +1119,19 @@ public class DataSciencePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListProjectsRequest.Builder, ListProjectsRequest, ListProjectsResponse,
                 com.oracle.bmc.datascience.model.ProjectSummary>(
-                new com.google.common.base.Supplier<ListProjectsRequest.Builder>() {
+                new java.util.function.Supplier<ListProjectsRequest.Builder>() {
                     @Override
                     public ListProjectsRequest.Builder get() {
                         return ListProjectsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProjectsResponse, String>() {
+                new java.util.function.Function<ListProjectsResponse, String>() {
                     @Override
                     public String apply(ListProjectsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProjectsRequest.Builder>,
                         ListProjectsRequest>() {
@@ -1144,18 +1144,18 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListProjectsRequest, ListProjectsResponse>() {
+                new java.util.function.Function<ListProjectsRequest, ListProjectsResponse>() {
                     @Override
                     public ListProjectsResponse apply(ListProjectsRequest request) {
                         return client.listProjects(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProjectsResponse,
                         java.util.List<com.oracle.bmc.datascience.model.ProjectSummary>>() {
                     @Override
@@ -1177,19 +1177,19 @@ public class DataSciencePaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -1202,12 +1202,12 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -1230,19 +1230,19 @@ public class DataSciencePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.datascience.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -1255,19 +1255,19 @@ public class DataSciencePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<com.oracle.bmc.datascience.model.WorkRequestSummary>>() {
                     @Override

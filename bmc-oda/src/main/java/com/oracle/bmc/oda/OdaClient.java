@@ -9,7 +9,6 @@ import com.oracle.bmc.oda.requests.*;
 import com.oracle.bmc.oda.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class OdaClient implements Oda {
@@ -335,9 +334,9 @@ public class OdaClient implements Oda {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Oda-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Oda-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class OdaClient implements Oda {
          * @return the client
          */
         public OdaClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class OdaClient implements Oda {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,8 +489,7 @@ public class OdaClient implements Oda {
                         "ChangeOdaInstanceCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstance/ChangeOdaInstanceCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeOdaInstanceCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeOdaInstanceCompartmentResponse>
                 transformer =
                         ChangeOdaInstanceCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -530,7 +529,7 @@ public class OdaClient implements Oda {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Oda", "CreateOdaInstance", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateOdaInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOdaInstanceResponse>
                 transformer =
                         CreateOdaInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -573,8 +572,7 @@ public class OdaClient implements Oda {
                         "CreateOdaInstanceAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachment/CreateOdaInstanceAttachment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateOdaInstanceAttachmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOdaInstanceAttachmentResponse>
                 transformer =
                         CreateOdaInstanceAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -616,7 +614,7 @@ public class OdaClient implements Oda {
                         "DeleteOdaInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstance/DeleteOdaInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteOdaInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOdaInstanceResponse>
                 transformer =
                         DeleteOdaInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -655,8 +653,7 @@ public class OdaClient implements Oda {
                         "DeleteOdaInstanceAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachment/DeleteOdaInstanceAttachment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteOdaInstanceAttachmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOdaInstanceAttachmentResponse>
                 transformer =
                         DeleteOdaInstanceAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -694,9 +691,8 @@ public class OdaClient implements Oda {
                         "GetOdaInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstance/GetOdaInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOdaInstanceResponse>
-                transformer =
-                        GetOdaInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetOdaInstanceResponse> transformer =
+                GetOdaInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -731,7 +727,7 @@ public class OdaClient implements Oda {
                         "GetOdaInstanceAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachment/GetOdaInstanceAttachment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOdaInstanceAttachmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetOdaInstanceAttachmentResponse>
                 transformer =
                         GetOdaInstanceAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -768,9 +764,8 @@ public class OdaClient implements Oda {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -805,8 +800,7 @@ public class OdaClient implements Oda {
                         "ListOdaInstanceAttachments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachmentCollection/ListOdaInstanceAttachments");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListOdaInstanceAttachmentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListOdaInstanceAttachmentsResponse>
                 transformer =
                         ListOdaInstanceAttachmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -843,7 +837,7 @@ public class OdaClient implements Oda {
                         "ListOdaInstances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceSummary/ListOdaInstances");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListOdaInstancesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListOdaInstancesResponse>
                 transformer =
                         ListOdaInstancesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -881,7 +875,7 @@ public class OdaClient implements Oda {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -918,7 +912,7 @@ public class OdaClient implements Oda {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -955,7 +949,7 @@ public class OdaClient implements Oda {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -993,7 +987,7 @@ public class OdaClient implements Oda {
                         "StartOdaInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstance/StartOdaInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartOdaInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StartOdaInstanceResponse>
                 transformer =
                         StartOdaInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1032,7 +1026,7 @@ public class OdaClient implements Oda {
                         "StopOdaInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstance/StopOdaInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopOdaInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StopOdaInstanceResponse>
                 transformer =
                         StopOdaInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1070,7 +1064,7 @@ public class OdaClient implements Oda {
                         "UpdateOdaInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstance/UpdateOdaInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOdaInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOdaInstanceResponse>
                 transformer =
                         UpdateOdaInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1112,8 +1106,7 @@ public class OdaClient implements Oda {
                         "UpdateOdaInstanceAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachment/UpdateOdaInstanceAttachment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateOdaInstanceAttachmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOdaInstanceAttachmentResponse>
                 transformer =
                         UpdateOdaInstanceAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

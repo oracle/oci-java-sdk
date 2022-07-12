@@ -6,7 +6,6 @@ package com.oracle.bmc.limits;
 
 import com.oracle.bmc.limits.requests.*;
 import com.oracle.bmc.limits.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -102,16 +101,16 @@ public class QuotasWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetQuotaRequest, GetQuotaResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetQuotaRequest, GetQuotaResponse>() {
                             @Override
                             public GetQuotaResponse apply(GetQuotaRequest request) {
                                 return client.getQuota(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetQuotaResponse>() {
+                        new java.util.function.Predicate<GetQuotaResponse>() {
                             @Override
-                            public boolean apply(GetQuotaResponse response) {
+                            public boolean test(GetQuotaResponse response) {
                                 return targetStatesSet.contains(
                                         response.getQuota().getLifecycleState());
                             }

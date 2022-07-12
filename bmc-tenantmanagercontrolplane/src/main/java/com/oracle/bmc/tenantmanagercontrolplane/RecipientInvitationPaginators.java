@@ -45,19 +45,19 @@ public class RecipientInvitationPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRecipientInvitationsRequest.Builder, ListRecipientInvitationsRequest,
                 ListRecipientInvitationsResponse>(
-                new com.google.common.base.Supplier<ListRecipientInvitationsRequest.Builder>() {
+                new java.util.function.Supplier<ListRecipientInvitationsRequest.Builder>() {
                     @Override
                     public ListRecipientInvitationsRequest.Builder get() {
                         return ListRecipientInvitationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRecipientInvitationsResponse, String>() {
+                new java.util.function.Function<ListRecipientInvitationsResponse, String>() {
                     @Override
                     public String apply(ListRecipientInvitationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRecipientInvitationsRequest.Builder>,
                         ListRecipientInvitationsRequest>() {
@@ -70,12 +70,12 @@ public class RecipientInvitationPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRecipientInvitationsRequest, ListRecipientInvitationsResponse>() {
                     @Override
                     public ListRecipientInvitationsResponse apply(
@@ -100,19 +100,19 @@ public class RecipientInvitationPaginators {
                 ListRecipientInvitationsRequest.Builder, ListRecipientInvitationsRequest,
                 ListRecipientInvitationsResponse,
                 com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitationSummary>(
-                new com.google.common.base.Supplier<ListRecipientInvitationsRequest.Builder>() {
+                new java.util.function.Supplier<ListRecipientInvitationsRequest.Builder>() {
                     @Override
                     public ListRecipientInvitationsRequest.Builder get() {
                         return ListRecipientInvitationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRecipientInvitationsResponse, String>() {
+                new java.util.function.Function<ListRecipientInvitationsResponse, String>() {
                     @Override
                     public String apply(ListRecipientInvitationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRecipientInvitationsRequest.Builder>,
                         ListRecipientInvitationsRequest>() {
@@ -125,12 +125,12 @@ public class RecipientInvitationPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRecipientInvitationsRequest, ListRecipientInvitationsResponse>() {
                     @Override
                     public ListRecipientInvitationsResponse apply(
@@ -138,7 +138,7 @@ public class RecipientInvitationPaginators {
                         return client.listRecipientInvitations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRecipientInvitationsResponse,
                         java.util.List<
                                 com.oracle.bmc.tenantmanagercontrolplane.model

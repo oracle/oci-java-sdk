@@ -50,22 +50,22 @@ public class GetConfigurationConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.audit.responses.GetConfigurationResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.audit.responses.GetConfigurationResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.audit.responses.GetConfigurationResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.audit.responses.GetConfigurationResponse>() {
                             @Override
@@ -73,7 +73,7 @@ public class GetConfigurationConverter {
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.audit.responses.GetConfigurationResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.audit.model.Configuration>>

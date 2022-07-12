@@ -7,7 +7,6 @@ package com.oracle.bmc.apigateway;
 import com.oracle.bmc.apigateway.internal.http.*;
 import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ApiGateway service. <br/>
@@ -319,7 +318,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
          * @return the client
          */
         public ApiGatewayAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,8 +404,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "ChangeApiCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/ChangeApiCompartment");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeApiCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeApiCompartmentResponse>
                 transformer =
                         ChangeApiCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -460,7 +459,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "ChangeCertificateCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/ChangeCertificateCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
                 transformer =
                         ChangeCertificateCompartmentConverter.fromResponse(
@@ -510,7 +509,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "ApiGateway", "CreateApi", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateApiResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateApiResponse>
                 transformer =
                         CreateApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateApiRequest, CreateApiResponse> handlerToUse =
@@ -557,7 +556,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "ApiGateway", "CreateCertificate", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
                 transformer =
                         CreateCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -607,7 +606,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "CreateSdk",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/CreateSdk");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSdkResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSdkResponse>
                 transformer =
                         CreateSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateSdkRequest, CreateSdkResponse> handlerToUse =
@@ -654,7 +653,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "DeleteApi",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/DeleteApi");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteApiResponse>
                 transformer =
                         DeleteApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteApiRequest, DeleteApiResponse> handlerToUse =
@@ -698,7 +697,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "DeleteCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/DeleteCertificate");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
                 transformer =
                         DeleteCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -742,7 +741,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "DeleteSdk",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/DeleteSdk");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSdkResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSdkResponse>
                 transformer =
                         DeleteSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteSdkRequest, DeleteSdkResponse> handlerToUse =
@@ -783,8 +782,8 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "GetApi",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/GetApi");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetApiResponse>
-                transformer = GetApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetApiResponse> transformer =
+                GetApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetApiRequest, GetApiResponse> handlerToUse = handler;
 
         java.util.function.Function<
@@ -834,7 +833,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "GetApiContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/GetApiContent");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetApiContentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetApiContentResponse>
                 transformer =
                         GetApiContentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetApiContentRequest, GetApiContentResponse>
@@ -881,7 +880,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "GetApiDeploymentSpecification",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/ApiSpecification/GetApiDeploymentSpecification");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetApiDeploymentSpecificationResponse>
                 transformer =
                         GetApiDeploymentSpecificationConverter.fromResponse(
@@ -930,7 +929,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "GetApiValidations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/ApiValidations/GetApiValidations");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetApiValidationsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetApiValidationsResponse>
                 transformer =
                         GetApiValidationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -976,7 +975,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "GetCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/GetCertificate");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCertificateResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCertificateResponse>
                 transformer =
                         GetCertificateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCertificateRequest, GetCertificateResponse>
@@ -1018,8 +1017,8 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "GetSdk",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/GetSdk");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSdkResponse>
-                transformer = GetSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSdkResponse> transformer =
+                GetSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSdkRequest, GetSdkResponse> handlerToUse = handler;
 
         java.util.function.Function<
@@ -1058,8 +1057,8 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "ListApis",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/ListApis");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListApisResponse>
-                transformer = ListApisConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, ListApisResponse> transformer =
+                ListApisConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListApisRequest, ListApisResponse> handlerToUse =
                 handler;
 
@@ -1101,7 +1100,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "ListCertificates",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/ListCertificates");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer =
                         ListCertificatesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1147,8 +1146,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "ListSdkLanguageTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/SdkLanguageTypeSummary/ListSdkLanguageTypes");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSdkLanguageTypesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSdkLanguageTypesResponse>
                 transformer =
                         ListSdkLanguageTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1193,8 +1191,8 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "ListSdks",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/ListSdks");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSdksResponse>
-                transformer = ListSdksConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSdksResponse> transformer =
+                ListSdksConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSdksRequest, ListSdksResponse> handlerToUse =
                 handler;
 
@@ -1234,7 +1232,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "UpdateApi",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/UpdateApi");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApiResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateApiResponse>
                 transformer =
                         UpdateApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateApiRequest, UpdateApiResponse> handlerToUse =
@@ -1283,7 +1281,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "UpdateCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/UpdateCertificate");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
                 transformer =
                         UpdateCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1332,7 +1330,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                         "UpdateSdk",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/UpdateSdk");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSdkResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSdkResponse>
                 transformer =
                         UpdateSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateSdkRequest, UpdateSdkResponse> handlerToUse =

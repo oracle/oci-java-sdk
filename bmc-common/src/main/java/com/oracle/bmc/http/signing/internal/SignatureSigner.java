@@ -12,8 +12,6 @@ import java.security.interfaces.RSAPrivateKey;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
-import com.google.common.base.Preconditions;
-
 import com.oracle.bmc.util.internal.Validate;
 
 /**
@@ -43,8 +41,8 @@ public class SignatureSigner {
             @Nonnull final byte[] message,
             @Nonnull final String algorithm) {
 
-        Preconditions.checkArgument(null != privateKey, "privateKey must not be null");
-        Preconditions.checkArgument(
+        Validate.isTrue(null != privateKey, "privateKey must not be null");
+        Validate.isTrue(
                 (null != message) && (0 < message.length), "message must not be null or empty");
         Validate.notBlank(algorithm, "algorithm must be set to non-blank string");
 

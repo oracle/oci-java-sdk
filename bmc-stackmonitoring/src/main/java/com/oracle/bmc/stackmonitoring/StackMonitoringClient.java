@@ -9,7 +9,6 @@ import com.oracle.bmc.stackmonitoring.requests.*;
 import com.oracle.bmc.stackmonitoring.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class StackMonitoringClient implements StackMonitoring {
@@ -335,9 +334,9 @@ public class StackMonitoringClient implements StackMonitoring {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("StackMonitoring-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("StackMonitoring-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class StackMonitoringClient implements StackMonitoring {
          * @return the client
          */
         public StackMonitoringClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class StackMonitoringClient implements StackMonitoring {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,8 +489,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "AssociateMonitoredResources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/AssociateMonitoredResources");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, AssociateMonitoredResourcesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AssociateMonitoredResourcesResponse>
                 transformer =
                         AssociateMonitoredResourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -534,7 +533,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "ChangeMonitoredResourceCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/ChangeMonitoredResourceCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeMonitoredResourceCompartmentResponse>
                 transformer =
                         ChangeMonitoredResourceCompartmentConverter.fromResponse(
@@ -578,7 +577,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "CreateDiscoveryJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJob/CreateDiscoveryJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDiscoveryJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDiscoveryJobResponse>
                 transformer =
                         CreateDiscoveryJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -621,7 +620,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "CreateMonitoredResource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/CreateMonitoredResource");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMonitoredResourceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateMonitoredResourceResponse>
                 transformer =
                         CreateMonitoredResourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -662,7 +661,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "DeleteDiscoveryJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJob/DeleteDiscoveryJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDiscoveryJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDiscoveryJobResponse>
                 transformer =
                         DeleteDiscoveryJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -701,7 +700,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "DeleteMonitoredResource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/DeleteMonitoredResource");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMonitoredResourceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteMonitoredResourceResponse>
                 transformer =
                         DeleteMonitoredResourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -741,7 +740,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "DisableExternalDatabase",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/DisableExternalDatabase");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DisableExternalDatabaseResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DisableExternalDatabaseResponse>
                 transformer =
                         DisableExternalDatabaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -781,7 +780,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "DisassociateMonitoredResources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/DisassociateMonitoredResources");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DisassociateMonitoredResourcesResponse>
                 transformer =
                         DisassociateMonitoredResourcesConverter.fromResponse(
@@ -824,7 +823,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "GetDiscoveryJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJob/GetDiscoveryJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDiscoveryJobResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDiscoveryJobResponse>
                 transformer =
                         GetDiscoveryJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -861,7 +860,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "GetMonitoredResource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/GetMonitoredResource");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetMonitoredResourceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetMonitoredResourceResponse>
                 transformer =
                         GetMonitoredResourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -898,9 +897,8 @@ public class StackMonitoringClient implements StackMonitoring {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -934,7 +932,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "ListDiscoveryJobLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJobLogCollection/ListDiscoveryJobLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDiscoveryJobLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDiscoveryJobLogsResponse>
                 transformer =
                         ListDiscoveryJobLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -971,7 +969,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "ListDiscoveryJobs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJobCollection/ListDiscoveryJobs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDiscoveryJobsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDiscoveryJobsResponse>
                 transformer =
                         ListDiscoveryJobsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1009,7 +1007,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequestErrorCollection/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1046,7 +1044,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequestLogEntryCollection/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1083,7 +1081,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequestSummaryCollection/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1123,7 +1121,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "SearchMonitoredResourceAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchMonitoredResourceAssociations");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SearchMonitoredResourceAssociationsResponse>
                 transformer =
                         SearchMonitoredResourceAssociationsConverter.fromResponse(
@@ -1168,7 +1166,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "SearchMonitoredResourceMembers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchMonitoredResourceMembers");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SearchMonitoredResourceMembersResponse>
                 transformer =
                         SearchMonitoredResourceMembersConverter.fromResponse(
@@ -1213,7 +1211,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "SearchMonitoredResources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchMonitoredResources");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SearchMonitoredResourcesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SearchMonitoredResourcesResponse>
                 transformer =
                         SearchMonitoredResourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1255,7 +1253,7 @@ public class StackMonitoringClient implements StackMonitoring {
                         "UpdateMonitoredResource",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/UpdateMonitoredResource");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMonitoredResourceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateMonitoredResourceResponse>
                 transformer =
                         UpdateMonitoredResourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -6,7 +6,6 @@ package com.oracle.bmc.managementdashboard;
 
 import com.oracle.bmc.managementdashboard.requests.*;
 import com.oracle.bmc.managementdashboard.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -112,8 +111,8 @@ public class DashxApisWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetManagementDashboardRequest, GetManagementDashboardResponse>() {
                             @Override
                             public GetManagementDashboardResponse apply(
@@ -121,9 +120,9 @@ public class DashxApisWaiters {
                                 return client.getManagementDashboard(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetManagementDashboardResponse>() {
+                        new java.util.function.Predicate<GetManagementDashboardResponse>() {
                             @Override
-                            public boolean apply(GetManagementDashboardResponse response) {
+                            public boolean test(GetManagementDashboardResponse response) {
                                 return targetStatesSet.contains(
                                         response.getManagementDashboard().getLifecycleState());
                             }
@@ -219,8 +218,8 @@ public class DashxApisWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetManagementSavedSearchRequest,
                                 GetManagementSavedSearchResponse>() {
                             @Override
@@ -229,9 +228,9 @@ public class DashxApisWaiters {
                                 return client.getManagementSavedSearch(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetManagementSavedSearchResponse>() {
+                        new java.util.function.Predicate<GetManagementSavedSearchResponse>() {
                             @Override
-                            public boolean apply(GetManagementSavedSearchResponse response) {
+                            public boolean test(GetManagementSavedSearchResponse response) {
                                 return targetStatesSet.contains(
                                         response.getManagementSavedSearch().getLifecycleState());
                             }

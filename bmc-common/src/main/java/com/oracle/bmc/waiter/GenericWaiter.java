@@ -4,10 +4,13 @@
  */
 package com.oracle.bmc.waiter;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-import com.google.common.base.Predicate;
-import com.google.common.base.Supplier;
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+
+import com.oracle.bmc.ServiceDetails;
+import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
 
 /**
@@ -40,6 +43,47 @@ public class GenericWaiter {
      * @return The last response object that was received and was accepted by
      *         the termination predicate, or empty if the waiter reached the max
      *         timeout.
+     *
+     * @deprecated in favor of the method that does not use Guava parameters
+     */
+    @Deprecated
+    public <REQUEST, RESPONSE>
+            com.google.common /*Guava will be removed soon*/.base.Optional<RESPONSE> execute(
+                    com.google.common /*Guava will be removed soon*/.base.Supplier<REQUEST>
+                            requestSupplier,
+                    com.google.common /*Guava will be removed soon*/.base.Function<
+                                    REQUEST, RESPONSE>
+                            functionCall,
+                    com.google.common /*Guava will be removed soon*/.base.Predicate<RESPONSE>
+                            terminationPredicate) {
+        return GuavaUtils.adaptToGuava(
+                execute(
+                        GuavaUtils.adaptFromGuava(requestSupplier),
+                        GuavaUtils.adaptFromGuava(functionCall),
+                        GuavaUtils.adaptFromGuava(terminationPredicate)));
+    }
+
+    /**
+     * Blocks until a specific condition is met.
+     *
+     * @param requestSupplier
+     *            Supplier that provides a new request instance to fetch the
+     *            current state.
+     * @param functionCall
+     *            Function that will be invoked to fetch the current state. It
+     *            will be provided the request instance given by the
+     *            requestSupplier.
+     * @param terminationPredicate
+     *            The termination predicate that will inspect the current state
+     *            (returned response instance) to determine if it is done
+     *            waiting.
+     * @param <REQUEST>
+     *            Request object class
+     * @param <RESPONSE>
+     *            Response object class
+     * @return The last response object that was received and was accepted by
+     *         the termination predicate, or empty if the waiter reached the max
+     *         timeout.
      */
     public <REQUEST, RESPONSE> Optional<RESPONSE> execute(
             Supplier<REQUEST> requestSupplier,
@@ -50,7 +94,7 @@ public class GenericWaiter {
         while (true) {
             LOG.debug("Invoking function call");
             r = functionCall.apply(requestSupplier.get());
-            if (terminationPredicate.apply(r)) {
+            if (terminationPredicate.test(r)) {
                 LOG.debug(
                         "Total Latency for this API call is: {}ms",
                         (context.getCurrentTime() - context.getStartTime()));
@@ -72,13 +116,13 @@ public class GenericWaiter {
             } catch (InterruptedException e) {
                 LOG.info("Waiter interrupted");
                 Thread.currentThread().interrupt();
-                return Optional.absent();
+                return Optional.empty();
             }
         }
         LOG.debug(
                 "Total Latency for this API call is: {}ms",
                 (context.getCurrentTime() - context.getStartTime()));
-        return Optional.absent();
+        return Optional.empty();
     }
 
     @java.beans.ConstructorProperties({"waiterConfiguration"})

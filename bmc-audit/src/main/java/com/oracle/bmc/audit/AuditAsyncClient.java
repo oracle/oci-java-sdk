@@ -7,7 +7,6 @@ package com.oracle.bmc.audit;
 import com.oracle.bmc.audit.internal.http.*;
 import com.oracle.bmc.audit.requests.*;
 import com.oracle.bmc.audit.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Audit service. <br/>
@@ -319,7 +318,7 @@ public class AuditAsyncClient implements AuditAsync {
          * @return the client
          */
         public AuditAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class AuditAsyncClient implements AuditAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -403,7 +403,7 @@ public class AuditAsyncClient implements AuditAsync {
                         "GetConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/audit/20190901/Configuration/GetConfiguration");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer =
                         GetConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -447,7 +447,7 @@ public class AuditAsyncClient implements AuditAsync {
                         "ListEvents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/audit/20190901/AuditEvent/ListEvents");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEventsResponse>
                 transformer =
                         ListEventsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListEventsRequest, ListEventsResponse> handlerToUse =
@@ -492,8 +492,7 @@ public class AuditAsyncClient implements AuditAsync {
                         "UpdateConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/audit/20190901/Configuration/UpdateConfiguration");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateConfigurationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
                 transformer =
                         UpdateConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

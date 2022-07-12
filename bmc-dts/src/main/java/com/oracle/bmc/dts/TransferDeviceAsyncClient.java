@@ -7,7 +7,6 @@ package com.oracle.bmc.dts;
 import com.oracle.bmc.dts.internal.http.*;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for TransferDevice service. <br/>
@@ -321,7 +320,7 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
          * @return the client
          */
         public TransferDeviceAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,8 +406,7 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
                         "CreateTransferDevice",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateTransferDeviceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTransferDeviceResponse>
                 transformer =
                         CreateTransferDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -459,8 +458,7 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
                         "DeleteTransferDevice",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteTransferDeviceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTransferDeviceResponse>
                 transformer =
                         DeleteTransferDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -504,7 +502,7 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferDevice", "GetTransferDevice", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTransferDeviceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTransferDeviceResponse>
                 transformer =
                         GetTransferDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -547,8 +545,7 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferDevice", "ListTransferDevices", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTransferDevicesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTransferDevicesResponse>
                 transformer =
                         ListTransferDevicesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -595,8 +592,7 @@ public class TransferDeviceAsyncClient implements TransferDeviceAsync {
                         "UpdateTransferDevice",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateTransferDeviceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTransferDeviceResponse>
                 transformer =
                         UpdateTransferDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

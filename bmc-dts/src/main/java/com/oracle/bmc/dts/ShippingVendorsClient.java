@@ -9,7 +9,6 @@ import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 public class ShippingVendorsClient implements ShippingVendors {
@@ -329,7 +328,7 @@ public class ShippingVendorsClient implements ShippingVendors {
          * @return the client
          */
         public ShippingVendorsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -365,7 +364,8 @@ public class ShippingVendorsClient implements ShippingVendors {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -410,7 +410,7 @@ public class ShippingVendorsClient implements ShippingVendors {
                         "ListShippingVendors",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListShippingVendorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListShippingVendorsResponse>
                 transformer =
                         ListShippingVendorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

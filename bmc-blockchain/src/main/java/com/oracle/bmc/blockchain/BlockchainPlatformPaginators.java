@@ -46,21 +46,19 @@ public class BlockchainPlatformPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBlockchainPlatformPatchesRequest.Builder, ListBlockchainPlatformPatchesRequest,
                 ListBlockchainPlatformPatchesResponse>(
-                new com.google.common.base.Supplier<
-                        ListBlockchainPlatformPatchesRequest.Builder>() {
+                new java.util.function.Supplier<ListBlockchainPlatformPatchesRequest.Builder>() {
                     @Override
                     public ListBlockchainPlatformPatchesRequest.Builder get() {
                         return ListBlockchainPlatformPatchesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListBlockchainPlatformPatchesResponse, String>() {
+                new java.util.function.Function<ListBlockchainPlatformPatchesResponse, String>() {
                     @Override
                     public String apply(ListBlockchainPlatformPatchesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBlockchainPlatformPatchesRequest.Builder>,
                         ListBlockchainPlatformPatchesRequest>() {
@@ -73,12 +71,12 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBlockchainPlatformPatchesRequest,
                         ListBlockchainPlatformPatchesResponse>() {
                     @Override
@@ -105,21 +103,19 @@ public class BlockchainPlatformPaginators {
                 ListBlockchainPlatformPatchesRequest.Builder, ListBlockchainPlatformPatchesRequest,
                 ListBlockchainPlatformPatchesResponse,
                 com.oracle.bmc.blockchain.model.BlockchainPlatformPatchSummary>(
-                new com.google.common.base.Supplier<
-                        ListBlockchainPlatformPatchesRequest.Builder>() {
+                new java.util.function.Supplier<ListBlockchainPlatformPatchesRequest.Builder>() {
                     @Override
                     public ListBlockchainPlatformPatchesRequest.Builder get() {
                         return ListBlockchainPlatformPatchesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListBlockchainPlatformPatchesResponse, String>() {
+                new java.util.function.Function<ListBlockchainPlatformPatchesResponse, String>() {
                     @Override
                     public String apply(ListBlockchainPlatformPatchesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBlockchainPlatformPatchesRequest.Builder>,
                         ListBlockchainPlatformPatchesRequest>() {
@@ -132,12 +128,12 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBlockchainPlatformPatchesRequest,
                         ListBlockchainPlatformPatchesResponse>() {
                     @Override
@@ -146,7 +142,7 @@ public class BlockchainPlatformPaginators {
                         return client.listBlockchainPlatformPatches(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBlockchainPlatformPatchesResponse,
                         java.util.List<
                                 com.oracle.bmc.blockchain.model.BlockchainPlatformPatchSummary>>() {
@@ -171,19 +167,19 @@ public class BlockchainPlatformPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBlockchainPlatformsRequest.Builder, ListBlockchainPlatformsRequest,
                 ListBlockchainPlatformsResponse>(
-                new com.google.common.base.Supplier<ListBlockchainPlatformsRequest.Builder>() {
+                new java.util.function.Supplier<ListBlockchainPlatformsRequest.Builder>() {
                     @Override
                     public ListBlockchainPlatformsRequest.Builder get() {
                         return ListBlockchainPlatformsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBlockchainPlatformsResponse, String>() {
+                new java.util.function.Function<ListBlockchainPlatformsResponse, String>() {
                     @Override
                     public String apply(ListBlockchainPlatformsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBlockchainPlatformsRequest.Builder>,
                         ListBlockchainPlatformsRequest>() {
@@ -196,12 +192,12 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBlockchainPlatformsRequest, ListBlockchainPlatformsResponse>() {
                     @Override
                     public ListBlockchainPlatformsResponse apply(
@@ -226,19 +222,19 @@ public class BlockchainPlatformPaginators {
                 ListBlockchainPlatformsRequest.Builder, ListBlockchainPlatformsRequest,
                 ListBlockchainPlatformsResponse,
                 com.oracle.bmc.blockchain.model.BlockchainPlatformSummary>(
-                new com.google.common.base.Supplier<ListBlockchainPlatformsRequest.Builder>() {
+                new java.util.function.Supplier<ListBlockchainPlatformsRequest.Builder>() {
                     @Override
                     public ListBlockchainPlatformsRequest.Builder get() {
                         return ListBlockchainPlatformsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBlockchainPlatformsResponse, String>() {
+                new java.util.function.Function<ListBlockchainPlatformsResponse, String>() {
                     @Override
                     public String apply(ListBlockchainPlatformsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBlockchainPlatformsRequest.Builder>,
                         ListBlockchainPlatformsRequest>() {
@@ -251,12 +247,12 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBlockchainPlatformsRequest, ListBlockchainPlatformsResponse>() {
                     @Override
                     public ListBlockchainPlatformsResponse apply(
@@ -264,7 +260,7 @@ public class BlockchainPlatformPaginators {
                         return client.listBlockchainPlatforms(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBlockchainPlatformsResponse,
                         java.util.List<
                                 com.oracle.bmc.blockchain.model.BlockchainPlatformSummary>>() {
@@ -286,19 +282,19 @@ public class BlockchainPlatformPaginators {
     public Iterable<ListOsnsResponse> listOsnsResponseIterator(final ListOsnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListOsnsRequest.Builder, ListOsnsRequest, ListOsnsResponse>(
-                new com.google.common.base.Supplier<ListOsnsRequest.Builder>() {
+                new java.util.function.Supplier<ListOsnsRequest.Builder>() {
                     @Override
                     public ListOsnsRequest.Builder get() {
                         return ListOsnsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListOsnsResponse, String>() {
+                new java.util.function.Function<ListOsnsResponse, String>() {
                     @Override
                     public String apply(ListOsnsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListOsnsRequest.Builder>,
                         ListOsnsRequest>() {
@@ -311,12 +307,12 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListOsnsRequest, ListOsnsResponse>() {
+                new java.util.function.Function<ListOsnsRequest, ListOsnsResponse>() {
                     @Override
                     public ListOsnsResponse apply(ListOsnsRequest request) {
                         return client.listOsns(request);
@@ -338,19 +334,19 @@ public class BlockchainPlatformPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListOsnsRequest.Builder, ListOsnsRequest, ListOsnsResponse,
                 com.oracle.bmc.blockchain.model.OsnSummary>(
-                new com.google.common.base.Supplier<ListOsnsRequest.Builder>() {
+                new java.util.function.Supplier<ListOsnsRequest.Builder>() {
                     @Override
                     public ListOsnsRequest.Builder get() {
                         return ListOsnsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListOsnsResponse, String>() {
+                new java.util.function.Function<ListOsnsResponse, String>() {
                     @Override
                     public String apply(ListOsnsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListOsnsRequest.Builder>,
                         ListOsnsRequest>() {
@@ -363,18 +359,18 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListOsnsRequest, ListOsnsResponse>() {
+                new java.util.function.Function<ListOsnsRequest, ListOsnsResponse>() {
                     @Override
                     public ListOsnsResponse apply(ListOsnsRequest request) {
                         return client.listOsns(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOsnsResponse,
                         java.util.List<com.oracle.bmc.blockchain.model.OsnSummary>>() {
                     @Override
@@ -395,19 +391,19 @@ public class BlockchainPlatformPaginators {
     public Iterable<ListPeersResponse> listPeersResponseIterator(final ListPeersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPeersRequest.Builder, ListPeersRequest, ListPeersResponse>(
-                new com.google.common.base.Supplier<ListPeersRequest.Builder>() {
+                new java.util.function.Supplier<ListPeersRequest.Builder>() {
                     @Override
                     public ListPeersRequest.Builder get() {
                         return ListPeersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPeersResponse, String>() {
+                new java.util.function.Function<ListPeersResponse, String>() {
                     @Override
                     public String apply(ListPeersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPeersRequest.Builder>,
                         ListPeersRequest>() {
@@ -420,12 +416,12 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListPeersRequest, ListPeersResponse>() {
+                new java.util.function.Function<ListPeersRequest, ListPeersResponse>() {
                     @Override
                     public ListPeersResponse apply(ListPeersRequest request) {
                         return client.listPeers(request);
@@ -447,19 +443,19 @@ public class BlockchainPlatformPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListPeersRequest.Builder, ListPeersRequest, ListPeersResponse,
                 com.oracle.bmc.blockchain.model.PeerSummary>(
-                new com.google.common.base.Supplier<ListPeersRequest.Builder>() {
+                new java.util.function.Supplier<ListPeersRequest.Builder>() {
                     @Override
                     public ListPeersRequest.Builder get() {
                         return ListPeersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPeersResponse, String>() {
+                new java.util.function.Function<ListPeersResponse, String>() {
                     @Override
                     public String apply(ListPeersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPeersRequest.Builder>,
                         ListPeersRequest>() {
@@ -472,18 +468,18 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListPeersRequest, ListPeersResponse>() {
+                new java.util.function.Function<ListPeersRequest, ListPeersResponse>() {
                     @Override
                     public ListPeersResponse apply(ListPeersRequest request) {
                         return client.listPeers(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPeersResponse,
                         java.util.List<com.oracle.bmc.blockchain.model.PeerSummary>>() {
                     @Override
@@ -506,19 +502,19 @@ public class BlockchainPlatformPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -531,12 +527,12 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -560,19 +556,19 @@ public class BlockchainPlatformPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse, com.oracle.bmc.blockchain.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -585,12 +581,12 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -598,7 +594,7 @@ public class BlockchainPlatformPaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<com.oracle.bmc.blockchain.model.WorkRequestError>>() {
                     @Override
@@ -621,19 +617,19 @@ public class BlockchainPlatformPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -646,12 +642,12 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -674,19 +670,19 @@ public class BlockchainPlatformPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse, com.oracle.bmc.blockchain.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -699,19 +695,19 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<com.oracle.bmc.blockchain.model.WorkRequestLogEntry>>() {
                     @Override
@@ -733,19 +729,19 @@ public class BlockchainPlatformPaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -758,12 +754,12 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -786,19 +782,19 @@ public class BlockchainPlatformPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.blockchain.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -811,19 +807,19 @@ public class BlockchainPlatformPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<com.oracle.bmc.blockchain.model.WorkRequestSummary>>() {
                     @Override

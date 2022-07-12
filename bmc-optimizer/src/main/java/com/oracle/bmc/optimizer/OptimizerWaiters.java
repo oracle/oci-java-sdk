@@ -6,7 +6,6 @@ package com.oracle.bmc.optimizer;
 
 import com.oracle.bmc.optimizer.requests.*;
 import com.oracle.bmc.optimizer.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -103,17 +102,16 @@ public class OptimizerWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetCategoryRequest, GetCategoryResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetCategoryRequest, GetCategoryResponse>() {
                             @Override
                             public GetCategoryResponse apply(GetCategoryRequest request) {
                                 return client.getCategory(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCategoryResponse>() {
+                        new java.util.function.Predicate<GetCategoryResponse>() {
                             @Override
-                            public boolean apply(GetCategoryResponse response) {
+                            public boolean test(GetCategoryResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCategory().getLifecycleState());
                             }
@@ -205,8 +203,8 @@ public class OptimizerWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetEnrollmentStatusRequest, GetEnrollmentStatusResponse>() {
                             @Override
                             public GetEnrollmentStatusResponse apply(
@@ -214,9 +212,9 @@ public class OptimizerWaiters {
                                 return client.getEnrollmentStatus(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetEnrollmentStatusResponse>() {
+                        new java.util.function.Predicate<GetEnrollmentStatusResponse>() {
                             @Override
-                            public boolean apply(GetEnrollmentStatusResponse response) {
+                            public boolean test(GetEnrollmentStatusResponse response) {
                                 return targetStatesSet.contains(
                                         response.getEnrollmentStatus().getLifecycleState());
                             }
@@ -304,17 +302,16 @@ public class OptimizerWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetProfileRequest, GetProfileResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetProfileRequest, GetProfileResponse>() {
                             @Override
                             public GetProfileResponse apply(GetProfileRequest request) {
                                 return client.getProfile(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetProfileResponse>() {
+                        new java.util.function.Predicate<GetProfileResponse>() {
                             @Override
-                            public boolean apply(GetProfileResponse response) {
+                            public boolean test(GetProfileResponse response) {
                                 return targetStatesSet.contains(
                                         response.getProfile().getLifecycleState());
                             }
@@ -406,8 +403,8 @@ public class OptimizerWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetRecommendationRequest, GetRecommendationResponse>() {
                             @Override
                             public GetRecommendationResponse apply(
@@ -415,9 +412,9 @@ public class OptimizerWaiters {
                                 return client.getRecommendation(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetRecommendationResponse>() {
+                        new java.util.function.Predicate<GetRecommendationResponse>() {
                             @Override
-                            public boolean apply(GetRecommendationResponse response) {
+                            public boolean test(GetRecommendationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getRecommendation().getLifecycleState());
                             }
@@ -509,8 +506,8 @@ public class OptimizerWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetResourceActionRequest, GetResourceActionResponse>() {
                             @Override
                             public GetResourceActionResponse apply(
@@ -518,9 +515,9 @@ public class OptimizerWaiters {
                                 return client.getResourceAction(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetResourceActionResponse>() {
+                        new java.util.function.Predicate<GetResourceActionResponse>() {
                             @Override
-                            public boolean apply(GetResourceActionResponse response) {
+                            public boolean test(GetResourceActionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getResourceAction().getLifecycleState());
                             }
@@ -567,17 +564,17 @@ public class OptimizerWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

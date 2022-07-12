@@ -44,19 +44,19 @@ public class RoverNodePaginators {
             final ListRoverNodesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRoverNodesRequest.Builder, ListRoverNodesRequest, ListRoverNodesResponse>(
-                new com.google.common.base.Supplier<ListRoverNodesRequest.Builder>() {
+                new java.util.function.Supplier<ListRoverNodesRequest.Builder>() {
                     @Override
                     public ListRoverNodesRequest.Builder get() {
                         return ListRoverNodesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRoverNodesResponse, String>() {
+                new java.util.function.Function<ListRoverNodesResponse, String>() {
                     @Override
                     public String apply(ListRoverNodesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRoverNodesRequest.Builder>,
                         ListRoverNodesRequest>() {
@@ -69,13 +69,12 @@ public class RoverNodePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListRoverNodesRequest, ListRoverNodesResponse>() {
+                new java.util.function.Function<ListRoverNodesRequest, ListRoverNodesResponse>() {
                     @Override
                     public ListRoverNodesResponse apply(ListRoverNodesRequest request) {
                         return client.listRoverNodes(request);
@@ -97,19 +96,19 @@ public class RoverNodePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListRoverNodesRequest.Builder, ListRoverNodesRequest, ListRoverNodesResponse,
                 com.oracle.bmc.rover.model.RoverNodeSummary>(
-                new com.google.common.base.Supplier<ListRoverNodesRequest.Builder>() {
+                new java.util.function.Supplier<ListRoverNodesRequest.Builder>() {
                     @Override
                     public ListRoverNodesRequest.Builder get() {
                         return ListRoverNodesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRoverNodesResponse, String>() {
+                new java.util.function.Function<ListRoverNodesResponse, String>() {
                     @Override
                     public String apply(ListRoverNodesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRoverNodesRequest.Builder>,
                         ListRoverNodesRequest>() {
@@ -122,19 +121,18 @@ public class RoverNodePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListRoverNodesRequest, ListRoverNodesResponse>() {
+                new java.util.function.Function<ListRoverNodesRequest, ListRoverNodesResponse>() {
                     @Override
                     public ListRoverNodesResponse apply(ListRoverNodesRequest request) {
                         return client.listRoverNodes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRoverNodesResponse,
                         java.util.List<com.oracle.bmc.rover.model.RoverNodeSummary>>() {
                     @Override

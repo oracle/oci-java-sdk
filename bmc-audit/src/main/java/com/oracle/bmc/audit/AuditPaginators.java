@@ -44,19 +44,19 @@ public class AuditPaginators {
             final ListEventsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListEventsRequest.Builder, ListEventsRequest, ListEventsResponse>(
-                new com.google.common.base.Supplier<ListEventsRequest.Builder>() {
+                new java.util.function.Supplier<ListEventsRequest.Builder>() {
                     @Override
                     public ListEventsRequest.Builder get() {
                         return ListEventsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEventsResponse, String>() {
+                new java.util.function.Function<ListEventsResponse, String>() {
                     @Override
                     public String apply(ListEventsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEventsRequest.Builder>,
                         ListEventsRequest>() {
@@ -69,12 +69,12 @@ public class AuditPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListEventsRequest, ListEventsResponse>() {
+                new java.util.function.Function<ListEventsRequest, ListEventsResponse>() {
                     @Override
                     public ListEventsResponse apply(ListEventsRequest request) {
                         return client.listEvents(request);
@@ -96,19 +96,19 @@ public class AuditPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListEventsRequest.Builder, ListEventsRequest, ListEventsResponse,
                 com.oracle.bmc.audit.model.AuditEvent>(
-                new com.google.common.base.Supplier<ListEventsRequest.Builder>() {
+                new java.util.function.Supplier<ListEventsRequest.Builder>() {
                     @Override
                     public ListEventsRequest.Builder get() {
                         return ListEventsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEventsResponse, String>() {
+                new java.util.function.Function<ListEventsResponse, String>() {
                     @Override
                     public String apply(ListEventsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEventsRequest.Builder>,
                         ListEventsRequest>() {
@@ -121,18 +121,18 @@ public class AuditPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListEventsRequest, ListEventsResponse>() {
+                new java.util.function.Function<ListEventsRequest, ListEventsResponse>() {
                     @Override
                     public ListEventsResponse apply(ListEventsRequest request) {
                         return client.listEvents(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListEventsResponse,
                         java.util.List<com.oracle.bmc.audit.model.AuditEvent>>() {
                     @Override

@@ -4,19 +4,20 @@
  */
 package com.oracle.bmc.auth;
 
-import com.google.common.base.Supplier;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.function.Supplier;
 
 import static com.oracle.bmc.util.internal.FileUtils.expandUserHome;
 
 /**
  * Simple Supplier for the private key that handles missing files.
  */
-public class SimplePrivateKeySupplier implements Supplier<InputStream> {
+public class SimplePrivateKeySupplier
+        implements Supplier<InputStream>,
+                com.google.common /*Guava will be removed soon*/.base.Supplier<InputStream> {
 
     private final String pemFilePath;
 

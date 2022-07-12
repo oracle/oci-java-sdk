@@ -9,7 +9,6 @@ import com.oracle.bmc.bastion.requests.*;
 import com.oracle.bmc.bastion.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 public class BastionClient implements Bastion {
@@ -334,9 +333,9 @@ public class BastionClient implements Bastion {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Bastion-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Bastion-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class BastionClient implements Bastion {
          * @return the client
          */
         public BastionClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class BastionClient implements Bastion {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,7 +487,7 @@ public class BastionClient implements Bastion {
                         "ChangeBastionCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/ChangeBastionCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeBastionCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeBastionCompartmentResponse>
                 transformer =
                         ChangeBastionCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,9 +529,8 @@ public class BastionClient implements Bastion {
                         "CreateBastion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/CreateBastion");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBastionResponse>
-                transformer =
-                        CreateBastionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBastionResponse> transformer =
+                CreateBastionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -570,9 +569,8 @@ public class BastionClient implements Bastion {
                         "CreateSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/CreateSession");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSessionResponse>
-                transformer =
-                        CreateSessionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSessionResponse> transformer =
+                CreateSessionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -610,9 +608,8 @@ public class BastionClient implements Bastion {
                         "DeleteBastion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/DeleteBastion");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBastionResponse>
-                transformer =
-                        DeleteBastionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBastionResponse> transformer =
+                DeleteBastionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -647,9 +644,8 @@ public class BastionClient implements Bastion {
                         "DeleteSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/DeleteSession");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSessionResponse>
-                transformer =
-                        DeleteSessionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSessionResponse> transformer =
+                DeleteSessionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -683,7 +679,7 @@ public class BastionClient implements Bastion {
                         "GetBastion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/GetBastion");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBastionResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetBastionResponse> transformer =
                 GetBastionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -717,7 +713,7 @@ public class BastionClient implements Bastion {
                         "GetSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/GetSession");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSessionResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetSessionResponse> transformer =
                 GetSessionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -752,9 +748,8 @@ public class BastionClient implements Bastion {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -788,9 +783,8 @@ public class BastionClient implements Bastion {
                         "ListBastions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/ListBastions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBastionsResponse>
-                transformer =
-                        ListBastionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListBastionsResponse> transformer =
+                ListBastionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -824,9 +818,8 @@ public class BastionClient implements Bastion {
                         "ListSessions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/ListSessions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSessionsResponse>
-                transformer =
-                        ListSessionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSessionsResponse> transformer =
+                ListSessionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -861,7 +854,7 @@ public class BastionClient implements Bastion {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -898,7 +891,7 @@ public class BastionClient implements Bastion {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -935,7 +928,7 @@ public class BastionClient implements Bastion {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -972,9 +965,8 @@ public class BastionClient implements Bastion {
                         "UpdateBastion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/UpdateBastion");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBastionResponse>
-                transformer =
-                        UpdateBastionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBastionResponse> transformer =
+                UpdateBastionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1012,9 +1004,8 @@ public class BastionClient implements Bastion {
                         "UpdateSession",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/UpdateSession");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSessionResponse>
-                transformer =
-                        UpdateSessionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSessionResponse> transformer =
+                UpdateSessionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -44,19 +44,19 @@ public class ServiceCatalogPaginators {
             final ListApplicationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListApplicationsRequest.Builder, ListApplicationsRequest, ListApplicationsResponse>(
-                new com.google.common.base.Supplier<ListApplicationsRequest.Builder>() {
+                new java.util.function.Supplier<ListApplicationsRequest.Builder>() {
                     @Override
                     public ListApplicationsRequest.Builder get() {
                         return ListApplicationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListApplicationsResponse, String>() {
+                new java.util.function.Function<ListApplicationsResponse, String>() {
                     @Override
                     public String apply(ListApplicationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListApplicationsRequest.Builder>,
                         ListApplicationsRequest>() {
@@ -69,12 +69,12 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListApplicationsRequest, ListApplicationsResponse>() {
                     @Override
                     public ListApplicationsResponse apply(ListApplicationsRequest request) {
@@ -97,19 +97,19 @@ public class ServiceCatalogPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListApplicationsRequest.Builder, ListApplicationsRequest, ListApplicationsResponse,
                 com.oracle.bmc.servicecatalog.model.ApplicationSummary>(
-                new com.google.common.base.Supplier<ListApplicationsRequest.Builder>() {
+                new java.util.function.Supplier<ListApplicationsRequest.Builder>() {
                     @Override
                     public ListApplicationsRequest.Builder get() {
                         return ListApplicationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListApplicationsResponse, String>() {
+                new java.util.function.Function<ListApplicationsResponse, String>() {
                     @Override
                     public String apply(ListApplicationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListApplicationsRequest.Builder>,
                         ListApplicationsRequest>() {
@@ -122,19 +122,19 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListApplicationsRequest, ListApplicationsResponse>() {
                     @Override
                     public ListApplicationsResponse apply(ListApplicationsRequest request) {
                         return client.listApplications(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListApplicationsResponse,
                         java.util.List<com.oracle.bmc.servicecatalog.model.ApplicationSummary>>() {
                     @Override
@@ -158,21 +158,19 @@ public class ServiceCatalogPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPrivateApplicationPackagesRequest.Builder,
                 ListPrivateApplicationPackagesRequest, ListPrivateApplicationPackagesResponse>(
-                new com.google.common.base.Supplier<
-                        ListPrivateApplicationPackagesRequest.Builder>() {
+                new java.util.function.Supplier<ListPrivateApplicationPackagesRequest.Builder>() {
                     @Override
                     public ListPrivateApplicationPackagesRequest.Builder get() {
                         return ListPrivateApplicationPackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListPrivateApplicationPackagesResponse, String>() {
+                new java.util.function.Function<ListPrivateApplicationPackagesResponse, String>() {
                     @Override
                     public String apply(ListPrivateApplicationPackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPrivateApplicationPackagesRequest.Builder>,
                         ListPrivateApplicationPackagesRequest>() {
@@ -185,12 +183,12 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPrivateApplicationPackagesRequest,
                         ListPrivateApplicationPackagesResponse>() {
                     @Override
@@ -217,21 +215,19 @@ public class ServiceCatalogPaginators {
                 ListPrivateApplicationPackagesRequest.Builder,
                 ListPrivateApplicationPackagesRequest, ListPrivateApplicationPackagesResponse,
                 com.oracle.bmc.servicecatalog.model.PrivateApplicationPackageSummary>(
-                new com.google.common.base.Supplier<
-                        ListPrivateApplicationPackagesRequest.Builder>() {
+                new java.util.function.Supplier<ListPrivateApplicationPackagesRequest.Builder>() {
                     @Override
                     public ListPrivateApplicationPackagesRequest.Builder get() {
                         return ListPrivateApplicationPackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListPrivateApplicationPackagesResponse, String>() {
+                new java.util.function.Function<ListPrivateApplicationPackagesResponse, String>() {
                     @Override
                     public String apply(ListPrivateApplicationPackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPrivateApplicationPackagesRequest.Builder>,
                         ListPrivateApplicationPackagesRequest>() {
@@ -244,12 +240,12 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPrivateApplicationPackagesRequest,
                         ListPrivateApplicationPackagesResponse>() {
                     @Override
@@ -258,7 +254,7 @@ public class ServiceCatalogPaginators {
                         return client.listPrivateApplicationPackages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPrivateApplicationPackagesResponse,
                         java.util.List<
                                 com.oracle.bmc.servicecatalog.model
@@ -285,19 +281,19 @@ public class ServiceCatalogPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPrivateApplicationsRequest.Builder, ListPrivateApplicationsRequest,
                 ListPrivateApplicationsResponse>(
-                new com.google.common.base.Supplier<ListPrivateApplicationsRequest.Builder>() {
+                new java.util.function.Supplier<ListPrivateApplicationsRequest.Builder>() {
                     @Override
                     public ListPrivateApplicationsRequest.Builder get() {
                         return ListPrivateApplicationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPrivateApplicationsResponse, String>() {
+                new java.util.function.Function<ListPrivateApplicationsResponse, String>() {
                     @Override
                     public String apply(ListPrivateApplicationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPrivateApplicationsRequest.Builder>,
                         ListPrivateApplicationsRequest>() {
@@ -310,12 +306,12 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPrivateApplicationsRequest, ListPrivateApplicationsResponse>() {
                     @Override
                     public ListPrivateApplicationsResponse apply(
@@ -340,19 +336,19 @@ public class ServiceCatalogPaginators {
                 ListPrivateApplicationsRequest.Builder, ListPrivateApplicationsRequest,
                 ListPrivateApplicationsResponse,
                 com.oracle.bmc.servicecatalog.model.PrivateApplicationSummary>(
-                new com.google.common.base.Supplier<ListPrivateApplicationsRequest.Builder>() {
+                new java.util.function.Supplier<ListPrivateApplicationsRequest.Builder>() {
                     @Override
                     public ListPrivateApplicationsRequest.Builder get() {
                         return ListPrivateApplicationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPrivateApplicationsResponse, String>() {
+                new java.util.function.Function<ListPrivateApplicationsResponse, String>() {
                     @Override
                     public String apply(ListPrivateApplicationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPrivateApplicationsRequest.Builder>,
                         ListPrivateApplicationsRequest>() {
@@ -365,12 +361,12 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPrivateApplicationsRequest, ListPrivateApplicationsResponse>() {
                     @Override
                     public ListPrivateApplicationsResponse apply(
@@ -378,7 +374,7 @@ public class ServiceCatalogPaginators {
                         return client.listPrivateApplications(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPrivateApplicationsResponse,
                         java.util.List<
                                 com.oracle.bmc.servicecatalog.model.PrivateApplicationSummary>>() {
@@ -404,21 +400,19 @@ public class ServiceCatalogPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListServiceCatalogAssociationsRequest.Builder,
                 ListServiceCatalogAssociationsRequest, ListServiceCatalogAssociationsResponse>(
-                new com.google.common.base.Supplier<
-                        ListServiceCatalogAssociationsRequest.Builder>() {
+                new java.util.function.Supplier<ListServiceCatalogAssociationsRequest.Builder>() {
                     @Override
                     public ListServiceCatalogAssociationsRequest.Builder get() {
                         return ListServiceCatalogAssociationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListServiceCatalogAssociationsResponse, String>() {
+                new java.util.function.Function<ListServiceCatalogAssociationsResponse, String>() {
                     @Override
                     public String apply(ListServiceCatalogAssociationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListServiceCatalogAssociationsRequest.Builder>,
                         ListServiceCatalogAssociationsRequest>() {
@@ -431,12 +425,12 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServiceCatalogAssociationsRequest,
                         ListServiceCatalogAssociationsResponse>() {
                     @Override
@@ -463,21 +457,19 @@ public class ServiceCatalogPaginators {
                 ListServiceCatalogAssociationsRequest.Builder,
                 ListServiceCatalogAssociationsRequest, ListServiceCatalogAssociationsResponse,
                 com.oracle.bmc.servicecatalog.model.ServiceCatalogAssociationSummary>(
-                new com.google.common.base.Supplier<
-                        ListServiceCatalogAssociationsRequest.Builder>() {
+                new java.util.function.Supplier<ListServiceCatalogAssociationsRequest.Builder>() {
                     @Override
                     public ListServiceCatalogAssociationsRequest.Builder get() {
                         return ListServiceCatalogAssociationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListServiceCatalogAssociationsResponse, String>() {
+                new java.util.function.Function<ListServiceCatalogAssociationsResponse, String>() {
                     @Override
                     public String apply(ListServiceCatalogAssociationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListServiceCatalogAssociationsRequest.Builder>,
                         ListServiceCatalogAssociationsRequest>() {
@@ -490,12 +482,12 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServiceCatalogAssociationsRequest,
                         ListServiceCatalogAssociationsResponse>() {
                     @Override
@@ -504,7 +496,7 @@ public class ServiceCatalogPaginators {
                         return client.listServiceCatalogAssociations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServiceCatalogAssociationsResponse,
                         java.util.List<
                                 com.oracle.bmc.servicecatalog.model
@@ -531,19 +523,19 @@ public class ServiceCatalogPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListServiceCatalogsRequest.Builder, ListServiceCatalogsRequest,
                 ListServiceCatalogsResponse>(
-                new com.google.common.base.Supplier<ListServiceCatalogsRequest.Builder>() {
+                new java.util.function.Supplier<ListServiceCatalogsRequest.Builder>() {
                     @Override
                     public ListServiceCatalogsRequest.Builder get() {
                         return ListServiceCatalogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListServiceCatalogsResponse, String>() {
+                new java.util.function.Function<ListServiceCatalogsResponse, String>() {
                     @Override
                     public String apply(ListServiceCatalogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListServiceCatalogsRequest.Builder>,
                         ListServiceCatalogsRequest>() {
@@ -556,12 +548,12 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServiceCatalogsRequest, ListServiceCatalogsResponse>() {
                     @Override
                     public ListServiceCatalogsResponse apply(ListServiceCatalogsRequest request) {
@@ -585,19 +577,19 @@ public class ServiceCatalogPaginators {
                 ListServiceCatalogsRequest.Builder, ListServiceCatalogsRequest,
                 ListServiceCatalogsResponse,
                 com.oracle.bmc.servicecatalog.model.ServiceCatalogSummary>(
-                new com.google.common.base.Supplier<ListServiceCatalogsRequest.Builder>() {
+                new java.util.function.Supplier<ListServiceCatalogsRequest.Builder>() {
                     @Override
                     public ListServiceCatalogsRequest.Builder get() {
                         return ListServiceCatalogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListServiceCatalogsResponse, String>() {
+                new java.util.function.Function<ListServiceCatalogsResponse, String>() {
                     @Override
                     public String apply(ListServiceCatalogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListServiceCatalogsRequest.Builder>,
                         ListServiceCatalogsRequest>() {
@@ -610,19 +602,19 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServiceCatalogsRequest, ListServiceCatalogsResponse>() {
                     @Override
                     public ListServiceCatalogsResponse apply(ListServiceCatalogsRequest request) {
                         return client.listServiceCatalogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServiceCatalogsResponse,
                         java.util.List<
                                 com.oracle.bmc.servicecatalog.model.ServiceCatalogSummary>>() {
@@ -646,19 +638,19 @@ public class ServiceCatalogPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -671,12 +663,12 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -701,19 +693,19 @@ public class ServiceCatalogPaginators {
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse,
                 com.oracle.bmc.servicecatalog.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -726,12 +718,12 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -739,7 +731,7 @@ public class ServiceCatalogPaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<com.oracle.bmc.servicecatalog.model.WorkRequestError>>() {
                     @Override
@@ -762,19 +754,19 @@ public class ServiceCatalogPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -787,12 +779,12 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -816,19 +808,19 @@ public class ServiceCatalogPaginators {
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse,
                 com.oracle.bmc.servicecatalog.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -841,19 +833,19 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<com.oracle.bmc.servicecatalog.model.WorkRequestLogEntry>>() {
                     @Override
@@ -875,19 +867,19 @@ public class ServiceCatalogPaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -900,12 +892,12 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -928,19 +920,19 @@ public class ServiceCatalogPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.servicecatalog.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -953,19 +945,19 @@ public class ServiceCatalogPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<com.oracle.bmc.servicecatalog.model.WorkRequestSummary>>() {
                     @Override

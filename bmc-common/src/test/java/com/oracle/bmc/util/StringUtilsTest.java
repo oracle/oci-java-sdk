@@ -287,4 +287,14 @@ public class StringUtilsTest {
         assertTrue(StringUtils.equalsIgnoreCase("x", "X"));
         assertTrue(StringUtils.equalsIgnoreCase("X", "x"));
     }
+
+    @Test
+    public void testRepeat() {
+        assertEquals("", StringUtils.repeat("", 0));
+        assertEquals("", StringUtils.repeat("", 1));
+        assertEquals("", StringUtils.repeat("", 10));
+        assertEquals("", StringUtils.repeat("abc", 0));
+        assertEquals("abc", StringUtils.repeat("abc", 1));
+        assertEquals("abcabcabc", StringUtils.repeat("abc", 3));
+    }
 }

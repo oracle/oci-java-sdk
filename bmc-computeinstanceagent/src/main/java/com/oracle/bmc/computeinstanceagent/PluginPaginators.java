@@ -45,19 +45,19 @@ public class PluginPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListInstanceAgentPluginsRequest.Builder, ListInstanceAgentPluginsRequest,
                 ListInstanceAgentPluginsResponse>(
-                new com.google.common.base.Supplier<ListInstanceAgentPluginsRequest.Builder>() {
+                new java.util.function.Supplier<ListInstanceAgentPluginsRequest.Builder>() {
                     @Override
                     public ListInstanceAgentPluginsRequest.Builder get() {
                         return ListInstanceAgentPluginsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInstanceAgentPluginsResponse, String>() {
+                new java.util.function.Function<ListInstanceAgentPluginsResponse, String>() {
                     @Override
                     public String apply(ListInstanceAgentPluginsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstanceAgentPluginsRequest.Builder>,
                         ListInstanceAgentPluginsRequest>() {
@@ -70,12 +70,12 @@ public class PluginPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceAgentPluginsRequest, ListInstanceAgentPluginsResponse>() {
                     @Override
                     public ListInstanceAgentPluginsResponse apply(
@@ -100,19 +100,19 @@ public class PluginPaginators {
                 ListInstanceAgentPluginsRequest.Builder, ListInstanceAgentPluginsRequest,
                 ListInstanceAgentPluginsResponse,
                 com.oracle.bmc.computeinstanceagent.model.InstanceAgentPluginSummary>(
-                new com.google.common.base.Supplier<ListInstanceAgentPluginsRequest.Builder>() {
+                new java.util.function.Supplier<ListInstanceAgentPluginsRequest.Builder>() {
                     @Override
                     public ListInstanceAgentPluginsRequest.Builder get() {
                         return ListInstanceAgentPluginsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInstanceAgentPluginsResponse, String>() {
+                new java.util.function.Function<ListInstanceAgentPluginsResponse, String>() {
                     @Override
                     public String apply(ListInstanceAgentPluginsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInstanceAgentPluginsRequest.Builder>,
                         ListInstanceAgentPluginsRequest>() {
@@ -125,12 +125,12 @@ public class PluginPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceAgentPluginsRequest, ListInstanceAgentPluginsResponse>() {
                     @Override
                     public ListInstanceAgentPluginsResponse apply(
@@ -138,7 +138,7 @@ public class PluginPaginators {
                         return client.listInstanceAgentPlugins(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInstanceAgentPluginsResponse,
                         java.util.List<
                                 com.oracle.bmc.computeinstanceagent.model

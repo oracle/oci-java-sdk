@@ -6,7 +6,6 @@ package com.oracle.bmc.mysql;
 
 import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -103,16 +102,16 @@ public class DbBackupsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetBackupRequest, GetBackupResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetBackupRequest, GetBackupResponse>() {
                             @Override
                             public GetBackupResponse apply(GetBackupRequest request) {
                                 return client.getBackup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBackupResponse>() {
+                        new java.util.function.Predicate<GetBackupResponse>() {
                             @Override
-                            public boolean apply(GetBackupResponse response) {
+                            public boolean test(GetBackupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBackup().getLifecycleState());
                             }

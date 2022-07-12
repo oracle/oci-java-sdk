@@ -7,7 +7,6 @@ package com.oracle.bmc.loggingsearch;
 import com.oracle.bmc.loggingsearch.internal.http.*;
 import com.oracle.bmc.loggingsearch.requests.*;
 import com.oracle.bmc.loggingsearch.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for LogSearch service. <br/>
@@ -319,7 +318,7 @@ public class LogSearchAsyncClient implements LogSearchAsync {
          * @return the client
          */
         public LogSearchAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class LogSearchAsyncClient implements LogSearchAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -401,7 +401,7 @@ public class LogSearchAsyncClient implements LogSearchAsync {
                         "SearchLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-search/20190909/SearchResult/SearchLogs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, SearchLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, SearchLogsResponse>
                 transformer =
                         SearchLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<SearchLogsRequest, SearchLogsResponse> handlerToUse =

@@ -9,7 +9,6 @@ import com.oracle.bmc.networkloadbalancer.requests.*;
 import com.oracle.bmc.networkloadbalancer.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
@@ -335,9 +334,9 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("NetworkLoadBalancer-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("NetworkLoadBalancer-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -406,7 +405,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
          * @return the client
          */
         public NetworkLoadBalancerClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -443,7 +442,8 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -491,7 +491,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "ChangeNetworkLoadBalancerCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/ChangeNetworkLoadBalancerCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkLoadBalancerCompartmentResponse>
                 transformer =
                         ChangeNetworkLoadBalancerCompartmentConverter.fromResponse(
@@ -535,9 +535,8 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "CreateBackend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/CreateBackend");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendResponse>
-                transformer =
-                        CreateBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBackendResponse> transformer =
+                CreateBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -576,7 +575,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "CreateBackendSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/CreateBackendSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendSetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBackendSetResponse>
                 transformer =
                         CreateBackendSetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -618,9 +617,8 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "CreateListener",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/CreateListener");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateListenerResponse>
-                transformer =
-                        CreateListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateListenerResponse> transformer =
+                CreateListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -660,8 +658,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "CreateNetworkLoadBalancer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/CreateNetworkLoadBalancer");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateNetworkLoadBalancerResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkLoadBalancerResponse>
                 transformer =
                         CreateNetworkLoadBalancerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -703,9 +700,8 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "DeleteBackend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/DeleteBackend");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackendResponse>
-                transformer =
-                        DeleteBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBackendResponse> transformer =
+                DeleteBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -740,7 +736,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "DeleteBackendSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/DeleteBackendSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackendSetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBackendSetResponse>
                 transformer =
                         DeleteBackendSetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -778,9 +774,8 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "DeleteListener",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/DeleteListener");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteListenerResponse>
-                transformer =
-                        DeleteListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteListenerResponse> transformer =
+                DeleteListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -816,8 +811,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "DeleteNetworkLoadBalancer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/DeleteNetworkLoadBalancer");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteNetworkLoadBalancerResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkLoadBalancerResponse>
                 transformer =
                         DeleteNetworkLoadBalancerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -854,7 +848,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "GetBackend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/GetBackend");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetBackendResponse> transformer =
                 GetBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -889,7 +883,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "GetBackendHealth",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendHealth/GetBackendHealth");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendHealthResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetBackendHealthResponse>
                 transformer =
                         GetBackendHealthConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -926,9 +920,8 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "GetBackendSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/GetBackendSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendSetResponse>
-                transformer =
-                        GetBackendSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetBackendSetResponse> transformer =
+                GetBackendSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -962,7 +955,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "GetBackendSetHealth",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSetHealth/GetBackendSetHealth");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendSetHealthResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetBackendSetHealthResponse>
                 transformer =
                         GetBackendSetHealthConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1000,7 +993,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "GetHealthChecker",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/HealthChecker/GetHealthChecker");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetHealthCheckerResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetHealthCheckerResponse>
                 transformer =
                         GetHealthCheckerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1037,9 +1030,8 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "GetListener",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/GetListener");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetListenerResponse>
-                transformer =
-                        GetListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetListenerResponse> transformer =
+                GetListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1074,7 +1066,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "GetNetworkLoadBalancer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/GetNetworkLoadBalancer");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkLoadBalancerResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetNetworkLoadBalancerResponse>
                 transformer =
                         GetNetworkLoadBalancerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1112,8 +1104,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "GetNetworkLoadBalancerHealth",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancerHealth/GetNetworkLoadBalancerHealth");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetNetworkLoadBalancerHealthResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetNetworkLoadBalancerHealthResponse>
                 transformer =
                         GetNetworkLoadBalancerHealthConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1150,9 +1141,8 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1186,7 +1176,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "ListBackendSets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSetSummary/ListBackendSets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBackendSetsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListBackendSetsResponse>
                 transformer =
                         ListBackendSetsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1223,9 +1213,8 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "ListBackends",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSummary/ListBackends");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBackendsResponse>
-                transformer =
-                        ListBackendsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListBackendsResponse> transformer =
+                ListBackendsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1259,9 +1248,8 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "ListListeners",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/ListenerSummary/ListListeners");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListListenersResponse>
-                transformer =
-                        ListListenersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListListenersResponse> transformer =
+                ListListenersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1296,7 +1284,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "ListNetworkLoadBalancerHealths",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancerHealth/ListNetworkLoadBalancerHealths");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListNetworkLoadBalancerHealthsResponse>
                 transformer =
                         ListNetworkLoadBalancerHealthsConverter.fromResponse(
@@ -1335,7 +1323,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "ListNetworkLoadBalancers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/ListNetworkLoadBalancers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListNetworkLoadBalancersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListNetworkLoadBalancersResponse>
                 transformer =
                         ListNetworkLoadBalancersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1373,7 +1361,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "ListNetworkLoadBalancersPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancingPolicy/ListNetworkLoadBalancersPolicies");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListNetworkLoadBalancersPoliciesResponse>
                 transformer =
                         ListNetworkLoadBalancersPoliciesConverter.fromResponse(
@@ -1412,7 +1400,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "ListNetworkLoadBalancersProtocols",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/ListenerProtocols/ListNetworkLoadBalancersProtocols");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListNetworkLoadBalancersProtocolsResponse>
                 transformer =
                         ListNetworkLoadBalancersProtocolsConverter.fromResponse(
@@ -1451,7 +1439,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1488,7 +1476,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1525,7 +1513,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1563,9 +1551,8 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "UpdateBackend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/UpdateBackend");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackendResponse>
-                transformer =
-                        UpdateBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBackendResponse> transformer =
+                UpdateBackendConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1604,7 +1591,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "UpdateBackendSet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/UpdateBackendSet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackendSetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBackendSetResponse>
                 transformer =
                         UpdateBackendSetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1646,7 +1633,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "UpdateHealthChecker",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/HealthChecker/UpdateHealthChecker");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHealthCheckerResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateHealthCheckerResponse>
                 transformer =
                         UpdateHealthCheckerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1688,9 +1675,8 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "UpdateListener",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/UpdateListener");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateListenerResponse>
-                transformer =
-                        UpdateListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateListenerResponse> transformer =
+                UpdateListenerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1729,8 +1715,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "UpdateNetworkLoadBalancer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/UpdateNetworkLoadBalancer");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateNetworkLoadBalancerResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkLoadBalancerResponse>
                 transformer =
                         UpdateNetworkLoadBalancerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1774,8 +1759,7 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         "UpdateNetworkSecurityGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/UpdateNetworkSecurityGroups");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateNetworkSecurityGroupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkSecurityGroupsResponse>
                 transformer =
                         UpdateNetworkSecurityGroupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

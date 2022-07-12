@@ -9,7 +9,6 @@ import com.oracle.bmc.osuborganizationsubscription.requests.*;
 import com.oracle.bmc.osuborganizationsubscription.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public class OrganizationSubscriptionClient implements OrganizationSubscription {
@@ -332,7 +331,7 @@ public class OrganizationSubscriptionClient implements OrganizationSubscription 
          * @return the client
          */
         public OrganizationSubscriptionClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -368,7 +367,8 @@ public class OrganizationSubscriptionClient implements OrganizationSubscription 
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -414,7 +414,7 @@ public class OrganizationSubscriptionClient implements OrganizationSubscription 
                         "ListOrganizationSubscriptions",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListOrganizationSubscriptionsResponse>
                 transformer =
                         ListOrganizationSubscriptionsConverter.fromResponse(

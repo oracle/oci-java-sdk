@@ -43,19 +43,19 @@ public class LinkPaginators {
     public Iterable<ListLinksResponse> listLinksResponseIterator(final ListLinksRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListLinksRequest.Builder, ListLinksRequest, ListLinksResponse>(
-                new com.google.common.base.Supplier<ListLinksRequest.Builder>() {
+                new java.util.function.Supplier<ListLinksRequest.Builder>() {
                     @Override
                     public ListLinksRequest.Builder get() {
                         return ListLinksRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListLinksResponse, String>() {
+                new java.util.function.Function<ListLinksResponse, String>() {
                     @Override
                     public String apply(ListLinksResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListLinksRequest.Builder>,
                         ListLinksRequest>() {
@@ -68,12 +68,12 @@ public class LinkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListLinksRequest, ListLinksResponse>() {
+                new java.util.function.Function<ListLinksRequest, ListLinksResponse>() {
                     @Override
                     public ListLinksResponse apply(ListLinksRequest request) {
                         return client.listLinks(request);
@@ -95,19 +95,19 @@ public class LinkPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListLinksRequest.Builder, ListLinksRequest, ListLinksResponse,
                 com.oracle.bmc.tenantmanagercontrolplane.model.LinkSummary>(
-                new com.google.common.base.Supplier<ListLinksRequest.Builder>() {
+                new java.util.function.Supplier<ListLinksRequest.Builder>() {
                     @Override
                     public ListLinksRequest.Builder get() {
                         return ListLinksRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListLinksResponse, String>() {
+                new java.util.function.Function<ListLinksResponse, String>() {
                     @Override
                     public String apply(ListLinksResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListLinksRequest.Builder>,
                         ListLinksRequest>() {
@@ -120,18 +120,18 @@ public class LinkPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListLinksRequest, ListLinksResponse>() {
+                new java.util.function.Function<ListLinksRequest, ListLinksResponse>() {
                     @Override
                     public ListLinksResponse apply(ListLinksRequest request) {
                         return client.listLinks(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListLinksResponse,
                         java.util.List<
                                 com.oracle.bmc.tenantmanagercontrolplane.model.LinkSummary>>() {

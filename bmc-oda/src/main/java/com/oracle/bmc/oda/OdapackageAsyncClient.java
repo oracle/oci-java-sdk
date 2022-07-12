@@ -7,7 +7,6 @@ package com.oracle.bmc.oda;
 import com.oracle.bmc.oda.internal.http.*;
 import com.oracle.bmc.oda.requests.*;
 import com.oracle.bmc.oda.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Odapackage service. <br/>
@@ -320,7 +319,7 @@ public class OdapackageAsyncClient implements OdapackageAsync {
          * @return the client
          */
         public OdapackageAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class OdapackageAsyncClient implements OdapackageAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -402,8 +402,7 @@ public class OdapackageAsyncClient implements OdapackageAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Odapackage", "CreateImportedPackage", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateImportedPackageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateImportedPackageResponse>
                 transformer =
                         CreateImportedPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -456,8 +455,7 @@ public class OdapackageAsyncClient implements OdapackageAsync {
                         "DeleteImportedPackage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/ImportedPackage/DeleteImportedPackage");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteImportedPackageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteImportedPackageResponse>
                 transformer =
                         DeleteImportedPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -504,7 +502,7 @@ public class OdapackageAsyncClient implements OdapackageAsync {
                         "GetImportedPackage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/ImportedPackage/GetImportedPackage");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetImportedPackageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetImportedPackageResponse>
                 transformer =
                         GetImportedPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -548,7 +546,7 @@ public class OdapackageAsyncClient implements OdapackageAsync {
                         "GetPackage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/PackageItem/GetPackage");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPackageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPackageResponse>
                 transformer =
                         GetPackageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetPackageRequest, GetPackageResponse> handlerToUse =
@@ -593,8 +591,7 @@ public class OdapackageAsyncClient implements OdapackageAsync {
                         "ListImportedPackages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/ImportedPackageSummary/ListImportedPackages");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListImportedPackagesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListImportedPackagesResponse>
                 transformer =
                         ListImportedPackagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -640,7 +637,7 @@ public class OdapackageAsyncClient implements OdapackageAsync {
                         "ListPackages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/PackageSummary/ListPackages");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPackagesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPackagesResponse>
                 transformer =
                         ListPackagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListPackagesRequest, ListPackagesResponse>
@@ -683,8 +680,7 @@ public class OdapackageAsyncClient implements OdapackageAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Odapackage", "UpdateImportedPackage", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateImportedPackageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateImportedPackageResponse>
                 transformer =
                         UpdateImportedPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

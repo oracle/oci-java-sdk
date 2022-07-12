@@ -9,7 +9,6 @@ import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class DbBackupsClient implements DbBackups {
@@ -334,9 +333,9 @@ public class DbBackupsClient implements DbBackups {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DbBackups-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DbBackups-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class DbBackupsClient implements DbBackups {
          * @return the client
          */
         public DbBackupsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class DbBackupsClient implements DbBackups {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class DbBackupsClient implements DbBackups {
                         "ChangeBackupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/ChangeBackupCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeBackupCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeBackupCompartmentResponse>
                 transformer =
                         ChangeBackupCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -530,9 +530,8 @@ public class DbBackupsClient implements DbBackups {
                         "CreateBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/CreateBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupResponse>
-                transformer =
-                        CreateBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBackupResponse> transformer =
+                CreateBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -570,9 +569,8 @@ public class DbBackupsClient implements DbBackups {
                         "DeleteBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/DeleteBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupResponse>
-                transformer =
-                        DeleteBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBackupResponse> transformer =
+                DeleteBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -606,7 +604,7 @@ public class DbBackupsClient implements DbBackups {
                         "GetBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/GetBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetBackupResponse> transformer =
                 GetBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -641,9 +639,8 @@ public class DbBackupsClient implements DbBackups {
                         "ListBackups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/BackupSummary/ListBackups");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupsResponse>
-                transformer =
-                        ListBackupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListBackupsResponse> transformer =
+                ListBackupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -677,9 +674,8 @@ public class DbBackupsClient implements DbBackups {
                         "UpdateBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/UpdateBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackupResponse>
-                transformer =
-                        UpdateBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBackupResponse> transformer =
+                UpdateBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

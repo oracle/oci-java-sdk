@@ -45,19 +45,19 @@ public class AccessRequestsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAccessRequestHistoriesRequest.Builder, ListAccessRequestHistoriesRequest,
                 ListAccessRequestHistoriesResponse>(
-                new com.google.common.base.Supplier<ListAccessRequestHistoriesRequest.Builder>() {
+                new java.util.function.Supplier<ListAccessRequestHistoriesRequest.Builder>() {
                     @Override
                     public ListAccessRequestHistoriesRequest.Builder get() {
                         return ListAccessRequestHistoriesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAccessRequestHistoriesResponse, String>() {
+                new java.util.function.Function<ListAccessRequestHistoriesResponse, String>() {
                     @Override
                     public String apply(ListAccessRequestHistoriesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAccessRequestHistoriesRequest.Builder>,
                         ListAccessRequestHistoriesRequest>() {
@@ -70,12 +70,12 @@ public class AccessRequestsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAccessRequestHistoriesRequest, ListAccessRequestHistoriesResponse>() {
                     @Override
                     public ListAccessRequestHistoriesResponse apply(
@@ -101,19 +101,19 @@ public class AccessRequestsPaginators {
                 ListAccessRequestHistoriesRequest.Builder, ListAccessRequestHistoriesRequest,
                 ListAccessRequestHistoriesResponse,
                 com.oracle.bmc.operatoraccesscontrol.model.AccessRequestHistorySummary>(
-                new com.google.common.base.Supplier<ListAccessRequestHistoriesRequest.Builder>() {
+                new java.util.function.Supplier<ListAccessRequestHistoriesRequest.Builder>() {
                     @Override
                     public ListAccessRequestHistoriesRequest.Builder get() {
                         return ListAccessRequestHistoriesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAccessRequestHistoriesResponse, String>() {
+                new java.util.function.Function<ListAccessRequestHistoriesResponse, String>() {
                     @Override
                     public String apply(ListAccessRequestHistoriesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAccessRequestHistoriesRequest.Builder>,
                         ListAccessRequestHistoriesRequest>() {
@@ -126,12 +126,12 @@ public class AccessRequestsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAccessRequestHistoriesRequest, ListAccessRequestHistoriesResponse>() {
                     @Override
                     public ListAccessRequestHistoriesResponse apply(
@@ -139,7 +139,7 @@ public class AccessRequestsPaginators {
                         return client.listAccessRequestHistories(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAccessRequestHistoriesResponse,
                         java.util.List<
                                 com.oracle.bmc.operatoraccesscontrol.model
@@ -166,19 +166,19 @@ public class AccessRequestsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAccessRequestsRequest.Builder, ListAccessRequestsRequest,
                 ListAccessRequestsResponse>(
-                new com.google.common.base.Supplier<ListAccessRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListAccessRequestsRequest.Builder>() {
                     @Override
                     public ListAccessRequestsRequest.Builder get() {
                         return ListAccessRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAccessRequestsResponse, String>() {
+                new java.util.function.Function<ListAccessRequestsResponse, String>() {
                     @Override
                     public String apply(ListAccessRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAccessRequestsRequest.Builder>,
                         ListAccessRequestsRequest>() {
@@ -191,12 +191,12 @@ public class AccessRequestsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAccessRequestsRequest, ListAccessRequestsResponse>() {
                     @Override
                     public ListAccessRequestsResponse apply(ListAccessRequestsRequest request) {
@@ -220,19 +220,19 @@ public class AccessRequestsPaginators {
                 ListAccessRequestsRequest.Builder, ListAccessRequestsRequest,
                 ListAccessRequestsResponse,
                 com.oracle.bmc.operatoraccesscontrol.model.AccessRequestSummary>(
-                new com.google.common.base.Supplier<ListAccessRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListAccessRequestsRequest.Builder>() {
                     @Override
                     public ListAccessRequestsRequest.Builder get() {
                         return ListAccessRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAccessRequestsResponse, String>() {
+                new java.util.function.Function<ListAccessRequestsResponse, String>() {
                     @Override
                     public String apply(ListAccessRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAccessRequestsRequest.Builder>,
                         ListAccessRequestsRequest>() {
@@ -245,19 +245,19 @@ public class AccessRequestsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAccessRequestsRequest, ListAccessRequestsResponse>() {
                     @Override
                     public ListAccessRequestsResponse apply(ListAccessRequestsRequest request) {
                         return client.listAccessRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAccessRequestsResponse,
                         java.util.List<
                                 com.oracle.bmc.operatoraccesscontrol.model
@@ -282,19 +282,19 @@ public class AccessRequestsPaginators {
             final ListInteractionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListInteractionsRequest.Builder, ListInteractionsRequest, ListInteractionsResponse>(
-                new com.google.common.base.Supplier<ListInteractionsRequest.Builder>() {
+                new java.util.function.Supplier<ListInteractionsRequest.Builder>() {
                     @Override
                     public ListInteractionsRequest.Builder get() {
                         return ListInteractionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInteractionsResponse, String>() {
+                new java.util.function.Function<ListInteractionsResponse, String>() {
                     @Override
                     public String apply(ListInteractionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInteractionsRequest.Builder>,
                         ListInteractionsRequest>() {
@@ -307,12 +307,12 @@ public class AccessRequestsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInteractionsRequest, ListInteractionsResponse>() {
                     @Override
                     public ListInteractionsResponse apply(ListInteractionsRequest request) {
@@ -335,19 +335,19 @@ public class AccessRequestsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListInteractionsRequest.Builder, ListInteractionsRequest, ListInteractionsResponse,
                 com.oracle.bmc.operatoraccesscontrol.model.InteractionSummary>(
-                new com.google.common.base.Supplier<ListInteractionsRequest.Builder>() {
+                new java.util.function.Supplier<ListInteractionsRequest.Builder>() {
                     @Override
                     public ListInteractionsRequest.Builder get() {
                         return ListInteractionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInteractionsResponse, String>() {
+                new java.util.function.Function<ListInteractionsResponse, String>() {
                     @Override
                     public String apply(ListInteractionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInteractionsRequest.Builder>,
                         ListInteractionsRequest>() {
@@ -360,19 +360,19 @@ public class AccessRequestsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInteractionsRequest, ListInteractionsResponse>() {
                     @Override
                     public ListInteractionsResponse apply(ListInteractionsRequest request) {
                         return client.listInteractions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInteractionsResponse,
                         java.util.List<
                                 com.oracle.bmc.operatoraccesscontrol.model.InteractionSummary>>() {

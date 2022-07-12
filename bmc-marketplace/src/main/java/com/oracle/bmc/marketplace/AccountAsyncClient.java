@@ -7,7 +7,6 @@ package com.oracle.bmc.marketplace;
 import com.oracle.bmc.marketplace.internal.http.*;
 import com.oracle.bmc.marketplace.requests.*;
 import com.oracle.bmc.marketplace.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Account service. <br/>
@@ -319,7 +318,7 @@ public class AccountAsyncClient implements AccountAsync {
          * @return the client
          */
         public AccountAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class AccountAsyncClient implements AccountAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -403,8 +403,7 @@ public class AccountAsyncClient implements AccountAsync {
                         "GetLaunchEligibility",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/LaunchEligibility/GetLaunchEligibility");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetLaunchEligibilityResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetLaunchEligibilityResponse>
                 transformer =
                         GetLaunchEligibilityConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -454,7 +453,7 @@ public class AccountAsyncClient implements AccountAsync {
                         "GetThirdPartyPaidListingEligibility",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ThirdPartyPaidListingEligibility/GetThirdPartyPaidListingEligibility");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetThirdPartyPaidListingEligibilityResponse>
                 transformer =
                         GetThirdPartyPaidListingEligibilityConverter.fromResponse(

@@ -7,7 +7,6 @@ package com.oracle.bmc.dts;
 import com.oracle.bmc.dts.internal.http.*;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for TransferApplianceEntitlement service. <br/>
@@ -321,7 +320,7 @@ public class TransferApplianceEntitlementAsyncClient implements TransferApplianc
          * @return the client
          */
         public TransferApplianceEntitlementAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class TransferApplianceEntitlementAsyncClient implements TransferApplianc
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -408,7 +408,7 @@ public class TransferApplianceEntitlementAsyncClient implements TransferApplianc
                         "CreateTransferApplianceEntitlement",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateTransferApplianceEntitlementResponse>
                 transformer =
                         CreateTransferApplianceEntitlementConverter.fromResponse(
@@ -467,7 +467,7 @@ public class TransferApplianceEntitlementAsyncClient implements TransferApplianc
                         "GetTransferApplianceEntitlement",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetTransferApplianceEntitlementResponse>
                 transformer =
                         GetTransferApplianceEntitlementConverter.fromResponse(
@@ -520,7 +520,7 @@ public class TransferApplianceEntitlementAsyncClient implements TransferApplianc
                         "ListTransferApplianceEntitlement",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListTransferApplianceEntitlementResponse>
                 transformer =
                         ListTransferApplianceEntitlementConverter.fromResponse(

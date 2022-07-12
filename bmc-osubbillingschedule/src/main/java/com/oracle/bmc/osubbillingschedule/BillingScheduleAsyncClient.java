@@ -7,7 +7,6 @@ package com.oracle.bmc.osubbillingschedule;
 import com.oracle.bmc.osubbillingschedule.internal.http.*;
 import com.oracle.bmc.osubbillingschedule.requests.*;
 import com.oracle.bmc.osubbillingschedule.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for BillingSchedule service. <br/>
@@ -320,7 +319,7 @@ public class BillingScheduleAsyncClient implements BillingScheduleAsync {
          * @return the client
          */
         public BillingScheduleAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class BillingScheduleAsyncClient implements BillingScheduleAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,8 +404,7 @@ public class BillingScheduleAsyncClient implements BillingScheduleAsync {
                         "ListBillingSchedules",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListBillingSchedulesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListBillingSchedulesResponse>
                 transformer =
                         ListBillingSchedulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

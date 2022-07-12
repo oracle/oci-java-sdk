@@ -9,7 +9,6 @@ import com.oracle.bmc.servicemanagerproxy.requests.*;
 import com.oracle.bmc.servicemanagerproxy.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
 public class ServiceManagerProxyClient implements ServiceManagerProxy {
@@ -332,7 +331,7 @@ public class ServiceManagerProxyClient implements ServiceManagerProxy {
          * @return the client
          */
         public ServiceManagerProxyClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -368,7 +367,8 @@ public class ServiceManagerProxyClient implements ServiceManagerProxy {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -414,7 +414,7 @@ public class ServiceManagerProxyClient implements ServiceManagerProxy {
                         "GetServiceEnvironment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/smp/20210914/ServiceEnvironment/GetServiceEnvironment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetServiceEnvironmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetServiceEnvironmentResponse>
                 transformer =
                         GetServiceEnvironmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -452,7 +452,7 @@ public class ServiceManagerProxyClient implements ServiceManagerProxy {
                         "ListServiceEnvironments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/smp/20210914/ServiceEnvironment/ListServiceEnvironments");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListServiceEnvironmentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListServiceEnvironmentsResponse>
                 transformer =
                         ListServiceEnvironmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -4,8 +4,8 @@
  */
 package com.oracle.bmc;
 
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Optional;
+import com.oracle.bmc.internal.GuavaUtils;
+import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder;
 import com.oracle.bmc.internal.EndpointBuilder;
 
@@ -30,6 +30,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.locks.ReentrantLock;
 import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.AUTHORIZATION_HEADER_VALUE;
 import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.METADATA_SERVICE_BASE_URL;
@@ -143,16 +144,20 @@ public final class Region implements Serializable, Comparable<Region> {
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
 
-    private static final long serialVersionUID = -905384971L;
+    private static final long serialVersionUID = -905384972L;
 
     /**
      * The region identifier as defined in https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
      */
     private final String regionId;
+
     /**
      * The region key as defined in https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
+     * or null if none.
+     *
+     * Not using Optional<String> here, since that is not serializable.
      */
-    private final Optional<String> regionCode;
+    private final String regionCode;
 
     /**
      * Get the realm this region belongs to.
@@ -172,7 +177,7 @@ public final class Region implements Serializable, Comparable<Region> {
         }
 
         this.regionId = regionId;
-        this.regionCode = regionCode;
+        this.regionCode = regionCode.orElse(null);
         this.realm = realm;
 
         synchronized (KNOWN_REGIONS) {
@@ -190,7 +195,7 @@ public final class Region implements Serializable, Comparable<Region> {
      * Get the region code.
      */
     public String getRegionCode() {
-        return regionCode.or(regionId);
+        return regionCode != null ? regionCode : regionId;
     }
 
     /**
@@ -201,7 +206,8 @@ public final class Region implements Serializable, Comparable<Region> {
      * @return The endpoint for the given service, or empty if the service
      *         endpoint is not known.
      */
-    public Optional<String> getEndpoint(Service service) {
+    public com.google.common /*Guava will be removed soon*/.base.Optional<String> getEndpoint(
+            Service service) {
         synchronized (SERVICE_TO_REGION_ENDPOINTS) {
             if (!SERVICE_TO_REGION_ENDPOINTS.containsKey(service.getServiceName())) {
                 HashMap<Region, String> endpoints = new HashMap<>();
@@ -224,7 +230,7 @@ public final class Region implements Serializable, Comparable<Region> {
                         endpoints);
             }
             String endpoint = SERVICE_TO_REGION_ENDPOINTS.get(service.getServiceName()).get(this);
-            return Optional.fromNullable(endpoint);
+            return GuavaUtils.adaptToGuava(Optional.ofNullable(endpoint));
         }
     }
 
@@ -442,7 +448,7 @@ public final class Region implements Serializable, Comparable<Region> {
                     regionCode = null;
                 }
             }
-            return new Region(regionId, Optional.fromNullable(regionCode), realm);
+            return new Region(regionId, Optional.ofNullable(regionCode), realm);
         }
     }
 
@@ -483,17 +489,16 @@ public final class Region implements Serializable, Comparable<Region> {
             regionCodeOrId = NameUtils.decanonicalizeFromEnumTypes(regionCodeOrId);
         }
 
-        java.util.Optional<Region> maybeRegion =
-                maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
+        Optional<Region> maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
         if (maybeRegion.isPresent()) {
-            return Optional.fromNullable(maybeRegion.get()); // already known
+            return maybeRegion; // already known
         }
 
         if (!hasUsedConfigFile) {
             readConfigFile(); // registers region and sets hasUsedConfigFile = true;
             maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
             if (maybeRegion.isPresent()) {
-                return Optional.fromNullable(maybeRegion.get());
+                return maybeRegion;
             }
         }
 
@@ -501,7 +506,7 @@ public final class Region implements Serializable, Comparable<Region> {
             readEnvVar(); // registers region and sets hasUsedEnvVar = true;
             maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
             if (maybeRegion.isPresent()) {
-                return Optional.fromNullable(maybeRegion.get());
+                return maybeRegion;
             }
         }
 
@@ -509,7 +514,7 @@ public final class Region implements Serializable, Comparable<Region> {
             registerFromInstanceMetadataService(); // registers region and sets hasUsedInstanceMetadataService = true;
             maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
             if (maybeRegion.isPresent()) {
-                return Optional.fromNullable(maybeRegion.get());
+                return maybeRegion;
             }
         }
 
@@ -517,11 +522,11 @@ public final class Region implements Serializable, Comparable<Region> {
             registerRegionWithDefaultRealm(regionCodeOrId);
             maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
             if (maybeRegion.isPresent()) {
-                return Optional.fromNullable(maybeRegion.get());
+                return maybeRegion;
             }
         }
 
-        return Optional.absent();
+        return Optional.empty();
     }
 
     /**

@@ -45,19 +45,19 @@ public class ResourceSearchPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListResourceTypesRequest.Builder, ListResourceTypesRequest,
                 ListResourceTypesResponse>(
-                new com.google.common.base.Supplier<ListResourceTypesRequest.Builder>() {
+                new java.util.function.Supplier<ListResourceTypesRequest.Builder>() {
                     @Override
                     public ListResourceTypesRequest.Builder get() {
                         return ListResourceTypesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListResourceTypesResponse, String>() {
+                new java.util.function.Function<ListResourceTypesResponse, String>() {
                     @Override
                     public String apply(ListResourceTypesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListResourceTypesRequest.Builder>,
                         ListResourceTypesRequest>() {
@@ -70,12 +70,12 @@ public class ResourceSearchPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListResourceTypesRequest, ListResourceTypesResponse>() {
                     @Override
                     public ListResourceTypesResponse apply(ListResourceTypesRequest request) {
@@ -98,19 +98,19 @@ public class ResourceSearchPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListResourceTypesRequest.Builder, ListResourceTypesRequest,
                 ListResourceTypesResponse, com.oracle.bmc.resourcesearch.model.ResourceType>(
-                new com.google.common.base.Supplier<ListResourceTypesRequest.Builder>() {
+                new java.util.function.Supplier<ListResourceTypesRequest.Builder>() {
                     @Override
                     public ListResourceTypesRequest.Builder get() {
                         return ListResourceTypesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListResourceTypesResponse, String>() {
+                new java.util.function.Function<ListResourceTypesResponse, String>() {
                     @Override
                     public String apply(ListResourceTypesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListResourceTypesRequest.Builder>,
                         ListResourceTypesRequest>() {
@@ -123,19 +123,19 @@ public class ResourceSearchPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListResourceTypesRequest, ListResourceTypesResponse>() {
                     @Override
                     public ListResourceTypesResponse apply(ListResourceTypesRequest request) {
                         return client.listResourceTypes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListResourceTypesResponse,
                         java.util.List<com.oracle.bmc.resourcesearch.model.ResourceType>>() {
                     @Override

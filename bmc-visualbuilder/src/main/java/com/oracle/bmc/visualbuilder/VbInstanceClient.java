@@ -9,7 +9,6 @@ import com.oracle.bmc.visualbuilder.requests.*;
 import com.oracle.bmc.visualbuilder.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
 public class VbInstanceClient implements VbInstance {
@@ -335,9 +334,9 @@ public class VbInstanceClient implements VbInstance {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("VbInstance-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("VbInstance-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class VbInstanceClient implements VbInstance {
          * @return the client
          */
         public VbInstanceClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class VbInstanceClient implements VbInstance {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,8 +489,7 @@ public class VbInstanceClient implements VbInstance {
                         "ChangeVbInstanceCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/ChangeVbInstanceCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeVbInstanceCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeVbInstanceCompartmentResponse>
                 transformer =
                         ChangeVbInstanceCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -533,7 +532,7 @@ public class VbInstanceClient implements VbInstance {
                         "CreateVbInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/CreateVbInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVbInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVbInstanceResponse>
                 transformer =
                         CreateVbInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -574,7 +573,7 @@ public class VbInstanceClient implements VbInstance {
                         "DeleteVbInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/DeleteVbInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVbInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVbInstanceResponse>
                 transformer =
                         DeleteVbInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -612,9 +611,8 @@ public class VbInstanceClient implements VbInstance {
                         "GetVbInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/GetVbInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVbInstanceResponse>
-                transformer =
-                        GetVbInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetVbInstanceResponse> transformer =
+                GetVbInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -648,9 +646,8 @@ public class VbInstanceClient implements VbInstance {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -684,7 +681,7 @@ public class VbInstanceClient implements VbInstance {
                         "ListVbInstances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstanceSummaryCollection/ListVbInstances");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVbInstancesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListVbInstancesResponse>
                 transformer =
                         ListVbInstancesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -722,7 +719,7 @@ public class VbInstanceClient implements VbInstance {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/WorkRequestErrorCollection/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -759,7 +756,7 @@ public class VbInstanceClient implements VbInstance {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/WorkRequestLogEntryCollection/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -796,7 +793,7 @@ public class VbInstanceClient implements VbInstance {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/WorkRequestSummaryCollection/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -835,7 +832,7 @@ public class VbInstanceClient implements VbInstance {
                         "RequestSummarizedApplications",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/ApplicationSummaryCollection/RequestSummarizedApplications");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedApplicationsResponse>
                 transformer =
                         RequestSummarizedApplicationsConverter.fromResponse(
@@ -879,7 +876,7 @@ public class VbInstanceClient implements VbInstance {
                         "StartVbInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/StartVbInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartVbInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StartVbInstanceResponse>
                 transformer =
                         StartVbInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -918,9 +915,8 @@ public class VbInstanceClient implements VbInstance {
                         "StopVbInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/StopVbInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopVbInstanceResponse>
-                transformer =
-                        StopVbInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, StopVbInstanceResponse> transformer =
+                StopVbInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -955,7 +951,7 @@ public class VbInstanceClient implements VbInstance {
                         "UpdateVbInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/UpdateVbInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVbInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVbInstanceResponse>
                 transformer =
                         UpdateVbInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

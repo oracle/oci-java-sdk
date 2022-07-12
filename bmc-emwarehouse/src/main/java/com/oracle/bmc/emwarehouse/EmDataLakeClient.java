@@ -9,7 +9,6 @@ import com.oracle.bmc.emwarehouse.requests.*;
 import com.oracle.bmc.emwarehouse.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class EmDataLakeClient implements EmDataLake {
@@ -335,9 +334,9 @@ public class EmDataLakeClient implements EmDataLake {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("EmDataLake-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("EmDataLake-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class EmDataLakeClient implements EmDataLake {
          * @return the client
          */
         public EmDataLakeClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class EmDataLakeClient implements EmDataLake {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -484,7 +484,7 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "CancelWorkRequest", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -524,8 +524,7 @@ public class EmDataLakeClient implements EmDataLake {
                         "ChangeEmWarehouseCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeEmWarehouseCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeEmWarehouseCompartmentResponse>
                 transformer =
                         ChangeEmWarehouseCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -565,7 +564,7 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "CreateEmWarehouse", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateEmWarehouseResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateEmWarehouseResponse>
                 transformer =
                         CreateEmWarehouseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -603,7 +602,7 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "DeleteEmWarehouse", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEmWarehouseResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteEmWarehouseResponse>
                 transformer =
                         DeleteEmWarehouseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -638,9 +637,8 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "GetEmWarehouse", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetEmWarehouseResponse>
-                transformer =
-                        GetEmWarehouseConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetEmWarehouseResponse> transformer =
+                GetEmWarehouseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -675,8 +673,7 @@ public class EmDataLakeClient implements EmDataLake {
                         "GetEmWarehouseResourceUsage",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetEmWarehouseResourceUsageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetEmWarehouseResourceUsageResponse>
                 transformer =
                         GetEmWarehouseResourceUsageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -710,9 +707,8 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "GetWorkRequest", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -743,7 +739,7 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "ListEmWarehouses", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListEmWarehousesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListEmWarehousesResponse>
                 transformer =
                         ListEmWarehousesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -777,9 +773,8 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "ListEtlRuns", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListEtlRunsResponse>
-                transformer =
-                        ListEtlRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListEtlRunsResponse> transformer =
+                ListEtlRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -811,7 +806,7 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -845,7 +840,7 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -879,7 +874,7 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "ListWorkRequests", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -913,7 +908,7 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "EmDataLake", "UpdateEmWarehouse", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEmWarehouseResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateEmWarehouseResponse>
                 transformer =
                         UpdateEmWarehouseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

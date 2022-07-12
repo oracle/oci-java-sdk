@@ -45,19 +45,19 @@ public class OdapackagePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListImportedPackagesRequest.Builder, ListImportedPackagesRequest,
                 ListImportedPackagesResponse>(
-                new com.google.common.base.Supplier<ListImportedPackagesRequest.Builder>() {
+                new java.util.function.Supplier<ListImportedPackagesRequest.Builder>() {
                     @Override
                     public ListImportedPackagesRequest.Builder get() {
                         return ListImportedPackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListImportedPackagesResponse, String>() {
+                new java.util.function.Function<ListImportedPackagesResponse, String>() {
                     @Override
                     public String apply(ListImportedPackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListImportedPackagesRequest.Builder>,
                         ListImportedPackagesRequest>() {
@@ -70,12 +70,12 @@ public class OdapackagePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListImportedPackagesRequest, ListImportedPackagesResponse>() {
                     @Override
                     public ListImportedPackagesResponse apply(ListImportedPackagesRequest request) {
@@ -98,19 +98,19 @@ public class OdapackagePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListImportedPackagesRequest.Builder, ListImportedPackagesRequest,
                 ListImportedPackagesResponse, com.oracle.bmc.oda.model.ImportedPackageSummary>(
-                new com.google.common.base.Supplier<ListImportedPackagesRequest.Builder>() {
+                new java.util.function.Supplier<ListImportedPackagesRequest.Builder>() {
                     @Override
                     public ListImportedPackagesRequest.Builder get() {
                         return ListImportedPackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListImportedPackagesResponse, String>() {
+                new java.util.function.Function<ListImportedPackagesResponse, String>() {
                     @Override
                     public String apply(ListImportedPackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListImportedPackagesRequest.Builder>,
                         ListImportedPackagesRequest>() {
@@ -123,19 +123,19 @@ public class OdapackagePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListImportedPackagesRequest, ListImportedPackagesResponse>() {
                     @Override
                     public ListImportedPackagesResponse apply(ListImportedPackagesRequest request) {
                         return client.listImportedPackages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListImportedPackagesResponse,
                         java.util.List<com.oracle.bmc.oda.model.ImportedPackageSummary>>() {
                     @Override
@@ -157,19 +157,19 @@ public class OdapackagePaginators {
             final ListPackagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPackagesRequest.Builder, ListPackagesRequest, ListPackagesResponse>(
-                new com.google.common.base.Supplier<ListPackagesRequest.Builder>() {
+                new java.util.function.Supplier<ListPackagesRequest.Builder>() {
                     @Override
                     public ListPackagesRequest.Builder get() {
                         return ListPackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPackagesResponse, String>() {
+                new java.util.function.Function<ListPackagesResponse, String>() {
                     @Override
                     public String apply(ListPackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPackagesRequest.Builder>,
                         ListPackagesRequest>() {
@@ -182,12 +182,12 @@ public class OdapackagePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListPackagesRequest, ListPackagesResponse>() {
+                new java.util.function.Function<ListPackagesRequest, ListPackagesResponse>() {
                     @Override
                     public ListPackagesResponse apply(ListPackagesRequest request) {
                         return client.listPackages(request);
@@ -209,19 +209,19 @@ public class OdapackagePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListPackagesRequest.Builder, ListPackagesRequest, ListPackagesResponse,
                 com.oracle.bmc.oda.model.PackageSummary>(
-                new com.google.common.base.Supplier<ListPackagesRequest.Builder>() {
+                new java.util.function.Supplier<ListPackagesRequest.Builder>() {
                     @Override
                     public ListPackagesRequest.Builder get() {
                         return ListPackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPackagesResponse, String>() {
+                new java.util.function.Function<ListPackagesResponse, String>() {
                     @Override
                     public String apply(ListPackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPackagesRequest.Builder>,
                         ListPackagesRequest>() {
@@ -234,18 +234,18 @@ public class OdapackagePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListPackagesRequest, ListPackagesResponse>() {
+                new java.util.function.Function<ListPackagesRequest, ListPackagesResponse>() {
                     @Override
                     public ListPackagesResponse apply(ListPackagesRequest request) {
                         return client.listPackages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPackagesResponse,
                         java.util.List<com.oracle.bmc.oda.model.PackageSummary>>() {
                     @Override

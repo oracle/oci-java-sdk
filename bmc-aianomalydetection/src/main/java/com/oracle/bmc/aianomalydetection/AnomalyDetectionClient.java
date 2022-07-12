@@ -9,7 +9,6 @@ import com.oracle.bmc.aianomalydetection.requests.*;
 import com.oracle.bmc.aianomalydetection.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 public class AnomalyDetectionClient implements AnomalyDetection {
@@ -335,9 +334,9 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("AnomalyDetection-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("AnomalyDetection-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
          * @return the client
          */
         public AnomalyDetectionClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -484,7 +484,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "CancelWorkRequest", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -524,7 +524,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "ChangeAiPrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAiPrivateEndpointCompartmentResponse>
                 transformer =
                         ChangeAiPrivateEndpointCompartmentConverter.fromResponse(
@@ -569,8 +569,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "ChangeDataAssetCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeDataAssetCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeDataAssetCompartmentResponse>
                 transformer =
                         ChangeDataAssetCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -614,7 +613,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "ChangeModelCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
                 transformer =
                         ChangeModelCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -657,7 +656,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "ChangeProjectCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
                 transformer =
                         ChangeProjectCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -700,7 +699,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "CreateAiPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAiPrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAiPrivateEndpointResponse>
                 transformer =
                         CreateAiPrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -739,7 +738,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "CreateDataAsset", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
                 transformer =
                         CreateDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -778,9 +777,8 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "CreateModel", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateModelResponse>
-                transformer =
-                        CreateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateModelResponse> transformer =
+                CreateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -816,9 +814,8 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "CreateProject", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
-                transformer =
-                        CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateProjectResponse> transformer =
+                CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -857,7 +854,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "DeleteAiPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAiPrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAiPrivateEndpointResponse>
                 transformer =
                         DeleteAiPrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -892,7 +889,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "DeleteDataAsset", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
                 transformer =
                         DeleteDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -927,9 +924,8 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "DeleteModel", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteModelResponse>
-                transformer =
-                        DeleteModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteModelResponse> transformer =
+                DeleteModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -961,9 +957,8 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "DeleteProject", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
-                transformer =
-                        DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteProjectResponse> transformer =
+                DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -996,7 +991,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "DetectAnomalies", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DetectAnomaliesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DetectAnomaliesResponse>
                 transformer =
                         DetectAnomaliesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1037,7 +1032,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "GetAiPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAiPrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAiPrivateEndpointResponse>
                 transformer =
                         GetAiPrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1071,9 +1066,8 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "GetDataAsset", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDataAssetResponse>
-                transformer =
-                        GetDataAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDataAssetResponse> transformer =
+                GetDataAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1103,7 +1097,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "GetModel", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetModelResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetModelResponse> transformer =
                 GetModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1134,7 +1128,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "GetProject", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetProjectResponse> transformer =
                 GetProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1166,9 +1160,8 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "GetWorkRequest", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1203,7 +1196,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "ListAiPrivateEndpoints",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAiPrivateEndpointsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAiPrivateEndpointsResponse>
                 transformer =
                         ListAiPrivateEndpointsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1237,9 +1230,8 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "ListDataAssets", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDataAssetsResponse>
-                transformer =
-                        ListDataAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListDataAssetsResponse> transformer =
+                ListDataAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1269,7 +1261,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "ListModels", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListModelsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListModelsResponse> transformer =
                 ListModelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1301,9 +1293,8 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "ListProjects", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
-                transformer =
-                        ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListProjectsResponse> transformer =
+                ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1338,7 +1329,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1375,7 +1366,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1409,7 +1400,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "ListWorkRequests", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1447,7 +1438,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "UpdateAiPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAiPrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAiPrivateEndpointResponse>
                 transformer =
                         UpdateAiPrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1485,7 +1476,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "UpdateDataAsset", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
                 transformer =
                         UpdateDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1523,9 +1514,8 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "UpdateModel", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateModelResponse>
-                transformer =
-                        UpdateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateModelResponse> transformer =
+                UpdateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1560,9 +1550,8 @@ public class AnomalyDetectionClient implements AnomalyDetection {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection", "UpdateProject", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
-                transformer =
-                        UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateProjectResponse> transformer =
+                UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

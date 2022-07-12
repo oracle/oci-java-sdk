@@ -7,7 +7,6 @@ package com.oracle.bmc.datacatalog;
 import com.oracle.bmc.datacatalog.internal.http.*;
 import com.oracle.bmc.datacatalog.requests.*;
 import com.oracle.bmc.datacatalog.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for DataCatalog service. <br/>
@@ -319,7 +318,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
          * @return the client
          */
         public DataCatalogAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,7 +404,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "AddDataSelectorPatterns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/AddDataSelectorPatterns");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, AddDataSelectorPatternsResponse>
                 transformer =
                         AddDataSelectorPatternsConverter.fromResponse(
@@ -458,7 +458,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "AssociateCustomProperty",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Type/AssociateCustomProperty");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, AssociateCustomPropertyResponse>
                 transformer =
                         AssociateCustomPropertyConverter.fromResponse(
@@ -514,7 +514,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "AttachCatalogPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/AttachCatalogPrivateEndpoint");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, AttachCatalogPrivateEndpointResponse>
                 transformer =
                         AttachCatalogPrivateEndpointConverter.fromResponse(
@@ -568,7 +568,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ChangeCatalogCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/ChangeCatalogCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeCatalogCompartmentResponse>
                 transformer =
                         ChangeCatalogCompartmentConverter.fromResponse(
@@ -624,7 +624,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ChangeCatalogPrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/ChangeCatalogPrivateEndpointCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeCatalogPrivateEndpointCompartmentResponse>
                 transformer =
                         ChangeCatalogPrivateEndpointCompartmentConverter.fromResponse(
@@ -684,7 +684,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ChangeMetastoreCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/ChangeMetastoreCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeMetastoreCompartmentResponse>
                 transformer =
                         ChangeMetastoreCompartmentConverter.fromResponse(
@@ -739,7 +739,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateAttribute",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Attribute/CreateAttribute");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAttributeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateAttributeResponse>
                 transformer =
                         CreateAttributeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -791,7 +791,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateAttributeTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeTag/CreateAttributeTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAttributeTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateAttributeTagResponse>
                 transformer =
                         CreateAttributeTagConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -842,7 +842,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateCatalog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/CreateCatalog");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCatalogResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCatalogResponse>
                 transformer =
                         CreateCatalogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateCatalogRequest, CreateCatalogResponse>
@@ -895,7 +895,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateCatalogPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/CreateCatalogPrivateEndpoint");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateCatalogPrivateEndpointResponse>
                 transformer =
                         CreateCatalogPrivateEndpointConverter.fromResponse(
@@ -950,7 +950,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/CreateConnection");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
                 transformer =
                         CreateConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1002,8 +1002,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateCustomProperty",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/CreateCustomProperty");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateCustomPropertyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCustomPropertyResponse>
                 transformer =
                         CreateCustomPropertyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1056,7 +1055,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateDataAsset",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/CreateDataAsset");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
                 transformer =
                         CreateDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1108,7 +1107,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateDataAssetTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetTag/CreateDataAssetTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDataAssetTagResponse>
                 transformer =
                         CreateDataAssetTagConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1159,7 +1158,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateEntity",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/CreateEntity");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEntityResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateEntityResponse>
                 transformer =
                         CreateEntityConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateEntityRequest, CreateEntityResponse>
@@ -1210,7 +1209,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateEntityTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/EntityTag/CreateEntityTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEntityTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateEntityTagResponse>
                 transformer =
                         CreateEntityTagConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1261,7 +1260,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateFolder",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Folder/CreateFolder");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFolderResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateFolderResponse>
                 transformer =
                         CreateFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateFolderRequest, CreateFolderResponse>
@@ -1312,7 +1311,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateFolderTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderTag/CreateFolderTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFolderTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateFolderTagResponse>
                 transformer =
                         CreateFolderTagConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1364,7 +1363,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateGlossary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/CreateGlossary");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateGlossaryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateGlossaryResponse>
                 transformer =
                         CreateGlossaryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateGlossaryRequest, CreateGlossaryResponse>
@@ -1413,7 +1412,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Job/CreateJob");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateJobResponse>
                 transformer =
                         CreateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handlerToUse =
@@ -1463,8 +1462,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateJobDefinition",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinition/CreateJobDefinition");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateJobDefinitionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateJobDefinitionResponse>
                 transformer =
                         CreateJobDefinitionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1517,7 +1515,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateJobExecution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobExecution/CreateJobExecution");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobExecutionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateJobExecutionResponse>
                 transformer =
                         CreateJobExecutionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1569,7 +1567,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateMetastore",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/CreateMetastore");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateMetastoreResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateMetastoreResponse>
                 transformer =
                         CreateMetastoreConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1621,7 +1619,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/CreateNamespace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateNamespaceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateNamespaceResponse>
                 transformer =
                         CreateNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1672,7 +1670,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreatePattern",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/CreatePattern");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePatternResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreatePatternResponse>
                 transformer =
                         CreatePatternConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreatePatternRequest, CreatePatternResponse>
@@ -1721,7 +1719,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateTerm",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/CreateTerm");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTermResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTermResponse>
                 transformer =
                         CreateTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateTermRequest, CreateTermResponse> handlerToUse =
@@ -1772,8 +1770,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "CreateTermRelationship",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/CreateTermRelationship");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateTermRelationshipResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTermRelationshipResponse>
                 transformer =
                         CreateTermRelationshipConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1825,7 +1822,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteAttribute",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Attribute/DeleteAttribute");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAttributeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteAttributeResponse>
                 transformer =
                         DeleteAttributeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1871,7 +1868,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteAttributeTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeTag/DeleteAttributeTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAttributeTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteAttributeTagResponse>
                 transformer =
                         DeleteAttributeTagConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1916,7 +1913,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteCatalog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/DeleteCatalog");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCatalogResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCatalogResponse>
                 transformer =
                         DeleteCatalogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteCatalogRequest, DeleteCatalogResponse>
@@ -1963,7 +1960,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteCatalogPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/DeleteCatalogPrivateEndpoint");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteCatalogPrivateEndpointResponse>
                 transformer =
                         DeleteCatalogPrivateEndpointConverter.fromResponse(
@@ -2012,7 +2009,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/DeleteConnection");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
                 transformer =
                         DeleteConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2058,8 +2055,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteCustomProperty",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/DeleteCustomProperty");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteCustomPropertyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCustomPropertyResponse>
                 transformer =
                         DeleteCustomPropertyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2106,7 +2102,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteDataAsset",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/DeleteDataAsset");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
                 transformer =
                         DeleteDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2152,7 +2148,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteDataAssetTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetTag/DeleteDataAssetTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataAssetTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDataAssetTagResponse>
                 transformer =
                         DeleteDataAssetTagConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2197,7 +2193,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteEntity",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/DeleteEntity");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEntityResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteEntityResponse>
                 transformer =
                         DeleteEntityConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteEntityRequest, DeleteEntityResponse>
@@ -2242,7 +2238,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteEntityTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/EntityTag/DeleteEntityTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEntityTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteEntityTagResponse>
                 transformer =
                         DeleteEntityTagConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2287,7 +2283,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteFolder",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Folder/DeleteFolder");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFolderResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteFolderResponse>
                 transformer =
                         DeleteFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteFolderRequest, DeleteFolderResponse>
@@ -2332,7 +2328,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteFolderTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderTag/DeleteFolderTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFolderTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteFolderTagResponse>
                 transformer =
                         DeleteFolderTagConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2378,7 +2374,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteGlossary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/DeleteGlossary");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGlossaryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteGlossaryResponse>
                 transformer =
                         DeleteGlossaryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteGlossaryRequest, DeleteGlossaryResponse>
@@ -2421,7 +2417,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Job/DeleteJob");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteJobResponse>
                 transformer =
                         DeleteJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse> handlerToUse =
@@ -2465,8 +2461,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteJobDefinition",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinition/DeleteJobDefinition");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteJobDefinitionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteJobDefinitionResponse>
                 transformer =
                         DeleteJobDefinitionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2513,7 +2508,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteMetastore",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/DeleteMetastore");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMetastoreResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMetastoreResponse>
                 transformer =
                         DeleteMetastoreConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2559,7 +2554,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/DeleteNamespace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNamespaceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteNamespaceResponse>
                 transformer =
                         DeleteNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2604,7 +2599,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeletePattern",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/DeletePattern");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePatternResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeletePatternResponse>
                 transformer =
                         DeletePatternConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeletePatternRequest, DeletePatternResponse>
@@ -2647,7 +2642,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteTerm",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/DeleteTerm");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTermResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTermResponse>
                 transformer =
                         DeleteTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteTermRequest, DeleteTermResponse> handlerToUse =
@@ -2692,8 +2687,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DeleteTermRelationship",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/DeleteTermRelationship");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteTermRelationshipResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTermRelationshipResponse>
                 transformer =
                         DeleteTermRelationshipConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2742,7 +2736,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DetachCatalogPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/DetachCatalogPrivateEndpoint");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DetachCatalogPrivateEndpointResponse>
                 transformer =
                         DetachCatalogPrivateEndpointConverter.fromResponse(
@@ -2799,7 +2793,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "DisassociateCustomProperty",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Type/DisassociateCustomProperty");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DisassociateCustomPropertyResponse>
                 transformer =
                         DisassociateCustomPropertyConverter.fromResponse(
@@ -2854,8 +2848,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ExpandTreeForGlossary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/ExpandTreeForGlossary");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ExpandTreeForGlossaryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ExpandTreeForGlossaryResponse>
                 transformer =
                         ExpandTreeForGlossaryConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2903,7 +2896,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ExportGlossary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/ExportGlossary");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ExportGlossaryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ExportGlossaryResponse>
                 transformer =
                         ExportGlossaryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ExportGlossaryRequest, ExportGlossaryResponse>
@@ -2947,7 +2940,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetAttribute",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Attribute/GetAttribute");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetAttributeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAttributeResponse>
                 transformer =
                         GetAttributeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetAttributeRequest, GetAttributeResponse>
@@ -2992,7 +2985,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetAttributeTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeTag/GetAttributeTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetAttributeTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAttributeTagResponse>
                 transformer =
                         GetAttributeTagConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3036,7 +3029,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetCatalog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/GetCatalog");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCatalogResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCatalogResponse>
                 transformer =
                         GetCatalogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCatalogRequest, GetCatalogResponse> handlerToUse =
@@ -3081,7 +3074,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetCatalogPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/GetCatalogPrivateEndpoint");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetCatalogPrivateEndpointResponse>
                 transformer =
                         GetCatalogPrivateEndpointConverter.fromResponse(
@@ -3129,7 +3122,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/GetConnection");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetConnectionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetConnectionResponse>
                 transformer =
                         GetConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
@@ -3174,7 +3167,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetCustomProperty",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/GetCustomProperty");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCustomPropertyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCustomPropertyResponse>
                 transformer =
                         GetCustomPropertyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3219,7 +3212,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetDataAsset",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/GetDataAsset");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDataAssetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDataAssetResponse>
                 transformer =
                         GetDataAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDataAssetRequest, GetDataAssetResponse>
@@ -3264,7 +3257,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetDataAssetTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetTag/GetDataAssetTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDataAssetTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDataAssetTagResponse>
                 transformer =
                         GetDataAssetTagConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3308,7 +3301,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetEntity",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/GetEntity");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetEntityResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEntityResponse>
                 transformer =
                         GetEntityConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetEntityRequest, GetEntityResponse> handlerToUse =
@@ -3351,7 +3344,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetEntityTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/EntityTag/GetEntityTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetEntityTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEntityTagResponse>
                 transformer =
                         GetEntityTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetEntityTagRequest, GetEntityTagResponse>
@@ -3394,7 +3387,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetFolder",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Folder/GetFolder");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetFolderResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetFolderResponse>
                 transformer =
                         GetFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetFolderRequest, GetFolderResponse> handlerToUse =
@@ -3437,7 +3430,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetFolderTag",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderTag/GetFolderTag");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetFolderTagResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetFolderTagResponse>
                 transformer =
                         GetFolderTagConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetFolderTagRequest, GetFolderTagResponse>
@@ -3481,7 +3474,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetGlossary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/GetGlossary");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetGlossaryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetGlossaryResponse>
                 transformer =
                         GetGlossaryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetGlossaryRequest, GetGlossaryResponse>
@@ -3523,8 +3516,8 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Job/GetJob");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobResponse>
-                transformer = GetJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJobResponse> transformer =
+                GetJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handlerToUse = handler;
 
         java.util.function.Function<
@@ -3565,7 +3558,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetJobDefinition",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinition/GetJobDefinition");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobDefinitionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJobDefinitionResponse>
                 transformer =
                         GetJobDefinitionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3611,7 +3604,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetJobExecution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobExecution/GetJobExecution");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobExecutionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJobExecutionResponse>
                 transformer =
                         GetJobExecutionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3655,7 +3648,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetJobLog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobLog/GetJobLog");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobLogResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJobLogResponse>
                 transformer =
                         GetJobLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetJobLogRequest, GetJobLogResponse> handlerToUse =
@@ -3698,7 +3691,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetJobMetrics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobMetric/GetJobMetrics");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobMetricsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJobMetricsResponse>
                 transformer =
                         GetJobMetricsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetJobMetricsRequest, GetJobMetricsResponse>
@@ -3742,7 +3735,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetMetastore",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/GetMetastore");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetMetastoreResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMetastoreResponse>
                 transformer =
                         GetMetastoreConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetMetastoreRequest, GetMetastoreResponse>
@@ -3786,7 +3779,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/GetNamespace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetNamespaceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetNamespaceResponse>
                 transformer =
                         GetNamespaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetNamespaceRequest, GetNamespaceResponse>
@@ -3829,7 +3822,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetPattern",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/GetPattern");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPatternResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPatternResponse>
                 transformer =
                         GetPatternConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetPatternRequest, GetPatternResponse> handlerToUse =
@@ -3871,8 +3864,8 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetTerm",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/GetTerm");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTermResponse>
-                transformer = GetTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTermResponse> transformer =
+                GetTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTermRequest, GetTermResponse> handlerToUse =
                 handler;
 
@@ -3914,8 +3907,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetTermRelationship",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/GetTermRelationship");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetTermRelationshipResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTermRelationshipResponse>
                 transformer =
                         GetTermRelationshipConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3959,8 +3951,8 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Type/GetType");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTypeResponse>
-                transformer = GetTypeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTypeResponse> transformer =
+                GetTypeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTypeRequest, GetTypeResponse> handlerToUse =
                 handler;
 
@@ -4002,7 +3994,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -4048,7 +4040,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ImportConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ImportConnection");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportConnectionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ImportConnectionResponse>
                 transformer =
                         ImportConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4100,7 +4092,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ImportDataAsset",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ImportDataAsset");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportDataAssetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ImportDataAssetResponse>
                 transformer =
                         ImportDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4152,7 +4144,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ImportGlossary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/ImportGlossary");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportGlossaryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ImportGlossaryResponse>
                 transformer =
                         ImportGlossaryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ImportGlossaryRequest, ImportGlossaryResponse>
@@ -4204,7 +4196,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListAggregatedPhysicalEntities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/ListAggregatedPhysicalEntities");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAggregatedPhysicalEntitiesResponse>
                 transformer =
                         ListAggregatedPhysicalEntitiesConverter.fromResponse(
@@ -4254,7 +4246,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListAttributeTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeTagCollection/ListAttributeTags");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAttributeTagsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAttributeTagsResponse>
                 transformer =
                         ListAttributeTagsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4300,7 +4292,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListAttributes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeCollection/ListAttributes");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAttributesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAttributesResponse>
                 transformer =
                         ListAttributesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListAttributesRequest, ListAttributesResponse>
@@ -4347,7 +4339,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListCatalogPrivateEndpoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpointSummary/ListCatalogPrivateEndpoints");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListCatalogPrivateEndpointsResponse>
                 transformer =
                         ListCatalogPrivateEndpointsConverter.fromResponse(
@@ -4395,7 +4387,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListCatalogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogSummary/ListCatalogs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCatalogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCatalogsResponse>
                 transformer =
                         ListCatalogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListCatalogsRequest, ListCatalogsResponse>
@@ -4440,7 +4432,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListConnections",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/ConnectionCollection/ListConnections");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
                 transformer =
                         ListConnectionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4486,8 +4478,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListCustomProperties",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/ListCustomProperties");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCustomPropertiesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCustomPropertiesResponse>
                 transformer =
                         ListCustomPropertiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4534,7 +4525,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListDataAssetTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetTagCollection/ListDataAssetTags");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataAssetTagsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDataAssetTagsResponse>
                 transformer =
                         ListDataAssetTagsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4580,7 +4571,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListDataAssets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetCollection/ListDataAssets");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataAssetsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDataAssetsResponse>
                 transformer =
                         ListDataAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDataAssetsRequest, ListDataAssetsResponse>
@@ -4628,7 +4619,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListDerivedLogicalEntities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/ListDerivedLogicalEntities");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDerivedLogicalEntitiesResponse>
                 transformer =
                         ListDerivedLogicalEntitiesConverter.fromResponse(
@@ -4676,7 +4667,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListEntities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/ListEntities");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListEntitiesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEntitiesResponse>
                 transformer =
                         ListEntitiesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListEntitiesRequest, ListEntitiesResponse>
@@ -4721,7 +4712,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListEntityTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/EntityTagCollection/ListEntityTags");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListEntityTagsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEntityTagsResponse>
                 transformer =
                         ListEntityTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListEntityTagsRequest, ListEntityTagsResponse>
@@ -4766,7 +4757,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListFolderTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderTagCollection/ListFolderTags");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListFolderTagsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListFolderTagsResponse>
                 transformer =
                         ListFolderTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListFolderTagsRequest, ListFolderTagsResponse>
@@ -4810,7 +4801,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListFolders",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderCollection/ListFolders");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListFoldersResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListFoldersResponse>
                 transformer =
                         ListFoldersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListFoldersRequest, ListFoldersResponse>
@@ -4855,7 +4846,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListGlossaries",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/ListGlossaries");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListGlossariesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListGlossariesResponse>
                 transformer =
                         ListGlossariesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListGlossariesRequest, ListGlossariesResponse>
@@ -4900,7 +4891,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListJobDefinitions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinitionCollection/ListJobDefinitions");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobDefinitionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJobDefinitionsResponse>
                 transformer =
                         ListJobDefinitionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4946,7 +4937,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListJobExecutions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobExecutionCollection/ListJobExecutions");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobExecutionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJobExecutionsResponse>
                 transformer =
                         ListJobExecutionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4991,7 +4982,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListJobLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobLogCollection/ListJobLogs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJobLogsResponse>
                 transformer =
                         ListJobLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListJobLogsRequest, ListJobLogsResponse>
@@ -5036,7 +5027,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListJobMetrics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobMetricCollection/ListJobMetrics");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobMetricsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJobMetricsResponse>
                 transformer =
                         ListJobMetricsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListJobMetricsRequest, ListJobMetricsResponse>
@@ -5079,8 +5070,8 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListJobs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobCollection/ListJobs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobsResponse>
-                transformer = ListJobsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJobsResponse> transformer =
+                ListJobsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handlerToUse =
                 handler;
 
@@ -5122,7 +5113,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListMetastores",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/MetastoreSummary/ListMetastores");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListMetastoresResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMetastoresResponse>
                 transformer =
                         ListMetastoresConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListMetastoresRequest, ListMetastoresResponse>
@@ -5167,7 +5158,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListNamespaces",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/ListNamespaces");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListNamespacesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListNamespacesResponse>
                 transformer =
                         ListNamespacesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListNamespacesRequest, ListNamespacesResponse>
@@ -5211,7 +5202,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListPatterns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/ListPatterns");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPatternsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPatternsResponse>
                 transformer =
                         ListPatternsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListPatternsRequest, ListPatternsResponse>
@@ -5254,7 +5245,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/RuleSummary/ListRules");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRulesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRulesResponse>
                 transformer =
                         ListRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRulesRequest, ListRulesResponse> handlerToUse =
@@ -5296,8 +5287,8 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListTags",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/ListTags");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTagsResponse>
-                transformer = ListTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTagsResponse> transformer =
+                ListTagsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTagsRequest, ListTagsResponse> handlerToUse =
                 handler;
 
@@ -5339,8 +5330,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListTermRelationships",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/ListTermRelationships");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTermRelationshipsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTermRelationshipsResponse>
                 transformer =
                         ListTermRelationshipsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5385,7 +5375,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListTerms",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/ListTerms");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTermsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTermsResponse>
                 transformer =
                         ListTermsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTermsRequest, ListTermsResponse> handlerToUse =
@@ -5427,7 +5417,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TypeCollection/ListTypes");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTypesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTypesResponse>
                 transformer =
                         ListTypesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTypesRequest, ListTypesResponse> handlerToUse =
@@ -5471,8 +5461,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5519,8 +5508,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/WorkRequestLog/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5567,7 +5555,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/WorkRequest/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5612,7 +5600,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ObjectStats",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/ObjectStats");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ObjectStatsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ObjectStatsResponse>
                 transformer =
                         ObjectStatsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ObjectStatsRequest, ObjectStatsResponse>
@@ -5658,7 +5646,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ParseConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ParseConnection");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ParseConnectionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ParseConnectionResponse>
                 transformer =
                         ParseConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5709,8 +5697,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ProcessRecommendation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/ProcessRecommendation");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ProcessRecommendationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ProcessRecommendationResponse>
                 transformer =
                         ProcessRecommendationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5762,7 +5749,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "Recommendations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/Recommendations");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RecommendationsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RecommendationsResponse>
                 transformer =
                         RecommendationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5811,7 +5798,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "RemoveDataSelectorPatterns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/RemoveDataSelectorPatterns");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveDataSelectorPatternsResponse>
                 transformer =
                         RemoveDataSelectorPatternsConverter.fromResponse(
@@ -5865,7 +5852,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "SearchCriteria",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/SearchResult/SearchCriteria");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, SearchCriteriaResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, SearchCriteriaResponse>
                 transformer =
                         SearchCriteriaConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<SearchCriteriaRequest, SearchCriteriaResponse>
@@ -5915,7 +5902,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "SuggestMatches",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/SuggestResults/SuggestMatches");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, SuggestMatchesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, SuggestMatchesResponse>
                 transformer =
                         SuggestMatchesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<SuggestMatchesRequest, SuggestMatchesResponse>
@@ -5973,7 +5960,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "SynchronousExportDataAsset",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/SynchronousExportDataAsset");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SynchronousExportDataAssetResponse>
                 transformer =
                         SynchronousExportDataAssetConverter.fromResponse(
@@ -6028,7 +6015,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "TestConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/TestConnection");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, TestConnectionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, TestConnectionResponse>
                 transformer =
                         TestConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<TestConnectionRequest, TestConnectionResponse>
@@ -6073,7 +6060,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateAttribute",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Attribute/UpdateAttribute");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAttributeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateAttributeResponse>
                 transformer =
                         UpdateAttributeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6123,7 +6110,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateCatalog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/UpdateCatalog");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCatalogResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCatalogResponse>
                 transformer =
                         UpdateCatalogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateCatalogRequest, UpdateCatalogResponse>
@@ -6175,7 +6162,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateCatalogPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/UpdateCatalogPrivateEndpoint");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateCatalogPrivateEndpointResponse>
                 transformer =
                         UpdateCatalogPrivateEndpointConverter.fromResponse(
@@ -6229,7 +6216,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/UpdateConnection");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
                 transformer =
                         UpdateConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6280,8 +6267,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateCustomProperty",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/UpdateCustomProperty");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateCustomPropertyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCustomPropertyResponse>
                 transformer =
                         UpdateCustomPropertyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6333,7 +6319,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateDataAsset",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/UpdateDataAsset");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
                 transformer =
                         UpdateDataAssetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6383,7 +6369,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateEntity",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/UpdateEntity");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEntityResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateEntityResponse>
                 transformer =
                         UpdateEntityConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateEntityRequest, UpdateEntityResponse>
@@ -6432,7 +6418,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateFolder",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Folder/UpdateFolder");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFolderResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateFolderResponse>
                 transformer =
                         UpdateFolderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateFolderRequest, UpdateFolderResponse>
@@ -6482,7 +6468,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateGlossary",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/UpdateGlossary");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGlossaryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateGlossaryResponse>
                 transformer =
                         UpdateGlossaryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateGlossaryRequest, UpdateGlossaryResponse>
@@ -6530,7 +6516,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Job/UpdateJob");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateJobResponse>
                 transformer =
                         UpdateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handlerToUse =
@@ -6579,8 +6565,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateJobDefinition",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinition/UpdateJobDefinition");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateJobDefinitionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateJobDefinitionResponse>
                 transformer =
                         UpdateJobDefinitionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6632,7 +6617,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateMetastore",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/UpdateMetastore");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMetastoreResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMetastoreResponse>
                 transformer =
                         UpdateMetastoreConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6683,7 +6668,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateNamespace",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/UpdateNamespace");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNamespaceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateNamespaceResponse>
                 transformer =
                         UpdateNamespaceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6733,7 +6718,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdatePattern",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/UpdatePattern");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePatternResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdatePatternResponse>
                 transformer =
                         UpdatePatternConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdatePatternRequest, UpdatePatternResponse>
@@ -6781,7 +6766,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateTerm",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/UpdateTerm");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTermResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTermResponse>
                 transformer =
                         UpdateTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateTermRequest, UpdateTermResponse> handlerToUse =
@@ -6831,8 +6816,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UpdateTermRelationship",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/UpdateTermRelationship");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateTermRelationshipResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTermRelationshipResponse>
                 transformer =
                         UpdateTermRelationshipConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6885,7 +6869,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "UploadCredentials",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/UploadCredentials");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UploadCredentialsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UploadCredentialsResponse>
                 transformer =
                         UploadCredentialsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6933,8 +6917,8 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "Users",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/Users");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UsersResponse>
-                transformer = UsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, UsersResponse> transformer =
+                UsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UsersRequest, UsersResponse> handlerToUse = handler;
 
         java.util.function.Function<
@@ -6976,7 +6960,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ValidateConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ValidateConnection");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ValidateConnectionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ValidateConnectionResponse>
                 transformer =
                         ValidateConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7028,7 +7012,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                         "ValidatePattern",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/ValidatePattern");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ValidatePatternResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ValidatePatternResponse>
                 transformer =
                         ValidatePatternConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

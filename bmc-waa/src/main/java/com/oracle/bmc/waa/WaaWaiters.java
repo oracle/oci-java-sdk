@@ -6,7 +6,6 @@ package com.oracle.bmc.waa;
 
 import com.oracle.bmc.waa.requests.*;
 import com.oracle.bmc.waa.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -108,8 +107,8 @@ public class WaaWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWebAppAccelerationRequest, GetWebAppAccelerationResponse>() {
                             @Override
                             public GetWebAppAccelerationResponse apply(
@@ -117,9 +116,9 @@ public class WaaWaiters {
                                 return client.getWebAppAcceleration(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWebAppAccelerationResponse>() {
+                        new java.util.function.Predicate<GetWebAppAccelerationResponse>() {
                             @Override
-                            public boolean apply(GetWebAppAccelerationResponse response) {
+                            public boolean test(GetWebAppAccelerationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getWebAppAcceleration().getLifecycleState());
                             }
@@ -219,8 +218,8 @@ public class WaaWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWebAppAccelerationPolicyRequest,
                                 GetWebAppAccelerationPolicyResponse>() {
                             @Override
@@ -229,10 +228,9 @@ public class WaaWaiters {
                                 return client.getWebAppAccelerationPolicy(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetWebAppAccelerationPolicyResponse>() {
+                        new java.util.function.Predicate<GetWebAppAccelerationPolicyResponse>() {
                             @Override
-                            public boolean apply(GetWebAppAccelerationPolicyResponse response) {
+                            public boolean test(GetWebAppAccelerationPolicyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getWebAppAccelerationPolicy().getLifecycleState());
                             }

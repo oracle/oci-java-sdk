@@ -60,22 +60,22 @@ public class DisableArchivingConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.loganalytics.responses.DisableArchivingResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.loganalytics.responses.DisableArchivingResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.loganalytics.responses.DisableArchivingResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.loganalytics.responses.DisableArchivingResponse>() {
                             @Override
@@ -83,7 +83,7 @@ public class DisableArchivingConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.loganalytics.responses.DisableArchivingResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.loganalytics.model.Success>>
@@ -116,10 +116,9 @@ public class DisableArchivingConverter {
 
                                 builder.success(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -128,7 +127,7 @@ public class DisableArchivingConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
+                                java.util.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
                                                 headers, "etag");
                                 if (etagHeader.isPresent()) {

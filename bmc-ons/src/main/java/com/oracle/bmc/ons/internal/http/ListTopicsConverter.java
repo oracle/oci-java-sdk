@@ -110,19 +110,19 @@ public class ListTopicsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response, com.oracle.bmc.ons.responses.ListTopicsResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response, com.oracle.bmc.ons.responses.ListTopicsResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, com.oracle.bmc.ons.responses.ListTopicsResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.ons.responses.ListTopicsResponse>() {
                             @Override
@@ -130,7 +130,7 @@ public class ListTopicsConverter {
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.ons.responses.ListTopicsResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
@@ -168,10 +168,9 @@ public class ListTopicsConverter {
 
                                 builder.items(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcNextPageHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-next-page");
+                                java.util.Optional<java.util.List<String>> opcNextPageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-next-page");
                                 if (opcNextPageHeader.isPresent()) {
                                     builder.opcNextPage(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -180,10 +179,9 @@ public class ListTopicsConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcPreviousPageHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-previous-page");
+                                java.util.Optional<java.util.List<String>> opcPreviousPageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-previous-page");
                                 if (opcPreviousPageHeader.isPresent()) {
                                     builder.opcPreviousPage(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -192,10 +190,9 @@ public class ListTopicsConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(

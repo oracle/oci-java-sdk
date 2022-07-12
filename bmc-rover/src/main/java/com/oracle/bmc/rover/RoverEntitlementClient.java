@@ -9,7 +9,6 @@ import com.oracle.bmc.rover.requests.*;
 import com.oracle.bmc.rover.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class RoverEntitlementClient implements RoverEntitlement {
@@ -334,9 +333,9 @@ public class RoverEntitlementClient implements RoverEntitlement {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("RoverEntitlement-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("RoverEntitlement-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class RoverEntitlementClient implements RoverEntitlement {
          * @return the client
          */
         public RoverEntitlementClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class RoverEntitlementClient implements RoverEntitlement {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class RoverEntitlementClient implements RoverEntitlement {
                         "ChangeRoverEntitlementCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/ChangeRoverEntitlementCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeRoverEntitlementCompartmentResponse>
                 transformer =
                         ChangeRoverEntitlementCompartmentConverter.fromResponse(
@@ -533,7 +533,7 @@ public class RoverEntitlementClient implements RoverEntitlement {
                         "CreateRoverEntitlement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/CreateRoverEntitlement");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRoverEntitlementResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRoverEntitlementResponse>
                 transformer =
                         CreateRoverEntitlementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -576,7 +576,7 @@ public class RoverEntitlementClient implements RoverEntitlement {
                         "DeleteRoverEntitlement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/DeleteRoverEntitlement");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRoverEntitlementResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRoverEntitlementResponse>
                 transformer =
                         DeleteRoverEntitlementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -615,7 +615,7 @@ public class RoverEntitlementClient implements RoverEntitlement {
                         "GetRoverEntitlement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/GetRoverEntitlement");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRoverEntitlementResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRoverEntitlementResponse>
                 transformer =
                         GetRoverEntitlementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -653,7 +653,7 @@ public class RoverEntitlementClient implements RoverEntitlement {
                         "ListRoverEntitlements",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/ListRoverEntitlements");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRoverEntitlementsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRoverEntitlementsResponse>
                 transformer =
                         ListRoverEntitlementsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -691,7 +691,7 @@ public class RoverEntitlementClient implements RoverEntitlement {
                         "UpdateRoverEntitlement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/UpdateRoverEntitlement");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRoverEntitlementResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRoverEntitlementResponse>
                 transformer =
                         UpdateRoverEntitlementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

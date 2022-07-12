@@ -46,19 +46,19 @@ public class GovernanceRulePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListEnforcedGovernanceRulesRequest.Builder, ListEnforcedGovernanceRulesRequest,
                 ListEnforcedGovernanceRulesResponse>(
-                new com.google.common.base.Supplier<ListEnforcedGovernanceRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListEnforcedGovernanceRulesRequest.Builder>() {
                     @Override
                     public ListEnforcedGovernanceRulesRequest.Builder get() {
                         return ListEnforcedGovernanceRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEnforcedGovernanceRulesResponse, String>() {
+                new java.util.function.Function<ListEnforcedGovernanceRulesResponse, String>() {
                     @Override
                     public String apply(ListEnforcedGovernanceRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEnforcedGovernanceRulesRequest.Builder>,
                         ListEnforcedGovernanceRulesRequest>() {
@@ -71,12 +71,12 @@ public class GovernanceRulePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListEnforcedGovernanceRulesRequest, ListEnforcedGovernanceRulesResponse>() {
                     @Override
                     public ListEnforcedGovernanceRulesResponse apply(
@@ -102,19 +102,19 @@ public class GovernanceRulePaginators {
                 ListEnforcedGovernanceRulesRequest.Builder, ListEnforcedGovernanceRulesRequest,
                 ListEnforcedGovernanceRulesResponse,
                 com.oracle.bmc.governancerulescontrolplane.model.EnforcedGovernanceRuleSummary>(
-                new com.google.common.base.Supplier<ListEnforcedGovernanceRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListEnforcedGovernanceRulesRequest.Builder>() {
                     @Override
                     public ListEnforcedGovernanceRulesRequest.Builder get() {
                         return ListEnforcedGovernanceRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEnforcedGovernanceRulesResponse, String>() {
+                new java.util.function.Function<ListEnforcedGovernanceRulesResponse, String>() {
                     @Override
                     public String apply(ListEnforcedGovernanceRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEnforcedGovernanceRulesRequest.Builder>,
                         ListEnforcedGovernanceRulesRequest>() {
@@ -127,12 +127,12 @@ public class GovernanceRulePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListEnforcedGovernanceRulesRequest, ListEnforcedGovernanceRulesResponse>() {
                     @Override
                     public ListEnforcedGovernanceRulesResponse apply(
@@ -140,7 +140,7 @@ public class GovernanceRulePaginators {
                         return client.listEnforcedGovernanceRules(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListEnforcedGovernanceRulesResponse,
                         java.util.List<
                                 com.oracle.bmc.governancerulescontrolplane.model
@@ -167,19 +167,19 @@ public class GovernanceRulePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListGovernanceRulesRequest.Builder, ListGovernanceRulesRequest,
                 ListGovernanceRulesResponse>(
-                new com.google.common.base.Supplier<ListGovernanceRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListGovernanceRulesRequest.Builder>() {
                     @Override
                     public ListGovernanceRulesRequest.Builder get() {
                         return ListGovernanceRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListGovernanceRulesResponse, String>() {
+                new java.util.function.Function<ListGovernanceRulesResponse, String>() {
                     @Override
                     public String apply(ListGovernanceRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListGovernanceRulesRequest.Builder>,
                         ListGovernanceRulesRequest>() {
@@ -192,12 +192,12 @@ public class GovernanceRulePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListGovernanceRulesRequest, ListGovernanceRulesResponse>() {
                     @Override
                     public ListGovernanceRulesResponse apply(ListGovernanceRulesRequest request) {
@@ -221,19 +221,19 @@ public class GovernanceRulePaginators {
                 ListGovernanceRulesRequest.Builder, ListGovernanceRulesRequest,
                 ListGovernanceRulesResponse,
                 com.oracle.bmc.governancerulescontrolplane.model.GovernanceRuleSummary>(
-                new com.google.common.base.Supplier<ListGovernanceRulesRequest.Builder>() {
+                new java.util.function.Supplier<ListGovernanceRulesRequest.Builder>() {
                     @Override
                     public ListGovernanceRulesRequest.Builder get() {
                         return ListGovernanceRulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListGovernanceRulesResponse, String>() {
+                new java.util.function.Function<ListGovernanceRulesResponse, String>() {
                     @Override
                     public String apply(ListGovernanceRulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListGovernanceRulesRequest.Builder>,
                         ListGovernanceRulesRequest>() {
@@ -246,19 +246,19 @@ public class GovernanceRulePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListGovernanceRulesRequest, ListGovernanceRulesResponse>() {
                     @Override
                     public ListGovernanceRulesResponse apply(ListGovernanceRulesRequest request) {
                         return client.listGovernanceRules(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListGovernanceRulesResponse,
                         java.util.List<
                                 com.oracle.bmc.governancerulescontrolplane.model
@@ -285,19 +285,19 @@ public class GovernanceRulePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListInclusionCriteriaRequest.Builder, ListInclusionCriteriaRequest,
                 ListInclusionCriteriaResponse>(
-                new com.google.common.base.Supplier<ListInclusionCriteriaRequest.Builder>() {
+                new java.util.function.Supplier<ListInclusionCriteriaRequest.Builder>() {
                     @Override
                     public ListInclusionCriteriaRequest.Builder get() {
                         return ListInclusionCriteriaRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInclusionCriteriaResponse, String>() {
+                new java.util.function.Function<ListInclusionCriteriaResponse, String>() {
                     @Override
                     public String apply(ListInclusionCriteriaResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInclusionCriteriaRequest.Builder>,
                         ListInclusionCriteriaRequest>() {
@@ -310,12 +310,12 @@ public class GovernanceRulePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInclusionCriteriaRequest, ListInclusionCriteriaResponse>() {
                     @Override
                     public ListInclusionCriteriaResponse apply(
@@ -340,19 +340,19 @@ public class GovernanceRulePaginators {
                 ListInclusionCriteriaRequest.Builder, ListInclusionCriteriaRequest,
                 ListInclusionCriteriaResponse,
                 com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterionSummary>(
-                new com.google.common.base.Supplier<ListInclusionCriteriaRequest.Builder>() {
+                new java.util.function.Supplier<ListInclusionCriteriaRequest.Builder>() {
                     @Override
                     public ListInclusionCriteriaRequest.Builder get() {
                         return ListInclusionCriteriaRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInclusionCriteriaResponse, String>() {
+                new java.util.function.Function<ListInclusionCriteriaResponse, String>() {
                     @Override
                     public String apply(ListInclusionCriteriaResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInclusionCriteriaRequest.Builder>,
                         ListInclusionCriteriaRequest>() {
@@ -365,12 +365,12 @@ public class GovernanceRulePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInclusionCriteriaRequest, ListInclusionCriteriaResponse>() {
                     @Override
                     public ListInclusionCriteriaResponse apply(
@@ -378,7 +378,7 @@ public class GovernanceRulePaginators {
                         return client.listInclusionCriteria(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInclusionCriteriaResponse,
                         java.util.List<
                                 com.oracle.bmc.governancerulescontrolplane.model
@@ -405,19 +405,19 @@ public class GovernanceRulePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListTenancyAttachmentsRequest.Builder, ListTenancyAttachmentsRequest,
                 ListTenancyAttachmentsResponse>(
-                new com.google.common.base.Supplier<ListTenancyAttachmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListTenancyAttachmentsRequest.Builder>() {
                     @Override
                     public ListTenancyAttachmentsRequest.Builder get() {
                         return ListTenancyAttachmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTenancyAttachmentsResponse, String>() {
+                new java.util.function.Function<ListTenancyAttachmentsResponse, String>() {
                     @Override
                     public String apply(ListTenancyAttachmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTenancyAttachmentsRequest.Builder>,
                         ListTenancyAttachmentsRequest>() {
@@ -430,12 +430,12 @@ public class GovernanceRulePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTenancyAttachmentsRequest, ListTenancyAttachmentsResponse>() {
                     @Override
                     public ListTenancyAttachmentsResponse apply(
@@ -460,19 +460,19 @@ public class GovernanceRulePaginators {
                 ListTenancyAttachmentsRequest.Builder, ListTenancyAttachmentsRequest,
                 ListTenancyAttachmentsResponse,
                 com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachmentSummary>(
-                new com.google.common.base.Supplier<ListTenancyAttachmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListTenancyAttachmentsRequest.Builder>() {
                     @Override
                     public ListTenancyAttachmentsRequest.Builder get() {
                         return ListTenancyAttachmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListTenancyAttachmentsResponse, String>() {
+                new java.util.function.Function<ListTenancyAttachmentsResponse, String>() {
                     @Override
                     public String apply(ListTenancyAttachmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListTenancyAttachmentsRequest.Builder>,
                         ListTenancyAttachmentsRequest>() {
@@ -485,12 +485,12 @@ public class GovernanceRulePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTenancyAttachmentsRequest, ListTenancyAttachmentsResponse>() {
                     @Override
                     public ListTenancyAttachmentsResponse apply(
@@ -498,7 +498,7 @@ public class GovernanceRulePaginators {
                         return client.listTenancyAttachments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListTenancyAttachmentsResponse,
                         java.util.List<
                                 com.oracle.bmc.governancerulescontrolplane.model

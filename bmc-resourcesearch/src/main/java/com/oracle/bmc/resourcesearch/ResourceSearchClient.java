@@ -9,7 +9,6 @@ import com.oracle.bmc.resourcesearch.requests.*;
 import com.oracle.bmc.resourcesearch.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public class ResourceSearchClient implements ResourceSearch {
@@ -331,7 +330,7 @@ public class ResourceSearchClient implements ResourceSearch {
          * @return the client
          */
         public ResourceSearchClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class ResourceSearchClient implements ResourceSearch {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -412,7 +412,7 @@ public class ResourceSearchClient implements ResourceSearch {
                         "GetResourceType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/GetResourceType");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetResourceTypeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetResourceTypeResponse>
                 transformer =
                         GetResourceTypeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -449,7 +449,7 @@ public class ResourceSearchClient implements ResourceSearch {
                         "ListResourceTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/ListResourceTypes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListResourceTypesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListResourceTypesResponse>
                 transformer =
                         ListResourceTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -486,7 +486,7 @@ public class ResourceSearchClient implements ResourceSearch {
                         "SearchResources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceSummary/SearchResources");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SearchResourcesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SearchResourcesResponse>
                 transformer =
                         SearchResourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

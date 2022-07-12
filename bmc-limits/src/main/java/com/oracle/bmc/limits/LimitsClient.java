@@ -9,7 +9,6 @@ import com.oracle.bmc.limits.requests.*;
 import com.oracle.bmc.limits.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 public class LimitsClient implements Limits {
@@ -331,7 +330,7 @@ public class LimitsClient implements Limits {
          * @return the client
          */
         public LimitsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class LimitsClient implements Limits {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -413,7 +413,7 @@ public class LimitsClient implements Limits {
                         "GetResourceAvailability",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/ResourceAvailability/GetResourceAvailability");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetResourceAvailabilityResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetResourceAvailabilityResponse>
                 transformer =
                         GetResourceAvailabilityConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -450,7 +450,7 @@ public class LimitsClient implements Limits {
                         "ListLimitDefinitions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/LimitDefinitionSummary/ListLimitDefinitions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLimitDefinitionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLimitDefinitionsResponse>
                 transformer =
                         ListLimitDefinitionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -487,7 +487,7 @@ public class LimitsClient implements Limits {
                         "ListLimitValues",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/LimitValueSummary/ListLimitValues");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLimitValuesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLimitValuesResponse>
                 transformer =
                         ListLimitValuesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -524,9 +524,8 @@ public class LimitsClient implements Limits {
                         "ListServices",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/limits/20181025/ServiceSummary/ListServices");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListServicesResponse>
-                transformer =
-                        ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListServicesResponse> transformer =
+                ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -6,7 +6,7 @@ package com.oracle.bmc.http.signing.internal;
 
 import javax.annotation.Nonnull;
 
-import com.google.common.base.Optional;
+import java.util.Optional;
 
 /**
  * Interface for anything that can get supply a Key of type T given a keyId

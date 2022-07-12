@@ -7,7 +7,6 @@ package com.oracle.bmc.keymanagement;
 import com.oracle.bmc.keymanagement.internal.http.*;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for KmsVault service. <br/>
@@ -319,7 +318,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
          * @return the client
          */
         public KmsVaultAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -400,7 +400,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "BackupVault", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, BackupVaultResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, BackupVaultResponse>
                 transformer =
                         BackupVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<BackupVaultRequest, BackupVaultResponse>
@@ -448,8 +448,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "CancelVaultDeletion", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CancelVaultDeletionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelVaultDeletionResponse>
                 transformer =
                         CancelVaultDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -494,8 +493,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "ChangeVaultCompartment", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeVaultCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeVaultCompartmentResponse>
                 transformer =
                         ChangeVaultCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -544,7 +542,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "CreateVault", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVaultResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateVaultResponse>
                 transformer =
                         CreateVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateVaultRequest, CreateVaultResponse>
@@ -592,7 +590,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "CreateVaultReplica", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVaultReplicaResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateVaultReplicaResponse>
                 transformer =
                         CreateVaultReplicaConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -641,7 +639,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "DeleteVaultReplica", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVaultReplicaResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteVaultReplicaResponse>
                 transformer =
                         DeleteVaultReplicaConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -687,8 +685,8 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "GetVault", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetVaultResponse>
-                transformer = GetVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetVaultResponse> transformer =
+                GetVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetVaultRequest, GetVaultResponse> handlerToUse =
                 handler;
 
@@ -726,7 +724,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "GetVaultUsage", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetVaultUsageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetVaultUsageResponse>
                 transformer =
                         GetVaultUsageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetVaultUsageRequest, GetVaultUsageResponse>
@@ -769,7 +767,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "ListVaultReplicas", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListVaultReplicasResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListVaultReplicasResponse>
                 transformer =
                         ListVaultReplicasConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -810,7 +808,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "ListVaults", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListVaultsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListVaultsResponse>
                 transformer =
                         ListVaultsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListVaultsRequest, ListVaultsResponse> handlerToUse =
@@ -860,8 +858,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "RestoreVaultFromFile", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RestoreVaultFromFileResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RestoreVaultFromFileResponse>
                 transformer =
                         RestoreVaultFromFileConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -921,7 +918,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                         "RestoreVaultFromObjectStore",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RestoreVaultFromObjectStoreResponse>
                 transformer =
                         RestoreVaultFromObjectStoreConverter.fromResponse(
@@ -973,8 +970,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "ScheduleVaultDeletion", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ScheduleVaultDeletionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ScheduleVaultDeletionResponse>
                 transformer =
                         ScheduleVaultDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1022,7 +1018,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "KmsVault", "UpdateVault", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVaultResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateVaultResponse>
                 transformer =
                         UpdateVaultConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateVaultRequest, UpdateVaultResponse>

@@ -4,8 +4,6 @@
  */
 package com.oracle.bmc.auth;
 
-import com.google.common.base.Preconditions;
-import com.google.common.base.Supplier;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
 import com.oracle.bmc.Realm;
@@ -13,14 +11,15 @@ import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.internal.ConfigFileDelegationTokenUtils;
 import com.oracle.bmc.auth.internal.DelegationTokenConfigurator;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.auth.internal.ConfigFileDelegationTokenUtils;
 import com.oracle.bmc.util.internal.StringUtils;
+import com.oracle.bmc.util.internal.Validate;
 import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 /**
  * Implementation of {@link AuthenticationDetailsProvider} that uses a standard
@@ -187,19 +186,19 @@ public class ConfigFileAuthenticationDetailsProvider
 
         private ConfigFileSimpleAuthenticationDetailsProvider(ConfigFile configFile) {
             String fingerprint =
-                    Preconditions.checkNotNull(
+                    Validate.notNull(
                             configFile.get("fingerprint"),
                             "Missing fingerprint in config." + CONFIG_FILE_DEBUG_INFORMATION_LOG);
             String tenantId =
-                    Preconditions.checkNotNull(
+                    Validate.notNull(
                             configFile.get("tenancy"),
                             "Missing tenancy in config." + CONFIG_FILE_DEBUG_INFORMATION_LOG);
             String userId =
-                    Preconditions.checkNotNull(
+                    Validate.notNull(
                             configFile.get("user"),
                             "Missing user in config." + CONFIG_FILE_DEBUG_INFORMATION_LOG);
             String pemFilePath =
-                    Preconditions.checkNotNull(
+                    Validate.notNull(
                             configFile.get("key_file"),
                             "Missing key_file in config." + CONFIG_FILE_DEBUG_INFORMATION_LOG);
             // pass phrase is optional

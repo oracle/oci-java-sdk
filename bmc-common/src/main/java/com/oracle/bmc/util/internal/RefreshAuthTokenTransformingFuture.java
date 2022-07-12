@@ -4,16 +4,18 @@
  */
 package com.oracle.bmc.util.internal;
 
-import com.google.common.base.Function;
-import com.google.common.base.Supplier;
-import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
-import com.oracle.bmc.model.BmcException;
-import javax.annotation.Nonnull;
-import org.slf4j.Logger;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+
+import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
+import com.oracle.bmc.model.BmcException;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+import javax.annotation.Nonnull;
+import org.slf4j.Logger;
 
 /**
  * Future that both delegates to another one and provides the ability to transform

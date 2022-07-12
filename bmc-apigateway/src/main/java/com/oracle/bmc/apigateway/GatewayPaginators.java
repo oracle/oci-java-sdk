@@ -44,19 +44,19 @@ public class GatewayPaginators {
             final ListGatewaysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListGatewaysRequest.Builder, ListGatewaysRequest, ListGatewaysResponse>(
-                new com.google.common.base.Supplier<ListGatewaysRequest.Builder>() {
+                new java.util.function.Supplier<ListGatewaysRequest.Builder>() {
                     @Override
                     public ListGatewaysRequest.Builder get() {
                         return ListGatewaysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListGatewaysResponse, String>() {
+                new java.util.function.Function<ListGatewaysResponse, String>() {
                     @Override
                     public String apply(ListGatewaysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListGatewaysRequest.Builder>,
                         ListGatewaysRequest>() {
@@ -69,12 +69,12 @@ public class GatewayPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListGatewaysRequest, ListGatewaysResponse>() {
+                new java.util.function.Function<ListGatewaysRequest, ListGatewaysResponse>() {
                     @Override
                     public ListGatewaysResponse apply(ListGatewaysRequest request) {
                         return client.listGateways(request);
@@ -96,19 +96,19 @@ public class GatewayPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListGatewaysRequest.Builder, ListGatewaysRequest, ListGatewaysResponse,
                 com.oracle.bmc.apigateway.model.GatewaySummary>(
-                new com.google.common.base.Supplier<ListGatewaysRequest.Builder>() {
+                new java.util.function.Supplier<ListGatewaysRequest.Builder>() {
                     @Override
                     public ListGatewaysRequest.Builder get() {
                         return ListGatewaysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListGatewaysResponse, String>() {
+                new java.util.function.Function<ListGatewaysResponse, String>() {
                     @Override
                     public String apply(ListGatewaysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListGatewaysRequest.Builder>,
                         ListGatewaysRequest>() {
@@ -121,18 +121,18 @@ public class GatewayPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListGatewaysRequest, ListGatewaysResponse>() {
+                new java.util.function.Function<ListGatewaysRequest, ListGatewaysResponse>() {
                     @Override
                     public ListGatewaysResponse apply(ListGatewaysRequest request) {
                         return client.listGateways(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListGatewaysResponse,
                         java.util.List<com.oracle.bmc.apigateway.model.GatewaySummary>>() {
                     @Override

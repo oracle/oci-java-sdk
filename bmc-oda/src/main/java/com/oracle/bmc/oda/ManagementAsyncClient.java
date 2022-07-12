@@ -7,7 +7,6 @@ package com.oracle.bmc.oda;
 import com.oracle.bmc.oda.internal.http.*;
 import com.oracle.bmc.oda.requests.*;
 import com.oracle.bmc.oda.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Management service. <br/>
@@ -320,7 +319,7 @@ public class ManagementAsyncClient implements ManagementAsync {
          * @return the client
          */
         public ManagementAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class ManagementAsyncClient implements ManagementAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -408,7 +408,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "ConfigureDigitalAssistantParameters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/ConfigureDigitalAssistantParameters");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ConfigureDigitalAssistantParametersResponse>
                 transformer =
                         ConfigureDigitalAssistantParametersConverter.fromResponse(
@@ -467,7 +467,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "CreateAuthenticationProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/CreateAuthenticationProvider");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateAuthenticationProviderResponse>
                 transformer =
                         CreateAuthenticationProviderConverter.fromResponse(
@@ -521,7 +521,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "CreateChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/CreateChannel");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateChannelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateChannelResponse>
                 transformer =
                         CreateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateChannelRequest, CreateChannelResponse>
@@ -572,8 +572,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "CreateDigitalAssistant",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/CreateDigitalAssistant");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateDigitalAssistantResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDigitalAssistantResponse>
                 transformer =
                         CreateDigitalAssistantConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -625,7 +624,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "CreateSkill",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/CreateSkill");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSkillResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSkillResponse>
                 transformer =
                         CreateSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateSkillRequest, CreateSkillResponse>
@@ -676,8 +675,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "CreateSkillParameter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/CreateSkillParameter");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateSkillParameterResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSkillParameterResponse>
                 transformer =
                         CreateSkillParameterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -730,7 +728,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "CreateTranslator",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/CreateTranslator");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTranslatorResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTranslatorResponse>
                 transformer =
                         CreateTranslatorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -783,7 +781,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "DeleteAuthenticationProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/DeleteAuthenticationProvider");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteAuthenticationProviderResponse>
                 transformer =
                         DeleteAuthenticationProviderConverter.fromResponse(
@@ -831,7 +829,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "DeleteChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/DeleteChannel");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteChannelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteChannelResponse>
                 transformer =
                         DeleteChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteChannelRequest, DeleteChannelResponse>
@@ -876,8 +874,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "DeleteDigitalAssistant",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/DeleteDigitalAssistant");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteDigitalAssistantResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDigitalAssistantResponse>
                 transformer =
                         DeleteDigitalAssistantConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -923,7 +920,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "DeleteSkill",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/DeleteSkill");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSkillResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSkillResponse>
                 transformer =
                         DeleteSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteSkillRequest, DeleteSkillResponse>
@@ -968,8 +965,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "DeleteSkillParameter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/DeleteSkillParameter");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteSkillParameterResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSkillParameterResponse>
                 transformer =
                         DeleteSkillParameterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1016,7 +1012,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "DeleteTranslator",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/DeleteTranslator");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTranslatorResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTranslatorResponse>
                 transformer =
                         DeleteTranslatorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1062,8 +1058,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "ExportDigitalAssistant",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/ExportDigitalAssistant");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ExportDigitalAssistantResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ExportDigitalAssistantResponse>
                 transformer =
                         ExportDigitalAssistantConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1114,7 +1109,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "ExportSkill",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/ExportSkill");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ExportSkillResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ExportSkillResponse>
                 transformer =
                         ExportSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ExportSkillRequest, ExportSkillResponse>
@@ -1164,7 +1159,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "GetAuthenticationProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/GetAuthenticationProvider");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetAuthenticationProviderResponse>
                 transformer =
                         GetAuthenticationProviderConverter.fromResponse(
@@ -1211,7 +1206,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "GetChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/GetChannel");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetChannelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetChannelResponse>
                 transformer =
                         GetChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetChannelRequest, GetChannelResponse> handlerToUse =
@@ -1256,8 +1251,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "GetDigitalAssistant",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/GetDigitalAssistant");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDigitalAssistantResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDigitalAssistantResponse>
                 transformer =
                         GetDigitalAssistantConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1306,7 +1300,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "GetDigitalAssistantParameter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/GetDigitalAssistantParameter");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDigitalAssistantParameterResponse>
                 transformer =
                         GetDigitalAssistantParameterConverter.fromResponse(
@@ -1353,8 +1347,8 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "GetSkill",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/GetSkill");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSkillResponse>
-                transformer = GetSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSkillResponse> transformer =
+                GetSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSkillRequest, GetSkillResponse> handlerToUse =
                 handler;
 
@@ -1396,7 +1390,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "GetSkillParameter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/GetSkillParameter");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSkillParameterResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSkillParameterResponse>
                 transformer =
                         GetSkillParameterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1441,7 +1435,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "GetTranslator",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/GetTranslator");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTranslatorResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTranslatorResponse>
                 transformer =
                         GetTranslatorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTranslatorRequest, GetTranslatorResponse>
@@ -1485,7 +1479,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "ImportBot",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Bot/ImportBot");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportBotResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ImportBotResponse>
                 transformer =
                         ImportBotConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ImportBotRequest, ImportBotResponse> handlerToUse =
@@ -1536,7 +1530,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "ListAuthenticationProviders",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/ListAuthenticationProviders");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAuthenticationProvidersResponse>
                 transformer =
                         ListAuthenticationProvidersConverter.fromResponse(
@@ -1584,7 +1578,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "ListChannels",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/ListChannels");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListChannelsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListChannelsResponse>
                 transformer =
                         ListChannelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListChannelsRequest, ListChannelsResponse>
@@ -1631,7 +1625,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "ListDigitalAssistantParameters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/ListDigitalAssistantParameters");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDigitalAssistantParametersResponse>
                 transformer =
                         ListDigitalAssistantParametersConverter.fromResponse(
@@ -1681,8 +1675,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "ListDigitalAssistants",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/ListDigitalAssistants");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDigitalAssistantsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDigitalAssistantsResponse>
                 transformer =
                         ListDigitalAssistantsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1729,8 +1722,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "ListSkillParameters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/ListSkillParameters");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSkillParametersResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSkillParametersResponse>
                 transformer =
                         ListSkillParametersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1775,7 +1767,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "ListSkills",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/ListSkills");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSkillsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSkillsResponse>
                 transformer =
                         ListSkillsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSkillsRequest, ListSkillsResponse> handlerToUse =
@@ -1820,7 +1812,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "ListTranslators",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/ListTranslators");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTranslatorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTranslatorsResponse>
                 transformer =
                         ListTranslatorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1866,7 +1858,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "PublishDigitalAssistant",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/PublishDigitalAssistant");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, PublishDigitalAssistantResponse>
                 transformer =
                         PublishDigitalAssistantConverter.fromResponse(
@@ -1913,7 +1905,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "PublishSkill",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/PublishSkill");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PublishSkillResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, PublishSkillResponse>
                 transformer =
                         PublishSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<PublishSkillRequest, PublishSkillResponse>
@@ -1959,7 +1951,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "RotateChannelKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/RotateChannelKeys");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RotateChannelKeysResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RotateChannelKeysResponse>
                 transformer =
                         RotateChannelKeysConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2005,7 +1997,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "StartChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/StartChannel");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StartChannelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, StartChannelResponse>
                 transformer =
                         StartChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<StartChannelRequest, StartChannelResponse>
@@ -2050,7 +2042,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "StopChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/StopChannel");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StopChannelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, StopChannelResponse>
                 transformer =
                         StopChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<StopChannelRequest, StopChannelResponse>
@@ -2097,7 +2089,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "UpdateAuthenticationProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/AuthenticationProvider/UpdateAuthenticationProvider");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateAuthenticationProviderResponse>
                 transformer =
                         UpdateAuthenticationProviderConverter.fromResponse(
@@ -2150,7 +2142,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "UpdateChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Channel/UpdateChannel");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateChannelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateChannelResponse>
                 transformer =
                         UpdateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateChannelRequest, UpdateChannelResponse>
@@ -2200,8 +2192,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "UpdateDigitalAssistant",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistant/UpdateDigitalAssistant");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateDigitalAssistantResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDigitalAssistantResponse>
                 transformer =
                         UpdateDigitalAssistantConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2255,7 +2246,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "UpdateDigitalAssistantParameter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/DigitalAssistantParameter/UpdateDigitalAssistantParameter");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDigitalAssistantParameterResponse>
                 transformer =
                         UpdateDigitalAssistantParameterConverter.fromResponse(
@@ -2310,7 +2301,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "UpdateSkill",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/UpdateSkill");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSkillResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSkillResponse>
                 transformer =
                         UpdateSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateSkillRequest, UpdateSkillResponse>
@@ -2360,8 +2351,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "UpdateSkillParameter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/SkillParameter/UpdateSkillParameter");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateSkillParameterResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSkillParameterResponse>
                 transformer =
                         UpdateSkillParameterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2413,7 +2403,7 @@ public class ManagementAsyncClient implements ManagementAsync {
                         "UpdateTranslator",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Translator/UpdateTranslator");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTranslatorResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTranslatorResponse>
                 transformer =
                         UpdateTranslatorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

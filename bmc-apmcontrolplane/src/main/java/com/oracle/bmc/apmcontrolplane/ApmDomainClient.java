@@ -9,7 +9,6 @@ import com.oracle.bmc.apmcontrolplane.requests.*;
 import com.oracle.bmc.apmcontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ApmDomainClient implements ApmDomain {
@@ -334,9 +333,9 @@ public class ApmDomainClient implements ApmDomain {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("ApmDomain-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("ApmDomain-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class ApmDomainClient implements ApmDomain {
          * @return the client
          */
         public ApmDomainClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class ApmDomainClient implements ApmDomain {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,8 +488,7 @@ public class ApmDomainClient implements ApmDomain {
                         "ChangeApmDomainCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/ChangeApmDomainCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeApmDomainCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeApmDomainCompartmentResponse>
                 transformer =
                         ChangeApmDomainCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -532,7 +531,7 @@ public class ApmDomainClient implements ApmDomain {
                         "CreateApmDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/CreateApmDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateApmDomainResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateApmDomainResponse>
                 transformer =
                         CreateApmDomainConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -573,7 +572,7 @@ public class ApmDomainClient implements ApmDomain {
                         "DeleteApmDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/DeleteApmDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApmDomainResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteApmDomainResponse>
                 transformer =
                         DeleteApmDomainConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -611,7 +610,7 @@ public class ApmDomainClient implements ApmDomain {
                         "GenerateDataKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/DataKey/GenerateDataKeys");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GenerateDataKeysResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GenerateDataKeysResponse>
                 transformer =
                         GenerateDataKeysConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -652,9 +651,8 @@ public class ApmDomainClient implements ApmDomain {
                         "GetApmDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/GetApmDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetApmDomainResponse>
-                transformer =
-                        GetApmDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetApmDomainResponse> transformer =
+                GetApmDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -688,9 +686,8 @@ public class ApmDomainClient implements ApmDomain {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -725,8 +722,7 @@ public class ApmDomainClient implements ApmDomain {
                         "ListApmDomainWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequest/ListApmDomainWorkRequests");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListApmDomainWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListApmDomainWorkRequestsResponse>
                 transformer =
                         ListApmDomainWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -763,9 +759,8 @@ public class ApmDomainClient implements ApmDomain {
                         "ListApmDomains",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomainSummary/ListApmDomains");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListApmDomainsResponse>
-                transformer =
-                        ListApmDomainsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListApmDomainsResponse> transformer =
+                ListApmDomainsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -799,9 +794,8 @@ public class ApmDomainClient implements ApmDomain {
                         "ListDataKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/DataKeySummary/ListDataKeys");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDataKeysResponse>
-                transformer =
-                        ListDataKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListDataKeysResponse> transformer =
+                ListDataKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -836,7 +830,7 @@ public class ApmDomainClient implements ApmDomain {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -873,7 +867,7 @@ public class ApmDomainClient implements ApmDomain {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -910,7 +904,7 @@ public class ApmDomainClient implements ApmDomain {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -947,9 +941,8 @@ public class ApmDomainClient implements ApmDomain {
                         "RemoveDataKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/DataKey/RemoveDataKeys");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveDataKeysResponse>
-                transformer =
-                        RemoveDataKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveDataKeysResponse> transformer =
+                RemoveDataKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -987,7 +980,7 @@ public class ApmDomainClient implements ApmDomain {
                         "UpdateApmDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/UpdateApmDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApmDomainResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateApmDomainResponse>
                 transformer =
                         UpdateApmDomainConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

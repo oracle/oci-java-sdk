@@ -2,7 +2,6 @@
  * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
 import com.oracle.bmc.Region;
@@ -29,6 +28,8 @@ import com.oracle.bmc.monitoring.responses.ListAlarmsStatusResponse;
 import com.oracle.bmc.monitoring.responses.RemoveAlarmSuppressionResponse;
 import com.oracle.bmc.monitoring.responses.UpdateAlarmResponse;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -116,7 +117,9 @@ public class MonitoringAlarmExample {
                                                     .pendingDuration(PENDING_DURATION)
                                                     .severity(ALERT_SEVERITY)
                                                     .body(BODY)
-                                                    .destinations(ImmutableList.of(destination))
+                                                    .destinations(
+                                                            Collections.unmodifiableList(
+                                                                    Arrays.asList(destination)))
                                                     .repeatNotificationDuration(REPEAT_DURATION)
                                                     .isEnabled(true)
                                                     .build())

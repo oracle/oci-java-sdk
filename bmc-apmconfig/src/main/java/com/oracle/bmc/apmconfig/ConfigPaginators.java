@@ -44,19 +44,19 @@ public class ConfigPaginators {
             final ListConfigsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListConfigsRequest.Builder, ListConfigsRequest, ListConfigsResponse>(
-                new com.google.common.base.Supplier<ListConfigsRequest.Builder>() {
+                new java.util.function.Supplier<ListConfigsRequest.Builder>() {
                     @Override
                     public ListConfigsRequest.Builder get() {
                         return ListConfigsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListConfigsResponse, String>() {
+                new java.util.function.Function<ListConfigsResponse, String>() {
                     @Override
                     public String apply(ListConfigsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListConfigsRequest.Builder>,
                         ListConfigsRequest>() {
@@ -69,12 +69,12 @@ public class ConfigPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListConfigsRequest, ListConfigsResponse>() {
+                new java.util.function.Function<ListConfigsRequest, ListConfigsResponse>() {
                     @Override
                     public ListConfigsResponse apply(ListConfigsRequest request) {
                         return client.listConfigs(request);
@@ -96,19 +96,19 @@ public class ConfigPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListConfigsRequest.Builder, ListConfigsRequest, ListConfigsResponse,
                 com.oracle.bmc.apmconfig.model.ConfigSummary>(
-                new com.google.common.base.Supplier<ListConfigsRequest.Builder>() {
+                new java.util.function.Supplier<ListConfigsRequest.Builder>() {
                     @Override
                     public ListConfigsRequest.Builder get() {
                         return ListConfigsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListConfigsResponse, String>() {
+                new java.util.function.Function<ListConfigsResponse, String>() {
                     @Override
                     public String apply(ListConfigsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListConfigsRequest.Builder>,
                         ListConfigsRequest>() {
@@ -121,18 +121,18 @@ public class ConfigPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListConfigsRequest, ListConfigsResponse>() {
+                new java.util.function.Function<ListConfigsRequest, ListConfigsResponse>() {
                     @Override
                     public ListConfigsResponse apply(ListConfigsRequest request) {
                         return client.listConfigs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListConfigsResponse,
                         java.util.List<com.oracle.bmc.apmconfig.model.ConfigSummary>>() {
                     @Override

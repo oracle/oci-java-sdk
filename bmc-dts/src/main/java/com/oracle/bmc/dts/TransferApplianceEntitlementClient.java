@@ -9,7 +9,6 @@ import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 public class TransferApplianceEntitlementClient implements TransferApplianceEntitlement {
@@ -333,9 +332,9 @@ public class TransferApplianceEntitlementClient implements TransferApplianceEnti
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("TransferApplianceEntitlement-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("TransferApplianceEntitlement-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -402,7 +401,7 @@ public class TransferApplianceEntitlementClient implements TransferApplianceEnti
          * @return the client
          */
         public TransferApplianceEntitlementClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -439,7 +438,8 @@ public class TransferApplianceEntitlementClient implements TransferApplianceEnti
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -486,7 +486,7 @@ public class TransferApplianceEntitlementClient implements TransferApplianceEnti
                         "CreateTransferApplianceEntitlement",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateTransferApplianceEntitlementResponse>
                 transformer =
                         CreateTransferApplianceEntitlementConverter.fromResponse(
@@ -531,7 +531,7 @@ public class TransferApplianceEntitlementClient implements TransferApplianceEnti
                         "GetTransferApplianceEntitlement",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetTransferApplianceEntitlementResponse>
                 transformer =
                         GetTransferApplianceEntitlementConverter.fromResponse(
@@ -570,7 +570,7 @@ public class TransferApplianceEntitlementClient implements TransferApplianceEnti
                         "ListTransferApplianceEntitlement",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListTransferApplianceEntitlementResponse>
                 transformer =
                         ListTransferApplianceEntitlementConverter.fromResponse(

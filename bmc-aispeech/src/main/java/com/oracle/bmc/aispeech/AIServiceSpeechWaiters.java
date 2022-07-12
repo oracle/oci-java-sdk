@@ -6,7 +6,6 @@ package com.oracle.bmc.aispeech;
 
 import com.oracle.bmc.aispeech.requests.*;
 import com.oracle.bmc.aispeech.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -108,8 +107,8 @@ public class AIServiceSpeechWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetTranscriptionJobRequest, GetTranscriptionJobResponse>() {
                             @Override
                             public GetTranscriptionJobResponse apply(
@@ -117,9 +116,9 @@ public class AIServiceSpeechWaiters {
                                 return client.getTranscriptionJob(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTranscriptionJobResponse>() {
+                        new java.util.function.Predicate<GetTranscriptionJobResponse>() {
                             @Override
-                            public boolean apply(GetTranscriptionJobResponse response) {
+                            public boolean test(GetTranscriptionJobResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTranscriptionJob().getLifecycleState());
                             }
@@ -213,8 +212,8 @@ public class AIServiceSpeechWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetTranscriptionTaskRequest, GetTranscriptionTaskResponse>() {
                             @Override
                             public GetTranscriptionTaskResponse apply(
@@ -222,9 +221,9 @@ public class AIServiceSpeechWaiters {
                                 return client.getTranscriptionTask(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTranscriptionTaskResponse>() {
+                        new java.util.function.Predicate<GetTranscriptionTaskResponse>() {
                             @Override
-                            public boolean apply(GetTranscriptionTaskResponse response) {
+                            public boolean test(GetTranscriptionTaskResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTranscriptionTask().getLifecycleState());
                             }

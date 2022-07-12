@@ -7,7 +7,6 @@ package com.oracle.bmc.bds;
 import com.oracle.bmc.bds.internal.http.*;
 import com.oracle.bmc.bds.requests.*;
 import com.oracle.bmc.bds.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Bds service. <br/>
@@ -320,7 +319,7 @@ public class BdsAsyncClient implements BdsAsync {
          * @return the client
          */
         public BdsAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class BdsAsyncClient implements BdsAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -407,7 +407,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "ActivateBdsMetastoreConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/ActivateBdsMetastoreConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ActivateBdsMetastoreConfigurationResponse>
                 transformer =
                         ActivateBdsMetastoreConfigurationConverter.fromResponse(
@@ -466,7 +466,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "AddAutoScalingConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddAutoScalingConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, AddAutoScalingConfigurationResponse>
                 transformer =
                         AddAutoScalingConfigurationConverter.fromResponse(
@@ -521,7 +521,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "AddBlockStorage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddBlockStorage");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AddBlockStorageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AddBlockStorageResponse>
                 transformer =
                         AddBlockStorageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -572,7 +572,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "AddCloudSql",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddCloudSql");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AddCloudSqlResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AddCloudSqlResponse>
                 transformer =
                         AddCloudSqlConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AddCloudSqlRequest, AddCloudSqlResponse>
@@ -623,7 +623,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "AddWorkerNodes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddWorkerNodes");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AddWorkerNodesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AddWorkerNodesResponse>
                 transformer =
                         AddWorkerNodesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AddWorkerNodesRequest, AddWorkerNodesResponse>
@@ -676,7 +676,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "ChangeBdsInstanceCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ChangeBdsInstanceCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeBdsInstanceCompartmentResponse>
                 transformer =
                         ChangeBdsInstanceCompartmentConverter.fromResponse(
@@ -730,7 +730,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "ChangeShape",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ChangeShape");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ChangeShapeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeShapeResponse>
                 transformer =
                         ChangeShapeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ChangeShapeRequest, ChangeShapeResponse>
@@ -781,7 +781,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "CreateBdsApiKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/CreateBdsApiKey");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBdsApiKeyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateBdsApiKeyResponse>
                 transformer =
                         CreateBdsApiKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -833,7 +833,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "CreateBdsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateBdsInstance");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBdsInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateBdsInstanceResponse>
                 transformer =
                         CreateBdsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -887,7 +887,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "CreateBdsMetastoreConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/CreateBdsMetastoreConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateBdsMetastoreConfigurationResponse>
                 transformer =
                         CreateBdsMetastoreConfigurationConverter.fromResponse(
@@ -943,7 +943,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "DeleteBdsApiKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/DeleteBdsApiKey");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBdsApiKeyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteBdsApiKeyResponse>
                 transformer =
                         DeleteBdsApiKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -989,7 +989,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "DeleteBdsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/DeleteBdsInstance");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBdsInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteBdsInstanceResponse>
                 transformer =
                         DeleteBdsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1037,7 +1037,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "DeleteBdsMetastoreConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/DeleteBdsMetastoreConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteBdsMetastoreConfigurationResponse>
                 transformer =
                         DeleteBdsMetastoreConfigurationConverter.fromResponse(
@@ -1090,7 +1090,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "GetAutoScalingConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetAutoScalingConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetAutoScalingConfigurationResponse>
                 transformer =
                         GetAutoScalingConfigurationConverter.fromResponse(
@@ -1138,7 +1138,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "GetBdsApiKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/GetBdsApiKey");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetBdsApiKeyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetBdsApiKeyResponse>
                 transformer =
                         GetBdsApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetBdsApiKeyRequest, GetBdsApiKeyResponse>
@@ -1183,7 +1183,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "GetBdsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetBdsInstance");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetBdsInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetBdsInstanceResponse>
                 transformer =
                         GetBdsInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetBdsInstanceRequest, GetBdsInstanceResponse>
@@ -1230,7 +1230,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "GetBdsMetastoreConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/GetBdsMetastoreConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetBdsMetastoreConfigurationResponse>
                 transformer =
                         GetBdsMetastoreConfigurationConverter.fromResponse(
@@ -1279,7 +1279,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -1324,7 +1324,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "InstallPatch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/InstallPatch");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, InstallPatchResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, InstallPatchResponse>
                 transformer =
                         InstallPatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<InstallPatchRequest, InstallPatchResponse>
@@ -1376,7 +1376,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "ListAutoScalingConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListAutoScalingConfigurations");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAutoScalingConfigurationsResponse>
                 transformer =
                         ListAutoScalingConfigurationsConverter.fromResponse(
@@ -1425,7 +1425,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "ListBdsApiKeys",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/ListBdsApiKeys");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListBdsApiKeysResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListBdsApiKeysResponse>
                 transformer =
                         ListBdsApiKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListBdsApiKeysRequest, ListBdsApiKeysResponse>
@@ -1470,7 +1470,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "ListBdsInstances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstanceSummary/ListBdsInstances");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListBdsInstancesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListBdsInstancesResponse>
                 transformer =
                         ListBdsInstancesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1518,7 +1518,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "ListBdsMetastoreConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/ListBdsMetastoreConfigurations");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListBdsMetastoreConfigurationsResponse>
                 transformer =
                         ListBdsMetastoreConfigurationsConverter.fromResponse(
@@ -1568,7 +1568,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "ListPatchHistories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListPatchHistories");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPatchHistoriesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPatchHistoriesResponse>
                 transformer =
                         ListPatchHistoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1613,7 +1613,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "ListPatches",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListPatches");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPatchesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPatchesResponse>
                 transformer =
                         ListPatchesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse>
@@ -1658,8 +1658,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1706,8 +1705,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequestLogEntry/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1754,7 +1752,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequest/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1803,7 +1801,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "RemoveAutoScalingConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveAutoScalingConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveAutoScalingConfigurationResponse>
                 transformer =
                         RemoveAutoScalingConfigurationConverter.fromResponse(
@@ -1859,7 +1857,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "RemoveCloudSql",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveCloudSql");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveCloudSqlResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveCloudSqlResponse>
                 transformer =
                         RemoveCloudSqlConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RemoveCloudSqlRequest, RemoveCloudSqlResponse>
@@ -1907,7 +1905,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "RemoveNode",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveNode");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveNodeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveNodeResponse>
                 transformer =
                         RemoveNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RemoveNodeRequest, RemoveNodeResponse> handlerToUse =
@@ -1957,7 +1955,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "RestartNode",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RestartNode");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RestartNodeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RestartNodeResponse>
                 transformer =
                         RestartNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<RestartNodeRequest, RestartNodeResponse>
@@ -2009,7 +2007,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "TestBdsMetastoreConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/TestBdsMetastoreConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, TestBdsMetastoreConfigurationResponse>
                 transformer =
                         TestBdsMetastoreConfigurationConverter.fromResponse(
@@ -2065,7 +2063,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "TestBdsObjectStorageConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/TestBdsObjectStorageConnection");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, TestBdsObjectStorageConnectionResponse>
                 transformer =
                         TestBdsObjectStorageConnectionConverter.fromResponse(
@@ -2123,7 +2121,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "UpdateAutoScalingConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateAutoScalingConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateAutoScalingConfigurationResponse>
                 transformer =
                         UpdateAutoScalingConfigurationConverter.fromResponse(
@@ -2178,7 +2176,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "UpdateBdsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateBdsInstance");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBdsInstanceResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateBdsInstanceResponse>
                 transformer =
                         UpdateBdsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2231,7 +2229,7 @@ public class BdsAsyncClient implements BdsAsync {
                         "UpdateBdsMetastoreConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/UpdateBdsMetastoreConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateBdsMetastoreConfigurationResponse>
                 transformer =
                         UpdateBdsMetastoreConfigurationConverter.fromResponse(

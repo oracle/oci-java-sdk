@@ -128,4 +128,38 @@ public class StreamUtilsTest {
                 StreamUtils.toByteArray(
                         new ByteArrayInputStream(value.getBytes(Charset.defaultCharset()))));
     }
+
+    @Test
+    public void testSkipBytesInStream() throws IOException {
+        String value = "1234567890";
+        ByteArrayInputStream is =
+                new ByteArrayInputStream(value.getBytes(Charset.defaultCharset()));
+        StreamUtils.skipBytesInStream(is, 4);
+        int r = is.read();
+        assertEquals('5', (char) r);
+
+        StreamUtils.skipBytesInStream(is, 0);
+        r = is.read();
+        assertEquals('6', (char) r);
+    }
+
+    @Test
+    public void testLimitRemainingStreamLength() throws IOException {
+        String value = "1234567890";
+        ByteArrayInputStream is =
+                new ByteArrayInputStream(value.getBytes(Charset.defaultCharset()));
+        InputStream limited = StreamUtils.limitRemainingStreamLength(is, 4);
+
+        String result = StreamUtils.toString(limited, Charset.defaultCharset());
+        assertEquals("1234", result);
+
+        is = new ByteArrayInputStream(value.getBytes(Charset.defaultCharset()));
+        limited = StreamUtils.limitRemainingStreamLength(is, 0);
+        assertEquals(-1, limited.read());
+
+        is = new ByteArrayInputStream(value.getBytes(Charset.defaultCharset()));
+        limited = StreamUtils.limitRemainingStreamLength(is, 20);
+        result = StreamUtils.toString(limited, Charset.defaultCharset());
+        assertEquals(value, result);
+    }
 }

@@ -9,7 +9,6 @@ import com.oracle.bmc.apmconfig.requests.*;
 import com.oracle.bmc.apmconfig.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class ConfigClient implements Config {
@@ -331,7 +330,7 @@ public class ConfigClient implements Config {
          * @return the client
          */
         public ConfigClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class ConfigClient implements Config {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -413,9 +413,8 @@ public class ConfigClient implements Config {
                         "CreateConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/CreateConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateConfigResponse>
-                transformer =
-                        CreateConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateConfigResponse> transformer =
+                CreateConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -453,9 +452,8 @@ public class ConfigClient implements Config {
                         "DeleteConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/DeleteConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConfigResponse>
-                transformer =
-                        DeleteConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteConfigResponse> transformer =
+                DeleteConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -489,7 +487,7 @@ public class ConfigClient implements Config {
                         "GetConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/GetConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetConfigResponse> transformer =
                 GetConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -524,9 +522,8 @@ public class ConfigClient implements Config {
                         "ListConfigs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ConfigCollection/ListConfigs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListConfigsResponse>
-                transformer =
-                        ListConfigsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListConfigsResponse> transformer =
+                ListConfigsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -561,7 +558,7 @@ public class ConfigClient implements Config {
                         "RetrieveNamespaceMetrics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MetricGroup/RetrieveNamespaceMetrics");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RetrieveNamespaceMetricsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RetrieveNamespaceMetricsResponse>
                 transformer =
                         RetrieveNamespaceMetricsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -602,7 +599,7 @@ public class ConfigClient implements Config {
                         "RetrieveNamespaces",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MetricGroup/RetrieveNamespaces");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RetrieveNamespacesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RetrieveNamespacesResponse>
                 transformer =
                         RetrieveNamespacesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -640,9 +637,8 @@ public class ConfigClient implements Config {
                         "UpdateConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/UpdateConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigResponse>
-                transformer =
-                        UpdateConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateConfigResponse> transformer =
+                UpdateConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -681,8 +677,7 @@ public class ConfigClient implements Config {
                         "ValidateSpanFilterPattern",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/SpanFilter/ValidateSpanFilterPattern");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ValidateSpanFilterPatternResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateSpanFilterPatternResponse>
                 transformer =
                         ValidateSpanFilterPatternConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

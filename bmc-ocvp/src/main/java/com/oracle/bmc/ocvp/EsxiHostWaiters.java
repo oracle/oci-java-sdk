@@ -6,7 +6,6 @@ package com.oracle.bmc.ocvp;
 
 import com.oracle.bmc.ocvp.requests.*;
 import com.oracle.bmc.ocvp.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -101,17 +100,16 @@ public class EsxiHostWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetEsxiHostRequest, GetEsxiHostResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetEsxiHostRequest, GetEsxiHostResponse>() {
                             @Override
                             public GetEsxiHostResponse apply(GetEsxiHostRequest request) {
                                 return client.getEsxiHost(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetEsxiHostResponse>() {
+                        new java.util.function.Predicate<GetEsxiHostResponse>() {
                             @Override
-                            public boolean apply(GetEsxiHostResponse response) {
+                            public boolean test(GetEsxiHostResponse response) {
                                 return targetStatesSet.contains(
                                         response.getEsxiHost().getLifecycleState());
                             }

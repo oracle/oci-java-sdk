@@ -7,7 +7,6 @@ package com.oracle.bmc.mysql;
 import com.oracle.bmc.mysql.internal.http.*;
 import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Channels service. <br/>
@@ -319,7 +318,7 @@ public class ChannelsAsyncClient implements ChannelsAsync {
          * @return the client
          */
         public ChannelsAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class ChannelsAsyncClient implements ChannelsAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -400,7 +400,7 @@ public class ChannelsAsyncClient implements ChannelsAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Channels", "CreateChannel", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateChannelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateChannelResponse>
                 transformer =
                         CreateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateChannelRequest, CreateChannelResponse>
@@ -449,7 +449,7 @@ public class ChannelsAsyncClient implements ChannelsAsync {
                         "DeleteChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/DeleteChannel");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteChannelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteChannelResponse>
                 transformer =
                         DeleteChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteChannelRequest, DeleteChannelResponse>
@@ -492,7 +492,7 @@ public class ChannelsAsyncClient implements ChannelsAsync {
                         "GetChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/GetChannel");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetChannelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetChannelResponse>
                 transformer =
                         GetChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetChannelRequest, GetChannelResponse> handlerToUse =
@@ -536,7 +536,7 @@ public class ChannelsAsyncClient implements ChannelsAsync {
                         "ListChannels",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ChannelSummary/ListChannels");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListChannelsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListChannelsResponse>
                 transformer =
                         ListChannelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListChannelsRequest, ListChannelsResponse>
@@ -581,7 +581,7 @@ public class ChannelsAsyncClient implements ChannelsAsync {
                         "ResetChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/ResetChannel");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ResetChannelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ResetChannelResponse>
                 transformer =
                         ResetChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ResetChannelRequest, ResetChannelResponse>
@@ -626,7 +626,7 @@ public class ChannelsAsyncClient implements ChannelsAsync {
                         "ResumeChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/ResumeChannel");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ResumeChannelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ResumeChannelResponse>
                 transformer =
                         ResumeChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ResumeChannelRequest, ResumeChannelResponse>
@@ -671,7 +671,7 @@ public class ChannelsAsyncClient implements ChannelsAsync {
                         "UpdateChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/UpdateChannel");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateChannelResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateChannelResponse>
                 transformer =
                         UpdateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateChannelRequest, UpdateChannelResponse>

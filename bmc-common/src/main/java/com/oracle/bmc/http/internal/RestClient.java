@@ -4,8 +4,6 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Throwables;
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.http.ApacheUtils;
@@ -16,6 +14,7 @@ import com.oracle.bmc.io.internal.ResettableFileInputStream;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.AsyncHandler;
+import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.util.internal.Consumer;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import javax.annotation.Nonnull;
@@ -292,7 +291,7 @@ public class RestClient implements AutoCloseable {
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> getFutureSupplier(
                     REQUEST interceptedRequest,
                     WrappedInvocationBuilder ib,
-                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+                    Function<Response, RESPONSE> transformer) {
         return h -> {
             final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
                     new com.oracle.bmc.http.internal.SuccessConsumer<>(
@@ -397,7 +396,7 @@ public class RestClient implements AutoCloseable {
                     REQUEST interceptedRequest,
                     Object body,
                     WrappedInvocationBuilder ib,
-                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+                    java.util.function.Function<Response, RESPONSE> transformer) {
         return h -> {
             final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
                     new com.oracle.bmc.http.internal.SuccessConsumer<>(
@@ -426,7 +425,7 @@ public class RestClient implements AutoCloseable {
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> postFutureSupplier(
                     REQUEST interceptedRequest,
                     WrappedInvocationBuilder ib,
-                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+                    java.util.function.Function<Response, RESPONSE> transformer) {
         return h -> {
             final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
                     new com.oracle.bmc.http.internal.SuccessConsumer<>(
@@ -628,7 +627,7 @@ public class RestClient implements AutoCloseable {
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> patchFutureSupplier(
                     REQUEST interceptedRequest,
                     WrappedInvocationBuilder ib,
-                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+                    java.util.function.Function<Response, RESPONSE> transformer) {
         return h -> {
             final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
                     new com.oracle.bmc.http.internal.SuccessConsumer<>(
@@ -658,7 +657,7 @@ public class RestClient implements AutoCloseable {
                     REQUEST interceptedRequest,
                     Object body,
                     WrappedInvocationBuilder ib,
-                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+                    java.util.function.Function<Response, RESPONSE> transformer) {
         return h -> {
             final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
                     new com.oracle.bmc.http.internal.SuccessConsumer<>(
@@ -818,7 +817,7 @@ public class RestClient implements AutoCloseable {
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> putFutureSupplier(
                     REQUEST interceptedRequest,
                     WrappedInvocationBuilder ib,
-                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+                    java.util.function.Function<Response, RESPONSE> transformer) {
         return h -> {
             final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
                     new com.oracle.bmc.http.internal.SuccessConsumer<>(
@@ -848,7 +847,7 @@ public class RestClient implements AutoCloseable {
                     REQUEST interceptedRequest,
                     Object body,
                     WrappedInvocationBuilder ib,
-                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+                    java.util.function.Function<Response, RESPONSE> transformer) {
         return h -> {
             final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
                     new com.oracle.bmc.http.internal.SuccessConsumer<>(
@@ -946,7 +945,7 @@ public class RestClient implements AutoCloseable {
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> deleteFutureSupplier(
                     REQUEST interceptedRequest,
                     WrappedInvocationBuilder ib,
-                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+                    java.util.function.Function<Response, RESPONSE> transformer) {
         return h -> {
             final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
                     new com.oracle.bmc.http.internal.SuccessConsumer<>(
@@ -1046,7 +1045,7 @@ public class RestClient implements AutoCloseable {
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> headFutureSupplier(
                     REQUEST interceptedRequest,
                     WrappedInvocationBuilder ib,
-                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+                    java.util.function.Function<Response, RESPONSE> transformer) {
         return h -> {
             final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
                     new com.oracle.bmc.http.internal.SuccessConsumer<>(
@@ -1090,7 +1089,7 @@ public class RestClient implements AutoCloseable {
             }
         }
 
-        Throwable t = Throwables.getRootCause(e);
+        Throwable t = getRootCause(e);
         if (t instanceof InterruptedIOException) {
             return new BmcException(
                     true,
@@ -1104,6 +1103,13 @@ public class RestClient implements AutoCloseable {
                 "Processing exception while communicating to: " + getUriSafe(target),
                 e,
                 info.getRequestId());
+    }
+
+    static Throwable getRootCause(Throwable t) {
+        while (t.getCause() != null) {
+            t = t.getCause();
+        }
+        return t;
     }
 
     /**

@@ -6,7 +6,6 @@ package com.oracle.bmc.announcementsservice;
 
 import com.oracle.bmc.announcementsservice.requests.*;
 import com.oracle.bmc.announcementsservice.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -121,8 +120,8 @@ public class AnnouncementSubscriptionWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetAnnouncementSubscriptionRequest,
                                 GetAnnouncementSubscriptionResponse>() {
                             @Override
@@ -131,10 +130,9 @@ public class AnnouncementSubscriptionWaiters {
                                 return client.getAnnouncementSubscription(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetAnnouncementSubscriptionResponse>() {
+                        new java.util.function.Predicate<GetAnnouncementSubscriptionResponse>() {
                             @Override
-                            public boolean apply(GetAnnouncementSubscriptionResponse response) {
+                            public boolean test(GetAnnouncementSubscriptionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAnnouncementSubscription().getLifecycleState());
                             }

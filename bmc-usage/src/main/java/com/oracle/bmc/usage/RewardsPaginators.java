@@ -44,19 +44,19 @@ public class RewardsPaginators {
             final ListProductsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListProductsRequest.Builder, ListProductsRequest, ListProductsResponse>(
-                new com.google.common.base.Supplier<ListProductsRequest.Builder>() {
+                new java.util.function.Supplier<ListProductsRequest.Builder>() {
                     @Override
                     public ListProductsRequest.Builder get() {
                         return ListProductsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProductsResponse, String>() {
+                new java.util.function.Function<ListProductsResponse, String>() {
                     @Override
                     public String apply(ListProductsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProductsRequest.Builder>,
                         ListProductsRequest>() {
@@ -69,12 +69,12 @@ public class RewardsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListProductsRequest, ListProductsResponse>() {
+                new java.util.function.Function<ListProductsRequest, ListProductsResponse>() {
                     @Override
                     public ListProductsResponse apply(ListProductsRequest request) {
                         return client.listProducts(request);
@@ -96,19 +96,19 @@ public class RewardsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListProductsRequest.Builder, ListProductsRequest, ListProductsResponse,
                 com.oracle.bmc.usage.model.ProductSummary>(
-                new com.google.common.base.Supplier<ListProductsRequest.Builder>() {
+                new java.util.function.Supplier<ListProductsRequest.Builder>() {
                     @Override
                     public ListProductsRequest.Builder get() {
                         return ListProductsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListProductsResponse, String>() {
+                new java.util.function.Function<ListProductsResponse, String>() {
                     @Override
                     public String apply(ListProductsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListProductsRequest.Builder>,
                         ListProductsRequest>() {
@@ -121,18 +121,18 @@ public class RewardsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListProductsRequest, ListProductsResponse>() {
+                new java.util.function.Function<ListProductsRequest, ListProductsResponse>() {
                     @Override
                     public ListProductsResponse apply(ListProductsRequest request) {
                         return client.listProducts(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListProductsResponse,
                         java.util.List<com.oracle.bmc.usage.model.ProductSummary>>() {
                     @Override
@@ -155,19 +155,19 @@ public class RewardsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRedeemableUsersRequest.Builder, ListRedeemableUsersRequest,
                 ListRedeemableUsersResponse>(
-                new com.google.common.base.Supplier<ListRedeemableUsersRequest.Builder>() {
+                new java.util.function.Supplier<ListRedeemableUsersRequest.Builder>() {
                     @Override
                     public ListRedeemableUsersRequest.Builder get() {
                         return ListRedeemableUsersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRedeemableUsersResponse, String>() {
+                new java.util.function.Function<ListRedeemableUsersResponse, String>() {
                     @Override
                     public String apply(ListRedeemableUsersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRedeemableUsersRequest.Builder>,
                         ListRedeemableUsersRequest>() {
@@ -180,12 +180,12 @@ public class RewardsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRedeemableUsersRequest, ListRedeemableUsersResponse>() {
                     @Override
                     public ListRedeemableUsersResponse apply(ListRedeemableUsersRequest request) {
@@ -208,19 +208,19 @@ public class RewardsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListRedeemableUsersRequest.Builder, ListRedeemableUsersRequest,
                 ListRedeemableUsersResponse, com.oracle.bmc.usage.model.RedeemableUserSummary>(
-                new com.google.common.base.Supplier<ListRedeemableUsersRequest.Builder>() {
+                new java.util.function.Supplier<ListRedeemableUsersRequest.Builder>() {
                     @Override
                     public ListRedeemableUsersRequest.Builder get() {
                         return ListRedeemableUsersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRedeemableUsersResponse, String>() {
+                new java.util.function.Function<ListRedeemableUsersResponse, String>() {
                     @Override
                     public String apply(ListRedeemableUsersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRedeemableUsersRequest.Builder>,
                         ListRedeemableUsersRequest>() {
@@ -233,19 +233,19 @@ public class RewardsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRedeemableUsersRequest, ListRedeemableUsersResponse>() {
                     @Override
                     public ListRedeemableUsersResponse apply(ListRedeemableUsersRequest request) {
                         return client.listRedeemableUsers(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRedeemableUsersResponse,
                         java.util.List<com.oracle.bmc.usage.model.RedeemableUserSummary>>() {
                     @Override

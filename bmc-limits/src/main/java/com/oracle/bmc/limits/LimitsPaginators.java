@@ -45,19 +45,19 @@ public class LimitsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListLimitDefinitionsRequest.Builder, ListLimitDefinitionsRequest,
                 ListLimitDefinitionsResponse>(
-                new com.google.common.base.Supplier<ListLimitDefinitionsRequest.Builder>() {
+                new java.util.function.Supplier<ListLimitDefinitionsRequest.Builder>() {
                     @Override
                     public ListLimitDefinitionsRequest.Builder get() {
                         return ListLimitDefinitionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListLimitDefinitionsResponse, String>() {
+                new java.util.function.Function<ListLimitDefinitionsResponse, String>() {
                     @Override
                     public String apply(ListLimitDefinitionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListLimitDefinitionsRequest.Builder>,
                         ListLimitDefinitionsRequest>() {
@@ -70,12 +70,12 @@ public class LimitsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListLimitDefinitionsRequest, ListLimitDefinitionsResponse>() {
                     @Override
                     public ListLimitDefinitionsResponse apply(ListLimitDefinitionsRequest request) {
@@ -98,19 +98,19 @@ public class LimitsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListLimitDefinitionsRequest.Builder, ListLimitDefinitionsRequest,
                 ListLimitDefinitionsResponse, com.oracle.bmc.limits.model.LimitDefinitionSummary>(
-                new com.google.common.base.Supplier<ListLimitDefinitionsRequest.Builder>() {
+                new java.util.function.Supplier<ListLimitDefinitionsRequest.Builder>() {
                     @Override
                     public ListLimitDefinitionsRequest.Builder get() {
                         return ListLimitDefinitionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListLimitDefinitionsResponse, String>() {
+                new java.util.function.Function<ListLimitDefinitionsResponse, String>() {
                     @Override
                     public String apply(ListLimitDefinitionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListLimitDefinitionsRequest.Builder>,
                         ListLimitDefinitionsRequest>() {
@@ -123,19 +123,19 @@ public class LimitsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListLimitDefinitionsRequest, ListLimitDefinitionsResponse>() {
                     @Override
                     public ListLimitDefinitionsResponse apply(ListLimitDefinitionsRequest request) {
                         return client.listLimitDefinitions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListLimitDefinitionsResponse,
                         java.util.List<com.oracle.bmc.limits.model.LimitDefinitionSummary>>() {
                     @Override
@@ -157,19 +157,19 @@ public class LimitsPaginators {
             final ListLimitValuesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListLimitValuesRequest.Builder, ListLimitValuesRequest, ListLimitValuesResponse>(
-                new com.google.common.base.Supplier<ListLimitValuesRequest.Builder>() {
+                new java.util.function.Supplier<ListLimitValuesRequest.Builder>() {
                     @Override
                     public ListLimitValuesRequest.Builder get() {
                         return ListLimitValuesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListLimitValuesResponse, String>() {
+                new java.util.function.Function<ListLimitValuesResponse, String>() {
                     @Override
                     public String apply(ListLimitValuesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListLimitValuesRequest.Builder>,
                         ListLimitValuesRequest>() {
@@ -182,13 +182,12 @@ public class LimitsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListLimitValuesRequest, ListLimitValuesResponse>() {
+                new java.util.function.Function<ListLimitValuesRequest, ListLimitValuesResponse>() {
                     @Override
                     public ListLimitValuesResponse apply(ListLimitValuesRequest request) {
                         return client.listLimitValues(request);
@@ -210,19 +209,19 @@ public class LimitsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListLimitValuesRequest.Builder, ListLimitValuesRequest, ListLimitValuesResponse,
                 com.oracle.bmc.limits.model.LimitValueSummary>(
-                new com.google.common.base.Supplier<ListLimitValuesRequest.Builder>() {
+                new java.util.function.Supplier<ListLimitValuesRequest.Builder>() {
                     @Override
                     public ListLimitValuesRequest.Builder get() {
                         return ListLimitValuesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListLimitValuesResponse, String>() {
+                new java.util.function.Function<ListLimitValuesResponse, String>() {
                     @Override
                     public String apply(ListLimitValuesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListLimitValuesRequest.Builder>,
                         ListLimitValuesRequest>() {
@@ -235,19 +234,18 @@ public class LimitsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListLimitValuesRequest, ListLimitValuesResponse>() {
+                new java.util.function.Function<ListLimitValuesRequest, ListLimitValuesResponse>() {
                     @Override
                     public ListLimitValuesResponse apply(ListLimitValuesRequest request) {
                         return client.listLimitValues(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListLimitValuesResponse,
                         java.util.List<com.oracle.bmc.limits.model.LimitValueSummary>>() {
                     @Override
@@ -269,19 +267,19 @@ public class LimitsPaginators {
             final ListServicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListServicesRequest.Builder, ListServicesRequest, ListServicesResponse>(
-                new com.google.common.base.Supplier<ListServicesRequest.Builder>() {
+                new java.util.function.Supplier<ListServicesRequest.Builder>() {
                     @Override
                     public ListServicesRequest.Builder get() {
                         return ListServicesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListServicesResponse, String>() {
+                new java.util.function.Function<ListServicesResponse, String>() {
                     @Override
                     public String apply(ListServicesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListServicesRequest.Builder>,
                         ListServicesRequest>() {
@@ -294,12 +292,12 @@ public class LimitsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListServicesRequest, ListServicesResponse>() {
+                new java.util.function.Function<ListServicesRequest, ListServicesResponse>() {
                     @Override
                     public ListServicesResponse apply(ListServicesRequest request) {
                         return client.listServices(request);
@@ -321,19 +319,19 @@ public class LimitsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListServicesRequest.Builder, ListServicesRequest, ListServicesResponse,
                 com.oracle.bmc.limits.model.ServiceSummary>(
-                new com.google.common.base.Supplier<ListServicesRequest.Builder>() {
+                new java.util.function.Supplier<ListServicesRequest.Builder>() {
                     @Override
                     public ListServicesRequest.Builder get() {
                         return ListServicesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListServicesResponse, String>() {
+                new java.util.function.Function<ListServicesResponse, String>() {
                     @Override
                     public String apply(ListServicesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListServicesRequest.Builder>,
                         ListServicesRequest>() {
@@ -346,18 +344,18 @@ public class LimitsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListServicesRequest, ListServicesResponse>() {
+                new java.util.function.Function<ListServicesRequest, ListServicesResponse>() {
                     @Override
                     public ListServicesResponse apply(ListServicesRequest request) {
                         return client.listServices(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListServicesResponse,
                         java.util.List<com.oracle.bmc.limits.model.ServiceSummary>>() {
                     @Override

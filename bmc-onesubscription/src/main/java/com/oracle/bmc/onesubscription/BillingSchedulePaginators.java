@@ -45,19 +45,19 @@ public class BillingSchedulePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBillingSchedulesRequest.Builder, ListBillingSchedulesRequest,
                 ListBillingSchedulesResponse>(
-                new com.google.common.base.Supplier<ListBillingSchedulesRequest.Builder>() {
+                new java.util.function.Supplier<ListBillingSchedulesRequest.Builder>() {
                     @Override
                     public ListBillingSchedulesRequest.Builder get() {
                         return ListBillingSchedulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBillingSchedulesResponse, String>() {
+                new java.util.function.Function<ListBillingSchedulesResponse, String>() {
                     @Override
                     public String apply(ListBillingSchedulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBillingSchedulesRequest.Builder>,
                         ListBillingSchedulesRequest>() {
@@ -70,12 +70,12 @@ public class BillingSchedulePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBillingSchedulesRequest, ListBillingSchedulesResponse>() {
                     @Override
                     public ListBillingSchedulesResponse apply(ListBillingSchedulesRequest request) {
@@ -99,19 +99,19 @@ public class BillingSchedulePaginators {
                 ListBillingSchedulesRequest.Builder, ListBillingSchedulesRequest,
                 ListBillingSchedulesResponse,
                 com.oracle.bmc.onesubscription.model.BillingScheduleSummary>(
-                new com.google.common.base.Supplier<ListBillingSchedulesRequest.Builder>() {
+                new java.util.function.Supplier<ListBillingSchedulesRequest.Builder>() {
                     @Override
                     public ListBillingSchedulesRequest.Builder get() {
                         return ListBillingSchedulesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListBillingSchedulesResponse, String>() {
+                new java.util.function.Function<ListBillingSchedulesResponse, String>() {
                     @Override
                     public String apply(ListBillingSchedulesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListBillingSchedulesRequest.Builder>,
                         ListBillingSchedulesRequest>() {
@@ -124,19 +124,19 @@ public class BillingSchedulePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBillingSchedulesRequest, ListBillingSchedulesResponse>() {
                     @Override
                     public ListBillingSchedulesResponse apply(ListBillingSchedulesRequest request) {
                         return client.listBillingSchedules(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListBillingSchedulesResponse,
                         java.util.List<
                                 com.oracle.bmc.onesubscription.model.BillingScheduleSummary>>() {

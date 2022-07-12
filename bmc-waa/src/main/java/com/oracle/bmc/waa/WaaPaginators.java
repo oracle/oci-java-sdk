@@ -46,21 +46,19 @@ public class WaaPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWebAppAccelerationPoliciesRequest.Builder,
                 ListWebAppAccelerationPoliciesRequest, ListWebAppAccelerationPoliciesResponse>(
-                new com.google.common.base.Supplier<
-                        ListWebAppAccelerationPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListWebAppAccelerationPoliciesRequest.Builder>() {
                     @Override
                     public ListWebAppAccelerationPoliciesRequest.Builder get() {
                         return ListWebAppAccelerationPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListWebAppAccelerationPoliciesResponse, String>() {
+                new java.util.function.Function<ListWebAppAccelerationPoliciesResponse, String>() {
                     @Override
                     public String apply(ListWebAppAccelerationPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWebAppAccelerationPoliciesRequest.Builder>,
                         ListWebAppAccelerationPoliciesRequest>() {
@@ -73,12 +71,12 @@ public class WaaPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWebAppAccelerationPoliciesRequest,
                         ListWebAppAccelerationPoliciesResponse>() {
                     @Override
@@ -105,21 +103,19 @@ public class WaaPaginators {
                 ListWebAppAccelerationPoliciesRequest.Builder,
                 ListWebAppAccelerationPoliciesRequest, ListWebAppAccelerationPoliciesResponse,
                 com.oracle.bmc.waa.model.WebAppAccelerationPolicySummary>(
-                new com.google.common.base.Supplier<
-                        ListWebAppAccelerationPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListWebAppAccelerationPoliciesRequest.Builder>() {
                     @Override
                     public ListWebAppAccelerationPoliciesRequest.Builder get() {
                         return ListWebAppAccelerationPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListWebAppAccelerationPoliciesResponse, String>() {
+                new java.util.function.Function<ListWebAppAccelerationPoliciesResponse, String>() {
                     @Override
                     public String apply(ListWebAppAccelerationPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWebAppAccelerationPoliciesRequest.Builder>,
                         ListWebAppAccelerationPoliciesRequest>() {
@@ -132,12 +128,12 @@ public class WaaPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWebAppAccelerationPoliciesRequest,
                         ListWebAppAccelerationPoliciesResponse>() {
                     @Override
@@ -146,7 +142,7 @@ public class WaaPaginators {
                         return client.listWebAppAccelerationPolicies(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWebAppAccelerationPoliciesResponse,
                         java.util.List<
                                 com.oracle.bmc.waa.model.WebAppAccelerationPolicySummary>>() {
@@ -170,19 +166,19 @@ public class WaaPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWebAppAccelerationsRequest.Builder, ListWebAppAccelerationsRequest,
                 ListWebAppAccelerationsResponse>(
-                new com.google.common.base.Supplier<ListWebAppAccelerationsRequest.Builder>() {
+                new java.util.function.Supplier<ListWebAppAccelerationsRequest.Builder>() {
                     @Override
                     public ListWebAppAccelerationsRequest.Builder get() {
                         return ListWebAppAccelerationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWebAppAccelerationsResponse, String>() {
+                new java.util.function.Function<ListWebAppAccelerationsResponse, String>() {
                     @Override
                     public String apply(ListWebAppAccelerationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWebAppAccelerationsRequest.Builder>,
                         ListWebAppAccelerationsRequest>() {
@@ -195,12 +191,12 @@ public class WaaPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWebAppAccelerationsRequest, ListWebAppAccelerationsResponse>() {
                     @Override
                     public ListWebAppAccelerationsResponse apply(
@@ -225,19 +221,19 @@ public class WaaPaginators {
                 ListWebAppAccelerationsRequest.Builder, ListWebAppAccelerationsRequest,
                 ListWebAppAccelerationsResponse,
                 com.oracle.bmc.waa.model.WebAppAccelerationSummary>(
-                new com.google.common.base.Supplier<ListWebAppAccelerationsRequest.Builder>() {
+                new java.util.function.Supplier<ListWebAppAccelerationsRequest.Builder>() {
                     @Override
                     public ListWebAppAccelerationsRequest.Builder get() {
                         return ListWebAppAccelerationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWebAppAccelerationsResponse, String>() {
+                new java.util.function.Function<ListWebAppAccelerationsResponse, String>() {
                     @Override
                     public String apply(ListWebAppAccelerationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWebAppAccelerationsRequest.Builder>,
                         ListWebAppAccelerationsRequest>() {
@@ -250,12 +246,12 @@ public class WaaPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWebAppAccelerationsRequest, ListWebAppAccelerationsResponse>() {
                     @Override
                     public ListWebAppAccelerationsResponse apply(
@@ -263,7 +259,7 @@ public class WaaPaginators {
                         return client.listWebAppAccelerations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWebAppAccelerationsResponse,
                         java.util.List<com.oracle.bmc.waa.model.WebAppAccelerationSummary>>() {
                     @Override

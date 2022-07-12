@@ -2,8 +2,6 @@
  * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
@@ -23,6 +21,10 @@ import com.oracle.bmc.objectstorage.requests.ListBucketsRequest;
 import com.oracle.bmc.objectstorage.responses.GetNamespaceResponse;
 import com.oracle.bmc.objectstorage.responses.ListBucketsResponse;
 import com.oracle.bmc.retrier.RetryConfiguration;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.time.Duration;
 
 /**
@@ -68,15 +70,18 @@ public class CircuitBreakerExample {
                                         .minimumNumberOfCalls(4)
                                         .waitDurationInOpenState(Duration.ofSeconds(2))
                                         .recordHttpStatuses(
-                                                ImmutableSet.of(
-                                                        CircuitBreakerConfiguration
-                                                                .TOO_MANY_REQUESTS,
-                                                        CircuitBreakerConfiguration
-                                                                .SERVICE_UNAVAILABLE))
+                                                Collections.unmodifiableSet(
+                                                        new HashSet<>(
+                                                                Arrays.asList(
+                                                                        CircuitBreakerConfiguration
+                                                                                .TOO_MANY_REQUESTS,
+                                                                        CircuitBreakerConfiguration
+                                                                                .SERVICE_UNAVAILABLE))))
                                         .recordExceptions(
-                                                ImmutableList.of(
-                                                        CircuitBreakerConfiguration
-                                                                .SERVICE_UNAVAILABLE_EXCEPTION_CLASS))
+                                                Collections.unmodifiableList(
+                                                        Arrays.asList(
+                                                                CircuitBreakerConfiguration
+                                                                        .SERVICE_UNAVAILABLE_EXCEPTION_CLASS)))
                                         .build())
                         .build();
 
@@ -102,13 +107,18 @@ public class CircuitBreakerExample {
                         .minimumNumberOfCalls(4)
                         .waitDurationInOpenState(Duration.ofSeconds(2))
                         .recordHttpStatuses(
-                                ImmutableSet.of(
-                                        CircuitBreakerConfiguration.TOO_MANY_REQUESTS,
-                                        CircuitBreakerConfiguration.SERVICE_UNAVAILABLE))
+                                Collections.unmodifiableSet(
+                                        new HashSet<>(
+                                                Arrays.asList(
+                                                        CircuitBreakerConfiguration
+                                                                .TOO_MANY_REQUESTS,
+                                                        CircuitBreakerConfiguration
+                                                                .SERVICE_UNAVAILABLE))))
                         .recordExceptions(
-                                ImmutableList.of(
-                                        CircuitBreakerConfiguration
-                                                .SERVICE_UNAVAILABLE_EXCEPTION_CLASS))
+                                Collections.unmodifiableList(
+                                        Arrays.asList(
+                                                CircuitBreakerConfiguration
+                                                        .SERVICE_UNAVAILABLE_EXCEPTION_CLASS)))
                         .build();
 
         JaxRsCircuitBreaker cb = CircuitBreakerFactory.build(circuitBreakerConfiguration);

@@ -4,6 +4,8 @@
  */
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +14,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
-import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -179,28 +180,33 @@ public class DataLabelingAnnotationExample {
     private static List<Entity> buildImageSelectionObjectEntities() {
 
         List<NormalizedVertex> vertexList =
-                ImmutableList.of(
-                        NormalizedVertex.builder().x(0.030035F).y(0.13743F).build(),
-                        NormalizedVertex.builder().x(0.030035F).y(0.396943F).build(),
-                        NormalizedVertex.builder().x(0.282685F).y(0.396943F).build(),
-                        NormalizedVertex.builder().x(0.2826855F).y(0.137438F).build());
+                Collections.unmodifiableList(
+                        Arrays.asList(
+                                NormalizedVertex.builder().x(0.030035F).y(0.13743F).build(),
+                                NormalizedVertex.builder().x(0.030035F).y(0.396943F).build(),
+                                NormalizedVertex.builder().x(0.282685F).y(0.396943F).build(),
+                                NormalizedVertex.builder().x(0.2826855F).y(0.137438F).build()));
 
         BoundingPolygon boundingPolygon =
                 BoundingPolygon.builder().normalizedVertices(vertexList).build();
-        List<Label> annotationLabels = ImmutableList.of(Label.builder().label("L1").build());
-        return ImmutableList.of(
-                ImageObjectSelectionEntity.builder()
-                        .boundingPolygon(boundingPolygon)
-                        .labels(annotationLabels)
-                        .build());
+        List<Label> annotationLabels =
+                Collections.unmodifiableList(Arrays.asList(Label.builder().label("L1").build()));
+        return Collections.unmodifiableList(
+                Arrays.asList(
+                        ImageObjectSelectionEntity.builder()
+                                .boundingPolygon(boundingPolygon)
+                                .labels(annotationLabels)
+                                .build()));
     }
 
     /**
      * Create Single Label Annotation for Image/Document/Text Records
      */
     private static List<Entity> buildSingleLabelAnnotationEntities() {
-        List<Label> labelList = ImmutableList.of(Label.builder().label("L1").build());
-        return ImmutableList.of(GenericEntity.builder().labels(labelList).build());
+        List<Label> labelList =
+                Collections.unmodifiableList(Arrays.asList(Label.builder().label("L1").build()));
+        return Collections.unmodifiableList(
+                Arrays.asList(GenericEntity.builder().labels(labelList).build()));
     }
 
     /**
@@ -208,9 +214,12 @@ public class DataLabelingAnnotationExample {
      */
     private static List<Entity> buildMultiLabelAnnotationEntities() {
         List<Label> labelList =
-                ImmutableList.of(
-                        Label.builder().label("L1").build(), Label.builder().label("L2").build());
-        return ImmutableList.of(GenericEntity.builder().labels(labelList).build());
+                Collections.unmodifiableList(
+                        Arrays.asList(
+                                Label.builder().label("L1").build(),
+                                Label.builder().label("L2").build()));
+        return Collections.unmodifiableList(
+                Arrays.asList(GenericEntity.builder().labels(labelList).build()));
     }
 
     /**
@@ -223,14 +232,20 @@ public class DataLabelingAnnotationExample {
                 TextSpan.builder().length(new BigDecimal(10)).offset(new BigDecimal(1)).build();
         TextSpan textSpan2 =
                 TextSpan.builder().length(new BigDecimal(2)).offset(new BigDecimal(10)).build();
-        List<Label> annotationLabels1 = ImmutableList.of(Label.builder().label("L1").build());
-        List<Label> annotationLabels2 = ImmutableList.of(Label.builder().label("L2").build());
-        return ImmutableList.of(
-                TextSelectionEntity.builder().textSpan(textSpan1).labels(annotationLabels1).build(),
-                TextSelectionEntity.builder()
-                        .textSpan(textSpan2)
-                        .labels(annotationLabels2)
-                        .build());
+        List<Label> annotationLabels1 =
+                Collections.unmodifiableList(Arrays.asList(Label.builder().label("L1").build()));
+        List<Label> annotationLabels2 =
+                Collections.unmodifiableList(Arrays.asList(Label.builder().label("L2").build()));
+        return Collections.unmodifiableList(
+                Arrays.asList(
+                        TextSelectionEntity.builder()
+                                .textSpan(textSpan1)
+                                .labels(annotationLabels1)
+                                .build(),
+                        TextSelectionEntity.builder()
+                                .textSpan(textSpan2)
+                                .labels(annotationLabels2)
+                                .build()));
     }
 
     public static void getAnnotation(String annotationId) throws JsonProcessingException {

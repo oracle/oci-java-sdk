@@ -9,7 +9,6 @@ import com.oracle.bmc.waas.requests.*;
 import com.oracle.bmc.waas.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class RedirectClient implements Redirect {
@@ -334,9 +333,9 @@ public class RedirectClient implements Redirect {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Redirect-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Redirect-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class RedirectClient implements Redirect {
          * @return the client
          */
         public RedirectClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class RedirectClient implements Redirect {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class RedirectClient implements Redirect {
                         "ChangeHttpRedirectCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/ChangeHttpRedirectCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeHttpRedirectCompartmentResponse>
                 transformer =
                         ChangeHttpRedirectCompartmentConverter.fromResponse(
@@ -532,7 +532,7 @@ public class RedirectClient implements Redirect {
                         "CreateHttpRedirect",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/CreateHttpRedirect");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateHttpRedirectResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateHttpRedirectResponse>
                 transformer =
                         CreateHttpRedirectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -574,7 +574,7 @@ public class RedirectClient implements Redirect {
                         "DeleteHttpRedirect",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/DeleteHttpRedirect");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHttpRedirectResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteHttpRedirectResponse>
                 transformer =
                         DeleteHttpRedirectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -612,7 +612,7 @@ public class RedirectClient implements Redirect {
                         "GetHttpRedirect",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/GetHttpRedirect");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetHttpRedirectResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetHttpRedirectResponse>
                 transformer =
                         GetHttpRedirectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -649,7 +649,7 @@ public class RedirectClient implements Redirect {
                         "ListHttpRedirects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/ListHttpRedirects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListHttpRedirectsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListHttpRedirectsResponse>
                 transformer =
                         ListHttpRedirectsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -687,7 +687,7 @@ public class RedirectClient implements Redirect {
                         "UpdateHttpRedirect",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/UpdateHttpRedirect");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHttpRedirectResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateHttpRedirectResponse>
                 transformer =
                         UpdateHttpRedirectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

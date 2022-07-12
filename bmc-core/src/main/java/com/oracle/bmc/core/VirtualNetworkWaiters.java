@@ -6,7 +6,6 @@ package com.oracle.bmc.core;
 
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -16,20 +15,20 @@ import javax.annotation.Nonnull;
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class VirtualNetworkWaiters {
-    @Nonnull private final java.util.concurrent.ExecutorService executorService;
-    @Nonnull private final VirtualNetwork client;
+    @javax.annotation.Nonnull private final java.util.concurrent.ExecutorService executorService;
+    @javax.annotation.Nonnull private final VirtualNetwork client;
     private final com.oracle.bmc.workrequests.WorkRequest workRequestClient;
 
     @Deprecated
     public VirtualNetworkWaiters(
-            @Nonnull java.util.concurrent.ExecutorService executorService,
-            @Nonnull VirtualNetwork client) {
+            @javax.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
+            @javax.annotation.Nonnull VirtualNetwork client) {
         this(executorService, client, null);
     }
 
     public VirtualNetworkWaiters(
-            @Nonnull java.util.concurrent.ExecutorService executorService,
-            @Nonnull VirtualNetwork client,
+            @javax.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
+            @javax.annotation.Nonnull VirtualNetwork client,
             com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
         if (executorService == null) {
             throw new NullPointerException("executorService is marked non-null but is null");
@@ -745,17 +744,17 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetByoipRangeRequest, GetByoipRangeResponse>() {
                             @Override
                             public GetByoipRangeResponse apply(GetByoipRangeRequest request) {
                                 return client.getByoipRange(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetByoipRangeResponse>() {
+                        new java.util.function.Predicate<GetByoipRangeResponse>() {
                             @Override
-                            public boolean apply(GetByoipRangeResponse response) {
+                            public boolean test(GetByoipRangeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getByoipRange().getLifecycleState());
                             }
@@ -847,17 +846,17 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetCaptureFilterRequest, GetCaptureFilterResponse>() {
                             @Override
                             public GetCaptureFilterResponse apply(GetCaptureFilterRequest request) {
                                 return client.getCaptureFilter(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCaptureFilterResponse>() {
+                        new java.util.function.Predicate<GetCaptureFilterResponse>() {
                             @Override
-                            public boolean apply(GetCaptureFilterResponse response) {
+                            public boolean test(GetCaptureFilterResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCaptureFilter().getLifecycleState());
                             }
@@ -949,17 +948,17 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetCrossConnectRequest, GetCrossConnectResponse>() {
                             @Override
                             public GetCrossConnectResponse apply(GetCrossConnectRequest request) {
                                 return client.getCrossConnect(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCrossConnectResponse>() {
+                        new java.util.function.Predicate<GetCrossConnectResponse>() {
                             @Override
-                            public boolean apply(GetCrossConnectResponse response) {
+                            public boolean test(GetCrossConnectResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCrossConnect().getLifecycleState());
                             }
@@ -1052,8 +1051,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetCrossConnectGroupRequest, GetCrossConnectGroupResponse>() {
                             @Override
                             public GetCrossConnectGroupResponse apply(
@@ -1061,9 +1060,9 @@ public class VirtualNetworkWaiters {
                                 return client.getCrossConnectGroup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCrossConnectGroupResponse>() {
+                        new java.util.function.Predicate<GetCrossConnectGroupResponse>() {
                             @Override
-                            public boolean apply(GetCrossConnectGroupResponse response) {
+                            public boolean test(GetCrossConnectGroupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCrossConnectGroup().getLifecycleState());
                             }
@@ -1156,17 +1155,17 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDhcpOptionsRequest, GetDhcpOptionsResponse>() {
                             @Override
                             public GetDhcpOptionsResponse apply(GetDhcpOptionsRequest request) {
                                 return client.getDhcpOptions(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDhcpOptionsResponse>() {
+                        new java.util.function.Predicate<GetDhcpOptionsResponse>() {
                             @Override
-                            public boolean apply(GetDhcpOptionsResponse response) {
+                            public boolean test(GetDhcpOptionsResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDhcpOptions().getLifecycleState());
                             }
@@ -1252,16 +1251,16 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetDrgRequest, GetDrgResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetDrgRequest, GetDrgResponse>() {
                             @Override
                             public GetDrgResponse apply(GetDrgRequest request) {
                                 return client.getDrg(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDrgResponse>() {
+                        new java.util.function.Predicate<GetDrgResponse>() {
                             @Override
-                            public boolean apply(GetDrgResponse response) {
+                            public boolean test(GetDrgResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDrg().getLifecycleState());
                             }
@@ -1353,17 +1352,17 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDrgAttachmentRequest, GetDrgAttachmentResponse>() {
                             @Override
                             public GetDrgAttachmentResponse apply(GetDrgAttachmentRequest request) {
                                 return client.getDrgAttachment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDrgAttachmentResponse>() {
+                        new java.util.function.Predicate<GetDrgAttachmentResponse>() {
                             @Override
-                            public boolean apply(GetDrgAttachmentResponse response) {
+                            public boolean test(GetDrgAttachmentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDrgAttachment().getLifecycleState());
                             }
@@ -1460,8 +1459,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDrgRouteDistributionRequest, GetDrgRouteDistributionResponse>() {
                             @Override
                             public GetDrgRouteDistributionResponse apply(
@@ -1469,9 +1468,9 @@ public class VirtualNetworkWaiters {
                                 return client.getDrgRouteDistribution(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDrgRouteDistributionResponse>() {
+                        new java.util.function.Predicate<GetDrgRouteDistributionResponse>() {
                             @Override
-                            public boolean apply(GetDrgRouteDistributionResponse response) {
+                            public boolean test(GetDrgRouteDistributionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDrgRouteDistribution().getLifecycleState());
                             }
@@ -1564,17 +1563,17 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDrgRouteTableRequest, GetDrgRouteTableResponse>() {
                             @Override
                             public GetDrgRouteTableResponse apply(GetDrgRouteTableRequest request) {
                                 return client.getDrgRouteTable(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDrgRouteTableResponse>() {
+                        new java.util.function.Predicate<GetDrgRouteTableResponse>() {
                             @Override
-                            public boolean apply(GetDrgRouteTableResponse response) {
+                            public boolean test(GetDrgRouteTableResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDrgRouteTable().getLifecycleState());
                             }
@@ -1667,8 +1666,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetIPSecConnectionRequest, GetIPSecConnectionResponse>() {
                             @Override
                             public GetIPSecConnectionResponse apply(
@@ -1676,9 +1675,9 @@ public class VirtualNetworkWaiters {
                                 return client.getIPSecConnection(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetIPSecConnectionResponse>() {
+                        new java.util.function.Predicate<GetIPSecConnectionResponse>() {
                             @Override
-                            public boolean apply(GetIPSecConnectionResponse response) {
+                            public boolean test(GetIPSecConnectionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getIPSecConnection().getLifecycleState());
                             }
@@ -1778,8 +1777,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetIPSecConnectionTunnelRequest,
                                 GetIPSecConnectionTunnelResponse>() {
                             @Override
@@ -1788,9 +1787,9 @@ public class VirtualNetworkWaiters {
                                 return client.getIPSecConnectionTunnel(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetIPSecConnectionTunnelResponse>() {
+                        new java.util.function.Predicate<GetIPSecConnectionTunnelResponse>() {
                             @Override
-                            public boolean apply(GetIPSecConnectionTunnelResponse response) {
+                            public boolean test(GetIPSecConnectionTunnelResponse response) {
                                 return targetStatesSet.contains(
                                         response.getIPSecConnectionTunnel().getLifecycleState());
                             }
@@ -1884,8 +1883,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetInternetGatewayRequest, GetInternetGatewayResponse>() {
                             @Override
                             public GetInternetGatewayResponse apply(
@@ -1893,9 +1892,9 @@ public class VirtualNetworkWaiters {
                                 return client.getInternetGateway(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetInternetGatewayResponse>() {
+                        new java.util.function.Predicate<GetInternetGatewayResponse>() {
                             @Override
-                            public boolean apply(GetInternetGatewayResponse response) {
+                            public boolean test(GetInternetGatewayResponse response) {
                                 return targetStatesSet.contains(
                                         response.getInternetGateway().getLifecycleState());
                             }
@@ -1982,16 +1981,16 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetIpv6Request, GetIpv6Response>() {
+                        () -> request,
+                        new java.util.function.Function<GetIpv6Request, GetIpv6Response>() {
                             @Override
                             public GetIpv6Response apply(GetIpv6Request request) {
                                 return client.getIpv6(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetIpv6Response>() {
+                        new java.util.function.Predicate<GetIpv6Response>() {
                             @Override
-                            public boolean apply(GetIpv6Response response) {
+                            public boolean test(GetIpv6Response response) {
                                 return targetStatesSet.contains(
                                         response.getIpv6().getLifecycleState());
                             }
@@ -2088,8 +2087,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>() {
                             @Override
                             public GetLocalPeeringGatewayResponse apply(
@@ -2097,9 +2096,9 @@ public class VirtualNetworkWaiters {
                                 return client.getLocalPeeringGateway(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetLocalPeeringGatewayResponse>() {
+                        new java.util.function.Predicate<GetLocalPeeringGatewayResponse>() {
                             @Override
-                            public boolean apply(GetLocalPeeringGatewayResponse response) {
+                            public boolean test(GetLocalPeeringGatewayResponse response) {
                                 return targetStatesSet.contains(
                                         response.getLocalPeeringGateway().getLifecycleState());
                             }
@@ -2197,8 +2196,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>() {
                             @Override
                             public GetLocalPeeringGatewayResponse apply(
@@ -2206,9 +2205,9 @@ public class VirtualNetworkWaiters {
                                 return client.getLocalPeeringGateway(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetLocalPeeringGatewayResponse>() {
+                        new java.util.function.Predicate<GetLocalPeeringGatewayResponse>() {
                             @Override
-                            public boolean apply(GetLocalPeeringGatewayResponse response) {
+                            public boolean test(GetLocalPeeringGatewayResponse response) {
                                 return targetStatesSet.contains(
                                         response.getLocalPeeringGateway().getPeeringStatus());
                             }
@@ -2297,17 +2296,17 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetNatGatewayRequest, GetNatGatewayResponse>() {
                             @Override
                             public GetNatGatewayResponse apply(GetNatGatewayRequest request) {
                                 return client.getNatGateway(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetNatGatewayResponse>() {
+                        new java.util.function.Predicate<GetNatGatewayResponse>() {
                             @Override
-                            public boolean apply(GetNatGatewayResponse response) {
+                            public boolean test(GetNatGatewayResponse response) {
                                 return targetStatesSet.contains(
                                         response.getNatGateway().getLifecycleState());
                             }
@@ -2404,8 +2403,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetNetworkSecurityGroupRequest, GetNetworkSecurityGroupResponse>() {
                             @Override
                             public GetNetworkSecurityGroupResponse apply(
@@ -2413,9 +2412,9 @@ public class VirtualNetworkWaiters {
                                 return client.getNetworkSecurityGroup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetNetworkSecurityGroupResponse>() {
+                        new java.util.function.Predicate<GetNetworkSecurityGroupResponse>() {
                             @Override
-                            public boolean apply(GetNetworkSecurityGroupResponse response) {
+                            public boolean test(GetNetworkSecurityGroupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getNetworkSecurityGroup().getLifecycleState());
                             }
@@ -2504,17 +2503,16 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetPublicIpRequest, GetPublicIpResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetPublicIpRequest, GetPublicIpResponse>() {
                             @Override
                             public GetPublicIpResponse apply(GetPublicIpRequest request) {
                                 return client.getPublicIp(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetPublicIpResponse>() {
+                        new java.util.function.Predicate<GetPublicIpResponse>() {
                             @Override
-                            public boolean apply(GetPublicIpResponse response) {
+                            public boolean test(GetPublicIpResponse response) {
                                 return targetStatesSet.contains(
                                         response.getPublicIp().getLifecycleState());
                             }
@@ -2606,17 +2604,17 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetPublicIpPoolRequest, GetPublicIpPoolResponse>() {
                             @Override
                             public GetPublicIpPoolResponse apply(GetPublicIpPoolRequest request) {
                                 return client.getPublicIpPool(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetPublicIpPoolResponse>() {
+                        new java.util.function.Predicate<GetPublicIpPoolResponse>() {
                             @Override
-                            public boolean apply(GetPublicIpPoolResponse response) {
+                            public boolean test(GetPublicIpPoolResponse response) {
                                 return targetStatesSet.contains(
                                         response.getPublicIpPool().getLifecycleState());
                             }
@@ -2715,8 +2713,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetRemotePeeringConnectionRequest,
                                 GetRemotePeeringConnectionResponse>() {
                             @Override
@@ -2725,9 +2723,9 @@ public class VirtualNetworkWaiters {
                                 return client.getRemotePeeringConnection(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetRemotePeeringConnectionResponse>() {
+                        new java.util.function.Predicate<GetRemotePeeringConnectionResponse>() {
                             @Override
-                            public boolean apply(GetRemotePeeringConnectionResponse response) {
+                            public boolean test(GetRemotePeeringConnectionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getRemotePeeringConnection().getLifecycleState());
                             }
@@ -2827,8 +2825,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetRemotePeeringConnectionRequest,
                                 GetRemotePeeringConnectionResponse>() {
                             @Override
@@ -2837,9 +2835,9 @@ public class VirtualNetworkWaiters {
                                 return client.getRemotePeeringConnection(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetRemotePeeringConnectionResponse>() {
+                        new java.util.function.Predicate<GetRemotePeeringConnectionResponse>() {
                             @Override
-                            public boolean apply(GetRemotePeeringConnectionResponse response) {
+                            public boolean test(GetRemotePeeringConnectionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getRemotePeeringConnection().getPeeringStatus());
                             }
@@ -2928,17 +2926,17 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetRouteTableRequest, GetRouteTableResponse>() {
                             @Override
                             public GetRouteTableResponse apply(GetRouteTableRequest request) {
                                 return client.getRouteTable(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetRouteTableResponse>() {
+                        new java.util.function.Predicate<GetRouteTableResponse>() {
                             @Override
-                            public boolean apply(GetRouteTableResponse response) {
+                            public boolean test(GetRouteTableResponse response) {
                                 return targetStatesSet.contains(
                                         response.getRouteTable().getLifecycleState());
                             }
@@ -3030,17 +3028,17 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetSecurityListRequest, GetSecurityListResponse>() {
                             @Override
                             public GetSecurityListResponse apply(GetSecurityListRequest request) {
                                 return client.getSecurityList(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSecurityListResponse>() {
+                        new java.util.function.Predicate<GetSecurityListResponse>() {
                             @Override
-                            public boolean apply(GetSecurityListResponse response) {
+                            public boolean test(GetSecurityListResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSecurityList().getLifecycleState());
                             }
@@ -3132,8 +3130,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetServiceGatewayRequest, GetServiceGatewayResponse>() {
                             @Override
                             public GetServiceGatewayResponse apply(
@@ -3141,9 +3139,9 @@ public class VirtualNetworkWaiters {
                                 return client.getServiceGateway(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetServiceGatewayResponse>() {
+                        new java.util.function.Predicate<GetServiceGatewayResponse>() {
                             @Override
-                            public boolean apply(GetServiceGatewayResponse response) {
+                            public boolean test(GetServiceGatewayResponse response) {
                                 return targetStatesSet.contains(
                                         response.getServiceGateway().getLifecycleState());
                             }
@@ -3232,16 +3230,16 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetSubnetRequest, GetSubnetResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetSubnetRequest, GetSubnetResponse>() {
                             @Override
                             public GetSubnetResponse apply(GetSubnetRequest request) {
                                 return client.getSubnet(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSubnetResponse>() {
+                        new java.util.function.Predicate<GetSubnetResponse>() {
                             @Override
-                            public boolean apply(GetSubnetResponse response) {
+                            public boolean test(GetSubnetResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSubnet().getLifecycleState());
                             }
@@ -3327,16 +3325,16 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetVcnRequest, GetVcnResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetVcnRequest, GetVcnResponse>() {
                             @Override
                             public GetVcnResponse apply(GetVcnRequest request) {
                                 return client.getVcn(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVcnResponse>() {
+                        new java.util.function.Predicate<GetVcnResponse>() {
                             @Override
-                            public boolean apply(GetVcnResponse response) {
+                            public boolean test(GetVcnResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVcn().getLifecycleState());
                             }
@@ -3435,8 +3433,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetVcnDnsResolverAssociationRequest,
                                 GetVcnDnsResolverAssociationResponse>() {
                             @Override
@@ -3445,10 +3443,9 @@ public class VirtualNetworkWaiters {
                                 return client.getVcnDnsResolverAssociation(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetVcnDnsResolverAssociationResponse>() {
+                        new java.util.function.Predicate<GetVcnDnsResolverAssociationResponse>() {
                             @Override
-                            public boolean apply(GetVcnDnsResolverAssociationResponse response) {
+                            public boolean test(GetVcnDnsResolverAssociationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVcnDnsResolverAssociation()
                                                 .getLifecycleState());
@@ -3542,8 +3539,8 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetVirtualCircuitRequest, GetVirtualCircuitResponse>() {
                             @Override
                             public GetVirtualCircuitResponse apply(
@@ -3551,9 +3548,9 @@ public class VirtualNetworkWaiters {
                                 return client.getVirtualCircuit(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVirtualCircuitResponse>() {
+                        new java.util.function.Predicate<GetVirtualCircuitResponse>() {
                             @Override
-                            public boolean apply(GetVirtualCircuitResponse response) {
+                            public boolean test(GetVirtualCircuitResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVirtualCircuit().getLifecycleState());
                             }
@@ -3640,16 +3637,16 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetVlanRequest, GetVlanResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetVlanRequest, GetVlanResponse>() {
                             @Override
                             public GetVlanResponse apply(GetVlanRequest request) {
                                 return client.getVlan(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVlanResponse>() {
+                        new java.util.function.Predicate<GetVlanResponse>() {
                             @Override
-                            public boolean apply(GetVlanResponse response) {
+                            public boolean test(GetVlanResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVlan().getLifecycleState());
                             }
@@ -3735,16 +3732,16 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetVnicRequest, GetVnicResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetVnicRequest, GetVnicResponse>() {
                             @Override
                             public GetVnicResponse apply(GetVnicRequest request) {
                                 return client.getVnic(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVnicResponse>() {
+                        new java.util.function.Predicate<GetVnicResponse>() {
                             @Override
-                            public boolean apply(GetVnicResponse response) {
+                            public boolean test(GetVnicResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVnic().getLifecycleState());
                             }
@@ -3830,16 +3827,16 @@ public class VirtualNetworkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetVtapRequest, GetVtapResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetVtapRequest, GetVtapResponse>() {
                             @Override
                             public GetVtapResponse apply(GetVtapRequest request) {
                                 return client.getVtap(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVtapResponse>() {
+                        new java.util.function.Predicate<GetVtapResponse>() {
                             @Override
-                            public boolean apply(GetVtapResponse response) {
+                            public boolean test(GetVtapResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVtap().getLifecycleState());
                             }

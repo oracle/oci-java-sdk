@@ -7,13 +7,13 @@ package com.oracle.bmc.auth.internal;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
+import java.util.Optional;
 
-import com.google.common.base.Charsets;
-import com.google.common.base.Optional;
 import com.oracle.bmc.util.StreamUtils;
 import org.junit.Test;
 
@@ -26,7 +26,7 @@ public class AuthUtilsTest {
         String key =
                 StreamUtils.toString(
                         new FileInputStream("src/test/resources/auth_utils_test_public.pem"),
-                        Charsets.UTF_8);
+                        StandardCharsets.UTF_8);
 
         String publicKeyPEM =
                 key.replace("-----BEGIN PUBLIC KEY-----", "")
@@ -91,7 +91,7 @@ public class AuthUtilsTest {
         String fakeCert =
                 StreamUtils.toString(
                         new FileInputStream("src/test/resources/auth_utils_test_cert.pem"),
-                        Charsets.UTF_8);
+                        StandardCharsets.UTF_8);
 
         byte[] encodedCertificateFromPem = AuthUtils.getEncodedCertificateFromPem(fakeCert);
         String asBase64 = Base64.getEncoder().encodeToString(encodedCertificateFromPem);

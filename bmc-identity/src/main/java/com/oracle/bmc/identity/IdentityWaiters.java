@@ -6,7 +6,6 @@ package com.oracle.bmc.identity;
 
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -107,17 +106,17 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetCompartmentRequest, GetCompartmentResponse>() {
                             @Override
                             public GetCompartmentResponse apply(GetCompartmentRequest request) {
                                 return client.getCompartment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCompartmentResponse>() {
+                        new java.util.function.Predicate<GetCompartmentResponse>() {
                             @Override
-                            public boolean apply(GetCompartmentResponse response) {
+                            public boolean test(GetCompartmentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCompartment().getLifecycleState());
                             }
@@ -205,16 +204,16 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetDomainRequest, GetDomainResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetDomainRequest, GetDomainResponse>() {
                             @Override
                             public GetDomainResponse apply(GetDomainRequest request) {
                                 return client.getDomain(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDomainResponse>() {
+                        new java.util.function.Predicate<GetDomainResponse>() {
                             @Override
-                            public boolean apply(GetDomainResponse response) {
+                            public boolean test(GetDomainResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDomain().getLifecycleState());
                             }
@@ -306,17 +305,17 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDynamicGroupRequest, GetDynamicGroupResponse>() {
                             @Override
                             public GetDynamicGroupResponse apply(GetDynamicGroupRequest request) {
                                 return client.getDynamicGroup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDynamicGroupResponse>() {
+                        new java.util.function.Predicate<GetDynamicGroupResponse>() {
                             @Override
-                            public boolean apply(GetDynamicGroupResponse response) {
+                            public boolean test(GetDynamicGroupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDynamicGroup().getLifecycleState());
                             }
@@ -404,16 +403,16 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetGroupRequest, GetGroupResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetGroupRequest, GetGroupResponse>() {
                             @Override
                             public GetGroupResponse apply(GetGroupRequest request) {
                                 return client.getGroup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetGroupResponse>() {
+                        new java.util.function.Predicate<GetGroupResponse>() {
                             @Override
-                            public boolean apply(GetGroupResponse response) {
+                            public boolean test(GetGroupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getGroup().getLifecycleState());
                             }
@@ -460,8 +459,8 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetIamWorkRequestRequest, GetIamWorkRequestResponse>() {
                             @Override
                             public GetIamWorkRequestResponse apply(
@@ -469,9 +468,9 @@ public class IdentityWaiters {
                                 return client.getIamWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetIamWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetIamWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetIamWorkRequestResponse response) {
+                            public boolean test(GetIamWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getIamWorkRequest().getTimeFinished() != null;
                             }
@@ -563,8 +562,8 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetIdentityProviderRequest, GetIdentityProviderResponse>() {
                             @Override
                             public GetIdentityProviderResponse apply(
@@ -572,9 +571,9 @@ public class IdentityWaiters {
                                 return client.getIdentityProvider(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetIdentityProviderResponse>() {
+                        new java.util.function.Predicate<GetIdentityProviderResponse>() {
                             @Override
-                            public boolean apply(GetIdentityProviderResponse response) {
+                            public boolean test(GetIdentityProviderResponse response) {
                                 return targetStatesSet.contains(
                                         response.getIdentityProvider().getLifecycleState());
                             }
@@ -668,8 +667,8 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetIdpGroupMappingRequest, GetIdpGroupMappingResponse>() {
                             @Override
                             public GetIdpGroupMappingResponse apply(
@@ -677,9 +676,9 @@ public class IdentityWaiters {
                                 return client.getIdpGroupMapping(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetIdpGroupMappingResponse>() {
+                        new java.util.function.Predicate<GetIdpGroupMappingResponse>() {
                             @Override
-                            public boolean apply(GetIdpGroupMappingResponse response) {
+                            public boolean test(GetIdpGroupMappingResponse response) {
                                 return targetStatesSet.contains(
                                         response.getIdpGroupMapping().getLifecycleState());
                             }
@@ -768,16 +767,16 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetPolicyRequest, GetPolicyResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetPolicyRequest, GetPolicyResponse>() {
                             @Override
                             public GetPolicyResponse apply(GetPolicyRequest request) {
                                 return client.getPolicy(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetPolicyResponse>() {
+                        new java.util.function.Predicate<GetPolicyResponse>() {
                             @Override
-                            public boolean apply(GetPolicyResponse response) {
+                            public boolean test(GetPolicyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getPolicy().getLifecycleState());
                             }
@@ -864,16 +863,16 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetTagRequest, GetTagResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetTagRequest, GetTagResponse>() {
                             @Override
                             public GetTagResponse apply(GetTagRequest request) {
                                 return client.getTag(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTagResponse>() {
+                        new java.util.function.Predicate<GetTagResponse>() {
                             @Override
-                            public boolean apply(GetTagResponse response) {
+                            public boolean test(GetTagResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTag().getLifecycleState());
                             }
@@ -961,17 +960,17 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetTagDefaultRequest, GetTagDefaultResponse>() {
                             @Override
                             public GetTagDefaultResponse apply(GetTagDefaultRequest request) {
                                 return client.getTagDefault(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTagDefaultResponse>() {
+                        new java.util.function.Predicate<GetTagDefaultResponse>() {
                             @Override
-                            public boolean apply(GetTagDefaultResponse response) {
+                            public boolean test(GetTagDefaultResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTagDefault().getLifecycleState());
                             }
@@ -1063,17 +1062,17 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetTagNamespaceRequest, GetTagNamespaceResponse>() {
                             @Override
                             public GetTagNamespaceResponse apply(GetTagNamespaceRequest request) {
                                 return client.getTagNamespace(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTagNamespaceResponse>() {
+                        new java.util.function.Predicate<GetTagNamespaceResponse>() {
                             @Override
-                            public boolean apply(GetTagNamespaceResponse response) {
+                            public boolean test(GetTagNamespaceResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTagNamespace().getLifecycleState());
                             }
@@ -1121,8 +1120,8 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetTaggingWorkRequestRequest, GetTaggingWorkRequestResponse>() {
                             @Override
                             public GetTaggingWorkRequestResponse apply(
@@ -1130,9 +1129,9 @@ public class IdentityWaiters {
                                 return client.getTaggingWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTaggingWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetTaggingWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetTaggingWorkRequestResponse response) {
+                            public boolean test(GetTaggingWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getTaggingWorkRequest().getTimeFinished() != null;
                             }
@@ -1218,16 +1217,16 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetUserRequest, GetUserResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetUserRequest, GetUserResponse>() {
                             @Override
                             public GetUserResponse apply(GetUserRequest request) {
                                 return client.getUser(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetUserResponse>() {
+                        new java.util.function.Predicate<GetUserResponse>() {
                             @Override
-                            public boolean apply(GetUserResponse response) {
+                            public boolean test(GetUserResponse response) {
                                 return targetStatesSet.contains(
                                         response.getUser().getLifecycleState());
                             }
@@ -1326,8 +1325,8 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>() {
                             @Override
                             public GetUserGroupMembershipResponse apply(
@@ -1335,9 +1334,9 @@ public class IdentityWaiters {
                                 return client.getUserGroupMembership(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetUserGroupMembershipResponse>() {
+                        new java.util.function.Predicate<GetUserGroupMembershipResponse>() {
                             @Override
-                            public boolean apply(GetUserGroupMembershipResponse response) {
+                            public boolean test(GetUserGroupMembershipResponse response) {
                                 return targetStatesSet.contains(
                                         response.getUserGroupMembership().getLifecycleState());
                             }
@@ -1385,17 +1384,17 @@ public class IdentityWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

@@ -97,20 +97,20 @@ public class ListPublicIpsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response, com.oracle.bmc.core.responses.ListPublicIpsResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response, com.oracle.bmc.core.responses.ListPublicIpsResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.core.responses.ListPublicIpsResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.core.responses.ListPublicIpsResponse>() {
                             @Override
@@ -118,7 +118,7 @@ public class ListPublicIpsConverter {
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.core.responses.ListPublicIpsResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.util.List<
@@ -157,10 +157,9 @@ public class ListPublicIpsConverter {
 
                                 builder.items(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcNextPageHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-next-page");
+                                java.util.Optional<java.util.List<String>> opcNextPageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-next-page");
                                 if (opcNextPageHeader.isPresent()) {
                                     builder.opcNextPage(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -169,10 +168,9 @@ public class ListPublicIpsConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(

@@ -7,7 +7,6 @@ package com.oracle.bmc.rover;
 import com.oracle.bmc.rover.internal.http.*;
 import com.oracle.bmc.rover.requests.*;
 import com.oracle.bmc.rover.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for RoverNode service. <br/>
@@ -319,7 +318,7 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
          * @return the client
          */
         public RoverNodeAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         "ChangeRoverNodeCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/ChangeRoverNodeCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeRoverNodeCompartmentResponse>
                 transformer =
                         ChangeRoverNodeCompartmentConverter.fromResponse(
@@ -461,7 +461,7 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         "CreateRoverNode",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/CreateRoverNode");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRoverNodeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateRoverNodeResponse>
                 transformer =
                         CreateRoverNodeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -513,7 +513,7 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         "DeleteRoverNode",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/DeleteRoverNode");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRoverNodeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteRoverNodeResponse>
                 transformer =
                         DeleteRoverNodeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -558,7 +558,7 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         "GetRoverNode",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/GetRoverNode");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRoverNodeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetRoverNodeResponse>
                 transformer =
                         GetRoverNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetRoverNodeRequest, GetRoverNodeResponse>
@@ -603,7 +603,7 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         "GetRoverNodeCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNodeCertificate/GetRoverNodeCertificate");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetRoverNodeCertificateResponse>
                 transformer =
                         GetRoverNodeCertificateConverter.fromResponse(
@@ -651,7 +651,7 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         "GetRoverNodeEncryptionKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNodeEncryptionKey/GetRoverNodeEncryptionKey");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetRoverNodeEncryptionKeyResponse>
                 transformer =
                         GetRoverNodeEncryptionKeyConverter.fromResponse(
@@ -700,7 +700,7 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         "GetRoverNodeGetRpt",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNodeGetRpt/GetRoverNodeGetRpt");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRoverNodeGetRptResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetRoverNodeGetRptResponse>
                 transformer =
                         GetRoverNodeGetRptConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -746,7 +746,7 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         "ListRoverNodes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/ListRoverNodes");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRoverNodesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRoverNodesResponse>
                 transformer =
                         ListRoverNodesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListRoverNodesRequest, ListRoverNodesResponse>
@@ -792,8 +792,7 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         "RoverNodeActionSetKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNodeSetKey/RoverNodeActionSetKey");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RoverNodeActionSetKeyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RoverNodeActionSetKeyResponse>
                 transformer =
                         RoverNodeActionSetKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -845,7 +844,7 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                         "UpdateRoverNode",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/UpdateRoverNode");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRoverNodeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateRoverNodeResponse>
                 transformer =
                         UpdateRoverNodeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -9,7 +9,6 @@ import com.oracle.bmc.opsi.requests.*;
 import com.oracle.bmc.opsi.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class OperationsInsightsClient implements OperationsInsights {
@@ -335,9 +334,9 @@ public class OperationsInsightsClient implements OperationsInsights {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("OperationsInsights-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("OperationsInsights-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class OperationsInsightsClient implements OperationsInsights {
          * @return the client
          */
         public OperationsInsightsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class OperationsInsightsClient implements OperationsInsights {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "AddExadataInsightMembers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/AddExadataInsightMembers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddExadataInsightMembersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddExadataInsightMembersResponse>
                 transformer =
                         AddExadataInsightMembersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -532,7 +532,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ChangeDatabaseInsightCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeDatabaseInsightCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseInsightCompartmentResponse>
                 transformer =
                         ChangeDatabaseInsightCompartmentConverter.fromResponse(
@@ -578,7 +578,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ChangeEnterpriseManagerBridgeCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ChangeEnterpriseManagerBridgeCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeEnterpriseManagerBridgeCompartmentResponse>
                 transformer =
                         ChangeEnterpriseManagerBridgeCompartmentConverter.fromResponse(
@@ -623,7 +623,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ChangeExadataInsightCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ChangeExadataInsightCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeExadataInsightCompartmentResponse>
                 transformer =
                         ChangeExadataInsightCompartmentConverter.fromResponse(
@@ -668,8 +668,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ChangeHostInsightCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ChangeHostInsightCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeHostInsightCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeHostInsightCompartmentResponse>
                 transformer =
                         ChangeHostInsightCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -716,7 +715,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ChangeOperationsInsightsPrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/ChangeOperationsInsightsPrivateEndpointCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeOperationsInsightsPrivateEndpointCompartmentResponse>
                 transformer =
@@ -762,7 +761,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ChangePeComanagedDatabaseInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangePeComanagedDatabaseInsight");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangePeComanagedDatabaseInsightResponse>
                 transformer =
                         ChangePeComanagedDatabaseInsightConverter.fromResponse(
@@ -806,9 +805,8 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "CreateAwrHub",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/CreateAwrHub");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAwrHubResponse>
-                transformer =
-                        CreateAwrHubConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAwrHubResponse> transformer =
+                CreateAwrHubConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -848,7 +846,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "CreateDatabaseInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/CreateDatabaseInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDatabaseInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDatabaseInsightResponse>
                 transformer =
                         CreateDatabaseInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -891,7 +889,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "CreateEnterpriseManagerBridge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/CreateEnterpriseManagerBridge");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateEnterpriseManagerBridgeResponse>
                 transformer =
                         CreateEnterpriseManagerBridgeConverter.fromResponse(
@@ -935,7 +933,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "CreateExadataInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/CreateExadataInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateExadataInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateExadataInsightResponse>
                 transformer =
                         CreateExadataInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -977,7 +975,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "CreateHostInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/CreateHostInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateHostInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateHostInsightResponse>
                 transformer =
                         CreateHostInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1021,7 +1019,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "CreateOperationsInsightsPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/CreateOperationsInsightsPrivateEndpoint");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateOperationsInsightsPrivateEndpointResponse>
                 transformer =
                         CreateOperationsInsightsPrivateEndpointConverter.fromResponse(
@@ -1066,7 +1064,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "CreateOperationsInsightsWarehouse",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/CreateOperationsInsightsWarehouse");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateOperationsInsightsWarehouseResponse>
                 transformer =
                         CreateOperationsInsightsWarehouseConverter.fromResponse(
@@ -1112,7 +1110,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "CreateOperationsInsightsWarehouseUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/CreateOperationsInsightsWarehouseUser");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateOperationsInsightsWarehouseUserResponse>
                 transformer =
                         CreateOperationsInsightsWarehouseUserConverter.fromResponse(
@@ -1155,9 +1153,8 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "DeleteAwrHub",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/DeleteAwrHub");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAwrHubResponse>
-                transformer =
-                        DeleteAwrHubConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAwrHubResponse> transformer =
+                DeleteAwrHubConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1193,7 +1190,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "DeleteDatabaseInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DeleteDatabaseInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDatabaseInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDatabaseInsightResponse>
                 transformer =
                         DeleteDatabaseInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1232,7 +1229,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "DeleteEnterpriseManagerBridge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/DeleteEnterpriseManagerBridge");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteEnterpriseManagerBridgeResponse>
                 transformer =
                         DeleteEnterpriseManagerBridgeConverter.fromResponse(
@@ -1271,7 +1268,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "DeleteExadataInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/DeleteExadataInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteExadataInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteExadataInsightResponse>
                 transformer =
                         DeleteExadataInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1309,7 +1306,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "DeleteHostInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/DeleteHostInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHostInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteHostInsightResponse>
                 transformer =
                         DeleteHostInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1349,7 +1346,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "DeleteOperationsInsightsPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/DeleteOperationsInsightsPrivateEndpoint");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOperationsInsightsPrivateEndpointResponse>
                 transformer =
                         DeleteOperationsInsightsPrivateEndpointConverter.fromResponse(
@@ -1389,7 +1386,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "DeleteOperationsInsightsWarehouse",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/DeleteOperationsInsightsWarehouse");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOperationsInsightsWarehouseResponse>
                 transformer =
                         DeleteOperationsInsightsWarehouseConverter.fromResponse(
@@ -1430,7 +1427,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "DeleteOperationsInsightsWarehouseUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/DeleteOperationsInsightsWarehouseUser");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOperationsInsightsWarehouseUserResponse>
                 transformer =
                         DeleteOperationsInsightsWarehouseUserConverter.fromResponse(
@@ -1471,7 +1468,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "DisableDatabaseInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DisableDatabaseInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DisableDatabaseInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DisableDatabaseInsightResponse>
                 transformer =
                         DisableDatabaseInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1511,7 +1508,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "DisableExadataInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/DisableExadataInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DisableExadataInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DisableExadataInsightResponse>
                 transformer =
                         DisableExadataInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1550,7 +1547,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "DisableHostInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/DisableHostInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DisableHostInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DisableHostInsightResponse>
                 transformer =
                         DisableHostInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1602,7 +1599,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "DownloadOperationsInsightsWarehouseWallet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/DownloadOperationsInsightsWarehouseWallet");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         DownloadOperationsInsightsWarehouseWalletResponse>
                 transformer =
@@ -1648,7 +1645,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "EnableDatabaseInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/EnableDatabaseInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, EnableDatabaseInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, EnableDatabaseInsightResponse>
                 transformer =
                         EnableDatabaseInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1690,7 +1687,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "EnableExadataInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/EnableExadataInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, EnableExadataInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, EnableExadataInsightResponse>
                 transformer =
                         EnableExadataInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1732,7 +1729,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "EnableHostInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/EnableHostInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, EnableHostInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, EnableHostInsightResponse>
                 transformer =
                         EnableHostInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1772,7 +1769,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "GetAwrHub",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrHub");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAwrHubResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetAwrHubResponse> transformer =
                 GetAwrHubConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1807,9 +1804,8 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "GetAwrReport",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrReport");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAwrReportResponse>
-                transformer =
-                        GetAwrReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetAwrReportResponse> transformer =
+                GetAwrReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1843,7 +1839,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "GetDatabaseInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/GetDatabaseInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDatabaseInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseInsightResponse>
                 transformer =
                         GetDatabaseInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1881,8 +1877,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "GetEnterpriseManagerBridge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/GetEnterpriseManagerBridge");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetEnterpriseManagerBridgeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetEnterpriseManagerBridgeResponse>
                 transformer =
                         GetEnterpriseManagerBridgeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1919,7 +1914,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "GetExadataInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/GetExadataInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetExadataInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetExadataInsightResponse>
                 transformer =
                         GetExadataInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1956,9 +1951,8 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "GetHostInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/GetHostInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetHostInsightResponse>
-                transformer =
-                        GetHostInsightConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetHostInsightResponse> transformer =
+                GetHostInsightConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1994,7 +1988,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "GetOperationsInsightsPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/GetOperationsInsightsPrivateEndpoint");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetOperationsInsightsPrivateEndpointResponse>
                 transformer =
                         GetOperationsInsightsPrivateEndpointConverter.fromResponse(
@@ -2033,7 +2027,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "GetOperationsInsightsWarehouse",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/GetOperationsInsightsWarehouse");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetOperationsInsightsWarehouseResponse>
                 transformer =
                         GetOperationsInsightsWarehouseConverter.fromResponse(
@@ -2072,7 +2066,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "GetOperationsInsightsWarehouseUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/GetOperationsInsightsWarehouseUser");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetOperationsInsightsWarehouseUserResponse>
                 transformer =
                         GetOperationsInsightsWarehouseUserConverter.fromResponse(
@@ -2110,7 +2104,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "GetOpsiDataObject",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/GetOpsiDataObject");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOpsiDataObjectResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetOpsiDataObjectResponse>
                 transformer =
                         GetOpsiDataObjectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2147,9 +2141,8 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2185,8 +2178,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "IngestDatabaseConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestDatabaseConfiguration");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, IngestDatabaseConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, IngestDatabaseConfigurationResponse>
                 transformer =
                         IngestDatabaseConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2230,7 +2222,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "IngestHostConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/IngestHostConfiguration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, IngestHostConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, IngestHostConfigurationResponse>
                 transformer =
                         IngestHostConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2272,7 +2264,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "IngestHostMetrics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/IngestHostMetrics");
-        com.google.common.base.Function<javax.ws.rs.core.Response, IngestHostMetricsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, IngestHostMetricsResponse>
                 transformer =
                         IngestHostMetricsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2314,7 +2306,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "IngestSqlBucket",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlBucket");
-        com.google.common.base.Function<javax.ws.rs.core.Response, IngestSqlBucketResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, IngestSqlBucketResponse>
                 transformer =
                         IngestSqlBucketConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2356,7 +2348,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "IngestSqlPlanLines",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlPlanLines");
-        com.google.common.base.Function<javax.ws.rs.core.Response, IngestSqlPlanLinesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, IngestSqlPlanLinesResponse>
                 transformer =
                         IngestSqlPlanLinesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2398,9 +2390,8 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "IngestSqlStats",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlStats");
-        com.google.common.base.Function<javax.ws.rs.core.Response, IngestSqlStatsResponse>
-                transformer =
-                        IngestSqlStatsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, IngestSqlStatsResponse> transformer =
+                IngestSqlStatsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2439,9 +2430,8 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "IngestSqlText",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlText");
-        com.google.common.base.Function<javax.ws.rs.core.Response, IngestSqlTextResponse>
-                transformer =
-                        IngestSqlTextConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, IngestSqlTextResponse> transformer =
+                IngestSqlTextConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2479,9 +2469,8 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListAwrHubs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrHubs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAwrHubsResponse>
-                transformer =
-                        ListAwrHubsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListAwrHubsResponse> transformer =
+                ListAwrHubsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2515,7 +2504,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListAwrSnapshots",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrSnapshots");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAwrSnapshotsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAwrSnapshotsResponse>
                 transformer =
                         ListAwrSnapshotsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2553,8 +2542,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListDatabaseConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListDatabaseConfigurations");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDatabaseConfigurationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseConfigurationsResponse>
                 transformer =
                         ListDatabaseConfigurationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2591,7 +2579,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListDatabaseInsights",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListDatabaseInsights");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDatabaseInsightsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseInsightsResponse>
                 transformer =
                         ListDatabaseInsightsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2629,8 +2617,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListEnterpriseManagerBridges",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ListEnterpriseManagerBridges");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListEnterpriseManagerBridgesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListEnterpriseManagerBridgesResponse>
                 transformer =
                         ListEnterpriseManagerBridgesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2668,8 +2655,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListExadataConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ListExadataConfigurations");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListExadataConfigurationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListExadataConfigurationsResponse>
                 transformer =
                         ListExadataConfigurationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2706,7 +2692,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListExadataInsights",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ListExadataInsights");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListExadataInsightsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListExadataInsightsResponse>
                 transformer =
                         ListExadataInsightsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2744,7 +2730,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListHostConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostConfigurations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListHostConfigurationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListHostConfigurationsResponse>
                 transformer =
                         ListHostConfigurationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2781,7 +2767,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListHostInsights",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostInsights");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListHostInsightsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListHostInsightsResponse>
                 transformer =
                         ListHostInsightsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2818,7 +2804,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListHostedEntities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostedEntities");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListHostedEntitiesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListHostedEntitiesResponse>
                 transformer =
                         ListHostedEntitiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2856,8 +2842,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListImportableAgentEntities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListImportableAgentEntities");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListImportableAgentEntitiesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListImportableAgentEntitiesResponse>
                 transformer =
                         ListImportableAgentEntitiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2896,7 +2881,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListImportableEnterpriseManagerEntities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ListImportableEnterpriseManagerEntities");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListImportableEnterpriseManagerEntitiesResponse>
                 transformer =
                         ListImportableEnterpriseManagerEntitiesConverter.fromResponse(
@@ -2936,7 +2921,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListOperationsInsightsPrivateEndpoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/ListOperationsInsightsPrivateEndpoints");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListOperationsInsightsPrivateEndpointsResponse>
                 transformer =
                         ListOperationsInsightsPrivateEndpointsConverter.fromResponse(
@@ -2976,7 +2961,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListOperationsInsightsWarehouseUsers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/ListOperationsInsightsWarehouseUsers");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListOperationsInsightsWarehouseUsersResponse>
                 transformer =
                         ListOperationsInsightsWarehouseUsersConverter.fromResponse(
@@ -3015,7 +3000,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListOperationsInsightsWarehouses",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/ListOperationsInsightsWarehouses");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListOperationsInsightsWarehousesResponse>
                 transformer =
                         ListOperationsInsightsWarehousesConverter.fromResponse(
@@ -3053,7 +3038,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListOpsiDataObjects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/ListOpsiDataObjects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListOpsiDataObjectsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListOpsiDataObjectsResponse>
                 transformer =
                         ListOpsiDataObjectsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3090,9 +3075,8 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListSqlPlans",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlPlans");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSqlPlansResponse>
-                transformer =
-                        ListSqlPlansConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlPlansResponse> transformer =
+                ListSqlPlansConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3126,7 +3110,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListSqlSearches",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlSearches");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSqlSearchesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlSearchesResponse>
                 transformer =
                         ListSqlSearchesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3163,9 +3147,8 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListSqlTexts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlTexts");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSqlTextsResponse>
-                transformer =
-                        ListSqlTextsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlTextsResponse> transformer =
+                ListSqlTextsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3200,7 +3183,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3237,7 +3220,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3274,7 +3257,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3312,7 +3295,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "QueryOpsiDataObjectData",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/QueryOpsiDataObjectData");
-        com.google.common.base.Function<javax.ws.rs.core.Response, QueryOpsiDataObjectDataResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, QueryOpsiDataObjectDataResponse>
                 transformer =
                         QueryOpsiDataObjectDataConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3355,7 +3338,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "RotateOperationsInsightsWarehouseWallet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/RotateOperationsInsightsWarehouseWallet");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, RotateOperationsInsightsWarehouseWalletResponse>
                 transformer =
                         RotateOperationsInsightsWarehouseWalletConverter.fromResponse(
@@ -3395,8 +3378,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeAwrSourcesSummaries",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrSourcesSummaries");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SummarizeAwrSourcesSummariesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeAwrSourcesSummariesResponse>
                 transformer =
                         SummarizeAwrSourcesSummariesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3436,7 +3418,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeDatabaseInsightResourceCapacityTrend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceCapacityTrend");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeDatabaseInsightResourceCapacityTrendResponse>
                 transformer =
@@ -3478,7 +3460,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeDatabaseInsightResourceForecastTrend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceForecastTrend");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeDatabaseInsightResourceForecastTrendResponse>
                 transformer =
@@ -3520,7 +3502,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeDatabaseInsightResourceStatistics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceStatistics");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeDatabaseInsightResourceStatisticsResponse>
                 transformer =
@@ -3561,7 +3543,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeDatabaseInsightResourceUsage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUsage");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeDatabaseInsightResourceUsageResponse>
                 transformer =
                         SummarizeDatabaseInsightResourceUsageConverter.fromResponse(
@@ -3602,7 +3584,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeDatabaseInsightResourceUsageTrend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUsageTrend");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeDatabaseInsightResourceUsageTrendResponse>
                 transformer =
@@ -3645,7 +3627,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeDatabaseInsightResourceUtilizationInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUtilizationInsight");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeDatabaseInsightResourceUtilizationInsightResponse>
                 transformer =
@@ -3687,7 +3669,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeDatabaseInsightTablespaceUsageTrend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightTablespaceUsageTrend");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeDatabaseInsightTablespaceUsageTrendResponse>
                 transformer =
@@ -3729,7 +3711,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeExadataInsightResourceCapacityTrend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceCapacityTrend");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeExadataInsightResourceCapacityTrendResponse>
                 transformer =
@@ -3772,7 +3754,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeExadataInsightResourceCapacityTrendAggregated",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceCapacityTrendAggregated");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeExadataInsightResourceCapacityTrendAggregatedResponse>
                 transformer =
@@ -3814,7 +3796,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeExadataInsightResourceForecastTrend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceForecastTrend");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeExadataInsightResourceForecastTrendResponse>
                 transformer =
@@ -3857,7 +3839,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeExadataInsightResourceForecastTrendAggregated",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceForecastTrendAggregated");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeExadataInsightResourceForecastTrendAggregatedResponse>
                 transformer =
@@ -3899,7 +3881,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeExadataInsightResourceStatistics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceStatistics");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeExadataInsightResourceStatisticsResponse>
                 transformer =
@@ -3940,7 +3922,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeExadataInsightResourceUsage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUsage");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeExadataInsightResourceUsageResponse>
                 transformer =
                         SummarizeExadataInsightResourceUsageConverter.fromResponse(
@@ -3981,7 +3963,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeExadataInsightResourceUsageAggregated",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUsageAggregated");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeExadataInsightResourceUsageAggregatedResponse>
                 transformer =
@@ -4024,7 +4006,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeExadataInsightResourceUtilizationInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUtilizationInsight");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeExadataInsightResourceUtilizationInsightResponse>
                 transformer =
@@ -4064,7 +4046,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeExadataMembers",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataMembers");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeExadataMembersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeExadataMembersResponse>
                 transformer =
                         SummarizeExadataMembersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4104,7 +4086,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeHostInsightResourceCapacityTrend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceCapacityTrend");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeHostInsightResourceCapacityTrendResponse>
                 transformer =
@@ -4146,7 +4128,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeHostInsightResourceForecastTrend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceForecastTrend");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeHostInsightResourceForecastTrendResponse>
                 transformer =
@@ -4187,7 +4169,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeHostInsightResourceStatistics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceStatistics");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeHostInsightResourceStatisticsResponse>
                 transformer =
                         SummarizeHostInsightResourceStatisticsConverter.fromResponse(
@@ -4226,7 +4208,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeHostInsightResourceUsage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUsage");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeHostInsightResourceUsageResponse>
                 transformer =
                         SummarizeHostInsightResourceUsageConverter.fromResponse(
@@ -4266,7 +4248,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeHostInsightResourceUsageTrend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUsageTrend");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeHostInsightResourceUsageTrendResponse>
                 transformer =
                         SummarizeHostInsightResourceUsageTrendConverter.fromResponse(
@@ -4307,7 +4289,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeHostInsightResourceUtilizationInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUtilizationInsight");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeHostInsightResourceUtilizationInsightResponse>
                 transformer =
@@ -4349,7 +4331,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeHostInsightTopProcessesUsageTrend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightTopProcessesUsageTrend");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeHostInsightTopProcessesUsageTrendResponse>
                 transformer =
@@ -4392,7 +4374,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeOperationsInsightsWarehouseResourceUsage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/SummarizeOperationsInsightsWarehouseResourceUsage");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeOperationsInsightsWarehouseResourceUsageResponse>
                 transformer =
@@ -4431,7 +4413,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeSqlInsights",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlInsights");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeSqlInsightsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeSqlInsightsResponse>
                 transformer =
                         SummarizeSqlInsightsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4469,7 +4451,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeSqlPlanInsights",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlPlanInsights");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeSqlPlanInsightsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeSqlPlanInsightsResponse>
                 transformer =
                         SummarizeSqlPlanInsightsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4508,7 +4490,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeSqlResponseTimeDistributions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlResponseTimeDistributions");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeSqlResponseTimeDistributionsResponse>
                 transformer =
                         SummarizeSqlResponseTimeDistributionsConverter.fromResponse(
@@ -4547,7 +4529,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeSqlStatistics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatistics");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeSqlStatisticsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeSqlStatisticsResponse>
                 transformer =
                         SummarizeSqlStatisticsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4585,7 +4567,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeSqlStatisticsTimeSeries",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatisticsTimeSeries");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeSqlStatisticsTimeSeriesResponse>
                 transformer =
                         SummarizeSqlStatisticsTimeSeriesConverter.fromResponse(
@@ -4625,7 +4607,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "SummarizeSqlStatisticsTimeSeriesByPlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatisticsTimeSeriesByPlan");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeSqlStatisticsTimeSeriesByPlanResponse>
                 transformer =
                         SummarizeSqlStatisticsTimeSeriesByPlanConverter.fromResponse(
@@ -4663,9 +4645,8 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "UpdateAwrHub",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/UpdateAwrHub");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAwrHubResponse>
-                transformer =
-                        UpdateAwrHubConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAwrHubResponse> transformer =
+                UpdateAwrHubConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4704,7 +4685,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "UpdateDatabaseInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/UpdateDatabaseInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDatabaseInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDatabaseInsightResponse>
                 transformer =
                         UpdateDatabaseInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4746,7 +4727,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "UpdateEnterpriseManagerBridge",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/UpdateEnterpriseManagerBridge");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateEnterpriseManagerBridgeResponse>
                 transformer =
                         UpdateEnterpriseManagerBridgeConverter.fromResponse(
@@ -4789,7 +4770,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "UpdateExadataInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/UpdateExadataInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateExadataInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateExadataInsightResponse>
                 transformer =
                         UpdateExadataInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4830,7 +4811,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "UpdateHostInsight",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/UpdateHostInsight");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHostInsightResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateHostInsightResponse>
                 transformer =
                         UpdateHostInsightConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4873,7 +4854,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "UpdateOperationsInsightsPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/UpdateOperationsInsightsPrivateEndpoint");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateOperationsInsightsPrivateEndpointResponse>
                 transformer =
                         UpdateOperationsInsightsPrivateEndpointConverter.fromResponse(
@@ -4917,7 +4898,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "UpdateOperationsInsightsWarehouse",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/UpdateOperationsInsightsWarehouse");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateOperationsInsightsWarehouseResponse>
                 transformer =
                         UpdateOperationsInsightsWarehouseConverter.fromResponse(
@@ -4962,7 +4943,7 @@ public class OperationsInsightsClient implements OperationsInsights {
                         "UpdateOperationsInsightsWarehouseUser",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/UpdateOperationsInsightsWarehouseUser");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateOperationsInsightsWarehouseUserResponse>
                 transformer =
                         UpdateOperationsInsightsWarehouseUserConverter.fromResponse(

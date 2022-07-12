@@ -45,19 +45,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAccessPoliciesRequest.Builder, ListAccessPoliciesRequest,
                 ListAccessPoliciesResponse>(
-                new com.google.common.base.Supplier<ListAccessPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListAccessPoliciesRequest.Builder>() {
                     @Override
                     public ListAccessPoliciesRequest.Builder get() {
                         return ListAccessPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAccessPoliciesResponse, String>() {
+                new java.util.function.Function<ListAccessPoliciesResponse, String>() {
                     @Override
                     public String apply(ListAccessPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAccessPoliciesRequest.Builder>,
                         ListAccessPoliciesRequest>() {
@@ -70,12 +70,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAccessPoliciesRequest, ListAccessPoliciesResponse>() {
                     @Override
                     public ListAccessPoliciesResponse apply(ListAccessPoliciesRequest request) {
@@ -98,19 +98,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListAccessPoliciesRequest.Builder, ListAccessPoliciesRequest,
                 ListAccessPoliciesResponse, com.oracle.bmc.servicemesh.model.AccessPolicySummary>(
-                new com.google.common.base.Supplier<ListAccessPoliciesRequest.Builder>() {
+                new java.util.function.Supplier<ListAccessPoliciesRequest.Builder>() {
                     @Override
                     public ListAccessPoliciesRequest.Builder get() {
                         return ListAccessPoliciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAccessPoliciesResponse, String>() {
+                new java.util.function.Function<ListAccessPoliciesResponse, String>() {
                     @Override
                     public String apply(ListAccessPoliciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAccessPoliciesRequest.Builder>,
                         ListAccessPoliciesRequest>() {
@@ -123,19 +123,19 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAccessPoliciesRequest, ListAccessPoliciesResponse>() {
                     @Override
                     public ListAccessPoliciesResponse apply(ListAccessPoliciesRequest request) {
                         return client.listAccessPolicies(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAccessPoliciesResponse,
                         java.util.List<com.oracle.bmc.servicemesh.model.AccessPolicySummary>>() {
                     @Override
@@ -159,21 +159,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListIngressGatewayRouteTablesRequest.Builder, ListIngressGatewayRouteTablesRequest,
                 ListIngressGatewayRouteTablesResponse>(
-                new com.google.common.base.Supplier<
-                        ListIngressGatewayRouteTablesRequest.Builder>() {
+                new java.util.function.Supplier<ListIngressGatewayRouteTablesRequest.Builder>() {
                     @Override
                     public ListIngressGatewayRouteTablesRequest.Builder get() {
                         return ListIngressGatewayRouteTablesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListIngressGatewayRouteTablesResponse, String>() {
+                new java.util.function.Function<ListIngressGatewayRouteTablesResponse, String>() {
                     @Override
                     public String apply(ListIngressGatewayRouteTablesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIngressGatewayRouteTablesRequest.Builder>,
                         ListIngressGatewayRouteTablesRequest>() {
@@ -186,12 +184,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIngressGatewayRouteTablesRequest,
                         ListIngressGatewayRouteTablesResponse>() {
                     @Override
@@ -218,21 +216,19 @@ public class ServiceMeshPaginators {
                 ListIngressGatewayRouteTablesRequest.Builder, ListIngressGatewayRouteTablesRequest,
                 ListIngressGatewayRouteTablesResponse,
                 com.oracle.bmc.servicemesh.model.IngressGatewayRouteTableSummary>(
-                new com.google.common.base.Supplier<
-                        ListIngressGatewayRouteTablesRequest.Builder>() {
+                new java.util.function.Supplier<ListIngressGatewayRouteTablesRequest.Builder>() {
                     @Override
                     public ListIngressGatewayRouteTablesRequest.Builder get() {
                         return ListIngressGatewayRouteTablesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListIngressGatewayRouteTablesResponse, String>() {
+                new java.util.function.Function<ListIngressGatewayRouteTablesResponse, String>() {
                     @Override
                     public String apply(ListIngressGatewayRouteTablesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIngressGatewayRouteTablesRequest.Builder>,
                         ListIngressGatewayRouteTablesRequest>() {
@@ -245,12 +241,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIngressGatewayRouteTablesRequest,
                         ListIngressGatewayRouteTablesResponse>() {
                     @Override
@@ -259,7 +255,7 @@ public class ServiceMeshPaginators {
                         return client.listIngressGatewayRouteTables(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIngressGatewayRouteTablesResponse,
                         java.util.List<
                                 com.oracle.bmc.servicemesh.model
@@ -286,19 +282,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListIngressGatewaysRequest.Builder, ListIngressGatewaysRequest,
                 ListIngressGatewaysResponse>(
-                new com.google.common.base.Supplier<ListIngressGatewaysRequest.Builder>() {
+                new java.util.function.Supplier<ListIngressGatewaysRequest.Builder>() {
                     @Override
                     public ListIngressGatewaysRequest.Builder get() {
                         return ListIngressGatewaysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListIngressGatewaysResponse, String>() {
+                new java.util.function.Function<ListIngressGatewaysResponse, String>() {
                     @Override
                     public String apply(ListIngressGatewaysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIngressGatewaysRequest.Builder>,
                         ListIngressGatewaysRequest>() {
@@ -311,12 +307,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIngressGatewaysRequest, ListIngressGatewaysResponse>() {
                     @Override
                     public ListIngressGatewaysResponse apply(ListIngressGatewaysRequest request) {
@@ -340,19 +336,19 @@ public class ServiceMeshPaginators {
                 ListIngressGatewaysRequest.Builder, ListIngressGatewaysRequest,
                 ListIngressGatewaysResponse,
                 com.oracle.bmc.servicemesh.model.IngressGatewaySummary>(
-                new com.google.common.base.Supplier<ListIngressGatewaysRequest.Builder>() {
+                new java.util.function.Supplier<ListIngressGatewaysRequest.Builder>() {
                     @Override
                     public ListIngressGatewaysRequest.Builder get() {
                         return ListIngressGatewaysRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListIngressGatewaysResponse, String>() {
+                new java.util.function.Function<ListIngressGatewaysResponse, String>() {
                     @Override
                     public String apply(ListIngressGatewaysResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListIngressGatewaysRequest.Builder>,
                         ListIngressGatewaysRequest>() {
@@ -365,19 +361,19 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIngressGatewaysRequest, ListIngressGatewaysResponse>() {
                     @Override
                     public ListIngressGatewaysResponse apply(ListIngressGatewaysRequest request) {
                         return client.listIngressGateways(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListIngressGatewaysResponse,
                         java.util.List<com.oracle.bmc.servicemesh.model.IngressGatewaySummary>>() {
                     @Override
@@ -399,19 +395,19 @@ public class ServiceMeshPaginators {
             final ListMeshesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListMeshesRequest.Builder, ListMeshesRequest, ListMeshesResponse>(
-                new com.google.common.base.Supplier<ListMeshesRequest.Builder>() {
+                new java.util.function.Supplier<ListMeshesRequest.Builder>() {
                     @Override
                     public ListMeshesRequest.Builder get() {
                         return ListMeshesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListMeshesResponse, String>() {
+                new java.util.function.Function<ListMeshesResponse, String>() {
                     @Override
                     public String apply(ListMeshesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListMeshesRequest.Builder>,
                         ListMeshesRequest>() {
@@ -424,12 +420,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListMeshesRequest, ListMeshesResponse>() {
+                new java.util.function.Function<ListMeshesRequest, ListMeshesResponse>() {
                     @Override
                     public ListMeshesResponse apply(ListMeshesRequest request) {
                         return client.listMeshes(request);
@@ -451,19 +447,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListMeshesRequest.Builder, ListMeshesRequest, ListMeshesResponse,
                 com.oracle.bmc.servicemesh.model.MeshSummary>(
-                new com.google.common.base.Supplier<ListMeshesRequest.Builder>() {
+                new java.util.function.Supplier<ListMeshesRequest.Builder>() {
                     @Override
                     public ListMeshesRequest.Builder get() {
                         return ListMeshesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListMeshesResponse, String>() {
+                new java.util.function.Function<ListMeshesResponse, String>() {
                     @Override
                     public String apply(ListMeshesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListMeshesRequest.Builder>,
                         ListMeshesRequest>() {
@@ -476,18 +472,18 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListMeshesRequest, ListMeshesResponse>() {
+                new java.util.function.Function<ListMeshesRequest, ListMeshesResponse>() {
                     @Override
                     public ListMeshesResponse apply(ListMeshesRequest request) {
                         return client.listMeshes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListMeshesResponse,
                         java.util.List<com.oracle.bmc.servicemesh.model.MeshSummary>>() {
                     @Override
@@ -510,19 +506,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVirtualDeploymentsRequest.Builder, ListVirtualDeploymentsRequest,
                 ListVirtualDeploymentsResponse>(
-                new com.google.common.base.Supplier<ListVirtualDeploymentsRequest.Builder>() {
+                new java.util.function.Supplier<ListVirtualDeploymentsRequest.Builder>() {
                     @Override
                     public ListVirtualDeploymentsRequest.Builder get() {
                         return ListVirtualDeploymentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVirtualDeploymentsResponse, String>() {
+                new java.util.function.Function<ListVirtualDeploymentsResponse, String>() {
                     @Override
                     public String apply(ListVirtualDeploymentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVirtualDeploymentsRequest.Builder>,
                         ListVirtualDeploymentsRequest>() {
@@ -535,12 +531,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualDeploymentsRequest, ListVirtualDeploymentsResponse>() {
                     @Override
                     public ListVirtualDeploymentsResponse apply(
@@ -565,19 +561,19 @@ public class ServiceMeshPaginators {
                 ListVirtualDeploymentsRequest.Builder, ListVirtualDeploymentsRequest,
                 ListVirtualDeploymentsResponse,
                 com.oracle.bmc.servicemesh.model.VirtualDeploymentSummary>(
-                new com.google.common.base.Supplier<ListVirtualDeploymentsRequest.Builder>() {
+                new java.util.function.Supplier<ListVirtualDeploymentsRequest.Builder>() {
                     @Override
                     public ListVirtualDeploymentsRequest.Builder get() {
                         return ListVirtualDeploymentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVirtualDeploymentsResponse, String>() {
+                new java.util.function.Function<ListVirtualDeploymentsResponse, String>() {
                     @Override
                     public String apply(ListVirtualDeploymentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVirtualDeploymentsRequest.Builder>,
                         ListVirtualDeploymentsRequest>() {
@@ -590,12 +586,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualDeploymentsRequest, ListVirtualDeploymentsResponse>() {
                     @Override
                     public ListVirtualDeploymentsResponse apply(
@@ -603,7 +599,7 @@ public class ServiceMeshPaginators {
                         return client.listVirtualDeployments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualDeploymentsResponse,
                         java.util.List<
                                 com.oracle.bmc.servicemesh.model.VirtualDeploymentSummary>>() {
@@ -628,21 +624,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVirtualServiceRouteTablesRequest.Builder, ListVirtualServiceRouteTablesRequest,
                 ListVirtualServiceRouteTablesResponse>(
-                new com.google.common.base.Supplier<
-                        ListVirtualServiceRouteTablesRequest.Builder>() {
+                new java.util.function.Supplier<ListVirtualServiceRouteTablesRequest.Builder>() {
                     @Override
                     public ListVirtualServiceRouteTablesRequest.Builder get() {
                         return ListVirtualServiceRouteTablesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListVirtualServiceRouteTablesResponse, String>() {
+                new java.util.function.Function<ListVirtualServiceRouteTablesResponse, String>() {
                     @Override
                     public String apply(ListVirtualServiceRouteTablesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVirtualServiceRouteTablesRequest.Builder>,
                         ListVirtualServiceRouteTablesRequest>() {
@@ -655,12 +649,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualServiceRouteTablesRequest,
                         ListVirtualServiceRouteTablesResponse>() {
                     @Override
@@ -687,21 +681,19 @@ public class ServiceMeshPaginators {
                 ListVirtualServiceRouteTablesRequest.Builder, ListVirtualServiceRouteTablesRequest,
                 ListVirtualServiceRouteTablesResponse,
                 com.oracle.bmc.servicemesh.model.VirtualServiceRouteTableSummary>(
-                new com.google.common.base.Supplier<
-                        ListVirtualServiceRouteTablesRequest.Builder>() {
+                new java.util.function.Supplier<ListVirtualServiceRouteTablesRequest.Builder>() {
                     @Override
                     public ListVirtualServiceRouteTablesRequest.Builder get() {
                         return ListVirtualServiceRouteTablesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListVirtualServiceRouteTablesResponse, String>() {
+                new java.util.function.Function<ListVirtualServiceRouteTablesResponse, String>() {
                     @Override
                     public String apply(ListVirtualServiceRouteTablesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVirtualServiceRouteTablesRequest.Builder>,
                         ListVirtualServiceRouteTablesRequest>() {
@@ -714,12 +706,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualServiceRouteTablesRequest,
                         ListVirtualServiceRouteTablesResponse>() {
                     @Override
@@ -728,7 +720,7 @@ public class ServiceMeshPaginators {
                         return client.listVirtualServiceRouteTables(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualServiceRouteTablesResponse,
                         java.util.List<
                                 com.oracle.bmc.servicemesh.model
@@ -755,19 +747,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListVirtualServicesRequest.Builder, ListVirtualServicesRequest,
                 ListVirtualServicesResponse>(
-                new com.google.common.base.Supplier<ListVirtualServicesRequest.Builder>() {
+                new java.util.function.Supplier<ListVirtualServicesRequest.Builder>() {
                     @Override
                     public ListVirtualServicesRequest.Builder get() {
                         return ListVirtualServicesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVirtualServicesResponse, String>() {
+                new java.util.function.Function<ListVirtualServicesResponse, String>() {
                     @Override
                     public String apply(ListVirtualServicesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVirtualServicesRequest.Builder>,
                         ListVirtualServicesRequest>() {
@@ -780,12 +772,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualServicesRequest, ListVirtualServicesResponse>() {
                     @Override
                     public ListVirtualServicesResponse apply(ListVirtualServicesRequest request) {
@@ -809,19 +801,19 @@ public class ServiceMeshPaginators {
                 ListVirtualServicesRequest.Builder, ListVirtualServicesRequest,
                 ListVirtualServicesResponse,
                 com.oracle.bmc.servicemesh.model.VirtualServiceSummary>(
-                new com.google.common.base.Supplier<ListVirtualServicesRequest.Builder>() {
+                new java.util.function.Supplier<ListVirtualServicesRequest.Builder>() {
                     @Override
                     public ListVirtualServicesRequest.Builder get() {
                         return ListVirtualServicesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListVirtualServicesResponse, String>() {
+                new java.util.function.Function<ListVirtualServicesResponse, String>() {
                     @Override
                     public String apply(ListVirtualServicesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListVirtualServicesRequest.Builder>,
                         ListVirtualServicesRequest>() {
@@ -834,19 +826,19 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualServicesRequest, ListVirtualServicesResponse>() {
                     @Override
                     public ListVirtualServicesResponse apply(ListVirtualServicesRequest request) {
                         return client.listVirtualServices(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListVirtualServicesResponse,
                         java.util.List<com.oracle.bmc.servicemesh.model.VirtualServiceSummary>>() {
                     @Override
@@ -869,19 +861,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -894,12 +886,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -923,19 +915,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse, com.oracle.bmc.servicemesh.model.WorkRequestError>(
-                new com.google.common.base.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
                         return ListWorkRequestErrorsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestErrorsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestErrorsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestErrorsRequest.Builder>,
                         ListWorkRequestErrorsRequest>() {
@@ -948,12 +940,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
                     @Override
                     public ListWorkRequestErrorsResponse apply(
@@ -961,7 +953,7 @@ public class ServiceMeshPaginators {
                         return client.listWorkRequestErrors(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestErrorsResponse,
                         java.util.List<com.oracle.bmc.servicemesh.model.WorkRequestError>>() {
                     @Override
@@ -984,19 +976,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -1009,12 +1001,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
@@ -1037,19 +1029,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse, com.oracle.bmc.servicemesh.model.WorkRequestLogEntry>(
-                new com.google.common.base.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
                         return ListWorkRequestLogsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestLogsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestLogsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestLogsRequest.Builder>,
                         ListWorkRequestLogsRequest>() {
@@ -1062,19 +1054,19 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
                     @Override
                     public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
                         return client.listWorkRequestLogs(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestLogsResponse,
                         java.util.List<com.oracle.bmc.servicemesh.model.WorkRequestLogEntry>>() {
                     @Override
@@ -1096,19 +1088,19 @@ public class ServiceMeshPaginators {
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -1121,12 +1113,12 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
@@ -1149,19 +1141,19 @@ public class ServiceMeshPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.servicemesh.model.WorkRequestSummary>(
-                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
                     public ListWorkRequestsRequest.Builder get() {
                         return ListWorkRequestsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                new java.util.function.Function<ListWorkRequestsResponse, String>() {
                     @Override
                     public String apply(ListWorkRequestsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListWorkRequestsRequest.Builder>,
                         ListWorkRequestsRequest>() {
@@ -1174,19 +1166,19 @@ public class ServiceMeshPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsRequest, ListWorkRequestsResponse>() {
                     @Override
                     public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
                         return client.listWorkRequests(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListWorkRequestsResponse,
                         java.util.List<com.oracle.bmc.servicemesh.model.WorkRequestSummary>>() {
                     @Override

@@ -9,7 +9,6 @@ import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class RecipientInvitationClient implements RecipientInvitation {
@@ -335,9 +334,9 @@ public class RecipientInvitationClient implements RecipientInvitation {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("RecipientInvitation-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("RecipientInvitation-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -406,7 +405,7 @@ public class RecipientInvitationClient implements RecipientInvitation {
          * @return the client
          */
         public RecipientInvitationClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -443,7 +442,8 @@ public class RecipientInvitationClient implements RecipientInvitation {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -490,8 +490,7 @@ public class RecipientInvitationClient implements RecipientInvitation {
                         "AcceptRecipientInvitation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/AcceptRecipientInvitation");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, AcceptRecipientInvitationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AcceptRecipientInvitationResponse>
                 transformer =
                         AcceptRecipientInvitationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -530,7 +529,7 @@ public class RecipientInvitationClient implements RecipientInvitation {
                         "GetRecipientInvitation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/GetRecipientInvitation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRecipientInvitationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRecipientInvitationResponse>
                 transformer =
                         GetRecipientInvitationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -569,8 +568,7 @@ public class RecipientInvitationClient implements RecipientInvitation {
                         "IgnoreRecipientInvitation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/IgnoreRecipientInvitation");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, IgnoreRecipientInvitationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, IgnoreRecipientInvitationResponse>
                 transformer =
                         IgnoreRecipientInvitationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -609,7 +607,7 @@ public class RecipientInvitationClient implements RecipientInvitation {
                         "ListRecipientInvitations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/ListRecipientInvitations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRecipientInvitationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRecipientInvitationsResponse>
                 transformer =
                         ListRecipientInvitationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -647,8 +645,7 @@ public class RecipientInvitationClient implements RecipientInvitation {
                         "UpdateRecipientInvitation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/UpdateRecipientInvitation");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateRecipientInvitationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRecipientInvitationResponse>
                 transformer =
                         UpdateRecipientInvitationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 
-import com.google.common.net.UrlEscapers;
+import com.google.common /*Guava will be removed soon*/.net.UrlEscapers;
 
 import com.oracle.bmc.http.signing.RequestSigningFilter;
 

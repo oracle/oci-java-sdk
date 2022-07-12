@@ -7,7 +7,6 @@ package com.oracle.bmc.core;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ComputeManagement service. <br/>
@@ -320,7 +319,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
          * @return the client
          */
         public ComputeManagementAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -407,7 +407,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "AttachInstancePoolInstance",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, AttachInstancePoolInstanceResponse>
                 transformer =
                         AttachInstancePoolInstanceConverter.fromResponse(
@@ -462,7 +462,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "AttachLoadBalancer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/AttachLoadBalancer");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AttachLoadBalancerResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AttachLoadBalancerResponse>
                 transformer =
                         AttachLoadBalancerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -516,7 +516,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "ChangeClusterNetworkCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ChangeClusterNetworkCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeClusterNetworkCompartmentResponse>
                 transformer =
                         ChangeClusterNetworkCompartmentConverter.fromResponse(
@@ -576,7 +576,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "ChangeInstanceConfigurationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/ChangeInstanceConfigurationCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeInstanceConfigurationCompartmentResponse>
                 transformer =
                         ChangeInstanceConfigurationCompartmentConverter.fromResponse(
@@ -636,7 +636,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "ChangeInstancePoolCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ChangeInstancePoolCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeInstancePoolCompartmentResponse>
                 transformer =
                         ChangeInstancePoolCompartmentConverter.fromResponse(
@@ -691,8 +691,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "CreateClusterNetwork",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/CreateClusterNetwork");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateClusterNetworkResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateClusterNetworkResponse>
                 transformer =
                         CreateClusterNetworkConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -747,7 +746,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "CreateInstanceConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateInstanceConfigurationResponse>
                 transformer =
                         CreateInstanceConfigurationConverter.fromResponse(
@@ -802,7 +801,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "CreateInstancePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/CreateInstancePool");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateInstancePoolResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateInstancePoolResponse>
                 transformer =
                         CreateInstancePoolConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -855,7 +854,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "DeleteInstanceConfiguration",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteInstanceConfigurationResponse>
                 transformer =
                         DeleteInstanceConfigurationConverter.fromResponse(
@@ -907,7 +906,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "DetachInstancePoolInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/DetachInstancePoolInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DetachInstancePoolInstanceResponse>
                 transformer =
                         DetachInstancePoolInstanceConverter.fromResponse(
@@ -962,7 +961,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "DetachLoadBalancer",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/DetachLoadBalancer");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DetachLoadBalancerResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DetachLoadBalancerResponse>
                 transformer =
                         DetachLoadBalancerConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1013,7 +1012,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "GetClusterNetwork",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/GetClusterNetwork");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterNetworkResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetClusterNetworkResponse>
                 transformer =
                         GetClusterNetworkConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1059,7 +1058,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "GetInstanceConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/GetInstanceConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetInstanceConfigurationResponse>
                 transformer =
                         GetInstanceConfigurationConverter.fromResponse(
@@ -1107,7 +1106,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "GetInstancePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/GetInstancePool");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetInstancePoolResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetInstancePoolResponse>
                 transformer =
                         GetInstancePoolConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1153,7 +1152,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "GetInstancePoolInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/GetInstancePoolInstance");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetInstancePoolInstanceResponse>
                 transformer =
                         GetInstancePoolInstanceConverter.fromResponse(
@@ -1204,7 +1203,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "GetInstancePoolLoadBalancerAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolLoadBalancerAttachment/GetInstancePoolLoadBalancerAttachment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetInstancePoolLoadBalancerAttachmentResponse>
                 transformer =
                         GetInstancePoolLoadBalancerAttachmentConverter.fromResponse(
@@ -1258,7 +1257,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "LaunchInstanceConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstanceConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, LaunchInstanceConfigurationResponse>
                 transformer =
                         LaunchInstanceConfigurationConverter.fromResponse(
@@ -1314,7 +1313,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "ListClusterNetworkInstances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworkInstances");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListClusterNetworkInstancesResponse>
                 transformer =
                         ListClusterNetworkInstancesConverter.fromResponse(
@@ -1363,8 +1362,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "ListClusterNetworks",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworks");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListClusterNetworksResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListClusterNetworksResponse>
                 transformer =
                         ListClusterNetworksConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1413,7 +1411,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "ListInstanceConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfigurationSummary/ListInstanceConfigurations");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListInstanceConfigurationsResponse>
                 transformer =
                         ListInstanceConfigurationsConverter.fromResponse(
@@ -1462,7 +1460,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "ListInstancePoolInstances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceSummary/ListInstancePoolInstances");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListInstancePoolInstancesResponse>
                 transformer =
                         ListInstancePoolInstancesConverter.fromResponse(
@@ -1511,7 +1509,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "ListInstancePools",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolSummary/ListInstancePools");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListInstancePoolsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListInstancePoolsResponse>
                 transformer =
                         ListInstancePoolsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1558,7 +1556,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "ResetInstancePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ResetInstancePool");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ResetInstancePoolResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ResetInstancePoolResponse>
                 transformer =
                         ResetInstancePoolConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1605,8 +1603,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "SoftresetInstancePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/SoftresetInstancePool");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SoftresetInstancePoolResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, SoftresetInstancePoolResponse>
                 transformer =
                         SoftresetInstancePoolConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1654,7 +1651,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "StartInstancePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StartInstancePool");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StartInstancePoolResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, StartInstancePoolResponse>
                 transformer =
                         StartInstancePoolConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1701,7 +1698,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "StopInstancePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StopInstancePool");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StopInstancePoolResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, StopInstancePoolResponse>
                 transformer =
                         StopInstancePoolConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1747,7 +1744,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "TerminateClusterNetwork",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/TerminateClusterNetwork");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, TerminateClusterNetworkResponse>
                 transformer =
                         TerminateClusterNetworkConverter.fromResponse(
@@ -1795,8 +1792,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "TerminateInstancePool",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, TerminateInstancePoolResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, TerminateInstancePoolResponse>
                 transformer =
                         TerminateInstancePoolConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1844,8 +1840,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "UpdateClusterNetwork",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/UpdateClusterNetwork");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateClusterNetworkResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateClusterNetworkResponse>
                 transformer =
                         UpdateClusterNetworkConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1900,7 +1895,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "UpdateInstanceConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/UpdateInstanceConfiguration");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateInstanceConfigurationResponse>
                 transformer =
                         UpdateInstanceConfigurationConverter.fromResponse(
@@ -1955,7 +1950,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                         "UpdateInstancePool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/UpdateInstancePool");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInstancePoolResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateInstancePoolResponse>
                 transformer =
                         UpdateInstancePoolConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

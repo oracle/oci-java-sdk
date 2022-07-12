@@ -84,22 +84,22 @@ public class ListInvoiceLinesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.ospgateway.responses.ListInvoiceLinesResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.ospgateway.responses.ListInvoiceLinesResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.ospgateway.responses.ListInvoiceLinesResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.ospgateway.responses.ListInvoiceLinesResponse>() {
                             @Override
@@ -107,7 +107,7 @@ public class ListInvoiceLinesConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.ospgateway.responses.ListInvoiceLinesResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.ospgateway.model
@@ -144,7 +144,7 @@ public class ListInvoiceLinesConverter {
 
                                 builder.invoiceLineCollection(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
+                                java.util.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
                                                 headers, "etag");
                                 if (etagHeader.isPresent()) {
@@ -153,10 +153,9 @@ public class ListInvoiceLinesConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -165,10 +164,9 @@ public class ListInvoiceLinesConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcNextPageHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-next-page");
+                                java.util.Optional<java.util.List<String>> opcNextPageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-next-page");
                                 if (opcNextPageHeader.isPresent()) {
                                     builder.opcNextPage(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -177,10 +175,9 @@ public class ListInvoiceLinesConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcTotalItemsHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-total-items");
+                                java.util.Optional<java.util.List<String>> opcTotalItemsHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-total-items");
                                 if (opcTotalItemsHeader.isPresent()) {
                                     builder.opcTotalItems(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(

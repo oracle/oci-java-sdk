@@ -45,19 +45,19 @@ public class MysqlaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListConfigurationsRequest.Builder, ListConfigurationsRequest,
                 ListConfigurationsResponse>(
-                new com.google.common.base.Supplier<ListConfigurationsRequest.Builder>() {
+                new java.util.function.Supplier<ListConfigurationsRequest.Builder>() {
                     @Override
                     public ListConfigurationsRequest.Builder get() {
                         return ListConfigurationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListConfigurationsResponse, String>() {
+                new java.util.function.Function<ListConfigurationsResponse, String>() {
                     @Override
                     public String apply(ListConfigurationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListConfigurationsRequest.Builder>,
                         ListConfigurationsRequest>() {
@@ -70,12 +70,12 @@ public class MysqlaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListConfigurationsRequest, ListConfigurationsResponse>() {
                     @Override
                     public ListConfigurationsResponse apply(ListConfigurationsRequest request) {
@@ -98,19 +98,19 @@ public class MysqlaasPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListConfigurationsRequest.Builder, ListConfigurationsRequest,
                 ListConfigurationsResponse, com.oracle.bmc.mysql.model.ConfigurationSummary>(
-                new com.google.common.base.Supplier<ListConfigurationsRequest.Builder>() {
+                new java.util.function.Supplier<ListConfigurationsRequest.Builder>() {
                     @Override
                     public ListConfigurationsRequest.Builder get() {
                         return ListConfigurationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListConfigurationsResponse, String>() {
+                new java.util.function.Function<ListConfigurationsResponse, String>() {
                     @Override
                     public String apply(ListConfigurationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListConfigurationsRequest.Builder>,
                         ListConfigurationsRequest>() {
@@ -123,19 +123,19 @@ public class MysqlaasPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListConfigurationsRequest, ListConfigurationsResponse>() {
                     @Override
                     public ListConfigurationsResponse apply(ListConfigurationsRequest request) {
                         return client.listConfigurations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListConfigurationsResponse,
                         java.util.List<com.oracle.bmc.mysql.model.ConfigurationSummary>>() {
                     @Override

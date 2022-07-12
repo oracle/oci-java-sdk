@@ -44,6 +44,7 @@ public class HostInsightSummary {
         "freeformTags",
         "definedTags",
         "systemTags",
+        "opsiPrivateEndpointId",
         "status",
         "timeCreated",
         "timeUpdated",
@@ -60,6 +61,7 @@ public class HostInsightSummary {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String opsiPrivateEndpointId,
             ResourceStatus status,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -75,6 +77,7 @@ public class HostInsightSummary {
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.opsiPrivateEndpointId = opsiPrivateEndpointId;
         this.status = status;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -221,6 +224,20 @@ public class HostInsightSummary {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
+    private final String opsiPrivateEndpointId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     * @return the value
+     **/
+    public String getOpsiPrivateEndpointId() {
+        return opsiPrivateEndpointId;
+    }
+
+    /**
      * Indicates the status of a host insight in Operations Insights
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
@@ -303,6 +320,7 @@ public class HostInsightSummary {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -331,6 +349,7 @@ public class HostInsightSummary {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -357,6 +376,11 @@ public class HostInsightSummary {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opsiPrivateEndpointId == null
+                                ? 43
+                                : this.opsiPrivateEndpointId.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());

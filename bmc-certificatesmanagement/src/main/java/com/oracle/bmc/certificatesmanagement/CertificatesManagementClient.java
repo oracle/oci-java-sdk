@@ -9,7 +9,6 @@ import com.oracle.bmc.certificatesmanagement.requests.*;
 import com.oracle.bmc.certificatesmanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class CertificatesManagementClient implements CertificatesManagement {
@@ -335,9 +334,9 @@ public class CertificatesManagementClient implements CertificatesManagement {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("CertificatesManagement-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("CertificatesManagement-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -406,7 +405,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
          * @return the client
          */
         public CertificatesManagementClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -443,7 +442,8 @@ public class CertificatesManagementClient implements CertificatesManagement {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "CancelCertificateAuthorityDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CancelCertificateAuthorityDeletion");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CancelCertificateAuthorityDeletionResponse>
                 transformer =
                         CancelCertificateAuthorityDeletionConverter.fromResponse(
@@ -531,7 +531,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "CancelCertificateAuthorityVersionDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/CancelCertificateAuthorityVersionDeletion");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         CancelCertificateAuthorityVersionDeletionResponse>
                 transformer =
@@ -572,8 +572,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "CancelCertificateDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CancelCertificateDeletion");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CancelCertificateDeletionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelCertificateDeletionResponse>
                 transformer =
                         CancelCertificateDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -612,7 +611,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "CancelCertificateVersionDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/CancelCertificateVersionDeletion");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CancelCertificateVersionDeletionResponse>
                 transformer =
                         CancelCertificateVersionDeletionConverter.fromResponse(
@@ -653,8 +652,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ChangeCaBundleCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/ChangeCaBundleCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeCaBundleCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeCaBundleCompartmentResponse>
                 transformer =
                         ChangeCaBundleCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -699,7 +697,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ChangeCertificateAuthorityCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ChangeCertificateAuthorityCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeCertificateAuthorityCompartmentResponse>
                 transformer =
                         ChangeCertificateAuthorityCompartmentConverter.fromResponse(
@@ -744,8 +742,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ChangeCertificateCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ChangeCertificateCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
                 transformer =
                         ChangeCertificateCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -788,9 +785,8 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "CreateCaBundle",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/CreateCaBundle");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCaBundleResponse>
-                transformer =
-                        CreateCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCaBundleResponse> transformer =
+                CreateCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -829,7 +825,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "CreateCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CreateCertificate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
                 transformer =
                         CreateCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -872,8 +868,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "CreateCertificateAuthority",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CreateCertificateAuthority");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateCertificateAuthorityResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateAuthorityResponse>
                 transformer =
                         CreateCertificateAuthorityConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -915,9 +910,8 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "DeleteCaBundle",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/DeleteCaBundle");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCaBundleResponse>
-                transformer =
-                        DeleteCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCaBundleResponse> transformer =
+                DeleteCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -952,9 +946,8 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "GetAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Association/GetAssociation");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAssociationResponse>
-                transformer =
-                        GetAssociationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetAssociationResponse> transformer =
+                GetAssociationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -988,9 +981,8 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "GetCaBundle",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/GetCaBundle");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCaBundleResponse>
-                transformer =
-                        GetCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetCaBundleResponse> transformer =
+                GetCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1024,9 +1016,8 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "GetCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/GetCertificate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCertificateResponse>
-                transformer =
-                        GetCertificateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetCertificateResponse> transformer =
+                GetCertificateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1061,7 +1052,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "GetCertificateAuthority",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/GetCertificateAuthority");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCertificateAuthorityResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetCertificateAuthorityResponse>
                 transformer =
                         GetCertificateAuthorityConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1099,7 +1090,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "GetCertificateAuthorityVersion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/GetCertificateAuthorityVersion");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetCertificateAuthorityVersionResponse>
                 transformer =
                         GetCertificateAuthorityVersionConverter.fromResponse(
@@ -1138,7 +1129,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "GetCertificateVersion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/GetCertificateVersion");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCertificateVersionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetCertificateVersionResponse>
                 transformer =
                         GetCertificateVersionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1175,7 +1166,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ListAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/AssociationSummary/ListAssociations");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAssociationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAssociationsResponse>
                 transformer =
                         ListAssociationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1212,9 +1203,8 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ListCaBundles",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundleSummary/ListCaBundles");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCaBundlesResponse>
-                transformer =
-                        ListCaBundlesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListCaBundlesResponse> transformer =
+                ListCaBundlesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1249,8 +1239,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ListCertificateAuthorities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthoritySummary/ListCertificateAuthorities");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCertificateAuthoritiesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCertificateAuthoritiesResponse>
                 transformer =
                         ListCertificateAuthoritiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1288,7 +1277,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ListCertificateAuthorityVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersionSummary/ListCertificateAuthorityVersions");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListCertificateAuthorityVersionsResponse>
                 transformer =
                         ListCertificateAuthorityVersionsConverter.fromResponse(
@@ -1327,7 +1316,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ListCertificateVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersionSummary/ListCertificateVersions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificateVersionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCertificateVersionsResponse>
                 transformer =
                         ListCertificateVersionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1364,7 +1353,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ListCertificates",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateSummary/ListCertificates");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer =
                         ListCertificatesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1403,7 +1392,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "RevokeCertificateAuthorityVersion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/RevokeCertificateAuthorityVersion");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, RevokeCertificateAuthorityVersionResponse>
                 transformer =
                         RevokeCertificateAuthorityVersionConverter.fromResponse(
@@ -1448,7 +1437,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "RevokeCertificateVersion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/RevokeCertificateVersion");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RevokeCertificateVersionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RevokeCertificateVersionResponse>
                 transformer =
                         RevokeCertificateVersionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1491,7 +1480,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ScheduleCertificateAuthorityDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ScheduleCertificateAuthorityDeletion");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ScheduleCertificateAuthorityDeletionResponse>
                 transformer =
                         ScheduleCertificateAuthorityDeletionConverter.fromResponse(
@@ -1537,7 +1526,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ScheduleCertificateAuthorityVersionDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/ScheduleCertificateAuthorityVersionDeletion");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ScheduleCertificateAuthorityVersionDeletionResponse>
                 transformer =
@@ -1582,8 +1571,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ScheduleCertificateDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ScheduleCertificateDeletion");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ScheduleCertificateDeletionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ScheduleCertificateDeletionResponse>
                 transformer =
                         ScheduleCertificateDeletionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1626,7 +1614,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "ScheduleCertificateVersionDeletion",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/ScheduleCertificateVersionDeletion");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ScheduleCertificateVersionDeletionResponse>
                 transformer =
                         ScheduleCertificateVersionDeletionConverter.fromResponse(
@@ -1669,9 +1657,8 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "UpdateCaBundle",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/UpdateCaBundle");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCaBundleResponse>
-                transformer =
-                        UpdateCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCaBundleResponse> transformer =
+                UpdateCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1709,7 +1696,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "UpdateCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/UpdateCertificate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
                 transformer =
                         UpdateCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1751,8 +1738,7 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         "UpdateCertificateAuthority",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/UpdateCertificateAuthority");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateCertificateAuthorityResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCertificateAuthorityResponse>
                 transformer =
                         UpdateCertificateAuthorityConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

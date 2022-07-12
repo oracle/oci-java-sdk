@@ -4,23 +4,26 @@
  */
 package com.oracle.bmc.circuitbreaker.internal;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
-import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
-import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
-import org.junit.Test;
-import org.mockito.Mockito;
-
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Predicate;
 import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.ServiceUnavailableException;
 import javax.ws.rs.core.Response;
+
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
+import org.junit.Test;
+import org.mockito.Mockito;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
 
 public class CircuitBreakerConfigurationTest {
 
@@ -37,13 +40,18 @@ public class CircuitBreakerConfigurationTest {
                         .minimumNumberOfCalls(4)
                         .waitDurationInOpenState(Duration.ofSeconds(2))
                         .recordHttpStatuses(
-                                ImmutableSet.of(
-                                        CircuitBreakerConfiguration.TOO_MANY_REQUESTS,
-                                        CircuitBreakerConfiguration.SERVICE_UNAVAILABLE))
+                                Collections.unmodifiableSet(
+                                        new HashSet<>(
+                                                Arrays.asList(
+                                                        CircuitBreakerConfiguration
+                                                                .TOO_MANY_REQUESTS,
+                                                        CircuitBreakerConfiguration
+                                                                .SERVICE_UNAVAILABLE))))
                         .recordExceptions(
-                                ImmutableList.of(
-                                        CircuitBreakerConfiguration
-                                                .SERVICE_UNAVAILABLE_EXCEPTION_CLASS))
+                                Collections.unmodifiableList(
+                                        Arrays.asList(
+                                                CircuitBreakerConfiguration
+                                                        .SERVICE_UNAVAILABLE_EXCEPTION_CLASS)))
                         .build();
 
         JaxRsCircuitBreakerImpl circuitBreaker = new JaxRsCircuitBreakerImpl(config);

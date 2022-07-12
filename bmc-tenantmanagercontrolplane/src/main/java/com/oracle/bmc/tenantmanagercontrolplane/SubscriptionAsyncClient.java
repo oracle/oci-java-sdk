@@ -7,7 +7,6 @@ package com.oracle.bmc.tenantmanagercontrolplane;
 import com.oracle.bmc.tenantmanagercontrolplane.internal.http.*;
 import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Subscription service. <br/>
@@ -320,7 +319,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
          * @return the client
          */
         public SubscriptionAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -405,7 +405,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "CreateSubscriptionMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/CreateSubscriptionMapping");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateSubscriptionMappingResponse>
                 transformer =
                         CreateSubscriptionMappingConverter.fromResponse(
@@ -459,7 +459,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "DeleteSubscriptionMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/DeleteSubscriptionMapping");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteSubscriptionMappingResponse>
                 transformer =
                         DeleteSubscriptionMappingConverter.fromResponse(
@@ -508,7 +508,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "GetAssignedSubscription",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/GetAssignedSubscription");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetAssignedSubscriptionResponse>
                 transformer =
                         GetAssignedSubscriptionConverter.fromResponse(
@@ -556,7 +556,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "GetSubscription",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/GetSubscription");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
                 transformer =
                         GetSubscriptionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -602,8 +602,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "GetSubscriptionMapping",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/GetSubscriptionMapping");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetSubscriptionMappingResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionMappingResponse>
                 transformer =
                         GetSubscriptionMappingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -650,7 +649,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "ListAssignedSubscriptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/ListAssignedSubscriptions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAssignedSubscriptionsResponse>
                 transformer =
                         ListAssignedSubscriptionsConverter.fromResponse(
@@ -699,8 +698,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "ListAvailableRegions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListAvailableRegions");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAvailableRegionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAvailableRegionsResponse>
                 transformer =
                         ListAvailableRegionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -747,7 +745,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "ListSubscriptionMappings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/ListSubscriptionMappings");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSubscriptionMappingsResponse>
                 transformer =
                         ListSubscriptionMappingsConverter.fromResponse(
@@ -795,7 +793,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "ListSubscriptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListSubscriptions");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
                 transformer =
                         ListSubscriptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

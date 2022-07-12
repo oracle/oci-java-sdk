@@ -109,6 +109,15 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
+        private String opsiPrivateEndpointId;
+
+        public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
+            this.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            this.__explicitlySet__.add("opsiPrivateEndpointId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ResourceStatus status;
 
@@ -207,6 +216,7 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
                             freeformTags,
                             definedTags,
                             systemTags,
+                            opsiPrivateEndpointId,
                             status,
                             timeCreated,
                             timeUpdated,
@@ -230,6 +240,7 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .systemTags(o.getSystemTags())
+                            .opsiPrivateEndpointId(o.getOpsiPrivateEndpointId())
                             .status(o.getStatus())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
@@ -265,6 +276,7 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String opsiPrivateEndpointId,
             ResourceStatus status,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -282,6 +294,7 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
                 freeformTags,
                 definedTags,
                 systemTags,
+                opsiPrivateEndpointId,
                 status,
                 timeCreated,
                 timeUpdated,

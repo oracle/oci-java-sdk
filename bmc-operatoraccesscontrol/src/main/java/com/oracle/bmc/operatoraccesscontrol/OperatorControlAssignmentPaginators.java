@@ -46,21 +46,19 @@ public class OperatorControlAssignmentPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListOperatorControlAssignmentsRequest.Builder,
                 ListOperatorControlAssignmentsRequest, ListOperatorControlAssignmentsResponse>(
-                new com.google.common.base.Supplier<
-                        ListOperatorControlAssignmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListOperatorControlAssignmentsRequest.Builder>() {
                     @Override
                     public ListOperatorControlAssignmentsRequest.Builder get() {
                         return ListOperatorControlAssignmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListOperatorControlAssignmentsResponse, String>() {
+                new java.util.function.Function<ListOperatorControlAssignmentsResponse, String>() {
                     @Override
                     public String apply(ListOperatorControlAssignmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListOperatorControlAssignmentsRequest.Builder>,
                         ListOperatorControlAssignmentsRequest>() {
@@ -73,12 +71,12 @@ public class OperatorControlAssignmentPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOperatorControlAssignmentsRequest,
                         ListOperatorControlAssignmentsResponse>() {
                     @Override
@@ -105,21 +103,19 @@ public class OperatorControlAssignmentPaginators {
                 ListOperatorControlAssignmentsRequest.Builder,
                 ListOperatorControlAssignmentsRequest, ListOperatorControlAssignmentsResponse,
                 com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignmentSummary>(
-                new com.google.common.base.Supplier<
-                        ListOperatorControlAssignmentsRequest.Builder>() {
+                new java.util.function.Supplier<ListOperatorControlAssignmentsRequest.Builder>() {
                     @Override
                     public ListOperatorControlAssignmentsRequest.Builder get() {
                         return ListOperatorControlAssignmentsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListOperatorControlAssignmentsResponse, String>() {
+                new java.util.function.Function<ListOperatorControlAssignmentsResponse, String>() {
                     @Override
                     public String apply(ListOperatorControlAssignmentsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListOperatorControlAssignmentsRequest.Builder>,
                         ListOperatorControlAssignmentsRequest>() {
@@ -132,12 +128,12 @@ public class OperatorControlAssignmentPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOperatorControlAssignmentsRequest,
                         ListOperatorControlAssignmentsResponse>() {
                     @Override
@@ -146,7 +142,7 @@ public class OperatorControlAssignmentPaginators {
                         return client.listOperatorControlAssignments(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOperatorControlAssignmentsResponse,
                         java.util.List<
                                 com.oracle.bmc.operatoraccesscontrol.model

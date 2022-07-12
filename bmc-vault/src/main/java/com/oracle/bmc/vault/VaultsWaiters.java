@@ -6,7 +6,6 @@ package com.oracle.bmc.vault;
 
 import com.oracle.bmc.vault.requests.*;
 import com.oracle.bmc.vault.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -102,16 +101,16 @@ public class VaultsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetSecretRequest, GetSecretResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetSecretRequest, GetSecretResponse>() {
                             @Override
                             public GetSecretResponse apply(GetSecretRequest request) {
                                 return client.getSecret(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSecretResponse>() {
+                        new java.util.function.Predicate<GetSecretResponse>() {
                             @Override
-                            public boolean apply(GetSecretResponse response) {
+                            public boolean test(GetSecretResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSecret().getLifecycleState());
                             }

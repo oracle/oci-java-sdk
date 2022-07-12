@@ -43,19 +43,19 @@ public class ApiGatewayPaginators {
     public Iterable<ListApisResponse> listApisResponseIterator(final ListApisRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListApisRequest.Builder, ListApisRequest, ListApisResponse>(
-                new com.google.common.base.Supplier<ListApisRequest.Builder>() {
+                new java.util.function.Supplier<ListApisRequest.Builder>() {
                     @Override
                     public ListApisRequest.Builder get() {
                         return ListApisRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListApisResponse, String>() {
+                new java.util.function.Function<ListApisResponse, String>() {
                     @Override
                     public String apply(ListApisResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListApisRequest.Builder>,
                         ListApisRequest>() {
@@ -68,12 +68,12 @@ public class ApiGatewayPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListApisRequest, ListApisResponse>() {
+                new java.util.function.Function<ListApisRequest, ListApisResponse>() {
                     @Override
                     public ListApisResponse apply(ListApisRequest request) {
                         return client.listApis(request);
@@ -95,19 +95,19 @@ public class ApiGatewayPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListApisRequest.Builder, ListApisRequest, ListApisResponse,
                 com.oracle.bmc.apigateway.model.ApiSummary>(
-                new com.google.common.base.Supplier<ListApisRequest.Builder>() {
+                new java.util.function.Supplier<ListApisRequest.Builder>() {
                     @Override
                     public ListApisRequest.Builder get() {
                         return ListApisRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListApisResponse, String>() {
+                new java.util.function.Function<ListApisResponse, String>() {
                     @Override
                     public String apply(ListApisResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListApisRequest.Builder>,
                         ListApisRequest>() {
@@ -120,18 +120,18 @@ public class ApiGatewayPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListApisRequest, ListApisResponse>() {
+                new java.util.function.Function<ListApisRequest, ListApisResponse>() {
                     @Override
                     public ListApisResponse apply(ListApisRequest request) {
                         return client.listApis(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListApisResponse,
                         java.util.List<com.oracle.bmc.apigateway.model.ApiSummary>>() {
                     @Override
@@ -153,19 +153,19 @@ public class ApiGatewayPaginators {
             final ListCertificatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCertificatesRequest.Builder, ListCertificatesRequest, ListCertificatesResponse>(
-                new com.google.common.base.Supplier<ListCertificatesRequest.Builder>() {
+                new java.util.function.Supplier<ListCertificatesRequest.Builder>() {
                     @Override
                     public ListCertificatesRequest.Builder get() {
                         return ListCertificatesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCertificatesResponse, String>() {
+                new java.util.function.Function<ListCertificatesResponse, String>() {
                     @Override
                     public String apply(ListCertificatesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCertificatesRequest.Builder>,
                         ListCertificatesRequest>() {
@@ -178,12 +178,12 @@ public class ApiGatewayPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificatesRequest, ListCertificatesResponse>() {
                     @Override
                     public ListCertificatesResponse apply(ListCertificatesRequest request) {
@@ -206,19 +206,19 @@ public class ApiGatewayPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCertificatesRequest.Builder, ListCertificatesRequest, ListCertificatesResponse,
                 com.oracle.bmc.apigateway.model.CertificateSummary>(
-                new com.google.common.base.Supplier<ListCertificatesRequest.Builder>() {
+                new java.util.function.Supplier<ListCertificatesRequest.Builder>() {
                     @Override
                     public ListCertificatesRequest.Builder get() {
                         return ListCertificatesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCertificatesResponse, String>() {
+                new java.util.function.Function<ListCertificatesResponse, String>() {
                     @Override
                     public String apply(ListCertificatesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCertificatesRequest.Builder>,
                         ListCertificatesRequest>() {
@@ -231,19 +231,19 @@ public class ApiGatewayPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificatesRequest, ListCertificatesResponse>() {
                     @Override
                     public ListCertificatesResponse apply(ListCertificatesRequest request) {
                         return client.listCertificates(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCertificatesResponse,
                         java.util.List<com.oracle.bmc.apigateway.model.CertificateSummary>>() {
                     @Override
@@ -266,19 +266,19 @@ public class ApiGatewayPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSdkLanguageTypesRequest.Builder, ListSdkLanguageTypesRequest,
                 ListSdkLanguageTypesResponse>(
-                new com.google.common.base.Supplier<ListSdkLanguageTypesRequest.Builder>() {
+                new java.util.function.Supplier<ListSdkLanguageTypesRequest.Builder>() {
                     @Override
                     public ListSdkLanguageTypesRequest.Builder get() {
                         return ListSdkLanguageTypesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSdkLanguageTypesResponse, String>() {
+                new java.util.function.Function<ListSdkLanguageTypesResponse, String>() {
                     @Override
                     public String apply(ListSdkLanguageTypesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSdkLanguageTypesRequest.Builder>,
                         ListSdkLanguageTypesRequest>() {
@@ -291,12 +291,12 @@ public class ApiGatewayPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>() {
                     @Override
                     public ListSdkLanguageTypesResponse apply(ListSdkLanguageTypesRequest request) {
@@ -320,19 +320,19 @@ public class ApiGatewayPaginators {
                 ListSdkLanguageTypesRequest.Builder, ListSdkLanguageTypesRequest,
                 ListSdkLanguageTypesResponse,
                 com.oracle.bmc.apigateway.model.SdkLanguageTypeSummary>(
-                new com.google.common.base.Supplier<ListSdkLanguageTypesRequest.Builder>() {
+                new java.util.function.Supplier<ListSdkLanguageTypesRequest.Builder>() {
                     @Override
                     public ListSdkLanguageTypesRequest.Builder get() {
                         return ListSdkLanguageTypesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSdkLanguageTypesResponse, String>() {
+                new java.util.function.Function<ListSdkLanguageTypesResponse, String>() {
                     @Override
                     public String apply(ListSdkLanguageTypesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSdkLanguageTypesRequest.Builder>,
                         ListSdkLanguageTypesRequest>() {
@@ -345,19 +345,19 @@ public class ApiGatewayPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>() {
                     @Override
                     public ListSdkLanguageTypesResponse apply(ListSdkLanguageTypesRequest request) {
                         return client.listSdkLanguageTypes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSdkLanguageTypesResponse,
                         java.util.List<com.oracle.bmc.apigateway.model.SdkLanguageTypeSummary>>() {
                     @Override
@@ -378,19 +378,19 @@ public class ApiGatewayPaginators {
     public Iterable<ListSdksResponse> listSdksResponseIterator(final ListSdksRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSdksRequest.Builder, ListSdksRequest, ListSdksResponse>(
-                new com.google.common.base.Supplier<ListSdksRequest.Builder>() {
+                new java.util.function.Supplier<ListSdksRequest.Builder>() {
                     @Override
                     public ListSdksRequest.Builder get() {
                         return ListSdksRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSdksResponse, String>() {
+                new java.util.function.Function<ListSdksResponse, String>() {
                     @Override
                     public String apply(ListSdksResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSdksRequest.Builder>,
                         ListSdksRequest>() {
@@ -403,12 +403,12 @@ public class ApiGatewayPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListSdksRequest, ListSdksResponse>() {
+                new java.util.function.Function<ListSdksRequest, ListSdksResponse>() {
                     @Override
                     public ListSdksResponse apply(ListSdksRequest request) {
                         return client.listSdks(request);
@@ -430,19 +430,19 @@ public class ApiGatewayPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSdksRequest.Builder, ListSdksRequest, ListSdksResponse,
                 com.oracle.bmc.apigateway.model.SdkSummary>(
-                new com.google.common.base.Supplier<ListSdksRequest.Builder>() {
+                new java.util.function.Supplier<ListSdksRequest.Builder>() {
                     @Override
                     public ListSdksRequest.Builder get() {
                         return ListSdksRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListSdksResponse, String>() {
+                new java.util.function.Function<ListSdksResponse, String>() {
                     @Override
                     public String apply(ListSdksResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListSdksRequest.Builder>,
                         ListSdksRequest>() {
@@ -455,18 +455,18 @@ public class ApiGatewayPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListSdksRequest, ListSdksResponse>() {
+                new java.util.function.Function<ListSdksRequest, ListSdksResponse>() {
                     @Override
                     public ListSdksResponse apply(ListSdksRequest request) {
                         return client.listSdks(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListSdksResponse,
                         java.util.List<com.oracle.bmc.apigateway.model.SdkSummary>>() {
                     @Override

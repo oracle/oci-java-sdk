@@ -7,7 +7,6 @@ package com.oracle.bmc.aispeech;
 import com.oracle.bmc.aispeech.internal.http.*;
 import com.oracle.bmc.aispeech.requests.*;
 import com.oracle.bmc.aispeech.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for AIServiceSpeech service. <br/>
@@ -321,7 +320,7 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
          * @return the client
          */
         public AIServiceSpeechAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,8 +406,7 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         "CancelTranscriptionJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CancelTranscriptionJob");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CancelTranscriptionJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelTranscriptionJobResponse>
                 transformer =
                         CancelTranscriptionJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -455,7 +454,7 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         "CancelTranscriptionTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/CancelTranscriptionTask");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CancelTranscriptionTaskResponse>
                 transformer =
                         CancelTranscriptionTaskConverter.fromResponse(
@@ -506,7 +505,7 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         "ChangeTranscriptionJobCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ChangeTranscriptionJobCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeTranscriptionJobCompartmentResponse>
                 transformer =
                         ChangeTranscriptionJobCompartmentConverter.fromResponse(
@@ -563,8 +562,7 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         "CreateTranscriptionJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CreateTranscriptionJob");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateTranscriptionJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTranscriptionJobResponse>
                 transformer =
                         CreateTranscriptionJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -616,8 +614,7 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         "GetTranscriptionJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/GetTranscriptionJob");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetTranscriptionJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTranscriptionJobResponse>
                 transformer =
                         GetTranscriptionJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -664,8 +661,7 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         "GetTranscriptionTask",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/GetTranscriptionTask");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetTranscriptionTaskResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTranscriptionTaskResponse>
                 transformer =
                         GetTranscriptionTaskConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -712,8 +708,7 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         "ListTranscriptionJobs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ListTranscriptionJobs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTranscriptionJobsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTranscriptionJobsResponse>
                 transformer =
                         ListTranscriptionJobsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -760,8 +755,7 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         "ListTranscriptionTasks",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/ListTranscriptionTasks");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTranscriptionTasksResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTranscriptionTasksResponse>
                 transformer =
                         ListTranscriptionTasksConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -808,8 +802,7 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         "UpdateTranscriptionJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/UpdateTranscriptionJob");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateTranscriptionJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTranscriptionJobResponse>
                 transformer =
                         UpdateTranscriptionJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

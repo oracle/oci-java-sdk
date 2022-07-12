@@ -4,20 +4,6 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.base.Optional;
-import com.google.common.base.Preconditions;
-import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
-import com.oracle.bmc.http.internal.RestClientFactory;
-import com.oracle.bmc.util.internal.Validate;
-import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-import org.bouncycastle.asn1.x500.AttributeTypeAndValue;
-import org.bouncycastle.asn1.x500.RDN;
-import org.bouncycastle.asn1.x500.X500Name;
-import org.bouncycastle.asn1.x500.style.BCStyle;
-import org.bouncycastle.openssl.jcajce.JcaPEMWriter;
-import org.slf4j.Logger;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -32,6 +18,21 @@ import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.Base64;
+
+import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
+import com.oracle.bmc.http.internal.RestClientFactory;
+import com.oracle.bmc.util.internal.Validate;
+import org.bouncycastle.asn1.ASN1ObjectIdentifier;
+import org.bouncycastle.asn1.x500.AttributeTypeAndValue;
+import org.bouncycastle.asn1.x500.RDN;
+import org.bouncycastle.asn1.x500.X500Name;
+import org.bouncycastle.asn1.x500.style.BCStyle;
+import org.bouncycastle.openssl.jcajce.JcaPEMWriter;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Optional;
+
+import org.slf4j.Logger;
 
 /**
  * Utilities dealing with authorization.
@@ -106,7 +107,7 @@ public class AuthUtils {
 
         Optional<JWK> jwk = toJwk(json);
         if (!jwk.isPresent()) {
-            return Optional.absent();
+            return Optional.empty();
         }
 
         return toPublicKeyFromJwk(jwk.get());
@@ -126,7 +127,7 @@ public class AuthUtils {
             return Optional.of(jwk);
         } catch (IOException e) {
             LOG.debug("Exception reading or de-serializing jwk", e);
-            return Optional.absent();
+            return Optional.empty();
         }
     }
 
@@ -160,7 +161,7 @@ public class AuthUtils {
             return Optional.of(key);
         } catch (Exception ex) {
             LOG.debug("Failed to construct public key from JWK", ex);
-            return Optional.absent();
+            return Optional.empty();
         }
     }
 
@@ -236,9 +237,10 @@ public class AuthUtils {
 
         X500Name name = new X500Name(certificate.getSubjectX500Principal().getName());
 
-        Optional<String> tenancyId =
-                getValue(name, BCStyle.OU, "opc-tenant") // IP
-                        .or(getValue(name, BCStyle.O, "opc-identity")); // SP
+        Optional<String> tenancyId = getValue(name, BCStyle.OU, "opc-tenant"); // IP
+        if (!tenancyId.isPresent()) {
+            tenancyId = getValue(name, BCStyle.O, "opc-identity"); // SP
+        }
         if (tenancyId.isPresent()) {
             return tenancyId.get();
         }
@@ -256,6 +258,6 @@ public class AuthUtils {
                 }
             }
         }
-        return Optional.absent();
+        return Optional.empty();
     }
 }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A base object for all types of Instance Power Action requests.
+ * A base object for all types of instance power action requests.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -25,6 +25,10 @@ package com.oracle.bmc.core.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ResetActionDetails.class,
         name = "reset"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RebootMigrateActionDetails.class,
+        name = "rebootMigrate"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = SoftResetActionDetails.class,

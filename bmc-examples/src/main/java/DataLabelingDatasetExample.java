@@ -4,6 +4,8 @@
  */
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +21,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
-import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
@@ -151,7 +152,7 @@ public class DataLabelingDatasetExample {
         // Build label sets which will be used for labeling.
         Label label1 = Label.builder().name("label1").build();
         Label label2 = Label.builder().name("label2").build();
-        List<Label> labelItems = ImmutableList.<Label>builder().add(label1).add(label2).build();
+        List<Label> labelItems = Collections.unmodifiableList(Arrays.asList(label1, label2));
         LabelSet labelSet = LabelSet.builder().items(labelItems).build();
 
         // Freeform tags.

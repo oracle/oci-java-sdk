@@ -7,7 +7,6 @@ package com.oracle.bmc.databasemanagement;
 import com.oracle.bmc.databasemanagement.internal.http.*;
 import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Diagnosability service. <br/>
@@ -320,7 +319,7 @@ public class DiagnosabilityAsyncClient implements DiagnosabilityAsync {
          * @return the client
          */
         public DiagnosabilityAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class DiagnosabilityAsyncClient implements DiagnosabilityAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -403,7 +403,7 @@ public class DiagnosabilityAsyncClient implements DiagnosabilityAsync {
                         "ListAlertLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAlertLogs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAlertLogsResponse>
                 transformer =
                         ListAlertLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListAlertLogsRequest, ListAlertLogsResponse>
@@ -448,7 +448,7 @@ public class DiagnosabilityAsyncClient implements DiagnosabilityAsync {
                         "ListAttentionLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAttentionLogs");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAttentionLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAttentionLogsResponse>
                 transformer =
                         ListAttentionLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -494,7 +494,7 @@ public class DiagnosabilityAsyncClient implements DiagnosabilityAsync {
                         "SummarizeAlertLogCounts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAlertLogCounts");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeAlertLogCountsResponse>
                 transformer =
                         SummarizeAlertLogCountsConverter.fromResponse(
@@ -544,7 +544,7 @@ public class DiagnosabilityAsyncClient implements DiagnosabilityAsync {
                         "SummarizeAttentionLogCounts",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAttentionLogCounts");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeAttentionLogCountsResponse>
                 transformer =
                         SummarizeAttentionLogCountsConverter.fromResponse(

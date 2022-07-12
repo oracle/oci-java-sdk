@@ -9,7 +9,6 @@ import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class DomainClient implements Domain {
@@ -335,9 +334,9 @@ public class DomainClient implements Domain {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Domain-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Domain-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class DomainClient implements Domain {
          * @return the client
          */
         public DomainClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class DomainClient implements Domain {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -485,9 +485,8 @@ public class DomainClient implements Domain {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Domain", "CreateDomain", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDomainResponse>
-                transformer =
-                        CreateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDomainResponse> transformer =
+                CreateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -525,9 +524,8 @@ public class DomainClient implements Domain {
                         "DeleteDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/DeleteDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDomainResponse>
-                transformer =
-                        DeleteDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDomainResponse> transformer =
+                DeleteDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -561,7 +559,7 @@ public class DomainClient implements Domain {
                         "GetDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/GetDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDomainResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetDomainResponse> transformer =
                 GetDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -596,9 +594,8 @@ public class DomainClient implements Domain {
                         "ListDomains",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/ListDomains");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDomainsResponse>
-                transformer =
-                        ListDomainsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListDomainsResponse> transformer =
+                ListDomainsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -632,9 +629,8 @@ public class DomainClient implements Domain {
                         "UpdateDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/UpdateDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDomainResponse>
-                transformer =
-                        UpdateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDomainResponse> transformer =
+                UpdateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

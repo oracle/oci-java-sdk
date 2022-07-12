@@ -9,7 +9,6 @@ import com.oracle.bmc.analytics.requests.*;
 import com.oracle.bmc.analytics.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public class AnalyticsClient implements Analytics {
@@ -334,9 +333,9 @@ public class AnalyticsClient implements Analytics {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Analytics-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Analytics-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class AnalyticsClient implements Analytics {
          * @return the client
          */
         public AnalyticsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class AnalyticsClient implements Analytics {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class AnalyticsClient implements Analytics {
                         "ChangeAnalyticsInstanceCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ChangeAnalyticsInstanceCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAnalyticsInstanceCompartmentResponse>
                 transformer =
                         ChangeAnalyticsInstanceCompartmentConverter.fromResponse(
@@ -533,7 +533,7 @@ public class AnalyticsClient implements Analytics {
                         "ChangeAnalyticsInstanceNetworkEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ChangeAnalyticsInstanceNetworkEndpoint");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAnalyticsInstanceNetworkEndpointResponse>
                 transformer =
                         ChangeAnalyticsInstanceNetworkEndpointConverter.fromResponse(
@@ -575,7 +575,7 @@ public class AnalyticsClient implements Analytics {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Analytics", "CreateAnalyticsInstance", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAnalyticsInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAnalyticsInstanceResponse>
                 transformer =
                         CreateAnalyticsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -618,8 +618,7 @@ public class AnalyticsClient implements Analytics {
                         "CreatePrivateAccessChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/CreatePrivateAccessChannel");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreatePrivateAccessChannelResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePrivateAccessChannelResponse>
                 transformer =
                         CreatePrivateAccessChannelConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -662,7 +661,7 @@ public class AnalyticsClient implements Analytics {
                         "CreateVanityUrl",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/CreateVanityUrl");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVanityUrlResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVanityUrlResponse>
                 transformer =
                         CreateVanityUrlConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -705,7 +704,7 @@ public class AnalyticsClient implements Analytics {
                         "DeleteAnalyticsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeleteAnalyticsInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAnalyticsInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAnalyticsInstanceResponse>
                 transformer =
                         DeleteAnalyticsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -745,8 +744,7 @@ public class AnalyticsClient implements Analytics {
                         "DeletePrivateAccessChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeletePrivateAccessChannel");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeletePrivateAccessChannelResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePrivateAccessChannelResponse>
                 transformer =
                         DeletePrivateAccessChannelConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -785,7 +783,7 @@ public class AnalyticsClient implements Analytics {
                         "DeleteVanityUrl",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeleteVanityUrl");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVanityUrlResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVanityUrlResponse>
                 transformer =
                         DeleteVanityUrlConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -823,7 +821,7 @@ public class AnalyticsClient implements Analytics {
                         "DeleteWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequest/DeleteWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
                 transformer =
                         DeleteWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -861,7 +859,7 @@ public class AnalyticsClient implements Analytics {
                         "GetAnalyticsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/GetAnalyticsInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAnalyticsInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAnalyticsInstanceResponse>
                 transformer =
                         GetAnalyticsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -899,7 +897,7 @@ public class AnalyticsClient implements Analytics {
                         "GetPrivateAccessChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/GetPrivateAccessChannel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateAccessChannelResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetPrivateAccessChannelResponse>
                 transformer =
                         GetPrivateAccessChannelConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -936,9 +934,8 @@ public class AnalyticsClient implements Analytics {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -973,7 +970,7 @@ public class AnalyticsClient implements Analytics {
                         "ListAnalyticsInstances",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstanceSummary/ListAnalyticsInstances");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAnalyticsInstancesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAnalyticsInstancesResponse>
                 transformer =
                         ListAnalyticsInstancesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1011,7 +1008,7 @@ public class AnalyticsClient implements Analytics {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1048,7 +1045,7 @@ public class AnalyticsClient implements Analytics {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestLog/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1085,7 +1082,7 @@ public class AnalyticsClient implements Analytics {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestSummary/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1124,7 +1121,7 @@ public class AnalyticsClient implements Analytics {
                         "ScaleAnalyticsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ScaleAnalyticsInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ScaleAnalyticsInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ScaleAnalyticsInstanceResponse>
                 transformer =
                         ScaleAnalyticsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1165,7 +1162,7 @@ public class AnalyticsClient implements Analytics {
                         "SetKmsKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/SetKmsKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, SetKmsKeyResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, SetKmsKeyResponse> transformer =
                 SetKmsKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1206,7 +1203,7 @@ public class AnalyticsClient implements Analytics {
                         "StartAnalyticsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/StartAnalyticsInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartAnalyticsInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StartAnalyticsInstanceResponse>
                 transformer =
                         StartAnalyticsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1246,7 +1243,7 @@ public class AnalyticsClient implements Analytics {
                         "StopAnalyticsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/StopAnalyticsInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopAnalyticsInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, StopAnalyticsInstanceResponse>
                 transformer =
                         StopAnalyticsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1285,7 +1282,7 @@ public class AnalyticsClient implements Analytics {
                         "UpdateAnalyticsInstance",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdateAnalyticsInstance");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAnalyticsInstanceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAnalyticsInstanceResponse>
                 transformer =
                         UpdateAnalyticsInstanceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1328,8 +1325,7 @@ public class AnalyticsClient implements Analytics {
                         "UpdatePrivateAccessChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdatePrivateAccessChannel");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdatePrivateAccessChannelResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePrivateAccessChannelResponse>
                 transformer =
                         UpdatePrivateAccessChannelConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1372,7 +1368,7 @@ public class AnalyticsClient implements Analytics {
                         "UpdateVanityUrl",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdateVanityUrl");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVanityUrlResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVanityUrlResponse>
                 transformer =
                         UpdateVanityUrlConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

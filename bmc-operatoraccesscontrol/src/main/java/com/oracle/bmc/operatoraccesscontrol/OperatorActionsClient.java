@@ -9,7 +9,6 @@ import com.oracle.bmc.operatoraccesscontrol.requests.*;
 import com.oracle.bmc.operatoraccesscontrol.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class OperatorActionsClient implements OperatorActions {
@@ -332,7 +331,7 @@ public class OperatorActionsClient implements OperatorActions {
          * @return the client
          */
         public OperatorActionsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -368,7 +367,8 @@ public class OperatorActionsClient implements OperatorActions {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -413,7 +413,7 @@ public class OperatorActionsClient implements OperatorActions {
                         "GetOperatorAction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/GetOperatorAction");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetOperatorActionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetOperatorActionResponse>
                 transformer =
                         GetOperatorActionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -450,7 +450,7 @@ public class OperatorActionsClient implements OperatorActions {
                         "ListOperatorActions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/ListOperatorActions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListOperatorActionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListOperatorActionsResponse>
                 transformer =
                         ListOperatorActionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

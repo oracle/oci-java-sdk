@@ -9,7 +9,6 @@ import com.oracle.bmc.audit.requests.*;
 import com.oracle.bmc.audit.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 public class AuditClient implements Audit {
@@ -331,7 +330,7 @@ public class AuditClient implements Audit {
          * @return the client
          */
         public AuditClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class AuditClient implements Audit {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -412,7 +412,7 @@ public class AuditClient implements Audit {
                         "GetConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/audit/20190901/Configuration/GetConfiguration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer =
                         GetConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -448,7 +448,7 @@ public class AuditClient implements Audit {
                         "ListEvents",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/audit/20190901/AuditEvent/ListEvents");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListEventsResponse> transformer =
                 ListEventsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -483,7 +483,7 @@ public class AuditClient implements Audit {
                         "UpdateConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/audit/20190901/Configuration/UpdateConfiguration");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
                 transformer =
                         UpdateConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

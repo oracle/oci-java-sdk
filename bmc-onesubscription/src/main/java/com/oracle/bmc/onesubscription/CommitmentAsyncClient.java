@@ -7,7 +7,6 @@ package com.oracle.bmc.onesubscription;
 import com.oracle.bmc.onesubscription.internal.http.*;
 import com.oracle.bmc.onesubscription.requests.*;
 import com.oracle.bmc.onesubscription.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Commitment service. <br/>
@@ -319,7 +318,7 @@ public class CommitmentAsyncClient implements CommitmentAsync {
          * @return the client
          */
         public CommitmentAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class CommitmentAsyncClient implements CommitmentAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -399,7 +399,7 @@ public class CommitmentAsyncClient implements CommitmentAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Commitment", "GetCommitment", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCommitmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCommitmentResponse>
                 transformer =
                         GetCommitmentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCommitmentRequest, GetCommitmentResponse>
@@ -441,7 +441,7 @@ public class CommitmentAsyncClient implements CommitmentAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Commitment", "ListCommitments", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCommitmentsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCommitmentsResponse>
                 transformer =
                         ListCommitmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

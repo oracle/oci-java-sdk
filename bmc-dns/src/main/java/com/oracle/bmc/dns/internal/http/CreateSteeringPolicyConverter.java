@@ -62,22 +62,22 @@ public class CreateSteeringPolicyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse>() {
                             @Override
@@ -85,7 +85,7 @@ public class CreateSteeringPolicyConverter {
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.dns.model.SteeringPolicy>>
@@ -116,7 +116,7 @@ public class CreateSteeringPolicyConverter {
 
                                 builder.steeringPolicy(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>> eTagHeader =
+                                java.util.Optional<java.util.List<String>> eTagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
                                                 headers, "ETag");
                                 if (eTagHeader.isPresent()) {
@@ -125,10 +125,9 @@ public class CreateSteeringPolicyConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        locationHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "Location");
+                                java.util.Optional<java.util.List<String>> locationHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "Location");
                                 if (locationHeader.isPresent()) {
                                     builder.location(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -137,10 +136,9 @@ public class CreateSteeringPolicyConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(

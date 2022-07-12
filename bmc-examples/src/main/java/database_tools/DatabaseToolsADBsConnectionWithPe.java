@@ -4,7 +4,7 @@
  */
 package database_tools;
 
-import com.google.common.base.Strings;
+import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -381,7 +381,7 @@ public class DatabaseToolsADBsConnectionWithPe {
      */
     public static void createPrivateEndpoint() throws Exception {
         assert dbtoolsPrivateEndpointId == null : "Database Tools PE should not already exists";
-        assert !Strings.isNullOrEmpty(autonomousDatabase.getPrivateEndpoint())
+        assert !StringUtils.isBlank(autonomousDatabase.getPrivateEndpoint())
                 : "Autonomous Database should have a private endpoint";
 
         String endpointServiceId =

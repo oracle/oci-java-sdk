@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.objectstorage.transfer.internal;
 
-import com.google.common.annotations.VisibleForTesting;
+import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
 import com.oracle.bmc.objectstorage.transfer.UploadConfiguration;
 

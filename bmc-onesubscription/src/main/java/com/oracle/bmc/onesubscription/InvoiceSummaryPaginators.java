@@ -46,21 +46,19 @@ public class InvoiceSummaryPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListInvoicelineComputedUsagesRequest.Builder, ListInvoicelineComputedUsagesRequest,
                 ListInvoicelineComputedUsagesResponse>(
-                new com.google.common.base.Supplier<
-                        ListInvoicelineComputedUsagesRequest.Builder>() {
+                new java.util.function.Supplier<ListInvoicelineComputedUsagesRequest.Builder>() {
                     @Override
                     public ListInvoicelineComputedUsagesRequest.Builder get() {
                         return ListInvoicelineComputedUsagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListInvoicelineComputedUsagesResponse, String>() {
+                new java.util.function.Function<ListInvoicelineComputedUsagesResponse, String>() {
                     @Override
                     public String apply(ListInvoicelineComputedUsagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInvoicelineComputedUsagesRequest.Builder>,
                         ListInvoicelineComputedUsagesRequest>() {
@@ -73,12 +71,12 @@ public class InvoiceSummaryPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInvoicelineComputedUsagesRequest,
                         ListInvoicelineComputedUsagesResponse>() {
                     @Override
@@ -105,21 +103,19 @@ public class InvoiceSummaryPaginators {
                 ListInvoicelineComputedUsagesRequest.Builder, ListInvoicelineComputedUsagesRequest,
                 ListInvoicelineComputedUsagesResponse,
                 com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary>(
-                new com.google.common.base.Supplier<
-                        ListInvoicelineComputedUsagesRequest.Builder>() {
+                new java.util.function.Supplier<ListInvoicelineComputedUsagesRequest.Builder>() {
                     @Override
                     public ListInvoicelineComputedUsagesRequest.Builder get() {
                         return ListInvoicelineComputedUsagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListInvoicelineComputedUsagesResponse, String>() {
+                new java.util.function.Function<ListInvoicelineComputedUsagesResponse, String>() {
                     @Override
                     public String apply(ListInvoicelineComputedUsagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInvoicelineComputedUsagesRequest.Builder>,
                         ListInvoicelineComputedUsagesRequest>() {
@@ -132,12 +128,12 @@ public class InvoiceSummaryPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInvoicelineComputedUsagesRequest,
                         ListInvoicelineComputedUsagesResponse>() {
                     @Override
@@ -146,7 +142,7 @@ public class InvoiceSummaryPaginators {
                         return client.listInvoicelineComputedUsages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInvoicelineComputedUsagesResponse,
                         java.util.List<
                                 com.oracle.bmc.onesubscription.model
@@ -172,19 +168,19 @@ public class InvoiceSummaryPaginators {
             final ListInvoicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListInvoicesRequest.Builder, ListInvoicesRequest, ListInvoicesResponse>(
-                new com.google.common.base.Supplier<ListInvoicesRequest.Builder>() {
+                new java.util.function.Supplier<ListInvoicesRequest.Builder>() {
                     @Override
                     public ListInvoicesRequest.Builder get() {
                         return ListInvoicesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInvoicesResponse, String>() {
+                new java.util.function.Function<ListInvoicesResponse, String>() {
                     @Override
                     public String apply(ListInvoicesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInvoicesRequest.Builder>,
                         ListInvoicesRequest>() {
@@ -197,12 +193,12 @@ public class InvoiceSummaryPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListInvoicesRequest, ListInvoicesResponse>() {
+                new java.util.function.Function<ListInvoicesRequest, ListInvoicesResponse>() {
                     @Override
                     public ListInvoicesResponse apply(ListInvoicesRequest request) {
                         return client.listInvoices(request);
@@ -224,19 +220,19 @@ public class InvoiceSummaryPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListInvoicesRequest.Builder, ListInvoicesRequest, ListInvoicesResponse,
                 com.oracle.bmc.onesubscription.model.InvoiceSummary>(
-                new com.google.common.base.Supplier<ListInvoicesRequest.Builder>() {
+                new java.util.function.Supplier<ListInvoicesRequest.Builder>() {
                     @Override
                     public ListInvoicesRequest.Builder get() {
                         return ListInvoicesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListInvoicesResponse, String>() {
+                new java.util.function.Function<ListInvoicesResponse, String>() {
                     @Override
                     public String apply(ListInvoicesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListInvoicesRequest.Builder>,
                         ListInvoicesRequest>() {
@@ -249,18 +245,18 @@ public class InvoiceSummaryPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListInvoicesRequest, ListInvoicesResponse>() {
+                new java.util.function.Function<ListInvoicesRequest, ListInvoicesResponse>() {
                     @Override
                     public ListInvoicesResponse apply(ListInvoicesRequest request) {
                         return client.listInvoices(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListInvoicesResponse,
                         java.util.List<com.oracle.bmc.onesubscription.model.InvoiceSummary>>() {
                     @Override

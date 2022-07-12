@@ -7,7 +7,6 @@ package com.oracle.bmc.dts;
 import com.oracle.bmc.dts.internal.http.*;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for TransferJob service. <br/>
@@ -320,7 +319,7 @@ public class TransferJobAsyncClient implements TransferJobAsync {
          * @return the client
          */
         public TransferJobAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class TransferJobAsyncClient implements TransferJobAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -407,7 +407,7 @@ public class TransferJobAsyncClient implements TransferJobAsync {
                         "ChangeTransferJobCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeTransferJobCompartmentResponse>
                 transformer =
                         ChangeTransferJobCompartmentConverter.fromResponse(
@@ -459,7 +459,7 @@ public class TransferJobAsyncClient implements TransferJobAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferJob", "CreateTransferJob", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTransferJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTransferJobResponse>
                 transformer =
                         CreateTransferJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -507,7 +507,7 @@ public class TransferJobAsyncClient implements TransferJobAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferJob", "DeleteTransferJob", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTransferJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTransferJobResponse>
                 transformer =
                         DeleteTransferJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -550,7 +550,7 @@ public class TransferJobAsyncClient implements TransferJobAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferJob", "GetTransferJob", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTransferJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTransferJobResponse>
                 transformer =
                         GetTransferJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTransferJobRequest, GetTransferJobResponse>
@@ -592,7 +592,7 @@ public class TransferJobAsyncClient implements TransferJobAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferJob", "ListTransferJobs", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTransferJobsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTransferJobsResponse>
                 transformer =
                         ListTransferJobsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -635,7 +635,7 @@ public class TransferJobAsyncClient implements TransferJobAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferJob", "UpdateTransferJob", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTransferJobResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTransferJobResponse>
                 transformer =
                         UpdateTransferJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

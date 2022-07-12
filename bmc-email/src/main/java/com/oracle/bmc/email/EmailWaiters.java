@@ -6,7 +6,6 @@ package com.oracle.bmc.email;
 
 import com.oracle.bmc.email.requests.*;
 import com.oracle.bmc.email.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -101,16 +100,16 @@ public class EmailWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetDkimRequest, GetDkimResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetDkimRequest, GetDkimResponse>() {
                             @Override
                             public GetDkimResponse apply(GetDkimRequest request) {
                                 return client.getDkim(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDkimResponse>() {
+                        new java.util.function.Predicate<GetDkimResponse>() {
                             @Override
-                            public boolean apply(GetDkimResponse response) {
+                            public boolean test(GetDkimResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDkim().getLifecycleState());
                             }
@@ -202,17 +201,17 @@ public class EmailWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetEmailDomainRequest, GetEmailDomainResponse>() {
                             @Override
                             public GetEmailDomainResponse apply(GetEmailDomainRequest request) {
                                 return client.getEmailDomain(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetEmailDomainResponse>() {
+                        new java.util.function.Predicate<GetEmailDomainResponse>() {
                             @Override
-                            public boolean apply(GetEmailDomainResponse response) {
+                            public boolean test(GetEmailDomainResponse response) {
                                 return targetStatesSet.contains(
                                         response.getEmailDomain().getLifecycleState());
                             }
@@ -300,16 +299,16 @@ public class EmailWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetSenderRequest, GetSenderResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetSenderRequest, GetSenderResponse>() {
                             @Override
                             public GetSenderResponse apply(GetSenderRequest request) {
                                 return client.getSender(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSenderResponse>() {
+                        new java.util.function.Predicate<GetSenderResponse>() {
                             @Override
-                            public boolean apply(GetSenderResponse response) {
+                            public boolean test(GetSenderResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSender().getLifecycleState());
                             }
@@ -356,17 +355,17 @@ public class EmailWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

@@ -2,7 +2,6 @@
  * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -30,6 +29,7 @@ import com.oracle.bmc.core.responses.CreateInstanceConfigurationResponse;
 import com.oracle.bmc.core.responses.GetClusterNetworkResponse;
 import com.oracle.bmc.core.responses.ListClusterNetworkInstancesResponse;
 
+import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -96,12 +96,13 @@ public class ClusterNetworkExample {
                         .compartmentId(compartmentId)
                         .displayName("Cluster Network Example")
                         .instancePools(
-                                ImmutableList.of(
-                                        CreateClusterNetworkInstancePoolDetails.builder()
-                                                .instanceConfigurationId(
-                                                        instanceConfiguration.getId())
-                                                .size(1)
-                                                .build()))
+                                Collections.unmodifiableList(
+                                        Arrays.asList(
+                                                CreateClusterNetworkInstancePoolDetails.builder()
+                                                        .instanceConfigurationId(
+                                                                instanceConfiguration.getId())
+                                                        .size(1)
+                                                        .build())))
                         .placementConfiguration(
                                 ClusterNetworkPlacementConfigurationDetails.builder()
                                         .availabilityDomain(availabilityDomain)

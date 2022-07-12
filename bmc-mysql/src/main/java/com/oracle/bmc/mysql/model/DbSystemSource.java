@@ -28,6 +28,10 @@ package com.oracle.bmc.mysql.model;
         name = "BACKUP"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DbSystemSourceFromPitr.class,
+        name = "PITR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DbSystemSourceFromNone.class,
         name = "NONE"
     ),
@@ -79,6 +83,7 @@ public class DbSystemSource {
     public enum SourceType {
         None("NONE"),
         Backup("BACKUP"),
+        Pitr("PITR"),
         Importurl("IMPORTURL"),
 
         /**

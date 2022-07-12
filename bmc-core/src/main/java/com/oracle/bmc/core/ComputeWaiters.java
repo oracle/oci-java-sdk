@@ -6,7 +6,6 @@ package com.oracle.bmc.core;
 
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -16,20 +15,20 @@ import javax.annotation.Nonnull;
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ComputeWaiters {
-    @Nonnull private final java.util.concurrent.ExecutorService executorService;
-    @Nonnull private final Compute client;
+    @javax.annotation.Nonnull private final java.util.concurrent.ExecutorService executorService;
+    @javax.annotation.Nonnull private final Compute client;
     private final com.oracle.bmc.workrequests.WorkRequest workRequestClient;
 
     @Deprecated
     public ComputeWaiters(
-            @Nonnull java.util.concurrent.ExecutorService executorService,
-            @Nonnull Compute client) {
+            @javax.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
+            @javax.annotation.Nonnull Compute client) {
         this(executorService, client, null);
     }
 
     public ComputeWaiters(
-            @Nonnull java.util.concurrent.ExecutorService executorService,
-            @Nonnull Compute client,
+            @javax.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
+            @javax.annotation.Nonnull Compute client,
             com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
         if (executorService == null) {
             throw new NullPointerException("executorService is marked non-null but is null");
@@ -659,8 +658,8 @@ public class ComputeWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>() {
                             @Override
                             public GetBootVolumeAttachmentResponse apply(
@@ -668,9 +667,9 @@ public class ComputeWaiters {
                                 return client.getBootVolumeAttachment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBootVolumeAttachmentResponse>() {
+                        new java.util.function.Predicate<GetBootVolumeAttachmentResponse>() {
                             @Override
-                            public boolean apply(GetBootVolumeAttachmentResponse response) {
+                            public boolean test(GetBootVolumeAttachmentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBootVolumeAttachment().getLifecycleState());
                             }
@@ -768,8 +767,8 @@ public class ComputeWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetComputeCapacityReservationRequest,
                                 GetComputeCapacityReservationResponse>() {
                             @Override
@@ -778,10 +777,9 @@ public class ComputeWaiters {
                                 return client.getComputeCapacityReservation(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetComputeCapacityReservationResponse>() {
+                        new java.util.function.Predicate<GetComputeCapacityReservationResponse>() {
                             @Override
-                            public boolean apply(GetComputeCapacityReservationResponse response) {
+                            public boolean test(GetComputeCapacityReservationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getComputeCapacityReservation()
                                                 .getLifecycleState());
@@ -875,8 +873,8 @@ public class ComputeWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetConsoleHistoryRequest, GetConsoleHistoryResponse>() {
                             @Override
                             public GetConsoleHistoryResponse apply(
@@ -884,9 +882,9 @@ public class ComputeWaiters {
                                 return client.getConsoleHistory(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetConsoleHistoryResponse>() {
+                        new java.util.function.Predicate<GetConsoleHistoryResponse>() {
                             @Override
-                            public boolean apply(GetConsoleHistoryResponse response) {
+                            public boolean test(GetConsoleHistoryResponse response) {
                                 return targetStatesSet.contains(
                                         response.getConsoleHistory().getLifecycleState());
                             }
@@ -978,8 +976,8 @@ public class ComputeWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDedicatedVmHostRequest, GetDedicatedVmHostResponse>() {
                             @Override
                             public GetDedicatedVmHostResponse apply(
@@ -987,9 +985,9 @@ public class ComputeWaiters {
                                 return client.getDedicatedVmHost(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDedicatedVmHostResponse>() {
+                        new java.util.function.Predicate<GetDedicatedVmHostResponse>() {
                             @Override
-                            public boolean apply(GetDedicatedVmHostResponse response) {
+                            public boolean test(GetDedicatedVmHostResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDedicatedVmHost().getLifecycleState());
                             }
@@ -1077,16 +1075,16 @@ public class ComputeWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetImageRequest, GetImageResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetImageRequest, GetImageResponse>() {
                             @Override
                             public GetImageResponse apply(GetImageRequest request) {
                                 return client.getImage(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetImageResponse>() {
+                        new java.util.function.Predicate<GetImageResponse>() {
                             @Override
-                            public boolean apply(GetImageResponse response) {
+                            public boolean test(GetImageResponse response) {
                                 return targetStatesSet.contains(
                                         response.getImage().getLifecycleState());
                             }
@@ -1174,17 +1172,16 @@ public class ComputeWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetInstanceRequest, GetInstanceResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetInstanceRequest, GetInstanceResponse>() {
                             @Override
                             public GetInstanceResponse apply(GetInstanceRequest request) {
                                 return client.getInstance(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetInstanceResponse>() {
+                        new java.util.function.Predicate<GetInstanceResponse>() {
                             @Override
-                            public boolean apply(GetInstanceResponse response) {
+                            public boolean test(GetInstanceResponse response) {
                                 return targetStatesSet.contains(
                                         response.getInstance().getLifecycleState());
                             }
@@ -1283,8 +1280,8 @@ public class ComputeWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetInstanceConsoleConnectionRequest,
                                 GetInstanceConsoleConnectionResponse>() {
                             @Override
@@ -1293,10 +1290,9 @@ public class ComputeWaiters {
                                 return client.getInstanceConsoleConnection(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetInstanceConsoleConnectionResponse>() {
+                        new java.util.function.Predicate<GetInstanceConsoleConnectionResponse>() {
                             @Override
-                            public boolean apply(GetInstanceConsoleConnectionResponse response) {
+                            public boolean test(GetInstanceConsoleConnectionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getInstanceConsoleConnection()
                                                 .getLifecycleState());
@@ -1390,8 +1386,8 @@ public class ComputeWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetVnicAttachmentRequest, GetVnicAttachmentResponse>() {
                             @Override
                             public GetVnicAttachmentResponse apply(
@@ -1399,9 +1395,9 @@ public class ComputeWaiters {
                                 return client.getVnicAttachment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVnicAttachmentResponse>() {
+                        new java.util.function.Predicate<GetVnicAttachmentResponse>() {
                             @Override
-                            public boolean apply(GetVnicAttachmentResponse response) {
+                            public boolean test(GetVnicAttachmentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVnicAttachment().getLifecycleState());
                             }
@@ -1493,8 +1489,8 @@ public class ComputeWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>() {
                             @Override
                             public GetVolumeAttachmentResponse apply(
@@ -1502,9 +1498,9 @@ public class ComputeWaiters {
                                 return client.getVolumeAttachment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVolumeAttachmentResponse>() {
+                        new java.util.function.Predicate<GetVolumeAttachmentResponse>() {
                             @Override
-                            public boolean apply(GetVolumeAttachmentResponse response) {
+                            public boolean test(GetVolumeAttachmentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVolumeAttachment().getLifecycleState());
                             }

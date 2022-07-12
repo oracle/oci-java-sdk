@@ -44,19 +44,19 @@ public class RatecardPaginators {
             final ListRateCardsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRateCardsRequest.Builder, ListRateCardsRequest, ListRateCardsResponse>(
-                new com.google.common.base.Supplier<ListRateCardsRequest.Builder>() {
+                new java.util.function.Supplier<ListRateCardsRequest.Builder>() {
                     @Override
                     public ListRateCardsRequest.Builder get() {
                         return ListRateCardsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRateCardsResponse, String>() {
+                new java.util.function.Function<ListRateCardsResponse, String>() {
                     @Override
                     public String apply(ListRateCardsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRateCardsRequest.Builder>,
                         ListRateCardsRequest>() {
@@ -69,12 +69,12 @@ public class RatecardPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListRateCardsRequest, ListRateCardsResponse>() {
+                new java.util.function.Function<ListRateCardsRequest, ListRateCardsResponse>() {
                     @Override
                     public ListRateCardsResponse apply(ListRateCardsRequest request) {
                         return client.listRateCards(request);
@@ -96,19 +96,19 @@ public class RatecardPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListRateCardsRequest.Builder, ListRateCardsRequest, ListRateCardsResponse,
                 com.oracle.bmc.osubsubscription.model.RateCardSummary>(
-                new com.google.common.base.Supplier<ListRateCardsRequest.Builder>() {
+                new java.util.function.Supplier<ListRateCardsRequest.Builder>() {
                     @Override
                     public ListRateCardsRequest.Builder get() {
                         return ListRateCardsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRateCardsResponse, String>() {
+                new java.util.function.Function<ListRateCardsResponse, String>() {
                     @Override
                     public String apply(ListRateCardsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRateCardsRequest.Builder>,
                         ListRateCardsRequest>() {
@@ -121,18 +121,18 @@ public class RatecardPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListRateCardsRequest, ListRateCardsResponse>() {
+                new java.util.function.Function<ListRateCardsRequest, ListRateCardsResponse>() {
                     @Override
                     public ListRateCardsResponse apply(ListRateCardsRequest request) {
                         return client.listRateCards(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRateCardsResponse,
                         java.util.List<com.oracle.bmc.osubsubscription.model.RateCardSummary>>() {
                     @Override

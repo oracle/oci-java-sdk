@@ -7,7 +7,6 @@ package com.oracle.bmc.dts;
 import com.oracle.bmc.dts.internal.http.*;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for TransferPackage service. <br/>
@@ -321,7 +320,7 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
          * @return the client
          */
         public TransferPackageAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -407,7 +407,7 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                         "AttachDevicesToTransferPackage",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, AttachDevicesToTransferPackageResponse>
                 transformer =
                         AttachDevicesToTransferPackageConverter.fromResponse(
@@ -463,8 +463,7 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                         "CreateTransferPackage",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateTransferPackageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTransferPackageResponse>
                 transformer =
                         CreateTransferPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -516,8 +515,7 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                         "DeleteTransferPackage",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteTransferPackageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTransferPackageResponse>
                 transformer =
                         DeleteTransferPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -566,7 +564,7 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                         "DetachDevicesFromTransferPackage",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DetachDevicesFromTransferPackageResponse>
                 transformer =
                         DetachDevicesFromTransferPackageConverter.fromResponse(
@@ -619,7 +617,7 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferPackage", "GetTransferPackage", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTransferPackageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTransferPackageResponse>
                 transformer =
                         GetTransferPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -665,8 +663,7 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                         "ListTransferPackages",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTransferPackagesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTransferPackagesResponse>
                 transformer =
                         ListTransferPackagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -713,8 +710,7 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
                         "UpdateTransferPackage",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateTransferPackageResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTransferPackageResponse>
                 transformer =
                         UpdateTransferPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -4,10 +4,9 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import com.google.common.base.Preconditions;
 import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
 import com.oracle.bmc.auth.SessionKeySupplier;
-import org.slf4j.Logger;
+import com.oracle.bmc.util.internal.Validate;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -17,6 +16,7 @@ import java.nio.file.Paths;
 import java.security.KeyPair;
 import java.time.Duration;
 import java.util.Optional;
+import org.slf4j.Logger;
 
 /**
  * This class gets a security token from file.
@@ -38,7 +38,8 @@ public class FileBasedResourcePrincipalFederationClient
      */
     public FileBasedResourcePrincipalFederationClient(
             SessionKeySupplier sessionKeySupplier, String resourcePrincipalSessionTokenPath) {
-        this.sessionKeySupplier = Preconditions.checkNotNull(sessionKeySupplier);
+        this.sessionKeySupplier =
+                Validate.notNull(sessionKeySupplier, "sessionKeySupplier must not be null");
         this.securityTokenAdapter = new SecurityTokenAdapter(null, sessionKeySupplier);
         this.resourcePrincipalSessionTokenPath = resourcePrincipalSessionTokenPath;
     }

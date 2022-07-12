@@ -9,7 +9,6 @@ import com.oracle.bmc.rover.requests.*;
 import com.oracle.bmc.rover.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class RoverClusterClient implements RoverCluster {
@@ -334,9 +333,9 @@ public class RoverClusterClient implements RoverCluster {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("RoverCluster-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("RoverCluster-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class RoverClusterClient implements RoverCluster {
          * @return the client
          */
         public RoverClusterClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class RoverClusterClient implements RoverCluster {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class RoverClusterClient implements RoverCluster {
                         "ChangeRoverClusterCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/ChangeRoverClusterCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeRoverClusterCompartmentResponse>
                 transformer =
                         ChangeRoverClusterCompartmentConverter.fromResponse(
@@ -532,7 +532,7 @@ public class RoverClusterClient implements RoverCluster {
                         "CreateRoverCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/CreateRoverCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRoverClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRoverClusterResponse>
                 transformer =
                         CreateRoverClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -574,7 +574,7 @@ public class RoverClusterClient implements RoverCluster {
                         "DeleteRoverCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/DeleteRoverCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRoverClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRoverClusterResponse>
                 transformer =
                         DeleteRoverClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -612,7 +612,7 @@ public class RoverClusterClient implements RoverCluster {
                         "GetRoverCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/GetRoverCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRoverClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRoverClusterResponse>
                 transformer =
                         GetRoverClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -650,8 +650,7 @@ public class RoverClusterClient implements RoverCluster {
                         "GetRoverClusterCertificate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverClusterCertificate/GetRoverClusterCertificate");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetRoverClusterCertificateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRoverClusterCertificateResponse>
                 transformer =
                         GetRoverClusterCertificateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -688,7 +687,7 @@ public class RoverClusterClient implements RoverCluster {
                         "ListRoverClusters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/ListRoverClusters");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRoverClustersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRoverClustersResponse>
                 transformer =
                         ListRoverClustersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -725,7 +724,7 @@ public class RoverClusterClient implements RoverCluster {
                         "UpdateRoverCluster",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/UpdateRoverCluster");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRoverClusterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRoverClusterResponse>
                 transformer =
                         UpdateRoverClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

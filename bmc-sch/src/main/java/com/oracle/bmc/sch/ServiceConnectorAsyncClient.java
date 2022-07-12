@@ -7,7 +7,6 @@ package com.oracle.bmc.sch;
 import com.oracle.bmc.sch.internal.http.*;
 import com.oracle.bmc.sch.requests.*;
 import com.oracle.bmc.sch.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ServiceConnector service. <br/>
@@ -321,7 +320,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
          * @return the client
          */
         public ServiceConnectorAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         "ActivateServiceConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ActivateServiceConnector");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ActivateServiceConnectorResponse>
                 transformer =
                         ActivateServiceConnectorConverter.fromResponse(
@@ -456,7 +456,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         "ChangeServiceConnectorCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ChangeServiceConnectorCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeServiceConnectorCompartmentResponse>
                 transformer =
                         ChangeServiceConnectorCompartmentConverter.fromResponse(
@@ -513,8 +513,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         "CreateServiceConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/CreateServiceConnector");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateServiceConnectorResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateServiceConnectorResponse>
                 transformer =
                         CreateServiceConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -569,7 +568,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         "DeactivateServiceConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeactivateServiceConnector");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeactivateServiceConnectorResponse>
                 transformer =
                         DeactivateServiceConnectorConverter.fromResponse(
@@ -618,8 +617,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         "DeleteServiceConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeleteServiceConnector");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteServiceConnectorResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteServiceConnectorResponse>
                 transformer =
                         DeleteServiceConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -666,8 +664,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         "GetServiceConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/GetServiceConnector");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetServiceConnectorResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetServiceConnectorResponse>
                 transformer =
                         GetServiceConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -714,7 +711,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -759,8 +756,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         "ListServiceConnectors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ListServiceConnectors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListServiceConnectorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListServiceConnectorsResponse>
                 transformer =
                         ListServiceConnectorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -807,8 +803,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -855,8 +850,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestLogEntry/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -903,7 +897,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -949,8 +943,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                         "UpdateServiceConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/UpdateServiceConnector");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateServiceConnectorResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateServiceConnectorResponse>
                 transformer =
                         UpdateServiceConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

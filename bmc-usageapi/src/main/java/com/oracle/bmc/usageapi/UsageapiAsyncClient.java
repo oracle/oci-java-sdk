@@ -7,7 +7,6 @@ package com.oracle.bmc.usageapi;
 import com.oracle.bmc.usageapi.internal.http.*;
 import com.oracle.bmc.usageapi.requests.*;
 import com.oracle.bmc.usageapi.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Usageapi service. <br/>
@@ -319,7 +318,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
          * @return the client
          */
         public UsageapiAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class UsageapiAsyncClient implements UsageapiAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,7 +404,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "CreateCustomTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/CreateCustomTable");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCustomTableResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCustomTableResponse>
                 transformer =
                         CreateCustomTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -455,7 +455,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "CreateQuery",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/CreateQuery");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateQueryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateQueryResponse>
                 transformer =
                         CreateQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateQueryRequest, CreateQueryResponse>
@@ -506,7 +506,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "CreateSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/CreateSchedule");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateScheduleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateScheduleResponse>
                 transformer =
                         CreateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateScheduleRequest, CreateScheduleResponse>
@@ -556,7 +556,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "DeleteCustomTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/DeleteCustomTable");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCustomTableResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCustomTableResponse>
                 transformer =
                         DeleteCustomTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -601,7 +601,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "DeleteQuery",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/DeleteQuery");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteQueryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteQueryResponse>
                 transformer =
                         DeleteQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteQueryRequest, DeleteQueryResponse>
@@ -646,7 +646,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "DeleteSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/DeleteSchedule");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteScheduleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteScheduleResponse>
                 transformer =
                         DeleteScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteScheduleRequest, DeleteScheduleResponse>
@@ -691,7 +691,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "GetCustomTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/GetCustomTable");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCustomTableResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCustomTableResponse>
                 transformer =
                         GetCustomTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCustomTableRequest, GetCustomTableResponse>
@@ -734,8 +734,8 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "GetQuery",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/GetQuery");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetQueryResponse>
-                transformer = GetQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, GetQueryResponse> transformer =
+                GetQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetQueryRequest, GetQueryResponse> handlerToUse =
                 handler;
 
@@ -776,7 +776,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "GetSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/GetSchedule");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetScheduleResponse>
                 transformer =
                         GetScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetScheduleRequest, GetScheduleResponse>
@@ -821,7 +821,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "GetScheduledRun",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/ScheduledRun/GetScheduledRun");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduledRunResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetScheduledRunResponse>
                 transformer =
                         GetScheduledRunConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -867,7 +867,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "ListCustomTables",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/ListCustomTables");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCustomTablesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCustomTablesResponse>
                 transformer =
                         ListCustomTablesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -912,7 +912,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "ListQueries",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/ListQueries");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListQueriesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListQueriesResponse>
                 transformer =
                         ListQueriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListQueriesRequest, ListQueriesResponse>
@@ -957,7 +957,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "ListScheduledRuns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/ScheduledRun/ListScheduledRuns");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListScheduledRunsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListScheduledRunsResponse>
                 transformer =
                         ListScheduledRunsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1002,7 +1002,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "ListSchedules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/ListSchedules");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSchedulesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSchedulesResponse>
                 transformer =
                         ListSchedulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSchedulesRequest, ListSchedulesResponse>
@@ -1049,7 +1049,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "RequestSummarizedConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Configuration/RequestSummarizedConfigurations");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedConfigurationsResponse>
                 transformer =
                         RequestSummarizedConfigurationsConverter.fromResponse(
@@ -1100,7 +1100,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "RequestSummarizedUsages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageSummary/RequestSummarizedUsages");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedUsagesResponse>
                 transformer =
                         RequestSummarizedUsagesConverter.fromResponse(
@@ -1153,7 +1153,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "UpdateCustomTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/UpdateCustomTable");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCustomTableResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCustomTableResponse>
                 transformer =
                         UpdateCustomTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1203,7 +1203,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "UpdateQuery",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/UpdateQuery");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateQueryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateQueryResponse>
                 transformer =
                         UpdateQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateQueryRequest, UpdateQueryResponse>
@@ -1253,7 +1253,7 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                         "UpdateSchedule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/UpdateSchedule");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateScheduleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateScheduleResponse>
                 transformer =
                         UpdateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateScheduleRequest, UpdateScheduleResponse>

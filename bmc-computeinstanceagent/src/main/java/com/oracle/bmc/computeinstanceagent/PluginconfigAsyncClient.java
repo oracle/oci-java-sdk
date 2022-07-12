@@ -7,7 +7,6 @@ package com.oracle.bmc.computeinstanceagent;
 import com.oracle.bmc.computeinstanceagent.internal.http.*;
 import com.oracle.bmc.computeinstanceagent.requests.*;
 import com.oracle.bmc.computeinstanceagent.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Pluginconfig service. <br/>
@@ -319,7 +318,7 @@ public class PluginconfigAsyncClient implements PluginconfigAsync {
          * @return the client
          */
         public PluginconfigAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class PluginconfigAsyncClient implements PluginconfigAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -405,7 +405,7 @@ public class PluginconfigAsyncClient implements PluginconfigAsync {
                         "ListInstanceagentAvailablePlugins",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListInstanceagentAvailablePluginsResponse>
                 transformer =
                         ListInstanceagentAvailablePluginsConverter.fromResponse(

@@ -9,7 +9,6 @@ import com.oracle.bmc.operatoraccesscontrol.requests.*;
 import com.oracle.bmc.operatoraccesscontrol.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class AccessRequestsClient implements AccessRequests {
@@ -335,9 +334,9 @@ public class AccessRequestsClient implements AccessRequests {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("AccessRequests-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("AccessRequests-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class AccessRequestsClient implements AccessRequests {
          * @return the client
          */
         public AccessRequestsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class AccessRequestsClient implements AccessRequests {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,7 +488,7 @@ public class AccessRequestsClient implements AccessRequests {
                         "ApproveAccessRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ApproveAccessRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ApproveAccessRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ApproveAccessRequestResponse>
                 transformer =
                         ApproveAccessRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,7 +529,7 @@ public class AccessRequestsClient implements AccessRequests {
                         "GetAccessRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/GetAccessRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAccessRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAccessRequestResponse>
                 transformer =
                         GetAccessRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -567,7 +567,7 @@ public class AccessRequestsClient implements AccessRequests {
                         "InteractionRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/InteractionRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, InteractionRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, InteractionRequestResponse>
                 transformer =
                         InteractionRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -609,8 +609,7 @@ public class AccessRequestsClient implements AccessRequests {
                         "ListAccessRequestHistories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequestHistories");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAccessRequestHistoriesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAccessRequestHistoriesResponse>
                 transformer =
                         ListAccessRequestHistoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -647,7 +646,7 @@ public class AccessRequestsClient implements AccessRequests {
                         "ListAccessRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAccessRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAccessRequestsResponse>
                 transformer =
                         ListAccessRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -684,7 +683,7 @@ public class AccessRequestsClient implements AccessRequests {
                         "ListInteractions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListInteractions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListInteractionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListInteractionsResponse>
                 transformer =
                         ListInteractionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -722,7 +721,7 @@ public class AccessRequestsClient implements AccessRequests {
                         "RejectAccessRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RejectAccessRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RejectAccessRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RejectAccessRequestResponse>
                 transformer =
                         RejectAccessRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -764,7 +763,7 @@ public class AccessRequestsClient implements AccessRequests {
                         "ReviewAccessRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ReviewAccessRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ReviewAccessRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ReviewAccessRequestResponse>
                 transformer =
                         ReviewAccessRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -806,7 +805,7 @@ public class AccessRequestsClient implements AccessRequests {
                         "RevokeAccessRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RevokeAccessRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RevokeAccessRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RevokeAccessRequestResponse>
                 transformer =
                         RevokeAccessRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

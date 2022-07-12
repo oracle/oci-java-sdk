@@ -7,7 +7,6 @@ package com.oracle.bmc.rover;
 import com.oracle.bmc.rover.internal.http.*;
 import com.oracle.bmc.rover.requests.*;
 import com.oracle.bmc.rover.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for RoverEntitlement service. <br/>
@@ -320,7 +319,7 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
          * @return the client
          */
         public RoverEntitlementAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -407,7 +407,7 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                         "ChangeRoverEntitlementCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/ChangeRoverEntitlementCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeRoverEntitlementCompartmentResponse>
                 transformer =
                         ChangeRoverEntitlementCompartmentConverter.fromResponse(
@@ -464,8 +464,7 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                         "CreateRoverEntitlement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/CreateRoverEntitlement");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateRoverEntitlementResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateRoverEntitlementResponse>
                 transformer =
                         CreateRoverEntitlementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -518,8 +517,7 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                         "DeleteRoverEntitlement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/DeleteRoverEntitlement");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteRoverEntitlementResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteRoverEntitlementResponse>
                 transformer =
                         DeleteRoverEntitlementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -567,8 +565,7 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                         "GetRoverEntitlement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/GetRoverEntitlement");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetRoverEntitlementResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetRoverEntitlementResponse>
                 transformer =
                         GetRoverEntitlementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -615,8 +612,7 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                         "ListRoverEntitlements",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/ListRoverEntitlements");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListRoverEntitlementsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRoverEntitlementsResponse>
                 transformer =
                         ListRoverEntitlementsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -663,8 +659,7 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                         "UpdateRoverEntitlement",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/UpdateRoverEntitlement");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateRoverEntitlementResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateRoverEntitlementResponse>
                 transformer =
                         UpdateRoverEntitlementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

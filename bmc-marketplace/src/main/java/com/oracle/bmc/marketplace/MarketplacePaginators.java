@@ -45,19 +45,19 @@ public class MarketplacePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAcceptedAgreementsRequest.Builder, ListAcceptedAgreementsRequest,
                 ListAcceptedAgreementsResponse>(
-                new com.google.common.base.Supplier<ListAcceptedAgreementsRequest.Builder>() {
+                new java.util.function.Supplier<ListAcceptedAgreementsRequest.Builder>() {
                     @Override
                     public ListAcceptedAgreementsRequest.Builder get() {
                         return ListAcceptedAgreementsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAcceptedAgreementsResponse, String>() {
+                new java.util.function.Function<ListAcceptedAgreementsResponse, String>() {
                     @Override
                     public String apply(ListAcceptedAgreementsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAcceptedAgreementsRequest.Builder>,
                         ListAcceptedAgreementsRequest>() {
@@ -70,12 +70,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAcceptedAgreementsRequest, ListAcceptedAgreementsResponse>() {
                     @Override
                     public ListAcceptedAgreementsResponse apply(
@@ -100,19 +100,19 @@ public class MarketplacePaginators {
                 ListAcceptedAgreementsRequest.Builder, ListAcceptedAgreementsRequest,
                 ListAcceptedAgreementsResponse,
                 com.oracle.bmc.marketplace.model.AcceptedAgreementSummary>(
-                new com.google.common.base.Supplier<ListAcceptedAgreementsRequest.Builder>() {
+                new java.util.function.Supplier<ListAcceptedAgreementsRequest.Builder>() {
                     @Override
                     public ListAcceptedAgreementsRequest.Builder get() {
                         return ListAcceptedAgreementsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAcceptedAgreementsResponse, String>() {
+                new java.util.function.Function<ListAcceptedAgreementsResponse, String>() {
                     @Override
                     public String apply(ListAcceptedAgreementsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAcceptedAgreementsRequest.Builder>,
                         ListAcceptedAgreementsRequest>() {
@@ -125,12 +125,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAcceptedAgreementsRequest, ListAcceptedAgreementsResponse>() {
                     @Override
                     public ListAcceptedAgreementsResponse apply(
@@ -138,7 +138,7 @@ public class MarketplacePaginators {
                         return client.listAcceptedAgreements(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAcceptedAgreementsResponse,
                         java.util.List<
                                 com.oracle.bmc.marketplace.model.AcceptedAgreementSummary>>() {
@@ -161,19 +161,19 @@ public class MarketplacePaginators {
             final ListAgreementsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAgreementsRequest.Builder, ListAgreementsRequest, ListAgreementsResponse>(
-                new com.google.common.base.Supplier<ListAgreementsRequest.Builder>() {
+                new java.util.function.Supplier<ListAgreementsRequest.Builder>() {
                     @Override
                     public ListAgreementsRequest.Builder get() {
                         return ListAgreementsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAgreementsResponse, String>() {
+                new java.util.function.Function<ListAgreementsResponse, String>() {
                     @Override
                     public String apply(ListAgreementsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAgreementsRequest.Builder>,
                         ListAgreementsRequest>() {
@@ -186,13 +186,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListAgreementsRequest, ListAgreementsResponse>() {
+                new java.util.function.Function<ListAgreementsRequest, ListAgreementsResponse>() {
                     @Override
                     public ListAgreementsResponse apply(ListAgreementsRequest request) {
                         return client.listAgreements(request);
@@ -214,19 +213,19 @@ public class MarketplacePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListAgreementsRequest.Builder, ListAgreementsRequest, ListAgreementsResponse,
                 com.oracle.bmc.marketplace.model.AgreementSummary>(
-                new com.google.common.base.Supplier<ListAgreementsRequest.Builder>() {
+                new java.util.function.Supplier<ListAgreementsRequest.Builder>() {
                     @Override
                     public ListAgreementsRequest.Builder get() {
                         return ListAgreementsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListAgreementsResponse, String>() {
+                new java.util.function.Function<ListAgreementsResponse, String>() {
                     @Override
                     public String apply(ListAgreementsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAgreementsRequest.Builder>,
                         ListAgreementsRequest>() {
@@ -239,19 +238,18 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListAgreementsRequest, ListAgreementsResponse>() {
+                new java.util.function.Function<ListAgreementsRequest, ListAgreementsResponse>() {
                     @Override
                     public ListAgreementsResponse apply(ListAgreementsRequest request) {
                         return client.listAgreements(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAgreementsResponse,
                         java.util.List<com.oracle.bmc.marketplace.model.AgreementSummary>>() {
                     @Override
@@ -273,19 +271,19 @@ public class MarketplacePaginators {
             final ListCategoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCategoriesRequest.Builder, ListCategoriesRequest, ListCategoriesResponse>(
-                new com.google.common.base.Supplier<ListCategoriesRequest.Builder>() {
+                new java.util.function.Supplier<ListCategoriesRequest.Builder>() {
                     @Override
                     public ListCategoriesRequest.Builder get() {
                         return ListCategoriesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCategoriesResponse, String>() {
+                new java.util.function.Function<ListCategoriesResponse, String>() {
                     @Override
                     public String apply(ListCategoriesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCategoriesRequest.Builder>,
                         ListCategoriesRequest>() {
@@ -298,13 +296,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListCategoriesRequest, ListCategoriesResponse>() {
+                new java.util.function.Function<ListCategoriesRequest, ListCategoriesResponse>() {
                     @Override
                     public ListCategoriesResponse apply(ListCategoriesRequest request) {
                         return client.listCategories(request);
@@ -326,19 +323,19 @@ public class MarketplacePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCategoriesRequest.Builder, ListCategoriesRequest, ListCategoriesResponse,
                 com.oracle.bmc.marketplace.model.CategorySummary>(
-                new com.google.common.base.Supplier<ListCategoriesRequest.Builder>() {
+                new java.util.function.Supplier<ListCategoriesRequest.Builder>() {
                     @Override
                     public ListCategoriesRequest.Builder get() {
                         return ListCategoriesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListCategoriesResponse, String>() {
+                new java.util.function.Function<ListCategoriesResponse, String>() {
                     @Override
                     public String apply(ListCategoriesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListCategoriesRequest.Builder>,
                         ListCategoriesRequest>() {
@@ -351,19 +348,18 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListCategoriesRequest, ListCategoriesResponse>() {
+                new java.util.function.Function<ListCategoriesRequest, ListCategoriesResponse>() {
                     @Override
                     public ListCategoriesResponse apply(ListCategoriesRequest request) {
                         return client.listCategories(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListCategoriesResponse,
                         java.util.List<com.oracle.bmc.marketplace.model.CategorySummary>>() {
                     @Override
@@ -385,19 +381,19 @@ public class MarketplacePaginators {
             final ListListingsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListListingsRequest.Builder, ListListingsRequest, ListListingsResponse>(
-                new com.google.common.base.Supplier<ListListingsRequest.Builder>() {
+                new java.util.function.Supplier<ListListingsRequest.Builder>() {
                     @Override
                     public ListListingsRequest.Builder get() {
                         return ListListingsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListListingsResponse, String>() {
+                new java.util.function.Function<ListListingsResponse, String>() {
                     @Override
                     public String apply(ListListingsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListListingsRequest.Builder>,
                         ListListingsRequest>() {
@@ -410,12 +406,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListListingsRequest, ListListingsResponse>() {
+                new java.util.function.Function<ListListingsRequest, ListListingsResponse>() {
                     @Override
                     public ListListingsResponse apply(ListListingsRequest request) {
                         return client.listListings(request);
@@ -437,19 +433,19 @@ public class MarketplacePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListListingsRequest.Builder, ListListingsRequest, ListListingsResponse,
                 com.oracle.bmc.marketplace.model.ListingSummary>(
-                new com.google.common.base.Supplier<ListListingsRequest.Builder>() {
+                new java.util.function.Supplier<ListListingsRequest.Builder>() {
                     @Override
                     public ListListingsRequest.Builder get() {
                         return ListListingsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListListingsResponse, String>() {
+                new java.util.function.Function<ListListingsResponse, String>() {
                     @Override
                     public String apply(ListListingsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListListingsRequest.Builder>,
                         ListListingsRequest>() {
@@ -462,18 +458,18 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListListingsRequest, ListListingsResponse>() {
+                new java.util.function.Function<ListListingsRequest, ListListingsResponse>() {
                     @Override
                     public ListListingsResponse apply(ListListingsRequest request) {
                         return client.listListings(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListListingsResponse,
                         java.util.List<com.oracle.bmc.marketplace.model.ListingSummary>>() {
                     @Override
@@ -495,19 +491,19 @@ public class MarketplacePaginators {
             final ListPackagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPackagesRequest.Builder, ListPackagesRequest, ListPackagesResponse>(
-                new com.google.common.base.Supplier<ListPackagesRequest.Builder>() {
+                new java.util.function.Supplier<ListPackagesRequest.Builder>() {
                     @Override
                     public ListPackagesRequest.Builder get() {
                         return ListPackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPackagesResponse, String>() {
+                new java.util.function.Function<ListPackagesResponse, String>() {
                     @Override
                     public String apply(ListPackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPackagesRequest.Builder>,
                         ListPackagesRequest>() {
@@ -520,12 +516,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListPackagesRequest, ListPackagesResponse>() {
+                new java.util.function.Function<ListPackagesRequest, ListPackagesResponse>() {
                     @Override
                     public ListPackagesResponse apply(ListPackagesRequest request) {
                         return client.listPackages(request);
@@ -547,19 +543,19 @@ public class MarketplacePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListPackagesRequest.Builder, ListPackagesRequest, ListPackagesResponse,
                 com.oracle.bmc.marketplace.model.ListingPackageSummary>(
-                new com.google.common.base.Supplier<ListPackagesRequest.Builder>() {
+                new java.util.function.Supplier<ListPackagesRequest.Builder>() {
                     @Override
                     public ListPackagesRequest.Builder get() {
                         return ListPackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPackagesResponse, String>() {
+                new java.util.function.Function<ListPackagesResponse, String>() {
                     @Override
                     public String apply(ListPackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPackagesRequest.Builder>,
                         ListPackagesRequest>() {
@@ -572,18 +568,18 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListPackagesRequest, ListPackagesResponse>() {
+                new java.util.function.Function<ListPackagesRequest, ListPackagesResponse>() {
                     @Override
                     public ListPackagesResponse apply(ListPackagesRequest request) {
                         return client.listPackages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPackagesResponse,
                         java.util.List<com.oracle.bmc.marketplace.model.ListingPackageSummary>>() {
                     @Override
@@ -606,19 +602,19 @@ public class MarketplacePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPublicationPackagesRequest.Builder, ListPublicationPackagesRequest,
                 ListPublicationPackagesResponse>(
-                new com.google.common.base.Supplier<ListPublicationPackagesRequest.Builder>() {
+                new java.util.function.Supplier<ListPublicationPackagesRequest.Builder>() {
                     @Override
                     public ListPublicationPackagesRequest.Builder get() {
                         return ListPublicationPackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPublicationPackagesResponse, String>() {
+                new java.util.function.Function<ListPublicationPackagesResponse, String>() {
                     @Override
                     public String apply(ListPublicationPackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPublicationPackagesRequest.Builder>,
                         ListPublicationPackagesRequest>() {
@@ -631,12 +627,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicationPackagesRequest, ListPublicationPackagesResponse>() {
                     @Override
                     public ListPublicationPackagesResponse apply(
@@ -661,19 +657,19 @@ public class MarketplacePaginators {
                 ListPublicationPackagesRequest.Builder, ListPublicationPackagesRequest,
                 ListPublicationPackagesResponse,
                 com.oracle.bmc.marketplace.model.PublicationPackageSummary>(
-                new com.google.common.base.Supplier<ListPublicationPackagesRequest.Builder>() {
+                new java.util.function.Supplier<ListPublicationPackagesRequest.Builder>() {
                     @Override
                     public ListPublicationPackagesRequest.Builder get() {
                         return ListPublicationPackagesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPublicationPackagesResponse, String>() {
+                new java.util.function.Function<ListPublicationPackagesResponse, String>() {
                     @Override
                     public String apply(ListPublicationPackagesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPublicationPackagesRequest.Builder>,
                         ListPublicationPackagesRequest>() {
@@ -686,12 +682,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicationPackagesRequest, ListPublicationPackagesResponse>() {
                     @Override
                     public ListPublicationPackagesResponse apply(
@@ -699,7 +695,7 @@ public class MarketplacePaginators {
                         return client.listPublicationPackages(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicationPackagesResponse,
                         java.util.List<
                                 com.oracle.bmc.marketplace.model.PublicationPackageSummary>>() {
@@ -723,19 +719,19 @@ public class MarketplacePaginators {
             final ListPublicationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPublicationsRequest.Builder, ListPublicationsRequest, ListPublicationsResponse>(
-                new com.google.common.base.Supplier<ListPublicationsRequest.Builder>() {
+                new java.util.function.Supplier<ListPublicationsRequest.Builder>() {
                     @Override
                     public ListPublicationsRequest.Builder get() {
                         return ListPublicationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPublicationsResponse, String>() {
+                new java.util.function.Function<ListPublicationsResponse, String>() {
                     @Override
                     public String apply(ListPublicationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPublicationsRequest.Builder>,
                         ListPublicationsRequest>() {
@@ -748,12 +744,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicationsRequest, ListPublicationsResponse>() {
                     @Override
                     public ListPublicationsResponse apply(ListPublicationsRequest request) {
@@ -776,19 +772,19 @@ public class MarketplacePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListPublicationsRequest.Builder, ListPublicationsRequest, ListPublicationsResponse,
                 com.oracle.bmc.marketplace.model.PublicationSummary>(
-                new com.google.common.base.Supplier<ListPublicationsRequest.Builder>() {
+                new java.util.function.Supplier<ListPublicationsRequest.Builder>() {
                     @Override
                     public ListPublicationsRequest.Builder get() {
                         return ListPublicationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPublicationsResponse, String>() {
+                new java.util.function.Function<ListPublicationsResponse, String>() {
                     @Override
                     public String apply(ListPublicationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPublicationsRequest.Builder>,
                         ListPublicationsRequest>() {
@@ -801,19 +797,19 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicationsRequest, ListPublicationsResponse>() {
                     @Override
                     public ListPublicationsResponse apply(ListPublicationsRequest request) {
                         return client.listPublications(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublicationsResponse,
                         java.util.List<com.oracle.bmc.marketplace.model.PublicationSummary>>() {
                     @Override
@@ -835,19 +831,19 @@ public class MarketplacePaginators {
             final ListPublishersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListPublishersRequest.Builder, ListPublishersRequest, ListPublishersResponse>(
-                new com.google.common.base.Supplier<ListPublishersRequest.Builder>() {
+                new java.util.function.Supplier<ListPublishersRequest.Builder>() {
                     @Override
                     public ListPublishersRequest.Builder get() {
                         return ListPublishersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPublishersResponse, String>() {
+                new java.util.function.Function<ListPublishersResponse, String>() {
                     @Override
                     public String apply(ListPublishersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPublishersRequest.Builder>,
                         ListPublishersRequest>() {
@@ -860,13 +856,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListPublishersRequest, ListPublishersResponse>() {
+                new java.util.function.Function<ListPublishersRequest, ListPublishersResponse>() {
                     @Override
                     public ListPublishersResponse apply(ListPublishersRequest request) {
                         return client.listPublishers(request);
@@ -888,19 +883,19 @@ public class MarketplacePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListPublishersRequest.Builder, ListPublishersRequest, ListPublishersResponse,
                 com.oracle.bmc.marketplace.model.PublisherSummary>(
-                new com.google.common.base.Supplier<ListPublishersRequest.Builder>() {
+                new java.util.function.Supplier<ListPublishersRequest.Builder>() {
                     @Override
                     public ListPublishersRequest.Builder get() {
                         return ListPublishersRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListPublishersResponse, String>() {
+                new java.util.function.Function<ListPublishersResponse, String>() {
                     @Override
                     public String apply(ListPublishersResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListPublishersRequest.Builder>,
                         ListPublishersRequest>() {
@@ -913,19 +908,18 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListPublishersRequest, ListPublishersResponse>() {
+                new java.util.function.Function<ListPublishersRequest, ListPublishersResponse>() {
                     @Override
                     public ListPublishersResponse apply(ListPublishersRequest request) {
                         return client.listPublishers(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListPublishersResponse,
                         java.util.List<com.oracle.bmc.marketplace.model.PublisherSummary>>() {
                     @Override
@@ -947,19 +941,19 @@ public class MarketplacePaginators {
             final ListReportTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListReportTypesRequest.Builder, ListReportTypesRequest, ListReportTypesResponse>(
-                new com.google.common.base.Supplier<ListReportTypesRequest.Builder>() {
+                new java.util.function.Supplier<ListReportTypesRequest.Builder>() {
                     @Override
                     public ListReportTypesRequest.Builder get() {
                         return ListReportTypesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListReportTypesResponse, String>() {
+                new java.util.function.Function<ListReportTypesResponse, String>() {
                     @Override
                     public String apply(ListReportTypesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListReportTypesRequest.Builder>,
                         ListReportTypesRequest>() {
@@ -972,13 +966,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListReportTypesRequest, ListReportTypesResponse>() {
+                new java.util.function.Function<ListReportTypesRequest, ListReportTypesResponse>() {
                     @Override
                     public ListReportTypesResponse apply(ListReportTypesRequest request) {
                         return client.listReportTypes(request);
@@ -1000,19 +993,19 @@ public class MarketplacePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListReportTypesRequest.Builder, ListReportTypesRequest, ListReportTypesResponse,
                 com.oracle.bmc.marketplace.model.ReportTypeSummary>(
-                new com.google.common.base.Supplier<ListReportTypesRequest.Builder>() {
+                new java.util.function.Supplier<ListReportTypesRequest.Builder>() {
                     @Override
                     public ListReportTypesRequest.Builder get() {
                         return ListReportTypesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListReportTypesResponse, String>() {
+                new java.util.function.Function<ListReportTypesResponse, String>() {
                     @Override
                     public String apply(ListReportTypesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListReportTypesRequest.Builder>,
                         ListReportTypesRequest>() {
@@ -1025,19 +1018,18 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListReportTypesRequest, ListReportTypesResponse>() {
+                new java.util.function.Function<ListReportTypesRequest, ListReportTypesResponse>() {
                     @Override
                     public ListReportTypesResponse apply(ListReportTypesRequest request) {
                         return client.listReportTypes(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListReportTypesResponse,
                         java.util.List<com.oracle.bmc.marketplace.model.ReportTypeSummary>>() {
                     @Override
@@ -1059,19 +1051,19 @@ public class MarketplacePaginators {
             final ListReportsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListReportsRequest.Builder, ListReportsRequest, ListReportsResponse>(
-                new com.google.common.base.Supplier<ListReportsRequest.Builder>() {
+                new java.util.function.Supplier<ListReportsRequest.Builder>() {
                     @Override
                     public ListReportsRequest.Builder get() {
                         return ListReportsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListReportsResponse, String>() {
+                new java.util.function.Function<ListReportsResponse, String>() {
                     @Override
                     public String apply(ListReportsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListReportsRequest.Builder>,
                         ListReportsRequest>() {
@@ -1084,12 +1076,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListReportsRequest, ListReportsResponse>() {
+                new java.util.function.Function<ListReportsRequest, ListReportsResponse>() {
                     @Override
                     public ListReportsResponse apply(ListReportsRequest request) {
                         return client.listReports(request);
@@ -1111,19 +1103,19 @@ public class MarketplacePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListReportsRequest.Builder, ListReportsRequest, ListReportsResponse,
                 com.oracle.bmc.marketplace.model.ReportSummary>(
-                new com.google.common.base.Supplier<ListReportsRequest.Builder>() {
+                new java.util.function.Supplier<ListReportsRequest.Builder>() {
                     @Override
                     public ListReportsRequest.Builder get() {
                         return ListReportsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListReportsResponse, String>() {
+                new java.util.function.Function<ListReportsResponse, String>() {
                     @Override
                     public String apply(ListReportsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListReportsRequest.Builder>,
                         ListReportsRequest>() {
@@ -1136,18 +1128,18 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListReportsRequest, ListReportsResponse>() {
+                new java.util.function.Function<ListReportsRequest, ListReportsResponse>() {
                     @Override
                     public ListReportsResponse apply(ListReportsRequest request) {
                         return client.listReports(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListReportsResponse,
                         java.util.List<com.oracle.bmc.marketplace.model.ReportSummary>>() {
                     @Override
@@ -1169,19 +1161,19 @@ public class MarketplacePaginators {
             final SearchListingsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 SearchListingsRequest.Builder, SearchListingsRequest, SearchListingsResponse>(
-                new com.google.common.base.Supplier<SearchListingsRequest.Builder>() {
+                new java.util.function.Supplier<SearchListingsRequest.Builder>() {
                     @Override
                     public SearchListingsRequest.Builder get() {
                         return SearchListingsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<SearchListingsResponse, String>() {
+                new java.util.function.Function<SearchListingsResponse, String>() {
                     @Override
                     public String apply(SearchListingsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 SearchListingsRequest.Builder>,
                         SearchListingsRequest>() {
@@ -1194,13 +1186,12 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        SearchListingsRequest, SearchListingsResponse>() {
+                new java.util.function.Function<SearchListingsRequest, SearchListingsResponse>() {
                     @Override
                     public SearchListingsResponse apply(SearchListingsRequest request) {
                         return client.searchListings(request);
@@ -1222,19 +1213,19 @@ public class MarketplacePaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 SearchListingsRequest.Builder, SearchListingsRequest, SearchListingsResponse,
                 com.oracle.bmc.marketplace.model.ListingSummary>(
-                new com.google.common.base.Supplier<SearchListingsRequest.Builder>() {
+                new java.util.function.Supplier<SearchListingsRequest.Builder>() {
                     @Override
                     public SearchListingsRequest.Builder get() {
                         return SearchListingsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<SearchListingsResponse, String>() {
+                new java.util.function.Function<SearchListingsResponse, String>() {
                     @Override
                     public String apply(SearchListingsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 SearchListingsRequest.Builder>,
                         SearchListingsRequest>() {
@@ -1247,19 +1238,18 @@ public class MarketplacePaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        SearchListingsRequest, SearchListingsResponse>() {
+                new java.util.function.Function<SearchListingsRequest, SearchListingsResponse>() {
                     @Override
                     public SearchListingsResponse apply(SearchListingsRequest request) {
                         return client.searchListings(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         SearchListingsResponse,
                         java.util.List<com.oracle.bmc.marketplace.model.ListingSummary>>() {
                     @Override

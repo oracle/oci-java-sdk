@@ -9,7 +9,6 @@ import com.oracle.bmc.healthchecks.requests.*;
 import com.oracle.bmc.healthchecks.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class HealthChecksClient implements HealthChecks {
@@ -332,7 +331,7 @@ public class HealthChecksClient implements HealthChecks {
          * @return the client
          */
         public HealthChecksClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -368,7 +367,8 @@ public class HealthChecksClient implements HealthChecks {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -415,8 +415,7 @@ public class HealthChecksClient implements HealthChecks {
                         "ChangeHttpMonitorCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/ChangeHttpMonitorCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeHttpMonitorCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeHttpMonitorCompartmentResponse>
                 transformer =
                         ChangeHttpMonitorCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -460,8 +459,7 @@ public class HealthChecksClient implements HealthChecks {
                         "ChangePingMonitorCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/ChangePingMonitorCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangePingMonitorCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangePingMonitorCompartmentResponse>
                 transformer =
                         ChangePingMonitorCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -504,7 +502,7 @@ public class HealthChecksClient implements HealthChecks {
                         "CreateHttpMonitor",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/CreateHttpMonitor");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateHttpMonitorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateHttpMonitorResponse>
                 transformer =
                         CreateHttpMonitorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -546,7 +544,7 @@ public class HealthChecksClient implements HealthChecks {
                         "CreateOnDemandHttpProbe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpProbe/CreateOnDemandHttpProbe");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateOnDemandHttpProbeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOnDemandHttpProbeResponse>
                 transformer =
                         CreateOnDemandHttpProbeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -588,7 +586,7 @@ public class HealthChecksClient implements HealthChecks {
                         "CreateOnDemandPingProbe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingProbe/CreateOnDemandPingProbe");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateOnDemandPingProbeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOnDemandPingProbeResponse>
                 transformer =
                         CreateOnDemandPingProbeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -630,7 +628,7 @@ public class HealthChecksClient implements HealthChecks {
                         "CreatePingMonitor",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/CreatePingMonitor");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePingMonitorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePingMonitorResponse>
                 transformer =
                         CreatePingMonitorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -671,7 +669,7 @@ public class HealthChecksClient implements HealthChecks {
                         "DeleteHttpMonitor",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/DeleteHttpMonitor");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHttpMonitorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteHttpMonitorResponse>
                 transformer =
                         DeleteHttpMonitorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -709,7 +707,7 @@ public class HealthChecksClient implements HealthChecks {
                         "DeletePingMonitor",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/DeletePingMonitor");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePingMonitorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePingMonitorResponse>
                 transformer =
                         DeletePingMonitorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -747,9 +745,8 @@ public class HealthChecksClient implements HealthChecks {
                         "GetHttpMonitor",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/GetHttpMonitor");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetHttpMonitorResponse>
-                transformer =
-                        GetHttpMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetHttpMonitorResponse> transformer =
+                GetHttpMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -783,9 +780,8 @@ public class HealthChecksClient implements HealthChecks {
                         "GetPingMonitor",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/GetPingMonitor");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPingMonitorResponse>
-                transformer =
-                        GetPingMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetPingMonitorResponse> transformer =
+                GetPingMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -820,7 +816,7 @@ public class HealthChecksClient implements HealthChecks {
                         "ListHealthChecksVantagePoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HealthChecksVantagePointSummary/ListHealthChecksVantagePoints");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListHealthChecksVantagePointsResponse>
                 transformer =
                         ListHealthChecksVantagePointsConverter.fromResponse(
@@ -858,7 +854,7 @@ public class HealthChecksClient implements HealthChecks {
                         "ListHttpMonitors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitorSummary/ListHttpMonitors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListHttpMonitorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListHttpMonitorsResponse>
                 transformer =
                         ListHttpMonitorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -895,7 +891,7 @@ public class HealthChecksClient implements HealthChecks {
                         "ListHttpProbeResults",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpProbeResultSummary/ListHttpProbeResults");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListHttpProbeResultsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListHttpProbeResultsResponse>
                 transformer =
                         ListHttpProbeResultsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -932,7 +928,7 @@ public class HealthChecksClient implements HealthChecks {
                         "ListPingMonitors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitorSummary/ListPingMonitors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPingMonitorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPingMonitorsResponse>
                 transformer =
                         ListPingMonitorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -969,7 +965,7 @@ public class HealthChecksClient implements HealthChecks {
                         "ListPingProbeResults",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingProbeResultSummary/ListPingProbeResults");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPingProbeResultsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPingProbeResultsResponse>
                 transformer =
                         ListPingProbeResultsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1006,7 +1002,7 @@ public class HealthChecksClient implements HealthChecks {
                         "UpdateHttpMonitor",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/UpdateHttpMonitor");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHttpMonitorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateHttpMonitorResponse>
                 transformer =
                         UpdateHttpMonitorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1047,7 +1043,7 @@ public class HealthChecksClient implements HealthChecks {
                         "UpdatePingMonitor",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/UpdatePingMonitor");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePingMonitorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePingMonitorResponse>
                 transformer =
                         UpdatePingMonitorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

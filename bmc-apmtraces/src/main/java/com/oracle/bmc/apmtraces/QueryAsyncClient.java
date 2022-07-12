@@ -7,7 +7,6 @@ package com.oracle.bmc.apmtraces;
 import com.oracle.bmc.apmtraces.internal.http.*;
 import com.oracle.bmc.apmtraces.requests.*;
 import com.oracle.bmc.apmtraces.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Query service. <br/>
@@ -319,7 +318,7 @@ public class QueryAsyncClient implements QueryAsync {
          * @return the client
          */
         public QueryAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class QueryAsyncClient implements QueryAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -403,7 +403,7 @@ public class QueryAsyncClient implements QueryAsync {
                         "ListQuickPicks",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/QuickPickSummary/ListQuickPicks");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListQuickPicksResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListQuickPicksResponse>
                 transformer =
                         ListQuickPicksConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListQuickPicksRequest, ListQuickPicksResponse>
@@ -445,8 +445,8 @@ public class QueryAsyncClient implements QueryAsync {
                         "Query",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/QueryResultResponse/Query");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, QueryResponse>
-                transformer = QueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        final java.util.function.Function<javax.ws.rs.core.Response, QueryResponse> transformer =
+                QueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<QueryRequest, QueryResponse> handlerToUse = handler;
 
         java.util.function.Function<

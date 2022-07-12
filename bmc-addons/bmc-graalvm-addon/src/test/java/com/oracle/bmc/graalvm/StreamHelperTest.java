@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.graalvm;
 
-import com.google.common.base.Strings;
+import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.objectstorage.transfer.internal.StreamHelper;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +20,7 @@ public class StreamHelperTest {
 
     @Test
     public void copy() throws Exception {
-        String testString = Strings.repeat(TEST_STR, 10000);
+        String testString = StringUtils.repeat(TEST_STR, 10000);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         StreamHelper.copy(new ByteArrayInputStream(testString.getBytes()), baos);
         assertEquals(testString, new String(baos.toByteArray()));

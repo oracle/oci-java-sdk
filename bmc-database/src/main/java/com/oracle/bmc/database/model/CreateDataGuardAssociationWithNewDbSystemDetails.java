@@ -185,6 +185,24 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
         /**
+         * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
+        private Integer nodeCount;
+
+        /**
+         * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+         *
+         * @param nodeCount the value to set
+         * @return this builder
+         **/
+        public Builder nodeCount(Integer nodeCount) {
+            this.nodeCount = nodeCount;
+            this.__explicitlySet__.add("nodeCount");
+            return this;
+        }
+        /**
          * The OCID of the subnet the DB system is associated with.
          * **Subnet Restrictions:**
          * - For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
@@ -270,6 +288,200 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             this.__explicitlySet__.add("hostname");
             return this;
         }
+        /**
+         * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
+        private String timeZone;
+
+        /**
+         * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * @param timeZone the value to set
+         * @return this builder
+         **/
+        public Builder timeZone(String timeZone) {
+            this.timeZone = timeZone;
+            this.__explicitlySet__.add("timeZone");
+            return this;
+        }
+        /**
+         * A Fault Domain is a grouping of hardware and infrastructure within an availability domain.
+         * Fault Domains let you distribute your instances so that they are not on the same physical
+         * hardware within a single availability domain. A hardware failure or maintenance
+         * that affects one Fault Domain does not affect DB systems in other Fault Domains.
+         * <p>
+         * If you do not specify the Fault Domain, the system selects one for you. To change the Fault
+         * Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+         * <p>
+         * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into.
+         * The system assigns your nodes automatically to the Fault Domains you specify so that
+         * no Fault Domain contains more than one node.
+         * <p>
+         * To get a list of Fault Domains, use the
+         * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+         * Identity and Access Management Service API.
+         * <p>
+         * Example: {@code FAULT-DOMAIN-1}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
+        private java.util.List<String> faultDomains;
+
+        /**
+         * A Fault Domain is a grouping of hardware and infrastructure within an availability domain.
+         * Fault Domains let you distribute your instances so that they are not on the same physical
+         * hardware within a single availability domain. A hardware failure or maintenance
+         * that affects one Fault Domain does not affect DB systems in other Fault Domains.
+         * <p>
+         * If you do not specify the Fault Domain, the system selects one for you. To change the Fault
+         * Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+         * <p>
+         * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into.
+         * The system assigns your nodes automatically to the Fault Domains you specify so that
+         * no Fault Domain contains more than one node.
+         * <p>
+         * To get a list of Fault Domains, use the
+         * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+         * Identity and Access Management Service API.
+         * <p>
+         * Example: {@code FAULT-DOMAIN-1}
+         *
+         * @param faultDomains the value to set
+         * @return this builder
+         **/
+        public Builder faultDomains(java.util.List<String> faultDomains) {
+            this.faultDomains = faultDomains;
+            this.__explicitlySet__.add("faultDomains");
+            return this;
+        }
+        /**
+         * The IPv4 address from the provided OCI subnet which needs to be assigned to the VNIC. If not provided, it will
+         * be auto-assigned with an available IPv4 address from the subnet.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
+        private String privateIp;
+
+        /**
+         * The IPv4 address from the provided OCI subnet which needs to be assigned to the VNIC. If not provided, it will
+         * be auto-assigned with an available IPv4 address from the subnet.
+         *
+         * @param privateIp the value to set
+         * @return this builder
+         **/
+        public Builder privateIp(String privateIp) {
+            this.privateIp = privateIp;
+            this.__explicitlySet__.add("privateIp");
+            return this;
+        }
+        /**
+         * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
+        private LicenseModel licenseModel;
+
+        /**
+         * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+         *
+         * @param licenseModel the value to set
+         * @return this builder
+         **/
+        public Builder licenseModel(LicenseModel licenseModel) {
+            this.licenseModel = licenseModel;
+            this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemFreeformTags")
+        private java.util.Map<String, String> dbSystemFreeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param dbSystemFreeformTags the value to set
+         * @return this builder
+         **/
+        public Builder dbSystemFreeformTags(java.util.Map<String, String> dbSystemFreeformTags) {
+            this.dbSystemFreeformTags = dbSystemFreeformTags;
+            this.__explicitlySet__.add("dbSystemFreeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemDefinedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> dbSystemDefinedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param dbSystemDefinedTags the value to set
+         * @return this builder
+         **/
+        public Builder dbSystemDefinedTags(
+                java.util.Map<String, java.util.Map<String, Object>> dbSystemDefinedTags) {
+            this.dbSystemDefinedTags = dbSystemDefinedTags;
+            this.__explicitlySet__.add("dbSystemDefinedTags");
+            return this;
+        }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseFreeformTags")
+        private java.util.Map<String, String> databaseFreeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param databaseFreeformTags the value to set
+         * @return this builder
+         **/
+        public Builder databaseFreeformTags(java.util.Map<String, String> databaseFreeformTags) {
+            this.databaseFreeformTags = databaseFreeformTags;
+            this.__explicitlySet__.add("databaseFreeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseDefinedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param databaseDefinedTags the value to set
+         * @return this builder
+         **/
+        public Builder databaseDefinedTags(
+                java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags) {
+            this.databaseDefinedTags = databaseDefinedTags;
+            this.__explicitlySet__.add("databaseDefinedTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -289,10 +501,19 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                             shape,
                             cpuCoreCount,
                             storageVolumePerformanceMode,
+                            nodeCount,
                             subnetId,
                             nsgIds,
                             backupNetworkNsgIds,
-                            hostname);
+                            hostname,
+                            timeZone,
+                            faultDomains,
+                            privateIp,
+                            licenseModel,
+                            dbSystemFreeformTags,
+                            dbSystemDefinedTags,
+                            databaseFreeformTags,
+                            databaseDefinedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -312,10 +533,19 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                             .shape(o.getShape())
                             .cpuCoreCount(o.getCpuCoreCount())
                             .storageVolumePerformanceMode(o.getStorageVolumePerformanceMode())
+                            .nodeCount(o.getNodeCount())
                             .subnetId(o.getSubnetId())
                             .nsgIds(o.getNsgIds())
                             .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
-                            .hostname(o.getHostname());
+                            .hostname(o.getHostname())
+                            .timeZone(o.getTimeZone())
+                            .faultDomains(o.getFaultDomains())
+                            .privateIp(o.getPrivateIp())
+                            .licenseModel(o.getLicenseModel())
+                            .dbSystemFreeformTags(o.getDbSystemFreeformTags())
+                            .dbSystemDefinedTags(o.getDbSystemDefinedTags())
+                            .databaseFreeformTags(o.getDatabaseFreeformTags())
+                            .databaseDefinedTags(o.getDatabaseDefinedTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -347,10 +577,19 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             String shape,
             Integer cpuCoreCount,
             StorageVolumePerformanceMode storageVolumePerformanceMode,
+            Integer nodeCount,
             String subnetId,
             java.util.List<String> nsgIds,
             java.util.List<String> backupNetworkNsgIds,
-            String hostname) {
+            String hostname,
+            String timeZone,
+            java.util.List<String> faultDomains,
+            String privateIp,
+            LicenseModel licenseModel,
+            java.util.Map<String, String> dbSystemFreeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> dbSystemDefinedTags,
+            java.util.Map<String, String> databaseFreeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags) {
         super(
                 databaseSoftwareImageId,
                 databaseAdminPassword,
@@ -364,10 +603,19 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         this.shape = shape;
         this.cpuCoreCount = cpuCoreCount;
         this.storageVolumePerformanceMode = storageVolumePerformanceMode;
+        this.nodeCount = nodeCount;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
         this.backupNetworkNsgIds = backupNetworkNsgIds;
         this.hostname = hostname;
+        this.timeZone = timeZone;
+        this.faultDomains = faultDomains;
+        this.privateIp = privateIp;
+        this.licenseModel = licenseModel;
+        this.dbSystemFreeformTags = dbSystemFreeformTags;
+        this.dbSystemDefinedTags = dbSystemDefinedTags;
+        this.databaseFreeformTags = databaseFreeformTags;
+        this.databaseDefinedTags = databaseDefinedTags;
     }
 
     /**
@@ -487,6 +735,22 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     }
 
     /**
+     * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
+    private final Integer nodeCount;
+
+    /**
+     * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+     *
+     * @return the value
+     **/
+    public Integer getNodeCount() {
+        return nodeCount;
+    }
+
+    /**
      * The OCID of the subnet the DB system is associated with.
      * **Subnet Restrictions:**
      * - For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
@@ -564,6 +828,218 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         return hostname;
     }
 
+    /**
+     * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
+    private final String timeZone;
+
+    /**
+     * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * @return the value
+     **/
+    public String getTimeZone() {
+        return timeZone;
+    }
+
+    /**
+     * A Fault Domain is a grouping of hardware and infrastructure within an availability domain.
+     * Fault Domains let you distribute your instances so that they are not on the same physical
+     * hardware within a single availability domain. A hardware failure or maintenance
+     * that affects one Fault Domain does not affect DB systems in other Fault Domains.
+     * <p>
+     * If you do not specify the Fault Domain, the system selects one for you. To change the Fault
+     * Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+     * <p>
+     * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into.
+     * The system assigns your nodes automatically to the Fault Domains you specify so that
+     * no Fault Domain contains more than one node.
+     * <p>
+     * To get a list of Fault Domains, use the
+     * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+     * Identity and Access Management Service API.
+     * <p>
+     * Example: {@code FAULT-DOMAIN-1}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
+    private final java.util.List<String> faultDomains;
+
+    /**
+     * A Fault Domain is a grouping of hardware and infrastructure within an availability domain.
+     * Fault Domains let you distribute your instances so that they are not on the same physical
+     * hardware within a single availability domain. A hardware failure or maintenance
+     * that affects one Fault Domain does not affect DB systems in other Fault Domains.
+     * <p>
+     * If you do not specify the Fault Domain, the system selects one for you. To change the Fault
+     * Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+     * <p>
+     * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into.
+     * The system assigns your nodes automatically to the Fault Domains you specify so that
+     * no Fault Domain contains more than one node.
+     * <p>
+     * To get a list of Fault Domains, use the
+     * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+     * Identity and Access Management Service API.
+     * <p>
+     * Example: {@code FAULT-DOMAIN-1}
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getFaultDomains() {
+        return faultDomains;
+    }
+
+    /**
+     * The IPv4 address from the provided OCI subnet which needs to be assigned to the VNIC. If not provided, it will
+     * be auto-assigned with an available IPv4 address from the subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
+    private final String privateIp;
+
+    /**
+     * The IPv4 address from the provided OCI subnet which needs to be assigned to the VNIC. If not provided, it will
+     * be auto-assigned with an available IPv4 address from the subnet.
+     *
+     * @return the value
+     **/
+    public String getPrivateIp() {
+        return privateIp;
+    }
+
+    /**
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     *
+     **/
+    public enum LicenseModel {
+        LicenseIncluded("LICENSE_INCLUDED"),
+        BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, LicenseModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LicenseModel v : LicenseModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        LicenseModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LicenseModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid LicenseModel: " + key);
+        }
+    };
+    /**
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
+    private final LicenseModel licenseModel;
+
+    /**
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     *
+     * @return the value
+     **/
+    public LicenseModel getLicenseModel() {
+        return licenseModel;
+    }
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemFreeformTags")
+    private final java.util.Map<String, String> dbSystemFreeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, String> getDbSystemFreeformTags() {
+        return dbSystemFreeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemDefinedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> dbSystemDefinedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getDbSystemDefinedTags() {
+        return dbSystemDefinedTags;
+    }
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseFreeformTags")
+    private final java.util.Map<String, String> databaseFreeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, String> getDatabaseFreeformTags() {
+        return databaseFreeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseDefinedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getDatabaseDefinedTags() {
+        return databaseDefinedTags;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
@@ -575,10 +1051,19 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", storageVolumePerformanceMode=")
                 .append(String.valueOf(this.storageVolumePerformanceMode));
+        sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", backupNetworkNsgIds=").append(String.valueOf(this.backupNetworkNsgIds));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
+        sb.append(", timeZone=").append(String.valueOf(this.timeZone));
+        sb.append(", faultDomains=").append(String.valueOf(this.faultDomains));
+        sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", dbSystemFreeformTags=").append(String.valueOf(this.dbSystemFreeformTags));
+        sb.append(", dbSystemDefinedTags=").append(String.valueOf(this.dbSystemDefinedTags));
+        sb.append(", databaseFreeformTags=").append(String.valueOf(this.databaseFreeformTags));
+        sb.append(", databaseDefinedTags=").append(String.valueOf(this.databaseDefinedTags));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -601,10 +1086,19 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(
                         this.storageVolumePerformanceMode, other.storageVolumePerformanceMode)
+                && java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.backupNetworkNsgIds, other.backupNetworkNsgIds)
                 && java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.timeZone, other.timeZone)
+                && java.util.Objects.equals(this.faultDomains, other.faultDomains)
+                && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.dbSystemFreeformTags, other.dbSystemFreeformTags)
+                && java.util.Objects.equals(this.dbSystemDefinedTags, other.dbSystemDefinedTags)
+                && java.util.Objects.equals(this.databaseFreeformTags, other.databaseFreeformTags)
+                && java.util.Objects.equals(this.databaseDefinedTags, other.databaseDefinedTags)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
                 && super.equals(o);
     }
@@ -626,6 +1120,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                         + (this.storageVolumePerformanceMode == null
                                 ? 43
                                 : this.storageVolumePerformanceMode.hashCode());
+        result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result =
@@ -634,6 +1129,30 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                                 ? 43
                                 : this.backupNetworkNsgIds.hashCode());
         result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
+        result = (result * PRIME) + (this.faultDomains == null ? 43 : this.faultDomains.hashCode());
+        result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbSystemFreeformTags == null
+                                ? 43
+                                : this.dbSystemFreeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbSystemDefinedTags == null
+                                ? 43
+                                : this.dbSystemDefinedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseFreeformTags == null
+                                ? 43
+                                : this.databaseFreeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseDefinedTags == null
+                                ? 43
+                                : this.databaseDefinedTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

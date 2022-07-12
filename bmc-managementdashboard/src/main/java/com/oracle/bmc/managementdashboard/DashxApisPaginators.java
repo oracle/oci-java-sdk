@@ -45,19 +45,19 @@ public class DashxApisPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListManagementDashboardsRequest.Builder, ListManagementDashboardsRequest,
                 ListManagementDashboardsResponse>(
-                new com.google.common.base.Supplier<ListManagementDashboardsRequest.Builder>() {
+                new java.util.function.Supplier<ListManagementDashboardsRequest.Builder>() {
                     @Override
                     public ListManagementDashboardsRequest.Builder get() {
                         return ListManagementDashboardsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListManagementDashboardsResponse, String>() {
+                new java.util.function.Function<ListManagementDashboardsResponse, String>() {
                     @Override
                     public String apply(ListManagementDashboardsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListManagementDashboardsRequest.Builder>,
                         ListManagementDashboardsRequest>() {
@@ -70,12 +70,12 @@ public class DashxApisPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagementDashboardsRequest, ListManagementDashboardsResponse>() {
                     @Override
                     public ListManagementDashboardsResponse apply(
@@ -100,19 +100,19 @@ public class DashxApisPaginators {
                 ListManagementDashboardsRequest.Builder, ListManagementDashboardsRequest,
                 ListManagementDashboardsResponse,
                 com.oracle.bmc.managementdashboard.model.ManagementDashboardSummary>(
-                new com.google.common.base.Supplier<ListManagementDashboardsRequest.Builder>() {
+                new java.util.function.Supplier<ListManagementDashboardsRequest.Builder>() {
                     @Override
                     public ListManagementDashboardsRequest.Builder get() {
                         return ListManagementDashboardsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListManagementDashboardsResponse, String>() {
+                new java.util.function.Function<ListManagementDashboardsResponse, String>() {
                     @Override
                     public String apply(ListManagementDashboardsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListManagementDashboardsRequest.Builder>,
                         ListManagementDashboardsRequest>() {
@@ -125,12 +125,12 @@ public class DashxApisPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagementDashboardsRequest, ListManagementDashboardsResponse>() {
                     @Override
                     public ListManagementDashboardsResponse apply(
@@ -138,7 +138,7 @@ public class DashxApisPaginators {
                         return client.listManagementDashboards(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagementDashboardsResponse,
                         java.util.List<
                                 com.oracle.bmc.managementdashboard.model
@@ -166,19 +166,19 @@ public class DashxApisPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListManagementSavedSearchesRequest.Builder, ListManagementSavedSearchesRequest,
                 ListManagementSavedSearchesResponse>(
-                new com.google.common.base.Supplier<ListManagementSavedSearchesRequest.Builder>() {
+                new java.util.function.Supplier<ListManagementSavedSearchesRequest.Builder>() {
                     @Override
                     public ListManagementSavedSearchesRequest.Builder get() {
                         return ListManagementSavedSearchesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListManagementSavedSearchesResponse, String>() {
+                new java.util.function.Function<ListManagementSavedSearchesResponse, String>() {
                     @Override
                     public String apply(ListManagementSavedSearchesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListManagementSavedSearchesRequest.Builder>,
                         ListManagementSavedSearchesRequest>() {
@@ -191,12 +191,12 @@ public class DashxApisPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagementSavedSearchesRequest, ListManagementSavedSearchesResponse>() {
                     @Override
                     public ListManagementSavedSearchesResponse apply(
@@ -222,19 +222,19 @@ public class DashxApisPaginators {
                 ListManagementSavedSearchesRequest.Builder, ListManagementSavedSearchesRequest,
                 ListManagementSavedSearchesResponse,
                 com.oracle.bmc.managementdashboard.model.ManagementSavedSearchSummary>(
-                new com.google.common.base.Supplier<ListManagementSavedSearchesRequest.Builder>() {
+                new java.util.function.Supplier<ListManagementSavedSearchesRequest.Builder>() {
                     @Override
                     public ListManagementSavedSearchesRequest.Builder get() {
                         return ListManagementSavedSearchesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListManagementSavedSearchesResponse, String>() {
+                new java.util.function.Function<ListManagementSavedSearchesResponse, String>() {
                     @Override
                     public String apply(ListManagementSavedSearchesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListManagementSavedSearchesRequest.Builder>,
                         ListManagementSavedSearchesRequest>() {
@@ -247,12 +247,12 @@ public class DashxApisPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagementSavedSearchesRequest, ListManagementSavedSearchesResponse>() {
                     @Override
                     public ListManagementSavedSearchesResponse apply(
@@ -260,7 +260,7 @@ public class DashxApisPaginators {
                         return client.listManagementSavedSearches(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListManagementSavedSearchesResponse,
                         java.util.List<
                                 com.oracle.bmc.managementdashboard.model

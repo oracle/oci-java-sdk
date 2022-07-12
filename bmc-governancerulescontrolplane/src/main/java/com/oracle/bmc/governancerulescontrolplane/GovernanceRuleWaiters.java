@@ -6,7 +6,6 @@ package com.oracle.bmc.governancerulescontrolplane;
 
 import com.oracle.bmc.governancerulescontrolplane.requests.*;
 import com.oracle.bmc.governancerulescontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -118,8 +117,8 @@ public class GovernanceRuleWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetEnforcedGovernanceRuleRequest,
                                 GetEnforcedGovernanceRuleResponse>() {
                             @Override
@@ -128,9 +127,9 @@ public class GovernanceRuleWaiters {
                                 return client.getEnforcedGovernanceRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetEnforcedGovernanceRuleResponse>() {
+                        new java.util.function.Predicate<GetEnforcedGovernanceRuleResponse>() {
                             @Override
-                            public boolean apply(GetEnforcedGovernanceRuleResponse response) {
+                            public boolean test(GetEnforcedGovernanceRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getEnforcedGovernanceRule().getLifecycleState());
                             }
@@ -230,8 +229,8 @@ public class GovernanceRuleWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetGovernanceRuleRequest, GetGovernanceRuleResponse>() {
                             @Override
                             public GetGovernanceRuleResponse apply(
@@ -239,9 +238,9 @@ public class GovernanceRuleWaiters {
                                 return client.getGovernanceRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetGovernanceRuleResponse>() {
+                        new java.util.function.Predicate<GetGovernanceRuleResponse>() {
                             @Override
-                            public boolean apply(GetGovernanceRuleResponse response) {
+                            public boolean test(GetGovernanceRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getGovernanceRule().getLifecycleState());
                             }
@@ -345,8 +344,8 @@ public class GovernanceRuleWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetInclusionCriterionRequest, GetInclusionCriterionResponse>() {
                             @Override
                             public GetInclusionCriterionResponse apply(
@@ -354,9 +353,9 @@ public class GovernanceRuleWaiters {
                                 return client.getInclusionCriterion(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetInclusionCriterionResponse>() {
+                        new java.util.function.Predicate<GetInclusionCriterionResponse>() {
                             @Override
-                            public boolean apply(GetInclusionCriterionResponse response) {
+                            public boolean test(GetInclusionCriterionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getInclusionCriterion().getLifecycleState());
                             }
@@ -459,8 +458,8 @@ public class GovernanceRuleWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetTenancyAttachmentRequest, GetTenancyAttachmentResponse>() {
                             @Override
                             public GetTenancyAttachmentResponse apply(
@@ -468,9 +467,9 @@ public class GovernanceRuleWaiters {
                                 return client.getTenancyAttachment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTenancyAttachmentResponse>() {
+                        new java.util.function.Predicate<GetTenancyAttachmentResponse>() {
                             @Override
-                            public boolean apply(GetTenancyAttachmentResponse response) {
+                            public boolean test(GetTenancyAttachmentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTenancyAttachment().getLifecycleState());
                             }

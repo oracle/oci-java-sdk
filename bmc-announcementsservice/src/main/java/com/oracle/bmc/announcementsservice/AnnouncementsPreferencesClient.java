@@ -9,7 +9,6 @@ import com.oracle.bmc.announcementsservice.requests.*;
 import com.oracle.bmc.announcementsservice.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class AnnouncementsPreferencesClient implements AnnouncementsPreferences {
@@ -333,7 +332,7 @@ public class AnnouncementsPreferencesClient implements AnnouncementsPreferences 
          * @return the client
          */
         public AnnouncementsPreferencesClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -369,7 +368,8 @@ public class AnnouncementsPreferencesClient implements AnnouncementsPreferences 
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -416,7 +416,7 @@ public class AnnouncementsPreferencesClient implements AnnouncementsPreferences 
                         "CreateAnnouncementsPreference",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/CreateAnnouncementsPreference");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateAnnouncementsPreferenceResponse>
                 transformer =
                         CreateAnnouncementsPreferenceConverter.fromResponse(
@@ -459,8 +459,7 @@ public class AnnouncementsPreferencesClient implements AnnouncementsPreferences 
                         "GetAnnouncementsPreference",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferences/GetAnnouncementsPreference");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAnnouncementsPreferenceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAnnouncementsPreferenceResponse>
                 transformer =
                         GetAnnouncementsPreferenceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -498,8 +497,7 @@ public class AnnouncementsPreferencesClient implements AnnouncementsPreferences 
                         "ListAnnouncementsPreferences",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/ListAnnouncementsPreferences");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAnnouncementsPreferencesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAnnouncementsPreferencesResponse>
                 transformer =
                         ListAnnouncementsPreferencesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -537,7 +535,7 @@ public class AnnouncementsPreferencesClient implements AnnouncementsPreferences 
                         "UpdateAnnouncementsPreference",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/UpdateAnnouncementsPreference");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateAnnouncementsPreferenceResponse>
                 transformer =
                         UpdateAnnouncementsPreferenceConverter.fromResponse(

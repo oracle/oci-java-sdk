@@ -135,6 +135,22 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parentId")
+        private String parentId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         * @param parentId the value to set
+         * @return this builder
+         **/
+        public Builder parentId(String parentId) {
+            this.parentId = parentId;
+            this.__explicitlySet__.add("parentId");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
@@ -148,6 +164,22 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             this.__explicitlySet__.add("opsiPrivateEndpointId");
+            return this;
+        }
+        /**
+         * Array of hostname and instance name.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("instances")
+        private java.util.List<HostInstanceMap> instances;
+
+        /**
+         * Array of hostname and instance name.
+         * @param instances the value to set
+         * @return this builder
+         **/
+        public Builder instances(java.util.List<HostInstanceMap> instances) {
+            this.instances = instances;
+            this.__explicitlySet__.add("instances");
             return this;
         }
 
@@ -168,7 +200,9 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
                             freeformTags,
                             processorCount,
                             databaseId,
-                            opsiPrivateEndpointId);
+                            parentId,
+                            opsiPrivateEndpointId,
+                            instances);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -187,7 +221,9 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
                             .freeformTags(o.getFreeformTags())
                             .processorCount(o.getProcessorCount())
                             .databaseId(o.getDatabaseId())
-                            .opsiPrivateEndpointId(o.getOpsiPrivateEndpointId());
+                            .parentId(o.getParentId())
+                            .opsiPrivateEndpointId(o.getOpsiPrivateEndpointId())
+                            .instances(o.getInstances());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -218,7 +254,9 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
             java.util.Map<String, String> freeformTags,
             Integer processorCount,
             String databaseId,
-            String opsiPrivateEndpointId) {
+            String parentId,
+            String opsiPrivateEndpointId,
+            java.util.List<HostInstanceMap> instances) {
         super(
                 databaseInsightId,
                 compartmentId,
@@ -231,7 +269,9 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
                 freeformTags,
                 processorCount);
         this.databaseId = databaseId;
+        this.parentId = parentId;
         this.opsiPrivateEndpointId = opsiPrivateEndpointId;
+        this.instances = instances;
     }
 
     /**
@@ -249,6 +289,20 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentId")
+    private final String parentId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     * @return the value
+     **/
+    public String getParentId() {
+        return parentId;
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
@@ -262,13 +316,29 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
         return opsiPrivateEndpointId;
     }
 
+    /**
+     * Array of hostname and instance name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instances")
+    private final java.util.List<HostInstanceMap> instances;
+
+    /**
+     * Array of hostname and instance name.
+     * @return the value
+     **/
+    public java.util.List<HostInstanceMap> getInstances() {
+        return instances;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PeComanagedManagedExternalDatabaseConfigurationSummary(");
         sb.append("super=").append(super.toString());
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", parentId=").append(String.valueOf(this.parentId));
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
+        sb.append(", instances=").append(String.valueOf(this.instances));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -286,7 +356,9 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
         PeComanagedManagedExternalDatabaseConfigurationSummary other =
                 (PeComanagedManagedExternalDatabaseConfigurationSummary) o;
         return java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.parentId, other.parentId)
                 && java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
+                && java.util.Objects.equals(this.instances, other.instances)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
                 && super.equals(o);
     }
@@ -296,11 +368,13 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result = (result * PRIME) + (this.parentId == null ? 43 : this.parentId.hashCode());
         result =
                 (result * PRIME)
                         + (this.opsiPrivateEndpointId == null
                                 ? 43
                                 : this.opsiPrivateEndpointId.hashCode());
+        result = (result * PRIME) + (this.instances == null ? 43 : this.instances.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

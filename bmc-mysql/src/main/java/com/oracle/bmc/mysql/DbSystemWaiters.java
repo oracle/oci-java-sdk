@@ -6,7 +6,6 @@ package com.oracle.bmc.mysql;
 
 import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -107,8 +106,8 @@ public class DbSystemWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetAnalyticsClusterRequest, GetAnalyticsClusterResponse>() {
                             @Override
                             public GetAnalyticsClusterResponse apply(
@@ -116,9 +115,9 @@ public class DbSystemWaiters {
                                 return client.getAnalyticsCluster(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAnalyticsClusterResponse>() {
+                        new java.util.function.Predicate<GetAnalyticsClusterResponse>() {
                             @Override
-                            public boolean apply(GetAnalyticsClusterResponse response) {
+                            public boolean test(GetAnalyticsClusterResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAnalyticsCluster().getLifecycleState());
                             }
@@ -207,17 +206,16 @@ public class DbSystemWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetDbSystemRequest, GetDbSystemResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetDbSystemRequest, GetDbSystemResponse>() {
                             @Override
                             public GetDbSystemResponse apply(GetDbSystemRequest request) {
                                 return client.getDbSystem(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDbSystemResponse>() {
+                        new java.util.function.Predicate<GetDbSystemResponse>() {
                             @Override
-                            public boolean apply(GetDbSystemResponse response) {
+                            public boolean test(GetDbSystemResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDbSystem().getLifecycleState());
                             }
@@ -310,8 +308,8 @@ public class DbSystemWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>() {
                             @Override
                             public GetHeatWaveClusterResponse apply(
@@ -319,9 +317,9 @@ public class DbSystemWaiters {
                                 return client.getHeatWaveCluster(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetHeatWaveClusterResponse>() {
+                        new java.util.function.Predicate<GetHeatWaveClusterResponse>() {
                             @Override
-                            public boolean apply(GetHeatWaveClusterResponse response) {
+                            public boolean test(GetHeatWaveClusterResponse response) {
                                 return targetStatesSet.contains(
                                         response.getHeatWaveCluster().getLifecycleState());
                             }

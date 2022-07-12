@@ -9,7 +9,6 @@ import com.oracle.bmc.sch.requests.*;
 import com.oracle.bmc.sch.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 public class ServiceConnectorClient implements ServiceConnector {
@@ -335,9 +334,9 @@ public class ServiceConnectorClient implements ServiceConnector {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("ServiceConnector-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("ServiceConnector-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class ServiceConnectorClient implements ServiceConnector {
          * @return the client
          */
         public ServiceConnectorClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class ServiceConnectorClient implements ServiceConnector {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class ServiceConnectorClient implements ServiceConnector {
                         "ActivateServiceConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ActivateServiceConnector");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ActivateServiceConnectorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ActivateServiceConnectorResponse>
                 transformer =
                         ActivateServiceConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -528,7 +528,7 @@ public class ServiceConnectorClient implements ServiceConnector {
                         "ChangeServiceConnectorCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ChangeServiceConnectorCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeServiceConnectorCompartmentResponse>
                 transformer =
                         ChangeServiceConnectorCompartmentConverter.fromResponse(
@@ -573,7 +573,7 @@ public class ServiceConnectorClient implements ServiceConnector {
                         "CreateServiceConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/CreateServiceConnector");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateServiceConnectorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateServiceConnectorResponse>
                 transformer =
                         CreateServiceConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -616,8 +616,7 @@ public class ServiceConnectorClient implements ServiceConnector {
                         "DeactivateServiceConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeactivateServiceConnector");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeactivateServiceConnectorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeactivateServiceConnectorResponse>
                 transformer =
                         DeactivateServiceConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -656,7 +655,7 @@ public class ServiceConnectorClient implements ServiceConnector {
                         "DeleteServiceConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeleteServiceConnector");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteServiceConnectorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteServiceConnectorResponse>
                 transformer =
                         DeleteServiceConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -694,7 +693,7 @@ public class ServiceConnectorClient implements ServiceConnector {
                         "GetServiceConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/GetServiceConnector");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetServiceConnectorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetServiceConnectorResponse>
                 transformer =
                         GetServiceConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -731,9 +730,8 @@ public class ServiceConnectorClient implements ServiceConnector {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -768,7 +766,7 @@ public class ServiceConnectorClient implements ServiceConnector {
                         "ListServiceConnectors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ListServiceConnectors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListServiceConnectorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListServiceConnectorsResponse>
                 transformer =
                         ListServiceConnectorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -806,7 +804,7 @@ public class ServiceConnectorClient implements ServiceConnector {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -843,7 +841,7 @@ public class ServiceConnectorClient implements ServiceConnector {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -880,7 +878,7 @@ public class ServiceConnectorClient implements ServiceConnector {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -918,7 +916,7 @@ public class ServiceConnectorClient implements ServiceConnector {
                         "UpdateServiceConnector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/UpdateServiceConnector");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateServiceConnectorResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateServiceConnectorResponse>
                 transformer =
                         UpdateServiceConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

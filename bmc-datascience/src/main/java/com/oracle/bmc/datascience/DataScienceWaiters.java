@@ -6,7 +6,6 @@ package com.oracle.bmc.datascience;
 
 import com.oracle.bmc.datascience.requests.*;
 import com.oracle.bmc.datascience.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -102,16 +101,16 @@ public class DataScienceWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetJobRequest, GetJobResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetJobRequest, GetJobResponse>() {
                             @Override
                             public GetJobResponse apply(GetJobRequest request) {
                                 return client.getJob(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetJobResponse>() {
+                        new java.util.function.Predicate<GetJobResponse>() {
                             @Override
-                            public boolean apply(GetJobResponse response) {
+                            public boolean test(GetJobResponse response) {
                                 return targetStatesSet.contains(
                                         response.getJob().getLifecycleState());
                             }
@@ -199,16 +198,16 @@ public class DataScienceWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetJobRunRequest, GetJobRunResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetJobRunRequest, GetJobRunResponse>() {
                             @Override
                             public GetJobRunResponse apply(GetJobRunRequest request) {
                                 return client.getJobRun(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetJobRunResponse>() {
+                        new java.util.function.Predicate<GetJobRunResponse>() {
                             @Override
-                            public boolean apply(GetJobRunResponse response) {
+                            public boolean test(GetJobRunResponse response) {
                                 return targetStatesSet.contains(
                                         response.getJobRun().getLifecycleState());
                             }
@@ -296,16 +295,16 @@ public class DataScienceWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetModelRequest, GetModelResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetModelRequest, GetModelResponse>() {
                             @Override
                             public GetModelResponse apply(GetModelRequest request) {
                                 return client.getModel(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetModelResponse>() {
+                        new java.util.function.Predicate<GetModelResponse>() {
                             @Override
-                            public boolean apply(GetModelResponse response) {
+                            public boolean test(GetModelResponse response) {
                                 return targetStatesSet.contains(
                                         response.getModel().getLifecycleState());
                             }
@@ -400,8 +399,8 @@ public class DataScienceWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetModelDeploymentRequest, GetModelDeploymentResponse>() {
                             @Override
                             public GetModelDeploymentResponse apply(
@@ -409,9 +408,9 @@ public class DataScienceWaiters {
                                 return client.getModelDeployment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetModelDeploymentResponse>() {
+                        new java.util.function.Predicate<GetModelDeploymentResponse>() {
                             @Override
-                            public boolean apply(GetModelDeploymentResponse response) {
+                            public boolean test(GetModelDeploymentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getModelDeployment().getLifecycleState());
                             }
@@ -507,8 +506,8 @@ public class DataScienceWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetNotebookSessionRequest, GetNotebookSessionResponse>() {
                             @Override
                             public GetNotebookSessionResponse apply(
@@ -516,9 +515,9 @@ public class DataScienceWaiters {
                                 return client.getNotebookSession(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetNotebookSessionResponse>() {
+                        new java.util.function.Predicate<GetNotebookSessionResponse>() {
                             @Override
-                            public boolean apply(GetNotebookSessionResponse response) {
+                            public boolean test(GetNotebookSessionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getNotebookSession().getLifecycleState());
                             }
@@ -607,17 +606,16 @@ public class DataScienceWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetProjectRequest, GetProjectResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetProjectRequest, GetProjectResponse>() {
                             @Override
                             public GetProjectResponse apply(GetProjectRequest request) {
                                 return client.getProject(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetProjectResponse>() {
+                        new java.util.function.Predicate<GetProjectResponse>() {
                             @Override
-                            public boolean apply(GetProjectResponse response) {
+                            public boolean test(GetProjectResponse response) {
                                 return targetStatesSet.contains(
                                         response.getProject().getLifecycleState());
                             }
@@ -664,17 +662,17 @@ public class DataScienceWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

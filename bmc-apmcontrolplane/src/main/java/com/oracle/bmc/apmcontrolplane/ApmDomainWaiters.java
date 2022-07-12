@@ -6,7 +6,6 @@ package com.oracle.bmc.apmcontrolplane;
 
 import com.oracle.bmc.apmcontrolplane.requests.*;
 import com.oracle.bmc.apmcontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -103,17 +102,17 @@ public class ApmDomainWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetApmDomainRequest, GetApmDomainResponse>() {
                             @Override
                             public GetApmDomainResponse apply(GetApmDomainRequest request) {
                                 return client.getApmDomain(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetApmDomainResponse>() {
+                        new java.util.function.Predicate<GetApmDomainResponse>() {
                             @Override
-                            public boolean apply(GetApmDomainResponse response) {
+                            public boolean test(GetApmDomainResponse response) {
                                 return targetStatesSet.contains(
                                         response.getApmDomain().getLifecycleState());
                             }
@@ -160,17 +159,17 @@ public class ApmDomainWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

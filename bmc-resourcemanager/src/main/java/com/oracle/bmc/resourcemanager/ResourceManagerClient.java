@@ -9,7 +9,6 @@ import com.oracle.bmc.resourcemanager.requests.*;
 import com.oracle.bmc.resourcemanager.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class ResourceManagerClient implements ResourceManager {
@@ -334,9 +333,9 @@ public class ResourceManagerClient implements ResourceManager {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("ResourceManager-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("ResourceManager-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class ResourceManagerClient implements ResourceManager {
          * @return the client
          */
         public ResourceManagerClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class ResourceManagerClient implements ResourceManager {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -485,7 +485,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "CancelJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/CancelJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CancelJobResponse> transformer =
                 CancelJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -525,7 +525,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ChangeConfigurationSourceProviderCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/ChangeConfigurationSourceProviderCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeConfigurationSourceProviderCompartmentResponse>
                 transformer =
@@ -571,7 +571,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ChangePrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/ChangePrivateEndpointCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangePrivateEndpointCompartmentResponse>
                 transformer =
                         ChangePrivateEndpointCompartmentConverter.fromResponse(
@@ -616,7 +616,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ChangeStackCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ChangeStackCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeStackCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeStackCompartmentResponse>
                 transformer =
                         ChangeStackCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -659,8 +659,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ChangeTemplateCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/ChangeTemplateCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeTemplateCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeTemplateCompartmentResponse>
                 transformer =
                         ChangeTemplateCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -704,7 +703,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "CreateConfigurationSourceProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/CreateConfigurationSourceProvider");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateConfigurationSourceProviderResponse>
                 transformer =
                         CreateConfigurationSourceProviderConverter.fromResponse(
@@ -747,7 +746,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "CreateJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/CreateJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateJobResponse> transformer =
                 CreateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -788,7 +787,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "CreatePrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/CreatePrivateEndpoint");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePrivateEndpointResponse>
                 transformer =
                         CreatePrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -830,9 +829,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "CreateStack",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/CreateStack");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateStackResponse>
-                transformer =
-                        CreateStackConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateStackResponse> transformer =
+                CreateStackConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -871,9 +869,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "CreateTemplate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/CreateTemplate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTemplateResponse>
-                transformer =
-                        CreateTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTemplateResponse> transformer =
+                CreateTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -912,7 +909,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "DeleteConfigurationSourceProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/DeleteConfigurationSourceProvider");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteConfigurationSourceProviderResponse>
                 transformer =
                         DeleteConfigurationSourceProviderConverter.fromResponse(
@@ -952,7 +949,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "DeletePrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/DeletePrivateEndpoint");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePrivateEndpointResponse>
                 transformer =
                         DeletePrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -990,9 +987,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "DeleteStack",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/DeleteStack");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteStackResponse>
-                transformer =
-                        DeleteStackConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteStackResponse> transformer =
+                DeleteStackConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1027,9 +1023,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "DeleteTemplate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/DeleteTemplate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTemplateResponse>
-                transformer =
-                        DeleteTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTemplateResponse> transformer =
+                DeleteTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1065,7 +1060,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "DetectStackDrift",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/DetectStackDrift");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DetectStackDriftResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DetectStackDriftResponse>
                 transformer =
                         DetectStackDriftConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1107,7 +1102,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetConfigurationSourceProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/GetConfigurationSourceProvider");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetConfigurationSourceProviderResponse>
                 transformer =
                         GetConfigurationSourceProviderConverter.fromResponse(
@@ -1144,7 +1139,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetJobResponse> transformer =
                 GetJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1180,7 +1175,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetJobDetailedLogContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobDetailedLogContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobDetailedLogContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetJobDetailedLogContentResponse>
                 transformer =
                         GetJobDetailedLogContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1216,7 +1211,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetJobLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobLogsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetJobLogsResponse> transformer =
                 GetJobLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1251,7 +1246,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetJobLogsContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobLogsContent");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobLogsContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetJobLogsContentResponse>
                 transformer =
                         GetJobLogsContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1298,9 +1293,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetJobTfConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobTfConfigResponse>
-                transformer =
-                        GetJobTfConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetJobTfConfigResponse> transformer =
+                GetJobTfConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1344,9 +1338,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetJobTfPlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfPlan");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobTfPlanResponse>
-                transformer =
-                        GetJobTfPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetJobTfPlanResponse> transformer =
+                GetJobTfPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1390,9 +1383,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetJobTfState",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfState");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetJobTfStateResponse>
-                transformer =
-                        GetJobTfStateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetJobTfStateResponse> transformer =
+                GetJobTfStateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1426,7 +1418,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/GetPrivateEndpoint");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetPrivateEndpointResponse>
                 transformer =
                         GetPrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1464,9 +1456,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetReachableIp",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ReachableIp/GetReachableIp");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetReachableIpResponse>
-                transformer =
-                        GetReachableIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetReachableIpResponse> transformer =
+                GetReachableIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1499,7 +1490,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetStack",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStack");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetStackResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetStackResponse> transformer =
                 GetStackConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1544,7 +1535,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetStackTfConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStackTfConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetStackTfConfigResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetStackTfConfigResponse>
                 transformer =
                         GetStackTfConfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1591,7 +1582,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetStackTfState",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStackTfState");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetStackTfStateResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetStackTfStateResponse>
                 transformer =
                         GetStackTfStateConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1628,9 +1619,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetTemplate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTemplateResponse>
-                transformer =
-                        GetTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetTemplateResponse> transformer =
+                GetTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1674,7 +1664,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetTemplateLogo",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplateLogo");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTemplateLogoResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTemplateLogoResponse>
                 transformer =
                         GetTemplateLogoConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1721,7 +1711,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetTemplateTfConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplateTfConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTemplateTfConfigResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTemplateTfConfigResponse>
                 transformer =
                         GetTemplateTfConfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1758,9 +1748,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1795,7 +1784,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ListConfigurationSourceProviders",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProviderSummary/ListConfigurationSourceProviders");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListConfigurationSourceProvidersResponse>
                 transformer =
                         ListConfigurationSourceProvidersConverter.fromResponse(
@@ -1832,7 +1821,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ListJobs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/JobSummary/ListJobs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListJobsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListJobsResponse> transformer =
                 ListJobsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1867,7 +1856,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ListPrivateEndpoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpointSummary/ListPrivateEndpoints");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPrivateEndpointsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPrivateEndpointsResponse>
                 transformer =
                         ListPrivateEndpointsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1905,7 +1894,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ListResourceDiscoveryServices",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ListResourceDiscoveryServices");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListResourceDiscoveryServicesResponse>
                 transformer =
                         ListResourceDiscoveryServicesConverter.fromResponse(
@@ -1944,7 +1933,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ListStackResourceDriftDetails",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/StackResourceDriftSummary/ListStackResourceDriftDetails");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListStackResourceDriftDetailsResponse>
                 transformer =
                         ListStackResourceDriftDetailsConverter.fromResponse(
@@ -1982,7 +1971,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ListStacks",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/StackSummary/ListStacks");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListStacksResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListStacksResponse> transformer =
                 ListStacksConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2018,7 +2007,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ListTemplateCategories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/TemplateCategorySummary/ListTemplateCategories");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTemplateCategoriesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTemplateCategoriesResponse>
                 transformer =
                         ListTemplateCategoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2055,9 +2044,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "ListTemplates",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/ListTemplates");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTemplatesResponse>
-                transformer =
-                        ListTemplatesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListTemplatesResponse> transformer =
+                ListTemplatesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2092,7 +2080,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ListTerraformVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ListTerraformVersions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTerraformVersionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTerraformVersionsResponse>
                 transformer =
                         ListTerraformVersionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2130,7 +2118,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2167,7 +2155,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2204,7 +2192,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2242,7 +2230,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "UpdateConfigurationSourceProvider",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/UpdateConfigurationSourceProvider");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateConfigurationSourceProviderResponse>
                 transformer =
                         UpdateConfigurationSourceProviderConverter.fromResponse(
@@ -2284,7 +2272,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "UpdateJob",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/UpdateJob");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJobResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateJobResponse> transformer =
                 UpdateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2324,7 +2312,7 @@ public class ResourceManagerClient implements ResourceManager {
                         "UpdatePrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/PrivateEndpoint/UpdatePrivateEndpoint");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePrivateEndpointResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePrivateEndpointResponse>
                 transformer =
                         UpdatePrivateEndpointConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2365,9 +2353,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "UpdateStack",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/UpdateStack");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateStackResponse>
-                transformer =
-                        UpdateStackConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateStackResponse> transformer =
+                UpdateStackConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2405,9 +2392,8 @@ public class ResourceManagerClient implements ResourceManager {
                         "UpdateTemplate",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/UpdateTemplate");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTemplateResponse>
-                transformer =
-                        UpdateTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTemplateResponse> transformer =
+                UpdateTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

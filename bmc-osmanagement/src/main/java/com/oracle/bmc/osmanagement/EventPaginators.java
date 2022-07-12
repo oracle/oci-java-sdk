@@ -44,19 +44,19 @@ public class EventPaginators {
             final ListEventsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListEventsRequest.Builder, ListEventsRequest, ListEventsResponse>(
-                new com.google.common.base.Supplier<ListEventsRequest.Builder>() {
+                new java.util.function.Supplier<ListEventsRequest.Builder>() {
                     @Override
                     public ListEventsRequest.Builder get() {
                         return ListEventsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEventsResponse, String>() {
+                new java.util.function.Function<ListEventsResponse, String>() {
                     @Override
                     public String apply(ListEventsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEventsRequest.Builder>,
                         ListEventsRequest>() {
@@ -69,12 +69,12 @@ public class EventPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListEventsRequest, ListEventsResponse>() {
+                new java.util.function.Function<ListEventsRequest, ListEventsResponse>() {
                     @Override
                     public ListEventsResponse apply(ListEventsRequest request) {
                         return client.listEvents(request);
@@ -96,19 +96,19 @@ public class EventPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListEventsRequest.Builder, ListEventsRequest, ListEventsResponse,
                 com.oracle.bmc.osmanagement.model.EventSummary>(
-                new com.google.common.base.Supplier<ListEventsRequest.Builder>() {
+                new java.util.function.Supplier<ListEventsRequest.Builder>() {
                     @Override
                     public ListEventsRequest.Builder get() {
                         return ListEventsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListEventsResponse, String>() {
+                new java.util.function.Function<ListEventsResponse, String>() {
                     @Override
                     public String apply(ListEventsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListEventsRequest.Builder>,
                         ListEventsRequest>() {
@@ -121,18 +121,18 @@ public class EventPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListEventsRequest, ListEventsResponse>() {
+                new java.util.function.Function<ListEventsRequest, ListEventsResponse>() {
                     @Override
                     public ListEventsResponse apply(ListEventsRequest request) {
                         return client.listEvents(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListEventsResponse,
                         java.util.List<com.oracle.bmc.osmanagement.model.EventSummary>>() {
                     @Override
@@ -155,19 +155,19 @@ public class EventPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListRelatedEventsRequest.Builder, ListRelatedEventsRequest,
                 ListRelatedEventsResponse>(
-                new com.google.common.base.Supplier<ListRelatedEventsRequest.Builder>() {
+                new java.util.function.Supplier<ListRelatedEventsRequest.Builder>() {
                     @Override
                     public ListRelatedEventsRequest.Builder get() {
                         return ListRelatedEventsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRelatedEventsResponse, String>() {
+                new java.util.function.Function<ListRelatedEventsResponse, String>() {
                     @Override
                     public String apply(ListRelatedEventsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRelatedEventsRequest.Builder>,
                         ListRelatedEventsRequest>() {
@@ -180,12 +180,12 @@ public class EventPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRelatedEventsRequest, ListRelatedEventsResponse>() {
                     @Override
                     public ListRelatedEventsResponse apply(ListRelatedEventsRequest request) {
@@ -208,19 +208,19 @@ public class EventPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListRelatedEventsRequest.Builder, ListRelatedEventsRequest,
                 ListRelatedEventsResponse, com.oracle.bmc.osmanagement.model.RelatedEventSummary>(
-                new com.google.common.base.Supplier<ListRelatedEventsRequest.Builder>() {
+                new java.util.function.Supplier<ListRelatedEventsRequest.Builder>() {
                     @Override
                     public ListRelatedEventsRequest.Builder get() {
                         return ListRelatedEventsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListRelatedEventsResponse, String>() {
+                new java.util.function.Function<ListRelatedEventsResponse, String>() {
                     @Override
                     public String apply(ListRelatedEventsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListRelatedEventsRequest.Builder>,
                         ListRelatedEventsRequest>() {
@@ -233,19 +233,19 @@ public class EventPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRelatedEventsRequest, ListRelatedEventsResponse>() {
                     @Override
                     public ListRelatedEventsResponse apply(ListRelatedEventsRequest request) {
                         return client.listRelatedEvents(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListRelatedEventsResponse,
                         java.util.List<com.oracle.bmc.osmanagement.model.RelatedEventSummary>>() {
                     @Override

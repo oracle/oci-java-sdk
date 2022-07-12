@@ -9,7 +9,6 @@ import com.oracle.bmc.oda.requests.*;
 import com.oracle.bmc.oda.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class OdapackageClient implements Odapackage {
@@ -332,7 +331,7 @@ public class OdapackageClient implements Odapackage {
          * @return the client
          */
         public OdapackageClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -368,7 +367,8 @@ public class OdapackageClient implements Odapackage {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -412,7 +412,7 @@ public class OdapackageClient implements Odapackage {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Odapackage", "CreateImportedPackage", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateImportedPackageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateImportedPackageResponse>
                 transformer =
                         CreateImportedPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -455,7 +455,7 @@ public class OdapackageClient implements Odapackage {
                         "DeleteImportedPackage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/ImportedPackage/DeleteImportedPackage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteImportedPackageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteImportedPackageResponse>
                 transformer =
                         DeleteImportedPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -493,7 +493,7 @@ public class OdapackageClient implements Odapackage {
                         "GetImportedPackage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/ImportedPackage/GetImportedPackage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetImportedPackageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetImportedPackageResponse>
                 transformer =
                         GetImportedPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -529,7 +529,7 @@ public class OdapackageClient implements Odapackage {
                         "GetPackage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/PackageItem/GetPackage");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPackageResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetPackageResponse> transformer =
                 GetPackageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -564,7 +564,7 @@ public class OdapackageClient implements Odapackage {
                         "ListImportedPackages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/ImportedPackageSummary/ListImportedPackages");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListImportedPackagesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListImportedPackagesResponse>
                 transformer =
                         ListImportedPackagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -601,9 +601,8 @@ public class OdapackageClient implements Odapackage {
                         "ListPackages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/PackageSummary/ListPackages");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPackagesResponse>
-                transformer =
-                        ListPackagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListPackagesResponse> transformer =
+                ListPackagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -636,7 +635,7 @@ public class OdapackageClient implements Odapackage {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Odapackage", "UpdateImportedPackage", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateImportedPackageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateImportedPackageResponse>
                 transformer =
                         UpdateImportedPackageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

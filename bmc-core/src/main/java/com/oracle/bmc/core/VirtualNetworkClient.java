@@ -9,7 +9,6 @@ import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class VirtualNetworkClient implements VirtualNetwork {
@@ -335,9 +334,9 @@ public class VirtualNetworkClient implements VirtualNetwork {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("VirtualNetwork-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("VirtualNetwork-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -406,7 +405,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
          * @return the client
          */
         public VirtualNetworkClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -443,7 +442,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "AddDrgRouteDistributionStatements",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/AddDrgRouteDistributionStatements");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, AddDrgRouteDistributionStatementsResponse>
                 transformer =
                         AddDrgRouteDistributionStatementsConverter.fromResponse(
@@ -533,7 +533,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "AddDrgRouteRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/AddDrgRouteRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddDrgRouteRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddDrgRouteRulesResponse>
                 transformer =
                         AddDrgRouteRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -575,7 +575,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "AddIpv6SubnetCidr",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/AddIpv6SubnetCidr");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddIpv6SubnetCidrResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddIpv6SubnetCidrResponse>
                 transformer =
                         AddIpv6SubnetCidrConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -617,9 +617,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "AddIpv6VcnCidr",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddIpv6VcnCidr");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddIpv6VcnCidrResponse>
-                transformer =
-                        AddIpv6VcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, AddIpv6VcnCidrResponse> transformer =
+                AddIpv6VcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -659,7 +658,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "AddNetworkSecurityGroupSecurityRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/AddNetworkSecurityGroupSecurityRules");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, AddNetworkSecurityGroupSecurityRulesResponse>
                 transformer =
                         AddNetworkSecurityGroupSecurityRulesConverter.fromResponse(
@@ -704,7 +703,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "AddPublicIpPoolCapacity",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/AddPublicIpPoolCapacity");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddPublicIpPoolCapacityResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AddPublicIpPoolCapacityResponse>
                 transformer =
                         AddPublicIpPoolCapacityConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -745,7 +744,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "AddVcnCidr",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddVcnCidr");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AddVcnCidrResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, AddVcnCidrResponse> transformer =
                 AddVcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -784,7 +783,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "AdvertiseByoipRange",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/AdvertiseByoipRange");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AdvertiseByoipRangeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AdvertiseByoipRangeResponse>
                 transformer =
                         AdvertiseByoipRangeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -822,7 +821,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "AttachServiceId",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/AttachServiceId");
-        com.google.common.base.Function<javax.ws.rs.core.Response, AttachServiceIdResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, AttachServiceIdResponse>
                 transformer =
                         AttachServiceIdConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -865,7 +864,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "BulkAddVirtualCircuitPublicPrefixes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkAddVirtualCircuitPublicPrefixes");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, BulkAddVirtualCircuitPublicPrefixesResponse>
                 transformer =
                         BulkAddVirtualCircuitPublicPrefixesConverter.fromResponse(
@@ -910,7 +909,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "BulkDeleteVirtualCircuitPublicPrefixes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkDeleteVirtualCircuitPublicPrefixes");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, BulkDeleteVirtualCircuitPublicPrefixesResponse>
                 transformer =
                         BulkDeleteVirtualCircuitPublicPrefixesConverter.fromResponse(
@@ -955,8 +954,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeByoipRangeCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ChangeByoipRangeCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeByoipRangeCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeByoipRangeCompartmentResponse>
                 transformer =
                         ChangeByoipRangeCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1000,7 +998,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeCaptureFilterCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ChangeCaptureFilterCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeCaptureFilterCompartmentResponse>
                 transformer =
                         ChangeCaptureFilterCompartmentConverter.fromResponse(
@@ -1044,7 +1042,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeCpeCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ChangeCpeCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeCpeCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeCpeCompartmentResponse>
                 transformer =
                         ChangeCpeCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1087,7 +1085,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeCrossConnectCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ChangeCrossConnectCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeCrossConnectCompartmentResponse>
                 transformer =
                         ChangeCrossConnectCompartmentConverter.fromResponse(
@@ -1132,7 +1130,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeCrossConnectGroupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ChangeCrossConnectGroupCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeCrossConnectGroupCompartmentResponse>
                 transformer =
                         ChangeCrossConnectGroupCompartmentConverter.fromResponse(
@@ -1177,8 +1175,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeDhcpOptionsCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ChangeDhcpOptionsCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeDhcpOptionsCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeDhcpOptionsCompartmentResponse>
                 transformer =
                         ChangeDhcpOptionsCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1221,7 +1218,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeDrgCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ChangeDrgCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeDrgCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeDrgCompartmentResponse>
                 transformer =
                         ChangeDrgCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1264,7 +1261,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeIPSecConnectionCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ChangeIPSecConnectionCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeIPSecConnectionCompartmentResponse>
                 transformer =
                         ChangeIPSecConnectionCompartmentConverter.fromResponse(
@@ -1309,7 +1306,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeInternetGatewayCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ChangeInternetGatewayCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeInternetGatewayCompartmentResponse>
                 transformer =
                         ChangeInternetGatewayCompartmentConverter.fromResponse(
@@ -1355,7 +1352,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeLocalPeeringGatewayCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ChangeLocalPeeringGatewayCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeLocalPeeringGatewayCompartmentResponse>
                 transformer =
                         ChangeLocalPeeringGatewayCompartmentConverter.fromResponse(
@@ -1400,8 +1397,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeNatGatewayCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ChangeNatGatewayCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeNatGatewayCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeNatGatewayCompartmentResponse>
                 transformer =
                         ChangeNatGatewayCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1446,7 +1442,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeNetworkSecurityGroupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ChangeNetworkSecurityGroupCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkSecurityGroupCompartmentResponse>
                 transformer =
                         ChangeNetworkSecurityGroupCompartmentConverter.fromResponse(
@@ -1491,8 +1487,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangePublicIpCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ChangePublicIpCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangePublicIpCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangePublicIpCompartmentResponse>
                 transformer =
                         ChangePublicIpCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1536,7 +1531,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangePublicIpPoolCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ChangePublicIpPoolCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangePublicIpPoolCompartmentResponse>
                 transformer =
                         ChangePublicIpPoolCompartmentConverter.fromResponse(
@@ -1583,7 +1578,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeRemotePeeringConnectionCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ChangeRemotePeeringConnectionCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeRemotePeeringConnectionCompartmentResponse>
                 transformer =
                         ChangeRemotePeeringConnectionCompartmentConverter.fromResponse(
@@ -1628,8 +1623,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeRouteTableCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ChangeRouteTableCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeRouteTableCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeRouteTableCompartmentResponse>
                 transformer =
                         ChangeRouteTableCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1673,7 +1667,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeSecurityListCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ChangeSecurityListCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeSecurityListCompartmentResponse>
                 transformer =
                         ChangeSecurityListCompartmentConverter.fromResponse(
@@ -1718,7 +1712,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeServiceGatewayCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ChangeServiceGatewayCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeServiceGatewayCompartmentResponse>
                 transformer =
                         ChangeServiceGatewayCompartmentConverter.fromResponse(
@@ -1763,7 +1757,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeSubnetCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ChangeSubnetCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeSubnetCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeSubnetCompartmentResponse>
                 transformer =
                         ChangeSubnetCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1805,7 +1799,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeVcnCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ChangeVcnCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeVcnCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeVcnCompartmentResponse>
                 transformer =
                         ChangeVcnCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1848,7 +1842,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeVirtualCircuitCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ChangeVirtualCircuitCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeVirtualCircuitCompartmentResponse>
                 transformer =
                         ChangeVirtualCircuitCompartmentConverter.fromResponse(
@@ -1893,7 +1887,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeVlanCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ChangeVlanCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeVlanCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeVlanCompartmentResponse>
                 transformer =
                         ChangeVlanCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1936,7 +1930,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ChangeVtapCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ChangeVtapCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeVtapCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeVtapCompartmentResponse>
                 transformer =
                         ChangeVtapCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1978,8 +1972,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ConnectLocalPeeringGateways",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ConnectLocalPeeringGateways");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ConnectLocalPeeringGatewaysResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ConnectLocalPeeringGatewaysResponse>
                 transformer =
                         ConnectLocalPeeringGatewaysConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2022,7 +2015,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ConnectRemotePeeringConnections",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ConnectRemotePeeringConnections");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ConnectRemotePeeringConnectionsResponse>
                 transformer =
                         ConnectRemotePeeringConnectionsConverter.fromResponse(
@@ -2066,7 +2059,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateByoipRange",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/CreateByoipRange");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateByoipRangeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateByoipRangeResponse>
                 transformer =
                         CreateByoipRangeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2108,7 +2101,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateCaptureFilter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/CreateCaptureFilter");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCaptureFilterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCaptureFilterResponse>
                 transformer =
                         CreateCaptureFilterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2149,7 +2142,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateCpe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/CreateCpe");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCpeResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCpeResponse> transformer =
                 CreateCpeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2189,7 +2182,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateCrossConnect",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/CreateCrossConnect");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCrossConnectResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCrossConnectResponse>
                 transformer =
                         CreateCrossConnectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2232,7 +2225,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateCrossConnectGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/CreateCrossConnectGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCrossConnectGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCrossConnectGroupResponse>
                 transformer =
                         CreateCrossConnectGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2274,7 +2267,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateDhcpOptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/CreateDhcpOptions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDhcpOptionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDhcpOptionsResponse>
                 transformer =
                         CreateDhcpOptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2315,7 +2308,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateDrg",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/CreateDrg");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDrgResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDrgResponse> transformer =
                 CreateDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2355,7 +2348,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateDrgAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/CreateDrgAttachment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDrgAttachmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDrgAttachmentResponse>
                 transformer =
                         CreateDrgAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2398,8 +2391,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateDrgRouteDistribution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/CreateDrgRouteDistribution");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateDrgRouteDistributionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDrgRouteDistributionResponse>
                 transformer =
                         CreateDrgRouteDistributionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2442,7 +2434,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateDrgRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/CreateDrgRouteTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDrgRouteTableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDrgRouteTableResponse>
                 transformer =
                         CreateDrgRouteTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2485,7 +2477,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateIPSecConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/CreateIPSecConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateIPSecConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateIPSecConnectionResponse>
                 transformer =
                         CreateIPSecConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2528,7 +2520,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateInternetGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/CreateInternetGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateInternetGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateInternetGatewayResponse>
                 transformer =
                         CreateInternetGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2569,7 +2561,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateIpv6",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/CreateIpv6");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateIpv6Response> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateIpv6Response> transformer =
                 CreateIpv6Converter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2610,8 +2602,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateLocalPeeringGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/CreateLocalPeeringGateway");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateLocalPeeringGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLocalPeeringGatewayResponse>
                 transformer =
                         CreateLocalPeeringGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2654,7 +2645,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateNatGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/CreateNatGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateNatGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateNatGatewayResponse>
                 transformer =
                         CreateNatGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2697,8 +2688,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateNetworkSecurityGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/CreateNetworkSecurityGroup");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateNetworkSecurityGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkSecurityGroupResponse>
                 transformer =
                         CreateNetworkSecurityGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2741,7 +2731,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreatePrivateIp",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/CreatePrivateIp");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePrivateIpResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePrivateIpResponse>
                 transformer =
                         CreatePrivateIpConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2783,9 +2773,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreatePublicIp",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/CreatePublicIp");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicIpResponse>
-                transformer =
-                        CreatePublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePublicIpResponse> transformer =
+                CreatePublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2824,7 +2813,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreatePublicIpPool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/CreatePublicIpPool");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicIpPoolResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePublicIpPoolResponse>
                 transformer =
                         CreatePublicIpPoolConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2867,7 +2856,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateRemotePeeringConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/CreateRemotePeeringConnection");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateRemotePeeringConnectionResponse>
                 transformer =
                         CreateRemotePeeringConnectionConverter.fromResponse(
@@ -2911,7 +2900,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/CreateRouteTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRouteTableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRouteTableResponse>
                 transformer =
                         CreateRouteTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2953,7 +2942,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateSecurityList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/CreateSecurityList");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecurityListResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSecurityListResponse>
                 transformer =
                         CreateSecurityListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2995,7 +2984,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateServiceGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/CreateServiceGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateServiceGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateServiceGatewayResponse>
                 transformer =
                         CreateServiceGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3037,9 +3026,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateSubnet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/CreateSubnet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubnetResponse>
-                transformer =
-                        CreateSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSubnetResponse> transformer =
+                CreateSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3077,7 +3065,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateVcn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/CreateVcn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVcnResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVcnResponse> transformer =
                 CreateVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3117,7 +3105,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateVirtualCircuit",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/CreateVirtualCircuit");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVirtualCircuitResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVirtualCircuitResponse>
                 transformer =
                         CreateVirtualCircuitConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3158,7 +3146,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateVlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/CreateVlan");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVlanResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVlanResponse> transformer =
                 CreateVlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3197,7 +3185,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "CreateVtap",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/CreateVtap");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVtapResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVtapResponse> transformer =
                 CreateVtapConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3236,7 +3224,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteByoipRange",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/DeleteByoipRange");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteByoipRangeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteByoipRangeResponse>
                 transformer =
                         DeleteByoipRangeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3274,7 +3262,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteCaptureFilter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/DeleteCaptureFilter");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCaptureFilterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCaptureFilterResponse>
                 transformer =
                         DeleteCaptureFilterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3308,7 +3296,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeleteCpe", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCpeResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCpeResponse> transformer =
                 DeleteCpeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3341,7 +3329,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeleteCrossConnect", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCrossConnectResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCrossConnectResponse>
                 transformer =
                         DeleteCrossConnectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3380,7 +3368,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteCrossConnectGroup",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCrossConnectGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCrossConnectGroupResponse>
                 transformer =
                         DeleteCrossConnectGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3415,7 +3403,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeleteDhcpOptions", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDhcpOptionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDhcpOptionsResponse>
                 transformer =
                         DeleteDhcpOptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3449,7 +3437,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeleteDrg", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDrgResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDrgResponse> transformer =
                 DeleteDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3482,7 +3470,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeleteDrgAttachment", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDrgAttachmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDrgAttachmentResponse>
                 transformer =
                         DeleteDrgAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3521,8 +3509,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteDrgRouteDistribution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/DeleteDrgRouteDistribution");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteDrgRouteDistributionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDrgRouteDistributionResponse>
                 transformer =
                         DeleteDrgRouteDistributionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3560,7 +3547,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteDrgRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternalPublicIp/DeleteDrgRouteTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDrgRouteTableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDrgRouteTableResponse>
                 transformer =
                         DeleteDrgRouteTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3599,7 +3586,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteIPSecConnection",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>
                 transformer =
                         DeleteIPSecConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3638,7 +3625,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteInternetGateway",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteInternetGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteInternetGatewayResponse>
                 transformer =
                         DeleteInternetGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3672,7 +3659,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeleteIpv6", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIpv6Response> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteIpv6Response> transformer =
                 DeleteIpv6Converter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3709,8 +3696,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteLocalPeeringGateway",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteLocalPeeringGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLocalPeeringGatewayResponse>
                 transformer =
                         DeleteLocalPeeringGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3745,7 +3731,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeleteNatGateway", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNatGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteNatGatewayResponse>
                 transformer =
                         DeleteNatGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3784,8 +3770,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteNetworkSecurityGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/DeleteNetworkSecurityGroup");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteNetworkSecurityGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkSecurityGroupResponse>
                 transformer =
                         DeleteNetworkSecurityGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3820,7 +3805,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeletePrivateIp", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePrivateIpResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePrivateIpResponse>
                 transformer =
                         DeletePrivateIpConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3855,9 +3840,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeletePublicIp", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicIpResponse>
-                transformer =
-                        DeletePublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePublicIpResponse> transformer =
+                DeletePublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3892,7 +3876,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeletePublicIpPool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/DeletePublicIpPool");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicIpPoolResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePublicIpPoolResponse>
                 transformer =
                         DeletePublicIpPoolConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3931,7 +3915,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteRemotePeeringConnection",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteRemotePeeringConnectionResponse>
                 transformer =
                         DeleteRemotePeeringConnectionConverter.fromResponse(
@@ -3967,7 +3951,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeleteRouteTable", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRouteTableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRouteTableResponse>
                 transformer =
                         DeleteRouteTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4002,7 +3986,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeleteSecurityList", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSecurityListResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSecurityListResponse>
                 transformer =
                         DeleteSecurityListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4040,7 +4024,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteServiceGateway",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteServiceGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteServiceGatewayResponse>
                 transformer =
                         DeleteServiceGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4075,9 +4059,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeleteSubnet", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubnetResponse>
-                transformer =
-                        DeleteSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSubnetResponse> transformer =
+                DeleteSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4108,7 +4091,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "DeleteVcn", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVcnResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVcnResponse> transformer =
                 DeleteVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4144,7 +4127,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteVirtualCircuit",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVirtualCircuitResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVirtualCircuitResponse>
                 transformer =
                         DeleteVirtualCircuitConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4181,7 +4164,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteVlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/DeleteVlan");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVlanResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVlanResponse> transformer =
                 DeleteVlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4216,7 +4199,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DeleteVtap",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/DeleteVtap");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVtapResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVtapResponse> transformer =
                 DeleteVtapConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4252,7 +4235,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "DetachServiceId",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/DetachServiceId");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DetachServiceIdResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DetachServiceIdResponse>
                 transformer =
                         DetachServiceIdConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4293,7 +4276,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetAllDrgAttachments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetAllDrgAttachments");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAllDrgAttachmentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAllDrgAttachmentsResponse>
                 transformer =
                         GetAllDrgAttachmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4332,8 +4315,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetAllowedIkeIPSecParameters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AllowedIkeIPSecParameters/GetAllowedIkeIPSecParameters");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAllowedIkeIPSecParametersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAllowedIkeIPSecParametersResponse>
                 transformer =
                         GetAllowedIkeIPSecParametersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4370,9 +4352,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetByoipRange",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/GetByoipRange");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetByoipRangeResponse>
-                transformer =
-                        GetByoipRangeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetByoipRangeResponse> transformer =
+                GetByoipRangeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4406,7 +4387,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetCaptureFilter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/GetCaptureFilter");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCaptureFilterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetCaptureFilterResponse>
                 transformer =
                         GetCaptureFilterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4442,7 +4423,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetCpe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpe");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCpeResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetCpeResponse> transformer =
                 GetCpeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4488,8 +4469,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetCpeDeviceConfigContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpeDeviceConfigContent");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetCpeDeviceConfigContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetCpeDeviceConfigContentResponse>
                 transformer =
                         GetCpeDeviceConfigContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4526,7 +4506,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetCpeDeviceShape",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeDetail/GetCpeDeviceShape");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCpeDeviceShapeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetCpeDeviceShapeResponse>
                 transformer =
                         GetCpeDeviceShapeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4563,7 +4543,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetCrossConnect",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/GetCrossConnect");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetCrossConnectResponse>
                 transformer =
                         GetCrossConnectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4600,7 +4580,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetCrossConnectGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/GetCrossConnectGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetCrossConnectGroupResponse>
                 transformer =
                         GetCrossConnectGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4638,7 +4618,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetCrossConnectLetterOfAuthority",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LetterOfAuthority/GetCrossConnectLetterOfAuthority");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetCrossConnectLetterOfAuthorityResponse>
                 transformer =
                         GetCrossConnectLetterOfAuthorityConverter.fromResponse(
@@ -4677,7 +4657,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetCrossConnectStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectStatus/GetCrossConnectStatus");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectStatusResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetCrossConnectStatusResponse>
                 transformer =
                         GetCrossConnectStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4714,9 +4694,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetDhcpOptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/GetDhcpOptions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDhcpOptionsResponse>
-                transformer =
-                        GetDhcpOptionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetDhcpOptionsResponse> transformer =
+                GetDhcpOptionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4749,7 +4728,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetDrg",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetDrg");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetDrgResponse> transformer =
                 GetDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4784,7 +4763,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetDrgAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/GetDrgAttachment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgAttachmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDrgAttachmentResponse>
                 transformer =
                         GetDrgAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4822,7 +4801,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetDrgRedundancyStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRedundancyStatus/GetDrgRedundancyStatus");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgRedundancyStatusResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDrgRedundancyStatusResponse>
                 transformer =
                         GetDrgRedundancyStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4860,7 +4839,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetDrgRouteDistribution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/GetDrgRouteDistribution");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgRouteDistributionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDrgRouteDistributionResponse>
                 transformer =
                         GetDrgRouteDistributionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4897,7 +4876,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetDrgRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/GetDrgRouteTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgRouteTableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDrgRouteTableResponse>
                 transformer =
                         GetDrgRouteTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4935,7 +4914,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetFastConnectProviderService",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/GetFastConnectProviderService");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetFastConnectProviderServiceResponse>
                 transformer =
                         GetFastConnectProviderServiceConverter.fromResponse(
@@ -4974,7 +4953,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetFastConnectProviderServiceKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetFastConnectProviderServiceKeyResponse>
                 transformer =
                         GetFastConnectProviderServiceKeyConverter.fromResponse(
@@ -5012,7 +4991,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetIPSecConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIPSecConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetIPSecConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetIPSecConnectionResponse>
                 transformer =
                         GetIPSecConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5050,7 +5029,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetIPSecConnectionDeviceConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceConfig/GetIPSecConnectionDeviceConfig");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetIPSecConnectionDeviceConfigResponse>
                 transformer =
                         GetIPSecConnectionDeviceConfigConverter.fromResponse(
@@ -5089,7 +5068,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetIPSecConnectionDeviceStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceStatus/GetIPSecConnectionDeviceStatus");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetIPSecConnectionDeviceStatusResponse>
                 transformer =
                         GetIPSecConnectionDeviceStatusConverter.fromResponse(
@@ -5128,7 +5107,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetIPSecConnectionTunnel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/GetIPSecConnectionTunnel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetIPSecConnectionTunnelResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetIPSecConnectionTunnelResponse>
                 transformer =
                         GetIPSecConnectionTunnelConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5166,7 +5145,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetIPSecConnectionTunnelError",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelErrorDetails/GetIPSecConnectionTunnelError");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetIPSecConnectionTunnelErrorResponse>
                 transformer =
                         GetIPSecConnectionTunnelErrorConverter.fromResponse(
@@ -5206,7 +5185,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetIPSecConnectionTunnelSharedSecret",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetIPSecConnectionTunnelSharedSecretResponse>
                 transformer =
                         GetIPSecConnectionTunnelSharedSecretConverter.fromResponse(
@@ -5244,7 +5223,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetInternetGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/GetInternetGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetInternetGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetInternetGatewayResponse>
                 transformer =
                         GetInternetGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5292,7 +5271,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetIpsecCpeDeviceConfigContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIpsecCpeDeviceConfigContent");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetIpsecCpeDeviceConfigContentResponse>
                 transformer =
                         GetIpsecCpeDeviceConfigContentConverter.fromResponse(
@@ -5329,7 +5308,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetIpv6",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetIpv6Response> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetIpv6Response> transformer =
                 GetIpv6Converter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5365,7 +5344,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetLocalPeeringGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/GetLocalPeeringGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLocalPeeringGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLocalPeeringGatewayResponse>
                 transformer =
                         GetLocalPeeringGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5402,9 +5381,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetNatGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/GetNatGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNatGatewayResponse>
-                transformer =
-                        GetNatGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetNatGatewayResponse> transformer =
+                GetNatGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5439,7 +5417,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetNetworkSecurityGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/GetNetworkSecurityGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkSecurityGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetNetworkSecurityGroupResponse>
                 transformer =
                         GetNetworkSecurityGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5477,7 +5455,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetNetworkingTopology",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkingTopology/GetNetworkingTopology");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkingTopologyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetNetworkingTopologyResponse>
                 transformer =
                         GetNetworkingTopologyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5514,9 +5492,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetPrivateIp",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateIpResponse>
-                transformer =
-                        GetPrivateIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetPrivateIpResponse> transformer =
+                GetPrivateIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5550,9 +5527,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetPublicIp",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIp");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpResponse>
-                transformer =
-                        GetPublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetPublicIpResponse> transformer =
+                GetPublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5587,7 +5563,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetPublicIpByIpAddress",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByIpAddress");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpByIpAddressResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetPublicIpByIpAddressResponse>
                 transformer =
                         GetPublicIpByIpAddressConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5629,7 +5605,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetPublicIpByPrivateIpId",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpByPrivateIpIdResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetPublicIpByPrivateIpIdResponse>
                 transformer =
                         GetPublicIpByPrivateIpIdConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5670,7 +5646,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetPublicIpPool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/GetPublicIpPool");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpPoolResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetPublicIpPoolResponse>
                 transformer =
                         GetPublicIpPoolConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5708,8 +5684,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetRemotePeeringConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/GetRemotePeeringConnection");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetRemotePeeringConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetRemotePeeringConnectionResponse>
                 transformer =
                         GetRemotePeeringConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5746,9 +5721,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/GetRouteTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetRouteTableResponse>
-                transformer =
-                        GetRouteTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetRouteTableResponse> transformer =
+                GetRouteTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5782,7 +5756,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetSecurityList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/GetSecurityList");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityListResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSecurityListResponse>
                 transformer =
                         GetSecurityListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5818,7 +5792,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetService",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/GetService");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetServiceResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetServiceResponse> transformer =
                 GetServiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5853,7 +5827,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetServiceGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/GetServiceGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetServiceGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetServiceGatewayResponse>
                 transformer =
                         GetServiceGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5889,7 +5863,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetSubnet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/GetSubnet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubnetResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetSubnetResponse> transformer =
                 GetSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5924,7 +5898,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetSubnetTopology",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SubnetTopology/GetSubnetTopology");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubnetTopologyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetSubnetTopologyResponse>
                 transformer =
                         GetSubnetTopologyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5962,7 +5936,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetTunnelCpeDeviceConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfig");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTunnelCpeDeviceConfigResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTunnelCpeDeviceConfigResponse>
                 transformer =
                         GetTunnelCpeDeviceConfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6010,7 +5984,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetTunnelCpeDeviceConfigContent",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetTunnelCpeDeviceConfigContentResponse>
                 transformer =
                         GetTunnelCpeDeviceConfigContentConverter.fromResponse(
@@ -6048,7 +6022,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetUpgradeStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetUpgradeStatus");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetUpgradeStatusResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetUpgradeStatusResponse>
                 transformer =
                         GetUpgradeStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6084,7 +6058,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetVcn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/GetVcn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVcnResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetVcnResponse> transformer =
                 GetVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6120,8 +6094,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetVcnDnsResolverAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnDnsResolverAssociation/GetVcnDnsResolverAssociation");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetVcnDnsResolverAssociationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetVcnDnsResolverAssociationResponse>
                 transformer =
                         GetVcnDnsResolverAssociationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6158,9 +6131,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetVcnTopology",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnTopology/GetVcnTopology");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVcnTopologyResponse>
-                transformer =
-                        GetVcnTopologyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetVcnTopologyResponse> transformer =
+                GetVcnTopologyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6194,7 +6166,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetVirtualCircuit",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/GetVirtualCircuit");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVirtualCircuitResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetVirtualCircuitResponse>
                 transformer =
                         GetVirtualCircuitConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6230,7 +6202,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetVlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/GetVlan");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVlanResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetVlanResponse> transformer =
                 GetVlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6264,7 +6236,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetVnic",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/GetVnic");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVnicResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetVnicResponse> transformer =
                 GetVnicConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6298,7 +6270,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "GetVtap",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/GetVtap");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVtapResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetVtapResponse> transformer =
                 GetVtapConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6335,7 +6307,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListAllowedPeerRegionsForRemotePeering",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PeerRegionForRemotePeering/ListAllowedPeerRegionsForRemotePeering");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListAllowedPeerRegionsForRemotePeeringResponse>
                 transformer =
                         ListAllowedPeerRegionsForRemotePeeringConverter.fromResponse(
@@ -6374,7 +6346,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListByoipAllocatedRanges",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipAllocatedRangeSummary/ListByoipAllocatedRanges");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListByoipAllocatedRangesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListByoipAllocatedRangesResponse>
                 transformer =
                         ListByoipAllocatedRangesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6411,7 +6383,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListByoipRanges",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ListByoipRanges");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListByoipRangesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListByoipRangesResponse>
                 transformer =
                         ListByoipRangesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6448,7 +6420,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListCaptureFilters",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ListCaptureFilters");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCaptureFiltersResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCaptureFiltersResponse>
                 transformer =
                         ListCaptureFiltersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6485,7 +6457,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListCpeDeviceShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeSummary/ListCpeDeviceShapes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCpeDeviceShapesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCpeDeviceShapesResponse>
                 transformer =
                         ListCpeDeviceShapesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6521,7 +6493,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListCpes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ListCpes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCpesResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListCpesResponse> transformer =
                 ListCpesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6557,7 +6529,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListCrossConnectGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ListCrossConnectGroups");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCrossConnectGroupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCrossConnectGroupsResponse>
                 transformer =
                         ListCrossConnectGroupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6595,8 +6567,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListCrossConnectLocations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCrossConnectLocationsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCrossConnectLocationsResponse>
                 transformer =
                         ListCrossConnectLocationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6634,7 +6605,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListCrossConnectMappings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectMappingDetailsCollection/ListCrossConnectMappings");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCrossConnectMappingsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCrossConnectMappingsResponse>
                 transformer =
                         ListCrossConnectMappingsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6671,7 +6642,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListCrossConnects",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ListCrossConnects");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListCrossConnectsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListCrossConnectsResponse>
                 transformer =
                         ListCrossConnectsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6709,7 +6680,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListCrossconnectPortSpeedShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListCrossconnectPortSpeedShapesResponse>
                 transformer =
                         ListCrossconnectPortSpeedShapesConverter.fromResponse(
@@ -6747,7 +6718,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListDhcpOptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ListDhcpOptions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDhcpOptionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDhcpOptionsResponse>
                 transformer =
                         ListDhcpOptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6784,7 +6755,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListDrgAttachments",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/ListDrgAttachments");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgAttachmentsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDrgAttachmentsResponse>
                 transformer =
                         ListDrgAttachmentsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6822,7 +6793,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListDrgRouteDistributionStatements",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/ListDrgRouteDistributionStatements");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListDrgRouteDistributionStatementsResponse>
                 transformer =
                         ListDrgRouteDistributionStatementsConverter.fromResponse(
@@ -6861,8 +6832,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListDrgRouteDistributions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/ListDrgRouteDistributions");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDrgRouteDistributionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDrgRouteDistributionsResponse>
                 transformer =
                         ListDrgRouteDistributionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6899,7 +6869,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListDrgRouteRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/ListDrgRouteRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgRouteRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDrgRouteRulesResponse>
                 transformer =
                         ListDrgRouteRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6936,7 +6906,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListDrgRouteTables",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/ListDrgRouteTables");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgRouteTablesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDrgRouteTablesResponse>
                 transformer =
                         ListDrgRouteTablesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6972,7 +6942,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListDrgs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ListDrgs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListDrgsResponse> transformer =
                 ListDrgsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -7008,7 +6978,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListFastConnectProviderServices",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderServices");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListFastConnectProviderServicesResponse>
                 transformer =
                         ListFastConnectProviderServicesConverter.fromResponse(
@@ -7050,7 +7020,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListFastConnectProviderVirtualCircuitBandwidthShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
                 transformer =
@@ -7090,7 +7060,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListIPSecConnectionTunnelRoutes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelRouteSummary/ListIPSecConnectionTunnelRoutes");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListIPSecConnectionTunnelRoutesResponse>
                 transformer =
                         ListIPSecConnectionTunnelRoutesConverter.fromResponse(
@@ -7131,7 +7101,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListIPSecConnectionTunnelSecurityAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelSecurityAssociationSummary/ListIPSecConnectionTunnelSecurityAssociations");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListIPSecConnectionTunnelSecurityAssociationsResponse>
                 transformer =
@@ -7171,8 +7141,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListIPSecConnectionTunnels",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/ListIPSecConnectionTunnels");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListIPSecConnectionTunnelsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListIPSecConnectionTunnelsResponse>
                 transformer =
                         ListIPSecConnectionTunnelsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7209,7 +7178,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListIPSecConnections",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ListIPSecConnections");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIPSecConnectionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListIPSecConnectionsResponse>
                 transformer =
                         ListIPSecConnectionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7246,7 +7215,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListInternetGateways",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ListInternetGateways");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListInternetGatewaysResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListInternetGatewaysResponse>
                 transformer =
                         ListInternetGatewaysConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7282,7 +7251,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListIpv6s",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/ListIpv6s");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListIpv6sResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListIpv6sResponse> transformer =
                 ListIpv6sConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -7318,7 +7287,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListLocalPeeringGateways",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ListLocalPeeringGateways");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLocalPeeringGatewaysResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLocalPeeringGatewaysResponse>
                 transformer =
                         ListLocalPeeringGatewaysConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7355,7 +7324,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListNatGateways",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ListNatGateways");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListNatGatewaysResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListNatGatewaysResponse>
                 transformer =
                         ListNatGatewaysConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7394,7 +7363,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListNetworkSecurityGroupSecurityRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/ListNetworkSecurityGroupSecurityRules");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListNetworkSecurityGroupSecurityRulesResponse>
                 transformer =
                         ListNetworkSecurityGroupSecurityRulesConverter.fromResponse(
@@ -7433,7 +7402,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListNetworkSecurityGroupVnics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroupVnic/ListNetworkSecurityGroupVnics");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListNetworkSecurityGroupVnicsResponse>
                 transformer =
                         ListNetworkSecurityGroupVnicsConverter.fromResponse(
@@ -7472,8 +7441,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListNetworkSecurityGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ListNetworkSecurityGroups");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListNetworkSecurityGroupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListNetworkSecurityGroupsResponse>
                 transformer =
                         ListNetworkSecurityGroupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7510,9 +7478,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListPrivateIps",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/ListPrivateIps");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPrivateIpsResponse>
-                transformer =
-                        ListPrivateIpsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListPrivateIpsResponse> transformer =
+                ListPrivateIpsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7546,7 +7513,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListPublicIpPools",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ListPublicIpPools");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicIpPoolsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListPublicIpPoolsResponse>
                 transformer =
                         ListPublicIpPoolsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7583,9 +7550,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListPublicIps",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ListPublicIps");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicIpsResponse>
-                transformer =
-                        ListPublicIpsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListPublicIpsResponse> transformer =
+                ListPublicIpsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7620,8 +7586,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListRemotePeeringConnections",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ListRemotePeeringConnections");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListRemotePeeringConnectionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRemotePeeringConnectionsResponse>
                 transformer =
                         ListRemotePeeringConnectionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7658,7 +7623,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListRouteTables",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ListRouteTables");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListRouteTablesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListRouteTablesResponse>
                 transformer =
                         ListRouteTablesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7695,7 +7660,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListSecurityLists",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ListSecurityLists");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSecurityListsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSecurityListsResponse>
                 transformer =
                         ListSecurityListsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7732,7 +7697,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListServiceGateways",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ListServiceGateways");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListServiceGatewaysResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListServiceGatewaysResponse>
                 transformer =
                         ListServiceGatewaysConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7769,9 +7734,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListServices",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/ListServices");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListServicesResponse>
-                transformer =
-                        ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListServicesResponse> transformer =
+                ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7805,9 +7769,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListSubnets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ListSubnets");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSubnetsResponse>
-                transformer =
-                        ListSubnetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSubnetsResponse> transformer =
+                ListSubnetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7840,7 +7803,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListVcns",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListVcns");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVcnsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListVcnsResponse> transformer =
                 ListVcnsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -7876,7 +7839,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListVirtualCircuitBandwidthShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitBandwidthShape/ListVirtualCircuitBandwidthShapes");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListVirtualCircuitBandwidthShapesResponse>
                 transformer =
                         ListVirtualCircuitBandwidthShapesConverter.fromResponse(
@@ -7915,7 +7878,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListVirtualCircuitPublicPrefixes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/ListVirtualCircuitPublicPrefixes");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListVirtualCircuitPublicPrefixesResponse>
                 transformer =
                         ListVirtualCircuitPublicPrefixesConverter.fromResponse(
@@ -7953,7 +7916,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListVirtualCircuits",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ListVirtualCircuits");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVirtualCircuitsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListVirtualCircuitsResponse>
                 transformer =
                         ListVirtualCircuitsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -7989,7 +7952,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListVlans",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ListVlans");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVlansResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListVlansResponse> transformer =
                 ListVlansConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -8023,7 +7986,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ListVtaps",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ListVtaps");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVtapsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListVtapsResponse> transformer =
                 ListVtapsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -8059,9 +8022,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ModifyVcnCidr",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ModifyVcnCidr");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ModifyVcnCidrResponse>
-                transformer =
-                        ModifyVcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ModifyVcnCidrResponse> transformer =
+                ModifyVcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8101,7 +8063,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "RemoveDrgRouteDistributionStatements",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/RemoveDrgRouteDistributionStatements");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveDrgRouteDistributionStatementsResponse>
                 transformer =
                         RemoveDrgRouteDistributionStatementsConverter.fromResponse(
@@ -8144,7 +8106,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "RemoveDrgRouteRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/RemoveDrgRouteRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveDrgRouteRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveDrgRouteRulesResponse>
                 transformer =
                         RemoveDrgRouteRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8186,7 +8148,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "RemoveExportDrgRouteDistribution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/RemoveExportDrgRouteDistribution");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveExportDrgRouteDistributionResponse>
                 transformer =
                         RemoveExportDrgRouteDistributionConverter.fromResponse(
@@ -8226,7 +8188,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "RemoveImportDrgRouteDistribution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/RemoveImportDrgRouteDistribution");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveImportDrgRouteDistributionResponse>
                 transformer =
                         RemoveImportDrgRouteDistributionConverter.fromResponse(
@@ -8266,7 +8228,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "RemoveIpv6SubnetCidr",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/RemoveIpv6SubnetCidr");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveIpv6SubnetCidrResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveIpv6SubnetCidrResponse>
                 transformer =
                         RemoveIpv6SubnetCidrConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8308,7 +8270,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "RemoveIpv6VcnCidr",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveIpv6VcnCidr");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveIpv6VcnCidrResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveIpv6VcnCidrResponse>
                 transformer =
                         RemoveIpv6VcnCidrConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8351,7 +8313,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "RemoveNetworkSecurityGroupSecurityRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/RemoveNetworkSecurityGroupSecurityRules");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveNetworkSecurityGroupSecurityRulesResponse>
                 transformer =
                         RemoveNetworkSecurityGroupSecurityRulesConverter.fromResponse(
@@ -8396,8 +8358,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "RemovePublicIpPoolCapacity",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/RemovePublicIpPoolCapacity");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RemovePublicIpPoolCapacityResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RemovePublicIpPoolCapacityResponse>
                 transformer =
                         RemovePublicIpPoolCapacityConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8440,9 +8401,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "RemoveVcnCidr",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveVcnCidr");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveVcnCidrResponse>
-                transformer =
-                        RemoveVcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveVcnCidrResponse> transformer =
+                RemoveVcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8480,7 +8440,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateByoipRange",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/UpdateByoipRange");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateByoipRangeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateByoipRangeResponse>
                 transformer =
                         UpdateByoipRangeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8521,7 +8481,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateCaptureFilter",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/UpdateCaptureFilter");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCaptureFilterResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCaptureFilterResponse>
                 transformer =
                         UpdateCaptureFilterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8561,7 +8521,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateCpe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/UpdateCpe");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCpeResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCpeResponse> transformer =
                 UpdateCpeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -8600,7 +8560,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateCrossConnect",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/UpdateCrossConnect");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCrossConnectResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCrossConnectResponse>
                 transformer =
                         UpdateCrossConnectConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8642,7 +8602,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateCrossConnectGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/UpdateCrossConnectGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCrossConnectGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCrossConnectGroupResponse>
                 transformer =
                         UpdateCrossConnectGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8683,7 +8643,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateDhcpOptions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/UpdateDhcpOptions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDhcpOptionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDhcpOptionsResponse>
                 transformer =
                         UpdateDhcpOptionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8723,7 +8683,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateDrg",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpdateDrg");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDrgResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgResponse> transformer =
                 UpdateDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -8762,7 +8722,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateDrgAttachment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/UpdateDrgAttachment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDrgAttachmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgAttachmentResponse>
                 transformer =
                         UpdateDrgAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8804,8 +8764,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateDrgRouteDistribution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/UpdateDrgRouteDistribution");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateDrgRouteDistributionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgRouteDistributionResponse>
                 transformer =
                         UpdateDrgRouteDistributionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8849,7 +8808,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateDrgRouteDistributionStatements",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/UpdateDrgRouteDistributionStatements");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDrgRouteDistributionStatementsResponse>
                 transformer =
                         UpdateDrgRouteDistributionStatementsConverter.fromResponse(
@@ -8892,7 +8851,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateDrgRouteRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/UpdateDrgRouteRules");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDrgRouteRulesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgRouteRulesResponse>
                 transformer =
                         UpdateDrgRouteRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8933,7 +8892,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateDrgRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/UpdateDrgRouteTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDrgRouteTableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgRouteTableResponse>
                 transformer =
                         UpdateDrgRouteTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -8975,7 +8934,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateIPSecConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/UpdateIPSecConnection");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIPSecConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateIPSecConnectionResponse>
                 transformer =
                         UpdateIPSecConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9017,8 +8976,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateIPSecConnectionTunnel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/UpdateIPSecConnectionTunnel");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelResponse>
                 transformer =
                         UpdateIPSecConnectionTunnelConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9062,7 +9020,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateIPSecConnectionTunnelSharedSecret",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelSharedSecretResponse>
                 transformer =
                         UpdateIPSecConnectionTunnelSharedSecretConverter.fromResponse(
@@ -9106,7 +9064,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateInternetGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/UpdateInternetGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInternetGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateInternetGatewayResponse>
                 transformer =
                         UpdateInternetGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9146,7 +9104,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateIpv6",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIpv6Response> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateIpv6Response> transformer =
                 UpdateIpv6Converter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -9186,8 +9144,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateLocalPeeringGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/UpdateLocalPeeringGateway");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateLocalPeeringGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLocalPeeringGatewayResponse>
                 transformer =
                         UpdateLocalPeeringGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9229,7 +9186,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateNatGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/UpdateNatGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNatGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateNatGatewayResponse>
                 transformer =
                         UpdateNatGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9271,8 +9228,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateNetworkSecurityGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/UpdateNetworkSecurityGroup");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateNetworkSecurityGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkSecurityGroupResponse>
                 transformer =
                         UpdateNetworkSecurityGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9316,7 +9272,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateNetworkSecurityGroupSecurityRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/UpdateNetworkSecurityGroupSecurityRules");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateNetworkSecurityGroupSecurityRulesResponse>
                 transformer =
                         UpdateNetworkSecurityGroupSecurityRulesConverter.fromResponse(
@@ -9359,7 +9315,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdatePrivateIp",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePrivateIpResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePrivateIpResponse>
                 transformer =
                         UpdatePrivateIpConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9400,9 +9356,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdatePublicIp",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/UpdatePublicIp");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicIpResponse>
-                transformer =
-                        UpdatePublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePublicIpResponse> transformer =
+                UpdatePublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9440,7 +9395,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdatePublicIpPool",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/UpdatePublicIpPool");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicIpPoolResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePublicIpPoolResponse>
                 transformer =
                         UpdatePublicIpPoolConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9482,7 +9437,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateRemotePeeringConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/UpdateRemotePeeringConnection");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateRemotePeeringConnectionResponse>
                 transformer =
                         UpdateRemotePeeringConnectionConverter.fromResponse(
@@ -9525,7 +9480,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateRouteTable",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/UpdateRouteTable");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRouteTableResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRouteTableResponse>
                 transformer =
                         UpdateRouteTableConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9566,7 +9521,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateSecurityList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/UpdateSecurityList");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecurityListResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSecurityListResponse>
                 transformer =
                         UpdateSecurityListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9607,7 +9562,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateServiceGateway",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/UpdateServiceGateway");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateServiceGatewayResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateServiceGatewayResponse>
                 transformer =
                         UpdateServiceGatewayConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9648,9 +9603,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateSubnet",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/UpdateSubnet");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubnetResponse>
-                transformer =
-                        UpdateSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSubnetResponse> transformer =
+                UpdateSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9690,8 +9644,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateTunnelCpeDeviceConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateTunnelCpeDeviceConfigResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTunnelCpeDeviceConfigResponse>
                 transformer =
                         UpdateTunnelCpeDeviceConfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9732,7 +9685,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateVcn",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/UpdateVcn");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVcnResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVcnResponse> transformer =
                 UpdateVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -9771,7 +9724,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateVirtualCircuit",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/UpdateVirtualCircuit");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVirtualCircuitResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVirtualCircuitResponse>
                 transformer =
                         UpdateVirtualCircuitConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9811,7 +9764,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateVlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/UpdateVlan");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVlanResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVlanResponse> transformer =
                 UpdateVlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -9849,7 +9802,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpdateVnic",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/UpdateVnic");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVnicResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVnicResponse> transformer =
                 UpdateVnicConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -9884,7 +9837,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "VirtualNetwork", "UpdateVtap", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVtapResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVtapResponse> transformer =
                 UpdateVtapConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -9923,7 +9876,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "UpgradeDrg",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpgradeDrg");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDrgResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpgradeDrgResponse> transformer =
                 UpgradeDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -9959,7 +9912,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "ValidateByoipRange",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ValidateByoipRange");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ValidateByoipRangeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateByoipRangeResponse>
                 transformer =
                         ValidateByoipRangeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -9997,7 +9950,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "WithdrawByoipRange",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/WithdrawByoipRange");
-        com.google.common.base.Function<javax.ws.rs.core.Response, WithdrawByoipRangeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, WithdrawByoipRangeResponse>
                 transformer =
                         WithdrawByoipRangeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

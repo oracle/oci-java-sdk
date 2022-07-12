@@ -88,22 +88,22 @@ public class UpdateZoneRecordsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse>() {
                             @Override
@@ -111,7 +111,7 @@ public class UpdateZoneRecordsConverter {
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.dns.model.RecordCollection>>
@@ -143,10 +143,9 @@ public class UpdateZoneRecordsConverter {
 
                                 builder.recordCollection(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcNextPageHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-next-page");
+                                java.util.Optional<java.util.List<String>> opcNextPageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-next-page");
                                 if (opcNextPageHeader.isPresent()) {
                                     builder.opcNextPage(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -155,10 +154,9 @@ public class UpdateZoneRecordsConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcTotalItemsHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-total-items");
+                                java.util.Optional<java.util.List<String>> opcTotalItemsHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-total-items");
                                 if (opcTotalItemsHeader.isPresent()) {
                                     builder.opcTotalItems(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -167,10 +165,9 @@ public class UpdateZoneRecordsConverter {
                                                     Integer.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -179,7 +176,7 @@ public class UpdateZoneRecordsConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>> eTagHeader =
+                                java.util.Optional<java.util.List<String>> eTagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
                                                 headers, "ETag");
                                 if (eTagHeader.isPresent()) {

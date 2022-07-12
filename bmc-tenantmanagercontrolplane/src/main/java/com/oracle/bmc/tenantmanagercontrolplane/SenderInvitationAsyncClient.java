@@ -7,7 +7,6 @@ package com.oracle.bmc.tenantmanagercontrolplane;
 import com.oracle.bmc.tenantmanagercontrolplane.internal.http.*;
 import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for SenderInvitation service. <br/>
@@ -321,7 +320,7 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
          * @return the client
          */
         public SenderInvitationAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,8 +406,7 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
                         "CancelSenderInvitation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/CancelSenderInvitation");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CancelSenderInvitationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelSenderInvitationResponse>
                 transformer =
                         CancelSenderInvitationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -455,8 +454,7 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
                         "CreateSenderInvitation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/CreateSenderInvitation");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateSenderInvitationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSenderInvitationResponse>
                 transformer =
                         CreateSenderInvitationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -508,8 +506,7 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
                         "GetSenderInvitation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/GetSenderInvitation");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetSenderInvitationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSenderInvitationResponse>
                 transformer =
                         GetSenderInvitationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -556,8 +553,7 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
                         "ListSenderInvitations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/ListSenderInvitations");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSenderInvitationsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSenderInvitationsResponse>
                 transformer =
                         ListSenderInvitationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -604,8 +600,7 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
                         "UpdateSenderInvitation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/UpdateSenderInvitation");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateSenderInvitationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSenderInvitationResponse>
                 transformer =
                         UpdateSenderInvitationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

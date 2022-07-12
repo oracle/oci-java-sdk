@@ -4,7 +4,6 @@
  */
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.common.util.concurrent.Uninterruptibles;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -92,7 +91,11 @@ public class StreamsExample {
         publishExampleMessages(streamClient, streamId);
 
         // give the streaming service a second to propagate messages
-        Uninterruptibles.sleepUninterruptibly(1, TimeUnit.SECONDS);
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            // ignore, just continue a bit earlier
+        }
 
         // Use a cursor for getting messages; each getMessages call will return a next-cursor for iteration.
         // There are a couple kinds of cursors.
@@ -210,7 +213,12 @@ public class StreamsExample {
                         .getStream();
 
         // Give a little time for the stream to be ready.
-        Uninterruptibles.sleepUninterruptibly(1, TimeUnit.SECONDS);
+        // give the streaming service a second to propagate messages
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            // ignore, just continue a bit earlier
+        }
         return activeStream;
     }
 
@@ -301,7 +309,12 @@ public class StreamsExample {
 
             // getMessages is a throttled method; clients should retrieve sufficiently large message
             // batches, as to avoid too many http requests.
-            Uninterruptibles.sleepUninterruptibly(1, TimeUnit.SECONDS);
+            // give the streaming service a second to propagate messages
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                // ignore, just continue a bit earlier
+            }
 
             // use the next-cursor for iteration
             cursor = getResponse.getOpcNextCursor();

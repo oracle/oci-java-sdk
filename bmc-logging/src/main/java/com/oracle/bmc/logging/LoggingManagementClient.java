@@ -9,7 +9,6 @@ import com.oracle.bmc.logging.requests.*;
 import com.oracle.bmc.logging.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public class LoggingManagementClient implements LoggingManagement {
@@ -334,9 +333,9 @@ public class LoggingManagementClient implements LoggingManagement {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("LoggingManagement-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("LoggingManagement-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class LoggingManagementClient implements LoggingManagement {
          * @return the client
          */
         public LoggingManagementClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class LoggingManagementClient implements LoggingManagement {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,8 +487,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ChangeLogGroupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/ChangeLogGroupCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeLogGroupCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeLogGroupCompartmentResponse>
                 transformer =
                         ChangeLogGroupCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -530,7 +529,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ChangeLogLogGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/ChangeLogLogGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeLogLogGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeLogLogGroupResponse>
                 transformer =
                         ChangeLogLogGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -573,7 +572,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ChangeLogSavedSearchCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ChangeLogSavedSearchCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeLogSavedSearchCompartmentResponse>
                 transformer =
                         ChangeLogSavedSearchCompartmentConverter.fromResponse(
@@ -620,7 +619,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ChangeUnifiedAgentConfigurationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ChangeUnifiedAgentConfigurationCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeUnifiedAgentConfigurationCompartmentResponse>
                 transformer =
@@ -664,7 +663,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "CreateLog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/CreateLog");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateLogResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLogResponse> transformer =
                 CreateLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -704,9 +703,8 @@ public class LoggingManagementClient implements LoggingManagement {
                         "CreateLogGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/CreateLogGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateLogGroupResponse>
-                transformer =
-                        CreateLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLogGroupResponse> transformer =
+                CreateLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -745,7 +743,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "CreateLogSavedSearch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/CreateLogSavedSearch");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateLogSavedSearchResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateLogSavedSearchResponse>
                 transformer =
                         CreateLogSavedSearchConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -788,7 +786,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "CreateUnifiedAgentConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/CreateUnifiedAgentConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateUnifiedAgentConfigurationResponse>
                 transformer =
                         CreateUnifiedAgentConfigurationConverter.fromResponse(
@@ -830,7 +828,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "DeleteLog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/DeleteLog");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLogResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogResponse> transformer =
                 DeleteLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -866,9 +864,8 @@ public class LoggingManagementClient implements LoggingManagement {
                         "DeleteLogGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/DeleteLogGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLogGroupResponse>
-                transformer =
-                        DeleteLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogGroupResponse> transformer =
+                DeleteLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -903,7 +900,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "DeleteLogSavedSearch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/DeleteLogSavedSearch");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLogSavedSearchResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteLogSavedSearchResponse>
                 transformer =
                         DeleteLogSavedSearchConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -942,7 +939,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "DeleteUnifiedAgentConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/DeleteUnifiedAgentConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteUnifiedAgentConfigurationResponse>
                 transformer =
                         DeleteUnifiedAgentConfigurationConverter.fromResponse(
@@ -981,7 +978,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "DeleteWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/DeleteWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
                 transformer =
                         DeleteWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1018,7 +1015,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "GetLog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/GetLog");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLogResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogResponse> transformer =
                 GetLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1053,9 +1050,8 @@ public class LoggingManagementClient implements LoggingManagement {
                         "GetLogGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/GetLogGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLogGroupResponse>
-                transformer =
-                        GetLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogGroupResponse> transformer =
+                GetLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1089,7 +1085,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "GetLogIncludedSearch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/GetLogIncludedSearch");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLogIncludedSearchResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogIncludedSearchResponse>
                 transformer =
                         GetLogIncludedSearchConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1126,7 +1122,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "GetLogSavedSearch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/GetLogSavedSearch");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetLogSavedSearchResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetLogSavedSearchResponse>
                 transformer =
                         GetLogSavedSearchConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1164,8 +1160,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "GetUnifiedAgentConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/GetUnifiedAgentConfiguration");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetUnifiedAgentConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetUnifiedAgentConfigurationResponse>
                 transformer =
                         GetUnifiedAgentConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1202,9 +1197,8 @@ public class LoggingManagementClient implements LoggingManagement {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1238,9 +1232,8 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ListLogGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroupSummary/ListLogGroups");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLogGroupsResponse>
-                transformer =
-                        ListLogGroupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogGroupsResponse> transformer =
+                ListLogGroupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1275,7 +1268,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ListLogIncludedSearches",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/ListLogIncludedSearches");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLogIncludedSearchesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogIncludedSearchesResponse>
                 transformer =
                         ListLogIncludedSearchesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1312,7 +1305,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ListLogSavedSearches",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ListLogSavedSearches");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLogSavedSearchesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogSavedSearchesResponse>
                 transformer =
                         ListLogSavedSearchesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1348,7 +1341,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ListLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSummary/ListLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListLogsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListLogsResponse> transformer =
                 ListLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1383,9 +1376,8 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ListServices",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/ServiceSummary/ListServices");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListServicesResponse>
-                transformer =
-                        ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListServicesResponse> transformer =
+                ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1420,7 +1412,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ListUnifiedAgentConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ListUnifiedAgentConfigurations");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListUnifiedAgentConfigurationsResponse>
                 transformer =
                         ListUnifiedAgentConfigurationsConverter.fromResponse(
@@ -1459,7 +1451,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1496,7 +1488,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestLog/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1533,7 +1525,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1569,7 +1561,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "UpdateLog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/UpdateLog");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLogResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogResponse> transformer =
                 UpdateLogConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1608,9 +1600,8 @@ public class LoggingManagementClient implements LoggingManagement {
                         "UpdateLogGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/UpdateLogGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLogGroupResponse>
-                transformer =
-                        UpdateLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogGroupResponse> transformer =
+                UpdateLogGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1648,7 +1639,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "UpdateLogSavedSearch",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/UpdateLogSavedSearch");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLogSavedSearchResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateLogSavedSearchResponse>
                 transformer =
                         UpdateLogSavedSearchConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1690,7 +1681,7 @@ public class LoggingManagementClient implements LoggingManagement {
                         "UpdateUnifiedAgentConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/UpdateUnifiedAgentConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateUnifiedAgentConfigurationResponse>
                 transformer =
                         UpdateUnifiedAgentConfigurationConverter.fromResponse(

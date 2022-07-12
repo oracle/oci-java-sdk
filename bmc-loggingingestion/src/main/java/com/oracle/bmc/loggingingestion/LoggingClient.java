@@ -9,7 +9,6 @@ import com.oracle.bmc.loggingingestion.requests.*;
 import com.oracle.bmc.loggingingestion.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
 public class LoggingClient implements Logging {
@@ -329,7 +328,7 @@ public class LoggingClient implements Logging {
          * @return the client
          */
         public LoggingClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -365,7 +364,8 @@ public class LoggingClient implements Logging {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -409,7 +409,7 @@ public class LoggingClient implements Logging {
                         "PutLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/logging-dataplane/20200831/LogEntry/PutLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PutLogsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, PutLogsResponse> transformer =
                 PutLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

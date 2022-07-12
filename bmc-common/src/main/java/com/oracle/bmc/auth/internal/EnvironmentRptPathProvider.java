@@ -4,9 +4,10 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
+import com.oracle.bmc.util.internal.Validate;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -26,9 +27,10 @@ public class EnvironmentRptPathProvider extends AbstractTemplateRptPathProvider 
 
     public EnvironmentRptPathProvider() {
         super(getPathTemplate());
-        this.replacements = buildReplacements();
-        Preconditions.checkNotNull(
-                replacements, "Environment variable 'OCI_RESOURCE_PRINCIPAL_RPT_ID' was not set");
+        this.replacements =
+                Validate.notNull(
+                        buildReplacements(),
+                        "Environment variable 'OCI_RESOURCE_PRINCIPAL_RPT_ID' was not set");
     }
 
     @Override
@@ -43,7 +45,9 @@ public class EnvironmentRptPathProvider extends AbstractTemplateRptPathProvider 
     protected static Map<String, String> buildReplacements() {
         String rpt_id = System.getenv(OCI_RESOURCE_PRINCIPAL_RPT_ID);
         if (rpt_id != null) {
-            return ImmutableMap.of("id", rpt_id);
+            Map<String, String> replacements = new HashMap<>();
+            replacements.put("id", rpt_id);
+            return Collections.unmodifiableMap(replacements);
         } else {
             return null;
         }

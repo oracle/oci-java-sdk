@@ -7,7 +7,6 @@ package com.oracle.bmc.cloudguard;
 import com.oracle.bmc.cloudguard.internal.http.*;
 import com.oracle.bmc.cloudguard.requests.*;
 import com.oracle.bmc.cloudguard.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for CloudGuard service. <br/>
@@ -320,7 +319,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
          * @return the client
          */
         public CloudGuardAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -405,7 +405,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "AddCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/AddCompartment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AddCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, AddCompartmentResponse>
                 transformer =
                         AddCompartmentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<AddCompartmentRequest, AddCompartmentResponse>
@@ -458,7 +458,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ChangeDetectorRecipeCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/ChangeDetectorRecipeCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDetectorRecipeCompartmentResponse>
                 transformer =
                         ChangeDetectorRecipeCompartmentConverter.fromResponse(
@@ -517,7 +517,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ChangeManagedListCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/ChangeManagedListCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeManagedListCompartmentResponse>
                 transformer =
                         ChangeManagedListCompartmentConverter.fromResponse(
@@ -574,7 +574,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ChangeResponderRecipeCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/ChangeResponderRecipeCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeResponderRecipeCompartmentResponse>
                 transformer =
                         ChangeResponderRecipeCompartmentConverter.fromResponse(
@@ -633,7 +633,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ChangeSecurityRecipeCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityRecipe/ChangeSecurityRecipeCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeSecurityRecipeCompartmentResponse>
                 transformer =
                         ChangeSecurityRecipeCompartmentConverter.fromResponse(
@@ -692,7 +692,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ChangeSecurityZoneCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/ChangeSecurityZoneCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeSecurityZoneCompartmentResponse>
                 transformer =
                         ChangeSecurityZoneCompartmentConverter.fromResponse(
@@ -747,7 +747,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "CreateDataMaskRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/CreateDataMaskRule");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataMaskRuleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDataMaskRuleResponse>
                 transformer =
                         CreateDataMaskRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -799,8 +799,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "CreateDetectorRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/CreateDetectorRecipe");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateDetectorRecipeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDetectorRecipeResponse>
                 transformer =
                         CreateDetectorRecipeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -853,7 +852,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "CreateManagedList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/CreateManagedList");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateManagedListResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateManagedListResponse>
                 transformer =
                         CreateManagedListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -905,8 +904,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "CreateResponderRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/CreateResponderRecipe");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateResponderRecipeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateResponderRecipeResponse>
                 transformer =
                         CreateResponderRecipeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -959,8 +957,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "CreateSecurityRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityRecipe/CreateSecurityRecipe");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateSecurityRecipeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSecurityRecipeResponse>
                 transformer =
                         CreateSecurityRecipeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1013,7 +1010,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "CreateSecurityZone",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/CreateSecurityZone");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecurityZoneResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSecurityZoneResponse>
                 transformer =
                         CreateSecurityZoneConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1064,7 +1061,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "CreateTarget",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/CreateTarget");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTargetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTargetResponse>
                 transformer =
                         CreateTargetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateTargetRequest, CreateTargetResponse>
@@ -1117,7 +1114,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "CreateTargetDetectorRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/CreateTargetDetectorRecipe");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateTargetDetectorRecipeResponse>
                 transformer =
                         CreateTargetDetectorRecipeConverter.fromResponse(
@@ -1174,7 +1171,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "CreateTargetResponderRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/CreateTargetResponderRecipe");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateTargetResponderRecipeResponse>
                 transformer =
                         CreateTargetResponderRecipeConverter.fromResponse(
@@ -1228,7 +1225,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "DeleteDataMaskRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/DeleteDataMaskRule");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataMaskRuleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDataMaskRuleResponse>
                 transformer =
                         DeleteDataMaskRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1275,8 +1272,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "DeleteDetectorRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/DeleteDetectorRecipe");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteDetectorRecipeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDetectorRecipeResponse>
                 transformer =
                         DeleteDetectorRecipeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1324,7 +1320,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "DeleteManagedList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/DeleteManagedList");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteManagedListResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteManagedListResponse>
                 transformer =
                         DeleteManagedListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1370,8 +1366,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "DeleteResponderRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/DeleteResponderRecipe");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteResponderRecipeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteResponderRecipeResponse>
                 transformer =
                         DeleteResponderRecipeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1418,8 +1413,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "DeleteSecurityRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityRecipe/DeleteSecurityRecipe");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteSecurityRecipeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSecurityRecipeResponse>
                 transformer =
                         DeleteSecurityRecipeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1466,7 +1460,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "DeleteSecurityZone",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/DeleteSecurityZone");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSecurityZoneResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSecurityZoneResponse>
                 transformer =
                         DeleteSecurityZoneConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1511,7 +1505,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "DeleteTarget",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/DeleteTarget");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTargetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTargetResponse>
                 transformer =
                         DeleteTargetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteTargetRequest, DeleteTargetResponse>
@@ -1558,7 +1552,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "DeleteTargetDetectorRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/DeleteTargetDetectorRecipe");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteTargetDetectorRecipeResponse>
                 transformer =
                         DeleteTargetDetectorRecipeConverter.fromResponse(
@@ -1609,7 +1603,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "DeleteTargetResponderRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/DeleteTargetResponderRecipe");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteTargetResponderRecipeResponse>
                 transformer =
                         DeleteTargetResponderRecipeConverter.fromResponse(
@@ -1659,7 +1653,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ExecuteResponderExecution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/ExecuteResponderExecution");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ExecuteResponderExecutionResponse>
                 transformer =
                         ExecuteResponderExecutionConverter.fromResponse(
@@ -1713,7 +1707,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetConditionMetadataType",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ConditionMetadataType/GetConditionMetadataType");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetConditionMetadataTypeResponse>
                 transformer =
                         GetConditionMetadataTypeConverter.fromResponse(
@@ -1761,7 +1755,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Configuration/GetConfiguration");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer =
                         GetConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1807,7 +1801,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetDataMaskRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/GetDataMaskRule");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDataMaskRuleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDataMaskRuleResponse>
                 transformer =
                         GetDataMaskRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1852,7 +1846,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetDetector",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Detector/GetDetector");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDetectorResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDetectorResponse>
                 transformer =
                         GetDetectorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetDetectorRequest, GetDetectorResponse>
@@ -1897,7 +1891,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetDetectorRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/GetDetectorRecipe");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDetectorRecipeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDetectorRecipeResponse>
                 transformer =
                         GetDetectorRecipeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1945,7 +1939,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetDetectorRecipeDetectorRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipeDetectorRule/GetDetectorRecipeDetectorRule");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDetectorRecipeDetectorRuleResponse>
                 transformer =
                         GetDetectorRecipeDetectorRuleConverter.fromResponse(
@@ -1994,7 +1988,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetDetectorRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRule/GetDetectorRule");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDetectorRuleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDetectorRuleResponse>
                 transformer =
                         GetDetectorRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2040,7 +2034,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetManagedList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/GetManagedList");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetManagedListResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetManagedListResponse>
                 transformer =
                         GetManagedListConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetManagedListRequest, GetManagedListResponse>
@@ -2083,7 +2077,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetProblem",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/GetProblem");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetProblemResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetProblemResponse>
                 transformer =
                         GetProblemConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetProblemRequest, GetProblemResponse> handlerToUse =
@@ -2128,7 +2122,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetResourceProfile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfile/GetResourceProfile");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetResourceProfileResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetResourceProfileResponse>
                 transformer =
                         GetResourceProfileConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2174,8 +2168,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetResponderExecution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/GetResponderExecution");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetResponderExecutionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetResponderExecutionResponse>
                 transformer =
                         GetResponderExecutionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2222,7 +2215,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetResponderRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/GetResponderRecipe");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetResponderRecipeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetResponderRecipeResponse>
                 transformer =
                         GetResponderRecipeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2270,7 +2263,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetResponderRecipeResponderRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipeResponderRule/GetResponderRecipeResponderRule");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetResponderRecipeResponderRuleResponse>
                 transformer =
                         GetResponderRecipeResponderRuleConverter.fromResponse(
@@ -2321,7 +2314,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetResponderRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRule/GetResponderRule");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetResponderRuleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetResponderRuleResponse>
                 transformer =
                         GetResponderRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2367,7 +2360,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetSecurityPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityPolicy/GetSecurityPolicy");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityPolicyResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSecurityPolicyResponse>
                 transformer =
                         GetSecurityPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2413,7 +2406,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetSecurityRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityRecipe/GetSecurityRecipe");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityRecipeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSecurityRecipeResponse>
                 transformer =
                         GetSecurityRecipeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2459,7 +2452,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetSecurityZone",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/GetSecurityZone");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityZoneResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSecurityZoneResponse>
                 transformer =
                         GetSecurityZoneConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2504,7 +2497,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetSighting",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Sighting/GetSighting");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSightingResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSightingResponse>
                 transformer =
                         GetSightingConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetSightingRequest, GetSightingResponse>
@@ -2547,7 +2540,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetTarget",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/GetTarget");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTargetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTargetResponse>
                 transformer =
                         GetTargetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTargetRequest, GetTargetResponse> handlerToUse =
@@ -2591,7 +2584,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetTargetDetectorRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/GetTargetDetectorRecipe");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetTargetDetectorRecipeResponse>
                 transformer =
                         GetTargetDetectorRecipeConverter.fromResponse(
@@ -2642,7 +2635,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetTargetDetectorRecipeDetectorRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipeDetectorRule/GetTargetDetectorRecipeDetectorRule");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetTargetDetectorRecipeDetectorRuleResponse>
                 transformer =
                         GetTargetDetectorRecipeDetectorRuleConverter.fromResponse(
@@ -2693,7 +2686,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetTargetResponderRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/GetTargetResponderRecipe");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetTargetResponderRecipeResponse>
                 transformer =
                         GetTargetResponderRecipeConverter.fromResponse(
@@ -2744,7 +2737,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "GetTargetResponderRecipeResponderRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipeResponderRule/GetTargetResponderRecipeResponderRule");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetTargetResponderRecipeResponderRuleResponse>
                 transformer =
                         GetTargetResponderRecipeResponderRuleConverter.fromResponse(
@@ -2797,7 +2790,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListConditionMetadataTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ConditionMetadataType/ListConditionMetadataTypes");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListConditionMetadataTypesResponse>
                 transformer =
                         ListConditionMetadataTypesConverter.fromResponse(
@@ -2846,7 +2839,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListDataMaskRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/ListDataMaskRules");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataMaskRulesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDataMaskRulesResponse>
                 transformer =
                         ListDataMaskRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2894,7 +2887,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListDetectorRecipeDetectorRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipeDetectorRule/ListDetectorRecipeDetectorRules");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDetectorRecipeDetectorRulesResponse>
                 transformer =
                         ListDetectorRecipeDetectorRulesConverter.fromResponse(
@@ -2945,8 +2938,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListDetectorRecipes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/ListDetectorRecipes");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDetectorRecipesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDetectorRecipesResponse>
                 transformer =
                         ListDetectorRecipesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2993,7 +2985,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListDetectorRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRule/ListDetectorRules");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDetectorRulesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDetectorRulesResponse>
                 transformer =
                         ListDetectorRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3038,7 +3030,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListDetectors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Detector/ListDetectors");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDetectorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDetectorsResponse>
                 transformer =
                         ListDetectorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListDetectorsRequest, ListDetectorsResponse>
@@ -3083,8 +3075,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListImpactedResources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ImpactedResourceSummary/ListImpactedResources");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListImpactedResourcesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListImpactedResourcesResponse>
                 transformer =
                         ListImpactedResourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3131,8 +3122,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListManagedListTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedListTypeSummary/ListManagedListTypes");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListManagedListTypesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListManagedListTypesResponse>
                 transformer =
                         ListManagedListTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3179,7 +3169,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListManagedLists",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/ListManagedLists");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListManagedListsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListManagedListsResponse>
                 transformer =
                         ListManagedListsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3224,7 +3214,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/PolicySummary/ListPolicies");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
                 transformer =
                         ListPoliciesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListPoliciesRequest, ListPoliciesResponse>
@@ -3269,8 +3259,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListProblemEndpoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ProblemEndpointSummary/ListProblemEndpoints");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListProblemEndpointsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListProblemEndpointsResponse>
                 transformer =
                         ListProblemEndpointsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3317,8 +3306,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListProblemHistories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/ListProblemHistories");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListProblemHistoriesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListProblemHistoriesResponse>
                 transformer =
                         ListProblemHistoriesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3364,7 +3352,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListProblems",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/ListProblems");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListProblemsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListProblemsResponse>
                 transformer =
                         ListProblemsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListProblemsRequest, ListProblemsResponse>
@@ -3409,8 +3397,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListRecommendations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/RecommendationSummary/ListRecommendations");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListRecommendationsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRecommendationsResponse>
                 transformer =
                         ListRecommendationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3459,7 +3446,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListResourceProfileEndpoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileEndpointSummary/ListResourceProfileEndpoints");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListResourceProfileEndpointsResponse>
                 transformer =
                         ListResourceProfileEndpointsConverter.fromResponse(
@@ -3511,7 +3498,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListResourceProfileImpactedResources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileImpactedResourceSummary/ListResourceProfileImpactedResources");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListResourceProfileImpactedResourcesResponse>
                 transformer =
                         ListResourceProfileImpactedResourcesConverter.fromResponse(
@@ -3562,8 +3549,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListResourceProfiles",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileSummary/ListResourceProfiles");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListResourceProfilesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListResourceProfilesResponse>
                 transformer =
                         ListResourceProfilesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3610,7 +3596,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListResourceTypes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceTypeSummary/ListResourceTypes");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListResourceTypesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListResourceTypesResponse>
                 transformer =
                         ListResourceTypesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3656,7 +3642,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListResponderActivities",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderActivitySummary/ListResponderActivities");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListResponderActivitiesResponse>
                 transformer =
                         ListResponderActivitiesConverter.fromResponse(
@@ -3704,7 +3690,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListResponderExecutions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecutionSummary/ListResponderExecutions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListResponderExecutionsResponse>
                 transformer =
                         ListResponderExecutionsConverter.fromResponse(
@@ -3754,7 +3740,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListResponderRecipeResponderRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipeResponderRule/ListResponderRecipeResponderRules");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListResponderRecipeResponderRulesResponse>
                 transformer =
                         ListResponderRecipeResponderRulesConverter.fromResponse(
@@ -3805,8 +3791,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListResponderRecipes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/ListResponderRecipes");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListResponderRecipesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListResponderRecipesResponse>
                 transformer =
                         ListResponderRecipesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3853,7 +3838,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListResponderRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRule/ListResponderRules");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListResponderRulesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListResponderRulesResponse>
                 transformer =
                         ListResponderRulesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3899,8 +3884,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListSecurityPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityPolicyCollection/ListSecurityPolicies");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSecurityPoliciesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSecurityPoliciesResponse>
                 transformer =
                         ListSecurityPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3947,8 +3931,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListSecurityRecipes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityRecipeCollection/ListSecurityRecipes");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSecurityRecipesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSecurityRecipesResponse>
                 transformer =
                         ListSecurityRecipesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -3995,7 +3978,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListSecurityZones",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZoneCollection/ListSecurityZones");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSecurityZonesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSecurityZonesResponse>
                 transformer =
                         ListSecurityZonesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4041,8 +4024,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListSightingEndpoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SightingEndpointSummary/ListSightingEndpoints");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSightingEndpointsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSightingEndpointsResponse>
                 transformer =
                         ListSightingEndpointsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4091,7 +4073,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListSightingImpactedResources",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SightingImpactedResourceSummary/ListSightingImpactedResources");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSightingImpactedResourcesResponse>
                 transformer =
                         ListSightingImpactedResourcesConverter.fromResponse(
@@ -4139,7 +4121,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListSightings",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SightingSummary/ListSightings");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSightingsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSightingsResponse>
                 transformer =
                         ListSightingsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListSightingsRequest, ListSightingsResponse>
@@ -4183,7 +4165,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListTactics",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TacticSummary/ListTactics");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTacticsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTacticsResponse>
                 transformer =
                         ListTacticsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTacticsRequest, ListTacticsResponse>
@@ -4231,7 +4213,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListTargetDetectorRecipeDetectorRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipeDetectorRule/ListTargetDetectorRecipeDetectorRules");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListTargetDetectorRecipeDetectorRulesResponse>
                 transformer =
                         ListTargetDetectorRecipeDetectorRulesConverter.fromResponse(
@@ -4282,7 +4264,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListTargetDetectorRecipes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/ListTargetDetectorRecipes");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListTargetDetectorRecipesResponse>
                 transformer =
                         ListTargetDetectorRecipesConverter.fromResponse(
@@ -4334,7 +4316,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListTargetResponderRecipeResponderRules",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipeResponderRule/ListTargetResponderRecipeResponderRules");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListTargetResponderRecipeResponderRulesResponse>
                 transformer =
                         ListTargetResponderRecipeResponderRulesConverter.fromResponse(
@@ -4388,7 +4370,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListTargetResponderRecipes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/ListTargetResponderRecipes");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListTargetResponderRecipesResponse>
                 transformer =
                         ListTargetResponderRecipesConverter.fromResponse(
@@ -4436,7 +4418,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListTargets",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/ListTargets");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTargetsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTargetsResponse>
                 transformer =
                         ListTargetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTargetsRequest, ListTargetsResponse>
@@ -4481,7 +4463,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "ListTechniques",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TechniqueSummary/ListTechniques");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTechniquesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTechniquesResponse>
                 transformer =
                         ListTechniquesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListTechniquesRequest, ListTechniquesResponse>
@@ -4527,7 +4509,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RemoveCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/RemoveCompartment");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveCompartmentResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveCompartmentResponse>
                 transformer =
                         RemoveCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4578,7 +4560,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestRiskScores",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/RiskScoreAggregation/RequestRiskScores");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RequestRiskScoresResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RequestRiskScoresResponse>
                 transformer =
                         RequestRiskScoresConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4627,7 +4609,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestSecurityScoreSummarizedTrend",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreTrendAggregation/RequestSecurityScoreSummarizedTrend");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSecurityScoreSummarizedTrendResponse>
                 transformer =
                         RequestSecurityScoreSummarizedTrendConverter.fromResponse(
@@ -4678,8 +4660,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestSecurityScores",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreAggregation/RequestSecurityScores");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RequestSecurityScoresResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, RequestSecurityScoresResponse>
                 transformer =
                         RequestSecurityScoresConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -4728,7 +4709,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestSummarizedActivityProblems",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ActivityProblemAggregation/RequestSummarizedActivityProblems");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedActivityProblemsResponse>
                 transformer =
                         RequestSummarizedActivityProblemsConverter.fromResponse(
@@ -4779,7 +4760,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestSummarizedProblems",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ProblemAggregation/RequestSummarizedProblems");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedProblemsResponse>
                 transformer =
                         RequestSummarizedProblemsConverter.fromResponse(
@@ -4831,7 +4812,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestSummarizedResponderExecutions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecutionAggregation/RequestSummarizedResponderExecutions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedResponderExecutionsResponse>
                 transformer =
                         RequestSummarizedResponderExecutionsConverter.fromResponse(
@@ -4884,7 +4865,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestSummarizedRiskScores",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/RiskScoreAggregation/RequestSummarizedRiskScores");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedRiskScoresResponse>
                 transformer =
                         RequestSummarizedRiskScoresConverter.fromResponse(
@@ -4935,7 +4916,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestSummarizedSecurityScores",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreAggregation/RequestSummarizedSecurityScores");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedSecurityScoresResponse>
                 transformer =
                         RequestSummarizedSecurityScoresConverter.fromResponse(
@@ -4990,7 +4971,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestSummarizedTopTrendResourceProfileRiskScores",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileRiskScoreAggregationSummary/RequestSummarizedTopTrendResourceProfileRiskScores");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RequestSummarizedTopTrendResourceProfileRiskScoresResponse>
                 transformer =
@@ -5045,7 +5026,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestSummarizedTrendProblems",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ProblemTrendAggregation/RequestSummarizedTrendProblems");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedTrendProblemsResponse>
                 transformer =
                         RequestSummarizedTrendProblemsConverter.fromResponse(
@@ -5098,7 +5079,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestSummarizedTrendResourceRiskScores",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceRiskScoreAggregation/RequestSummarizedTrendResourceRiskScores");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedTrendResourceRiskScoresResponse>
                 transformer =
                         RequestSummarizedTrendResourceRiskScoresConverter.fromResponse(
@@ -5159,7 +5140,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestSummarizedTrendResponderExecutions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecutionTrendAggregation/RequestSummarizedTrendResponderExecutions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RequestSummarizedTrendResponderExecutionsResponse>
                 transformer =
@@ -5215,7 +5196,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "RequestSummarizedTrendSecurityScores",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreTrendAggregation/RequestSummarizedTrendSecurityScores");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedTrendSecurityScoresResponse>
                 transformer =
                         RequestSummarizedTrendSecurityScoresConverter.fromResponse(
@@ -5268,7 +5249,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "SkipBulkResponderExecution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/SkipBulkResponderExecution");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, SkipBulkResponderExecutionResponse>
                 transformer =
                         SkipBulkResponderExecutionConverter.fromResponse(
@@ -5323,8 +5304,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "SkipResponderExecution",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/SkipResponderExecution");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SkipResponderExecutionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, SkipResponderExecutionResponse>
                 transformer =
                         SkipResponderExecutionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5372,7 +5352,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "TriggerResponder",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/TriggerResponder");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, TriggerResponderResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, TriggerResponderResponse>
                 transformer =
                         TriggerResponderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5423,7 +5403,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateBulkProblemStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/UpdateBulkProblemStatus");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateBulkProblemStatusResponse>
                 transformer =
                         UpdateBulkProblemStatusConverter.fromResponse(
@@ -5477,8 +5457,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Configuration/UpdateConfiguration");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateConfigurationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
                 transformer =
                         UpdateConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5530,7 +5509,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateDataMaskRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/UpdateDataMaskRule");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataMaskRuleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDataMaskRuleResponse>
                 transformer =
                         UpdateDataMaskRuleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5582,8 +5561,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateDetectorRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/UpdateDetectorRecipe");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateDetectorRecipeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDetectorRecipeResponse>
                 transformer =
                         UpdateDetectorRecipeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5637,7 +5615,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateDetectorRecipeDetectorRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipeDetectorRule/UpdateDetectorRecipeDetectorRule");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDetectorRecipeDetectorRuleResponse>
                 transformer =
                         UpdateDetectorRecipeDetectorRuleConverter.fromResponse(
@@ -5694,7 +5672,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateManagedList",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/UpdateManagedList");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateManagedListResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateManagedListResponse>
                 transformer =
                         UpdateManagedListConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5746,8 +5724,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateProblemStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/UpdateProblemStatus");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateProblemStatusResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateProblemStatusResponse>
                 transformer =
                         UpdateProblemStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5799,8 +5776,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateResponderRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/UpdateResponderRecipe");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateResponderRecipeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateResponderRecipeResponse>
                 transformer =
                         UpdateResponderRecipeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5854,7 +5830,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateResponderRecipeResponderRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipeResponderRule/UpdateResponderRecipeResponderRule");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateResponderRecipeResponderRuleResponse>
                 transformer =
                         UpdateResponderRecipeResponderRuleConverter.fromResponse(
@@ -5910,8 +5886,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateSecurityRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityRecipe/UpdateSecurityRecipe");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateSecurityRecipeResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSecurityRecipeResponse>
                 transformer =
                         UpdateSecurityRecipeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -5963,7 +5938,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateSecurityZone",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/UpdateSecurityZone");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecurityZoneResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSecurityZoneResponse>
                 transformer =
                         UpdateSecurityZoneConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -6013,7 +5988,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateTarget",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/UpdateTarget");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTargetResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTargetResponse>
                 transformer =
                         UpdateTargetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateTargetRequest, UpdateTargetResponse>
@@ -6065,7 +6040,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateTargetDetectorRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/UpdateTargetDetectorRecipe");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateTargetDetectorRecipeResponse>
                 transformer =
                         UpdateTargetDetectorRecipeConverter.fromResponse(
@@ -6122,7 +6097,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateTargetDetectorRecipeDetectorRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipeDetectorRule/UpdateTargetDetectorRecipeDetectorRule");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateTargetDetectorRecipeDetectorRuleResponse>
                 transformer =
                         UpdateTargetDetectorRecipeDetectorRuleConverter.fromResponse(
@@ -6181,7 +6156,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateTargetResponderRecipe",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/UpdateTargetResponderRecipe");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateTargetResponderRecipeResponse>
                 transformer =
                         UpdateTargetResponderRecipeConverter.fromResponse(
@@ -6238,7 +6213,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         "UpdateTargetResponderRecipeResponderRule",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipeResponderRule/UpdateTargetResponderRecipeResponderRule");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateTargetResponderRecipeResponderRuleResponse>
                 transformer =
                         UpdateTargetResponderRecipeResponderRuleConverter.fromResponse(

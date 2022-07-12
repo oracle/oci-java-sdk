@@ -68,22 +68,22 @@ public class DownloadPdfContentConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.ospgateway.responses.DownloadPdfContentResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.ospgateway.responses.DownloadPdfContentResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.ospgateway.responses.DownloadPdfContentResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.ospgateway.responses.DownloadPdfContentResponse>() {
                             @Override
@@ -91,7 +91,7 @@ public class DownloadPdfContentConverter {
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.ospgateway.responses.DownloadPdfContentResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.io.InputStream>>
@@ -122,10 +122,9 @@ public class DownloadPdfContentConverter {
 
                                 builder.inputStream(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -134,7 +133,7 @@ public class DownloadPdfContentConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
+                                java.util.Optional<java.util.List<String>>
                                         contentDispositionHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
                                                         headers, "Content-Disposition");
@@ -146,10 +145,9 @@ public class DownloadPdfContentConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        contentTypeHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "Content-Type");
+                                java.util.Optional<java.util.List<String>> contentTypeHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "Content-Type");
                                 if (contentTypeHeader.isPresent()) {
                                     builder.contentType(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -158,10 +156,9 @@ public class DownloadPdfContentConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        contentLengthHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "Content-Length");
+                                java.util.Optional<java.util.List<String>> contentLengthHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "Content-Length");
                                 if (contentLengthHeader.isPresent()) {
                                     builder.contentLength(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(

@@ -6,7 +6,6 @@ package com.oracle.bmc.dts;
 
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -107,17 +106,17 @@ public class TransferJobWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetTransferJobRequest, GetTransferJobResponse>() {
                             @Override
                             public GetTransferJobResponse apply(GetTransferJobRequest request) {
                                 return client.getTransferJob(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTransferJobResponse>() {
+                        new java.util.function.Predicate<GetTransferJobResponse>() {
                             @Override
-                            public boolean apply(GetTransferJobResponse response) {
+                            public boolean test(GetTransferJobResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTransferJob().getLifecycleState());
                             }

@@ -9,7 +9,6 @@ import com.oracle.bmc.databasetools.requests.*;
 import com.oracle.bmc.databasetools.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public class DatabaseToolsClient implements DatabaseTools {
@@ -334,9 +333,9 @@ public class DatabaseToolsClient implements DatabaseTools {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("DatabaseTools-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("DatabaseTools-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class DatabaseToolsClient implements DatabaseTools {
          * @return the client
          */
         public DatabaseToolsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class DatabaseToolsClient implements DatabaseTools {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -490,7 +490,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "ChangeDatabaseToolsConnectionCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ChangeDatabaseToolsConnectionCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseToolsConnectionCompartmentResponse>
                 transformer =
                         ChangeDatabaseToolsConnectionCompartmentConverter.fromResponse(
@@ -537,7 +537,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "ChangeDatabaseToolsPrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ChangeDatabaseToolsPrivateEndpointCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeDatabaseToolsPrivateEndpointCompartmentResponse>
                 transformer =
@@ -583,7 +583,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "CreateDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateDatabaseToolsConnectionResponse>
                 transformer =
                         CreateDatabaseToolsConnectionConverter.fromResponse(
@@ -628,7 +628,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "CreateDatabaseToolsPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateDatabaseToolsPrivateEndpointResponse>
                 transformer =
                         CreateDatabaseToolsPrivateEndpointConverter.fromResponse(
@@ -672,7 +672,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DeleteDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/DeleteDatabaseToolsConnection");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseToolsConnectionResponse>
                 transformer =
                         DeleteDatabaseToolsConnectionConverter.fromResponse(
@@ -712,7 +712,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DeleteDatabaseToolsPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/DeleteDatabaseToolsPrivateEndpoint");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseToolsPrivateEndpointResponse>
                 transformer =
                         DeleteDatabaseToolsPrivateEndpointConverter.fromResponse(
@@ -752,8 +752,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "GetDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/GetDatabaseToolsConnection");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDatabaseToolsConnectionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseToolsConnectionResponse>
                 transformer =
                         GetDatabaseToolsConnectionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -791,7 +790,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "GetDatabaseToolsEndpointService",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/GetDatabaseToolsEndpointService");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsEndpointServiceResponse>
                 transformer =
                         GetDatabaseToolsEndpointServiceConverter.fromResponse(
@@ -830,7 +829,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "GetDatabaseToolsPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/GetDatabaseToolsPrivateEndpoint");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsPrivateEndpointResponse>
                 transformer =
                         GetDatabaseToolsPrivateEndpointConverter.fromResponse(
@@ -868,9 +867,8 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -905,8 +903,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "ListDatabaseToolsConnections",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ListDatabaseToolsConnections");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDatabaseToolsConnectionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseToolsConnectionsResponse>
                 transformer =
                         ListDatabaseToolsConnectionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -944,7 +941,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "ListDatabaseToolsEndpointServices",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/ListDatabaseToolsEndpointServices");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsEndpointServicesResponse>
                 transformer =
                         ListDatabaseToolsEndpointServicesConverter.fromResponse(
@@ -983,7 +980,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "ListDatabaseToolsPrivateEndpoints",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ListDatabaseToolsPrivateEndpoints");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsPrivateEndpointsResponse>
                 transformer =
                         ListDatabaseToolsPrivateEndpointsConverter.fromResponse(
@@ -1022,7 +1019,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestError/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1059,7 +1056,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestLogEntry/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1096,7 +1093,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1134,7 +1131,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "UpdateDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/UpdateDatabaseToolsConnection");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseToolsConnectionResponse>
                 transformer =
                         UpdateDatabaseToolsConnectionConverter.fromResponse(
@@ -1178,7 +1175,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "UpdateDatabaseToolsPrivateEndpoint",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/UpdateDatabaseToolsPrivateEndpoint");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseToolsPrivateEndpointResponse>
                 transformer =
                         UpdateDatabaseToolsPrivateEndpointConverter.fromResponse(
@@ -1222,7 +1219,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "ValidateDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ValidateDatabaseToolsConnection");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateDatabaseToolsConnectionResponse>
                 transformer =
                         ValidateDatabaseToolsConnectionConverter.fromResponse(

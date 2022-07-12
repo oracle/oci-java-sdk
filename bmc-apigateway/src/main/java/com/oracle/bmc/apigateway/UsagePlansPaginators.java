@@ -44,19 +44,19 @@ public class UsagePlansPaginators {
             final ListUsagePlansRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListUsagePlansRequest.Builder, ListUsagePlansRequest, ListUsagePlansResponse>(
-                new com.google.common.base.Supplier<ListUsagePlansRequest.Builder>() {
+                new java.util.function.Supplier<ListUsagePlansRequest.Builder>() {
                     @Override
                     public ListUsagePlansRequest.Builder get() {
                         return ListUsagePlansRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListUsagePlansResponse, String>() {
+                new java.util.function.Function<ListUsagePlansResponse, String>() {
                     @Override
                     public String apply(ListUsagePlansResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListUsagePlansRequest.Builder>,
                         ListUsagePlansRequest>() {
@@ -69,13 +69,12 @@ public class UsagePlansPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListUsagePlansRequest, ListUsagePlansResponse>() {
+                new java.util.function.Function<ListUsagePlansRequest, ListUsagePlansResponse>() {
                     @Override
                     public ListUsagePlansResponse apply(ListUsagePlansRequest request) {
                         return client.listUsagePlans(request);
@@ -97,19 +96,19 @@ public class UsagePlansPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListUsagePlansRequest.Builder, ListUsagePlansRequest, ListUsagePlansResponse,
                 com.oracle.bmc.apigateway.model.UsagePlanSummary>(
-                new com.google.common.base.Supplier<ListUsagePlansRequest.Builder>() {
+                new java.util.function.Supplier<ListUsagePlansRequest.Builder>() {
                     @Override
                     public ListUsagePlansRequest.Builder get() {
                         return ListUsagePlansRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListUsagePlansResponse, String>() {
+                new java.util.function.Function<ListUsagePlansResponse, String>() {
                     @Override
                     public String apply(ListUsagePlansResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListUsagePlansRequest.Builder>,
                         ListUsagePlansRequest>() {
@@ -122,19 +121,18 @@ public class UsagePlansPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
-                        ListUsagePlansRequest, ListUsagePlansResponse>() {
+                new java.util.function.Function<ListUsagePlansRequest, ListUsagePlansResponse>() {
                     @Override
                     public ListUsagePlansResponse apply(ListUsagePlansRequest request) {
                         return client.listUsagePlans(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListUsagePlansResponse,
                         java.util.List<com.oracle.bmc.apigateway.model.UsagePlanSummary>>() {
                     @Override

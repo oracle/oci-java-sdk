@@ -6,7 +6,6 @@ package com.oracle.bmc.datalabelingservicedataplane;
 
 import com.oracle.bmc.datalabelingservicedataplane.requests.*;
 import com.oracle.bmc.datalabelingservicedataplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -107,17 +106,17 @@ public class DataLabelingWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetAnnotationRequest, GetAnnotationResponse>() {
                             @Override
                             public GetAnnotationResponse apply(GetAnnotationRequest request) {
                                 return client.getAnnotation(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAnnotationResponse>() {
+                        new java.util.function.Predicate<GetAnnotationResponse>() {
                             @Override
-                            public boolean apply(GetAnnotationResponse response) {
+                            public boolean test(GetAnnotationResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAnnotation().getLifecycleState());
                             }
@@ -210,17 +209,16 @@ public class DataLabelingWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetDatasetRequest, GetDatasetResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetDatasetRequest, GetDatasetResponse>() {
                             @Override
                             public GetDatasetResponse apply(GetDatasetRequest request) {
                                 return client.getDataset(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDatasetResponse>() {
+                        new java.util.function.Predicate<GetDatasetResponse>() {
                             @Override
-                            public boolean apply(GetDatasetResponse response) {
+                            public boolean test(GetDatasetResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDataset().getLifecycleState());
                             }
@@ -312,16 +310,16 @@ public class DataLabelingWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetRecordRequest, GetRecordResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetRecordRequest, GetRecordResponse>() {
                             @Override
                             public GetRecordResponse apply(GetRecordRequest request) {
                                 return client.getRecord(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetRecordResponse>() {
+                        new java.util.function.Predicate<GetRecordResponse>() {
                             @Override
-                            public boolean apply(GetRecordResponse response) {
+                            public boolean test(GetRecordResponse response) {
                                 return targetStatesSet.contains(
                                         response.getRecord().getLifecycleState());
                             }

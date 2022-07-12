@@ -142,22 +142,22 @@ public class GetObjectConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.objectstorage.responses.GetObjectResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
-    public static com.google.common.base.Function<
+    public static java.util.function.Function<
                     javax.ws.rs.core.Response,
                     com.oracle.bmc.objectstorage.responses.GetObjectResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         com.oracle.bmc.objectstorage.responses.GetObjectResponse>
                 transformer =
-                        new com.google.common.base.Function<
+                        new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.objectstorage.responses.GetObjectResponse>() {
                             @Override
@@ -165,7 +165,7 @@ public class GetObjectConverter {
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
                                         "Transform function invoked for com.oracle.bmc.objectstorage.responses.GetObjectResponse");
-                                final com.google.common.base.Function<
+                                final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         java.io.InputStream>>
@@ -200,7 +200,7 @@ public class GetObjectConverter {
                                     builder.isNotModified(true);
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
+                                java.util.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
                                                         headers, "opc-client-request-id");
@@ -212,10 +212,9 @@ public class GetObjectConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
+                                java.util.Optional<java.util.List<String>> opcRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -224,7 +223,7 @@ public class GetObjectConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>> eTagHeader =
+                                java.util.Optional<java.util.List<String>> eTagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
                                                 headers, "ETag");
                                 if (eTagHeader.isPresent()) {
@@ -248,10 +247,9 @@ public class GetObjectConverter {
                                     builder.opcMeta(opcMeta);
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        contentLengthHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "content-length");
+                                java.util.Optional<java.util.List<String>> contentLengthHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "content-length");
                                 if (contentLengthHeader.isPresent()) {
                                     builder.contentLength(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -260,10 +258,9 @@ public class GetObjectConverter {
                                                     Long.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        contentRangeHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "content-range");
+                                java.util.Optional<java.util.List<String>> contentRangeHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "content-range");
                                 if (contentRangeHeader.isPresent()) {
                                     builder.contentRange(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -272,10 +269,9 @@ public class GetObjectConverter {
                                                     com.oracle.bmc.model.Range.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        contentMd5Header =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "content-md5");
+                                java.util.Optional<java.util.List<String>> contentMd5Header =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "content-md5");
                                 if (contentMd5Header.isPresent()) {
                                     builder.contentMd5(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -284,10 +280,9 @@ public class GetObjectConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcMultipartMd5Header =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-multipart-md5");
+                                java.util.Optional<java.util.List<String>> opcMultipartMd5Header =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "opc-multipart-md5");
                                 if (opcMultipartMd5Header.isPresent()) {
                                     builder.opcMultipartMd5(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -296,10 +291,9 @@ public class GetObjectConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        contentTypeHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "content-type");
+                                java.util.Optional<java.util.List<String>> contentTypeHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "content-type");
                                 if (contentTypeHeader.isPresent()) {
                                     builder.contentType(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -308,10 +302,9 @@ public class GetObjectConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        contentLanguageHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "content-language");
+                                java.util.Optional<java.util.List<String>> contentLanguageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "content-language");
                                 if (contentLanguageHeader.isPresent()) {
                                     builder.contentLanguage(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -320,10 +313,9 @@ public class GetObjectConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        contentEncodingHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "content-encoding");
+                                java.util.Optional<java.util.List<String>> contentEncodingHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "content-encoding");
                                 if (contentEncodingHeader.isPresent()) {
                                     builder.contentEncoding(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -332,10 +324,9 @@ public class GetObjectConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        cacheControlHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "cache-control");
+                                java.util.Optional<java.util.List<String>> cacheControlHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "cache-control");
                                 if (cacheControlHeader.isPresent()) {
                                     builder.cacheControl(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -344,7 +335,7 @@ public class GetObjectConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
+                                java.util.Optional<java.util.List<String>>
                                         contentDispositionHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
                                                         headers, "content-disposition");
@@ -356,10 +347,9 @@ public class GetObjectConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        lastModifiedHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "last-modified");
+                                java.util.Optional<java.util.List<String>> lastModifiedHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "last-modified");
                                 if (lastModifiedHeader.isPresent()) {
                                     builder.lastModified(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -368,10 +358,9 @@ public class GetObjectConverter {
                                                     java.util.Date.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        storageTierHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "storage-tier");
+                                java.util.Optional<java.util.List<String>> storageTierHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "storage-tier");
                                 if (storageTierHeader.isPresent()) {
                                     builder.storageTier(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -380,10 +369,9 @@ public class GetObjectConverter {
                                                     StorageTier.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        archivalStateHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "archival-state");
+                                java.util.Optional<java.util.List<String>> archivalStateHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "archival-state");
                                 if (archivalStateHeader.isPresent()) {
                                     builder.archivalState(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -392,10 +380,9 @@ public class GetObjectConverter {
                                                     ArchivalState.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        timeOfArchivalHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "time-of-archival");
+                                java.util.Optional<java.util.List<String>> timeOfArchivalHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "time-of-archival");
                                 if (timeOfArchivalHeader.isPresent()) {
                                     builder.timeOfArchival(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -404,10 +391,9 @@ public class GetObjectConverter {
                                                     java.util.Date.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        versionIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "version-id");
+                                java.util.Optional<java.util.List<String>> versionIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "version-id");
                                 if (versionIdHeader.isPresent()) {
                                     builder.versionId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -416,10 +402,9 @@ public class GetObjectConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        expiresHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "expires");
+                                java.util.Optional<java.util.List<String>> expiresHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "expires");
                                 if (expiresHeader.isPresent()) {
                                     builder.expires(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(

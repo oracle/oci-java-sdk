@@ -4,8 +4,6 @@
  */
 package com.oracle.bmc.auth;
 
-import com.google.common.base.Optional;
-import com.google.common.base.Preconditions;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.internal.DefaultRptPathProvider;
@@ -17,11 +15,14 @@ import com.oracle.bmc.auth.internal.FixedContentResourcePrincipalFederationClien
 import com.oracle.bmc.auth.internal.ResourcePrincipalsFederationClient;
 import com.oracle.bmc.auth.internal.RptPathProvider;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 import com.oracle.bmc.util.internal.NameUtils;
+import com.oracle.bmc.util.internal.Validate;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.Optional;
 
 /**
  * This constructs a default implementation of the {@link ResourcePrincipalAuthenticationDetailsProvider}, constructed
@@ -231,12 +232,8 @@ public class ResourcePrincipalAuthenticationDetailsProvider
          */
         public ResourcePrincipalAuthenticationDetailsProviderBuilder resourcePrincipalTokenEndpoint(
                 Service service, Region region) {
-            Optional<String> endpoint = region.getEndpoint(service);
-            if (endpoint.isPresent()) {
-                return resourcePrincipalTokenEndpoint(endpoint.get());
-            } else {
-                return resourcePrincipalTokenEndpoint(null);
-            }
+            Optional<String> endpoint = GuavaUtils.adaptFromGuava(region.getEndpoint(service));
+            return resourcePrincipalTokenEndpoint(endpoint.orElse(null));
         }
 
         /**
@@ -412,7 +409,9 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
         @Override
         protected FederationClient createFederationClient(SessionKeySupplier sessionKeySupplier) {
-            Preconditions.checkNotNull(resourcePrincipalTokenEndpoint);
+            Validate.notNull(
+                    resourcePrincipalTokenEndpoint,
+                    "resourcePrincipalTokenEndpoint must not be null");
             if (resourcePrincipalTokenPathProvider == null)
                 resourcePrincipalTokenPathProvider = new DefaultRptPathProvider();
 

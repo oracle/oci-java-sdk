@@ -7,7 +7,6 @@ package com.oracle.bmc.secrets;
 import com.oracle.bmc.secrets.internal.http.*;
 import com.oracle.bmc.secrets.requests.*;
 import com.oracle.bmc.secrets.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Secrets service. <br/>
@@ -320,7 +319,7 @@ public class SecretsAsyncClient implements SecretsAsync {
          * @return the client
          */
         public SecretsAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class SecretsAsyncClient implements SecretsAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,7 +404,7 @@ public class SecretsAsyncClient implements SecretsAsync {
                         "GetSecretBundle",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretretrieval/20190301/SecretBundle/GetSecretBundle");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecretBundleResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSecretBundleResponse>
                 transformer =
                         GetSecretBundleConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -450,8 +450,7 @@ public class SecretsAsyncClient implements SecretsAsync {
                         "GetSecretBundleByName",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretretrieval/20190301/SecretBundle/GetSecretBundleByName");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetSecretBundleByNameResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSecretBundleByNameResponse>
                 transformer =
                         GetSecretBundleByNameConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -498,7 +497,7 @@ public class SecretsAsyncClient implements SecretsAsync {
                         "ListSecretBundleVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/secretretrieval/20190301/SecretBundleVersionSummary/ListSecretBundleVersions");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSecretBundleVersionsResponse>
                 transformer =
                         ListSecretBundleVersionsConverter.fromResponse(

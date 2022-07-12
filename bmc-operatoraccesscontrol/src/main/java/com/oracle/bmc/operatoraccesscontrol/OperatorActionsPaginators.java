@@ -45,19 +45,19 @@ public class OperatorActionsPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListOperatorActionsRequest.Builder, ListOperatorActionsRequest,
                 ListOperatorActionsResponse>(
-                new com.google.common.base.Supplier<ListOperatorActionsRequest.Builder>() {
+                new java.util.function.Supplier<ListOperatorActionsRequest.Builder>() {
                     @Override
                     public ListOperatorActionsRequest.Builder get() {
                         return ListOperatorActionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListOperatorActionsResponse, String>() {
+                new java.util.function.Function<ListOperatorActionsResponse, String>() {
                     @Override
                     public String apply(ListOperatorActionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListOperatorActionsRequest.Builder>,
                         ListOperatorActionsRequest>() {
@@ -70,12 +70,12 @@ public class OperatorActionsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOperatorActionsRequest, ListOperatorActionsResponse>() {
                     @Override
                     public ListOperatorActionsResponse apply(ListOperatorActionsRequest request) {
@@ -99,19 +99,19 @@ public class OperatorActionsPaginators {
                 ListOperatorActionsRequest.Builder, ListOperatorActionsRequest,
                 ListOperatorActionsResponse,
                 com.oracle.bmc.operatoraccesscontrol.model.OperatorActionSummary>(
-                new com.google.common.base.Supplier<ListOperatorActionsRequest.Builder>() {
+                new java.util.function.Supplier<ListOperatorActionsRequest.Builder>() {
                     @Override
                     public ListOperatorActionsRequest.Builder get() {
                         return ListOperatorActionsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListOperatorActionsResponse, String>() {
+                new java.util.function.Function<ListOperatorActionsResponse, String>() {
                     @Override
                     public String apply(ListOperatorActionsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListOperatorActionsRequest.Builder>,
                         ListOperatorActionsRequest>() {
@@ -124,19 +124,19 @@ public class OperatorActionsPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOperatorActionsRequest, ListOperatorActionsResponse>() {
                     @Override
                     public ListOperatorActionsResponse apply(ListOperatorActionsRequest request) {
                         return client.listOperatorActions(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOperatorActionsResponse,
                         java.util.List<
                                 com.oracle.bmc.operatoraccesscontrol.model

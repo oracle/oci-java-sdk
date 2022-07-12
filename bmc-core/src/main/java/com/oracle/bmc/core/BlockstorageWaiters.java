@@ -6,7 +6,6 @@ package com.oracle.bmc.core;
 
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -16,20 +15,20 @@ import javax.annotation.Nonnull;
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class BlockstorageWaiters {
-    @Nonnull private final java.util.concurrent.ExecutorService executorService;
-    @Nonnull private final Blockstorage client;
+    @javax.annotation.Nonnull private final java.util.concurrent.ExecutorService executorService;
+    @javax.annotation.Nonnull private final Blockstorage client;
     private final com.oracle.bmc.workrequests.WorkRequest workRequestClient;
 
     @Deprecated
     public BlockstorageWaiters(
-            @Nonnull java.util.concurrent.ExecutorService executorService,
-            @Nonnull Blockstorage client) {
+            @javax.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
+            @javax.annotation.Nonnull Blockstorage client) {
         this(executorService, client, null);
     }
 
     public BlockstorageWaiters(
-            @Nonnull java.util.concurrent.ExecutorService executorService,
-            @Nonnull Blockstorage client,
+            @javax.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
+            @javax.annotation.Nonnull Blockstorage client,
             com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
         if (executorService == null) {
             throw new NullPointerException("executorService is marked non-null but is null");
@@ -239,8 +238,8 @@ public class BlockstorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetBlockVolumeReplicaRequest, GetBlockVolumeReplicaResponse>() {
                             @Override
                             public GetBlockVolumeReplicaResponse apply(
@@ -248,9 +247,9 @@ public class BlockstorageWaiters {
                                 return client.getBlockVolumeReplica(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBlockVolumeReplicaResponse>() {
+                        new java.util.function.Predicate<GetBlockVolumeReplicaResponse>() {
                             @Override
-                            public boolean apply(GetBlockVolumeReplicaResponse response) {
+                            public boolean test(GetBlockVolumeReplicaResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBlockVolumeReplica().getLifecycleState());
                             }
@@ -339,17 +338,17 @@ public class BlockstorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetBootVolumeRequest, GetBootVolumeResponse>() {
                             @Override
                             public GetBootVolumeResponse apply(GetBootVolumeRequest request) {
                                 return client.getBootVolume(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBootVolumeResponse>() {
+                        new java.util.function.Predicate<GetBootVolumeResponse>() {
                             @Override
-                            public boolean apply(GetBootVolumeResponse response) {
+                            public boolean test(GetBootVolumeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBootVolume().getLifecycleState());
                             }
@@ -442,8 +441,8 @@ public class BlockstorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetBootVolumeBackupRequest, GetBootVolumeBackupResponse>() {
                             @Override
                             public GetBootVolumeBackupResponse apply(
@@ -451,9 +450,9 @@ public class BlockstorageWaiters {
                                 return client.getBootVolumeBackup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBootVolumeBackupResponse>() {
+                        new java.util.function.Predicate<GetBootVolumeBackupResponse>() {
                             @Override
-                            public boolean apply(GetBootVolumeBackupResponse response) {
+                            public boolean test(GetBootVolumeBackupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBootVolumeBackup().getLifecycleState());
                             }
@@ -547,8 +546,8 @@ public class BlockstorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetBootVolumeReplicaRequest, GetBootVolumeReplicaResponse>() {
                             @Override
                             public GetBootVolumeReplicaResponse apply(
@@ -556,9 +555,9 @@ public class BlockstorageWaiters {
                                 return client.getBootVolumeReplica(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBootVolumeReplicaResponse>() {
+                        new java.util.function.Predicate<GetBootVolumeReplicaResponse>() {
                             @Override
-                            public boolean apply(GetBootVolumeReplicaResponse response) {
+                            public boolean test(GetBootVolumeReplicaResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBootVolumeReplica().getLifecycleState());
                             }
@@ -647,16 +646,16 @@ public class BlockstorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetVolumeRequest, GetVolumeResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetVolumeRequest, GetVolumeResponse>() {
                             @Override
                             public GetVolumeResponse apply(GetVolumeRequest request) {
                                 return client.getVolume(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVolumeResponse>() {
+                        new java.util.function.Predicate<GetVolumeResponse>() {
                             @Override
-                            public boolean apply(GetVolumeResponse response) {
+                            public boolean test(GetVolumeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVolume().getLifecycleState());
                             }
@@ -748,17 +747,17 @@ public class BlockstorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetVolumeBackupRequest, GetVolumeBackupResponse>() {
                             @Override
                             public GetVolumeBackupResponse apply(GetVolumeBackupRequest request) {
                                 return client.getVolumeBackup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVolumeBackupResponse>() {
+                        new java.util.function.Predicate<GetVolumeBackupResponse>() {
                             @Override
-                            public boolean apply(GetVolumeBackupResponse response) {
+                            public boolean test(GetVolumeBackupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVolumeBackup().getLifecycleState());
                             }
@@ -850,17 +849,17 @@ public class BlockstorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetVolumeGroupRequest, GetVolumeGroupResponse>() {
                             @Override
                             public GetVolumeGroupResponse apply(GetVolumeGroupRequest request) {
                                 return client.getVolumeGroup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVolumeGroupResponse>() {
+                        new java.util.function.Predicate<GetVolumeGroupResponse>() {
                             @Override
-                            public boolean apply(GetVolumeGroupResponse response) {
+                            public boolean test(GetVolumeGroupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVolumeGroup().getLifecycleState());
                             }
@@ -953,8 +952,8 @@ public class BlockstorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetVolumeGroupBackupRequest, GetVolumeGroupBackupResponse>() {
                             @Override
                             public GetVolumeGroupBackupResponse apply(
@@ -962,9 +961,9 @@ public class BlockstorageWaiters {
                                 return client.getVolumeGroupBackup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVolumeGroupBackupResponse>() {
+                        new java.util.function.Predicate<GetVolumeGroupBackupResponse>() {
                             @Override
-                            public boolean apply(GetVolumeGroupBackupResponse response) {
+                            public boolean test(GetVolumeGroupBackupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVolumeGroupBackup().getLifecycleState());
                             }
@@ -1059,8 +1058,8 @@ public class BlockstorageWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetVolumeGroupReplicaRequest, GetVolumeGroupReplicaResponse>() {
                             @Override
                             public GetVolumeGroupReplicaResponse apply(
@@ -1068,9 +1067,9 @@ public class BlockstorageWaiters {
                                 return client.getVolumeGroupReplica(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVolumeGroupReplicaResponse>() {
+                        new java.util.function.Predicate<GetVolumeGroupReplicaResponse>() {
                             @Override
-                            public boolean apply(GetVolumeGroupReplicaResponse response) {
+                            public boolean test(GetVolumeGroupReplicaResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVolumeGroupReplica().getLifecycleState());
                             }

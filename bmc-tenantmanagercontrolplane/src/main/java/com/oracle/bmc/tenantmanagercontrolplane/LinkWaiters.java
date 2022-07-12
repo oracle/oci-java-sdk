@@ -6,7 +6,6 @@ package com.oracle.bmc.tenantmanagercontrolplane;
 
 import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -101,16 +100,16 @@ public class LinkWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetLinkRequest, GetLinkResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetLinkRequest, GetLinkResponse>() {
                             @Override
                             public GetLinkResponse apply(GetLinkRequest request) {
                                 return client.getLink(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetLinkResponse>() {
+                        new java.util.function.Predicate<GetLinkResponse>() {
                             @Override
-                            public boolean apply(GetLinkResponse response) {
+                            public boolean test(GetLinkResponse response) {
                                 return targetStatesSet.contains(
                                         response.getLink().getLifecycleState());
                             }

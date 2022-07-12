@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.graalvm;
 
-import com.google.common.collect.Maps;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.objectstorage.ObjectStorage;
@@ -225,7 +224,7 @@ public abstract class BaseObjectStorageTest extends BaseTest {
                 StringUtils.isNotBlank(bucketFromResponse.getEtag()), "Etag should not be blank");
         assertTrue(bucketFromResponse.getFreeformTags().isEmpty(), "FreeformTags should be empty");
         assertTrue(
-                Maps.difference(initialMetadata, bucketFromResponse.getMetadata()).areEqual(),
+                initialMetadata.equals(bucketFromResponse.getMetadata()),
                 "Metadata should be equal");
         assertEquals(namespace, bucketFromResponse.getNamespace(), "Namespace should be equal");
         assertEquals(

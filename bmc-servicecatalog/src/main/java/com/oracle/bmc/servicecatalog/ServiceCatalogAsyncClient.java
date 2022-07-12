@@ -7,7 +7,6 @@ package com.oracle.bmc.servicecatalog;
 import com.oracle.bmc.servicecatalog.internal.http.*;
 import com.oracle.bmc.servicecatalog.requests.*;
 import com.oracle.bmc.servicecatalog.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ServiceCatalog service. <br/>
@@ -321,7 +320,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
          * @return the client
          */
         public ServiceCatalogAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -408,7 +408,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "BulkReplaceServiceCatalogAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalogAssociation/BulkReplaceServiceCatalogAssociations");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, BulkReplaceServiceCatalogAssociationsResponse>
                 transformer =
                         BulkReplaceServiceCatalogAssociationsConverter.fromResponse(
@@ -468,7 +468,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "ChangePrivateApplicationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/ChangePrivateApplicationCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangePrivateApplicationCompartmentResponse>
                 transformer =
                         ChangePrivateApplicationCompartmentConverter.fromResponse(
@@ -526,7 +526,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "ChangeServiceCatalogCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalog/ChangeServiceCatalogCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeServiceCatalogCompartmentResponse>
                 transformer =
                         ChangeServiceCatalogCompartmentConverter.fromResponse(
@@ -583,7 +583,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "CreatePrivateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/CreatePrivateApplication");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreatePrivateApplicationResponse>
                 transformer =
                         CreatePrivateApplicationConverter.fromResponse(
@@ -637,8 +637,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "CreateServiceCatalog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalog/CreateServiceCatalog");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateServiceCatalogResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateServiceCatalogResponse>
                 transformer =
                         CreateServiceCatalogConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -693,7 +692,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "CreateServiceCatalogAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalogAssociation/CreateServiceCatalogAssociation");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateServiceCatalogAssociationResponse>
                 transformer =
                         CreateServiceCatalogAssociationConverter.fromResponse(
@@ -749,7 +748,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "DeletePrivateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/DeletePrivateApplication");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeletePrivateApplicationResponse>
                 transformer =
                         DeletePrivateApplicationConverter.fromResponse(
@@ -797,8 +796,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "DeleteServiceCatalog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalog/DeleteServiceCatalog");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteServiceCatalogResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteServiceCatalogResponse>
                 transformer =
                         DeleteServiceCatalogConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -847,7 +845,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "DeleteServiceCatalogAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalogAssociation/DeleteServiceCatalogAssociation");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteServiceCatalogAssociationResponse>
                 transformer =
                         DeleteServiceCatalogAssociationConverter.fromResponse(
@@ -898,8 +896,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "GetPrivateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/GetPrivateApplication");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetPrivateApplicationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPrivateApplicationResponse>
                 transformer =
                         GetPrivateApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -959,7 +956,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "GetPrivateApplicationActionDownloadLogo",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/GetPrivateApplicationActionDownloadLogo");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetPrivateApplicationActionDownloadLogoResponse>
                 transformer =
                         GetPrivateApplicationActionDownloadLogoConverter.fromResponse(
@@ -1013,7 +1010,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "GetPrivateApplicationPackage",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplicationPackage/GetPrivateApplicationPackage");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetPrivateApplicationPackageResponse>
                 transformer =
                         GetPrivateApplicationPackageConverter.fromResponse(
@@ -1075,7 +1072,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "GetPrivateApplicationPackageActionDownloadConfig",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplicationPackage/GetPrivateApplicationPackageActionDownloadConfig");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetPrivateApplicationPackageActionDownloadConfigResponse>
                 transformer =
@@ -1128,7 +1125,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "GetServiceCatalog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalog/GetServiceCatalog");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetServiceCatalogResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetServiceCatalogResponse>
                 transformer =
                         GetServiceCatalogConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1176,7 +1173,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "GetServiceCatalogAssociation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalogAssociation/GetServiceCatalogAssociation");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetServiceCatalogAssociationResponse>
                 transformer =
                         GetServiceCatalogAssociationConverter.fromResponse(
@@ -1225,7 +1222,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -1270,7 +1267,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "ListApplications",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ApplicationSummary/ListApplications");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
                 transformer =
                         ListApplicationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1318,7 +1315,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "ListPrivateApplicationPackages",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplicationPackage/ListPrivateApplicationPackages");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListPrivateApplicationPackagesResponse>
                 transformer =
                         ListPrivateApplicationPackagesConverter.fromResponse(
@@ -1368,7 +1365,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "ListPrivateApplications",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/ListPrivateApplications");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListPrivateApplicationsResponse>
                 transformer =
                         ListPrivateApplicationsConverter.fromResponse(
@@ -1418,7 +1415,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "ListServiceCatalogAssociations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalogAssociation/ListServiceCatalogAssociations");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListServiceCatalogAssociationsResponse>
                 transformer =
                         ListServiceCatalogAssociationsConverter.fromResponse(
@@ -1468,8 +1465,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "ListServiceCatalogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalog/ListServiceCatalogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListServiceCatalogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListServiceCatalogsResponse>
                 transformer =
                         ListServiceCatalogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1516,8 +1512,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1564,8 +1559,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/WorkRequestLogEntry/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1612,7 +1606,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/WorkRequest/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1658,7 +1652,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "UpdatePrivateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/UpdatePrivateApplication");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdatePrivateApplicationResponse>
                 transformer =
                         UpdatePrivateApplicationConverter.fromResponse(
@@ -1711,8 +1705,7 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                         "UpdateServiceCatalog",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalog/UpdateServiceCatalog");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateServiceCatalogResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateServiceCatalogResponse>
                 transformer =
                         UpdateServiceCatalogConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -6,7 +6,6 @@ package com.oracle.bmc.threatintelligence;
 
 import com.oracle.bmc.threatintelligence.requests.*;
 import com.oracle.bmc.threatintelligence.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -103,17 +102,17 @@ public class ThreatintelWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetIndicatorRequest, GetIndicatorResponse>() {
                             @Override
                             public GetIndicatorResponse apply(GetIndicatorRequest request) {
                                 return client.getIndicator(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetIndicatorResponse>() {
+                        new java.util.function.Predicate<GetIndicatorResponse>() {
                             @Override
-                            public boolean apply(GetIndicatorResponse response) {
+                            public boolean test(GetIndicatorResponse response) {
                                 return targetStatesSet.contains(
                                         response.getIndicator().getLifecycleState());
                             }

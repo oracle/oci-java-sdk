@@ -6,7 +6,6 @@ package com.oracle.bmc.devops;
 
 import com.oracle.bmc.devops.requests.*;
 import com.oracle.bmc.devops.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -107,17 +106,17 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetBuildPipelineRequest, GetBuildPipelineResponse>() {
                             @Override
                             public GetBuildPipelineResponse apply(GetBuildPipelineRequest request) {
                                 return client.getBuildPipeline(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBuildPipelineResponse>() {
+                        new java.util.function.Predicate<GetBuildPipelineResponse>() {
                             @Override
-                            public boolean apply(GetBuildPipelineResponse response) {
+                            public boolean test(GetBuildPipelineResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBuildPipeline().getLifecycleState());
                             }
@@ -211,8 +210,8 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetBuildPipelineStageRequest, GetBuildPipelineStageResponse>() {
                             @Override
                             public GetBuildPipelineStageResponse apply(
@@ -220,9 +219,9 @@ public class DevopsWaiters {
                                 return client.getBuildPipelineStage(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBuildPipelineStageResponse>() {
+                        new java.util.function.Predicate<GetBuildPipelineStageResponse>() {
                             @Override
-                            public boolean apply(GetBuildPipelineStageResponse response) {
+                            public boolean test(GetBuildPipelineStageResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBuildPipelineStage().getLifecycleState());
                             }
@@ -311,17 +310,16 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetBuildRunRequest, GetBuildRunResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetBuildRunRequest, GetBuildRunResponse>() {
                             @Override
                             public GetBuildRunResponse apply(GetBuildRunRequest request) {
                                 return client.getBuildRun(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBuildRunResponse>() {
+                        new java.util.function.Predicate<GetBuildRunResponse>() {
                             @Override
-                            public boolean apply(GetBuildRunResponse response) {
+                            public boolean test(GetBuildRunResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBuildRun().getLifecycleState());
                             }
@@ -408,17 +406,17 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetConnectionRequest, GetConnectionResponse>() {
                             @Override
                             public GetConnectionResponse apply(GetConnectionRequest request) {
                                 return client.getConnection(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetConnectionResponse>() {
+                        new java.util.function.Predicate<GetConnectionResponse>() {
                             @Override
-                            public boolean apply(GetConnectionResponse response) {
+                            public boolean test(GetConnectionResponse response) {
                                 return targetStatesSet.contains(
                                         response.getConnection().getLifecycleState());
                             }
@@ -510,8 +508,8 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDeployArtifactRequest, GetDeployArtifactResponse>() {
                             @Override
                             public GetDeployArtifactResponse apply(
@@ -519,9 +517,9 @@ public class DevopsWaiters {
                                 return client.getDeployArtifact(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDeployArtifactResponse>() {
+                        new java.util.function.Predicate<GetDeployArtifactResponse>() {
                             @Override
-                            public boolean apply(GetDeployArtifactResponse response) {
+                            public boolean test(GetDeployArtifactResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDeployArtifact().getLifecycleState());
                             }
@@ -614,8 +612,8 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDeployEnvironmentRequest, GetDeployEnvironmentResponse>() {
                             @Override
                             public GetDeployEnvironmentResponse apply(
@@ -623,9 +621,9 @@ public class DevopsWaiters {
                                 return client.getDeployEnvironment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDeployEnvironmentResponse>() {
+                        new java.util.function.Predicate<GetDeployEnvironmentResponse>() {
                             @Override
-                            public boolean apply(GetDeployEnvironmentResponse response) {
+                            public boolean test(GetDeployEnvironmentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDeployEnvironment().getLifecycleState());
                             }
@@ -719,8 +717,8 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDeployPipelineRequest, GetDeployPipelineResponse>() {
                             @Override
                             public GetDeployPipelineResponse apply(
@@ -728,9 +726,9 @@ public class DevopsWaiters {
                                 return client.getDeployPipeline(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDeployPipelineResponse>() {
+                        new java.util.function.Predicate<GetDeployPipelineResponse>() {
                             @Override
-                            public boolean apply(GetDeployPipelineResponse response) {
+                            public boolean test(GetDeployPipelineResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDeployPipeline().getLifecycleState());
                             }
@@ -822,17 +820,17 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDeployStageRequest, GetDeployStageResponse>() {
                             @Override
                             public GetDeployStageResponse apply(GetDeployStageRequest request) {
                                 return client.getDeployStage(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDeployStageResponse>() {
+                        new java.util.function.Predicate<GetDeployStageResponse>() {
                             @Override
-                            public boolean apply(GetDeployStageResponse response) {
+                            public boolean test(GetDeployStageResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDeployStage().getLifecycleState());
                             }
@@ -920,17 +918,17 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDeploymentRequest, GetDeploymentResponse>() {
                             @Override
                             public GetDeploymentResponse apply(GetDeploymentRequest request) {
                                 return client.getDeployment(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDeploymentResponse>() {
+                        new java.util.function.Predicate<GetDeploymentResponse>() {
                             @Override
-                            public boolean apply(GetDeploymentResponse response) {
+                            public boolean test(GetDeploymentResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDeployment().getLifecycleState());
                             }
@@ -1017,17 +1015,16 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetProjectRequest, GetProjectResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetProjectRequest, GetProjectResponse>() {
                             @Override
                             public GetProjectResponse apply(GetProjectRequest request) {
                                 return client.getProject(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetProjectResponse>() {
+                        new java.util.function.Predicate<GetProjectResponse>() {
                             @Override
-                            public boolean apply(GetProjectResponse response) {
+                            public boolean test(GetProjectResponse response) {
                                 return targetStatesSet.contains(
                                         response.getProject().getLifecycleState());
                             }
@@ -1115,17 +1112,17 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetRepositoryRequest, GetRepositoryResponse>() {
                             @Override
                             public GetRepositoryResponse apply(GetRepositoryRequest request) {
                                 return client.getRepository(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetRepositoryResponse>() {
+                        new java.util.function.Predicate<GetRepositoryResponse>() {
                             @Override
-                            public boolean apply(GetRepositoryResponse response) {
+                            public boolean test(GetRepositoryResponse response) {
                                 return targetStatesSet.contains(
                                         response.getRepository().getLifecycleState());
                             }
@@ -1213,17 +1210,16 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetTriggerRequest, GetTriggerResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetTriggerRequest, GetTriggerResponse>() {
                             @Override
                             public GetTriggerResponse apply(GetTriggerRequest request) {
                                 return client.getTrigger(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTriggerResponse>() {
+                        new java.util.function.Predicate<GetTriggerResponse>() {
                             @Override
-                            public boolean apply(GetTriggerResponse response) {
+                            public boolean test(GetTriggerResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTrigger().getLifecycleState());
                             }
@@ -1269,17 +1265,17 @@ public class DevopsWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

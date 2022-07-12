@@ -7,7 +7,6 @@ package com.oracle.bmc.announcementsservice;
 import com.oracle.bmc.announcementsservice.internal.http.*;
 import com.oracle.bmc.announcementsservice.requests.*;
 import com.oracle.bmc.announcementsservice.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for AnnouncementsPreferences service. <br/>
@@ -321,7 +320,7 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
          * @return the client
          */
         public AnnouncementsPreferencesAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -408,7 +408,7 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
                         "CreateAnnouncementsPreference",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/CreateAnnouncementsPreference");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateAnnouncementsPreferenceResponse>
                 transformer =
                         CreateAnnouncementsPreferenceConverter.fromResponse(
@@ -464,7 +464,7 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
                         "GetAnnouncementsPreference",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferences/GetAnnouncementsPreference");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetAnnouncementsPreferenceResponse>
                 transformer =
                         GetAnnouncementsPreferenceConverter.fromResponse(
@@ -515,7 +515,7 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
                         "ListAnnouncementsPreferences",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/ListAnnouncementsPreferences");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAnnouncementsPreferencesResponse>
                 transformer =
                         ListAnnouncementsPreferencesConverter.fromResponse(
@@ -566,7 +566,7 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
                         "UpdateAnnouncementsPreference",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/UpdateAnnouncementsPreference");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateAnnouncementsPreferenceResponse>
                 transformer =
                         UpdateAnnouncementsPreferenceConverter.fromResponse(

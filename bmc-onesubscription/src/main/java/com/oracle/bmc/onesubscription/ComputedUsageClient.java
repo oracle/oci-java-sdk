@@ -9,7 +9,6 @@ import com.oracle.bmc.onesubscription.requests.*;
 import com.oracle.bmc.onesubscription.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ComputedUsageClient implements ComputedUsage {
@@ -331,7 +330,7 @@ public class ComputedUsageClient implements ComputedUsage {
          * @return the client
          */
         public ComputedUsageClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class ComputedUsageClient implements ComputedUsage {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -409,7 +409,7 @@ public class ComputedUsageClient implements ComputedUsage {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "ComputedUsage", "GetComputedUsage", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetComputedUsageResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetComputedUsageResponse>
                 transformer =
                         GetComputedUsageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -447,8 +447,7 @@ public class ComputedUsageClient implements ComputedUsage {
                         "ListAggregatedComputedUsages",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAggregatedComputedUsagesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAggregatedComputedUsagesResponse>
                 transformer =
                         ListAggregatedComputedUsagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -482,7 +481,7 @@ public class ComputedUsageClient implements ComputedUsage {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "ComputedUsage", "ListComputedUsages", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListComputedUsagesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListComputedUsagesResponse>
                 transformer =
                         ListComputedUsagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -6,7 +6,6 @@ package com.oracle.bmc.keymanagement;
 
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -102,16 +101,16 @@ public class KmsVaultWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetVaultRequest, GetVaultResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetVaultRequest, GetVaultResponse>() {
                             @Override
                             public GetVaultResponse apply(GetVaultRequest request) {
                                 return client.getVault(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetVaultResponse>() {
+                        new java.util.function.Predicate<GetVaultResponse>() {
                             @Override
-                            public boolean apply(GetVaultResponse response) {
+                            public boolean test(GetVaultResponse response) {
                                 return targetStatesSet.contains(
                                         response.getVault().getLifecycleState());
                             }

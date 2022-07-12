@@ -9,7 +9,6 @@ import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 public class TransferDeviceClient implements TransferDevice {
@@ -333,9 +332,9 @@ public class TransferDeviceClient implements TransferDevice {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("TransferDevice-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("TransferDevice-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -401,7 +400,7 @@ public class TransferDeviceClient implements TransferDevice {
          * @return the client
          */
         public TransferDeviceClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -438,7 +437,8 @@ public class TransferDeviceClient implements TransferDevice {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -484,7 +484,7 @@ public class TransferDeviceClient implements TransferDevice {
                         "CreateTransferDevice",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTransferDeviceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTransferDeviceResponse>
                 transformer =
                         CreateTransferDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -525,7 +525,7 @@ public class TransferDeviceClient implements TransferDevice {
                         "DeleteTransferDevice",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTransferDeviceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTransferDeviceResponse>
                 transformer =
                         DeleteTransferDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -560,7 +560,7 @@ public class TransferDeviceClient implements TransferDevice {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferDevice", "GetTransferDevice", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetTransferDeviceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetTransferDeviceResponse>
                 transformer =
                         GetTransferDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -594,7 +594,7 @@ public class TransferDeviceClient implements TransferDevice {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferDevice", "ListTransferDevices", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListTransferDevicesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListTransferDevicesResponse>
                 transformer =
                         ListTransferDevicesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -631,7 +631,7 @@ public class TransferDeviceClient implements TransferDevice {
                         "UpdateTransferDevice",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTransferDeviceResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTransferDeviceResponse>
                 transformer =
                         UpdateTransferDeviceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

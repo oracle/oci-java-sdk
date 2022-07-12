@@ -7,7 +7,6 @@ package com.oracle.bmc.functions;
 import com.oracle.bmc.functions.internal.http.*;
 import com.oracle.bmc.functions.requests.*;
 import com.oracle.bmc.functions.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for FunctionsInvoke service. <br/>
@@ -320,7 +319,7 @@ public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
          * @return the client
          */
         public FunctionsInvokeAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -421,7 +421,7 @@ public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
                         "InvokeFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/InvokeFunction");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, InvokeFunctionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, InvokeFunctionResponse>
                 transformer =
                         InvokeFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<InvokeFunctionRequest, InvokeFunctionResponse>

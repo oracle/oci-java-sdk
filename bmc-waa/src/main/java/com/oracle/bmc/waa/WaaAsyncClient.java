@@ -7,7 +7,6 @@ package com.oracle.bmc.waa;
 import com.oracle.bmc.waa.internal.http.*;
 import com.oracle.bmc.waa.requests.*;
 import com.oracle.bmc.waa.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Waa service. <br/>
@@ -319,7 +318,7 @@ public class WaaAsyncClient implements WaaAsync {
          * @return the client
          */
         public WaaAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class WaaAsyncClient implements WaaAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class WaaAsyncClient implements WaaAsync {
                         "ChangeWebAppAccelerationCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeWebAppAccelerationCompartmentResponse>
                 transformer =
                         ChangeWebAppAccelerationCompartmentConverter.fromResponse(
@@ -465,7 +465,7 @@ public class WaaAsyncClient implements WaaAsync {
                         "ChangeWebAppAccelerationPolicyCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeWebAppAccelerationPolicyCompartmentResponse>
                 transformer =
@@ -522,7 +522,7 @@ public class WaaAsyncClient implements WaaAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "CreateWebAppAcceleration", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateWebAppAccelerationResponse>
                 transformer =
                         CreateWebAppAccelerationConverter.fromResponse(
@@ -575,7 +575,7 @@ public class WaaAsyncClient implements WaaAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "CreateWebAppAccelerationPolicy", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateWebAppAccelerationPolicyResponse>
                 transformer =
                         CreateWebAppAccelerationPolicyConverter.fromResponse(
@@ -627,7 +627,7 @@ public class WaaAsyncClient implements WaaAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "DeleteWebAppAcceleration", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteWebAppAccelerationResponse>
                 transformer =
                         DeleteWebAppAccelerationConverter.fromResponse(
@@ -674,7 +674,7 @@ public class WaaAsyncClient implements WaaAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "DeleteWebAppAccelerationPolicy", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteWebAppAccelerationPolicyResponse>
                 transformer =
                         DeleteWebAppAccelerationPolicyConverter.fromResponse(
@@ -721,8 +721,7 @@ public class WaaAsyncClient implements WaaAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "GetWebAppAcceleration", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetWebAppAccelerationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWebAppAccelerationResponse>
                 transformer =
                         GetWebAppAccelerationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -768,7 +767,7 @@ public class WaaAsyncClient implements WaaAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "GetWebAppAccelerationPolicy", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetWebAppAccelerationPolicyResponse>
                 transformer =
                         GetWebAppAccelerationPolicyConverter.fromResponse(
@@ -816,7 +815,7 @@ public class WaaAsyncClient implements WaaAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "ListWebAppAccelerationPolicies", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListWebAppAccelerationPoliciesResponse>
                 transformer =
                         ListWebAppAccelerationPoliciesConverter.fromResponse(
@@ -863,7 +862,7 @@ public class WaaAsyncClient implements WaaAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "ListWebAppAccelerations", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListWebAppAccelerationsResponse>
                 transformer =
                         ListWebAppAccelerationsConverter.fromResponse(
@@ -910,7 +909,7 @@ public class WaaAsyncClient implements WaaAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "PurgeWebAppAccelerationCache", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, PurgeWebAppAccelerationCacheResponse>
                 transformer =
                         PurgeWebAppAccelerationCacheConverter.fromResponse(
@@ -961,7 +960,7 @@ public class WaaAsyncClient implements WaaAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "UpdateWebAppAcceleration", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateWebAppAccelerationResponse>
                 transformer =
                         UpdateWebAppAccelerationConverter.fromResponse(
@@ -1013,7 +1012,7 @@ public class WaaAsyncClient implements WaaAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Waa", "UpdateWebAppAccelerationPolicy", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateWebAppAccelerationPolicyResponse>
                 transformer =
                         UpdateWebAppAccelerationPolicyConverter.fromResponse(

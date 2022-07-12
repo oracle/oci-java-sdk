@@ -6,7 +6,6 @@ package com.oracle.bmc.databasemanagement;
 
 import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -111,8 +110,8 @@ public class DbManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDbManagementPrivateEndpointRequest,
                                 GetDbManagementPrivateEndpointResponse>() {
                             @Override
@@ -121,10 +120,9 @@ public class DbManagementWaiters {
                                 return client.getDbManagementPrivateEndpoint(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetDbManagementPrivateEndpointResponse>() {
+                        new java.util.function.Predicate<GetDbManagementPrivateEndpointResponse>() {
                             @Override
-                            public boolean apply(GetDbManagementPrivateEndpointResponse response) {
+                            public boolean test(GetDbManagementPrivateEndpointResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDbManagementPrivateEndpoint()
                                                 .getLifecycleState());
@@ -212,16 +210,16 @@ public class DbManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetJobRequest, GetJobResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetJobRequest, GetJobResponse>() {
                             @Override
                             public GetJobResponse apply(GetJobRequest request) {
                                 return client.getJob(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetJobResponse>() {
+                        new java.util.function.Predicate<GetJobResponse>() {
                             @Override
-                            public boolean apply(GetJobResponse response) {
+                            public boolean test(GetJobResponse response) {
                                 return targetStatesSet.contains(
                                         response.getJob().getLifecycleState());
                             }
@@ -316,8 +314,8 @@ public class DbManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetManagedDatabaseGroupRequest, GetManagedDatabaseGroupResponse>() {
                             @Override
                             public GetManagedDatabaseGroupResponse apply(
@@ -325,9 +323,9 @@ public class DbManagementWaiters {
                                 return client.getManagedDatabaseGroup(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetManagedDatabaseGroupResponse>() {
+                        new java.util.function.Predicate<GetManagedDatabaseGroupResponse>() {
                             @Override
-                            public boolean apply(GetManagedDatabaseGroupResponse response) {
+                            public boolean test(GetManagedDatabaseGroupResponse response) {
                                 return targetStatesSet.contains(
                                         response.getManagedDatabaseGroup().getLifecycleState());
                             }
@@ -374,17 +372,17 @@ public class DbManagementWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

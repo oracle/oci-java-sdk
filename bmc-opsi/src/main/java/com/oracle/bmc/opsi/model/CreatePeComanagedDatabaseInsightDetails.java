@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * The information about database to be analyzed.
+ * The information about database to be analyzed. Either an opsiPrivateEndpointId or dbmPrivateEndpointId must be specified. If the dbmPrivateEndpointId is specified, a new Operations Insights private endpoint will be created.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -103,6 +103,22 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbmPrivateEndpointId")
+        private String dbmPrivateEndpointId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+         * @param dbmPrivateEndpointId the value to set
+         * @return this builder
+         **/
+        public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
+            this.dbmPrivateEndpointId = dbmPrivateEndpointId;
+            this.__explicitlySet__.add("dbmPrivateEndpointId");
+            return this;
+        }
+        /**
          * Database service name used for connection requests.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
@@ -176,6 +192,7 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
                             databaseId,
                             databaseResourceType,
                             opsiPrivateEndpointId,
+                            dbmPrivateEndpointId,
                             serviceName,
                             credentialDetails,
                             deploymentType,
@@ -193,6 +210,7 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
                             .databaseId(o.getDatabaseId())
                             .databaseResourceType(o.getDatabaseResourceType())
                             .opsiPrivateEndpointId(o.getOpsiPrivateEndpointId())
+                            .dbmPrivateEndpointId(o.getDbmPrivateEndpointId())
                             .serviceName(o.getServiceName())
                             .credentialDetails(o.getCredentialDetails())
                             .deploymentType(o.getDeploymentType())
@@ -222,6 +240,7 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
             String databaseId,
             String databaseResourceType,
             String opsiPrivateEndpointId,
+            String dbmPrivateEndpointId,
             String serviceName,
             CredentialDetails credentialDetails,
             DeploymentType deploymentType,
@@ -230,6 +249,7 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
         this.databaseId = databaseId;
         this.databaseResourceType = databaseResourceType;
         this.opsiPrivateEndpointId = opsiPrivateEndpointId;
+        this.dbmPrivateEndpointId = dbmPrivateEndpointId;
         this.serviceName = serviceName;
         this.credentialDetails = credentialDetails;
         this.deploymentType = deploymentType;
@@ -276,6 +296,20 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
      **/
     public String getOpsiPrivateEndpointId() {
         return opsiPrivateEndpointId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbmPrivateEndpointId")
+    private final String dbmPrivateEndpointId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+     * @return the value
+     **/
+    public String getDbmPrivateEndpointId() {
+        return dbmPrivateEndpointId;
     }
 
     /**
@@ -375,6 +409,7 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", databaseResourceType=").append(String.valueOf(this.databaseResourceType));
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
+        sb.append(", dbmPrivateEndpointId=").append(String.valueOf(this.dbmPrivateEndpointId));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
         sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
@@ -397,6 +432,7 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
         return java.util.Objects.equals(this.databaseId, other.databaseId)
                 && java.util.Objects.equals(this.databaseResourceType, other.databaseResourceType)
                 && java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
+                && java.util.Objects.equals(this.dbmPrivateEndpointId, other.dbmPrivateEndpointId)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
                 && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
                 && java.util.Objects.equals(this.deploymentType, other.deploymentType)
@@ -420,6 +456,11 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
                         + (this.opsiPrivateEndpointId == null
                                 ? 43
                                 : this.opsiPrivateEndpointId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbmPrivateEndpointId == null
+                                ? 43
+                                : this.dbmPrivateEndpointId.hashCode());
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
         result =
                 (result * PRIME)

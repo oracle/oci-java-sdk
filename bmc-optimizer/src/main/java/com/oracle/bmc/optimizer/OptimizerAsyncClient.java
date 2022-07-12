@@ -7,7 +7,6 @@ package com.oracle.bmc.optimizer;
 import com.oracle.bmc.optimizer.internal.http.*;
 import com.oracle.bmc.optimizer.requests.*;
 import com.oracle.bmc.optimizer.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for Optimizer service. <br/>
@@ -319,7 +318,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
          * @return the client
          */
         public OptimizerAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class OptimizerAsyncClient implements OptimizerAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -404,7 +404,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "BulkApplyRecommendations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Recommendation/BulkApplyRecommendations");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, BulkApplyRecommendationsResponse>
                 transformer =
                         BulkApplyRecommendationsConverter.fromResponse(
@@ -457,7 +457,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "CreateProfile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/CreateProfile");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateProfileResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateProfileResponse>
                 transformer =
                         CreateProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateProfileRequest, CreateProfileResponse>
@@ -506,7 +506,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "DeleteProfile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/DeleteProfile");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProfileResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteProfileResponse>
                 transformer =
                         DeleteProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteProfileRequest, DeleteProfileResponse>
@@ -551,8 +551,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "FilterResourceActions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceActionSummary/FilterResourceActions");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, FilterResourceActionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, FilterResourceActionsResponse>
                 transformer =
                         FilterResourceActionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -603,7 +602,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "GetCategory",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Category/GetCategory");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCategoryResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCategoryResponse>
                 transformer =
                         GetCategoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetCategoryRequest, GetCategoryResponse>
@@ -648,8 +647,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "GetEnrollmentStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/EnrollmentStatus/GetEnrollmentStatus");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetEnrollmentStatusResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEnrollmentStatusResponse>
                 transformer =
                         GetEnrollmentStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -694,7 +692,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "GetProfile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/GetProfile");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetProfileResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetProfileResponse>
                 transformer =
                         GetProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetProfileRequest, GetProfileResponse> handlerToUse =
@@ -739,7 +737,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "GetRecommendation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Recommendation/GetRecommendation");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRecommendationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetRecommendationResponse>
                 transformer =
                         GetRecommendationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -785,7 +783,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "GetResourceAction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceAction/GetResourceAction");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetResourceActionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetResourceActionResponse>
                 transformer =
                         GetResourceActionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -831,7 +829,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequest/GetWorkRequest");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
@@ -876,7 +874,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "ListCategories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/CategorySummary/ListCategories");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCategoriesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCategoriesResponse>
                 transformer =
                         ListCategoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListCategoriesRequest, ListCategoriesResponse>
@@ -921,8 +919,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "ListEnrollmentStatuses",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/EnrollmentStatusSummary/ListEnrollmentStatuses");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListEnrollmentStatusesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEnrollmentStatusesResponse>
                 transformer =
                         ListEnrollmentStatusesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -968,7 +965,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "ListHistories",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/HistorySummary/ListHistories");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListHistoriesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListHistoriesResponse>
                 transformer =
                         ListHistoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListHistoriesRequest, ListHistoriesResponse>
@@ -1013,7 +1010,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "ListProfileLevels",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ProfileLevelSummary/ListProfileLevels");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListProfileLevelsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListProfileLevelsResponse>
                 transformer =
                         ListProfileLevelsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1058,7 +1055,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "ListProfiles",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ProfileSummary/ListProfiles");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListProfilesResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListProfilesResponse>
                 transformer =
                         ListProfilesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListProfilesRequest, ListProfilesResponse>
@@ -1105,7 +1102,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "ListRecommendationStrategies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/RecommendationStrategySummary/ListRecommendationStrategies");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListRecommendationStrategiesResponse>
                 transformer =
                         ListRecommendationStrategiesConverter.fromResponse(
@@ -1154,8 +1151,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "ListRecommendations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/RecommendationSummary/ListRecommendations");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListRecommendationsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRecommendationsResponse>
                 transformer =
                         ListRecommendationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1204,7 +1200,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "ListResourceActionQueryableFields",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/QueryableFieldSummary/ListResourceActionQueryableFields");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ListResourceActionQueryableFieldsResponse>
                 transformer =
                         ListResourceActionQueryableFieldsConverter.fromResponse(
@@ -1255,8 +1251,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "ListResourceActions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceActionSummary/ListResourceActions");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListResourceActionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListResourceActionsResponse>
                 transformer =
                         ListResourceActionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1303,8 +1298,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequestError/ListWorkRequestErrors");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1351,8 +1345,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequestLogEntry/ListWorkRequestLogs");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1399,7 +1392,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequest/ListWorkRequests");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1445,8 +1438,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "UpdateEnrollmentStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/EnrollmentStatus/UpdateEnrollmentStatus");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateEnrollmentStatusResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateEnrollmentStatusResponse>
                 transformer =
                         UpdateEnrollmentStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1497,7 +1489,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "UpdateProfile",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/UpdateProfile");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProfileResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateProfileResponse>
                 transformer =
                         UpdateProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateProfileRequest, UpdateProfileResponse>
@@ -1547,8 +1539,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "UpdateRecommendation",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Recommendation/UpdateRecommendation");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateRecommendationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateRecommendationResponse>
                 transformer =
                         UpdateRecommendationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1600,8 +1591,7 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                         "UpdateResourceAction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceAction/UpdateResourceAction");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateResourceActionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateResourceActionResponse>
                 transformer =
                         UpdateResourceActionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

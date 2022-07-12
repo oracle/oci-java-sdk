@@ -7,7 +7,6 @@ package com.oracle.bmc.dts;
 import com.oracle.bmc.dts.internal.http.*;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for ShippingVendors service. <br/>
@@ -321,7 +320,7 @@ public class ShippingVendorsAsyncClient implements ShippingVendorsAsync {
          * @return the client
          */
         public ShippingVendorsAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class ShippingVendorsAsyncClient implements ShippingVendorsAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -405,8 +405,7 @@ public class ShippingVendorsAsyncClient implements ShippingVendorsAsync {
                         "ListShippingVendors",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListShippingVendorsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListShippingVendorsResponse>
                 transformer =
                         ListShippingVendorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -6,7 +6,6 @@ package com.oracle.bmc.waas;
 
 import com.oracle.bmc.waas.requests.*;
 import com.oracle.bmc.waas.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -106,17 +105,17 @@ public class WaasWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetAddressListRequest, GetAddressListResponse>() {
                             @Override
                             public GetAddressListResponse apply(GetAddressListRequest request) {
                                 return client.getAddressList(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetAddressListResponse>() {
+                        new java.util.function.Predicate<GetAddressListResponse>() {
                             @Override
-                            public boolean apply(GetAddressListResponse response) {
+                            public boolean test(GetAddressListResponse response) {
                                 return targetStatesSet.contains(
                                         response.getAddressList().getLifecycleState());
                             }
@@ -208,17 +207,17 @@ public class WaasWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetCertificateRequest, GetCertificateResponse>() {
                             @Override
                             public GetCertificateResponse apply(GetCertificateRequest request) {
                                 return client.getCertificate(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCertificateResponse>() {
+                        new java.util.function.Predicate<GetCertificateResponse>() {
                             @Override
-                            public boolean apply(GetCertificateResponse response) {
+                            public boolean test(GetCertificateResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCertificate().getLifecycleState());
                             }
@@ -314,8 +313,8 @@ public class WaasWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetCustomProtectionRuleRequest, GetCustomProtectionRuleResponse>() {
                             @Override
                             public GetCustomProtectionRuleResponse apply(
@@ -323,9 +322,9 @@ public class WaasWaiters {
                                 return client.getCustomProtectionRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetCustomProtectionRuleResponse>() {
+                        new java.util.function.Predicate<GetCustomProtectionRuleResponse>() {
                             @Override
-                            public boolean apply(GetCustomProtectionRuleResponse response) {
+                            public boolean test(GetCustomProtectionRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getCustomProtectionRule().getLifecycleState());
                             }
@@ -413,17 +412,17 @@ public class WaasWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWaasPolicyRequest, GetWaasPolicyResponse>() {
                             @Override
                             public GetWaasPolicyResponse apply(GetWaasPolicyRequest request) {
                                 return client.getWaasPolicy(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWaasPolicyResponse>() {
+                        new java.util.function.Predicate<GetWaasPolicyResponse>() {
                             @Override
-                            public boolean apply(GetWaasPolicyResponse response) {
+                            public boolean test(GetWaasPolicyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getWaasPolicy().getLifecycleState());
                             }
@@ -470,17 +469,17 @@ public class WaasWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

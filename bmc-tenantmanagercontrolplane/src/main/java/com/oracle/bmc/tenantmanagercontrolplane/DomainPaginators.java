@@ -44,19 +44,19 @@ public class DomainPaginators {
             final ListDomainsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDomainsRequest.Builder, ListDomainsRequest, ListDomainsResponse>(
-                new com.google.common.base.Supplier<ListDomainsRequest.Builder>() {
+                new java.util.function.Supplier<ListDomainsRequest.Builder>() {
                     @Override
                     public ListDomainsRequest.Builder get() {
                         return ListDomainsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDomainsResponse, String>() {
+                new java.util.function.Function<ListDomainsResponse, String>() {
                     @Override
                     public String apply(ListDomainsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDomainsRequest.Builder>,
                         ListDomainsRequest>() {
@@ -69,12 +69,12 @@ public class DomainPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListDomainsRequest, ListDomainsResponse>() {
+                new java.util.function.Function<ListDomainsRequest, ListDomainsResponse>() {
                     @Override
                     public ListDomainsResponse apply(ListDomainsRequest request) {
                         return client.listDomains(request);
@@ -96,19 +96,19 @@ public class DomainPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDomainsRequest.Builder, ListDomainsRequest, ListDomainsResponse,
                 com.oracle.bmc.tenantmanagercontrolplane.model.DomainSummary>(
-                new com.google.common.base.Supplier<ListDomainsRequest.Builder>() {
+                new java.util.function.Supplier<ListDomainsRequest.Builder>() {
                     @Override
                     public ListDomainsRequest.Builder get() {
                         return ListDomainsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListDomainsResponse, String>() {
+                new java.util.function.Function<ListDomainsResponse, String>() {
                     @Override
                     public String apply(ListDomainsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListDomainsRequest.Builder>,
                         ListDomainsRequest>() {
@@ -121,18 +121,18 @@ public class DomainPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<ListDomainsRequest, ListDomainsResponse>() {
+                new java.util.function.Function<ListDomainsRequest, ListDomainsResponse>() {
                     @Override
                     public ListDomainsResponse apply(ListDomainsRequest request) {
                         return client.listDomains(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListDomainsResponse,
                         java.util.List<
                                 com.oracle.bmc.tenantmanagercontrolplane.model.DomainSummary>>() {

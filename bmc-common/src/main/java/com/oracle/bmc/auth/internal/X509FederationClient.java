@@ -4,12 +4,28 @@
  */
 package com.oracle.bmc.auth.internal;
 
+import java.net.URI;
+import java.security.KeyPair;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.security.interfaces.RSAPublicKey;
+import java.util.HashSet;
+import java.time.Duration;
+import java.util.List;
+import java.util.Set;
+import java.util.function.Function;
+
+import javax.annotation.concurrent.Immutable;
+import javax.security.auth.RefreshFailedException;
+import javax.security.auth.Refreshable;
+import javax.ws.rs.client.Invocation.Builder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Response;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Function;
-import com.google.common.base.Preconditions;
 import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
+import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.X509CertificateSupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
@@ -20,7 +36,7 @@ import com.oracle.bmc.http.internal.WithHeaders;
 import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
-import org.slf4j.Logger;
+import com.oracle.bmc.util.internal.Validate;
 
 import javax.annotation.concurrent.Immutable;
 import javax.security.auth.RefreshFailedException;
@@ -38,6 +54,8 @@ import java.util.List;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
+
+import org.slf4j.Logger;
 
 /**
  * This class gets a security token from the auth service by signing the request with a PKI issued leaf certificate,
@@ -108,10 +126,13 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
             List<ClientConfigurator> additionalClientConfigurators,
             CircuitBreakerConfiguration circuitBreakerConfig,
             String purpose) {
-        this.leafCertificateSupplier = Preconditions.checkNotNull(leafCertificateSupplier);
-        this.sessionKeySupplier = Preconditions.checkNotNull(sessionKeySupplier);
+        this.leafCertificateSupplier =
+                Validate.notNull(
+                        leafCertificateSupplier, "leafCertificateSupplier must not be null");
+        this.sessionKeySupplier =
+                Validate.notNull(sessionKeySupplier, "sessionKeySupplier must not be null");
         this.intermediateCertificateSuppliers = intermediateCertificateSuppliers;
-        this.tenancyId = Preconditions.checkNotNull(tenancyId);
+        this.tenancyId = Validate.notNull(tenancyId, "tenancyId must not be null");
         this.federationHttpClient =
                 RestClientUtils.createRestClient(
                         federationEndpoint,
@@ -120,7 +141,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                         this,
                         circuitBreakerConfig);
         this.securityTokenAdapter = new SecurityTokenAdapter(null, sessionKeySupplier);
-        this.purpose = Preconditions.checkNotNull(purpose);
+        this.purpose = Validate.notNull(purpose, "purpose must not be null");
     }
 
     /**
@@ -348,8 +369,8 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                 Set<String> intermediateCertificates,
                 String purpose,
                 String fingerprintAlgorithm) {
-            this.certificate = Preconditions.checkNotNull(certificate);
-            this.publicKey = Preconditions.checkNotNull(publicKey);
+            this.certificate = Validate.notNull(certificate, "certificate must not be null");
+            this.publicKey = Validate.notNull(publicKey, "publicKey must not be null");
             this.intermediateCertificates = intermediateCertificates;
             this.purpose = purpose;
             this.fingerprintAlgorithm = fingerprintAlgorithm;

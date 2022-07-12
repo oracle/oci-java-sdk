@@ -7,7 +7,6 @@ package com.oracle.bmc.apigateway;
 import com.oracle.bmc.apigateway.internal.http.*;
 import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for UsagePlans service. <br/>
@@ -319,7 +318,7 @@ public class UsagePlansAsyncClient implements UsagePlansAsync {
          * @return the client
          */
         public UsagePlansAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -359,7 +358,8 @@ public class UsagePlansAsyncClient implements UsagePlansAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class UsagePlansAsyncClient implements UsagePlansAsync {
                         "ChangeUsagePlanCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/ChangeUsagePlanCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeUsagePlanCompartmentResponse>
                 transformer =
                         ChangeUsagePlanCompartmentConverter.fromResponse(
@@ -458,7 +458,7 @@ public class UsagePlansAsyncClient implements UsagePlansAsync {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "UsagePlans", "CreateUsagePlan", ib.getRequestUri().toString(), "");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateUsagePlanResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateUsagePlanResponse>
                 transformer =
                         CreateUsagePlanConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -509,7 +509,7 @@ public class UsagePlansAsyncClient implements UsagePlansAsync {
                         "DeleteUsagePlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/DeleteUsagePlan");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUsagePlanResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteUsagePlanResponse>
                 transformer =
                         DeleteUsagePlanConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -554,7 +554,7 @@ public class UsagePlansAsyncClient implements UsagePlansAsync {
                         "GetUsagePlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/GetUsagePlan");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetUsagePlanResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetUsagePlanResponse>
                 transformer =
                         GetUsagePlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetUsagePlanRequest, GetUsagePlanResponse>
@@ -599,7 +599,7 @@ public class UsagePlansAsyncClient implements UsagePlansAsync {
                         "ListUsagePlans",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/ListUsagePlans");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListUsagePlansResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListUsagePlansResponse>
                 transformer =
                         ListUsagePlansConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListUsagePlansRequest, ListUsagePlansResponse>
@@ -644,7 +644,7 @@ public class UsagePlansAsyncClient implements UsagePlansAsync {
                         "UpdateUsagePlan",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/UsagePlan/UpdateUsagePlan");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUsagePlanResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateUsagePlanResponse>
                 transformer =
                         UpdateUsagePlanConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

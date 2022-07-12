@@ -7,7 +7,6 @@ package com.oracle.bmc.functions;
 import com.oracle.bmc.functions.internal.http.*;
 import com.oracle.bmc.functions.requests.*;
 import com.oracle.bmc.functions.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for FunctionsManagement service. <br/>
@@ -320,7 +319,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
          * @return the client
          */
         public FunctionsManagementAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -360,7 +359,8 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -406,7 +406,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "ChangeApplicationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/ChangeApplicationCompartment");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>
                 transformer =
                         ChangeApplicationCompartmentConverter.fromResponse(
@@ -460,7 +460,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "CreateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/CreateApplication");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
                 transformer =
                         CreateApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -511,7 +511,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "CreateFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/CreateFunction");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFunctionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateFunctionResponse>
                 transformer =
                         CreateFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<CreateFunctionRequest, CreateFunctionResponse>
@@ -561,7 +561,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "DeleteApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/DeleteApplication");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
                 transformer =
                         DeleteApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -607,7 +607,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "DeleteFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/DeleteFunction");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFunctionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteFunctionResponse>
                 transformer =
                         DeleteFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResponse>
@@ -652,7 +652,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "GetApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/GetApplication");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetApplicationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetApplicationResponse>
                 transformer =
                         GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetApplicationRequest, GetApplicationResponse>
@@ -696,7 +696,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "GetFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/GetFunction");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetFunctionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, GetFunctionResponse>
                 transformer =
                         GetFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetFunctionRequest, GetFunctionResponse>
@@ -741,7 +741,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "ListApplications",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/ApplicationSummary/ListApplications");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
                 transformer =
                         ListApplicationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -786,7 +786,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "ListFunctions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/FunctionSummary/ListFunctions");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListFunctionsResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, ListFunctionsResponse>
                 transformer =
                         ListFunctionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<ListFunctionsRequest, ListFunctionsResponse>
@@ -831,7 +831,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "UpdateApplication",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/UpdateApplication");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
                 transformer =
                         UpdateApplicationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -882,7 +882,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "UpdateFunction",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/UpdateFunction");
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFunctionResponse>
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateFunctionResponse>
                 transformer =
                         UpdateFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<UpdateFunctionRequest, UpdateFunctionResponse>

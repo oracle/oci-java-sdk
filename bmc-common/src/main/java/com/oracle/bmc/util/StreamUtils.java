@@ -9,6 +9,7 @@ import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import com.oracle.bmc.io.internal.WrappedByteArrayInputStream;
 import com.oracle.bmc.io.internal.WrappedFileInputStream;
+import com.oracle.bmc.util.internal.Validate;
 import org.slf4j.Logger;
 
 import java.io.ByteArrayInputStream;
@@ -142,5 +143,50 @@ public class StreamUtils {
             return Optional.of(String.format("At offset %d: %d != %d", offset, ch, ch2));
         }
         return Optional.empty();
+    }
+
+    /**
+     * Skip the specified number of bytes in the stream.
+     * @param is stream
+     * @param count number of bytes to skip
+     * @return number of bytes that were skipped
+     * @throws IOException
+     */
+    public static long skipBytesInStream(InputStream is, long count) throws IOException {
+        // not wrapping in a buffered input stream; that could lead to reading more bytes than we want to skip
+        long bytesRead;
+        for (bytesRead = 0; bytesRead < count; ++bytesRead) {
+            int read = is.read();
+            if (read == -1) {
+                break;
+            }
+        }
+        return bytesRead;
+    }
+
+    /**
+     * Limit the number of bytes remaining in the input stream to at most this many bytes.
+     * The input stream may reach its end earlier.
+     * @param is input stream
+     * @param limit upper limit of remaining bytes
+     * @return limited stream
+     */
+    public static InputStream limitRemainingStreamLength(InputStream is, long limit) {
+        Validate.notNull(is, "input stream must not be null");
+        InputStream limitedStream =
+                new InputStream() {
+                    private volatile long remainingBytes = limit;
+
+                    @Override
+                    public synchronized int read() throws IOException {
+                        if (remainingBytes > 0) {
+                            --remainingBytes;
+                            return is.read();
+                        } else {
+                            return -1;
+                        }
+                    }
+                };
+        return new BufferedInputStream(limitedStream);
     }
 }

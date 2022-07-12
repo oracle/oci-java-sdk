@@ -9,7 +9,6 @@ import com.oracle.bmc.email.requests.*;
 import com.oracle.bmc.email.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class EmailClient implements Email {
@@ -334,9 +333,9 @@ public class EmailClient implements Email {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Email-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Email-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class EmailClient implements Email {
          * @return the client
          */
         public EmailClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class EmailClient implements Email {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -488,8 +488,7 @@ public class EmailClient implements Email {
                         "ChangeEmailDomainCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/ChangeEmailDomainCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeEmailDomainCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeEmailDomainCompartmentResponse>
                 transformer =
                         ChangeEmailDomainCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -532,7 +531,7 @@ public class EmailClient implements Email {
                         "ChangeSenderCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/ChangeSenderCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeSenderCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeSenderCompartmentResponse>
                 transformer =
                         ChangeSenderCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -573,7 +572,7 @@ public class EmailClient implements Email {
                         "CreateDkim",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/CreateDkim");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDkimResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDkimResponse> transformer =
                 CreateDkimConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -613,7 +612,7 @@ public class EmailClient implements Email {
                         "CreateEmailDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/CreateEmailDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateEmailDomainResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateEmailDomainResponse>
                 transformer =
                         CreateEmailDomainConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -654,9 +653,8 @@ public class EmailClient implements Email {
                         "CreateSender",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/CreateSender");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSenderResponse>
-                transformer =
-                        CreateSenderConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSenderResponse> transformer =
+                CreateSenderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -694,7 +692,7 @@ public class EmailClient implements Email {
                         "CreateSuppression",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Suppression/CreateSuppression");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSuppressionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSuppressionResponse>
                 transformer =
                         CreateSuppressionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -734,7 +732,7 @@ public class EmailClient implements Email {
                         "DeleteDkim",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/DeleteDkim");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDkimResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDkimResponse> transformer =
                 DeleteDkimConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -770,7 +768,7 @@ public class EmailClient implements Email {
                         "DeleteEmailDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/DeleteEmailDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEmailDomainResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteEmailDomainResponse>
                 transformer =
                         DeleteEmailDomainConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -808,9 +806,8 @@ public class EmailClient implements Email {
                         "DeleteSender",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/DeleteSender");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSenderResponse>
-                transformer =
-                        DeleteSenderConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSenderResponse> transformer =
+                DeleteSenderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -845,7 +842,7 @@ public class EmailClient implements Email {
                         "DeleteSuppression",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Suppression/DeleteSuppression");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSuppressionResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSuppressionResponse>
                 transformer =
                         DeleteSuppressionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -882,7 +879,7 @@ public class EmailClient implements Email {
                         "GetDkim",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/GetDkim");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetDkimResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetDkimResponse> transformer =
                 GetDkimConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -917,9 +914,8 @@ public class EmailClient implements Email {
                         "GetEmailDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/GetEmailDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetEmailDomainResponse>
-                transformer =
-                        GetEmailDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetEmailDomainResponse> transformer =
+                GetEmailDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -952,7 +948,7 @@ public class EmailClient implements Email {
                         "GetSender",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/GetSender");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSenderResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetSenderResponse> transformer =
                 GetSenderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -987,9 +983,8 @@ public class EmailClient implements Email {
                         "GetSuppression",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Suppression/GetSuppression");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSuppressionResponse>
-                transformer =
-                        GetSuppressionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetSuppressionResponse> transformer =
+                GetSuppressionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1023,9 +1018,8 @@ public class EmailClient implements Email {
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/WorkRequest/GetWorkRequest");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1058,7 +1052,7 @@ public class EmailClient implements Email {
                         "ListDkims",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/ListDkims");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListDkimsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListDkimsResponse> transformer =
                 ListDkimsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1093,7 +1087,7 @@ public class EmailClient implements Email {
                         "ListEmailDomains",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/ListEmailDomains");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListEmailDomainsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListEmailDomainsResponse>
                 transformer =
                         ListEmailDomainsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1130,9 +1124,8 @@ public class EmailClient implements Email {
                         "ListSenders",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/ListSenders");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSendersResponse>
-                transformer =
-                        ListSendersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListSendersResponse> transformer =
+                ListSendersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1166,7 +1159,7 @@ public class EmailClient implements Email {
                         "ListSuppressions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Suppression/ListSuppressions");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSuppressionsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSuppressionsResponse>
                 transformer =
                         ListSuppressionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1204,7 +1197,7 @@ public class EmailClient implements Email {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/WorkRequestErrorCollection/ListWorkRequestErrors");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1241,7 +1234,7 @@ public class EmailClient implements Email {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/WorkRequestLogEntryCollection/ListWorkRequestLogs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1278,7 +1271,7 @@ public class EmailClient implements Email {
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/WorkRequestSummaryCollection/ListWorkRequests");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1314,7 +1307,7 @@ public class EmailClient implements Email {
                         "UpdateDkim",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/UpdateDkim");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDkimResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDkimResponse> transformer =
                 UpdateDkimConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1353,7 +1346,7 @@ public class EmailClient implements Email {
                         "UpdateEmailDomain",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/UpdateEmailDomain");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEmailDomainResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateEmailDomainResponse>
                 transformer =
                         UpdateEmailDomainConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1394,9 +1387,8 @@ public class EmailClient implements Email {
                         "UpdateSender",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/UpdateSender");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSenderResponse>
-                transformer =
-                        UpdateSenderConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSenderResponse> transformer =
+                UpdateSenderConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

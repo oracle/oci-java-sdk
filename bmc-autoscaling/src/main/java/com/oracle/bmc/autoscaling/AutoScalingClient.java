@@ -9,7 +9,6 @@ import com.oracle.bmc.autoscaling.requests.*;
 import com.oracle.bmc.autoscaling.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class AutoScalingClient implements AutoScaling {
@@ -331,7 +330,7 @@ public class AutoScalingClient implements AutoScaling {
          * @return the client
          */
         public AutoScalingClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class AutoScalingClient implements AutoScaling {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -416,7 +416,7 @@ public class AutoScalingClient implements AutoScaling {
                         "ChangeAutoScalingConfigurationCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/ChangeAutoScalingConfigurationCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeAutoScalingConfigurationCompartmentResponse>
                 transformer =
@@ -461,7 +461,7 @@ public class AutoScalingClient implements AutoScaling {
                         "CreateAutoScalingConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/CreateAutoScalingConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateAutoScalingConfigurationResponse>
                 transformer =
                         CreateAutoScalingConfigurationConverter.fromResponse(
@@ -506,7 +506,7 @@ public class AutoScalingClient implements AutoScaling {
                         "CreateAutoScalingPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/CreateAutoScalingPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAutoScalingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAutoScalingPolicyResponse>
                 transformer =
                         CreateAutoScalingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -548,7 +548,7 @@ public class AutoScalingClient implements AutoScaling {
                         "DeleteAutoScalingConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/DeleteAutoScalingConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteAutoScalingConfigurationResponse>
                 transformer =
                         DeleteAutoScalingConfigurationConverter.fromResponse(
@@ -588,7 +588,7 @@ public class AutoScalingClient implements AutoScaling {
                         "DeleteAutoScalingPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/DeleteAutoScalingPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAutoScalingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAutoScalingPolicyResponse>
                 transformer =
                         DeleteAutoScalingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -627,8 +627,7 @@ public class AutoScalingClient implements AutoScaling {
                         "GetAutoScalingConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/GetAutoScalingConfiguration");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutoScalingConfigurationResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAutoScalingConfigurationResponse>
                 transformer =
                         GetAutoScalingConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -665,7 +664,7 @@ public class AutoScalingClient implements AutoScaling {
                         "GetAutoScalingPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/GetAutoScalingPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetAutoScalingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetAutoScalingPolicyResponse>
                 transformer =
                         GetAutoScalingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -703,7 +702,7 @@ public class AutoScalingClient implements AutoScaling {
                         "ListAutoScalingConfigurations",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfigurationSummary/ListAutoScalingConfigurations");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListAutoScalingConfigurationsResponse>
                 transformer =
                         ListAutoScalingConfigurationsConverter.fromResponse(
@@ -742,7 +741,7 @@ public class AutoScalingClient implements AutoScaling {
                         "ListAutoScalingPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicySummary/ListAutoScalingPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListAutoScalingPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListAutoScalingPoliciesResponse>
                 transformer =
                         ListAutoScalingPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -781,7 +780,7 @@ public class AutoScalingClient implements AutoScaling {
                         "UpdateAutoScalingConfiguration",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/UpdateAutoScalingConfiguration");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateAutoScalingConfigurationResponse>
                 transformer =
                         UpdateAutoScalingConfigurationConverter.fromResponse(
@@ -826,7 +825,7 @@ public class AutoScalingClient implements AutoScaling {
                         "UpdateAutoScalingPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/UpdateAutoScalingPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAutoScalingPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAutoScalingPolicyResponse>
                 transformer =
                         UpdateAutoScalingPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

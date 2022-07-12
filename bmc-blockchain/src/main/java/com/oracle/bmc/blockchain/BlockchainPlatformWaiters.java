@@ -6,7 +6,6 @@ package com.oracle.bmc.blockchain;
 
 import com.oracle.bmc.blockchain.requests.*;
 import com.oracle.bmc.blockchain.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -111,8 +110,8 @@ public class BlockchainPlatformWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetBlockchainPlatformRequest, GetBlockchainPlatformResponse>() {
                             @Override
                             public GetBlockchainPlatformResponse apply(
@@ -120,9 +119,9 @@ public class BlockchainPlatformWaiters {
                                 return client.getBlockchainPlatform(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetBlockchainPlatformResponse>() {
+                        new java.util.function.Predicate<GetBlockchainPlatformResponse>() {
                             @Override
-                            public boolean apply(GetBlockchainPlatformResponse response) {
+                            public boolean test(GetBlockchainPlatformResponse response) {
                                 return targetStatesSet.contains(
                                         response.getBlockchainPlatform().getLifecycleState());
                             }
@@ -210,16 +209,16 @@ public class BlockchainPlatformWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetOsnRequest, GetOsnResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetOsnRequest, GetOsnResponse>() {
                             @Override
                             public GetOsnResponse apply(GetOsnRequest request) {
                                 return client.getOsn(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetOsnResponse>() {
+                        new java.util.function.Predicate<GetOsnResponse>() {
                             @Override
-                            public boolean apply(GetOsnResponse response) {
+                            public boolean test(GetOsnResponse response) {
                                 return targetStatesSet.contains(
                                         response.getOsn().getLifecycleState());
                             }
@@ -305,16 +304,16 @@ public class BlockchainPlatformWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetPeerRequest, GetPeerResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetPeerRequest, GetPeerResponse>() {
                             @Override
                             public GetPeerResponse apply(GetPeerRequest request) {
                                 return client.getPeer(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetPeerResponse>() {
+                        new java.util.function.Predicate<GetPeerResponse>() {
                             @Override
-                            public boolean apply(GetPeerResponse response) {
+                            public boolean test(GetPeerResponse response) {
                                 return targetStatesSet.contains(
                                         response.getPeer().getLifecycleState());
                             }
@@ -360,17 +359,17 @@ public class BlockchainPlatformWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetWorkRequestRequest, GetWorkRequestResponse>() {
                             @Override
                             public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
                                 return client.getWorkRequest(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetWorkRequestResponse>() {
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
                             @Override
-                            public boolean apply(GetWorkRequestResponse response) {
+                            public boolean test(GetWorkRequestResponse response) {
                                 // work requests are complete once the time finished is available
                                 return response.getWorkRequest().getTimeFinished() != null;
                             }

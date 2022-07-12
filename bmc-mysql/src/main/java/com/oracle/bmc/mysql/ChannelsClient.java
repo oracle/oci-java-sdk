@@ -9,7 +9,6 @@ import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class ChannelsClient implements Channels {
@@ -334,9 +333,9 @@ public class ChannelsClient implements Channels {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Channels-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Channels-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class ChannelsClient implements Channels {
          * @return the client
          */
         public ChannelsClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class ChannelsClient implements Channels {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -484,9 +484,8 @@ public class ChannelsClient implements Channels {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Channels", "CreateChannel", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateChannelResponse>
-                transformer =
-                        CreateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateChannelResponse> transformer =
+                CreateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -524,9 +523,8 @@ public class ChannelsClient implements Channels {
                         "DeleteChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/DeleteChannel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteChannelResponse>
-                transformer =
-                        DeleteChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteChannelResponse> transformer =
+                DeleteChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -560,7 +558,7 @@ public class ChannelsClient implements Channels {
                         "GetChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/GetChannel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetChannelResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetChannelResponse> transformer =
                 GetChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -595,9 +593,8 @@ public class ChannelsClient implements Channels {
                         "ListChannels",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ChannelSummary/ListChannels");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListChannelsResponse>
-                transformer =
-                        ListChannelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListChannelsResponse> transformer =
+                ListChannelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -632,9 +629,8 @@ public class ChannelsClient implements Channels {
                         "ResetChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/ResetChannel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ResetChannelResponse>
-                transformer =
-                        ResetChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ResetChannelResponse> transformer =
+                ResetChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -670,9 +666,8 @@ public class ChannelsClient implements Channels {
                         "ResumeChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/ResumeChannel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ResumeChannelResponse>
-                transformer =
-                        ResumeChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ResumeChannelResponse> transformer =
+                ResumeChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -708,9 +703,8 @@ public class ChannelsClient implements Channels {
                         "UpdateChannel",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/UpdateChannel");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateChannelResponse>
-                transformer =
-                        UpdateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateChannelResponse> transformer =
+                UpdateChannelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

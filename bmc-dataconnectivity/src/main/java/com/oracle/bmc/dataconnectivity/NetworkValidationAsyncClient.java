@@ -7,7 +7,6 @@ package com.oracle.bmc.dataconnectivity;
 import com.oracle.bmc.dataconnectivity.internal.http.*;
 import com.oracle.bmc.dataconnectivity.requests.*;
 import com.oracle.bmc.dataconnectivity.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Async client implementation for NetworkValidation service. <br/>
@@ -321,7 +320,7 @@ public class NetworkValidationAsyncClient implements NetworkValidationAsync {
          * @return the client
          */
         public NetworkValidationAsyncClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -361,7 +360,8 @@ public class NetworkValidationAsyncClient implements NetworkValidationAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -409,7 +409,7 @@ public class NetworkValidationAsyncClient implements NetworkValidationAsync {
                         "GetNetworkConnectivityStatusCollection",
                         ib.getRequestUri().toString(),
                         "");
-        final com.google.common.base.Function<
+        final java.util.function.Function<
                         javax.ws.rs.core.Response, GetNetworkConnectivityStatusCollectionResponse>
                 transformer =
                         GetNetworkConnectivityStatusCollectionConverter.fromResponse(

@@ -9,7 +9,6 @@ import com.oracle.bmc.ocvp.requests.*;
 import com.oracle.bmc.ocvp.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class SddcClient implements Sddc {
@@ -334,9 +333,9 @@ public class SddcClient implements Sddc {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Sddc-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Sddc-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -404,7 +403,7 @@ public class SddcClient implements Sddc {
          * @return the client
          */
         public SddcClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -441,7 +440,8 @@ public class SddcClient implements Sddc {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -487,7 +487,7 @@ public class SddcClient implements Sddc {
                         "CancelDowngradeHcx",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CancelDowngradeHcx");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelDowngradeHcxResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelDowngradeHcxResponse>
                 transformer =
                         CancelDowngradeHcxConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -527,7 +527,7 @@ public class SddcClient implements Sddc {
                         "ChangeSddcCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/ChangeSddcCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeSddcCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeSddcCompartmentResponse>
                 transformer =
                         ChangeSddcCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -568,7 +568,7 @@ public class SddcClient implements Sddc {
                         "CreateSddc",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CreateSddc");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSddcResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSddcResponse> transformer =
                 CreateSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -606,7 +606,7 @@ public class SddcClient implements Sddc {
                         "DeleteSddc",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DeleteSddc");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSddcResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSddcResponse> transformer =
                 DeleteSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -643,9 +643,8 @@ public class SddcClient implements Sddc {
                         "DowngradeHcx",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DowngradeHcx");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DowngradeHcxResponse>
-                transformer =
-                        DowngradeHcxConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DowngradeHcxResponse> transformer =
+                DowngradeHcxConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -682,7 +681,7 @@ public class SddcClient implements Sddc {
                         "GetSddc",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/GetSddc");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetSddcResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetSddcResponse> transformer =
                 GetSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -716,7 +715,7 @@ public class SddcClient implements Sddc {
                         "ListSddcs",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SddcSummary/ListSddcs");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSddcsResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, ListSddcsResponse> transformer =
                 ListSddcsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -752,7 +751,7 @@ public class SddcClient implements Sddc {
                         "ListSupportedHostShapes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapeSummary/ListSupportedHostShapes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSupportedHostShapesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSupportedHostShapesResponse>
                 transformer =
                         ListSupportedHostShapesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -789,7 +788,7 @@ public class SddcClient implements Sddc {
                         "ListSupportedSkus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListSupportedSkusResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListSupportedSkusResponse>
                 transformer =
                         ListSupportedSkusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -828,7 +827,7 @@ public class SddcClient implements Sddc {
                         "ListSupportedVmwareSoftwareVersions",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ListSupportedVmwareSoftwareVersionsResponse>
                 transformer =
                         ListSupportedVmwareSoftwareVersionsConverter.fromResponse(
@@ -868,7 +867,7 @@ public class SddcClient implements Sddc {
                         "RefreshHcxLicenseStatus",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/RefreshHcxLicenseStatus");
-        com.google.common.base.Function<javax.ws.rs.core.Response, RefreshHcxLicenseStatusResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, RefreshHcxLicenseStatusResponse>
                 transformer =
                         RefreshHcxLicenseStatusConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -905,7 +904,7 @@ public class SddcClient implements Sddc {
                         "UpdateSddc",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSddcResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSddcResponse> transformer =
                 UpdateSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -944,7 +943,7 @@ public class SddcClient implements Sddc {
                         "UpgradeHcx",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpgradeHcx");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeHcxResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, UpgradeHcxResponse> transformer =
                 UpgradeHcxConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

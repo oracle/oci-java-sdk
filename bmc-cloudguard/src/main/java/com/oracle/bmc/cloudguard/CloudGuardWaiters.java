@@ -6,7 +6,6 @@ package com.oracle.bmc.cloudguard;
 
 import com.oracle.bmc.cloudguard.requests.*;
 import com.oracle.bmc.cloudguard.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -107,17 +106,17 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDataMaskRuleRequest, GetDataMaskRuleResponse>() {
                             @Override
                             public GetDataMaskRuleResponse apply(GetDataMaskRuleRequest request) {
                                 return client.getDataMaskRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDataMaskRuleResponse>() {
+                        new java.util.function.Predicate<GetDataMaskRuleResponse>() {
                             @Override
-                            public boolean apply(GetDataMaskRuleResponse response) {
+                            public boolean test(GetDataMaskRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDataMaskRule().getLifecycleState());
                             }
@@ -205,17 +204,16 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetDetectorRequest, GetDetectorResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetDetectorRequest, GetDetectorResponse>() {
                             @Override
                             public GetDetectorResponse apply(GetDetectorRequest request) {
                                 return client.getDetector(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDetectorResponse>() {
+                        new java.util.function.Predicate<GetDetectorResponse>() {
                             @Override
-                            public boolean apply(GetDetectorResponse response) {
+                            public boolean test(GetDetectorResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDetector().getLifecycleState());
                             }
@@ -307,8 +305,8 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDetectorRecipeRequest, GetDetectorRecipeResponse>() {
                             @Override
                             public GetDetectorRecipeResponse apply(
@@ -316,9 +314,9 @@ public class CloudGuardWaiters {
                                 return client.getDetectorRecipe(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDetectorRecipeResponse>() {
+                        new java.util.function.Predicate<GetDetectorRecipeResponse>() {
                             @Override
-                            public boolean apply(GetDetectorRecipeResponse response) {
+                            public boolean test(GetDetectorRecipeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDetectorRecipe().getLifecycleState());
                             }
@@ -414,8 +412,8 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDetectorRecipeDetectorRuleRequest,
                                 GetDetectorRecipeDetectorRuleResponse>() {
                             @Override
@@ -424,10 +422,9 @@ public class CloudGuardWaiters {
                                 return client.getDetectorRecipeDetectorRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
-                                GetDetectorRecipeDetectorRuleResponse>() {
+                        new java.util.function.Predicate<GetDetectorRecipeDetectorRuleResponse>() {
                             @Override
-                            public boolean apply(GetDetectorRecipeDetectorRuleResponse response) {
+                            public boolean test(GetDetectorRecipeDetectorRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDetectorRecipeDetectorRule()
                                                 .getLifecycleState());
@@ -520,17 +517,17 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetDetectorRuleRequest, GetDetectorRuleResponse>() {
                             @Override
                             public GetDetectorRuleResponse apply(GetDetectorRuleRequest request) {
                                 return client.getDetectorRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetDetectorRuleResponse>() {
+                        new java.util.function.Predicate<GetDetectorRuleResponse>() {
                             @Override
-                            public boolean apply(GetDetectorRuleResponse response) {
+                            public boolean test(GetDetectorRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getDetectorRule().getLifecycleState());
                             }
@@ -622,17 +619,17 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetManagedListRequest, GetManagedListResponse>() {
                             @Override
                             public GetManagedListResponse apply(GetManagedListRequest request) {
                                 return client.getManagedList(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetManagedListResponse>() {
+                        new java.util.function.Predicate<GetManagedListResponse>() {
                             @Override
-                            public boolean apply(GetManagedListResponse response) {
+                            public boolean test(GetManagedListResponse response) {
                                 return targetStatesSet.contains(
                                         response.getManagedList().getLifecycleState());
                             }
@@ -720,17 +717,16 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetProblemRequest, GetProblemResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetProblemRequest, GetProblemResponse>() {
                             @Override
                             public GetProblemResponse apply(GetProblemRequest request) {
                                 return client.getProblem(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetProblemResponse>() {
+                        new java.util.function.Predicate<GetProblemResponse>() {
                             @Override
-                            public boolean apply(GetProblemResponse response) {
+                            public boolean test(GetProblemResponse response) {
                                 return targetStatesSet.contains(
                                         response.getProblem().getLifecycleState());
                             }
@@ -821,8 +817,8 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetResponderRecipeRequest, GetResponderRecipeResponse>() {
                             @Override
                             public GetResponderRecipeResponse apply(
@@ -830,9 +826,9 @@ public class CloudGuardWaiters {
                                 return client.getResponderRecipe(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetResponderRecipeResponse>() {
+                        new java.util.function.Predicate<GetResponderRecipeResponse>() {
                             @Override
-                            public boolean apply(GetResponderRecipeResponse response) {
+                            public boolean test(GetResponderRecipeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getResponderRecipe().getLifecycleState());
                             }
@@ -928,8 +924,8 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetResponderRecipeResponderRuleRequest,
                                 GetResponderRecipeResponderRuleResponse>() {
                             @Override
@@ -938,10 +934,10 @@ public class CloudGuardWaiters {
                                 return client.getResponderRecipeResponderRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
+                        new java.util.function.Predicate<
                                 GetResponderRecipeResponderRuleResponse>() {
                             @Override
-                            public boolean apply(GetResponderRecipeResponderRuleResponse response) {
+                            public boolean test(GetResponderRecipeResponderRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getResponderRecipeResponderRule()
                                                 .getLifecycleState());
@@ -1034,17 +1030,17 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetResponderRuleRequest, GetResponderRuleResponse>() {
                             @Override
                             public GetResponderRuleResponse apply(GetResponderRuleRequest request) {
                                 return client.getResponderRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetResponderRuleResponse>() {
+                        new java.util.function.Predicate<GetResponderRuleResponse>() {
                             @Override
-                            public boolean apply(GetResponderRuleResponse response) {
+                            public boolean test(GetResponderRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getResponderRule().getLifecycleState());
                             }
@@ -1136,8 +1132,8 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetSecurityPolicyRequest, GetSecurityPolicyResponse>() {
                             @Override
                             public GetSecurityPolicyResponse apply(
@@ -1145,9 +1141,9 @@ public class CloudGuardWaiters {
                                 return client.getSecurityPolicy(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSecurityPolicyResponse>() {
+                        new java.util.function.Predicate<GetSecurityPolicyResponse>() {
                             @Override
-                            public boolean apply(GetSecurityPolicyResponse response) {
+                            public boolean test(GetSecurityPolicyResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSecurityPolicy().getLifecycleState());
                             }
@@ -1239,8 +1235,8 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetSecurityRecipeRequest, GetSecurityRecipeResponse>() {
                             @Override
                             public GetSecurityRecipeResponse apply(
@@ -1248,9 +1244,9 @@ public class CloudGuardWaiters {
                                 return client.getSecurityRecipe(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSecurityRecipeResponse>() {
+                        new java.util.function.Predicate<GetSecurityRecipeResponse>() {
                             @Override
-                            public boolean apply(GetSecurityRecipeResponse response) {
+                            public boolean test(GetSecurityRecipeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSecurityRecipe().getLifecycleState());
                             }
@@ -1342,17 +1338,17 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetSecurityZoneRequest, GetSecurityZoneResponse>() {
                             @Override
                             public GetSecurityZoneResponse apply(GetSecurityZoneRequest request) {
                                 return client.getSecurityZone(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetSecurityZoneResponse>() {
+                        new java.util.function.Predicate<GetSecurityZoneResponse>() {
                             @Override
-                            public boolean apply(GetSecurityZoneResponse response) {
+                            public boolean test(GetSecurityZoneResponse response) {
                                 return targetStatesSet.contains(
                                         response.getSecurityZone().getLifecycleState());
                             }
@@ -1440,16 +1436,16 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<GetTargetRequest, GetTargetResponse>() {
+                        () -> request,
+                        new java.util.function.Function<GetTargetRequest, GetTargetResponse>() {
                             @Override
                             public GetTargetResponse apply(GetTargetRequest request) {
                                 return client.getTarget(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTargetResponse>() {
+                        new java.util.function.Predicate<GetTargetResponse>() {
                             @Override
-                            public boolean apply(GetTargetResponse response) {
+                            public boolean test(GetTargetResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTarget().getLifecycleState());
                             }
@@ -1545,8 +1541,8 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetTargetDetectorRecipeRequest, GetTargetDetectorRecipeResponse>() {
                             @Override
                             public GetTargetDetectorRecipeResponse apply(
@@ -1554,9 +1550,9 @@ public class CloudGuardWaiters {
                                 return client.getTargetDetectorRecipe(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetTargetDetectorRecipeResponse>() {
+                        new java.util.function.Predicate<GetTargetDetectorRecipeResponse>() {
                             @Override
-                            public boolean apply(GetTargetDetectorRecipeResponse response) {
+                            public boolean test(GetTargetDetectorRecipeResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTargetDetectorRecipe().getLifecycleState());
                             }
@@ -1656,8 +1652,8 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetTargetDetectorRecipeDetectorRuleRequest,
                                 GetTargetDetectorRecipeDetectorRuleResponse>() {
                             @Override
@@ -1666,10 +1662,10 @@ public class CloudGuardWaiters {
                                 return client.getTargetDetectorRecipeDetectorRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
+                        new java.util.function.Predicate<
                                 GetTargetDetectorRecipeDetectorRuleResponse>() {
                             @Override
-                            public boolean apply(
+                            public boolean test(
                                     GetTargetDetectorRecipeDetectorRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTargetDetectorRecipeDetectorRule()
@@ -1771,8 +1767,8 @@ public class CloudGuardWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetTargetResponderRecipeResponderRuleRequest,
                                 GetTargetResponderRecipeResponderRuleResponse>() {
                             @Override
@@ -1781,10 +1777,10 @@ public class CloudGuardWaiters {
                                 return client.getTargetResponderRecipeResponderRule(request);
                             }
                         },
-                        new com.google.common.base.Predicate<
+                        new java.util.function.Predicate<
                                 GetTargetResponderRecipeResponderRuleResponse>() {
                             @Override
-                            public boolean apply(
+                            public boolean test(
                                     GetTargetResponderRecipeResponderRuleResponse response) {
                                 return targetStatesSet.contains(
                                         response.getTargetResponderRecipeResponderRule()

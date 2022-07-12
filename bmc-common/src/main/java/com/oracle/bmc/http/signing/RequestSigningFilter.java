@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.http.signing;
 
-import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.ClientRuntime;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -16,6 +15,8 @@ import javax.ws.rs.Priorities;
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.core.HttpHeaders;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -50,7 +51,7 @@ public class RequestSigningFilter extends AuthnClientFilter {
      * @param requestSigner the request signer instance
      */
     public RequestSigningFilter(@Nonnull final RequestSigner requestSigner) {
-        this(requestSigner, ImmutableMap.of());
+        this(requestSigner, Collections.unmodifiableMap(new HashMap<>()));
     }
 
     /**

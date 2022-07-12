@@ -46,20 +46,19 @@ public class AnnouncementsPreferencesPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListAnnouncementsPreferencesRequest.Builder, ListAnnouncementsPreferencesRequest,
                 ListAnnouncementsPreferencesResponse>(
-                new com.google.common.base.Supplier<ListAnnouncementsPreferencesRequest.Builder>() {
+                new java.util.function.Supplier<ListAnnouncementsPreferencesRequest.Builder>() {
                     @Override
                     public ListAnnouncementsPreferencesRequest.Builder get() {
                         return ListAnnouncementsPreferencesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListAnnouncementsPreferencesResponse, String>() {
+                new java.util.function.Function<ListAnnouncementsPreferencesResponse, String>() {
                     @Override
                     public String apply(ListAnnouncementsPreferencesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAnnouncementsPreferencesRequest.Builder>,
                         ListAnnouncementsPreferencesRequest>() {
@@ -72,12 +71,12 @@ public class AnnouncementsPreferencesPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAnnouncementsPreferencesRequest,
                         ListAnnouncementsPreferencesResponse>() {
                     @Override
@@ -104,20 +103,19 @@ public class AnnouncementsPreferencesPaginators {
                 ListAnnouncementsPreferencesRequest.Builder, ListAnnouncementsPreferencesRequest,
                 ListAnnouncementsPreferencesResponse,
                 com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary>(
-                new com.google.common.base.Supplier<ListAnnouncementsPreferencesRequest.Builder>() {
+                new java.util.function.Supplier<ListAnnouncementsPreferencesRequest.Builder>() {
                     @Override
                     public ListAnnouncementsPreferencesRequest.Builder get() {
                         return ListAnnouncementsPreferencesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<
-                        ListAnnouncementsPreferencesResponse, String>() {
+                new java.util.function.Function<ListAnnouncementsPreferencesResponse, String>() {
                     @Override
                     public String apply(ListAnnouncementsPreferencesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListAnnouncementsPreferencesRequest.Builder>,
                         ListAnnouncementsPreferencesRequest>() {
@@ -130,12 +128,12 @@ public class AnnouncementsPreferencesPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAnnouncementsPreferencesRequest,
                         ListAnnouncementsPreferencesResponse>() {
                     @Override
@@ -144,7 +142,7 @@ public class AnnouncementsPreferencesPaginators {
                         return client.listAnnouncementsPreferences(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListAnnouncementsPreferencesResponse,
                         java.util.List<
                                 com.oracle.bmc.announcementsservice.model

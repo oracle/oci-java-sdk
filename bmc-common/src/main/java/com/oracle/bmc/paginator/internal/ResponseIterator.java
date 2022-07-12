@@ -4,10 +4,9 @@
  */
 package com.oracle.bmc.paginator.internal;
 
-import com.google.common.base.Function;
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.function.Function;
 
 /**
  * An iterator for iterating over response objects returned from a list operation. Each time we advance

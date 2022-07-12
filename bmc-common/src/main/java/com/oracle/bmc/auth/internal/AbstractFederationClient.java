@@ -4,8 +4,6 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import com.google.common.base.Function;
-import com.google.common.base.Preconditions;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
@@ -22,7 +20,7 @@ import com.oracle.bmc.http.signing.DefaultRequestSigner;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
-import org.slf4j.Logger;
+import com.oracle.bmc.util.internal.Validate;
 
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.core.Response;
@@ -30,6 +28,9 @@ import java.net.URI;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Optional;
+import java.util.function.Function;
+
+import org.slf4j.Logger;
 
 /**
  * This class gets a security token from the auth service by signing the request with a PKI issued leaf certificate,
@@ -69,9 +70,13 @@ public abstract class AbstractFederationClient
             ClientConfigurator clientConfigurator,
             CircuitBreakerConfiguration circuitBreakerConfiguration) {
         this.resourcePrincipalTokenEndpoint =
-                Preconditions.checkNotNull(resourcePrincipalTokenEndpoint);
-        this.federationEndpoint = Preconditions.checkNotNull(federationEndpoint);
-        this.sessionKeySupplier = Preconditions.checkNotNull(sessionKeySupplier);
+                Validate.notNull(
+                        resourcePrincipalTokenEndpoint,
+                        "resourcePrincipalTokenEndpoint must not be null");
+        this.federationEndpoint =
+                Validate.notNull(federationEndpoint, "federationEndpoint must not be null");
+        this.sessionKeySupplier =
+                Validate.notNull(sessionKeySupplier, "sessionKeySupplier must not be null");
 
         RequestSigner requestSigner =
                 DefaultRequestSigner.createRequestSigner(basicAuthenticationDetailsProvider);

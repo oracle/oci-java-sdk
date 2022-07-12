@@ -9,7 +9,6 @@ import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class BlockstorageClient implements Blockstorage {
@@ -335,9 +334,9 @@ public class BlockstorageClient implements Blockstorage {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("Blockstorage-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("Blockstorage-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -406,7 +405,7 @@ public class BlockstorageClient implements Blockstorage {
          * @return the client
          */
         public BlockstorageClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -443,7 +442,8 @@ public class BlockstorageClient implements Blockstorage {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -489,7 +489,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ChangeBootVolumeBackupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/ChangeBootVolumeBackupCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeBootVolumeBackupCompartmentResponse>
                 transformer =
                         ChangeBootVolumeBackupCompartmentConverter.fromResponse(
@@ -533,8 +533,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ChangeBootVolumeCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/ChangeBootVolumeCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeBootVolumeCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeBootVolumeCompartmentResponse>
                 transformer =
                         ChangeBootVolumeCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -577,7 +576,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ChangeVolumeBackupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/ChangeVolumeBackupCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeVolumeBackupCompartmentResponse>
                 transformer =
                         ChangeVolumeBackupCompartmentConverter.fromResponse(
@@ -621,7 +620,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ChangeVolumeCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ChangeVolumeCompartment");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeVolumeCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeVolumeCompartmentResponse>
                 transformer =
                         ChangeVolumeCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -663,7 +662,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ChangeVolumeGroupBackupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/ChangeVolumeGroupBackupCompartment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeVolumeGroupBackupCompartmentResponse>
                 transformer =
                         ChangeVolumeGroupBackupCompartmentConverter.fromResponse(
@@ -707,8 +706,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ChangeVolumeGroupCompartment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/ChangeVolumeGroupCompartment");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeVolumeGroupCompartmentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeVolumeGroupCompartmentResponse>
                 transformer =
                         ChangeVolumeGroupCompartmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -751,7 +749,7 @@ public class BlockstorageClient implements Blockstorage {
                         "CopyBootVolumeBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/CopyBootVolumeBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CopyBootVolumeBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CopyBootVolumeBackupResponse>
                 transformer =
                         CopyBootVolumeBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -793,7 +791,7 @@ public class BlockstorageClient implements Blockstorage {
                         "CopyVolumeBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/CopyVolumeBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CopyVolumeBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CopyVolumeBackupResponse>
                 transformer =
                         CopyVolumeBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -836,7 +834,7 @@ public class BlockstorageClient implements Blockstorage {
                         "CopyVolumeGroupBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/CopyVolumeGroupBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CopyVolumeGroupBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CopyVolumeGroupBackupResponse>
                 transformer =
                         CopyVolumeGroupBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -878,7 +876,7 @@ public class BlockstorageClient implements Blockstorage {
                         "CreateBootVolume",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/CreateBootVolume");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBootVolumeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBootVolumeResponse>
                 transformer =
                         CreateBootVolumeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -921,7 +919,7 @@ public class BlockstorageClient implements Blockstorage {
                         "CreateBootVolumeBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/CreateBootVolumeBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBootVolumeBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBootVolumeBackupResponse>
                 transformer =
                         CreateBootVolumeBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -963,9 +961,8 @@ public class BlockstorageClient implements Blockstorage {
                         "CreateVolume",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/CreateVolume");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeResponse>
-                transformer =
-                        CreateVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVolumeResponse> transformer =
+                CreateVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1004,7 +1001,7 @@ public class BlockstorageClient implements Blockstorage {
                         "CreateVolumeBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/CreateVolumeBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVolumeBackupResponse>
                 transformer =
                         CreateVolumeBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1047,7 +1044,7 @@ public class BlockstorageClient implements Blockstorage {
                         "CreateVolumeBackupPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/CreateVolumeBackupPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeBackupPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVolumeBackupPolicyResponse>
                 transformer =
                         CreateVolumeBackupPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1089,7 +1086,7 @@ public class BlockstorageClient implements Blockstorage {
                         "CreateVolumeBackupPolicyAssignment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/CreateVolumeBackupPolicyAssignment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, CreateVolumeBackupPolicyAssignmentResponse>
                 transformer =
                         CreateVolumeBackupPolicyAssignmentConverter.fromResponse(
@@ -1133,7 +1130,7 @@ public class BlockstorageClient implements Blockstorage {
                         "CreateVolumeGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/CreateVolumeGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVolumeGroupResponse>
                 transformer =
                         CreateVolumeGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1176,7 +1173,7 @@ public class BlockstorageClient implements Blockstorage {
                         "CreateVolumeGroupBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/CreateVolumeGroupBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeGroupBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVolumeGroupBackupResponse>
                 transformer =
                         CreateVolumeGroupBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1214,7 +1211,7 @@ public class BlockstorageClient implements Blockstorage {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Blockstorage", "DeleteBootVolume", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBootVolumeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBootVolumeResponse>
                 transformer =
                         DeleteBootVolumeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1253,7 +1250,7 @@ public class BlockstorageClient implements Blockstorage {
                         "DeleteBootVolumeBackup",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBootVolumeBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBootVolumeBackupResponse>
                 transformer =
                         DeleteBootVolumeBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1292,7 +1289,7 @@ public class BlockstorageClient implements Blockstorage {
                         "DeleteBootVolumeKmsKey",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBootVolumeKmsKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBootVolumeKmsKeyResponse>
                 transformer =
                         DeleteBootVolumeKmsKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1327,9 +1324,8 @@ public class BlockstorageClient implements Blockstorage {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Blockstorage", "DeleteVolume", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeResponse>
-                transformer =
-                        DeleteVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVolumeResponse> transformer =
+                DeleteVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1361,7 +1357,7 @@ public class BlockstorageClient implements Blockstorage {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Blockstorage", "DeleteVolumeBackup", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVolumeBackupResponse>
                 transformer =
                         DeleteVolumeBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1400,7 +1396,7 @@ public class BlockstorageClient implements Blockstorage {
                         "DeleteVolumeBackupPolicy",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeBackupPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVolumeBackupPolicyResponse>
                 transformer =
                         DeleteVolumeBackupPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1439,7 +1435,7 @@ public class BlockstorageClient implements Blockstorage {
                         "DeleteVolumeBackupPolicyAssignment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteVolumeBackupPolicyAssignmentResponse>
                 transformer =
                         DeleteVolumeBackupPolicyAssignmentConverter.fromResponse(
@@ -1475,7 +1471,7 @@ public class BlockstorageClient implements Blockstorage {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Blockstorage", "DeleteVolumeGroup", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVolumeGroupResponse>
                 transformer =
                         DeleteVolumeGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1514,7 +1510,7 @@ public class BlockstorageClient implements Blockstorage {
                         "DeleteVolumeGroupBackup",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeGroupBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVolumeGroupBackupResponse>
                 transformer =
                         DeleteVolumeGroupBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1549,7 +1545,7 @@ public class BlockstorageClient implements Blockstorage {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Blockstorage", "DeleteVolumeKmsKey", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeKmsKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteVolumeKmsKeyResponse>
                 transformer =
                         DeleteVolumeKmsKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1588,7 +1584,7 @@ public class BlockstorageClient implements Blockstorage {
                         "GetBlockVolumeReplica",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BlockVolumeReplica/GetBlockVolumeReplica");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBlockVolumeReplicaResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetBlockVolumeReplicaResponse>
                 transformer =
                         GetBlockVolumeReplicaConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1625,9 +1621,8 @@ public class BlockstorageClient implements Blockstorage {
                         "GetBootVolume",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/GetBootVolume");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeResponse>
-                transformer =
-                        GetBootVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetBootVolumeResponse> transformer =
+                GetBootVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1661,7 +1656,7 @@ public class BlockstorageClient implements Blockstorage {
                         "GetBootVolumeBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/GetBootVolumeBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetBootVolumeBackupResponse>
                 transformer =
                         GetBootVolumeBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1698,7 +1693,7 @@ public class BlockstorageClient implements Blockstorage {
                         "GetBootVolumeKmsKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeKmsKey/GetBootVolumeKmsKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeKmsKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetBootVolumeKmsKeyResponse>
                 transformer =
                         GetBootVolumeKmsKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1735,7 +1730,7 @@ public class BlockstorageClient implements Blockstorage {
                         "GetBootVolumeReplica",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeReplica/GetBootVolumeReplica");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeReplicaResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetBootVolumeReplicaResponse>
                 transformer =
                         GetBootVolumeReplicaConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1771,7 +1766,7 @@ public class BlockstorageClient implements Blockstorage {
                         "GetVolume",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/GetVolume");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetVolumeResponse> transformer =
                 GetVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1806,7 +1801,7 @@ public class BlockstorageClient implements Blockstorage {
                         "GetVolumeBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/GetVolumeBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetVolumeBackupResponse>
                 transformer =
                         GetVolumeBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1844,7 +1839,7 @@ public class BlockstorageClient implements Blockstorage {
                         "GetVolumeBackupPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/GetVolumeBackupPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeBackupPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetVolumeBackupPolicyResponse>
                 transformer =
                         GetVolumeBackupPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1883,7 +1878,7 @@ public class BlockstorageClient implements Blockstorage {
                         "GetVolumeBackupPolicyAssetAssignment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/GetVolumeBackupPolicyAssetAssignment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetVolumeBackupPolicyAssetAssignmentResponse>
                 transformer =
                         GetVolumeBackupPolicyAssetAssignmentConverter.fromResponse(
@@ -1922,7 +1917,7 @@ public class BlockstorageClient implements Blockstorage {
                         "GetVolumeBackupPolicyAssignment",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/GetVolumeBackupPolicyAssignment");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, GetVolumeBackupPolicyAssignmentResponse>
                 transformer =
                         GetVolumeBackupPolicyAssignmentConverter.fromResponse(
@@ -1960,9 +1955,8 @@ public class BlockstorageClient implements Blockstorage {
                         "GetVolumeGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/GetVolumeGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupResponse>
-                transformer =
-                        GetVolumeGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetVolumeGroupResponse> transformer =
+                GetVolumeGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1996,7 +1990,7 @@ public class BlockstorageClient implements Blockstorage {
                         "GetVolumeGroupBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/GetVolumeGroupBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetVolumeGroupBackupResponse>
                 transformer =
                         GetVolumeGroupBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2034,7 +2028,7 @@ public class BlockstorageClient implements Blockstorage {
                         "GetVolumeGroupReplica",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupReplica/GetVolumeGroupReplica");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupReplicaResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetVolumeGroupReplicaResponse>
                 transformer =
                         GetVolumeGroupReplicaConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2071,7 +2065,7 @@ public class BlockstorageClient implements Blockstorage {
                         "GetVolumeKmsKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeKmsKey/GetVolumeKmsKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeKmsKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetVolumeKmsKeyResponse>
                 transformer =
                         GetVolumeKmsKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2109,7 +2103,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ListBlockVolumeReplicas",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BlockVolumeReplica/ListBlockVolumeReplicas");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBlockVolumeReplicasResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListBlockVolumeReplicasResponse>
                 transformer =
                         ListBlockVolumeReplicasConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2147,7 +2141,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ListBootVolumeBackups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/ListBootVolumeBackups");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBootVolumeBackupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListBootVolumeBackupsResponse>
                 transformer =
                         ListBootVolumeBackupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2185,7 +2179,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ListBootVolumeReplicas",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeReplica/ListBootVolumeReplicas");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBootVolumeReplicasResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListBootVolumeReplicasResponse>
                 transformer =
                         ListBootVolumeReplicasConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2222,7 +2216,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ListBootVolumes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/ListBootVolumes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListBootVolumesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListBootVolumesResponse>
                 transformer =
                         ListBootVolumesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2260,7 +2254,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ListVolumeBackupPolicies",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/ListVolumeBackupPolicies");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeBackupPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListVolumeBackupPoliciesResponse>
                 transformer =
                         ListVolumeBackupPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2297,7 +2291,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ListVolumeBackups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/ListVolumeBackups");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeBackupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListVolumeBackupsResponse>
                 transformer =
                         ListVolumeBackupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2335,7 +2329,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ListVolumeGroupBackups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/ListVolumeGroupBackups");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeGroupBackupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListVolumeGroupBackupsResponse>
                 transformer =
                         ListVolumeGroupBackupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2373,7 +2367,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ListVolumeGroupReplicas",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupReplica/ListVolumeGroupReplicas");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeGroupReplicasResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListVolumeGroupReplicasResponse>
                 transformer =
                         ListVolumeGroupReplicasConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2410,7 +2404,7 @@ public class BlockstorageClient implements Blockstorage {
                         "ListVolumeGroups",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/ListVolumeGroups");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeGroupsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListVolumeGroupsResponse>
                 transformer =
                         ListVolumeGroupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2447,9 +2441,8 @@ public class BlockstorageClient implements Blockstorage {
                         "ListVolumes",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumesResponse>
-                transformer =
-                        ListVolumesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListVolumesResponse> transformer =
+                ListVolumesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2483,7 +2476,7 @@ public class BlockstorageClient implements Blockstorage {
                         "UpdateBootVolume",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/UpdateBootVolume");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBootVolumeResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBootVolumeResponse>
                 transformer =
                         UpdateBootVolumeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2525,7 +2518,7 @@ public class BlockstorageClient implements Blockstorage {
                         "UpdateBootVolumeBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/UpdateBootVolumeBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBootVolumeBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBootVolumeBackupResponse>
                 transformer =
                         UpdateBootVolumeBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2567,7 +2560,7 @@ public class BlockstorageClient implements Blockstorage {
                         "UpdateBootVolumeKmsKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeKmsKey/UpdateBootVolumeKmsKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBootVolumeKmsKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBootVolumeKmsKeyResponse>
                 transformer =
                         UpdateBootVolumeKmsKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2608,9 +2601,8 @@ public class BlockstorageClient implements Blockstorage {
                         "UpdateVolume",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/UpdateVolume");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeResponse>
-                transformer =
-                        UpdateVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVolumeResponse> transformer =
+                UpdateVolumeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2648,7 +2640,7 @@ public class BlockstorageClient implements Blockstorage {
                         "UpdateVolumeBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/UpdateVolumeBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVolumeBackupResponse>
                 transformer =
                         UpdateVolumeBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2691,7 +2683,7 @@ public class BlockstorageClient implements Blockstorage {
                         "UpdateVolumeBackupPolicy",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/UpdateVolumeBackupPolicy");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeBackupPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVolumeBackupPolicyResponse>
                 transformer =
                         UpdateVolumeBackupPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2732,7 +2724,7 @@ public class BlockstorageClient implements Blockstorage {
                         "UpdateVolumeGroup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/UpdateVolumeGroup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeGroupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVolumeGroupResponse>
                 transformer =
                         UpdateVolumeGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2774,7 +2766,7 @@ public class BlockstorageClient implements Blockstorage {
                         "UpdateVolumeGroupBackup",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/UpdateVolumeGroupBackup");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeGroupBackupResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVolumeGroupBackupResponse>
                 transformer =
                         UpdateVolumeGroupBackupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -2815,7 +2807,7 @@ public class BlockstorageClient implements Blockstorage {
                         "UpdateVolumeKmsKey",
                         ib.getRequestUri().toString(),
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeKmsKey/UpdateVolumeKmsKey");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeKmsKeyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateVolumeKmsKeyResponse>
                 transformer =
                         UpdateVolumeKmsKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

@@ -9,7 +9,6 @@ import com.oracle.bmc.networkfirewall.requests.*;
 import com.oracle.bmc.networkfirewall.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class NetworkFirewallClient implements NetworkFirewall {
@@ -335,9 +334,9 @@ public class NetworkFirewallClient implements NetworkFirewall {
                             60L,
                             java.util.concurrent.TimeUnit.SECONDS,
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                    .setDaemon(true)
-                                    .setNameFormat("NetworkFirewall-waiters-%d")
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("NetworkFirewall-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
@@ -405,7 +404,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
          * @return the client
          */
         public NetworkFirewallClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -442,7 +441,8 @@ public class NetworkFirewallClient implements NetworkFirewall {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -484,7 +484,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "NetworkFirewall", "CancelWorkRequest", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -523,7 +523,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "ChangeNetworkFirewallCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkFirewallCompartmentResponse>
                 transformer =
                         ChangeNetworkFirewallCompartmentConverter.fromResponse(
@@ -569,7 +569,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "ChangeNetworkFirewallPolicyCompartment",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
+        java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkFirewallPolicyCompartmentResponse>
                 transformer =
                         ChangeNetworkFirewallPolicyCompartmentConverter.fromResponse(
@@ -614,7 +614,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "CreateNetworkFirewall",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateNetworkFirewallResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkFirewallResponse>
                 transformer =
                         CreateNetworkFirewallConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -657,8 +657,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "CreateNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateNetworkFirewallPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkFirewallPolicyResponse>
                 transformer =
                         CreateNetworkFirewallPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -701,7 +700,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "DeleteNetworkFirewall",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNetworkFirewallResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkFirewallResponse>
                 transformer =
                         DeleteNetworkFirewallConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -740,8 +739,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "DeleteNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteNetworkFirewallPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkFirewallPolicyResponse>
                 transformer =
                         DeleteNetworkFirewallPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -776,7 +774,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "NetworkFirewall", "GetNetworkFirewall", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkFirewallResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetNetworkFirewallResponse>
                 transformer =
                         GetNetworkFirewallConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -814,7 +812,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "GetNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkFirewallPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, GetNetworkFirewallPolicyResponse>
                 transformer =
                         GetNetworkFirewallPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -848,9 +846,8 @@ public class NetworkFirewallClient implements NetworkFirewall {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "NetworkFirewall", "GetWorkRequest", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -885,8 +882,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "ListNetworkFirewallPolicies",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListNetworkFirewallPoliciesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListNetworkFirewallPoliciesResponse>
                 transformer =
                         ListNetworkFirewallPoliciesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -923,7 +919,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "ListNetworkFirewalls",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListNetworkFirewallsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListNetworkFirewallsResponse>
                 transformer =
                         ListNetworkFirewallsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -961,7 +957,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -998,7 +994,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1032,7 +1028,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "NetworkFirewall", "ListWorkRequests", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1070,7 +1066,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "UpdateNetworkFirewall",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNetworkFirewallResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkFirewallResponse>
                 transformer =
                         UpdateNetworkFirewallConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -1112,8 +1108,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "UpdateNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
                         "");
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateNetworkFirewallPolicyResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkFirewallPolicyResponse>
                 transformer =
                         UpdateNetworkFirewallPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));

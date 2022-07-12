@@ -45,19 +45,19 @@ public class OrganizationPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListOrganizationTenanciesRequest.Builder, ListOrganizationTenanciesRequest,
                 ListOrganizationTenanciesResponse>(
-                new com.google.common.base.Supplier<ListOrganizationTenanciesRequest.Builder>() {
+                new java.util.function.Supplier<ListOrganizationTenanciesRequest.Builder>() {
                     @Override
                     public ListOrganizationTenanciesRequest.Builder get() {
                         return ListOrganizationTenanciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListOrganizationTenanciesResponse, String>() {
+                new java.util.function.Function<ListOrganizationTenanciesResponse, String>() {
                     @Override
                     public String apply(ListOrganizationTenanciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListOrganizationTenanciesRequest.Builder>,
                         ListOrganizationTenanciesRequest>() {
@@ -70,12 +70,12 @@ public class OrganizationPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOrganizationTenanciesRequest, ListOrganizationTenanciesResponse>() {
                     @Override
                     public ListOrganizationTenanciesResponse apply(
@@ -101,19 +101,19 @@ public class OrganizationPaginators {
                 ListOrganizationTenanciesRequest.Builder, ListOrganizationTenanciesRequest,
                 ListOrganizationTenanciesResponse,
                 com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancySummary>(
-                new com.google.common.base.Supplier<ListOrganizationTenanciesRequest.Builder>() {
+                new java.util.function.Supplier<ListOrganizationTenanciesRequest.Builder>() {
                     @Override
                     public ListOrganizationTenanciesRequest.Builder get() {
                         return ListOrganizationTenanciesRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListOrganizationTenanciesResponse, String>() {
+                new java.util.function.Function<ListOrganizationTenanciesResponse, String>() {
                     @Override
                     public String apply(ListOrganizationTenanciesResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListOrganizationTenanciesRequest.Builder>,
                         ListOrganizationTenanciesRequest>() {
@@ -126,12 +126,12 @@ public class OrganizationPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOrganizationTenanciesRequest, ListOrganizationTenanciesResponse>() {
                     @Override
                     public ListOrganizationTenanciesResponse apply(
@@ -139,7 +139,7 @@ public class OrganizationPaginators {
                         return client.listOrganizationTenancies(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOrganizationTenanciesResponse,
                         java.util.List<
                                 com.oracle.bmc.tenantmanagercontrolplane.model
@@ -166,19 +166,19 @@ public class OrganizationPaginators {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListOrganizationsRequest.Builder, ListOrganizationsRequest,
                 ListOrganizationsResponse>(
-                new com.google.common.base.Supplier<ListOrganizationsRequest.Builder>() {
+                new java.util.function.Supplier<ListOrganizationsRequest.Builder>() {
                     @Override
                     public ListOrganizationsRequest.Builder get() {
                         return ListOrganizationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListOrganizationsResponse, String>() {
+                new java.util.function.Function<ListOrganizationsResponse, String>() {
                     @Override
                     public String apply(ListOrganizationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListOrganizationsRequest.Builder>,
                         ListOrganizationsRequest>() {
@@ -191,12 +191,12 @@ public class OrganizationPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOrganizationsRequest, ListOrganizationsResponse>() {
                     @Override
                     public ListOrganizationsResponse apply(ListOrganizationsRequest request) {
@@ -220,19 +220,19 @@ public class OrganizationPaginators {
                 ListOrganizationsRequest.Builder, ListOrganizationsRequest,
                 ListOrganizationsResponse,
                 com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationSummary>(
-                new com.google.common.base.Supplier<ListOrganizationsRequest.Builder>() {
+                new java.util.function.Supplier<ListOrganizationsRequest.Builder>() {
                     @Override
                     public ListOrganizationsRequest.Builder get() {
                         return ListOrganizationsRequest.builder().copy(request);
                     }
                 },
-                new com.google.common.base.Function<ListOrganizationsResponse, String>() {
+                new java.util.function.Function<ListOrganizationsResponse, String>() {
                     @Override
                     public String apply(ListOrganizationsResponse response) {
                         return response.getOpcNextPage();
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                 ListOrganizationsRequest.Builder>,
                         ListOrganizationsRequest>() {
@@ -245,19 +245,19 @@ public class OrganizationPaginators {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orNull())
+                                    .page(input.getToken().orElse(null))
                                     .build();
                         }
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOrganizationsRequest, ListOrganizationsResponse>() {
                     @Override
                     public ListOrganizationsResponse apply(ListOrganizationsRequest request) {
                         return client.listOrganizations(request);
                     }
                 },
-                new com.google.common.base.Function<
+                new java.util.function.Function<
                         ListOrganizationsResponse,
                         java.util.List<
                                 com.oracle.bmc.tenantmanagercontrolplane.model

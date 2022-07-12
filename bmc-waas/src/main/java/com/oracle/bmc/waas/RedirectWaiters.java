@@ -6,7 +6,6 @@ package com.oracle.bmc.waas;
 
 import com.oracle.bmc.waas.requests.*;
 import com.oracle.bmc.waas.responses.*;
-import javax.annotation.Nonnull;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
@@ -106,17 +105,17 @@ public class RedirectWaiters {
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
+                        () -> request,
+                        new java.util.function.Function<
                                 GetHttpRedirectRequest, GetHttpRedirectResponse>() {
                             @Override
                             public GetHttpRedirectResponse apply(GetHttpRedirectRequest request) {
                                 return client.getHttpRedirect(request);
                             }
                         },
-                        new com.google.common.base.Predicate<GetHttpRedirectResponse>() {
+                        new java.util.function.Predicate<GetHttpRedirectResponse>() {
                             @Override
-                            public boolean apply(GetHttpRedirectResponse response) {
+                            public boolean test(GetHttpRedirectResponse response) {
                                 return targetStatesSet.contains(
                                         response.getHttpRedirect().getLifecycleState());
                             }

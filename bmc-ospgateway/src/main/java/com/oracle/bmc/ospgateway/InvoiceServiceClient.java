@@ -9,7 +9,6 @@ import com.oracle.bmc.ospgateway.requests.*;
 import com.oracle.bmc.ospgateway.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import javax.annotation.Nonnull;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public class InvoiceServiceClient implements InvoiceService {
@@ -331,7 +330,7 @@ public class InvoiceServiceClient implements InvoiceService {
          * @return the client
          */
         public InvoiceServiceClient build(
-                @Nonnull
+                @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
             if (authenticationDetailsProvider == null) {
@@ -367,7 +366,8 @@ public class InvoiceServiceClient implements InvoiceService {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -419,7 +419,7 @@ public class InvoiceServiceClient implements InvoiceService {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "InvoiceService", "DownloadPdfContent", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, DownloadPdfContentResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, DownloadPdfContentResponse>
                 transformer =
                         DownloadPdfContentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -453,7 +453,7 @@ public class InvoiceServiceClient implements InvoiceService {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "InvoiceService", "GetInvoice", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetInvoiceResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, GetInvoiceResponse> transformer =
                 GetInvoiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -485,7 +485,7 @@ public class InvoiceServiceClient implements InvoiceService {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "InvoiceService", "ListInvoiceLines", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoiceLinesResponse>
+        java.util.function.Function<javax.ws.rs.core.Response, ListInvoiceLinesResponse>
                 transformer =
                         ListInvoiceLinesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
@@ -519,9 +519,8 @@ public class InvoiceServiceClient implements InvoiceService {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "InvoiceService", "ListInvoices", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoicesResponse>
-                transformer =
-                        ListInvoicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        java.util.function.Function<javax.ws.rs.core.Response, ListInvoicesResponse> transformer =
+                ListInvoicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -552,7 +551,7 @@ public class InvoiceServiceClient implements InvoiceService {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "InvoiceService", "PayInvoice", ib.getRequestUri().toString(), "");
-        com.google.common.base.Function<javax.ws.rs.core.Response, PayInvoiceResponse> transformer =
+        java.util.function.Function<javax.ws.rs.core.Response, PayInvoiceResponse> transformer =
                 PayInvoiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
