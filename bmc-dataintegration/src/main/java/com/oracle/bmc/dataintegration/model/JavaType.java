@@ -188,9 +188,18 @@ public final class JavaType extends BaseType {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JavaType(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", javaTypeName=").append(String.valueOf(this.javaTypeName));
         sb.append(", configDefinition=").append(String.valueOf(this.configDefinition));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

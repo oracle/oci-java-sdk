@@ -241,9 +241,18 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDataGuardAssociationToExistingVmClusterDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", peerVmClusterId=").append(String.valueOf(this.peerVmClusterId));
         sb.append(", peerDbHomeId=").append(String.valueOf(this.peerDbHomeId));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

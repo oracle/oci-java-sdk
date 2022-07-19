@@ -6,9 +6,13 @@ package com.oracle.bmc.encryption.internal;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.oracle.bmc.auth.internal.AuthUtils;
 import com.oracle.bmc.http.internal.RestClientFactory;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class EncryptionHeader {
     private String additionalAuthenticatedData;
@@ -25,7 +29,7 @@ public class EncryptionHeader {
 
     @JsonIgnore
     public byte[] getIvBytes() {
-        return Base64.getDecoder().decode(iv);
+        return AuthUtils.base64Decode(iv);
     }
 
     @JsonIgnore

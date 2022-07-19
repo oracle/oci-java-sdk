@@ -123,6 +123,15 @@ public final class BitbucketCloudFilterAttributes {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BitbucketCloudFilterAttributes(");
         sb.append("headRef=").append(String.valueOf(this.headRef));

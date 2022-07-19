@@ -26,20 +26,23 @@ public final class RouteRule {
         "destination",
         "destinationType",
         "networkEntityId",
-        "description"
+        "description",
+        "routeType"
     })
     public RouteRule(
             String cidrBlock,
             String destination,
             DestinationType destinationType,
             String networkEntityId,
-            String description) {
+            String description,
+            RouteType routeType) {
         super();
         this.cidrBlock = cidrBlock;
         this.destination = destination;
         this.destinationType = destinationType;
         this.networkEntityId = networkEntityId;
         this.description = description;
+        this.routeType = routeType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -192,6 +195,24 @@ public final class RouteRule {
             this.__explicitlySet__.add("description");
             return this;
         }
+        /**
+         * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the route table.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("routeType")
+        private RouteType routeType;
+
+        /**
+         * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the route table.
+         *
+         * @param routeType the value to set
+         * @return this builder
+         **/
+        public Builder routeType(RouteType routeType) {
+            this.routeType = routeType;
+            this.__explicitlySet__.add("routeType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -199,7 +220,12 @@ public final class RouteRule {
         public RouteRule build() {
             RouteRule __instance__ =
                     new RouteRule(
-                            cidrBlock, destination, destinationType, networkEntityId, description);
+                            cidrBlock,
+                            destination,
+                            destinationType,
+                            networkEntityId,
+                            description,
+                            routeType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -211,7 +237,8 @@ public final class RouteRule {
                             .destination(o.getDestination())
                             .destinationType(o.getDestinationType())
                             .networkEntityId(o.getNetworkEntityId())
-                            .description(o.getDescription());
+                            .description(o.getDescription())
+                            .routeType(o.getRouteType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -422,8 +449,82 @@ public final class RouteRule {
         return description;
     }
 
+    /**
+     * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the route table.
+     *
+     **/
+    public enum RouteType {
+        Static("STATIC"),
+        Local("LOCAL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RouteType.class);
+
+        private final String value;
+        private static java.util.Map<String, RouteType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RouteType v : RouteType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        RouteType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RouteType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'RouteType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the route table.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeType")
+    private final RouteType routeType;
+
+    /**
+     * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the route table.
+     *
+     * @return the value
+     **/
+    public RouteType getRouteType() {
+        return routeType;
+    }
+
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RouteRule(");
         sb.append("cidrBlock=").append(String.valueOf(this.cidrBlock));
@@ -431,6 +532,7 @@ public final class RouteRule {
         sb.append(", destinationType=").append(String.valueOf(this.destinationType));
         sb.append(", networkEntityId=").append(String.valueOf(this.networkEntityId));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", routeType=").append(String.valueOf(this.routeType));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -451,6 +553,7 @@ public final class RouteRule {
                 && java.util.Objects.equals(this.destinationType, other.destinationType)
                 && java.util.Objects.equals(this.networkEntityId, other.networkEntityId)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.routeType, other.routeType)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -467,6 +570,7 @@ public final class RouteRule {
                 (result * PRIME)
                         + (this.networkEntityId == null ? 43 : this.networkEntityId.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.routeType == null ? 43 : this.routeType.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

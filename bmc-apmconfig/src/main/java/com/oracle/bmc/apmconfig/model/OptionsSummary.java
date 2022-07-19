@@ -263,9 +263,18 @@ public final class OptionsSummary extends ConfigSummary {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OptionsSummary(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", options=").append(String.valueOf(this.options));
         sb.append(", group=").append(String.valueOf(this.group));

@@ -34,7 +34,8 @@ public final class UpdateInstanceDetails {
         "instanceOptions",
         "faultDomain",
         "launchOptions",
-        "availabilityConfig"
+        "availabilityConfig",
+        "timeMaintenanceRebootDue"
     })
     public UpdateInstanceDetails(
             String capacityReservationId,
@@ -49,7 +50,8 @@ public final class UpdateInstanceDetails {
             InstanceOptions instanceOptions,
             String faultDomain,
             UpdateLaunchOptions launchOptions,
-            UpdateInstanceAvailabilityConfigDetails availabilityConfig) {
+            UpdateInstanceAvailabilityConfigDetails availabilityConfig,
+            java.util.Date timeMaintenanceRebootDue) {
         super();
         this.capacityReservationId = capacityReservationId;
         this.definedTags = definedTags;
@@ -64,6 +66,7 @@ public final class UpdateInstanceDetails {
         this.faultDomain = faultDomain;
         this.launchOptions = launchOptions;
         this.availabilityConfig = availabilityConfig;
+        this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -369,6 +372,38 @@ public final class UpdateInstanceDetails {
             this.__explicitlySet__.add("availabilityConfig");
             return this;
         }
+        /**
+         * The date and time the instance is expected to be stopped and restarted, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * If the instance hasn't been rebooted after this date, Oracle reboots the instance within 24 hours of the time
+         * and date that maintenance is due.
+         * Regardless of how the instance is stopped, this flag is reset to empty as soon as the instance reaches
+         * Stopped state.
+         * <p>
+         * Example: {@code 2018-05-25T21:10:29.600Z}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")
+        private java.util.Date timeMaintenanceRebootDue;
+
+        /**
+         * The date and time the instance is expected to be stopped and restarted, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * If the instance hasn't been rebooted after this date, Oracle reboots the instance within 24 hours of the time
+         * and date that maintenance is due.
+         * Regardless of how the instance is stopped, this flag is reset to empty as soon as the instance reaches
+         * Stopped state.
+         * <p>
+         * Example: {@code 2018-05-25T21:10:29.600Z}
+         *
+         * @param timeMaintenanceRebootDue the value to set
+         * @return this builder
+         **/
+        public Builder timeMaintenanceRebootDue(java.util.Date timeMaintenanceRebootDue) {
+            this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
+            this.__explicitlySet__.add("timeMaintenanceRebootDue");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -388,7 +423,8 @@ public final class UpdateInstanceDetails {
                             instanceOptions,
                             faultDomain,
                             launchOptions,
-                            availabilityConfig);
+                            availabilityConfig,
+                            timeMaintenanceRebootDue);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -408,7 +444,8 @@ public final class UpdateInstanceDetails {
                             .instanceOptions(o.getInstanceOptions())
                             .faultDomain(o.getFaultDomain())
                             .launchOptions(o.getLaunchOptions())
-                            .availabilityConfig(o.getAvailabilityConfig());
+                            .availabilityConfig(o.getAvailabilityConfig())
+                            .timeMaintenanceRebootDue(o.getTimeMaintenanceRebootDue());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -699,8 +736,47 @@ public final class UpdateInstanceDetails {
         return availabilityConfig;
     }
 
+    /**
+     * The date and time the instance is expected to be stopped and restarted, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * If the instance hasn't been rebooted after this date, Oracle reboots the instance within 24 hours of the time
+     * and date that maintenance is due.
+     * Regardless of how the instance is stopped, this flag is reset to empty as soon as the instance reaches
+     * Stopped state.
+     * <p>
+     * Example: {@code 2018-05-25T21:10:29.600Z}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")
+    private final java.util.Date timeMaintenanceRebootDue;
+
+    /**
+     * The date and time the instance is expected to be stopped and restarted, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * If the instance hasn't been rebooted after this date, Oracle reboots the instance within 24 hours of the time
+     * and date that maintenance is due.
+     * Regardless of how the instance is stopped, this flag is reset to empty as soon as the instance reaches
+     * Stopped state.
+     * <p>
+     * Example: {@code 2018-05-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeMaintenanceRebootDue() {
+        return timeMaintenanceRebootDue;
+    }
+
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateInstanceDetails(");
         sb.append("capacityReservationId=").append(String.valueOf(this.capacityReservationId));
@@ -716,6 +792,8 @@ public final class UpdateInstanceDetails {
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", launchOptions=").append(String.valueOf(this.launchOptions));
         sb.append(", availabilityConfig=").append(String.valueOf(this.availabilityConfig));
+        sb.append(", timeMaintenanceRebootDue=")
+                .append(String.valueOf(this.timeMaintenanceRebootDue));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -744,6 +822,8 @@ public final class UpdateInstanceDetails {
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.launchOptions, other.launchOptions)
                 && java.util.Objects.equals(this.availabilityConfig, other.availabilityConfig)
+                && java.util.Objects.equals(
+                        this.timeMaintenanceRebootDue, other.timeMaintenanceRebootDue)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -778,6 +858,11 @@ public final class UpdateInstanceDetails {
                         + (this.availabilityConfig == null
                                 ? 43
                                 : this.availabilityConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMaintenanceRebootDue == null
+                                ? 43
+                                : this.timeMaintenanceRebootDue.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

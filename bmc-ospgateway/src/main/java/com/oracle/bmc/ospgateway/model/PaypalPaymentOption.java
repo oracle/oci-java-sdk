@@ -224,9 +224,18 @@ public final class PaypalPaymentOption extends PaymentOption {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PaypalPaymentOption(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", emailAddress=").append(String.valueOf(this.emailAddress));
         sb.append(", firstName=").append(String.valueOf(this.firstName));
         sb.append(", lastName=").append(String.valueOf(this.lastName));

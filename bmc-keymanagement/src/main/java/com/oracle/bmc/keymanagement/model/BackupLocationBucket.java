@@ -119,9 +119,18 @@ public final class BackupLocationBucket extends BackupLocation {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BackupLocationBucket(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", bucketName=").append(String.valueOf(this.bucketName));
         sb.append(", objectName=").append(String.valueOf(this.objectName));

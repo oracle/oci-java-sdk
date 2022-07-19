@@ -205,9 +205,18 @@ public final class UpdateGitlabAccessTokenConfigurationSourceProviderDetails
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateGitlabAccessTokenConfigurationSourceProviderDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", apiEndpoint=").append(String.valueOf(this.apiEndpoint));
         sb.append(", accessToken=").append(String.valueOf(this.accessToken));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

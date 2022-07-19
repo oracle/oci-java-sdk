@@ -123,6 +123,15 @@ public final class TenancyInformation {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TenancyInformation(");
         sb.append("customerSupportKey=").append(String.valueOf(this.customerSupportKey));

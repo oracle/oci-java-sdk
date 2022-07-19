@@ -457,9 +457,18 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PeComanagedDatabaseInsight(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
         sb.append(", connectionDetails=").append(String.valueOf(this.connectionDetails));
         sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));

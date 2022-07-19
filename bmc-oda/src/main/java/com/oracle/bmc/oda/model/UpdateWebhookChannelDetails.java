@@ -217,9 +217,18 @@ public final class UpdateWebhookChannelDetails extends UpdateChannelDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateWebhookChannelDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", outboundUrl=").append(String.valueOf(this.outboundUrl));
         sb.append(", payloadVersion=").append(String.valueOf(this.payloadVersion));
         sb.append(", botId=").append(String.valueOf(this.botId));

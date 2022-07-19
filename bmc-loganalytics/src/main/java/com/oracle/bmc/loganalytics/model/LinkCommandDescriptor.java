@@ -239,9 +239,18 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LinkCommandDescriptor(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", shouldIncludeNulls=").append(String.valueOf(this.shouldIncludeNulls));
         sb.append(", shouldIncludeTrends=").append(String.valueOf(this.shouldIncludeTrends));
         sb.append(", span=").append(String.valueOf(this.span));

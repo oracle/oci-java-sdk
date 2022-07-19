@@ -1,0 +1,3 @@
+[DEFAULT]
+authentication_type=resource_principal
+delegation_token=test_delegation_token_resource_principal

@@ -592,9 +592,18 @@ public final class SqlJob extends Job {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlJob(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sqlType=").append(String.valueOf(this.sqlType));
         sb.append(", sqlText=").append(String.valueOf(this.sqlText));
         sb.append(", operationType=").append(String.valueOf(this.operationType));

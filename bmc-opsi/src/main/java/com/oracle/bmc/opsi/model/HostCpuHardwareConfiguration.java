@@ -417,9 +417,18 @@ public final class HostCpuHardwareConfiguration extends HostConfigurationMetricG
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostCpuHardwareConfiguration(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", totalSockets=").append(String.valueOf(this.totalSockets));
         sb.append(", vendorName=").append(String.valueOf(this.vendorName));
         sb.append(", frequencyInMhz=").append(String.valueOf(this.frequencyInMhz));

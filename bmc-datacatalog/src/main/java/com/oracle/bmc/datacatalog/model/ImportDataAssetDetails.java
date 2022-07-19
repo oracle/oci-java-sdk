@@ -91,9 +91,25 @@ public final class ImportDataAssetDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImportDataAssetDetails(");
-        sb.append("importFileContents=").append(String.valueOf(this.importFileContents));
+        sb.append("importFileContents=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.importFileContents)
+                                : (String.valueOf(this.importFileContents)
+                                        + (this.importFileContents != null
+                                                ? " (byte[" + this.importFileContents.length + "])"
+                                                : ""))));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -109,7 +125,7 @@ public final class ImportDataAssetDetails {
         }
 
         ImportDataAssetDetails other = (ImportDataAssetDetails) o;
-        return java.util.Objects.equals(this.importFileContents, other.importFileContents)
+        return java.util.Arrays.equals(this.importFileContents, other.importFileContents)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -117,11 +133,7 @@ public final class ImportDataAssetDetails {
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result =
-                (result * PRIME)
-                        + (this.importFileContents == null
-                                ? 43
-                                : this.importFileContents.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.importFileContents);
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

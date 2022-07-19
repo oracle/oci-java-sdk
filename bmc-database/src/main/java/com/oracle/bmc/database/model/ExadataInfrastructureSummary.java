@@ -38,6 +38,7 @@ public final class ExadataInfrastructureSummary {
         "maxDbNodeStorageInGBs",
         "dataStorageSizeInTBs",
         "maxDataStorageInTBs",
+        "rackSerialNumber",
         "storageCount",
         "additionalStorageCount",
         "activatedStorageCount",
@@ -80,6 +81,7 @@ public final class ExadataInfrastructureSummary {
             Integer maxDbNodeStorageInGBs,
             Double dataStorageSizeInTBs,
             Double maxDataStorageInTBs,
+            String rackSerialNumber,
             Integer storageCount,
             Integer additionalStorageCount,
             Integer activatedStorageCount,
@@ -121,6 +123,7 @@ public final class ExadataInfrastructureSummary {
         this.maxDbNodeStorageInGBs = maxDbNodeStorageInGBs;
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
         this.maxDataStorageInTBs = maxDataStorageInTBs;
+        this.rackSerialNumber = rackSerialNumber;
         this.storageCount = storageCount;
         this.additionalStorageCount = additionalStorageCount;
         this.activatedStorageCount = activatedStorageCount;
@@ -377,6 +380,22 @@ public final class ExadataInfrastructureSummary {
         public Builder maxDataStorageInTBs(Double maxDataStorageInTBs) {
             this.maxDataStorageInTBs = maxDataStorageInTBs;
             this.__explicitlySet__.add("maxDataStorageInTBs");
+            return this;
+        }
+        /**
+         * The serial number for the Exadata infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("rackSerialNumber")
+        private String rackSerialNumber;
+
+        /**
+         * The serial number for the Exadata infrastructure.
+         * @param rackSerialNumber the value to set
+         * @return this builder
+         **/
+        public Builder rackSerialNumber(String rackSerialNumber) {
+            this.rackSerialNumber = rackSerialNumber;
+            this.__explicitlySet__.add("rackSerialNumber");
             return this;
         }
         /**
@@ -828,6 +847,7 @@ public final class ExadataInfrastructureSummary {
                             maxDbNodeStorageInGBs,
                             dataStorageSizeInTBs,
                             maxDataStorageInTBs,
+                            rackSerialNumber,
                             storageCount,
                             additionalStorageCount,
                             activatedStorageCount,
@@ -875,6 +895,7 @@ public final class ExadataInfrastructureSummary {
                             .maxDbNodeStorageInGBs(o.getMaxDbNodeStorageInGBs())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .maxDataStorageInTBs(o.getMaxDataStorageInTBs())
+                            .rackSerialNumber(o.getRackSerialNumber())
                             .storageCount(o.getStorageCount())
                             .additionalStorageCount(o.getAdditionalStorageCount())
                             .activatedStorageCount(o.getActivatedStorageCount())
@@ -1173,6 +1194,20 @@ public final class ExadataInfrastructureSummary {
      **/
     public Double getMaxDataStorageInTBs() {
         return maxDataStorageInTBs;
+    }
+
+    /**
+     * The serial number for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("rackSerialNumber")
+    private final String rackSerialNumber;
+
+    /**
+     * The serial number for the Exadata infrastructure.
+     * @return the value
+     **/
+    public String getRackSerialNumber() {
+        return rackSerialNumber;
     }
 
     /**
@@ -1600,6 +1635,15 @@ public final class ExadataInfrastructureSummary {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExadataInfrastructureSummary(");
         sb.append("id=").append(String.valueOf(this.id));
@@ -1616,6 +1660,7 @@ public final class ExadataInfrastructureSummary {
         sb.append(", maxDbNodeStorageInGBs=").append(String.valueOf(this.maxDbNodeStorageInGBs));
         sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
         sb.append(", maxDataStorageInTBs=").append(String.valueOf(this.maxDataStorageInTBs));
+        sb.append(", rackSerialNumber=").append(String.valueOf(this.rackSerialNumber));
         sb.append(", storageCount=").append(String.valueOf(this.storageCount));
         sb.append(", additionalStorageCount=").append(String.valueOf(this.additionalStorageCount));
         sb.append(", activatedStorageCount=").append(String.valueOf(this.activatedStorageCount));
@@ -1675,6 +1720,7 @@ public final class ExadataInfrastructureSummary {
                 && java.util.Objects.equals(this.maxDbNodeStorageInGBs, other.maxDbNodeStorageInGBs)
                 && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
                 && java.util.Objects.equals(this.maxDataStorageInTBs, other.maxDataStorageInTBs)
+                && java.util.Objects.equals(this.rackSerialNumber, other.rackSerialNumber)
                 && java.util.Objects.equals(this.storageCount, other.storageCount)
                 && java.util.Objects.equals(
                         this.additionalStorageCount, other.additionalStorageCount)
@@ -1750,6 +1796,9 @@ public final class ExadataInfrastructureSummary {
                         + (this.maxDataStorageInTBs == null
                                 ? 43
                                 : this.maxDataStorageInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rackSerialNumber == null ? 43 : this.rackSerialNumber.hashCode());
         result = (result * PRIME) + (this.storageCount == null ? 43 : this.storageCount.hashCode());
         result =
                 (result * PRIME)

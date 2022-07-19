@@ -133,9 +133,18 @@ public final class GenericEntity extends Entity {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GenericEntity(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", labels=").append(String.valueOf(this.labels));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

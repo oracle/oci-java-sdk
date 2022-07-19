@@ -397,9 +397,18 @@ public final class ServiceCloudChannel extends Channel {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ServiceCloudChannel(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", domainName=").append(String.valueOf(this.domainName));
         sb.append(", hostNamePrefix=").append(String.valueOf(this.hostNamePrefix));
         sb.append(", userName=").append(String.valueOf(this.userName));

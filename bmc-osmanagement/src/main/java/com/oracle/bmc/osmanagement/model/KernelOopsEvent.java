@@ -334,9 +334,18 @@ public final class KernelOopsEvent extends Event {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("KernelOopsEvent(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", reason=").append(String.valueOf(this.reason));
         sb.append(", timeFirstOccurred=").append(String.valueOf(this.timeFirstOccurred));
         sb.append(", vmcore=").append(String.valueOf(this.vmcore));

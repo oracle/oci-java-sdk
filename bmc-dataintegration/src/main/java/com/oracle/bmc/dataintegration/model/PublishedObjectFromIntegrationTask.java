@@ -330,9 +330,18 @@ public final class PublishedObjectFromIntegrationTask extends PublishedObject {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PublishedObjectFromIntegrationTask(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", inputPorts=").append(String.valueOf(this.inputPorts));
         sb.append(", outputPorts=").append(String.valueOf(this.outputPorts));
         sb.append(", parameters=").append(String.valueOf(this.parameters));

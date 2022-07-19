@@ -403,9 +403,18 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreatePeComanagedDatabaseInsightDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", databaseResourceType=").append(String.valueOf(this.databaseResourceType));
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));

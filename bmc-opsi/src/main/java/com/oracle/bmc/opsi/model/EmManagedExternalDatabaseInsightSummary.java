@@ -540,9 +540,18 @@ public final class EmManagedExternalDatabaseInsightSummary extends DatabaseInsig
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EmManagedExternalDatabaseInsightSummary(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", enterpriseManagerIdentifier=")
                 .append(String.valueOf(this.enterpriseManagerIdentifier));
         sb.append(", enterpriseManagerEntityName=")

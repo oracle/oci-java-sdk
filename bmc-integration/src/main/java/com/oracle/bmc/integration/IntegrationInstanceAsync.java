@@ -14,6 +14,12 @@ import com.oracle.bmc.integration.responses.*;
 public interface IntegrationInstanceAsync extends AutoCloseable {
 
     /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
+    void refreshClient();
+
+    /**
      * Sets the endpoint to call (ex, https://www.example.com).
      * @param endpoint The endpoint of the serice.
      */

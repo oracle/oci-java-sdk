@@ -26,6 +26,7 @@ mvn install -Dmaven.test.failure.ignore=true
 ```
 The following tests should report errors: 
  - ConfigFileDelegationTokenUtilsTest
+ - ConfigFileAuthenticationDetailsProviderTest
  - X509FederationClientTest
  - DefaultConfiguratorTest
  - RequestSignerImplTest

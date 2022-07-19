@@ -180,9 +180,18 @@ public final class ImportSourceDetails extends SourceDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImportSourceDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", manifest=").append(String.valueOf(this.manifest));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", bucket=").append(String.valueOf(this.bucket));

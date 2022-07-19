@@ -275,9 +275,18 @@ public final class CertificateBundleWithPrivateKey extends CertificateBundle {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CertificateBundleWithPrivateKey(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", privateKeyPem=").append(String.valueOf(this.privateKeyPem));
         sb.append(", privateKeyPemPassphrase=")
                 .append(String.valueOf(this.privateKeyPemPassphrase));

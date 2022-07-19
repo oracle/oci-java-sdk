@@ -391,9 +391,18 @@ public final class Lookup extends Operator {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Lookup(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", lookupCondition=").append(String.valueOf(this.lookupCondition));
         sb.append(", isSkipNoMatch=").append(String.valueOf(this.isSkipNoMatch));
         sb.append(", multiMatchStrategy=").append(String.valueOf(this.multiMatchStrategy));

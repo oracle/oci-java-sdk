@@ -16,6 +16,7 @@ public enum OperationType {
     EnableExternalDatabase("ENABLE_EXTERNAL_DATABASE"),
     DisableExternalDatabase("DISABLE_EXTERNAL_DATABASE"),
     AddSourcesToAgent("ADD_SOURCES_TO_AGENT"),
+    BulkAddResources("BULK_ADD_RESOURCES"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

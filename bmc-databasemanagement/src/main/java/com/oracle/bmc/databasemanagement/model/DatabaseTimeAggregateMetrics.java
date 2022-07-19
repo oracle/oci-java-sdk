@@ -157,6 +157,15 @@ public final class DatabaseTimeAggregateMetrics {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseTimeAggregateMetrics(");
         sb.append("cpuCount=").append(String.valueOf(this.cpuCount));

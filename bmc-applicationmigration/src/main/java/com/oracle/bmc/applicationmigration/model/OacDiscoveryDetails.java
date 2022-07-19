@@ -130,9 +130,18 @@ public final class OacDiscoveryDetails extends DiscoveryDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OacDiscoveryDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", serviceInstanceUser=").append(String.valueOf(this.serviceInstanceUser));
         sb.append(", serviceInstancePassword=")
                 .append(String.valueOf(this.serviceInstancePassword));

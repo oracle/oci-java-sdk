@@ -321,9 +321,18 @@ public final class HttpIngressGatewayTrafficRouteRule extends IngressGatewayTraf
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HttpIngressGatewayTrafficRouteRule(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", path=").append(String.valueOf(this.path));
         sb.append(", pathType=").append(String.valueOf(this.pathType));
         sb.append(", isGrpc=").append(String.valueOf(this.isGrpc));

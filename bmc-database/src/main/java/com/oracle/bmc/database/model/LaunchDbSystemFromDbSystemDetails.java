@@ -533,9 +533,18 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LaunchDbSystemFromDbSystemDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sourceDbSystemId=").append(String.valueOf(this.sourceDbSystemId));
         sb.append(", dbHome=").append(String.valueOf(this.dbHome));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));

@@ -274,9 +274,18 @@ public final class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget 
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExternalServiceAccessPolicyTarget(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", hostnames=").append(String.valueOf(this.hostnames));
         sb.append(", ipAddresses=").append(String.valueOf(this.ipAddresses));
         sb.append(", ports=").append(String.valueOf(this.ports));

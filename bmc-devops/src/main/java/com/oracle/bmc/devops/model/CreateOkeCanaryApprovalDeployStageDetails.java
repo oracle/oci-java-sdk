@@ -201,9 +201,18 @@ public final class CreateOkeCanaryApprovalDeployStageDetails extends CreateDeplo
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateOkeCanaryApprovalDeployStageDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", okeCanaryTrafficShiftDeployStageId=")
                 .append(String.valueOf(this.okeCanaryTrafficShiftDeployStageId));
         sb.append(", approvalPolicy=").append(String.valueOf(this.approvalPolicy));

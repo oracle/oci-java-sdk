@@ -704,9 +704,18 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAutonomousDatabaseFromBackupTimestampDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", cloneType=").append(String.valueOf(this.cloneType));

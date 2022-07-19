@@ -224,9 +224,18 @@ public final class CreditCardPaymentOption extends PaymentOption {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreditCardPaymentOption(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", creditCardType=").append(String.valueOf(this.creditCardType));
         sb.append(", lastDigits=").append(String.valueOf(this.lastDigits));
         sb.append(", nameOnCard=").append(String.valueOf(this.nameOnCard));

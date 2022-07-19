@@ -29,9 +29,13 @@ public class ConfigFileAuthenticationDetailsProvider
         implements AuthenticationDetailsProvider, RegionProvider, ProvidesClientConfigurators {
 
     private final static String OCI_REGION_ENV_VAR_NAME = "OCI_REGION";
+    private final static String AUTHENTICATION_TYPE_KEY = "authentication_type";
+    private final static String INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE = "instance_principal";
+    private final static String RESOURCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE = "resource_principal";
+
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ConfigFileAuthenticationDetailsProvider.class);
-    private final BasicConfigFileAuthenticationProvider delegate;
+    protected final BasicConfigFileAuthenticationProvider delegate;
     private final Region region;
     private final static String CONFIG_FILE_DEBUG_INFORMATION_LOG =
             "\nFor more information about OCI configuration file and how to get required information, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm";
@@ -71,10 +75,16 @@ public class ConfigFileAuthenticationDetailsProvider
      *            The configuration file to use.
      */
     public ConfigFileAuthenticationDetailsProvider(ConfigFile configFile) {
-        String authentication_type = configFile.get("authentication_type");
-        if (authentication_type != null && authentication_type.equals("instance_principal")) {
+        final String authentication_type = configFile.get(AUTHENTICATION_TYPE_KEY);
+        if (INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE.equals(authentication_type)) {
             this.delegate =
                     new ConfigFileInstancePrincipalAuthenticationDetailsProvider(configFile);
+        } else if (RESOURCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE.equals(authentication_type)) {
+            LOG.debug(
+                    "Authentication type in config file: "
+                            + configFile.get(AUTHENTICATION_TYPE_KEY));
+            this.delegate =
+                    new ConfigFileResourcePrincipalAuthenticationDetailsProvider(configFile);
         } else {
             this.delegate = new ConfigFileSimpleAuthenticationDetailsProvider(configFile);
         }
@@ -177,14 +187,14 @@ public class ConfigFileAuthenticationDetailsProvider
                 + ")";
     }
 
-    private static class ConfigFileSimpleAuthenticationDetailsProvider
+    protected static class ConfigFileSimpleAuthenticationDetailsProvider
             implements BasicConfigFileAuthenticationProvider {
 
         private final SimpleAuthenticationDetailsProvider delegate;
         private final String pemFilePath;
         private final List<ClientConfigurator> clientConfigurators;
 
-        private ConfigFileSimpleAuthenticationDetailsProvider(ConfigFile configFile) {
+        protected ConfigFileSimpleAuthenticationDetailsProvider(ConfigFile configFile) {
             String fingerprint =
                     Validate.notNull(
                             configFile.get("fingerprint"),
@@ -261,14 +271,14 @@ public class ConfigFileAuthenticationDetailsProvider
         }
     }
 
-    private static class ConfigFileInstancePrincipalAuthenticationDetailsProvider
+    protected static class ConfigFileInstancePrincipalAuthenticationDetailsProvider
             implements BasicConfigFileAuthenticationProvider {
 
         private final InstancePrincipalsAuthenticationDetailsProvider delegate;
         private final String tenantId;
         private final List<ClientConfigurator> clientConfigurators;
 
-        private ConfigFileInstancePrincipalAuthenticationDetailsProvider(ConfigFile configFile) {
+        protected ConfigFileInstancePrincipalAuthenticationDetailsProvider(ConfigFile configFile) {
             this.delegate = InstancePrincipalsAuthenticationDetailsProvider.builder().build();
             String tenantId = configFile.get("tenancy");
             if (tenantId == null) tenantId = "";
@@ -281,7 +291,79 @@ public class ConfigFileAuthenticationDetailsProvider
                     this.clientConfigurators.add(new DelegationTokenConfigurator(delegationToken));
                 }
             } catch (Exception e) {
-                LOG.debug("Could not load delegation token!");
+                LOG.debug("Could not load delegation token!", e);
+            }
+        }
+
+        @Override
+        public String getFingerprint() {
+            return null;
+        }
+
+        @Override
+        public String getTenantId() {
+            return this.tenantId;
+        }
+
+        @Override
+        public String getUserId() {
+            return null;
+        }
+
+        @Override
+        public String getKeyId() {
+            return this.delegate.getKeyId();
+        }
+
+        @Override
+        public InputStream getPrivateKey() {
+            return this.delegate.getPrivateKey();
+        }
+
+        @Override
+        public String getPassPhrase() {
+            return null;
+        }
+
+        @Override
+        public char[] getPassphraseCharacters() {
+            return null;
+        }
+
+        @Override
+        public String getPemFilePath() {
+            return null;
+        }
+
+        @Override
+        public List<ClientConfigurator> getClientConfigurators() {
+            return this.clientConfigurators;
+        }
+    }
+
+    protected static class ConfigFileResourcePrincipalAuthenticationDetailsProvider
+            implements BasicConfigFileAuthenticationProvider {
+
+        private final ResourcePrincipalAuthenticationDetailsProvider delegate;
+        private final String tenantId;
+        private final List<ClientConfigurator> clientConfigurators;
+
+        protected ConfigFileResourcePrincipalAuthenticationDetailsProvider(ConfigFile configFile) {
+            this.delegate = ResourcePrincipalAuthenticationDetailsProvider.builder().build();
+            String tenantId = configFile.get("tenancy");
+            if (tenantId == null) {
+                tenantId = "";
+            }
+            this.tenantId = tenantId;
+            this.clientConfigurators = new ArrayList<>();
+            try {
+                String delegationToken =
+                        ConfigFileDelegationTokenUtils.parseAndGetToken(configFile);
+                if (!StringUtils.isBlank(delegationToken)) {
+                    this.clientConfigurators.add(new DelegationTokenConfigurator(delegationToken));
+                }
+            } catch (Exception e) {
+                LOG.debug("Could not load delegation token!", e);
             }
         }
 

@@ -17,6 +17,7 @@ import java.util.Optional;
 import com.oracle.bmc.util.StreamUtils;
 import org.junit.Test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -99,5 +100,11 @@ public class AuthUtilsTest {
         assertEquals(
                 "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0Iq55yeKhH5Bjk+UUr537WZnWAyZBGLNm8gI0F/4+wht1PDuWq/ovx5Y9OONc3bcyGphYhUgBhEE94XHthqbFQzF7zc9MKH1IK6B7rimZ/J0/0WRnW7PI+xuTHyKGBZ+jJq5hV9T5WMk1hxGCMWhzEBqxQKLjU3BEUHp7A2DRQOT52uhkFNTut7koAGIJGfQQdyDFhK2jdm8J9u+C1OFWXyCOTQjpaZaMJpDSdZWhGmSTfwvU/4564KIkKGBsW9MfML/HI2f+Lm9FijycrhwLs6ysZkbS7pocqLAwq2Ou3QeoHReuuMySGd6Q721RlvzGbRSx2dWG4WXbSL67iF/EwIDAQAB",
                 asBase64);
+    }
+
+    @Test
+    public void testUrlSafeBase64Decode() {
+        assertArrayEquals(AuthUtils.base64Decode("++//"), AuthUtils.base64Decode("--__"));
+        assertEquals(null, AuthUtils.base64Decode(null));
     }
 }

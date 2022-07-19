@@ -167,6 +167,15 @@ public final class UpdateObjectStorageTierDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateObjectStorageTierDetails(");
         sb.append("objectName=").append(String.valueOf(this.objectName));

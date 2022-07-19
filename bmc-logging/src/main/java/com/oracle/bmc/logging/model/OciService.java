@@ -194,9 +194,18 @@ public final class OciService extends Source {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OciService(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", service=").append(String.valueOf(this.service));
         sb.append(", resource=").append(String.valueOf(this.resource));
         sb.append(", category=").append(String.valueOf(this.category));

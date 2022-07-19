@@ -277,9 +277,18 @@ public final class V1Dashboard extends Dashboard {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("V1Dashboard(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", config=").append(String.valueOf(this.config));
         sb.append(", widgets=").append(String.valueOf(this.widgets));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

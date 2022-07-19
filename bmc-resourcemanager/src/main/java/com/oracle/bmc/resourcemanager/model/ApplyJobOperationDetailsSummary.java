@@ -149,9 +149,18 @@ public final class ApplyJobOperationDetailsSummary extends JobOperationDetailsSu
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApplyJobOperationDetailsSummary(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", executionPlanStrategy=").append(String.valueOf(this.executionPlanStrategy));
         sb.append(", executionPlanJobId=").append(String.valueOf(this.executionPlanJobId));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

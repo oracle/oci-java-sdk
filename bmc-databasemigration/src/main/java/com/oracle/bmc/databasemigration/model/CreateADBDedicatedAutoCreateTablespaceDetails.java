@@ -177,9 +177,18 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateADBDedicatedAutoCreateTablespaceDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", isAutoCreate=").append(String.valueOf(this.isAutoCreate));
         sb.append(", isBigFile=").append(String.valueOf(this.isBigFile));
         sb.append(", extendSizeInMBs=").append(String.valueOf(this.extendSizeInMBs));

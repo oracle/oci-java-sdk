@@ -373,9 +373,18 @@ public final class SlackChannel extends Channel {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SlackChannel(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", clientId=").append(String.valueOf(this.clientId));
         sb.append(", authSuccessUrl=").append(String.valueOf(this.authSuccessUrl));
         sb.append(", authErrorUrl=").append(String.valueOf(this.authErrorUrl));

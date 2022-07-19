@@ -501,9 +501,18 @@ public final class OSSChannel extends Channel {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OSSChannel(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", eventSinkBotIds=").append(String.valueOf(this.eventSinkBotIds));
         sb.append(", inboundMessageTopic=").append(String.valueOf(this.inboundMessageTopic));
         sb.append(", outboundMessageTopic=").append(String.valueOf(this.outboundMessageTopic));

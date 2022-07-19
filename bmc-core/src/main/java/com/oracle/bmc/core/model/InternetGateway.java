@@ -35,7 +35,8 @@ public final class InternetGateway {
         "isEnabled",
         "lifecycleState",
         "timeCreated",
-        "vcnId"
+        "vcnId",
+        "routeTableId"
     })
     public InternetGateway(
             String compartmentId,
@@ -46,7 +47,8 @@ public final class InternetGateway {
             Boolean isEnabled,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
-            String vcnId) {
+            String vcnId,
+            String routeTableId) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -57,6 +59,7 @@ public final class InternetGateway {
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
+        this.routeTableId = routeTableId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -236,6 +239,22 @@ public final class InternetGateway {
             this.__explicitlySet__.add("vcnId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+         * @param routeTableId the value to set
+         * @return this builder
+         **/
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -251,7 +270,8 @@ public final class InternetGateway {
                             isEnabled,
                             lifecycleState,
                             timeCreated,
-                            vcnId);
+                            vcnId,
+                            routeTableId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -267,7 +287,8 @@ public final class InternetGateway {
                             .isEnabled(o.getIsEnabled())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
-                            .vcnId(o.getVcnId());
+                            .vcnId(o.getVcnId())
+                            .routeTableId(o.getRouteTableId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -491,8 +512,31 @@ public final class InternetGateway {
         return vcnId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    private final String routeTableId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+     * @return the value
+     **/
+    public String getRouteTableId() {
+        return routeTableId;
+    }
+
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InternetGateway(");
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
@@ -504,6 +548,7 @@ public final class InternetGateway {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -528,6 +573,7 @@ public final class InternetGateway {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -548,6 +594,7 @@ public final class InternetGateway {
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

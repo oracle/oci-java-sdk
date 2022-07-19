@@ -294,9 +294,18 @@ public final class StringAttribute extends AttributeProfileResult {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StringAttribute(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", minLength=").append(String.valueOf(this.minLength));
         sb.append(", maxLength=").append(String.valueOf(this.maxLength));
         sb.append(", meanLength=").append(String.valueOf(this.meanLength));

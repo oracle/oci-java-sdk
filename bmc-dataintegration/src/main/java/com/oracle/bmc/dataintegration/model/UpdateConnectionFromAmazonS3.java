@@ -235,9 +235,18 @@ public final class UpdateConnectionFromAmazonS3 extends UpdateConnectionDetails 
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateConnectionFromAmazonS3(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", accessKey=").append(String.valueOf(this.accessKey));
         sb.append(", secretKey=").append(String.valueOf(this.secretKey));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

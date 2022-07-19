@@ -22,12 +22,17 @@ package com.oracle.bmc.datascience.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ModelDeploymentShapeSummary {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "coreCount", "memoryInGBs"})
-    public ModelDeploymentShapeSummary(String name, Integer coreCount, Integer memoryInGBs) {
+    @java.beans.ConstructorProperties({"name", "coreCount", "memoryInGBs", "shapeSeries"})
+    public ModelDeploymentShapeSummary(
+            String name,
+            Integer coreCount,
+            Integer memoryInGBs,
+            ModelDeploymentShapeSeries shapeSeries) {
         super();
         this.name = name;
         this.coreCount = coreCount;
         this.memoryInGBs = memoryInGBs;
+        this.shapeSeries = shapeSeries;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -86,13 +91,31 @@ public final class ModelDeploymentShapeSummary {
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
+        /**
+         * The family that the compute shape belongs to.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
+        private ModelDeploymentShapeSeries shapeSeries;
+
+        /**
+         * The family that the compute shape belongs to.
+         *
+         * @param shapeSeries the value to set
+         * @return this builder
+         **/
+        public Builder shapeSeries(ModelDeploymentShapeSeries shapeSeries) {
+            this.shapeSeries = shapeSeries;
+            this.__explicitlySet__.add("shapeSeries");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ModelDeploymentShapeSummary build() {
             ModelDeploymentShapeSummary __instance__ =
-                    new ModelDeploymentShapeSummary(name, coreCount, memoryInGBs);
+                    new ModelDeploymentShapeSummary(name, coreCount, memoryInGBs, shapeSeries);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -100,7 +123,10 @@ public final class ModelDeploymentShapeSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ModelDeploymentShapeSummary o) {
             Builder copiedBuilder =
-                    name(o.getName()).coreCount(o.getCoreCount()).memoryInGBs(o.getMemoryInGBs());
+                    name(o.getName())
+                            .coreCount(o.getCoreCount())
+                            .memoryInGBs(o.getMemoryInGBs())
+                            .shapeSeries(o.getShapeSeries());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -166,13 +192,39 @@ public final class ModelDeploymentShapeSummary {
         return memoryInGBs;
     }
 
+    /**
+     * The family that the compute shape belongs to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
+    private final ModelDeploymentShapeSeries shapeSeries;
+
+    /**
+     * The family that the compute shape belongs to.
+     *
+     * @return the value
+     **/
+    public ModelDeploymentShapeSeries getShapeSeries() {
+        return shapeSeries;
+    }
+
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModelDeploymentShapeSummary(");
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", coreCount=").append(String.valueOf(this.coreCount));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", shapeSeries=").append(String.valueOf(this.shapeSeries));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -191,6 +243,7 @@ public final class ModelDeploymentShapeSummary {
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.coreCount, other.coreCount)
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(this.shapeSeries, other.shapeSeries)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -201,6 +254,7 @@ public final class ModelDeploymentShapeSummary {
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.coreCount == null ? 43 : this.coreCount.hashCode());
         result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result = (result * PRIME) + (this.shapeSeries == null ? 43 : this.shapeSeries.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

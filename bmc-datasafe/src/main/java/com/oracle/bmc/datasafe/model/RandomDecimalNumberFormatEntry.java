@@ -166,9 +166,18 @@ public final class RandomDecimalNumberFormatEntry extends FormatEntry {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RandomDecimalNumberFormatEntry(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", startValue=").append(String.valueOf(this.startValue));
         sb.append(", endValue=").append(String.valueOf(this.endValue));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

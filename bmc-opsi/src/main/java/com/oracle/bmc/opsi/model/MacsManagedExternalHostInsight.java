@@ -448,9 +448,18 @@ public final class MacsManagedExternalHostInsight extends HostInsight {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MacsManagedExternalHostInsight(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", platformName=").append(String.valueOf(this.platformName));
         sb.append(", platformType=").append(String.valueOf(this.platformType));

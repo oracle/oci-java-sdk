@@ -112,10 +112,26 @@ public final class UploadCredentialsDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UploadCredentialsDetails(");
         sb.append("connectionDetail=").append(String.valueOf(this.connectionDetail));
-        sb.append(", credentialPayload=").append(String.valueOf(this.credentialPayload));
+        sb.append(", credentialPayload=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.credentialPayload)
+                                : (String.valueOf(this.credentialPayload)
+                                        + (this.credentialPayload != null
+                                                ? " (byte[" + this.credentialPayload.length + "])"
+                                                : ""))));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -132,7 +148,7 @@ public final class UploadCredentialsDetails {
 
         UploadCredentialsDetails other = (UploadCredentialsDetails) o;
         return java.util.Objects.equals(this.connectionDetail, other.connectionDetail)
-                && java.util.Objects.equals(this.credentialPayload, other.credentialPayload)
+                && java.util.Arrays.equals(this.credentialPayload, other.credentialPayload)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -143,9 +159,7 @@ public final class UploadCredentialsDetails {
         result =
                 (result * PRIME)
                         + (this.connectionDetail == null ? 43 : this.connectionDetail.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.credentialPayload == null ? 43 : this.credentialPayload.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.credentialPayload);
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

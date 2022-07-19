@@ -177,9 +177,18 @@ public final class FunctionTaskDetails extends TaskDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FunctionTaskDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", functionId=").append(String.valueOf(this.functionId));
         sb.append(", batchSizeInKbs=").append(String.valueOf(this.batchSizeInKbs));
         sb.append(", batchTimeInSec=").append(String.valueOf(this.batchTimeInSec));

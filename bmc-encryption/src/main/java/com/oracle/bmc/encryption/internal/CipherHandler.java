@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.encryption.internal;
 
+import com.oracle.bmc.auth.internal.AuthUtils;
 import com.oracle.bmc.encryption.KmsMasterKey;
 import com.oracle.bmc.encryption.MasterKeyProvider;
 
@@ -15,7 +16,6 @@ import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.SecureRandom;
 import java.security.spec.AlgorithmParameterSpec;
-import java.util.Base64;
 
 public abstract class CipherHandler {
     protected final Cipher cipher;
@@ -42,7 +42,7 @@ public abstract class CipherHandler {
     }
 
     private SecretKeySpec generateSecretKeySpec(DataKey dataKey) {
-        byte[] secretKeyBytes = Base64.getDecoder().decode(dataKey.getPlaintext());
+        byte[] secretKeyBytes = AuthUtils.base64Decode(dataKey.getPlaintext());
         return new SecretKeySpec(secretKeyBytes, provider.getCryptoAlgorithm().getAlgorithm());
     }
 
@@ -52,7 +52,7 @@ public abstract class CipherHandler {
                 decryptionKmsMasterKey.decryptDataKey(
                         encryptionHeader.getEncryptionKey().getEncryptedDataKey(),
                         encryptionHeader.getEncryptionKey().getMasterKeyId());
-        byte[] secretKeyBytes = Base64.getDecoder().decode(decryptDataKey);
+        byte[] secretKeyBytes = AuthUtils.base64Decode(decryptDataKey);
         return new SecretKeySpec(secretKeyBytes, provider.getCryptoAlgorithm().getAlgorithm());
     }
 

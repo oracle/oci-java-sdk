@@ -182,9 +182,18 @@ public final class RandomSubstitutionFormatEntry extends FormatEntry {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RandomSubstitutionFormatEntry(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", schemaName=").append(String.valueOf(this.schemaName));
         sb.append(", tableName=").append(String.valueOf(this.tableName));
         sb.append(", columnName=").append(String.valueOf(this.columnName));

@@ -148,9 +148,18 @@ public final class NotificationsTargetDetails extends TargetDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NotificationsTargetDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", topicId=").append(String.valueOf(this.topicId));
         sb.append(", enableFormattedMessaging=")
                 .append(String.valueOf(this.enableFormattedMessaging));

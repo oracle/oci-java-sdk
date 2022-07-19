@@ -151,7 +151,7 @@ public class DefaultConfigurator
         try {
             SetsClientBuilderProperties setsClientBuilderProperties =
                     (SetsClientBuilderProperties) effectiveClientConfigurator;
-            setsClientBuilderProperties.setConnectorProvider(builder);
+            setsClientBuilderProperties.setSslContext(builder);
         } catch (Exception e) {
             LOG.info("Cannot call setSslContext on this ClientConfigurator");
         }

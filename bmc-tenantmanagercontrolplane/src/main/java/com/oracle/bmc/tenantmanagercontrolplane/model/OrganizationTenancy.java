@@ -307,6 +307,15 @@ public final class OrganizationTenancy {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OrganizationTenancy(");
         sb.append("tenancyId=").append(String.valueOf(this.tenancyId));

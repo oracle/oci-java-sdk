@@ -198,9 +198,18 @@ public final class CreateExternalMacsConnectorDetails
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateExternalMacsConnectorDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", connectionCredentials=").append(String.valueOf(this.connectionCredentials));
         sb.append(", connectorAgentId=").append(String.valueOf(this.connectorAgentId));

@@ -675,9 +675,18 @@ public final class CreateTaskFromRestTask extends CreateTaskDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateTaskFromRestTask(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", authDetails=").append(String.valueOf(this.authDetails));
         sb.append(", authConfig=").append(String.valueOf(this.authConfig));
         sb.append(", endpoint=").append(String.valueOf(this.endpoint));

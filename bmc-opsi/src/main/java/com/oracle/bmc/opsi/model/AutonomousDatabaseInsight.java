@@ -421,9 +421,18 @@ public final class AutonomousDatabaseInsight extends DatabaseInsight {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousDatabaseInsight(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));
         sb.append(", databaseDisplayName=").append(String.valueOf(this.databaseDisplayName));

@@ -438,6 +438,15 @@ public final class AnalyzeDocumentResult {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AnalyzeDocumentResult(");
         sb.append("documentMetadata=").append(String.valueOf(this.documentMetadata));
@@ -455,7 +464,14 @@ public final class AnalyzeDocumentResult {
         sb.append(", tableDetectionModelVersion=")
                 .append(String.valueOf(this.tableDetectionModelVersion));
         sb.append(", errors=").append(String.valueOf(this.errors));
-        sb.append(", searchablePdf=").append(String.valueOf(this.searchablePdf));
+        sb.append(", searchablePdf=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.searchablePdf)
+                                : (String.valueOf(this.searchablePdf)
+                                        + (this.searchablePdf != null
+                                                ? " (byte[" + this.searchablePdf.length + "])"
+                                                : ""))));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -488,7 +504,7 @@ public final class AnalyzeDocumentResult {
                 && java.util.Objects.equals(
                         this.tableDetectionModelVersion, other.tableDetectionModelVersion)
                 && java.util.Objects.equals(this.errors, other.errors)
-                && java.util.Objects.equals(this.searchablePdf, other.searchablePdf)
+                && java.util.Arrays.equals(this.searchablePdf, other.searchablePdf)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -534,9 +550,7 @@ public final class AnalyzeDocumentResult {
                                 ? 43
                                 : this.tableDetectionModelVersion.hashCode());
         result = (result * PRIME) + (this.errors == null ? 43 : this.errors.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.searchablePdf == null ? 43 : this.searchablePdf.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.searchablePdf);
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

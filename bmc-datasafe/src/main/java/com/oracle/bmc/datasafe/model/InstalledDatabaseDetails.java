@@ -212,9 +212,18 @@ public final class InstalledDatabaseDetails extends DatabaseDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstalledDatabaseDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", ipAddresses=").append(String.valueOf(this.ipAddresses));
         sb.append(", listenerPort=").append(String.valueOf(this.listenerPort));

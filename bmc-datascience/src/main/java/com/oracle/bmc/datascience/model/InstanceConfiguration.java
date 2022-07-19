@@ -21,10 +21,16 @@ package com.oracle.bmc.datascience.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstanceConfiguration {
     @Deprecated
-    @java.beans.ConstructorProperties({"instanceShapeName"})
-    public InstanceConfiguration(String instanceShapeName) {
+    @java.beans.ConstructorProperties({
+        "instanceShapeName",
+        "modelDeploymentInstanceShapeConfigDetails"
+    })
+    public InstanceConfiguration(
+            String instanceShapeName,
+            ModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails) {
         super();
         this.instanceShapeName = instanceShapeName;
+        this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,18 +52,35 @@ public final class InstanceConfiguration {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("modelDeploymentInstanceShapeConfigDetails")
+        private ModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails;
+
+        public Builder modelDeploymentInstanceShapeConfigDetails(
+                ModelDeploymentInstanceShapeConfigDetails
+                        modelDeploymentInstanceShapeConfigDetails) {
+            this.modelDeploymentInstanceShapeConfigDetails =
+                    modelDeploymentInstanceShapeConfigDetails;
+            this.__explicitlySet__.add("modelDeploymentInstanceShapeConfigDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceConfiguration build() {
-            InstanceConfiguration __instance__ = new InstanceConfiguration(instanceShapeName);
+            InstanceConfiguration __instance__ =
+                    new InstanceConfiguration(
+                            instanceShapeName, modelDeploymentInstanceShapeConfigDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstanceConfiguration o) {
-            Builder copiedBuilder = instanceShapeName(o.getInstanceShapeName());
+            Builder copiedBuilder =
+                    instanceShapeName(o.getInstanceShapeName())
+                            .modelDeploymentInstanceShapeConfigDetails(
+                                    o.getModelDeploymentInstanceShapeConfigDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -89,11 +112,31 @@ public final class InstanceConfiguration {
         return instanceShapeName;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("modelDeploymentInstanceShapeConfigDetails")
+    private final ModelDeploymentInstanceShapeConfigDetails
+            modelDeploymentInstanceShapeConfigDetails;
+
+    public ModelDeploymentInstanceShapeConfigDetails
+            getModelDeploymentInstanceShapeConfigDetails() {
+        return modelDeploymentInstanceShapeConfigDetails;
+    }
+
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceConfiguration(");
         sb.append("instanceShapeName=").append(String.valueOf(this.instanceShapeName));
+        sb.append(", modelDeploymentInstanceShapeConfigDetails=")
+                .append(String.valueOf(this.modelDeploymentInstanceShapeConfigDetails));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -110,6 +153,9 @@ public final class InstanceConfiguration {
 
         InstanceConfiguration other = (InstanceConfiguration) o;
         return java.util.Objects.equals(this.instanceShapeName, other.instanceShapeName)
+                && java.util.Objects.equals(
+                        this.modelDeploymentInstanceShapeConfigDetails,
+                        other.modelDeploymentInstanceShapeConfigDetails)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -120,6 +166,11 @@ public final class InstanceConfiguration {
         result =
                 (result * PRIME)
                         + (this.instanceShapeName == null ? 43 : this.instanceShapeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelDeploymentInstanceShapeConfigDetails == null
+                                ? 43
+                                : this.modelDeploymentInstanceShapeConfigDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

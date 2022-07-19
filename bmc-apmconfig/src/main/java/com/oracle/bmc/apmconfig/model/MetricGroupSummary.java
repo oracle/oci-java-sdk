@@ -313,9 +313,18 @@ public final class MetricGroupSummary extends ConfigSummary {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MetricGroupSummary(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", filterId=").append(String.valueOf(this.filterId));
         sb.append(", namespace=").append(String.valueOf(this.namespace));

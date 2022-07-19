@@ -278,9 +278,18 @@ public final class ChannelSourceMysql extends ChannelSource {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ChannelSourceMysql(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", username=").append(String.valueOf(this.username));

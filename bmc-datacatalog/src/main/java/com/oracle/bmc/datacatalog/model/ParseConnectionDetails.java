@@ -187,10 +187,26 @@ public final class ParseConnectionDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ParseConnectionDetails(");
         sb.append("connectionDetail=").append(String.valueOf(this.connectionDetail));
-        sb.append(", connectionPayload=").append(String.valueOf(this.connectionPayload));
+        sb.append(", connectionPayload=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.connectionPayload)
+                                : (String.valueOf(this.connectionPayload)
+                                        + (this.connectionPayload != null
+                                                ? " (byte[" + this.connectionPayload.length + "])"
+                                                : ""))));
         sb.append(", walletSecretId=").append(String.valueOf(this.walletSecretId));
         sb.append(", walletSecretName=").append(String.valueOf(this.walletSecretName));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
@@ -209,7 +225,7 @@ public final class ParseConnectionDetails {
 
         ParseConnectionDetails other = (ParseConnectionDetails) o;
         return java.util.Objects.equals(this.connectionDetail, other.connectionDetail)
-                && java.util.Objects.equals(this.connectionPayload, other.connectionPayload)
+                && java.util.Arrays.equals(this.connectionPayload, other.connectionPayload)
                 && java.util.Objects.equals(this.walletSecretId, other.walletSecretId)
                 && java.util.Objects.equals(this.walletSecretName, other.walletSecretName)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
@@ -222,9 +238,7 @@ public final class ParseConnectionDetails {
         result =
                 (result * PRIME)
                         + (this.connectionDetail == null ? 43 : this.connectionDetail.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.connectionPayload == null ? 43 : this.connectionPayload.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.connectionPayload);
         result =
                 (result * PRIME)
                         + (this.walletSecretId == null ? 43 : this.walletSecretId.hashCode());

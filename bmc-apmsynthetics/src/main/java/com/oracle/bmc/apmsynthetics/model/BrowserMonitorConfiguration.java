@@ -172,9 +172,18 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BrowserMonitorConfiguration(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", isCertificateValidationEnabled=")
                 .append(String.valueOf(this.isCertificateValidationEnabled));
         sb.append(", verifyTexts=").append(String.valueOf(this.verifyTexts));

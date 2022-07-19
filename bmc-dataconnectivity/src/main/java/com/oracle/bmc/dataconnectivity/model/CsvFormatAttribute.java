@@ -303,9 +303,18 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CsvFormatAttribute(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", encoding=").append(String.valueOf(this.encoding));
         sb.append(", escapeCharacter=").append(String.valueOf(this.escapeCharacter));
         sb.append(", delimiter=").append(String.valueOf(this.delimiter));

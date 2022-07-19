@@ -214,9 +214,18 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagedSshSessionTargetResourceDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", targetResourceOperatingSystemUserName=")
                 .append(String.valueOf(this.targetResourceOperatingSystemUserName));
         sb.append(", targetResourceId=").append(String.valueOf(this.targetResourceId));

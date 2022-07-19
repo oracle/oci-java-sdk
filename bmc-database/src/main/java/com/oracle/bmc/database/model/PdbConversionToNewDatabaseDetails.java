@@ -278,9 +278,18 @@ public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetB
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PdbConversionToNewDatabaseDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", cdbName=").append(String.valueOf(this.cdbName));
         sb.append(", cdbAdminPassword=").append(String.valueOf(this.cdbAdminPassword));
         sb.append(", pdbAdminPassword=").append(String.valueOf(this.pdbAdminPassword));

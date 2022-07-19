@@ -598,9 +598,18 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IScsiVolumeAttachment(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", chapSecret=").append(String.valueOf(this.chapSecret));
         sb.append(", chapUsername=").append(String.valueOf(this.chapUsername));
         sb.append(", ipv4=").append(String.valueOf(this.ipv4));

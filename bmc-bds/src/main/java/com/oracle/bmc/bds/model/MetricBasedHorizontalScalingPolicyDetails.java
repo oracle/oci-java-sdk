@@ -128,9 +128,18 @@ public final class MetricBasedHorizontalScalingPolicyDetails extends AutoScalePo
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MetricBasedHorizontalScalingPolicyDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", scaleOutConfig=").append(String.valueOf(this.scaleOutConfig));
         sb.append(", scaleInConfig=").append(String.valueOf(this.scaleInConfig));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

@@ -259,9 +259,18 @@ public final class CreateSaml2IdentityProviderDetails extends CreateIdentityProv
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateSaml2IdentityProviderDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", metadataUrl=").append(String.valueOf(this.metadataUrl));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", freeformAttributes=").append(String.valueOf(this.freeformAttributes));

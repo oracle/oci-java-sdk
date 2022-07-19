@@ -218,10 +218,26 @@ public final class MonitorResultData {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MonitorResultData(");
         sb.append("name=").append(String.valueOf(this.name));
-        sb.append(", byteContent=").append(String.valueOf(this.byteContent));
+        sb.append(", byteContent=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.byteContent)
+                                : (String.valueOf(this.byteContent)
+                                        + (this.byteContent != null
+                                                ? " (byte[" + this.byteContent.length + "])"
+                                                : ""))));
         sb.append(", stringContent=").append(String.valueOf(this.stringContent));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
@@ -240,7 +256,7 @@ public final class MonitorResultData {
 
         MonitorResultData other = (MonitorResultData) o;
         return java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.byteContent, other.byteContent)
+                && java.util.Arrays.equals(this.byteContent, other.byteContent)
                 && java.util.Objects.equals(this.stringContent, other.stringContent)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
@@ -251,7 +267,7 @@ public final class MonitorResultData {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
-        result = (result * PRIME) + (this.byteContent == null ? 43 : this.byteContent.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.byteContent);
         result =
                 (result * PRIME)
                         + (this.stringContent == null ? 43 : this.stringContent.hashCode());

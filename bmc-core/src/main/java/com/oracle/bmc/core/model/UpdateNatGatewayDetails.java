@@ -25,18 +25,21 @@ public final class UpdateNatGatewayDetails {
         "definedTags",
         "displayName",
         "freeformTags",
-        "blockTraffic"
+        "blockTraffic",
+        "routeTableId"
     })
     public UpdateNatGatewayDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
-            Boolean blockTraffic) {
+            Boolean blockTraffic,
+            String routeTableId) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.blockTraffic = blockTraffic;
+        this.routeTableId = routeTableId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -132,6 +135,32 @@ public final class UpdateNatGatewayDetails {
             this.__explicitlySet__.add("blockTraffic");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+         * <p>
+         * If you don't specify a route table here, the NAT gateway is created without an associated route
+         * table. The Networking service does NOT automatically associate the attached VCN's default route
+         * table with the NAT gateway.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+         * <p>
+         * If you don't specify a route table here, the NAT gateway is created without an associated route
+         * table. The Networking service does NOT automatically associate the attached VCN's default route
+         * table with the NAT gateway.
+         *
+         * @param routeTableId the value to set
+         * @return this builder
+         **/
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -139,7 +168,7 @@ public final class UpdateNatGatewayDetails {
         public UpdateNatGatewayDetails build() {
             UpdateNatGatewayDetails __instance__ =
                     new UpdateNatGatewayDetails(
-                            definedTags, displayName, freeformTags, blockTraffic);
+                            definedTags, displayName, freeformTags, blockTraffic, routeTableId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -150,7 +179,8 @@ public final class UpdateNatGatewayDetails {
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
-                            .blockTraffic(o.getBlockTraffic());
+                            .blockTraffic(o.getBlockTraffic())
+                            .routeTableId(o.getRouteTableId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -250,14 +280,48 @@ public final class UpdateNatGatewayDetails {
         return blockTraffic;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     * <p>
+     * If you don't specify a route table here, the NAT gateway is created without an associated route
+     * table. The Networking service does NOT automatically associate the attached VCN's default route
+     * table with the NAT gateway.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    private final String routeTableId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     * <p>
+     * If you don't specify a route table here, the NAT gateway is created without an associated route
+     * table. The Networking service does NOT automatically associate the attached VCN's default route
+     * table with the NAT gateway.
+     *
+     * @return the value
+     **/
+    public String getRouteTableId() {
+        return routeTableId;
+    }
+
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateNatGatewayDetails(");
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", blockTraffic=").append(String.valueOf(this.blockTraffic));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -277,6 +341,7 @@ public final class UpdateNatGatewayDetails {
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.blockTraffic, other.blockTraffic)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -288,6 +353,7 @@ public final class UpdateNatGatewayDetails {
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.blockTraffic == null ? 43 : this.blockTraffic.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
