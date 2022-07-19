@@ -129,6 +129,15 @@ public final class AuditPolicyDimensions {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuditPolicyDimensions(");
         sb.append("auditPolicyCategory=").append(String.valueOf(this.auditPolicyCategory));

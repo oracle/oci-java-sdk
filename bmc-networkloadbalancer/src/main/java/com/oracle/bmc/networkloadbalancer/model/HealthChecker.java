@@ -524,6 +524,15 @@ public final class HealthChecker {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HealthChecker(");
         sb.append("protocol=").append(String.valueOf(this.protocol));
@@ -534,8 +543,22 @@ public final class HealthChecker {
         sb.append(", urlPath=").append(String.valueOf(this.urlPath));
         sb.append(", responseBodyRegex=").append(String.valueOf(this.responseBodyRegex));
         sb.append(", returnCode=").append(String.valueOf(this.returnCode));
-        sb.append(", requestData=").append(String.valueOf(this.requestData));
-        sb.append(", responseData=").append(String.valueOf(this.responseData));
+        sb.append(", requestData=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.requestData)
+                                : (String.valueOf(this.requestData)
+                                        + (this.requestData != null
+                                                ? " (byte[" + this.requestData.length + "])"
+                                                : ""))));
+        sb.append(", responseData=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.responseData)
+                                : (String.valueOf(this.responseData)
+                                        + (this.responseData != null
+                                                ? " (byte[" + this.responseData.length + "])"
+                                                : ""))));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -559,8 +582,8 @@ public final class HealthChecker {
                 && java.util.Objects.equals(this.urlPath, other.urlPath)
                 && java.util.Objects.equals(this.responseBodyRegex, other.responseBodyRegex)
                 && java.util.Objects.equals(this.returnCode, other.returnCode)
-                && java.util.Objects.equals(this.requestData, other.requestData)
-                && java.util.Objects.equals(this.responseData, other.responseData)
+                && java.util.Arrays.equals(this.requestData, other.requestData)
+                && java.util.Arrays.equals(this.responseData, other.responseData)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -582,8 +605,8 @@ public final class HealthChecker {
                 (result * PRIME)
                         + (this.responseBodyRegex == null ? 43 : this.responseBodyRegex.hashCode());
         result = (result * PRIME) + (this.returnCode == null ? 43 : this.returnCode.hashCode());
-        result = (result * PRIME) + (this.requestData == null ? 43 : this.requestData.hashCode());
-        result = (result * PRIME) + (this.responseData == null ? 43 : this.responseData.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.requestData);
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.responseData);
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

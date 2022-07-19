@@ -476,9 +476,18 @@ public final class ClassifyColumn extends AbstractColumn {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClassifyColumn(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", classifyFieldNames=").append(String.valueOf(this.classifyFieldNames));
         sb.append(", classifyFieldNullCount=").append(String.valueOf(this.classifyFieldNullCount));
         sb.append(", classifyAnomalyIntervalCounts=")

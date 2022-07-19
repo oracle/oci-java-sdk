@@ -192,9 +192,18 @@ public final class SimpleCondition extends Condition {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SimpleCondition(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", parameter=").append(String.valueOf(this.parameter));
         sb.append(", operator=").append(String.valueOf(this.operator));
         sb.append(", value=").append(String.valueOf(this.value));

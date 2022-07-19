@@ -101,10 +101,28 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateImportTfStateJobOperationDetails(");
-        sb.append("super=").append(super.toString());
-        sb.append(", tfStateBase64Encoded=").append(String.valueOf(this.tfStateBase64Encoded));
+        sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", tfStateBase64Encoded=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.tfStateBase64Encoded)
+                                : (String.valueOf(this.tfStateBase64Encoded)
+                                        + (this.tfStateBase64Encoded != null
+                                                ? " (byte["
+                                                        + this.tfStateBase64Encoded.length
+                                                        + "])"
+                                                : ""))));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -120,7 +138,7 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
         }
 
         CreateImportTfStateJobOperationDetails other = (CreateImportTfStateJobOperationDetails) o;
-        return java.util.Objects.equals(this.tfStateBase64Encoded, other.tfStateBase64Encoded)
+        return java.util.Arrays.equals(this.tfStateBase64Encoded, other.tfStateBase64Encoded)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
                 && super.equals(o);
     }
@@ -129,11 +147,7 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.tfStateBase64Encoded == null
-                                ? 43
-                                : this.tfStateBase64Encoded.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.tfStateBase64Encoded);
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

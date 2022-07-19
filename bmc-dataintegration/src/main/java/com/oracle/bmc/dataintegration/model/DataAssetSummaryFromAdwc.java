@@ -342,9 +342,18 @@ public final class DataAssetSummaryFromAdwc extends DataAssetSummary {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataAssetSummaryFromAdwc(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", serviceNames=").append(String.valueOf(this.serviceNames));
         sb.append(", driverClass=").append(String.valueOf(this.driverClass));

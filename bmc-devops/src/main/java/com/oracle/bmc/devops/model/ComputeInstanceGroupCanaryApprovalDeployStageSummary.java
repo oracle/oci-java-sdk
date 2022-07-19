@@ -309,9 +309,18 @@ public final class ComputeInstanceGroupCanaryApprovalDeployStageSummary extends 
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ComputeInstanceGroupCanaryApprovalDeployStageSummary(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", computeInstanceGroupCanaryTrafficShiftDeployStageId=")
                 .append(String.valueOf(this.computeInstanceGroupCanaryTrafficShiftDeployStageId));
         sb.append(", approvalPolicy=").append(String.valueOf(this.approvalPolicy));

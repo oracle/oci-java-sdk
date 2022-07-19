@@ -405,9 +405,18 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BuildStageSummary(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", image=").append(String.valueOf(this.image));
         sb.append(", buildSpecFile=").append(String.valueOf(this.buildSpecFile));
         sb.append(", stageExecutionTimeoutInSeconds=")

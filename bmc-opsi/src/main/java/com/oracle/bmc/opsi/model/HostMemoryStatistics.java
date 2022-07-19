@@ -325,9 +325,18 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostMemoryStatistics(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", freeMemory=").append(String.valueOf(this.freeMemory));
         sb.append(", availableMemory=").append(String.valueOf(this.availableMemory));
         sb.append(", hugePagesTotal=").append(String.valueOf(this.hugePagesTotal));

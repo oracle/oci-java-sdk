@@ -95,10 +95,26 @@ public final class InlineImageDetails extends ImageDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InlineImageDetails(");
-        sb.append("super=").append(super.toString());
-        sb.append(", data=").append(String.valueOf(this.data));
+        sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", data=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.data)
+                                : (String.valueOf(this.data)
+                                        + (this.data != null
+                                                ? " (byte[" + this.data.length + "])"
+                                                : ""))));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -114,7 +130,7 @@ public final class InlineImageDetails extends ImageDetails {
         }
 
         InlineImageDetails other = (InlineImageDetails) o;
-        return java.util.Objects.equals(this.data, other.data)
+        return java.util.Arrays.equals(this.data, other.data)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
                 && super.equals(o);
     }
@@ -123,7 +139,7 @@ public final class InlineImageDetails extends ImageDetails {
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result = (result * PRIME) + (this.data == null ? 43 : this.data.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.data);
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

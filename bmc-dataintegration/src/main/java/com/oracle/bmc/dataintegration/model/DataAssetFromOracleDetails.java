@@ -497,9 +497,18 @@ public final class DataAssetFromOracleDetails extends DataAsset {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataAssetFromOracleDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", host=").append(String.valueOf(this.host));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));

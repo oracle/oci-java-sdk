@@ -112,10 +112,26 @@ public final class ImportConnectionDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImportConnectionDetails(");
         sb.append("connectionDetail=").append(String.valueOf(this.connectionDetail));
-        sb.append(", connectionPayload=").append(String.valueOf(this.connectionPayload));
+        sb.append(", connectionPayload=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.connectionPayload)
+                                : (String.valueOf(this.connectionPayload)
+                                        + (this.connectionPayload != null
+                                                ? " (byte[" + this.connectionPayload.length + "])"
+                                                : ""))));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -132,7 +148,7 @@ public final class ImportConnectionDetails {
 
         ImportConnectionDetails other = (ImportConnectionDetails) o;
         return java.util.Objects.equals(this.connectionDetail, other.connectionDetail)
-                && java.util.Objects.equals(this.connectionPayload, other.connectionPayload)
+                && java.util.Arrays.equals(this.connectionPayload, other.connectionPayload)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -143,9 +159,7 @@ public final class ImportConnectionDetails {
         result =
                 (result * PRIME)
                         + (this.connectionDetail == null ? 43 : this.connectionDetail.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.connectionPayload == null ? 43 : this.connectionPayload.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.connectionPayload);
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

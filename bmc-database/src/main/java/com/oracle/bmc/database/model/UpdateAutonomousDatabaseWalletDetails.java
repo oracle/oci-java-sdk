@@ -22,10 +22,11 @@ package com.oracle.bmc.database.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateAutonomousDatabaseWalletDetails {
     @Deprecated
-    @java.beans.ConstructorProperties({"shouldRotate"})
-    public UpdateAutonomousDatabaseWalletDetails(Boolean shouldRotate) {
+    @java.beans.ConstructorProperties({"shouldRotate", "gracePeriod"})
+    public UpdateAutonomousDatabaseWalletDetails(Boolean shouldRotate, Integer gracePeriod) {
         super();
         this.shouldRotate = shouldRotate;
+        this.gracePeriod = gracePeriod;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,20 +47,37 @@ public final class UpdateAutonomousDatabaseWalletDetails {
             this.__explicitlySet__.add("shouldRotate");
             return this;
         }
+        /**
+         * Grace period in hours to keep the existing wallet valid after rotation.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("gracePeriod")
+        private Integer gracePeriod;
+
+        /**
+         * Grace period in hours to keep the existing wallet valid after rotation.
+         * @param gracePeriod the value to set
+         * @return this builder
+         **/
+        public Builder gracePeriod(Integer gracePeriod) {
+            this.gracePeriod = gracePeriod;
+            this.__explicitlySet__.add("gracePeriod");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAutonomousDatabaseWalletDetails build() {
             UpdateAutonomousDatabaseWalletDetails __instance__ =
-                    new UpdateAutonomousDatabaseWalletDetails(shouldRotate);
+                    new UpdateAutonomousDatabaseWalletDetails(shouldRotate, gracePeriod);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateAutonomousDatabaseWalletDetails o) {
-            Builder copiedBuilder = shouldRotate(o.getShouldRotate());
+            Builder copiedBuilder =
+                    shouldRotate(o.getShouldRotate()).gracePeriod(o.getGracePeriod());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -91,11 +109,35 @@ public final class UpdateAutonomousDatabaseWalletDetails {
         return shouldRotate;
     }
 
+    /**
+     * Grace period in hours to keep the existing wallet valid after rotation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("gracePeriod")
+    private final Integer gracePeriod;
+
+    /**
+     * Grace period in hours to keep the existing wallet valid after rotation.
+     * @return the value
+     **/
+    public Integer getGracePeriod() {
+        return gracePeriod;
+    }
+
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateAutonomousDatabaseWalletDetails(");
         sb.append("shouldRotate=").append(String.valueOf(this.shouldRotate));
+        sb.append(", gracePeriod=").append(String.valueOf(this.gracePeriod));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -112,6 +154,7 @@ public final class UpdateAutonomousDatabaseWalletDetails {
 
         UpdateAutonomousDatabaseWalletDetails other = (UpdateAutonomousDatabaseWalletDetails) o;
         return java.util.Objects.equals(this.shouldRotate, other.shouldRotate)
+                && java.util.Objects.equals(this.gracePeriod, other.gracePeriod)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -120,6 +163,7 @@ public final class UpdateAutonomousDatabaseWalletDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.shouldRotate == null ? 43 : this.shouldRotate.hashCode());
+        result = (result * PRIME) + (this.gracePeriod == null ? 43 : this.gracePeriod.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

@@ -419,9 +419,18 @@ public final class Announcement extends BaseAnnouncement {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Announcement(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", additionalInformation=").append(String.valueOf(this.additionalInformation));
         sb.append(", affectedResources=").append(String.valueOf(this.affectedResources));

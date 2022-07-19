@@ -22,6 +22,8 @@ import java.util.stream.Stream;
 public class ConfigFileDelegationTokenUtils {
 
     private static final String OCI_DELEGATION_TOKEN_FILE_KEY = "delegation_token_file";
+    private static final String OCI_DELEGATION_TOKEN = "delegation_token";
+
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ConfigFileDelegationTokenUtils.class);
 
@@ -35,6 +37,10 @@ public class ConfigFileDelegationTokenUtils {
      */
     public static String parseAndGetToken(ConfigFileReader.ConfigFile effectiveConfigFile)
             throws IOException {
+
+        if (effectiveConfigFile.get(OCI_DELEGATION_TOKEN) != null) {
+            return effectiveConfigFile.get(OCI_DELEGATION_TOKEN);
+        }
 
         String delegationTokenFilePath = getDelegationTokenFilePath(effectiveConfigFile);
         if (StringUtils.isBlank(delegationTokenFilePath)) {

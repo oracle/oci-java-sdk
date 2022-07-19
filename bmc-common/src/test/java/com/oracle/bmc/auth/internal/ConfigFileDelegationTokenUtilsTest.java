@@ -42,4 +42,14 @@ public class ConfigFileDelegationTokenUtilsTest {
 
         assertEquals(ConfigFileDelegationTokenUtils.parseAndGetToken(configFile), "");
     }
+
+    @Test
+    public void loadDelegationTokenStringFromConfigFileTest() throws IOException {
+        final ConfigFileReader.ConfigFile configFile =
+                ConfigFileReader.parse(
+                        "src/test/resources/unit_test_config_for_delegation_token", "DEFAULT");
+        assertEquals(
+                ConfigFileDelegationTokenUtils.parseAndGetToken(configFile),
+                "test_delegation_token");
+    }
 }

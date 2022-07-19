@@ -177,9 +177,18 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DefaultJobConfigurationDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", environmentVariables=").append(String.valueOf(this.environmentVariables));
         sb.append(", commandLineArguments=").append(String.valueOf(this.commandLineArguments));
         sb.append(", maximumRuntimeInMinutes=")

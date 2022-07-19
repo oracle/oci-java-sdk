@@ -217,7 +217,7 @@ public class CreateAutonomousDatabaseBase {
     }
 
     /**
-     * The character set for the Autonomous Database.  The default is AL32UTF8. Use [List Autonomous Database Character Sets](https://docs.cloud.oracle.com/autonomousDatabaseCharacterSets) to list the allowed values for an Autonomous Database on shared Exadata infrastructure.
+     * The character set for the Autonomous Database.  The default is AL32UTF8. Use {@link #listAutonomousDatabaseCharacterSets(ListAutonomousDatabaseCharacterSetsRequest) listAutonomousDatabaseCharacterSets} to list the allowed values for an Autonomous Database on shared Exadata infrastructure.
      * For an Autonomous Database on dedicated Exadata infrastructure, the allowed values are:
      * AL16UTF16 or UTF8.
      *
@@ -226,7 +226,7 @@ public class CreateAutonomousDatabaseBase {
     private final String ncharacterSet;
 
     /**
-     * The character set for the Autonomous Database.  The default is AL32UTF8. Use [List Autonomous Database Character Sets](https://docs.cloud.oracle.com/autonomousDatabaseCharacterSets) to list the allowed values for an Autonomous Database on shared Exadata infrastructure.
+     * The character set for the Autonomous Database.  The default is AL32UTF8. Use {@link #listAutonomousDatabaseCharacterSets(ListAutonomousDatabaseCharacterSetsRequest) listAutonomousDatabaseCharacterSets} to list the allowed values for an Autonomous Database on shared Exadata infrastructure.
      * For an Autonomous Database on dedicated Exadata infrastructure, the allowed values are:
      * AL16UTF16 or UTF8.
      *
@@ -1027,6 +1027,15 @@ public class CreateAutonomousDatabaseBase {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAutonomousDatabaseBase(");
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));

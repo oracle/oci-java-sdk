@@ -197,9 +197,18 @@ public final class ObjectStorageSourceDetails extends SourceDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ObjectStorageSourceDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", relativePath=").append(String.valueOf(this.relativePath));
         sb.append(", path=").append(String.valueOf(this.path));
         sb.append(", offset=").append(String.valueOf(this.offset));

@@ -163,9 +163,18 @@ public final class GenericDeployArtifactSource extends DeployArtifactSource {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GenericDeployArtifactSource(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", repositoryId=").append(String.valueOf(this.repositoryId));
         sb.append(", deployArtifactPath=").append(String.valueOf(this.deployArtifactPath));
         sb.append(", deployArtifactVersion=").append(String.valueOf(this.deployArtifactVersion));

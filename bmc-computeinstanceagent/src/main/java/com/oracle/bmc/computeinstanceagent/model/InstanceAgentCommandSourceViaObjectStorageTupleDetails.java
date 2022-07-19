@@ -164,9 +164,18 @@ public final class InstanceAgentCommandSourceViaObjectStorageTupleDetails
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceAgentCommandSourceViaObjectStorageTupleDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", bucketName=").append(String.valueOf(this.bucketName));
         sb.append(", namespaceName=").append(String.valueOf(this.namespaceName));
         sb.append(", objectName=").append(String.valueOf(this.objectName));

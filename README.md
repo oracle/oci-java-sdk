@@ -7,6 +7,12 @@ oci-java-sdk provides an SDK for Java that you can use to manage your Oracle Clo
 
 The project is open source and maintained by Oracle Corp. The home page for the project is [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
 
+## Documentation
+
+Full documentation, including prerequisites, installation, supported JDK versions and configuration instructions, is available [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
+
+API reference can be found [here](https://docs.cloud.oracle.com/iaas/tools/java/latest/).
+
 ## Installation
 
 For basic set up, see [Getting Started](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdkgettingstarted.htm).
@@ -22,21 +28,25 @@ export OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED=FALSE
 
 Examples can be found [here](/bmc-examples/src/main/java/).
 
+Please compile the `bmc-examples` module before running any example, specially if it is your first time working with the examples. Failure to do so can lead to exception like `ClassNotFoundException`. You can compile the source code of the examples as below:
+```
+cd bmc-examples/
+mvn compile
+```
+
 You may run any example by invoking the `exec:java` goal and passing appropriate values for `exec.mainClass` and `.exec.arguments` properties,
 for example: `ObjectStorageGetBucketExample` class requires 3 arguments which are OCID of the compartment, name of bucket, name of object. This example class can be executed as follows:
-
 ```
 mvn -am -pl bmc-examples exec:java -Dexec.mainClass=ObjectStorageGetBucketExample \
   -Dexec.arguments=compartment_ocid,bucket_name,object_name
 ```
+You can also compile and run the example at the same time by doing the following:
+```
+mvn clean compile -am -pl bmc-examples exec:java -Dexec.mainClass=ObjectStorageGetBucketExample \
+  -Dexec.arguments=compartment_ocid,bucket_name,object_name
+```
 
 Where `compartment_id`, `bucket_name`, and `object_name` should be substituted with appropriate values according to your setup.
-
-## Documentation
-
-Full documentation, including prerequisites, installation, and configuration instructions, is available [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
-
-API reference can be found [here](https://docs.cloud.oracle.com/iaas/tools/java/latest/).
 
 ## Help
 
@@ -81,6 +91,10 @@ Use `ApacheConnectionClosingStrategy.ImmediateClosingStrategy` for large files w
  
 Note : If both the above Apache Connection closing strategies do not give you optimal results for your use-cases, please consider switching back to Jersey Default `HttpUrlConnectorProvider`.
 For more info on Apache Connector, please look into ApacheConnector-README.
+
+### OCI Java SDK shows incorrect service details while displaying the logs for BmcException
+
+OCI Java SDK displays wrong service details when a BmcException is thrown. For example, exception generated from service A could see information about service B. This behavior can be seen in versions `2.23.0` to `2.34.0` making it thread unsafe. Please update to version `2.35.0` which has the fix for this issue.
  
 You can find information on any known issues with the SDK [here](https://docs.cloud.oracle.com/iaas/Content/knownissues.htm) and under the “Issues” tab of this GitHub repository.
 

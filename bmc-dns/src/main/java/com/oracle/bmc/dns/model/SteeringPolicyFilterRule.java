@@ -190,9 +190,18 @@ public final class SteeringPolicyFilterRule extends SteeringPolicyRule {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SteeringPolicyFilterRule(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", cases=").append(String.valueOf(this.cases));
         sb.append(", defaultAnswerData=").append(String.valueOf(this.defaultAnswerData));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

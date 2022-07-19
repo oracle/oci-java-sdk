@@ -353,9 +353,18 @@ public final class ClusterCompareCommandDescriptor extends AbstractCommandDescri
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClusterCompareCommandDescriptor(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", timeShift=").append(String.valueOf(this.timeShift));
         sb.append(", timeStart=").append(String.valueOf(this.timeStart));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));

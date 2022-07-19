@@ -256,9 +256,18 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BiccReadAttributes(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", fetchSize=").append(String.valueOf(this.fetchSize));
         sb.append(", extractStrategy=").append(String.valueOf(this.extractStrategy));
         sb.append(", externalStorage=").append(String.valueOf(this.externalStorage));

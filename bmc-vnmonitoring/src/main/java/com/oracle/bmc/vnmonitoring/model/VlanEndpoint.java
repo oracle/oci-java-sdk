@@ -136,9 +136,18 @@ public final class VlanEndpoint extends Endpoint {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VlanEndpoint(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", address=").append(String.valueOf(this.address));
         sb.append(", vlanId=").append(String.valueOf(this.vlanId));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

@@ -295,9 +295,18 @@ public final class BipReadAttributes extends AbstractReadAttribute {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BipReadAttributes(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", fetchSize=").append(String.valueOf(this.fetchSize));
         sb.append(", rowLimit=").append(String.valueOf(this.rowLimit));
         sb.append(", offsetParameter=").append(String.valueOf(this.offsetParameter));

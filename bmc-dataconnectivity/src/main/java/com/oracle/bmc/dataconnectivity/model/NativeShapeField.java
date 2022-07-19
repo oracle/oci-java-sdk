@@ -282,9 +282,18 @@ public final class NativeShapeField extends TypedObject {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NativeShapeField(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", position=").append(String.valueOf(this.position));
         sb.append(", defaultValueString=").append(String.valueOf(this.defaultValueString));

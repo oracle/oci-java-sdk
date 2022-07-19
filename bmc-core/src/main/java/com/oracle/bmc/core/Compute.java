@@ -20,6 +20,12 @@ import com.oracle.bmc.core.responses.*;
 public interface Compute extends AutoCloseable {
 
     /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
+    void refreshClient();
+
+    /**
      * Sets the endpoint to call (ex, https://www.example.com).
      * @param endpoint The endpoint of the service.
      */
@@ -708,6 +714,19 @@ public interface Compute extends AutoCloseable {
      */
     GetInstanceConsoleConnectionResponse getInstanceConsoleConnection(
             GetInstanceConsoleConnectionRequest request);
+
+    /**
+     * Gets the maximum possible date that a maintenance reboot can be extended.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceMaintenanceRebootExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstanceMaintenanceReboot API.
+     */
+    GetInstanceMaintenanceRebootResponse getInstanceMaintenanceReboot(
+            GetInstanceMaintenanceRebootRequest request);
 
     /**
      * Gets the measured boot report for this shielded instance.

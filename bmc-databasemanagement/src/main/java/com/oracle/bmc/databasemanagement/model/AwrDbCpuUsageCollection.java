@@ -248,9 +248,18 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrDbCpuUsageCollection(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", numCpuCores=").append(String.valueOf(this.numCpuCores));
         sb.append(", cpuCount=").append(String.valueOf(this.cpuCount));
         sb.append(", numCpus=").append(String.valueOf(this.numCpus));

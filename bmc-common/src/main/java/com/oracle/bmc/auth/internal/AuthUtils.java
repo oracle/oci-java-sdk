@@ -148,15 +148,11 @@ public class AuthUtils {
                                     .generatePublic(
                                             new RSAPublicKeySpec(
                                                     new BigInteger(
-                                                            1,
-                                                            Base64.getDecoder()
-                                                                    .decode(jwk.getModulus())),
+                                                            1, base64Decode(jwk.getModulus())),
                                                     new BigInteger(
                                                             1,
-                                                            Base64.getDecoder()
-                                                                    .decode(
-                                                                            jwk
-                                                                                    .getPublicExponent()))));
+                                                            base64Decode(
+                                                                    jwk.getPublicExponent()))));
 
             return Optional.of(key);
         } catch (Exception ex) {
@@ -216,15 +212,29 @@ public class AuthUtils {
         }
     }
 
+    /**
+     * Decode the base64 string. This supports both '+' and '/' as well as '-' and '_'.
+     * @param base64 base64 string
+     * @return decoded bytes
+     */
+    public static byte[] base64Decode(String base64) {
+        // compatibility with Apache Commons Codec Base64: decoding null yields null
+        if (base64 == null) {
+            return null;
+        }
+        // compatibility with Apache Commons Codec Base64:
+        // urlSafe - Instead of emitting '+' and '/' we emit '-' and '_' respectively. urlSafe is only applied to encode operations. Decoding seamlessly handles both modes.
+        return Base64.getDecoder().decode(base64.replace('-', '+').replace('_', '/'));
+    }
+
     static byte[] getEncodedCertificateFromPem(String pemEncodedCertificate) {
         // strip out header and footer
-        return Base64.getDecoder()
-                .decode(
-                        pemEncodedCertificate
-                                .replace("-----BEGIN CERTIFICATE-----", "")
-                                .replace("-----END CERTIFICATE-----", "")
-                                .replace("\n", "")
-                                .replace("\r", ""));
+        return base64Decode(
+                pemEncodedCertificate
+                        .replace("-----BEGIN CERTIFICATE-----", "")
+                        .replace("-----END CERTIFICATE-----", "")
+                        .replace("\n", "")
+                        .replace("\r", ""));
     }
 
     /**

@@ -239,6 +239,15 @@ public final class DatabaseConnectionString {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseConnectionString(");
         sb.append("hostname=").append(String.valueOf(this.hostname));

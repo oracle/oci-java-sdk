@@ -201,9 +201,18 @@ public final class RedirectRule extends Rule {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RedirectRule(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", responseCode=").append(String.valueOf(this.responseCode));
         sb.append(", conditions=").append(String.valueOf(this.conditions));
         sb.append(", redirectUri=").append(String.valueOf(this.redirectUri));

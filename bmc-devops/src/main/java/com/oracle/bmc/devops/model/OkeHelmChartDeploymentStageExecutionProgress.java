@@ -297,9 +297,18 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OkeHelmChartDeploymentStageExecutionProgress(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", releaseName=").append(String.valueOf(this.releaseName));
         sb.append(", chartUrl=").append(String.valueOf(this.chartUrl));
         sb.append(", version=").append(String.valueOf(this.version));

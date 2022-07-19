@@ -441,6 +441,15 @@ public final class UpdateOperatorControlDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateOperatorControlDetails(");
         sb.append("operatorControlName=").append(String.valueOf(this.operatorControlName));

@@ -126,10 +126,33 @@ public final class PutMessagesDetailsEntry {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PutMessagesDetailsEntry(");
-        sb.append("key=").append(String.valueOf(this.key));
-        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append("key=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.key)
+                                : (String.valueOf(this.key)
+                                        + (this.key != null
+                                                ? " (byte[" + this.key.length + "])"
+                                                : ""))));
+        sb.append(", value=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.value)
+                                : (String.valueOf(this.value)
+                                        + (this.value != null
+                                                ? " (byte[" + this.value.length + "])"
+                                                : ""))));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -145,8 +168,8 @@ public final class PutMessagesDetailsEntry {
         }
 
         PutMessagesDetailsEntry other = (PutMessagesDetailsEntry) o;
-        return java.util.Objects.equals(this.key, other.key)
-                && java.util.Objects.equals(this.value, other.value)
+        return java.util.Arrays.equals(this.key, other.key)
+                && java.util.Arrays.equals(this.value, other.value)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -154,8 +177,8 @@ public final class PutMessagesDetailsEntry {
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
-        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.key);
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.value);
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

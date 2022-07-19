@@ -314,9 +314,18 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseSslConnectionCredentials(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", credentialName=").append(String.valueOf(this.credentialName));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append(String.valueOf(this.password));

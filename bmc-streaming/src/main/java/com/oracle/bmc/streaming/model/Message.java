@@ -263,12 +263,35 @@ public final class Message {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Message(");
         sb.append("stream=").append(String.valueOf(this.stream));
         sb.append(", partition=").append(String.valueOf(this.partition));
-        sb.append(", key=").append(String.valueOf(this.key));
-        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append(", key=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.key)
+                                : (String.valueOf(this.key)
+                                        + (this.key != null
+                                                ? " (byte[" + this.key.length + "])"
+                                                : ""))));
+        sb.append(", value=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.value)
+                                : (String.valueOf(this.value)
+                                        + (this.value != null
+                                                ? " (byte[" + this.value.length + "])"
+                                                : ""))));
         sb.append(", offset=").append(String.valueOf(this.offset));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
@@ -288,8 +311,8 @@ public final class Message {
         Message other = (Message) o;
         return java.util.Objects.equals(this.stream, other.stream)
                 && java.util.Objects.equals(this.partition, other.partition)
-                && java.util.Objects.equals(this.key, other.key)
-                && java.util.Objects.equals(this.value, other.value)
+                && java.util.Arrays.equals(this.key, other.key)
+                && java.util.Arrays.equals(this.value, other.value)
                 && java.util.Objects.equals(this.offset, other.offset)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
@@ -301,8 +324,8 @@ public final class Message {
         int result = 1;
         result = (result * PRIME) + (this.stream == null ? 43 : this.stream.hashCode());
         result = (result * PRIME) + (this.partition == null ? 43 : this.partition.hashCode());
-        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
-        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.key);
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.value);
         result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
         result =

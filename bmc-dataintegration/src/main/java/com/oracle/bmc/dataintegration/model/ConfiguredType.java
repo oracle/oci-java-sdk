@@ -208,9 +208,18 @@ public final class ConfiguredType extends BaseType {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConfiguredType(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", wrappedType=").append(String.valueOf(this.wrappedType));
         sb.append(", configValues=").append(String.valueOf(this.configValues));
         sb.append(", configDefinition=").append(String.valueOf(this.configDefinition));

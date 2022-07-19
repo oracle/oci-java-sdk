@@ -217,9 +217,18 @@ public final class UpdateFacebookChannelDetails extends UpdateChannelDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateFacebookChannelDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", appSecret=").append(String.valueOf(this.appSecret));
         sb.append(", pageAccessToken=").append(String.valueOf(this.pageAccessToken));
         sb.append(", botId=").append(String.valueOf(this.botId));

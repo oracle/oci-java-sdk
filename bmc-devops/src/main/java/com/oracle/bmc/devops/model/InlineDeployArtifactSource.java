@@ -96,10 +96,28 @@ public final class InlineDeployArtifactSource extends DeployArtifactSource {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InlineDeployArtifactSource(");
-        sb.append("super=").append(super.toString());
-        sb.append(", base64EncodedContent=").append(String.valueOf(this.base64EncodedContent));
+        sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", base64EncodedContent=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.base64EncodedContent)
+                                : (String.valueOf(this.base64EncodedContent)
+                                        + (this.base64EncodedContent != null
+                                                ? " (byte["
+                                                        + this.base64EncodedContent.length
+                                                        + "])"
+                                                : ""))));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -115,7 +133,7 @@ public final class InlineDeployArtifactSource extends DeployArtifactSource {
         }
 
         InlineDeployArtifactSource other = (InlineDeployArtifactSource) o;
-        return java.util.Objects.equals(this.base64EncodedContent, other.base64EncodedContent)
+        return java.util.Arrays.equals(this.base64EncodedContent, other.base64EncodedContent)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
                 && super.equals(o);
     }
@@ -124,11 +142,7 @@ public final class InlineDeployArtifactSource extends DeployArtifactSource {
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.base64EncodedContent == null
-                                ? 43
-                                : this.base64EncodedContent.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.base64EncodedContent);
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

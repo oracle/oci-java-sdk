@@ -91,9 +91,27 @@ public final class ImportGlossaryDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImportGlossaryDetails(");
-        sb.append("glossaryFileContents=").append(String.valueOf(this.glossaryFileContents));
+        sb.append("glossaryFileContents=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.glossaryFileContents)
+                                : (String.valueOf(this.glossaryFileContents)
+                                        + (this.glossaryFileContents != null
+                                                ? " (byte["
+                                                        + this.glossaryFileContents.length
+                                                        + "])"
+                                                : ""))));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -109,7 +127,7 @@ public final class ImportGlossaryDetails {
         }
 
         ImportGlossaryDetails other = (ImportGlossaryDetails) o;
-        return java.util.Objects.equals(this.glossaryFileContents, other.glossaryFileContents)
+        return java.util.Arrays.equals(this.glossaryFileContents, other.glossaryFileContents)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -117,11 +135,7 @@ public final class ImportGlossaryDetails {
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result =
-                (result * PRIME)
-                        + (this.glossaryFileContents == null
-                                ? 43
-                                : this.glossaryFileContents.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.glossaryFileContents);
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

@@ -309,9 +309,18 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateZoneDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", zoneType=").append(String.valueOf(this.zoneType));
         sb.append(", viewId=").append(String.valueOf(this.viewId));
         sb.append(", scope=").append(String.valueOf(this.scope));

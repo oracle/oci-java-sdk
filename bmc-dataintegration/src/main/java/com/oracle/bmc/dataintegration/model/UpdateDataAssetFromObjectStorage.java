@@ -350,9 +350,18 @@ public final class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetai
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDataAssetFromObjectStorage(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", ociRegion=").append(String.valueOf(this.ociRegion));
         sb.append(", url=").append(String.valueOf(this.url));
         sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));

@@ -268,9 +268,18 @@ public final class UpdateInvokeFunctionDeployStageDetails extends UpdateDeploySt
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateInvokeFunctionDeployStageDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", functionDeployEnvironmentId=")
                 .append(String.valueOf(this.functionDeployEnvironmentId));
         sb.append(", deployArtifactId=").append(String.valueOf(this.deployArtifactId));

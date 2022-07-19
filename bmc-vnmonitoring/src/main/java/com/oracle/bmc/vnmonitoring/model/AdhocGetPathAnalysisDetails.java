@@ -213,9 +213,18 @@ public final class AdhocGetPathAnalysisDetails extends GetPathAnalysisDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AdhocGetPathAnalysisDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", protocol=").append(String.valueOf(this.protocol));
         sb.append(", sourceEndpoint=").append(String.valueOf(this.sourceEndpoint));

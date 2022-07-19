@@ -353,9 +353,18 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HighlightGroupsCommandDescriptor(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", color=").append(String.valueOf(this.color));
         sb.append(", priority=").append(String.valueOf(this.priority));
         sb.append(", matchOnly=").append(String.valueOf(this.matchOnly));

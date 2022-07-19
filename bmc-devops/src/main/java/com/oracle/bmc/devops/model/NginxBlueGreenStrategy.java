@@ -161,9 +161,18 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NginxBlueGreenStrategy(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", namespaceA=").append(String.valueOf(this.namespaceA));
         sb.append(", namespaceB=").append(String.valueOf(this.namespaceB));
         sb.append(", ingressName=").append(String.valueOf(this.ingressName));

@@ -168,9 +168,18 @@ public final class HostProduct extends HostConfigurationMetricGroup {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostProduct(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", vendor=").append(String.valueOf(this.vendor));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", version=").append(String.valueOf(this.version));

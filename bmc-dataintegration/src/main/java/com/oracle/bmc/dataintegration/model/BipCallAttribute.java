@@ -202,9 +202,18 @@ public final class BipCallAttribute extends AbstractCallAttribute {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BipCallAttribute(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", offsetParameter=").append(String.valueOf(this.offsetParameter));
         sb.append(", fetchNextRowsParameter=").append(String.valueOf(this.fetchNextRowsParameter));
         sb.append(", stagingDataAsset=").append(String.valueOf(this.stagingDataAsset));

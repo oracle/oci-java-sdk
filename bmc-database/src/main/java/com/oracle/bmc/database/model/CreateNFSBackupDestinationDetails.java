@@ -175,9 +175,18 @@ public final class CreateNFSBackupDestinationDetails extends CreateBackupDestina
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateNFSBackupDestinationDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", localMountPointPath=").append(String.valueOf(this.localMountPointPath));
         sb.append(", mountTypeDetails=").append(String.valueOf(this.mountTypeDetails));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

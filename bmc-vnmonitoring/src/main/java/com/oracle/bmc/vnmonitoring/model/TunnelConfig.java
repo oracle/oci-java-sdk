@@ -183,6 +183,15 @@ public final class TunnelConfig {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TunnelConfig(");
         sb.append("ipAddress=").append(String.valueOf(this.ipAddress));

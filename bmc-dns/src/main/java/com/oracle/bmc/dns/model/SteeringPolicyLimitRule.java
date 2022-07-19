@@ -189,9 +189,18 @@ public final class SteeringPolicyLimitRule extends SteeringPolicyRule {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SteeringPolicyLimitRule(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", cases=").append(String.valueOf(this.cases));
         sb.append(", defaultCount=").append(String.valueOf(this.defaultCount));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

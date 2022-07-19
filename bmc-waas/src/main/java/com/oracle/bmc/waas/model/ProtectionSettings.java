@@ -736,6 +736,15 @@ public final class ProtectionSettings {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProtectionSettings(");
         sb.append("blockAction=").append(String.valueOf(this.blockAction));

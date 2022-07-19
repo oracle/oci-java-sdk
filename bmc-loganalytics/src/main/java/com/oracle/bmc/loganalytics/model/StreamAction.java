@@ -234,9 +234,18 @@ public final class StreamAction extends Action {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StreamAction(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", savedSearchId=").append(String.valueOf(this.savedSearchId));
         sb.append(", metricExtraction=").append(String.valueOf(this.metricExtraction));
         sb.append(", savedSearchDuration=").append(String.valueOf(this.savedSearchDuration));

@@ -410,6 +410,15 @@ public final class WafMeterDatum {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WafMeterDatum(");
         sb.append("timeObserved=").append(String.valueOf(this.timeObserved));
@@ -421,7 +430,14 @@ public final class WafMeterDatum {
         sb.append(", isBotEnabled=").append(String.valueOf(this.isBotEnabled));
         sb.append(", requestCount=").append(String.valueOf(this.requestCount));
         sb.append(", trafficInBytes=").append(String.valueOf(this.trafficInBytes));
-        sb.append(", tagSlug=").append(String.valueOf(this.tagSlug));
+        sb.append(", tagSlug=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.tagSlug)
+                                : (String.valueOf(this.tagSlug)
+                                        + (this.tagSlug != null
+                                                ? " (byte[" + this.tagSlug.length + "])"
+                                                : ""))));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -446,7 +462,7 @@ public final class WafMeterDatum {
                 && java.util.Objects.equals(this.isBotEnabled, other.isBotEnabled)
                 && java.util.Objects.equals(this.requestCount, other.requestCount)
                 && java.util.Objects.equals(this.trafficInBytes, other.trafficInBytes)
-                && java.util.Objects.equals(this.tagSlug, other.tagSlug)
+                && java.util.Arrays.equals(this.tagSlug, other.tagSlug)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -471,7 +487,7 @@ public final class WafMeterDatum {
         result =
                 (result * PRIME)
                         + (this.trafficInBytes == null ? 43 : this.trafficInBytes.hashCode());
-        result = (result * PRIME) + (this.tagSlug == null ? 43 : this.tagSlug.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.tagSlug);
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

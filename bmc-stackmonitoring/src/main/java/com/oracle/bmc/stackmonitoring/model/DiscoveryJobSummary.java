@@ -390,6 +390,9 @@ public final class DiscoveryJobSummary {
         WeblogicDomain("WEBLOGIC_DOMAIN"),
         EbsInstance("EBS_INSTANCE"),
         OracleDatabase("ORACLE_DATABASE"),
+        OciOracleDb("OCI_ORACLE_DB"),
+        OciOracleCdb("OCI_ORACLE_CDB"),
+        OciOraclePdb("OCI_ORACLE_PDB"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -731,6 +734,15 @@ public final class DiscoveryJobSummary {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DiscoveryJobSummary(");
         sb.append("id=").append(String.valueOf(this.id));

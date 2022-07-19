@@ -161,9 +161,18 @@ public final class OracleWriteAttributes extends AbstractWriteAttribute {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OracleWriteAttributes(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", batchSize=").append(String.valueOf(this.batchSize));
         sb.append(", isTruncate=").append(String.valueOf(this.isTruncate));
         sb.append(", isolationLevel=").append(String.valueOf(this.isolationLevel));

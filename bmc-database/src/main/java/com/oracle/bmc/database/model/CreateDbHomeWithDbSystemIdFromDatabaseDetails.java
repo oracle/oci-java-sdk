@@ -211,9 +211,18 @@ public final class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateD
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDbHomeWithDbSystemIdFromDatabaseDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", database=").append(String.valueOf(this.database));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

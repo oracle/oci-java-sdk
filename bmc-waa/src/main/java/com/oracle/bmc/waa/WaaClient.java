@@ -34,12 +34,39 @@ public class WaaClient implements Waa {
     private final WaaWaiters waiters;
 
     private final WaaPaginators paginators;
-    private final com.oracle.bmc.http.internal.RestClient client;
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
     private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
             apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
 
     /**
      * Creates a new service instance using the given authentication provider.
@@ -275,54 +302,37 @@ public class WaaClient implements Waa {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
-        com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
+        this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(allConfigurators)
                         .build();
-        boolean isNonBufferingApacheClient =
+        this.isNonBufferingApacheClient =
                 com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        restClientFactory.getClientConfigurator());
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
+                        this.restClientFactory.getClientConfigurator());
         this.apacheConnectionClosingStrategy =
                 com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
                         restClientFactory.getClientConfigurator());
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
 
-        final com.oracle.bmc.ClientConfiguration clientConfigurationToUse =
+        this.clientConfigurationToUse =
                 (configuration != null)
                         ? configuration
                         : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        CircuitBreakerConfiguration circuitBreakerConfiguration =
-                CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(configuration);
-        if (circuitBreakerConfiguration == null) {
-            circuitBreakerConfiguration = CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
         }
-        this.client =
-                restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        clientConfigurationToUse,
-                        isNonBufferingApacheClient,
-                        null,
-                        circuitBreakerConfiguration);
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -423,9 +433,56 @@ public class WaaClient implements Waa {
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
     public void setEndpoint(String endpoint) {
         LOG.info("Setting endpoint to {}", endpoint);
-        client.setEndpoint(endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
     }
 
     @Override
@@ -487,7 +544,7 @@ public class WaaClient implements Waa {
                         "Waa",
                         "ChangeWebAppAccelerationCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/ChangeWebAppAccelerationCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeWebAppAccelerationCompartmentResponse>
                 transformer =
@@ -533,7 +590,7 @@ public class WaaClient implements Waa {
                         "Waa",
                         "ChangeWebAppAccelerationPolicyCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/ChangeWebAppAccelerationPolicyCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeWebAppAccelerationPolicyCompartmentResponse>
@@ -576,7 +633,10 @@ public class WaaClient implements Waa {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Waa", "CreateWebAppAcceleration", ib.getRequestUri().toString(), "");
+                        "Waa",
+                        "CreateWebAppAcceleration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/CreateWebAppAcceleration");
         java.util.function.Function<javax.ws.rs.core.Response, CreateWebAppAccelerationResponse>
                 transformer =
                         CreateWebAppAccelerationConverter.fromResponse(
@@ -616,7 +676,10 @@ public class WaaClient implements Waa {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Waa", "CreateWebAppAccelerationPolicy", ib.getRequestUri().toString(), "");
+                        "Waa",
+                        "CreateWebAppAccelerationPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/CreateWebAppAccelerationPolicy");
         java.util.function.Function<
                         javax.ws.rs.core.Response, CreateWebAppAccelerationPolicyResponse>
                 transformer =
@@ -657,7 +720,10 @@ public class WaaClient implements Waa {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Waa", "DeleteWebAppAcceleration", ib.getRequestUri().toString(), "");
+                        "Waa",
+                        "DeleteWebAppAcceleration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/DeleteWebAppAcceleration");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteWebAppAccelerationResponse>
                 transformer =
                         DeleteWebAppAccelerationConverter.fromResponse(
@@ -693,7 +759,10 @@ public class WaaClient implements Waa {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Waa", "DeleteWebAppAccelerationPolicy", ib.getRequestUri().toString(), "");
+                        "Waa",
+                        "DeleteWebAppAccelerationPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/DeleteWebAppAccelerationPolicy");
         java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteWebAppAccelerationPolicyResponse>
                 transformer =
@@ -730,7 +799,10 @@ public class WaaClient implements Waa {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Waa", "GetWebAppAcceleration", ib.getRequestUri().toString(), "");
+                        "Waa",
+                        "GetWebAppAcceleration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/GetWebAppAcceleration");
         java.util.function.Function<javax.ws.rs.core.Response, GetWebAppAccelerationResponse>
                 transformer =
                         GetWebAppAccelerationConverter.fromResponse(
@@ -765,7 +837,10 @@ public class WaaClient implements Waa {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Waa", "GetWebAppAccelerationPolicy", ib.getRequestUri().toString(), "");
+                        "Waa",
+                        "GetWebAppAccelerationPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/GetWebAppAccelerationPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, GetWebAppAccelerationPolicyResponse>
                 transformer =
                         GetWebAppAccelerationPolicyConverter.fromResponse(
@@ -800,7 +875,10 @@ public class WaaClient implements Waa {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Waa", "ListWebAppAccelerationPolicies", ib.getRequestUri().toString(), "");
+                        "Waa",
+                        "ListWebAppAccelerationPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/ListWebAppAccelerationPolicies");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListWebAppAccelerationPoliciesResponse>
                 transformer =
@@ -836,7 +914,10 @@ public class WaaClient implements Waa {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Waa", "ListWebAppAccelerations", ib.getRequestUri().toString(), "");
+                        "Waa",
+                        "ListWebAppAccelerations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/ListWebAppAccelerations");
         java.util.function.Function<javax.ws.rs.core.Response, ListWebAppAccelerationsResponse>
                 transformer =
                         ListWebAppAccelerationsConverter.fromResponse(
@@ -871,7 +952,10 @@ public class WaaClient implements Waa {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Waa", "PurgeWebAppAccelerationCache", ib.getRequestUri().toString(), "");
+                        "Waa",
+                        "PurgeWebAppAccelerationCache",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/PurgeWebAppAccelerationCache");
         java.util.function.Function<javax.ws.rs.core.Response, PurgeWebAppAccelerationCacheResponse>
                 transformer =
                         PurgeWebAppAccelerationCacheConverter.fromResponse(
@@ -911,7 +995,10 @@ public class WaaClient implements Waa {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Waa", "UpdateWebAppAcceleration", ib.getRequestUri().toString(), "");
+                        "Waa",
+                        "UpdateWebAppAcceleration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/UpdateWebAppAcceleration");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateWebAppAccelerationResponse>
                 transformer =
                         UpdateWebAppAccelerationConverter.fromResponse(
@@ -950,7 +1037,10 @@ public class WaaClient implements Waa {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Waa", "UpdateWebAppAccelerationPolicy", ib.getRequestUri().toString(), "");
+                        "Waa",
+                        "UpdateWebAppAccelerationPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/UpdateWebAppAccelerationPolicy");
         java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateWebAppAccelerationPolicyResponse>
                 transformer =

@@ -179,6 +179,9 @@ public final class DiscoveryDetails {
         WeblogicDomain("WEBLOGIC_DOMAIN"),
         EbsInstance("EBS_INSTANCE"),
         OracleDatabase("ORACLE_DATABASE"),
+        OciOracleDb("OCI_ORACLE_DB"),
+        OciOracleCdb("OCI_ORACLE_CDB"),
+        OciOraclePdb("OCI_ORACLE_PDB"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -272,6 +275,15 @@ public final class DiscoveryDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DiscoveryDetails(");
         sb.append("agentId=").append(String.valueOf(this.agentId));

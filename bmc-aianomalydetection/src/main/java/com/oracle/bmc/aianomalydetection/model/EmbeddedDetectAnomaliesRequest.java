@@ -145,11 +145,27 @@ public final class EmbeddedDetectAnomaliesRequest extends DetectAnomaliesDetails
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EmbeddedDetectAnomaliesRequest(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", contentType=").append(String.valueOf(this.contentType));
-        sb.append(", content=").append(String.valueOf(this.content));
+        sb.append(", content=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.content)
+                                : (String.valueOf(this.content)
+                                        + (this.content != null
+                                                ? " (byte[" + this.content.length + "])"
+                                                : ""))));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -166,7 +182,7 @@ public final class EmbeddedDetectAnomaliesRequest extends DetectAnomaliesDetails
 
         EmbeddedDetectAnomaliesRequest other = (EmbeddedDetectAnomaliesRequest) o;
         return java.util.Objects.equals(this.contentType, other.contentType)
-                && java.util.Objects.equals(this.content, other.content)
+                && java.util.Arrays.equals(this.content, other.content)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
                 && super.equals(o);
     }
@@ -176,7 +192,7 @@ public final class EmbeddedDetectAnomaliesRequest extends DetectAnomaliesDetails
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
-        result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.content);
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

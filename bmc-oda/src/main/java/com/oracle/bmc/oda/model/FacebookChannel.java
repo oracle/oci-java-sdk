@@ -271,9 +271,18 @@ public final class FacebookChannel extends Channel {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FacebookChannel(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", botId=").append(String.valueOf(this.botId));
         sb.append(", webhookUrl=").append(String.valueOf(this.webhookUrl));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

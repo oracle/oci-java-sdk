@@ -269,9 +269,18 @@ public final class DataType extends BaseType {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataType(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", dtType=").append(String.valueOf(this.dtType));
         sb.append(", typeSystemName=").append(String.valueOf(this.typeSystemName));
         sb.append(", configDefinition=").append(String.valueOf(this.configDefinition));

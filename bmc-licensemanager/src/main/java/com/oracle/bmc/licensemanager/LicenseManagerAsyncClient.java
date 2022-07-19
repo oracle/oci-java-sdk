@@ -37,13 +37,37 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(LicenseManagerAsyncClient.class);
 
-    private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
 
     private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
             apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
 
     /**
      * Creates a new service instance using the given authentication provider.
@@ -237,41 +261,22 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
-        com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
+        this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(allConfigurators)
                         .build();
-        boolean isNonBufferingApacheClient =
+        this.isNonBufferingApacheClient =
                 com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
                         restClientFactory.getClientConfigurator());
         this.apacheConnectionClosingStrategy =
                 com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
                         restClientFactory.getClientConfigurator());
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-        this.client =
-                restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        configuration,
-                        isNonBufferingApacheClient);
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -343,9 +348,54 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
     public void setEndpoint(String endpoint) {
         LOG.info("Setting endpoint to {}", endpoint);
-        client.setEndpoint(endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
     }
 
     @Override
@@ -404,7 +454,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "LicenseManager",
                         "BulkUploadLicenseRecords",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/BulkUploadLicenseRecordsDetails/BulkUploadLicenseRecords");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, BulkUploadLicenseRecordsResponse>
                 transformer =
@@ -455,7 +505,10 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "LicenseManager", "CreateLicenseRecord", ib.getRequestUri().toString(), "");
+                        "LicenseManager",
+                        "CreateLicenseRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/LicenseRecord/CreateLicenseRecord");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateLicenseRecordResponse>
                 transformer =
                         CreateLicenseRecordConverter.fromResponse(
@@ -508,7 +561,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "LicenseManager",
                         "CreateProductLicense",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/ProductLicense/CreateProductLicense");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateProductLicenseResponse>
                 transformer =
                         CreateProductLicenseConverter.fromResponse(
@@ -557,7 +610,10 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                 DeleteLicenseRecordConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "LicenseManager", "DeleteLicenseRecord", ib.getRequestUri().toString(), "");
+                        "LicenseManager",
+                        "DeleteLicenseRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/LicenseRecord/DeleteLicenseRecord");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteLicenseRecordResponse>
                 transformer =
                         DeleteLicenseRecordConverter.fromResponse(
@@ -604,7 +660,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "LicenseManager",
                         "DeleteProductLicense",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/ProductLicense/DeleteProductLicense");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteProductLicenseResponse>
                 transformer =
                         DeleteProductLicenseConverter.fromResponse(
@@ -651,7 +707,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "LicenseManager",
                         "GetBulkUploadTemplate",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/BulkUploadTemplate/GetBulkUploadTemplate");
         final java.util.function.Function<javax.ws.rs.core.Response, GetBulkUploadTemplateResponse>
                 transformer =
                         GetBulkUploadTemplateConverter.fromResponse(
@@ -695,7 +751,10 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                 GetConfigurationConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "LicenseManager", "GetConfiguration", ib.getRequestUri().toString(), "");
+                        "LicenseManager",
+                        "GetConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/Configuration/GetConfiguration");
         final java.util.function.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer =
                         GetConfigurationConverter.fromResponse(
@@ -738,7 +797,10 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                 GetLicenseMetricConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "LicenseManager", "GetLicenseMetric", ib.getRequestUri().toString(), "");
+                        "LicenseManager",
+                        "GetLicenseMetric",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/LicenseMetric/GetLicenseMetric");
         final java.util.function.Function<javax.ws.rs.core.Response, GetLicenseMetricResponse>
                 transformer =
                         GetLicenseMetricConverter.fromResponse(
@@ -781,7 +843,10 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                 GetLicenseRecordConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "LicenseManager", "GetLicenseRecord", ib.getRequestUri().toString(), "");
+                        "LicenseManager",
+                        "GetLicenseRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/LicenseRecord/GetLicenseRecord");
         final java.util.function.Function<javax.ws.rs.core.Response, GetLicenseRecordResponse>
                 transformer =
                         GetLicenseRecordConverter.fromResponse(
@@ -824,7 +889,10 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                 GetProductLicenseConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "LicenseManager", "GetProductLicense", ib.getRequestUri().toString(), "");
+                        "LicenseManager",
+                        "GetProductLicense",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/ProductLicense/GetProductLicense");
         final java.util.function.Function<javax.ws.rs.core.Response, GetProductLicenseResponse>
                 transformer =
                         GetProductLicenseConverter.fromResponse(
@@ -867,7 +935,10 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                 ListLicenseRecordsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "LicenseManager", "ListLicenseRecords", ib.getRequestUri().toString(), "");
+                        "LicenseManager",
+                        "ListLicenseRecords",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/LicenseRecordCollection/ListLicenseRecords");
         final java.util.function.Function<javax.ws.rs.core.Response, ListLicenseRecordsResponse>
                 transformer =
                         ListLicenseRecordsConverter.fromResponse(
@@ -915,7 +986,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "LicenseManager",
                         "ListProductLicenseConsumers",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/ProductLicenseConsumerCollection/ListProductLicenseConsumers");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListProductLicenseConsumersResponse>
                 transformer =
@@ -961,7 +1032,10 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                 ListProductLicensesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "LicenseManager", "ListProductLicenses", ib.getRequestUri().toString(), "");
+                        "LicenseManager",
+                        "ListProductLicenses",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/ProductLicenseCollection/ListProductLicenses");
         final java.util.function.Function<javax.ws.rs.core.Response, ListProductLicensesResponse>
                 transformer =
                         ListProductLicensesConverter.fromResponse(
@@ -1010,7 +1084,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "LicenseManager",
                         "ListTopUtilizedProductLicenses",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/TopUtilizedProductLicenseCollection/ListTopUtilizedProductLicenses");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListTopUtilizedProductLicensesResponse>
                 transformer =
@@ -1060,7 +1134,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "LicenseManager",
                         "ListTopUtilizedResources",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/TopUtilizedResourceCollection/ListTopUtilizedResources");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListTopUtilizedResourcesResponse>
                 transformer =
@@ -1105,7 +1179,10 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                 UpdateConfigurationConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "LicenseManager", "UpdateConfiguration", ib.getRequestUri().toString(), "");
+                        "LicenseManager",
+                        "UpdateConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/Configuration/UpdateConfiguration");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
                 transformer =
                         UpdateConfigurationConverter.fromResponse(
@@ -1154,7 +1231,10 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                 UpdateLicenseRecordConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "LicenseManager", "UpdateLicenseRecord", ib.getRequestUri().toString(), "");
+                        "LicenseManager",
+                        "UpdateLicenseRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/LicenseRecord/UpdateLicenseRecord");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateLicenseRecordResponse>
                 transformer =
                         UpdateLicenseRecordConverter.fromResponse(
@@ -1206,7 +1286,7 @@ public class LicenseManagerAsyncClient implements LicenseManagerAsync {
                         "LicenseManager",
                         "UpdateProductLicense",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/ProductLicense/UpdateProductLicense");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateProductLicenseResponse>
                 transformer =
                         UpdateProductLicenseConverter.fromResponse(

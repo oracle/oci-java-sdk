@@ -274,9 +274,18 @@ public final class DataAssetSummaryFromAmazonS3 extends DataAssetSummary {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataAssetSummaryFromAmazonS3(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", defaultConnection=").append(String.valueOf(this.defaultConnection));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));

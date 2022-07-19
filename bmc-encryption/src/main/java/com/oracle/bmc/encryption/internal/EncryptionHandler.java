@@ -7,13 +7,13 @@ package com.oracle.bmc.encryption.internal;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Base64;
 import java.util.Map;
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.spec.SecretKeySpec;
 
+import com.oracle.bmc.auth.internal.AuthUtils;
 import com.oracle.bmc.encryption.MasterKeyProvider;
 import com.oracle.bmc.encryption.OciCryptoInputStream;
 import com.oracle.bmc.encryption.OciCryptoResult;
@@ -31,7 +31,7 @@ public class EncryptionHandler extends CipherHandler {
     }
 
     private SecretKeySpec generateSecretKeySpec(DataKey dataKey) {
-        byte[] secretKeyBytes = Base64.getDecoder().decode(dataKey.getPlaintext());
+        byte[] secretKeyBytes = AuthUtils.base64Decode(dataKey.getPlaintext());
         return new SecretKeySpec(secretKeyBytes, provider.getCryptoAlgorithm().getAlgorithm());
     }
 

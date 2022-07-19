@@ -175,9 +175,18 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
 
     @Override
     public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseCloudServiceDetails(");
-        sb.append("super=").append(super.toString());
+        sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
